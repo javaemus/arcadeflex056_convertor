@@ -250,7 +250,7 @@ public class m107
 		IREM_COINS
 		IREM_SYSTEM_DIPSWITCH
 	
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "2" );
 		PORT_DIPSETTING(    0x03, "3" );
@@ -273,7 +273,7 @@ public class m107
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -308,7 +308,7 @@ public class m107
 		IREM_COINS
 		IREM_SYSTEM_DIPSWITCH_4PLAYERS
 	
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x03, 0x03, "Time" );
 		PORT_DIPSETTING(    0x00, "1:30" );
 		PORT_DIPSETTING(    0x03, "2:00" );
@@ -331,7 +331,7 @@ public class m107
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );

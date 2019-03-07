@@ -197,7 +197,7 @@ public class mappy
 	
 	/* input from the outside world */
 	static InputPortPtr input_ports_mappy = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 	/* According to the manual, 0x04, 0x08 and 0x10 should always be off,
 	but... */
 		PORT_DIPNAME( 0x07, 0x00, "Rank" );
@@ -224,7 +224,7 @@ public class mappy
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START      /* DSW1 */
+		PORT_START();       /* DSW1 */
 		PORT_DIPNAME( 0x07, 0x00, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x06, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "2C_1C") );
@@ -260,7 +260,7 @@ public class mappy
 		PORT_DIPSETTING(    0x00, "3" );
 		PORT_DIPSETTING(    0x40, "5" );
 	
-		PORT_START      /* DSW2 */
+		PORT_START();       /* DSW2 */
 		PORT_BIT( 0x03, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_DIPNAME( 0x04, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
@@ -268,7 +268,7 @@ public class mappy
 		PORT_SERVICE( 0x08, IP_ACTIVE_HIGH );
 		PORT_BIT( 0xf0, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		/* The player inputs are not memory mapped, they are handled by an I/O chip. */
 		/* These fake input ports are read by mappy_customio_data_r() */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNUSED );
@@ -279,7 +279,7 @@ public class mappy
 		PORT_BITX(0x20, IP_ACTIVE_HIGH, IPT_BUTTON1, 0, IP_KEY_PREVIOUS, IP_JOY_PREVIOUS );
 		PORT_BIT( 0xc0, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		PORT_BIT_IMPULSE( 0x01, IP_ACTIVE_HIGH, IPT_COIN1, 1 );
 	/* Coin 2 is not working */
 		PORT_BIT_IMPULSE( 0x02, IP_ACTIVE_HIGH, IPT_COIN2, 1 );
@@ -288,7 +288,7 @@ public class mappy
 		PORT_BIT_IMPULSE( 0x20, IP_ACTIVE_HIGH, IPT_START2, 1 );
 		PORT_BIT( 0xc0, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	    /* FAKE */
+		PORT_START(); 	    /* FAKE */
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_2WAY | IPF_COCKTAIL );
 		PORT_BIT_IMPULSE( 0x10, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_COCKTAIL, 1 );
@@ -298,7 +298,7 @@ public class mappy
 	
 	
 	static InputPortPtr input_ports_digdug2 = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -323,7 +323,7 @@ public class mappy
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_1C") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_2C") );
 	
-		PORT_START      /* DSW1 */
+		PORT_START();       /* DSW1 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x00, "30k 80k and ..." );
 		PORT_DIPSETTING(    0x01, "30k 100k and ..." );
@@ -345,12 +345,12 @@ public class mappy
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START      /* DSW2 */
+		PORT_START();       /* DSW2 */
 		PORT_BIT( 0x07, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_SERVICE( 0x08, IP_ACTIVE_HIGH );
 		PORT_BIT( 0xf0, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		/* The player inputs are not memory mapped, they are handled by an I/O chip. */
 		/* These fake input ports are read by mappy_customio_data_r() */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_4WAY );
@@ -361,7 +361,7 @@ public class mappy
 		PORT_BITX(0x20, IP_ACTIVE_HIGH, IPT_BUTTON1, 0, IP_KEY_PREVIOUS, IP_JOY_PREVIOUS );
 		PORT_BIT( 0xc0, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		PORT_BIT_IMPULSE( 0x01, IP_ACTIVE_HIGH, IPT_COIN1, 1 );
 	/* Coin 2 is not working */
 		PORT_BIT_IMPULSE( 0x02, IP_ACTIVE_HIGH, IPT_COIN2, 1 );
@@ -370,7 +370,7 @@ public class mappy
 		PORT_BIT_IMPULSE( 0x20, IP_ACTIVE_HIGH, IPT_START2, 1 );
 		PORT_BIT( 0xc0, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		/* The player inputs are not memory mapped, they are handled by an I/O chip. */
 		/* These fake input ports are read by mappy_customio_data_r() */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_COCKTAIL );
@@ -385,7 +385,7 @@ public class mappy
 	
 	
 	static InputPortPtr input_ports_motos = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, "Reset" );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -409,14 +409,14 @@ public class mappy
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSW1 */
+		PORT_START();       /* DSW1 */
 		PORT_BIT( 0x3f, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_DIPNAME( 0x40, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x40, DEF_STR( "Cocktail") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_HIGH );
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		/* The player inputs are not memory mapped, they are handled by an I/O chip. */
 		/* These fake input ports are read by mappy_customio_data_r() */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY );
@@ -427,7 +427,7 @@ public class mappy
 		PORT_BITX(0x20, IP_ACTIVE_HIGH, IPT_BUTTON1, 0, IP_KEY_PREVIOUS, IP_JOY_PREVIOUS );
 		PORT_BIT( 0xc0, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		PORT_BIT_IMPULSE( 0x01, IP_ACTIVE_HIGH, IPT_COIN1, 2 );
 		PORT_BIT_IMPULSE( 0x02, IP_ACTIVE_HIGH, IPT_COIN2, 2 );
 		PORT_BIT( 0x0c, IP_ACTIVE_HIGH, IPT_UNUSED );
@@ -435,7 +435,7 @@ public class mappy
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_HIGH, IPT_START2, 2 );
 		PORT_BIT( 0x30, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		/* The player inputs are not memory mapped, they are handled by an I/O chip. */
 		/* These fake input ports are read by mappy_customio_data_r() */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_COCKTAIL );
@@ -451,7 +451,7 @@ public class mappy
 	
 	
 	static InputPortPtr input_ports_todruaga = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_BIT( 0x0f, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_DIPNAME( 0x30, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x20, "1" );
@@ -464,7 +464,7 @@ public class mappy
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_1C") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_2C") );
 	
-		PORT_START      /* DSW1 */
+		PORT_START();       /* DSW1 */
 		PORT_DIPNAME( 0x01, 0x00, "Freeze" );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -481,12 +481,12 @@ public class mappy
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START      /* DSW2 */
+		PORT_START();       /* DSW2 */
 		PORT_BIT( 0x07, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_SERVICE( 0x08, IP_ACTIVE_HIGH );
 		PORT_BIT( 0xf0, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		/* The player inputs are not memory mapped, they are handled by an I/O chip. */
 		/* These fake input ports are read by mappy_customio_data_r() */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_4WAY );
@@ -498,14 +498,14 @@ public class mappy
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_START1 );/* used on level 31 */
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		PORT_BIT( 0x0f, IP_ACTIVE_HIGH, IPT_UNUSED );
 		/* this is just a guess */
 		PORT_BIT_IMPULSE( 0x10, IP_ACTIVE_HIGH, IPT_BUTTON2, 1 );
 		PORT_BITX(0x20, IP_ACTIVE_HIGH, IPT_BUTTON2, 0, IP_KEY_PREVIOUS, IP_JOY_PREVIOUS );
 		PORT_BIT( 0xc0, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		PORT_BIT_IMPULSE( 0x01, IP_ACTIVE_HIGH, IPT_COIN1, 1 );
 	/* Coin 2 is not working */
 		PORT_BIT_IMPULSE( 0x02, IP_ACTIVE_HIGH, IPT_COIN2, 1 );
@@ -515,7 +515,7 @@ public class mappy
 		PORT_BIT_IMPULSE( 0x20, IP_ACTIVE_HIGH, IPT_START2, 1 );
 		PORT_BIT( 0xc0, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		/* The player inputs are not memory mapped, they are handled by an I/O chip. */
 		/* These fake input ports are read by mappy_customio_data_r() */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_COCKTAIL );

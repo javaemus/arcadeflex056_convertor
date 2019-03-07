@@ -266,7 +266,7 @@ public class starwars
 	 *************************************/
 	
 	static InputPortPtr input_ports_starwars = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT ( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -276,7 +276,7 @@ public class starwars
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_BUTTON4 );
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_BITX( 0x04, IP_ACTIVE_LOW, IPT_SERVICE, "Diagnostic Step", KEYCODE_F1, IP_JOY_NONE );
@@ -288,7 +288,7 @@ public class starwars
 		/* Bit 7 is VG_HALT - see machine/starwars.c */
 		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME(0x03, 0x00, "Starting Shields" );
 		PORT_DIPSETTING (  0x00, "6" );
 		PORT_DIPSETTING (  0x01, "7" );
@@ -311,7 +311,7 @@ public class starwars
 		PORT_DIPSETTING (  0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING (  0x00, DEF_STR( "On") );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME(0x03, 0x02, DEF_STR( "Coinage") );
 		PORT_DIPSETTING (  0x03, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING (  0x02, DEF_STR( "1C_1C") );
@@ -334,16 +334,16 @@ public class starwars
 		PORT_DIPSETTING (  0x00, "None" );
 	/* 0xc0 and 0xe0 None */
 	
-		PORT_START	/* IN4 */
+		PORT_START(); 	/* IN4 */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 70, 30, 0, 255 );
 	
-		PORT_START	/* IN5 */
+		PORT_START(); 	/* IN5 */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 50, 30, 0, 255 );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_esb = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT ( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -353,7 +353,7 @@ public class starwars
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_BUTTON4 );
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_BITX( 0x04, IP_ACTIVE_LOW, IPT_SERVICE, "Diagnostic Step", KEYCODE_F1, IP_JOY_NONE );
@@ -365,7 +365,7 @@ public class starwars
 		/* Bit 7 is VG_HALT - see machine/starwars.c */
 		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME(0x03, 0x03, "Starting Shields" );
 		PORT_DIPSETTING (  0x01, "2" );
 		PORT_DIPSETTING (  0x00, "3" );
@@ -388,7 +388,7 @@ public class starwars
 		PORT_DIPSETTING (  0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING (  0x00, DEF_STR( "On") );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME(0x03, 0x02, DEF_STR( "Coinage") );
 		PORT_DIPSETTING (  0x03, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING (  0x02, DEF_STR( "1C_1C") );
@@ -411,10 +411,10 @@ public class starwars
 		PORT_DIPSETTING (  0xe0, "None" );
 	/* 0xc0 and 0x00 None */
 	
-		PORT_START	/* IN4 */
+		PORT_START(); 	/* IN4 */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 70, 30, 0, 255 );
 	
-		PORT_START	/* IN5 */
+		PORT_START(); 	/* IN5 */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 50, 30, 0, 255 );
 	INPUT_PORTS_END(); }}; 
 	

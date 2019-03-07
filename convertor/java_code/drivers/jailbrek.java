@@ -104,7 +104,7 @@ public class jailbrek
 	
 	
 	static InputPortPtr input_ports_jailbrek = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 - $3300 */
+		PORT_START(); 	/* IN0 - $3300 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -114,7 +114,7 @@ public class jailbrek
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* IN1 - $3301 */
+		PORT_START(); 	/* IN1 - $3301 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP );
@@ -124,7 +124,7 @@ public class jailbrek
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* IN2 - $3302 */
+		PORT_START(); 	/* IN2 - $3302 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_PLAYER2 );
@@ -134,7 +134,7 @@ public class jailbrek
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* DSW0  - $3303 */
+		PORT_START(); 	/* DSW0  - $3303 */
 		PORT_DIPNAME( 0x0f, 0x0f, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x05, DEF_STR( "3C_1C") );
@@ -170,7 +170,7 @@ public class jailbrek
 		PORT_DIPSETTING(    0x90, DEF_STR( "1C_7C") );
 		PORT_DIPSETTING(    0x00, "Invalid?" );
 	
-		PORT_START	/* DSW1  - $3100 */
+		PORT_START(); 	/* DSW1  - $3100 */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x03, "1" );
 		PORT_DIPSETTING(    0x02, "2" );
@@ -194,7 +194,7 @@ public class jailbrek
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* DSW2  - $3200 */
+		PORT_START(); 	/* DSW2  - $3200 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "On") );

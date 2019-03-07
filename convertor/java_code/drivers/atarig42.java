@@ -369,17 +369,17 @@ public class atarig42
 	 *************************************/
 	
 	static InputPortPtr input_ports_roadriot = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* e00000 */
+		PORT_START(); 		/* e00000 */
 		PORT_BIT( 0x00ff, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x0100, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x0200, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT( 0x0400, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER1 );
 		PORT_BIT( 0xf800, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* e00002 */
+		PORT_START();       /* e00002 */
 		PORT_BIT( 0xffff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* e00010 */
+		PORT_START(); 		/* e00010 */
 		PORT_BIT( 0x003f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_SERVICE( 0x0040, IP_ACTIVE_LOW );
 		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_VBLANK );
@@ -387,18 +387,18 @@ public class atarig42
 	
 		JSA_III_PORT	/* audio board port */
 	
-		PORT_START		/* e00012 */
+		PORT_START(); 		/* e00012 */
 		PORT_ANALOG ( 0x00ff, 0x0080, IPT_AD_STICK_X, 50, 10, 0, 255 );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* fake for pedals */
+		PORT_START();       /* fake for pedals */
 		PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0xfffe, IP_ACTIVE_HIGH, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_guardian = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* e00000 */
+		PORT_START(); 		/* e00000 */
 		PORT_BIT( 0x01ff, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x0200, IP_ACTIVE_LOW, IPT_BUTTON5 | IPF_PLAYER1 );
 		PORT_BIT( 0x0400, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
@@ -408,7 +408,7 @@ public class atarig42
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_PLAYER1 );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_PLAYER1 );
 	
-		PORT_START      /* e00002 */
+		PORT_START();       /* e00002 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );
@@ -422,7 +422,7 @@ public class atarig42
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_PLAYER2 );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_PLAYER2 );
 	
-		PORT_START		/* e00010 */
+		PORT_START(); 		/* e00010 */
 		PORT_BIT( 0x003f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_SERVICE( 0x0040, IP_ACTIVE_LOW );
 		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_VBLANK );
@@ -430,10 +430,10 @@ public class atarig42
 	
 		JSA_III_PORT	/* audio board port */
 	
-		PORT_START      /* e00012 */
+		PORT_START();       /* e00012 */
 		PORT_BIT( 0xffff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* not used */
+		PORT_START();       /* not used */
 		PORT_BIT( 0xffff, IP_ACTIVE_LOW, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 
 	

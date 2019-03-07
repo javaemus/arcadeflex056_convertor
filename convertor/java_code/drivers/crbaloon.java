@@ -235,7 +235,7 @@ public class crbaloon
 	
 	
 	static InputPortPtr input_ports_crbaloon = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x01, 0x01, "Test?" );
 		PORT_DIPSETTING(    0x01, "I/O Check?" );
 		PORT_DIPSETTING(    0x00, "RAM Check?" );
@@ -260,7 +260,7 @@ public class crbaloon
 		PORT_DIPSETTING(    0xe0, DEF_STR( "1C_4C") );
 		PORT_DIPSETTING(    0x00, "Disable" );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY );
@@ -270,7 +270,7 @@ public class crbaloon
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0f, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* from chip PC3259 */
 		PORT_BITX(    0x10, 0x10, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE );
 		PORT_DIPSETTING(    0x10, DEF_STR( "Off") );
@@ -285,7 +285,7 @@ public class crbaloon
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );

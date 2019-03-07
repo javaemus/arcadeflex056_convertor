@@ -506,11 +506,11 @@ public class segasyse
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_transfrm = new InputPortPtr(){ public void handler() {  /* Used By Transformer */
-		PORT_START	/* DSW0 Read from Port 0xf2 */
+		PORT_START(); 	/* DSW0 Read from Port 0xf2 */
 		SEGA_COIN_A
 		SEGA_COIN_B
 	
-		PORT_START	/* DSW1 Read from Port 0xf3 */
+		PORT_START(); 	/* DSW1 Read from Port 0xf3 */
 		PORT_DIPNAME( 0x01, 0x00, "1 Player Only" );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -533,7 +533,7 @@ public class segasyse
 		PORT_DIPSETTING(    0x80, "Hard" );
 		PORT_DIPSETTING(    0x00, "Hardest" );
 	
-		PORT_START	/* Read from Port 0xe0 */
+		PORT_START(); 	/* Read from Port 0xe0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_COIN2 );
 		PORT_BITX(0x04, IP_ACTIVE_LOW,  IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
@@ -543,7 +543,7 @@ public class segasyse
 		PORT_BIT( 0x40, IP_ACTIVE_LOW,  IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_START2 );
 	
-		PORT_START	/* Read from Port 0xe1 */
+		PORT_START(); 	/* Read from Port 0xe1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_JOYSTICK_UP | IPF_8WAY  );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_JOYSTICK_DOWN | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_JOYSTICK_LEFT | IPF_8WAY );
@@ -555,11 +555,11 @@ public class segasyse
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_hangonjr = new InputPortPtr(){ public void handler() {  /* Used By Hang On Jr */
-		PORT_START	/* DSW0 Read from Port 0xf2 */
+		PORT_START(); 	/* DSW0 Read from Port 0xf2 */
 		SEGA_COIN_A
 		SEGA_COIN_B
 	
-		PORT_START	/* DSW1 Read from Port 0xf3 */
+		PORT_START(); 	/* DSW1 Read from Port 0xf3 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -583,7 +583,7 @@ public class segasyse
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* Read from Port 0xe0 */
+		PORT_START(); 	/* Read from Port 0xe0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_COIN2 );
 		PORT_BITX(0x04, IP_ACTIVE_LOW,  IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
@@ -593,7 +593,7 @@ public class segasyse
 		PORT_BIT( 0x40, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
-		PORT_START	/* Read from Port 0xe1 */
+		PORT_START(); 	/* Read from Port 0xe1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_UNKNOWN );
@@ -603,21 +603,21 @@ public class segasyse
 		PORT_BIT( 0x40, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
-		PORT_START	/* Read from Port 0xf8 */
+		PORT_START(); 	/* Read from Port 0xf8 */
 		PORT_ANALOG( 0xff, 0x7f, IPT_AD_STICK_X | IPF_PLAYER1, 25, 15, 0, 0xff );
 	
-		PORT_START  /* Read from Port 0xf8 */
+		PORT_START();   /* Read from Port 0xf8 */
 		PORT_ANALOG( 0xff, 0x00, IPT_AD_STICK_Y | IPF_REVERSE | IPF_PLAYER1, 20, 10, 0, 0xff);
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_ridleofp = new InputPortPtr(){ public void handler() {  /* Used By Riddle Of Pythagoras */
-		PORT_START	/* DSW0 Read from Port 0xf2 */
+		PORT_START(); 	/* DSW0 Read from Port 0xf2 */
 		SEGA_COIN_A
 		PORT_DIPSETTING(    0x00, DEF_STR( "Free_Play") );
 		SEGA_COIN_B
 		PORT_DIPSETTING(    0x00, DEF_STR( "Free_Play") );
 	
-		PORT_START	/* DSW1 Read from Port 0xf3 */
+		PORT_START(); 	/* DSW1 Read from Port 0xf3 */
 		PORT_DIPNAME( 0x03, 0x02, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x03, "2" );
 		PORT_DIPSETTING(    0x02, "3" );
@@ -641,7 +641,7 @@ public class segasyse
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* Read from Port 0xe0 */
+		PORT_START(); 	/* Read from Port 0xe0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_UNKNOWN );
@@ -651,7 +651,7 @@ public class segasyse
 		PORT_BIT( 0x40, IP_ACTIVE_LOW,  IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_UNKNOWN );// Would Be IPT_START2 but the code doesn't use it
 	
-		PORT_START	/* Port 0xe1 */
+		PORT_START(); 	/* Port 0xe1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_UNKNOWN );
@@ -661,14 +661,14 @@ public class segasyse
 		PORT_BIT( 0x40, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
-		PORT_START	/* Read from Port 0xf8 */
+		PORT_START(); 	/* Read from Port 0xf8 */
 		PORT_ANALOG( 0x0fff, 0x0000, IPT_DIAL, 50, 20, 0, 0 );
 		PORT_BIT( 0x1000, IP_ACTIVE_LOW,  IPT_BUTTON2 );/* is this used in the game? */
 		PORT_BIT( 0x2000, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW,  IPT_BUTTON1 );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
-		PORT_START	/* Read from Port 0xf8 */
+		PORT_START(); 	/* Read from Port 0xf8 */
 		PORT_ANALOG( 0x0fff, 0x0000, IPT_DIAL | IPF_COCKTAIL, 50, 20, 0, 0 );
 		PORT_BIT( 0x1000, IP_ACTIVE_LOW,  IPT_BUTTON2 | IPF_COCKTAIL );
 		PORT_BIT( 0x2000, IP_ACTIVE_LOW,  IPT_UNKNOWN );

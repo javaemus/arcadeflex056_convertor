@@ -64,7 +64,7 @@ public class cheekyms
 	
 	
 	static InputPortPtr input_ports_cheekyms = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "2" );
 		PORT_DIPSETTING(    0x01, "3" );
@@ -87,7 +87,7 @@ public class cheekyms
 		PORT_DIPSETTING(    0xc0, "6000" );
 		PORT_DIPSETTING(    0x00, "None" );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_COCKTAIL );
@@ -97,7 +97,7 @@ public class cheekyms
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 );
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		/* The coin slots are not memory mapped. Coin  causes a NMI, */
 		/* This fake input port is used by the interrupt */
 		/* handler to be notified of coin insertions. We use IMPULSE to */

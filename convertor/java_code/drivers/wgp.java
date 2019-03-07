@@ -604,7 +604,7 @@ public class wgp
 	***********************************************************/
 	
 	static InputPortPtr input_ports_wgp = new InputPortPtr(){ public void handler() { 	/* Wgp2 has no "lumps" ? */
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -626,7 +626,7 @@ public class wgp
 		PORT_DIPSETTING(    0x40, DEF_STR( "1C_4C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_6C") );
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x03, "Normal" );
 		PORT_DIPSETTING(    0x02, "Easy" );
@@ -651,7 +651,7 @@ public class wgp
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_BUTTON7 | IPF_PLAYER1 );/* freeze */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_BUTTON4 | IPF_PLAYER1 );/* shift up */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_BUTTON3 | IPF_PLAYER1 );/* shift down */
@@ -661,7 +661,7 @@ public class wgp
 		PORT_BIT( 0x40, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON5 | IPF_PLAYER1 );/* "start lump" (lamp?) */
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON6 | IPF_PLAYER1 );/* "brake lump" (lamp?) */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_UNKNOWN );
@@ -671,7 +671,7 @@ public class wgp
 		PORT_BIT( 0x40, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_TILT );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN1 );
@@ -681,7 +681,7 @@ public class wgp
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* fake inputs, for steering etc. */
+		PORT_START();       /* fake inputs, for steering etc. */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_PLAYER1 );
@@ -694,25 +694,25 @@ public class wgp
 	   inputs are replaced by discrete values derived from the fake
 	   input port above, so keyboard control is feasible. */
 	
-	//	PORT_START	/* accel, 0-255 */
+	//	PORT_START(); 	/* accel, 0-255 */
 	//	PORT_ANALOG( 0xff, 0x00, IPT_AD_STICK_Y | IPF_REVERSE | IPF_PLAYER1, 20, 10, 0, 0xff);
 	
-	//	PORT_START	/* steer -64 to +64 */
+	//	PORT_START(); 	/* steer -64 to +64 */
 	//	PORT_ANALOG( 0xff, 0x00, IPT_AD_STICK_X | IPF_REVERSE | IPF_PLAYER1, 20, 10, 0, 0x80);
 	
-	//	PORT_START	/* steer offset */
+	//	PORT_START(); 	/* steer offset */
 	
-	//	PORT_START	/* accel offset */
+	//	PORT_START(); 	/* accel offset */
 	
-	//	PORT_START	/* brake, 0-0x30: needs to start at 0xff; then 0xcf is max brake */
+	//	PORT_START(); 	/* brake, 0-0x30: needs to start at 0xff; then 0xcf is max brake */
 	//	PORT_ANALOG( 0xff, 0xff, IPT_AD_STICK_X | IPF_PLAYER2, 10, 5, 0xcf, 0xff);
 	
-		PORT_START	/* unknown */
+		PORT_START(); 	/* unknown */
 		PORT_ANALOG( 0xff, 0x00, IPT_AD_STICK_Y | IPF_PLAYER2, 20, 10, 0, 0xff);
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_wgpjoy = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -734,7 +734,7 @@ public class wgp
 		PORT_DIPSETTING(    0x40, DEF_STR( "1C_4C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_6C") );
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x03, "Normal" );
 		PORT_DIPSETTING(    0x02, "Easy" );
@@ -759,7 +759,7 @@ public class wgp
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
@@ -770,7 +770,7 @@ public class wgp
 		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	//	PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_BUTTON3 | IPF_PLAYER1 );// freeze
 	
-		PORT_START      /* IN1, is it read? */
+		PORT_START();       /* IN1, is it read? */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_UNKNOWN );
@@ -780,7 +780,7 @@ public class wgp
 		PORT_BIT( 0x40, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN1 );
@@ -790,9 +790,9 @@ public class wgp
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* doesn't exist */
+		PORT_START(); 	/* doesn't exist */
 	
-		PORT_START	/* doesn't exist */
+		PORT_START(); 	/* doesn't exist */
 	INPUT_PORTS_END(); }}; 
 	
 	

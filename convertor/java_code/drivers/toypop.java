@@ -144,7 +144,7 @@ public class toypop
 		// FAKE
 		/* The player inputs and the dipswitches are not memory mapped, they are handled by an I/O chip. */
 		/* These fake input ports are read by toypop_customio_r() */
-		PORT_START	// IN0
+		PORT_START(); 	// IN0
 		PORT_BIT(0x01, IP_ACTIVE_HIGH, IPT_COIN1);
 		PORT_BIT(0x02, IP_ACTIVE_HIGH, IPT_COIN2);
 		PORT_BIT(0x10, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP | IPF_4WAY );
@@ -153,7 +153,7 @@ public class toypop
 		PORT_BIT(0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_4WAY );
 		PORT_BIT(0x0c, IP_ACTIVE_HIGH, IPT_UNKNOWN);
 	
-		PORT_START	// IN1
+		PORT_START(); 	// IN1
 		PORT_BIT(0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP | IPF_4WAY | IPF_PLAYER2);
 		PORT_BIT(0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_PLAYER2);
 		PORT_BIT(0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_4WAY | IPF_PLAYER2);
@@ -163,7 +163,7 @@ public class toypop
 		PORT_BIT(0x40, IP_ACTIVE_HIGH, IPT_START1);
 		PORT_BIT(0x80, IP_ACTIVE_HIGH, IPT_START2);
 	
-		PORT_START	// DSW0
+		PORT_START(); 	// DSW0
 		PORT_DIPNAME(0x03, 0x00, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(   0x03, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(   0x02, DEF_STR( "2C_1C") );
@@ -186,7 +186,7 @@ public class toypop
 		PORT_DIPSETTING(   0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(   0x00, DEF_STR( "On") );
 	
-		PORT_START	// DSW1
+		PORT_START(); 	// DSW1
 		PORT_DIPNAME(0x01, 0x00, "Entering" );// ???
 		PORT_DIPSETTING(   0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(   0x00, DEF_STR( "On") );
@@ -215,7 +215,7 @@ public class toypop
 		// FAKE
 		/* The player inputs and the dipswitches are not memory mapped, they are handled by an I/O chip. */
 		/* These fake input ports are read by liblrabl_customio_r() */
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME(0x01, 0x00, "Freeze" );
 		PORT_DIPSETTING(   0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(   0x01, DEF_STR( "On") );
@@ -239,7 +239,7 @@ public class toypop
 		PORT_DIPSETTING(   0x40, "C" );
 		PORT_DIPSETTING(   0xc0, "D" );
 	
-		PORT_START      /* DSW1 */
+		PORT_START();       /* DSW1 */
 		PORT_DIPNAME(0x03, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(   0x01, "1" );
 		PORT_DIPSETTING(   0x03, "2" );
@@ -265,7 +265,7 @@ public class toypop
 		PORT_DIPSETTING(   0x40, DEF_STR( "1C_3C") );
 		PORT_DIPSETTING(   0xc0, DEF_STR( "1C_6C") );
 	
-		PORT_START      /* DSW2 */
+		PORT_START();       /* DSW2 */
 		PORT_BIT(0x03, IP_ACTIVE_HIGH, IPT_UNKNOWN);
 		PORT_DIPNAME(0x04, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(   0x00, DEF_STR( "Upright") );
@@ -273,14 +273,14 @@ public class toypop
 		PORT_SERVICE(0x08, IP_ACTIVE_HIGH );
 		PORT_BIT(0xf0, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START	// IN0
+		PORT_START(); 	// IN0
 		PORT_BIT_IMPULSE(0x01, IP_ACTIVE_HIGH, IPT_COIN1, 1);
 		PORT_BIT_IMPULSE(0x02, IP_ACTIVE_HIGH, IPT_COIN2, 1);
 		PORT_BIT(0x10, IP_ACTIVE_HIGH, IPT_START1);
 		PORT_BIT(0x20, IP_ACTIVE_HIGH, IPT_START2);
 		PORT_BIT(0xcc, IP_ACTIVE_HIGH, IPT_UNKNOWN);
 	
-		PORT_START	// IN1
+		PORT_START(); 	// IN1
 		PORT_BIT(0x01, IP_ACTIVE_HIGH, IPT_JOYSTICKLEFT_UP | IPF_8WAY );
 		PORT_BIT(0x02, IP_ACTIVE_HIGH, IPT_JOYSTICKLEFT_RIGHT | IPF_8WAY );
 		PORT_BIT(0x04, IP_ACTIVE_HIGH, IPT_JOYSTICKLEFT_DOWN | IPF_8WAY );
@@ -290,7 +290,7 @@ public class toypop
 		PORT_BIT(0x40, IP_ACTIVE_HIGH, IPT_JOYSTICKRIGHT_DOWN | IPF_8WAY );
 		PORT_BIT(0x80, IP_ACTIVE_HIGH, IPT_JOYSTICKRIGHT_LEFT | IPF_8WAY );
 	
-		PORT_START	// IN2
+		PORT_START(); 	// IN2
 		PORT_BIT(0x01, IP_ACTIVE_HIGH, IPT_JOYSTICKLEFT_UP | IPF_8WAY | IPF_COCKTAIL);
 		PORT_BIT(0x02, IP_ACTIVE_HIGH, IPT_JOYSTICKLEFT_RIGHT | IPF_8WAY | IPF_COCKTAIL);
 		PORT_BIT(0x04, IP_ACTIVE_HIGH, IPT_JOYSTICKLEFT_DOWN | IPF_8WAY | IPF_COCKTAIL);

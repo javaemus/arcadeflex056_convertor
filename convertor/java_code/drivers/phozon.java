@@ -141,7 +141,7 @@ public class phozon
 	
 	/* The dipswitches and player inputs are not memory mapped, they are handled by an I/O chip. */
 	static InputPortPtr input_ports_phozon = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* DSW0 */
+		PORT_START();   /* DSW0 */
 		PORT_DIPNAME( 0x07, 0x00, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x07, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(    0x05, DEF_STR( "2C_1C") );
@@ -162,7 +162,7 @@ public class phozon
 		PORT_DIPSETTING(    0x60, DEF_STR( "2C_3C") );
 		PORT_DIPSETTING(    0x20, DEF_STR( "1C_2C") );
 	
-		PORT_START  /* DSW1 */
+		PORT_START();   /* DSW1 */
 		PORT_DIPNAME( 0x07, 0x00, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x00, "0" );
 		PORT_DIPSETTING(    0x01, "1" );
@@ -180,7 +180,7 @@ public class phozon
 		PORT_DIPSETTING(    0x80, "30k 120k and every 120k" );
 		PORT_DIPSETTING(    0x00, "30k 100k" );
 	
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		PORT_BIT_IMPULSE(   0x01, IP_ACTIVE_HIGH, IPT_START1, 1 );
 		PORT_BIT_IMPULSE(   0x02, IP_ACTIVE_HIGH, IPT_START2, 1 );
 		PORT_BIT_IMPULSE(   0x10, IP_ACTIVE_HIGH, IPT_COIN1, 1 );
@@ -190,7 +190,7 @@ public class phozon
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START  /* IN1 */
+		PORT_START();   /* IN1 */
 		PORT_BIT(   0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT(   0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT(   0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY );
@@ -200,7 +200,7 @@ public class phozon
 		PORT_BIT(   0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT(   0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
 	
-		PORT_START  /* IN2 */
+		PORT_START();   /* IN2 */
 		PORT_BIT_IMPULSE( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON1, 1 );
 		PORT_BITX(  0x02, IP_ACTIVE_HIGH, IPT_BUTTON1, 0, IP_KEY_PREVIOUS, IP_JOY_PREVIOUS );
 		PORT_BIT_IMPULSE( 0x04, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER2, 1 );

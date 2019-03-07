@@ -152,7 +152,7 @@ public class geebee
 	};
 	
 	static InputPortPtr input_ports_geebee = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 SW0 */
+		PORT_START(); 		/* IN0 SW0 */
 		PORT_BIT	( 0x01, IP_ACTIVE_LOW, IPT_COIN1   );
 		PORT_BIT	( 0x02, IP_ACTIVE_LOW, IPT_COIN2   );
 		PORT_BIT	( 0x04, IP_ACTIVE_LOW, IPT_START1  );
@@ -161,7 +161,7 @@ public class geebee
 		PORT_SERVICE( 0x20, IP_ACTIVE_LOW );
 		PORT_BIT	( 0xc0, 0x00, IPT_UNUSED );
 	
-		PORT_START      /* IN1 SW1 */
+		PORT_START();       /* IN1 SW1 */
 		PORT_BIT	( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT	( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT	( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -170,7 +170,7 @@ public class geebee
 		PORT_BIT	( 0x20, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT	( 0xc0, 0x00, IPT_UNUSED );
 	
-		PORT_START      /* IN2 DSW2 */
+		PORT_START();       /* IN2 DSW2 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail"));
@@ -186,10 +186,10 @@ public class geebee
 		PORT_BIT	( 0x30, 0x00, IPT_UNUSED );
 		PORT_BIT	( 0xc0, 0x00, IPT_UNUSED );
 	
-		PORT_START		/* IN3 VOLIN */
+		PORT_START(); 		/* IN3 VOLIN */
 		PORT_ANALOG( 0xff, 0x58, IPT_PADDLE | IPF_REVERSE, 30, 15, 0x10, 0xa0 );
 	
-		PORT_START		/* IN4 FAKE for 3 lives */
+		PORT_START(); 		/* IN4 FAKE for 3 lives */
 		PORT_BIT	( 0x0f, 0x00, IPT_UNUSED );
 		PORT_DIPNAME( 0x30, 0x00, "Bonus Life (3 lives); )
 		PORT_DIPSETTING(    0x10, "40k 80k" );
@@ -198,7 +198,7 @@ public class geebee
 		PORT_DIPSETTING(    0x00, "None" );
 		PORT_BIT	( 0xc0, 0x00, IPT_UNUSED );
 	
-		PORT_START		/* IN5 FAKE for 5 lives */
+		PORT_START(); 		/* IN5 FAKE for 5 lives */
 		PORT_BIT	( 0x0f, 0x00, IPT_UNUSED );
 		PORT_DIPNAME( 0x30, 0x00, "Bonus Life (5 lives); )
 		PORT_DIPSETTING(    0x10, "60k 120k" );
@@ -210,7 +210,7 @@ public class geebee
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_navalone = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 SW0 */
+		PORT_START(); 		/* IN0 SW0 */
 		PORT_BIT	( 0x01, IP_ACTIVE_LOW, IPT_COIN1   );
 		PORT_BIT	( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT	( 0x04, IP_ACTIVE_LOW, IPT_START1  );
@@ -219,7 +219,7 @@ public class geebee
 		PORT_BIT	( 0x20, IP_ACTIVE_LOW, IPT_COIN2   );
 		PORT_BIT	( 0xc0, 0x00, IPT_UNUSED );
 	
-		PORT_START      /* IN1 SW1 */
+		PORT_START();       /* IN1 SW1 */
 		PORT_BIT	( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT	( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT	( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -228,7 +228,7 @@ public class geebee
 		PORT_BIT	( 0x20, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT	( 0xc0, 0x00, IPT_UNUSED );
 	
-		PORT_START      /* IN2 DSW2 */
+		PORT_START();       /* IN2 DSW2 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail"));
@@ -248,17 +248,17 @@ public class geebee
 		PORT_DIPSETTING(	0x00, DEF_STR( "Free_Play") );
 	    PORT_BIT    ( 0xc0, 0x00, IPT_UNUSED );
 	
-		PORT_START		/* IN3 VOLIN */
+		PORT_START(); 		/* IN3 VOLIN */
 		PORT_BIT	( 0xff, 0x58, IPT_UNUSED );
 	
-		PORT_START		/* IN4 two-way digital joystick */
+		PORT_START(); 		/* IN4 two-way digital joystick */
 		PORT_BIT	( 0x01, 0x00, IPT_JOYSTICK_LEFT );
 		PORT_BIT	( 0x02, 0x00, IPT_JOYSTICK_RIGHT );
 	
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_kaitei = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 SW0 */
+		PORT_START(); 		/* IN0 SW0 */
 		PORT_BIT	( 0x01, IP_ACTIVE_LOW,	IPT_COIN1 );
 		PORT_BIT	( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT	( 0x04, IP_ACTIVE_LOW,	IPT_START1 );
@@ -268,7 +268,7 @@ public class geebee
 		PORT_BIT	( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT	( 0x80, IP_ACTIVE_LOW,	IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 SW1 */
+		PORT_START();       /* IN1 SW1 */
 		PORT_BIT	( 0x01, IP_ACTIVE_LOW,	IPT_JOYSTICK_RIGHT );
 		PORT_BIT	( 0x02, IP_ACTIVE_LOW,	IPT_JOYSTICK_LEFT );
 		PORT_BIT	( 0x04, IP_ACTIVE_LOW,	IPT_BUTTON1 );
@@ -278,7 +278,7 @@ public class geebee
 	    PORT_BIT    ( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT	( 0x80, IP_ACTIVE_LOW,	IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 DSW2 */
+		PORT_START();       /* IN2 DSW2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Cocktail"));
@@ -300,7 +300,7 @@ public class geebee
 	    PORT_BIT    ( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT	( 0x80, IP_ACTIVE_LOW,	IPT_UNKNOWN );
 	
-		PORT_START		/* IN3 VOLIN */
+		PORT_START(); 		/* IN3 VOLIN */
 		PORT_BIT	( 0x01, IP_ACTIVE_LOW,	IPT_UNKNOWN );
 		PORT_BIT	( 0x02, IP_ACTIVE_LOW,	IPT_UNKNOWN );
 		PORT_BIT	( 0x04, IP_ACTIVE_LOW,	IPT_UNKNOWN );
@@ -313,7 +313,7 @@ public class geebee
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_kaitein = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 SW0 */
+		PORT_START(); 		/* IN0 SW0 */
 		PORT_BIT	( 0x01, IP_ACTIVE_LOW,	IPT_COIN1 );
 		PORT_BIT	( 0x02, IP_ACTIVE_LOW,	IPT_COIN2 );
 		PORT_BIT	( 0x04, IP_ACTIVE_LOW,	IPT_START1 );
@@ -323,7 +323,7 @@ public class geebee
 		PORT_BIT	( 0x40, IP_ACTIVE_LOW,	IPT_UNKNOWN );
 		PORT_BIT	( 0x80, IP_ACTIVE_LOW,	IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 SW1 */
+		PORT_START();       /* IN1 SW1 */
 		PORT_BIT	( 0x01, IP_ACTIVE_LOW,	IPT_UNKNOWN );
 		PORT_BIT	( 0x02, IP_ACTIVE_LOW,	IPT_UNKNOWN );
 		PORT_BIT	( 0x04, IP_ACTIVE_LOW,	IPT_UNKNOWN );
@@ -333,7 +333,7 @@ public class geebee
 		PORT_BIT	( 0x40, IP_ACTIVE_LOW,	IPT_UNKNOWN );
 	    PORT_BIT    ( 0x80, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
-	    PORT_START      /* IN2 DSW2 */
+	    PORT_START();       /* IN2 DSW2 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(	0x00, "2" );
 		PORT_DIPSETTING(	0x01, "3" );
@@ -353,17 +353,17 @@ public class geebee
 		PORT_BIT	( 0x40, IP_ACTIVE_LOW,	IPT_UNKNOWN );
 		PORT_BIT	( 0x80, IP_ACTIVE_LOW,	IPT_UNKNOWN );
 	
-		PORT_START		/* IN3 VOLIN */
+		PORT_START(); 		/* IN3 VOLIN */
 		PORT_BIT	( 0xff, 0x58, IPT_UNUSED );
 	
-		PORT_START		/* IN4 two-way digital joystick */
+		PORT_START(); 		/* IN4 two-way digital joystick */
 		PORT_BIT	( 0x01, 0x00, IPT_JOYSTICK_LEFT );
 		PORT_BIT	( 0x02, 0x00, IPT_JOYSTICK_RIGHT );
 	
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_sos = new InputPortPtr(){ public void handler() { 
-	    PORT_START      /* IN0 SW0 */
+	    PORT_START();       /* IN0 SW0 */
 	    PORT_BIT    ( 0x01, IP_ACTIVE_LOW, IPT_COIN1   );
 	    PORT_BIT    ( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_BIT    ( 0x04, IP_ACTIVE_LOW, IPT_START1  );
@@ -372,7 +372,7 @@ public class geebee
 	    PORT_BIT    ( 0x20, IP_ACTIVE_LOW, IPT_COIN2   );
 	    PORT_BIT    ( 0xc0, 0x00, IPT_UNUSED );
 	
-	    PORT_START      /* IN1 SW1 */
+	    PORT_START();       /* IN1 SW1 */
 	    PORT_BIT    ( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 	    PORT_BIT    ( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );
 	    PORT_BIT    ( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -381,7 +381,7 @@ public class geebee
 	    PORT_BIT    ( 0x20, IP_ACTIVE_LOW, IPT_UNUSED );
 	    PORT_BIT    ( 0xc0, 0x00, IPT_UNUSED );
 	
-	    PORT_START      /* IN2 DSW2 */
+	    PORT_START();       /* IN2 DSW2 */
 	    PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 	    PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 	    PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail"));
@@ -398,7 +398,7 @@ public class geebee
 	    PORT_DIPSETTING(    0x00, DEF_STR( "Free_Play") );
 	    PORT_BIT    ( 0xc0, 0x00, IPT_UNUSED );
 	
-	    PORT_START      /* IN3 VOLIN */
+	    PORT_START();       /* IN3 VOLIN */
 		PORT_ANALOG( 0xff, 0x58, IPT_PADDLE | IPF_REVERSE, 30, 15, 0x10, 0xa0 );
 	
 	INPUT_PORTS_END(); }}; 

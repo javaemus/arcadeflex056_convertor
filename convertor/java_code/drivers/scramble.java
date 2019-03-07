@@ -422,7 +422,7 @@ public class scramble
 	
 	
 	static InputPortPtr input_ports_scramble = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -432,7 +432,7 @@ public class scramble
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "3" );
 		PORT_DIPSETTING(    0x01, "4" );
@@ -445,7 +445,7 @@ public class scramble
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_DIPNAME( 0x06, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x00, "A 1/1  B 2/1  C 1/1" );
@@ -462,7 +462,7 @@ public class scramble
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_atlantis = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
@@ -472,7 +472,7 @@ public class scramble
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
@@ -486,7 +486,7 @@ public class scramble
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_DIPNAME( 0x0e, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x02, "A 1/3  B 2/1" );
@@ -500,7 +500,7 @@ public class scramble
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_theend = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -510,7 +510,7 @@ public class scramble
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "3" );
 		PORT_DIPSETTING(    0x01, "4" );
@@ -523,7 +523,7 @@ public class scramble
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_DIPNAME( 0x06, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "3C_1C") );
@@ -537,7 +537,7 @@ public class scramble
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_froggers = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* 1P shoot2 - unused */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -547,7 +547,7 @@ public class scramble
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "3" );
 		PORT_DIPSETTING(    0x01, "5" );
@@ -560,7 +560,7 @@ public class scramble
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY | IPF_COCKTAIL );
 		PORT_DIPNAME( 0x06, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x02, "A 2/1 B 2/1 C 2/1" );
@@ -577,7 +577,7 @@ public class scramble
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_amidars = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* 1P shoot2 - unused */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -587,7 +587,7 @@ public class scramble
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_DIPNAME( 0x03, 0x02, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x03, "2" );
 		PORT_DIPSETTING(    0x02, "3" );
@@ -600,7 +600,7 @@ public class scramble
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY | IPF_COCKTAIL );
 		PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x00, "A 1/1 B 1/6" );
@@ -623,7 +623,7 @@ public class scramble
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_triplep = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -633,7 +633,7 @@ public class scramble
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "3" );
 		PORT_DIPSETTING(    0x01, "4" );
@@ -646,7 +646,7 @@ public class scramble
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY | IPF_COCKTAIL );
 		PORT_DIPNAME( 0x06, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x02, "A 1/2 B 1/1 C 1/2" );
@@ -665,7 +665,7 @@ public class scramble
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_ckongs = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
@@ -675,7 +675,7 @@ public class scramble
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		/* the coinage dip switch is spread across bits 0/1 of port 1 and bit 3 of port 2. */
 		/* To handle that, we swap bits 0/1 of port 1 and bits 1/2 of port 2 - this is handled */
 		/* by ckongs_input_port_N_r() */
@@ -692,7 +692,7 @@ public class scramble
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		/* the coinage dip switch is spread across bits 0/1 of port 1 and bit 3 of port 2. */
 		/* To handle that, we swap bits 0/1 of port 1 and bits 1/2 of port 2 - this is handled */
 		/* by ckongs_input_port_N_r() */
@@ -713,7 +713,7 @@ public class scramble
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_mars = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_UP     | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_RIGHT | IPF_8WAY );
@@ -723,7 +723,7 @@ public class scramble
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_3C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "1C_5C") );
@@ -737,7 +737,7 @@ public class scramble
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_DOWN   | IPF_8WAY | IPF_PLAYER2 ); /* this also control cocktail mode */
 		PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
@@ -753,7 +753,7 @@ public class scramble
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_DOWN   | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_UP    | IPF_8WAY );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x1f, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_DOWN  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -761,7 +761,7 @@ public class scramble
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_devilfsh = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -771,7 +771,7 @@ public class scramble
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x00, "10000" );
 		PORT_DIPSETTING(    0x01, "15000" );
@@ -785,7 +785,7 @@ public class scramble
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "4" );
@@ -803,7 +803,7 @@ public class scramble
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_newsin7 = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -813,7 +813,7 @@ public class scramble
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x03, " A 1C/1C  B 2C/1C" );
 		PORT_DIPSETTING(    0x01, " A 1C/3C  B 3C/1C" );
@@ -826,7 +826,7 @@ public class scramble
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_DIPNAME( 0x02, 0x02, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "Upright") );
@@ -844,7 +844,7 @@ public class scramble
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_hotshock = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_BUTTON1 );
@@ -852,7 +852,7 @@ public class scramble
 		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 		PORT_BIT( 0xc0, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN1 );
@@ -862,7 +862,7 @@ public class scramble
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_START1 );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_DIPNAME( 0x0f, 0x00, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(    0x08, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x09, DEF_STR( "2C_2C") );
@@ -898,7 +898,7 @@ public class scramble
 		PORT_DIPSETTING(    0x60, DEF_STR( "1C_7C") );
 		PORT_DIPSETTING(    0x70, DEF_STR( "1C_8C") );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "2" );
 		PORT_DIPSETTING(    0x01, "3" );
@@ -924,7 +924,7 @@ public class scramble
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_hunchbks = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -934,7 +934,7 @@ public class scramble
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x01, "3" );
 		PORT_DIPSETTING(    0x00, "5" );
@@ -948,7 +948,7 @@ public class scramble
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_DIPNAME( 0x06, 0x00, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x00, "10000" );
@@ -963,12 +963,12 @@ public class scramble
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );/* protection check? */
 	
-	    PORT_START /* Sense */
+	    PORT_START();  /* Sense */
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_VBLANK );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_cavelon = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );/* force UR controls in CK mode? */
@@ -978,7 +978,7 @@ public class scramble
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
@@ -992,7 +992,7 @@ public class scramble
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_DIPNAME( 0x06, 0x02, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "5" );

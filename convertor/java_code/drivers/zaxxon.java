@@ -299,7 +299,7 @@ public class zaxxon
 	}
 	
 	static InputPortPtr input_ports_zaxxon = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_8WAY );/* the self test calls this UP */
@@ -309,7 +309,7 @@ public class zaxxon
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_COCKTAIL );/* the self test calls this UP */
@@ -319,7 +319,7 @@ public class zaxxon
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_START1 );
@@ -331,7 +331,7 @@ public class zaxxon
 		PORT_BIT_IMPULSE( 0x40, IP_ACTIVE_HIGH, IPT_COIN2, 1 );
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_HIGH, IPT_COIN3, 1 );
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(	0x03, "10000" );
 		PORT_DIPSETTING(	0x01, "20000" );
@@ -355,7 +355,7 @@ public class zaxxon
 		PORT_DIPSETTING(	0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x0f, 0x03, DEF_STR ( Coin_B );
 		PORT_DIPSETTING(	0x0f, DEF_STR ( 4C_1C );
 		PORT_DIPSETTING(	0x07, DEF_STR ( 3C_1C );
@@ -391,17 +391,17 @@ public class zaxxon
 		PORT_DIPSETTING(	0x10, DEF_STR ( 1C_5C );
 		PORT_DIPSETTING(	0xe0, DEF_STR ( 1C_6C );
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		/* This fake input port is used to get the status of the F2 key, */
 		/* and activate the test mode, which is triggered by a NMI */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_ixion = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_ANALOGX( 0xff, 0x00, IPT_DIAL | IPF_CENTER, 30, 15, 0, 0, KEYCODE_Z, KEYCODE_X, 0, 0 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY );
@@ -411,7 +411,7 @@ public class zaxxon
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_START1 );
@@ -423,7 +423,7 @@ public class zaxxon
 		PORT_BIT_IMPULSE( 0x40, IP_ACTIVE_HIGH, IPT_COIN2, 1 );
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_HIGH, IPT_COIN3, 1 );
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "On") );
@@ -449,7 +449,7 @@ public class zaxxon
 		PORT_DIPSETTING(	0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "On") );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x07, 0x03, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(	0x00, DEF_STR ( 4C_1C );
 		PORT_DIPSETTING(	0x01, DEF_STR ( 3C_1C );
@@ -475,14 +475,14 @@ public class zaxxon
 		PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x80, DEF_STR( "On") );
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		/* This fake input port is used to get the status of the F2 key, */
 		/* and activate the test mode, which is triggered by a NMI */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_futspy = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP | IPF_8WAY );/* the self test calls this UP */
@@ -492,7 +492,7 @@ public class zaxxon
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP | IPF_8WAY | IPF_COCKTAIL );/* the self test calls this UP */
@@ -502,7 +502,7 @@ public class zaxxon
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_START1 );
@@ -514,7 +514,7 @@ public class zaxxon
 		PORT_BIT_IMPULSE( 0x40, IP_ACTIVE_HIGH, IPT_COIN2, 1 );
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_HIGH, IPT_COIN3, 1 );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x0f, 0x00, DEF_STR ( Coin_A );
 		PORT_DIPSETTING(	0x08, DEF_STR ( 4C_1C );
 		PORT_DIPSETTING(	0x07, DEF_STR ( 3C_1C );
@@ -551,7 +551,7 @@ public class zaxxon
 		PORT_DIPSETTING(	0x50, DEF_STR ( 1C_6C );
 	
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Cocktail") );
@@ -574,20 +574,20 @@ public class zaxxon
 		PORT_DIPSETTING(	0x80, "Hard" );
 		PORT_DIPSETTING(	0xc0, "Hardest" );
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		/* This fake input port is used to get the status of the F2 key, */
 		/* and activate the test mode, which is triggered by a NMI */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_razmataz = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_CENTER | IPF_PLAYER1, 30, 15, 0, 0 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_CENTER | IPF_PLAYER2 | IPF_REVERSE, 30, 15, 0, 0 );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );
@@ -599,7 +599,7 @@ public class zaxxon
 		PORT_BIT_IMPULSE( 0x40, IP_ACTIVE_HIGH, IPT_COIN2, 1 );
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_HIGH, IPT_COIN3, 1 );
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "On") );
@@ -624,7 +624,7 @@ public class zaxxon
 		PORT_DIPSETTING(	0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "On") );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x07, 0x03, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(	0x00, DEF_STR ( 4C_1C );
 		PORT_DIPSETTING(	0x01, DEF_STR ( 3C_1C );
@@ -650,12 +650,12 @@ public class zaxxon
 		PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x80, DEF_STR( "On") );
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		/* This fake input port is used to get the status of the F2 key, */
 		/* and activate the test mode, which is triggered by a NMI */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );
@@ -665,7 +665,7 @@ public class zaxxon
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START	/* IN4 */
+		PORT_START(); 	/* IN4 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );

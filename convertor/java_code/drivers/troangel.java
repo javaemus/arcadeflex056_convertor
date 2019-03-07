@@ -50,7 +50,7 @@ public class troangel
 	
 	
 	static InputPortPtr input_ports_troangel = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		/* coin input must be active for 19 frames to be consistently recognized */
@@ -58,7 +58,7 @@ public class troangel
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -68,7 +68,7 @@ public class troangel
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -78,7 +78,7 @@ public class troangel
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x03, 0x03, "Time" );
 		PORT_DIPSETTING(    0x03, "180 160 140" );
 		PORT_DIPSETTING(    0x02, "160 140 120" );
@@ -106,7 +106,7 @@ public class troangel
 		PORT_DIPSETTING(    0x00, DEF_STR( "Free_Play") );
 		/* settings 0x10, 0x20, 0x80, 0x90 all give 1 Coin/1 Credit */
 	
-		PORT_START	/* DSW2 */
+		PORT_START(); 	/* DSW2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );

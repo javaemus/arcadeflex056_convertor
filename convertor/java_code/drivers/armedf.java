@@ -324,15 +324,15 @@ public class armedf
 	
 	
 	static InputPortPtr input_ports_armedf = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		NIHON_SINGLE_JOYSTICK(1)
 		NIHON_COINS
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		NIHON_SINGLE_JOYSTICK(2)
 		NIHON_SYSTEM
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		NIHON_LIVES
 		/* This is how the Bonus Life are defined in Service Mode */
 		/* However, to keep the way Bonus Life are defined in MAME, */
@@ -360,7 +360,7 @@ public class armedf
 		PORT_DIPSETTING(    0x40, "Hard" );
 		PORT_DIPSETTING(    0x00, "Hardest" );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		NIHON_COINAGE_A
 		NIHON_COINAGE_B
 		PORT_DIPNAME( 0x30, 0x00, "Allow Continue" );
@@ -377,15 +377,15 @@ public class armedf
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_terraf = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		NIHON_SINGLE_JOYSTICK(1)
 		NIHON_COINS
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		NIHON_SINGLE_JOYSTICK(2)
 		NIHON_SYSTEM
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		NIHON_LIVES
 		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x0c, "20k and every 60k" );
@@ -404,7 +404,7 @@ public class armedf
 		PORT_DIPSETTING(    0x40, "Hard" );
 		PORT_DIPSETTING(    0x00, "Hardest" );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		NIHON_COINAGE_A
 		NIHON_COINAGE_B
 		PORT_DIPNAME( 0x10, 0x10, DEF_STR( "Unknown") );
@@ -421,15 +421,15 @@ public class armedf
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_kodure = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		NIHON_SINGLE_JOYSTICK(1)
 		NIHON_COINS
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		NIHON_SINGLE_JOYSTICK(2)
 		NIHON_SYSTEM
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		NIHON_LIVES
 	//	PORT_DIPNAME( 0x04, 0x04, "1st Bonus Life" );
 	//	PORT_DIPSETTING(    0x04, "None" );
@@ -455,7 +455,7 @@ public class armedf
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		NIHON_COINAGE_A
 		NIHON_COINAGE_B_ALT
 		PORT_DIPNAME( 0x10, 0x10, DEF_STR( "Unknown") );
@@ -473,7 +473,7 @@ public class armedf
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_cclimbr2 = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_UP     | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_DOWN   | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_LEFT   | IPF_8WAY | IPF_PLAYER1 );
@@ -484,7 +484,7 @@ public class armedf
 		PORT_BIT( 0x0080, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		NIHON_COINS
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_UP     | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_DOWN   | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_LEFT   | IPF_8WAY | IPF_PLAYER2 );
@@ -495,7 +495,7 @@ public class armedf
 		PORT_BIT( 0x0080, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_RIGHT | IPF_8WAY | IPF_PLAYER2 );
 		NIHON_SYSTEM
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		NIHON_LIVES
 	//	PORT_DIPNAME( 0x04, 0x04, "1st Bonus Life" );
 	//	PORT_DIPSETTING(    0x04, "30k" );
@@ -521,7 +521,7 @@ public class armedf
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		NIHON_COINAGE_A
 		NIHON_COINAGE_B
 		PORT_DIPNAME( 0x10, 0x10, "Allow Continue" );

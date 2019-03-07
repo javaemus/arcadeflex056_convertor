@@ -65,7 +65,7 @@ public class kncljoe
 	/******************************************************************************/
 	
 	static InputPortPtr input_ports_kncljoe = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN 0 */
+		PORT_START(); 	/* IN 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT_IMPULSE( 0x04, IP_ACTIVE_LOW, IPT_COIN1, 4 );
@@ -75,7 +75,7 @@ public class kncljoe
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* IN 1 */
+		PORT_START(); 	/* IN 1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
@@ -85,7 +85,7 @@ public class kncljoe
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* IN 2 */
+		PORT_START(); 	/* IN 2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
@@ -95,7 +95,7 @@ public class kncljoe
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* DSW A */
+		PORT_START(); 	/* DSW A */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING( 0x00, DEF_STR( "5C_1C") );
 		PORT_DIPSETTING( 0x04, DEF_STR( "4C_1C") );
@@ -118,7 +118,7 @@ public class kncljoe
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );

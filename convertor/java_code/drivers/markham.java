@@ -106,7 +106,7 @@ public class markham
 	/****************************************************************************/
 	
 	static InputPortPtr input_ports_markham = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* dsw1 */
+		PORT_START();   /* dsw1 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "3" );
 		PORT_DIPSETTING(    0x01, "5" );
@@ -137,7 +137,7 @@ public class markham
 		PORT_DIPSETTING(    0xe0, "1C 2C / 1C 6C" );
 		PORT_DIPSETTING(    0xf0, DEF_STR( "Free_Play") );
 	
-		PORT_START  /* dsw2 */
+		PORT_START();   /* dsw2 */
 		PORT_DIPNAME( 0x03, 0x02, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x00, "None" );
 		PORT_DIPSETTING(    0x01, "20000" );
@@ -162,7 +162,7 @@ public class markham
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START /* e002 */
+		PORT_START();  /* e002 */
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_BUTTON2 );
@@ -172,7 +172,7 @@ public class markham
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 	
-		PORT_START /* e003 */
+		PORT_START();  /* e003 */
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_BUTTON2 | IPF_COCKTAIL );
@@ -182,7 +182,7 @@ public class markham
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START /* e005 */
+		PORT_START();  /* e005 */
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_SERVICE1 );
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_UNKNOWN );

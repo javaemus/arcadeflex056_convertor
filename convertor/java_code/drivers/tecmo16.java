@@ -155,7 +155,7 @@ public class tecmo16
 	/******************************************************************************/
 	
 	static InputPortPtr input_ports_fstarfrc = new InputPortPtr(){ public void handler() { 
-		PORT_START			/* DIP SW 1 */
+		PORT_START(); 			/* DIP SW 1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "1C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "1C_2C") );
@@ -179,7 +179,7 @@ public class tecmo16
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START			/* DIP SW 2 */
+		PORT_START(); 			/* DIP SW 2 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "2" );
 		PORT_DIPSETTING(    0x03, "3" );
@@ -204,7 +204,7 @@ public class tecmo16
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW,  IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW,  IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW,  IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -224,7 +224,7 @@ public class tecmo16
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_ginkun = new InputPortPtr(){ public void handler() { 
-		PORT_START			/* DIP SW 1 */
+		PORT_START(); 			/* DIP SW 1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "1C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "1C_2C") );
@@ -248,7 +248,7 @@ public class tecmo16
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START			/* DIP SW 2 */
+		PORT_START(); 			/* DIP SW 2 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "2" );
 		PORT_DIPSETTING(    0x03, "3" );
@@ -272,7 +272,7 @@ public class tecmo16
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW,  IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW,  IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW,  IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );

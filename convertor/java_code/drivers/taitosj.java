@@ -341,7 +341,7 @@ public class taitosj
 	
 	
 	static InputPortPtr input_ports_spaceskr = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY );
@@ -351,7 +351,7 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_COCKTAIL );
@@ -361,7 +361,7 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -371,7 +371,7 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START      /* Service */
+		PORT_START();       /* Service */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -381,10 +381,10 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSW1 */
+		PORT_START();       /* DSW1 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -407,10 +407,10 @@ public class taitosj
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START      /* DSW2 Coinage */
+		PORT_START();       /* DSW2 Coinage */
 		DSW2_PORT
 	
-		PORT_START      /* DSW3 */
+		PORT_START();       /* DSW3 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -438,7 +438,7 @@ public class taitosj
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_junglek = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY );
@@ -448,7 +448,7 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_COCKTAIL );
@@ -458,7 +458,7 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -468,7 +468,7 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START      /* Service */
+		PORT_START();       /* Service */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -478,10 +478,10 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSW1 */
+		PORT_START();       /* DSW1 */
 		PORT_DIPNAME( 0x03, 0x03, "Finish Bonus" );
 		PORT_DIPSETTING(    0x03, "None" );
 		PORT_DIPSETTING(    0x02, "Timer x1" );
@@ -503,10 +503,10 @@ public class taitosj
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START      /* DSW2 Coinage */
+		PORT_START();       /* DSW2 Coinage */
 		DSW2_PORT
 	
-		PORT_START      /* DSW3 */
+		PORT_START();       /* DSW3 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x02, "10000" );
 		PORT_DIPSETTING(    0x01, "20000" );
@@ -533,7 +533,7 @@ public class taitosj
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_alpine = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -543,7 +543,7 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -553,14 +553,14 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x1e, 0x00, IPT_UNUSED );                             /* protection read */
 		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START      /* Service */
+		PORT_START();       /* Service */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -570,10 +570,10 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSW1 */
+		PORT_START();       /* DSW1 */
 		PORT_DIPNAME( 0x03, 0x03, "Jump Bonus" );
 		PORT_DIPSETTING(    0x00, "500-1500" );
 		PORT_DIPSETTING(    0x01, "800-2000" );
@@ -595,10 +595,10 @@ public class taitosj
 		PORT_DIPSETTING(    0x80, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
 	
-		PORT_START      /* DSW2 Coinage */
+		PORT_START();       /* DSW2 Coinage */
 		DSW2_PORT
 	
-		PORT_START      /* DSW3 */
+		PORT_START();       /* DSW3 */
 		PORT_DIPNAME( 0x03, 0x03, "1st Extended Time" );
 		PORT_DIPSETTING(    0x00, "10k" );
 		PORT_DIPSETTING(    0x01, "15k" );
@@ -625,7 +625,7 @@ public class taitosj
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_alpinea = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -635,7 +635,7 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -645,14 +645,14 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x0f, 0x00, IPT_UNUSED );                             /* protection read */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START      /* Service */
+		PORT_START();       /* Service */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -662,10 +662,10 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSW1 */
+		PORT_START();       /* DSW1 */
 		PORT_DIPNAME( 0x03, 0x03, "Jump Bonus" );
 		PORT_DIPSETTING(    0x00, "500-1500" );
 		PORT_DIPSETTING(    0x01, "800-2000" );
@@ -685,10 +685,10 @@ public class taitosj
 		PORT_DIPSETTING(    0x80, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
 	
-		PORT_START      /* DSW2 Coinage */
+		PORT_START();       /* DSW2 Coinage */
 		DSW2_PORT
 	
-		PORT_START      /* DSW3 */
+		PORT_START();       /* DSW3 */
 		PORT_DIPNAME( 0x03, 0x03, "1st Extended Time" );
 		PORT_DIPSETTING(    0x00, "10k" );
 		PORT_DIPSETTING(    0x01, "15k" );
@@ -715,7 +715,7 @@ public class taitosj
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_timetunl = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY );
@@ -725,7 +725,7 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_COCKTAIL );
@@ -735,7 +735,7 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -745,7 +745,7 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START      /* Service */
+		PORT_START();       /* Service */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -755,10 +755,10 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSW1 */
+		PORT_START();       /* DSW1 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -783,10 +783,10 @@ public class taitosj
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START      /* DSW2 Coinage */
+		PORT_START();       /* DSW2 Coinage */
 		DSW2_PORT
 	
-		PORT_START      /* DSW3 */
+		PORT_START();       /* DSW3 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -814,7 +814,7 @@ public class taitosj
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_wwestern = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_LEFT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_DOWN | IPF_8WAY );
@@ -824,7 +824,7 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_LEFT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_DOWN | IPF_8WAY | IPF_COCKTAIL );
@@ -834,7 +834,7 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x1c, 0x18, IPT_UNUSED );                             /* protection read, the game resets after a while without it */
@@ -842,7 +842,7 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START      /* Service */
+		PORT_START();       /* Service */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_LEFT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_DOWN | IPF_8WAY );
@@ -852,14 +852,14 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_LEFT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_DOWN | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_UP | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSW1 */
+		PORT_START();       /* DSW1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x03, "10000" );
 		PORT_DIPSETTING(    0x02, "30000" );
@@ -881,10 +881,10 @@ public class taitosj
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START      /* DSW2 Coinage */
+		PORT_START();       /* DSW2 Coinage */
 		DSW2_PORT
 	
-		PORT_START      /* DSW3 */
+		PORT_START();       /* DSW3 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -912,7 +912,7 @@ public class taitosj
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_frontlin = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_LEFT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_DOWN | IPF_8WAY );
@@ -922,7 +922,7 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_LEFT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_DOWN | IPF_8WAY | IPF_COCKTAIL );
@@ -932,7 +932,7 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -942,7 +942,7 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START      /* Service */
+		PORT_START();       /* Service */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_LEFT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_DOWN | IPF_8WAY );
@@ -952,14 +952,14 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_LEFT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_DOWN | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_UP | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSW1 */
+		PORT_START();       /* DSW1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x03, "10000" );
 		PORT_DIPSETTING(    0x02, "20000" );
@@ -981,10 +981,10 @@ public class taitosj
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START      /* DSW2 Coinage */
+		PORT_START();       /* DSW2 Coinage */
 		DSW2_PORT
 	
-		PORT_START      /* DSW3 */
+		PORT_START();       /* DSW3 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1012,7 +1012,7 @@ public class taitosj
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_elevator = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_4WAY );
@@ -1022,7 +1022,7 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_4WAY | IPF_COCKTAIL );
@@ -1032,7 +1032,7 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -1042,7 +1042,7 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START      /* Service */
+		PORT_START();       /* Service */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -1052,10 +1052,10 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSW1 */
+		PORT_START();       /* DSW1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x03, "10000" );
 		PORT_DIPSETTING(    0x02, "15000" );
@@ -1079,10 +1079,10 @@ public class taitosj
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START      /* DSW2 Coinage */
+		PORT_START();       /* DSW2 Coinage */
 		DSW2_PORT
 	
-		PORT_START      /* DSW3 */
+		PORT_START();       /* DSW3 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x03, "Easiest" );
 		PORT_DIPSETTING(    0x02, "Easy" );
@@ -1109,7 +1109,7 @@ public class taitosj
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_tinstar = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_LEFT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_DOWN | IPF_8WAY );
@@ -1119,7 +1119,7 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_LEFT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_DOWN | IPF_8WAY | IPF_COCKTAIL );
@@ -1129,7 +1129,7 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -1139,7 +1139,7 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START      /* Service */
+		PORT_START();       /* Service */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_LEFT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_DOWN | IPF_8WAY );
@@ -1149,7 +1149,7 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_LEFT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_DOWN | IPF_8WAY | IPF_COCKTAIL );
@@ -1157,7 +1157,7 @@ public class taitosj
 		PORT_BIT( 0x30, 0x00, IPT_UNUSED );                             /* protection read, the game hangs without it */
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSW1 */
+		PORT_START();       /* DSW1 */
 		PORT_DIPNAME( 0x03, 0x03, "Bonus Life?" );
 		PORT_DIPSETTING(    0x03, "10000?" );
 		PORT_DIPSETTING(    0x02, "20000?" );
@@ -1181,10 +1181,10 @@ public class taitosj
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START      /* DSW2 Coinage */
+		PORT_START();       /* DSW2 Coinage */
 		DSW2_PORT
 	
-		PORT_START      /* DSW3 */
+		PORT_START();       /* DSW3 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1212,7 +1212,7 @@ public class taitosj
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_waterski = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -1222,7 +1222,7 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -1232,7 +1232,7 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -1242,7 +1242,7 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START      /* Service */
+		PORT_START();       /* Service */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -1252,10 +1252,10 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSW1 */
+		PORT_START();       /* DSW1 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1280,10 +1280,10 @@ public class taitosj
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START      /* DSW2 Coinage */
+		PORT_START();       /* DSW2 Coinage */
 		DSW2_PORT
 	
-		PORT_START      /* DSW3 */
+		PORT_START();       /* DSW3 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1311,7 +1311,7 @@ public class taitosj
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_bioatack = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY );
@@ -1321,7 +1321,7 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_COCKTAIL );
@@ -1331,14 +1331,14 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x0f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START      /* Service */
+		PORT_START();       /* Service */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -1348,10 +1348,10 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSW1 d50a */
+		PORT_START();       /* DSW1 d50a */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x03, "5000" );
 		PORT_DIPSETTING(    0x02, "10000" );
@@ -1375,10 +1375,10 @@ public class taitosj
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START      /* DSW2 Coinage */
+		PORT_START();       /* DSW2 Coinage */
 		DSW2_PORT
 	
-		PORT_START      /* DSW3 */
+		PORT_START();       /* DSW3 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );  /* most likely unused */
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1406,7 +1406,7 @@ public class taitosj
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_sfposeid = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY );
@@ -1416,7 +1416,7 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_COCKTAIL );
@@ -1426,7 +1426,7 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -1436,7 +1436,7 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START      /* Service */
+		PORT_START();       /* Service */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -1446,10 +1446,10 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSW1 */
+		PORT_START();       /* DSW1 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1474,10 +1474,10 @@ public class taitosj
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START      /* DSW2 Coinage */
+		PORT_START();       /* DSW2 Coinage */
 		DSW2_PORT
 	
-		PORT_START      /* DSW3 */
+		PORT_START();       /* DSW3 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1505,7 +1505,7 @@ public class taitosj
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_hwrace = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY );
@@ -1515,7 +1515,7 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_COCKTAIL );
@@ -1525,7 +1525,7 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -1535,7 +1535,7 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START      /* Service */
+		PORT_START();       /* Service */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -1545,10 +1545,10 @@ public class taitosj
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSW1 */
+		PORT_START();       /* DSW1 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1572,10 +1572,10 @@ public class taitosj
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START      /* DSW2 Coinage */
+		PORT_START();       /* DSW2 Coinage */
 		DSW2_PORT
 	
-		PORT_START      /* DSW3 */
+		PORT_START();       /* DSW3 */
 		PORT_DIPNAME( 0x01, 0x03, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x00, "0" );
 		PORT_DIPSETTING(    0x01, "1" );

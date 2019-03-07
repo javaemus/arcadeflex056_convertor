@@ -187,7 +187,7 @@ public class pacland
 	
 	
 	static InputPortPtr input_ports_pacland = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* DSWA */
+		PORT_START();       /* DSWA */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );
@@ -210,7 +210,7 @@ public class pacland
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START      /* DSWB */
+		PORT_START();       /* DSWB */
 		PORT_DIPNAME( 0x01, 0x00, "Start Level Select" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -235,7 +235,7 @@ public class pacland
 		PORT_DIPSETTING(    0xc0, "40K,100K,200K" );
 		PORT_DIPSETTING(    0xe0, "40K" );
 	
-		PORT_START	/* Memory Mapped Port */
+		PORT_START(); 	/* Memory Mapped Port */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_UP );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_COCKTAIL );
@@ -247,7 +247,7 @@ public class pacland
 		PORT_DIPSETTING(    0x80, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
 	
-		PORT_START	/* Memory Mapped Port */
+		PORT_START(); 	/* Memory Mapped Port */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -257,7 +257,7 @@ public class pacland
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START	/* MCU Input Port */
+		PORT_START(); 	/* MCU Input Port */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SPECIAL );/* OUT:coin lockout */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SPECIAL );/* OUT:coin counter 1 */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SPECIAL );/* OUT:coin counter 2 */

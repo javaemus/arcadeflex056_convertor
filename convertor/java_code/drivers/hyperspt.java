@@ -199,7 +199,7 @@ public class hyperspt
 	
 	
 	static InputPortPtr input_ports_hyperspt = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN3 );
@@ -209,7 +209,7 @@ public class hyperspt
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START		/* IN1 */
+		PORT_START(); 		/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
@@ -221,7 +221,7 @@ public class hyperspt
 		/* Fake button to press buttons 1 and 3 impossibly fast. Handle via konami_IN1_r */
 		PORT_BITX(0x80, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_CHEAT | IPF_PLAYER1, "Run Like Hell Cheat", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 	
-		PORT_START		/* IN2 */
+		PORT_START(); 		/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER3 /*| IPF_COCKTAIL*/ );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER3 /*| IPF_COCKTAIL*/ );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER3 /*| IPF_COCKTAIL*/ );
@@ -231,7 +231,7 @@ public class hyperspt
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER4 /*| IPF_COCKTAIL*/ );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START		/* DSW0 */
+		PORT_START(); 		/* DSW0 */
 		PORT_DIPNAME( 0x0f, 0x0f, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(	0x02, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(	0x05, DEF_STR( "3C_1C") );
@@ -269,7 +269,7 @@ public class hyperspt
 	/* 0x00 disables Coin 2. It still accepts coins and makes the sound, but
 	   it doesn't give you any credit */
 	
-		PORT_START		/* DSW1 */
+		PORT_START(); 		/* DSW1 */
 		PORT_DIPNAME( 0x01, 0x00, "After Last Event" );
 		PORT_DIPSETTING(	0x01, "Game Over" );
 		PORT_DIPSETTING(	0x00, "Game Continues" );
@@ -302,7 +302,7 @@ public class hyperspt
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_roadf = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN3 );
@@ -312,7 +312,7 @@ public class hyperspt
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START		/* IN1 */
+		PORT_START(); 		/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY );
@@ -322,7 +322,7 @@ public class hyperspt
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START		/* IN2 */
+		PORT_START(); 		/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY | IPF_COCKTAIL );
@@ -332,7 +332,7 @@ public class hyperspt
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* the game doesn't boot if this is 1 */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START		/* DSW0 */
+		PORT_START(); 		/* DSW0 */
 		PORT_DIPNAME( 0x0f, 0x0f, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(	0x02, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(	0x05, DEF_STR( "3C_1C") );
@@ -370,7 +370,7 @@ public class hyperspt
 	/* 0x00 disables Coin 2. It still accepts coins and makes the sound, but
 	   it doesn't give you any credit */
 	
-		PORT_START		/* DSW1 */
+		PORT_START(); 		/* DSW1 */
 		PORT_DIPNAME( 0x01, 0x00, "Allow Continue" );
 		PORT_DIPSETTING(	0x01, DEF_STR( "No") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Yes") );

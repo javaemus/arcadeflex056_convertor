@@ -512,7 +512,7 @@ public class harddriv
 	 *************************************/
 	
 	static InputPortPtr input_ports_harddriv = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* 600000 */
+		PORT_START(); 		/* 600000 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_VBLANK );
@@ -523,51 +523,51 @@ public class harddriv
 		PORT_BIT( 0x0080, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0xff00, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START		/* a80000 */
+		PORT_START(); 		/* a80000 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0xfffc, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b00000 - 8 bit ADC 0 (gas) */
+		PORT_START(); 		/* b00000 - 8 bit ADC 0 (gas) */
 		PORT_ANALOG( 0xff, 0x00, IPT_PEDAL | IPF_PLAYER1, 25, 10, 0x00, 0xff );
 	
-		PORT_START		/* b00000 - 8 bit ADC 1 (clutch) */
+		PORT_START(); 		/* b00000 - 8 bit ADC 1 (clutch) */
 		PORT_ANALOG( 0xff, 0x00, IPT_PEDAL | IPF_PLAYER3, 25, 10, 0x00, 0xff );
 	
-		PORT_START		/* b00000 - 8 bit ADC 2 (seat) */
+		PORT_START(); 		/* b00000 - 8 bit ADC 2 (seat) */
 		PORT_BIT( 0xff, 0x80, IPT_UNUSED );
 	
-		PORT_START		/* b00000 - 8 bit ADC 3 (shift F/B) */
+		PORT_START(); 		/* b00000 - 8 bit ADC 3 (shift F/B) */
 		PORT_BIT( 0xff, 0x80, IPT_UNUSED );
 	
-		PORT_START		/* b00000 - 8 bit ADC 4 (shift L/R) */
+		PORT_START(); 		/* b00000 - 8 bit ADC 4 (shift L/R) */
 		PORT_BIT( 0xff, 0x80, IPT_UNUSED );
 	
-		PORT_START		/* b00000 - 8 bit ADC 5 */
+		PORT_START(); 		/* b00000 - 8 bit ADC 5 */
 		PORT_BIT( 0xff, 0x80, IPT_UNUSED );
 	
-		PORT_START		/* b00000 - 8 bit ADC 6 */
+		PORT_START(); 		/* b00000 - 8 bit ADC 6 */
 		PORT_BIT( 0xff, 0x80, IPT_UNUSED );
 	
-		PORT_START		/* b00000 - 8 bit ADC 7 */
+		PORT_START(); 		/* b00000 - 8 bit ADC 7 */
 		PORT_BIT( 0xff, 0x80, IPT_UNUSED );
 	
-		PORT_START		/* b80000 - 12 bit ADC 0 (wheel) */
+		PORT_START(); 		/* b80000 - 12 bit ADC 0 (wheel) */
 		PORT_ANALOG( 0xff, 0x80, IPT_PADDLE, 25, 10, 0x00, 0xff );
 	
-		PORT_START		/* b80000 - 12 bit ADC 1 (brake) */
+		PORT_START(); 		/* b80000 - 12 bit ADC 1 (brake) */
 		PORT_ANALOG( 0xff, 0x00, IPT_PEDAL | IPF_PLAYER2 | IPF_REVERSE, 25, 10, 0x00, 0xff );
 	
-		PORT_START		/* b80000 - 12 bit ADC 2 */
+		PORT_START(); 		/* b80000 - 12 bit ADC 2 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b80000 - 12 bit ADC 3 */
+		PORT_START(); 		/* b80000 - 12 bit ADC 3 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_racedriv = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* 60c000 */
+		PORT_START(); 		/* 60c000 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_VBLANK );
@@ -578,51 +578,51 @@ public class harddriv
 		PORT_BIT( 0x0080, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* a80000 */
+		PORT_START(); 		/* a80000 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0xfffc, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b00000 - 8 bit ADC 0 */
+		PORT_START(); 		/* b00000 - 8 bit ADC 0 */
 		PORT_ANALOG( 0xff, 0x00, IPT_PEDAL | IPF_PLAYER1, 25, 10, 0x00, 0xff );
 	
-		PORT_START		/* b00000 - 8 bit ADC 1 */
+		PORT_START(); 		/* b00000 - 8 bit ADC 1 */
 		PORT_ANALOG( 0xff, 0x00, IPT_PEDAL | IPF_PLAYER3, 25, 10, 0x00, 0xff );
 	
-		PORT_START		/* b00000 - 8 bit ADC 2 */
+		PORT_START(); 		/* b00000 - 8 bit ADC 2 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b00000 - 8 bit ADC 3 */
+		PORT_START(); 		/* b00000 - 8 bit ADC 3 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b00000 - 8 bit ADC 4 */
+		PORT_START(); 		/* b00000 - 8 bit ADC 4 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b00000 - 8 bit ADC 5 */
+		PORT_START(); 		/* b00000 - 8 bit ADC 5 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b00000 - 8 bit ADC 6 */
+		PORT_START(); 		/* b00000 - 8 bit ADC 6 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b00000 - 8 bit ADC 7 */
+		PORT_START(); 		/* b00000 - 8 bit ADC 7 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b80000 - 12 bit ADC 0 */
+		PORT_START(); 		/* b80000 - 12 bit ADC 0 */
 		PORT_ANALOG( 0xff, 0x80, IPT_PADDLE, 25, 10, 0x00, 0xff );
 	
-		PORT_START		/* b80000 - 12 bit ADC 1 */
+		PORT_START(); 		/* b80000 - 12 bit ADC 1 */
 		PORT_ANALOG( 0xff, 0x00, IPT_PEDAL | IPF_PLAYER2 | IPF_REVERSE, 25, 10, 0x00, 0xff );
 	
-		PORT_START		/* b80000 - 12 bit ADC 2 */
+		PORT_START(); 		/* b80000 - 12 bit ADC 2 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b80000 - 12 bit ADC 3 */
+		PORT_START(); 		/* b80000 - 12 bit ADC 3 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_stunrun = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* 60c000 */
+		PORT_START(); 		/* 60c000 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_VBLANK );
@@ -633,46 +633,46 @@ public class harddriv
 		PORT_BIT( 0x0080, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0xff00, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START		/* a80000 */
+		PORT_START(); 		/* a80000 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0xfff8, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b00000 - 8 bit ADC 0 */
+		PORT_START(); 		/* b00000 - 8 bit ADC 0 */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 25, 10, 0x00, 0xff );
 	
-		PORT_START		/* b00000 - 8 bit ADC 1 */
+		PORT_START(); 		/* b00000 - 8 bit ADC 1 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b00000 - 8 bit ADC 2 */
+		PORT_START(); 		/* b00000 - 8 bit ADC 2 */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 25, 10, 0x00, 0xff );
 	
-		PORT_START		/* b00000 - 8 bit ADC 3 */
+		PORT_START(); 		/* b00000 - 8 bit ADC 3 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b00000 - 8 bit ADC 4 */
+		PORT_START(); 		/* b00000 - 8 bit ADC 4 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b00000 - 8 bit ADC 5 */
+		PORT_START(); 		/* b00000 - 8 bit ADC 5 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b00000 - 8 bit ADC 6 */
+		PORT_START(); 		/* b00000 - 8 bit ADC 6 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b00000 - 8 bit ADC 7 */
+		PORT_START(); 		/* b00000 - 8 bit ADC 7 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b80000 - 12 bit ADC 0 */
+		PORT_START(); 		/* b80000 - 12 bit ADC 0 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b80000 - 12 bit ADC 1 */
+		PORT_START(); 		/* b80000 - 12 bit ADC 1 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b80000 - 12 bit ADC 2 */
+		PORT_START(); 		/* b80000 - 12 bit ADC 2 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b80000 - 12 bit ADC 3 */
+		PORT_START(); 		/* b80000 - 12 bit ADC 3 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
 		JSA_II_PORT		/* audio port */
@@ -680,7 +680,7 @@ public class harddriv
 	
 	
 	static InputPortPtr input_ports_steeltal = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* 60c000 */
+		PORT_START(); 		/* 60c000 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_VBLANK );
@@ -691,46 +691,46 @@ public class harddriv
 		PORT_BIT( 0x0080, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* a80000 */
+		PORT_START(); 		/* a80000 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_BUTTON3 );
 		PORT_BIT( 0xfff8, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b00000 - 8 bit ADC 0 */
+		PORT_START(); 		/* b00000 - 8 bit ADC 0 */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 25, 10, 0x00, 0xff );
 	
-		PORT_START		/* b00000 - 8 bit ADC 1 */
+		PORT_START(); 		/* b00000 - 8 bit ADC 1 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b00000 - 8 bit ADC 2 */
+		PORT_START(); 		/* b00000 - 8 bit ADC 2 */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 25, 10, 0x00, 0xff );
 	
-		PORT_START		/* b00000 - 8 bit ADC 3 */
+		PORT_START(); 		/* b00000 - 8 bit ADC 3 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b00000 - 8 bit ADC 4 */
+		PORT_START(); 		/* b00000 - 8 bit ADC 4 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b00000 - 8 bit ADC 5 */
+		PORT_START(); 		/* b00000 - 8 bit ADC 5 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b00000 - 8 bit ADC 6 */
+		PORT_START(); 		/* b00000 - 8 bit ADC 6 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b00000 - 8 bit ADC 7 */
+		PORT_START(); 		/* b00000 - 8 bit ADC 7 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b80000 - 12 bit ADC 0 */
+		PORT_START(); 		/* b80000 - 12 bit ADC 0 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b80000 - 12 bit ADC 1 */
+		PORT_START(); 		/* b80000 - 12 bit ADC 1 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b80000 - 12 bit ADC 2 */
+		PORT_START(); 		/* b80000 - 12 bit ADC 2 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b80000 - 12 bit ADC 3 */
+		PORT_START(); 		/* b80000 - 12 bit ADC 3 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
 		JSA_III_PORT	/* audio port */
@@ -738,7 +738,7 @@ public class harddriv
 	
 	
 	static InputPortPtr input_ports_hdrivair = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* 60c000 */
+		PORT_START(); 		/* 60c000 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_VBLANK );
@@ -749,45 +749,45 @@ public class harddriv
 		PORT_BIT( 0x0080, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* a80000 */
+		PORT_START(); 		/* a80000 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0xfffc, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b00000 - 8 bit ADC 0 */
+		PORT_START(); 		/* b00000 - 8 bit ADC 0 */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 25, 10, 0x00, 0xff );
 	
-		PORT_START		/* b00000 - 8 bit ADC 1 */
+		PORT_START(); 		/* b00000 - 8 bit ADC 1 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b00000 - 8 bit ADC 2 */
+		PORT_START(); 		/* b00000 - 8 bit ADC 2 */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 25, 10, 0x00, 0xff );
 	
-		PORT_START		/* b00000 - 8 bit ADC 3 */
+		PORT_START(); 		/* b00000 - 8 bit ADC 3 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b00000 - 8 bit ADC 4 */
+		PORT_START(); 		/* b00000 - 8 bit ADC 4 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b00000 - 8 bit ADC 5 */
+		PORT_START(); 		/* b00000 - 8 bit ADC 5 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b00000 - 8 bit ADC 6 */
+		PORT_START(); 		/* b00000 - 8 bit ADC 6 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b00000 - 8 bit ADC 7 */
+		PORT_START(); 		/* b00000 - 8 bit ADC 7 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b80000 - 12 bit ADC 0 */
+		PORT_START(); 		/* b80000 - 12 bit ADC 0 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b80000 - 12 bit ADC 1 */
+		PORT_START(); 		/* b80000 - 12 bit ADC 1 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b80000 - 12 bit ADC 2 */
+		PORT_START(); 		/* b80000 - 12 bit ADC 2 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* b80000 - 12 bit ADC 3 */
+		PORT_START(); 		/* b80000 - 12 bit ADC 3 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 
 	

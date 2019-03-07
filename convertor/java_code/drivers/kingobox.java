@@ -268,7 +268,7 @@ public class kingobox
 	};
 	
 	static InputPortPtr input_ports_kingofb = new InputPortPtr(){ public void handler() { 
-	    PORT_START /* DSW0 - 0xfc01 */
+	    PORT_START();  /* DSW0 - 0xfc01 */
 	    PORT_DIPNAME( 0x03, 0x01, "Rest Up Points" );
 	    PORT_DIPSETTING(    0x02, "70000" );
 	    PORT_DIPSETTING(    0x01, "100000" );
@@ -290,7 +290,7 @@ public class kingobox
 	    PORT_DIPSETTING(    0x40, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_HIGH );
 	
-	    PORT_START /* DSW1 - 0xfc01 */
+	    PORT_START();  /* DSW1 - 0xfc01 */
 	    PORT_DIPNAME( 0x07, 0x00, DEF_STR( "Coinage") );
 	    PORT_DIPSETTING(    0x07, DEF_STR( "4C_1C") );
 	    PORT_DIPSETTING(    0x06, DEF_STR( "3C_1C") );
@@ -316,7 +316,7 @@ public class kingobox
 	    PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 	    PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-	    PORT_START /* IN 0 - 0xfc02 */
+	    PORT_START();  /* IN 0 - 0xfc02 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT );
@@ -326,7 +326,7 @@ public class kingobox
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-	    PORT_START /* IN 1 - 0xfc03 */
+	    PORT_START();  /* IN 1 - 0xfc03 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_COCKTAIL );
@@ -336,7 +336,7 @@ public class kingobox
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START /* IN 2 - 0xfc04 */
+		PORT_START();  /* IN 2 - 0xfc04 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_START1 );
@@ -346,7 +346,7 @@ public class kingobox
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-	    PORT_START /* IN 3 - 0xfc05 */
+	    PORT_START();  /* IN 3 - 0xfc05 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON3 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON3 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );
@@ -359,7 +359,7 @@ public class kingobox
 	
 	/* Ring King */
 	static InputPortPtr input_ports_ringking = new InputPortPtr(){ public void handler() { 
-	    PORT_START /* DSW0 - 0xe000 */
+	    PORT_START();  /* DSW0 - 0xe000 */
 	    PORT_DIPNAME( 0x03, 0x03, "Replay" );
 	    PORT_DIPSETTING(    0x01, "70000" );
 	    PORT_DIPSETTING(    0x02, "100000" );
@@ -379,7 +379,7 @@ public class kingobox
 	    PORT_BIT(			0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-	    PORT_START /* DSW1 - 0xe001 */
+	    PORT_START();  /* DSW1 - 0xe001 */
 	    PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coin_A") );
 	    PORT_DIPSETTING(    0x00, DEF_STR( "2C_1C") );
 	    PORT_DIPSETTING(    0x03, DEF_STR( "1C_1C") );
@@ -402,7 +402,7 @@ public class kingobox
 	    PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 	    PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-	    PORT_START /* IN 0 - 0xe002 */
+	    PORT_START();  /* IN 0 - 0xe002 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT );
@@ -412,7 +412,7 @@ public class kingobox
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-	    PORT_START /* IN 1 - 0xe003 */
+	    PORT_START();  /* IN 1 - 0xe003 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_COCKTAIL );
@@ -422,7 +422,7 @@ public class kingobox
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START /* IN 2 - 0xe004 */
+		PORT_START();  /* IN 2 - 0xe004 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_TILT );/* Service Switch */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1 );
@@ -432,7 +432,7 @@ public class kingobox
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-	    PORT_START /* IN 3 - 0xfc05 */
+	    PORT_START();  /* IN 3 - 0xfc05 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON3 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );

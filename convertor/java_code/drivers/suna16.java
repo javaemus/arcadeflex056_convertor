@@ -385,19 +385,19 @@ public class suna16
 	
 	static InputPortPtr input_ports_bssoccer = new InputPortPtr(){ public void handler() { 
 	
-		PORT_START	// IN0 - $a00001.b - Player 1
+		PORT_START(); 	// IN0 - $a00001.b - Player 1
 		JOY(1)
 	
-		PORT_START	// IN1 - $a00003.b - Player 2
+		PORT_START(); 	// IN1 - $a00003.b - Player 2
 		JOY(2)
 	
-		PORT_START	// IN2 - $a00005.b - Player 3
+		PORT_START(); 	// IN2 - $a00005.b - Player 3
 		JOY(3)
 	
-		PORT_START	// IN3 - $a00007.b - Player 4
+		PORT_START(); 	// IN3 - $a00007.b - Player 4
 		JOY(4)
 	
-		PORT_START	// IN4 - $a00008.w - DSW x 2
+		PORT_START(); 	// IN4 - $a00008.w - DSW x 2
 		PORT_DIPNAME( 0x0007, 0x0007, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(	  0x0000, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(	  0x0001, DEF_STR( "3C_1C") );
@@ -441,7 +441,7 @@ public class suna16
 		PORT_DIPSETTING(	  0x4000, "2:00" );
 		PORT_DIPSETTING(	  0x0000, "2:15" );
 	
-		PORT_START	// IN5 - $a0000b.b - Coins
+		PORT_START(); 	// IN5 - $a0000b.b - Coins
 		PORT_DIPNAME( 0x0001, 0x0001, "Copyright" );        // these 4 are shown in test mode
 		PORT_DIPSETTING(	  0x0001, "Distributer Unico" );
 		PORT_DIPSETTING(	  0x0000, "All Rights Reserved" );
@@ -468,7 +468,7 @@ public class suna16
 	
 	static InputPortPtr input_ports_uballoon = new InputPortPtr(){ public void handler() { 
 	
-		PORT_START	// IN0 - $600000.w - Player 1
+		PORT_START(); 	// IN0 - $600000.w - Player 1
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_UP     | IPF_PLAYER1 );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN   | IPF_PLAYER1 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT   | IPF_PLAYER1 );
@@ -486,7 +486,7 @@ public class suna16
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_START1   );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_COIN1    );
 	
-		PORT_START	// IN1 - $600002.w - Player 2
+		PORT_START(); 	// IN1 - $600002.w - Player 2
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_UP     | IPF_PLAYER2 );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN   | IPF_PLAYER2 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT   | IPF_PLAYER2 );
@@ -507,7 +507,7 @@ public class suna16
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_START2   );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_COIN2    );
 	
-		PORT_START	// IN2 - $600005.b - DSW 1
+		PORT_START(); 	// IN2 - $600005.b - DSW 1
 		PORT_DIPNAME( 0x0007, 0x0007, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(	  0x0000, DEF_STR( "5C_1C") );
 		PORT_DIPSETTING(	  0x0001, DEF_STR( "4C_1C") );
@@ -529,7 +529,7 @@ public class suna16
 		PORT_DIPSETTING(	  0x0000, "Hardest" );
 		PORT_SERVICE( 0x0080, IP_ACTIVE_LOW );
 	
-		PORT_START	// IN3 - $600007.b - DSW 2
+		PORT_START(); 	// IN3 - $600007.b - DSW 2
 		PORT_DIPNAME( 0x0001, 0x0001, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(	  0x0001, DEF_STR( "Off") );
 		PORT_DIPSETTING(	  0x0000, DEF_STR( "On") );

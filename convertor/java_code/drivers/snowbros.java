@@ -115,7 +115,7 @@ public class snowbros
 	
 	
 	static InputPortPtr input_ports_snowbros = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* 500001 */
+		PORT_START(); 	/* 500001 */
 		PORT_DIPNAME( 0x01, 0x01, "Country (Affects Coinage); )
 		PORT_DIPSETTING(    0x01, "America" );
 		PORT_DIPSETTING(    0x00, "Europe" );
@@ -147,7 +147,7 @@ public class snowbros
 		PORT_BIT( 0x8000, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* Must be low or game stops! */
 	                                               /* probably VBlank */
 	
-		PORT_START	/* 500003 */
+		PORT_START(); 	/* 500003 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x02, "Easy" );
 		PORT_DIPSETTING(    0x03, "Normal" );
@@ -178,7 +178,7 @@ public class snowbros
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );
 		PORT_BIT( 0x8000, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START	/* 500005 */
+		PORT_START(); 	/* 500005 */
 		PORT_BIT( 0x0100, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x0200, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x0400, IP_ACTIVE_LOW, IPT_COIN1 );

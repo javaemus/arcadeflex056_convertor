@@ -61,7 +61,7 @@ public class travrusa
 	
 	
 	static InputPortPtr input_ports_travrusa = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		/* coin input must be active for 19 frames to be consistently recognized */
@@ -72,7 +72,7 @@ public class travrusa
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -82,7 +82,7 @@ public class travrusa
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -92,7 +92,7 @@ public class travrusa
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x03, 0x03, "Fuel Reduced on Collision" );
 		PORT_DIPSETTING(    0x03, "Low" );
 		PORT_DIPSETTING(    0x02, "Med" );
@@ -121,7 +121,7 @@ public class travrusa
 		/* PORT_DIPSETTING( 0x10, "INVALID" );*/
 		/* PORT_DIPSETTING( 0x00, "INVALID" );*/
 	
-		PORT_START	/* DSW2 */
+		PORT_START(); 	/* DSW2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -149,7 +149,7 @@ public class travrusa
 	
 	/* same as travrusa, no "Title" switch */
 	static InputPortPtr input_ports_motorace = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		/* coin input must be active for 19 frames to be consistently recognized */
@@ -160,7 +160,7 @@ public class travrusa
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -170,7 +170,7 @@ public class travrusa
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -180,7 +180,7 @@ public class travrusa
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x03, 0x03, "Fuel Reduced on Collision" );
 		PORT_DIPSETTING(    0x03, "Low" );
 		PORT_DIPSETTING(    0x02, "Med" );
@@ -209,7 +209,7 @@ public class travrusa
 		/* PORT_DIPSETTING( 0x10, "INVALID" );*/
 		/* PORT_DIPSETTING( 0x00, "INVALID" );*/
 	
-		PORT_START	/* DSW2 */
+		PORT_START(); 	/* DSW2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );

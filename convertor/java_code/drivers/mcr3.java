@@ -579,7 +579,7 @@ public class mcr3
 	 *************************************/
 	
 	static InputPortPtr input_ports_tapper = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1 );
@@ -589,7 +589,7 @@ public class mcr3
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY );
@@ -597,7 +597,7 @@ public class mcr3
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0xe0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY | IPF_COCKTAIL );
@@ -605,7 +605,7 @@ public class mcr3
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT( 0xe0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN3 -- dipswitches */
+		PORT_START(); 	/* IN3 -- dipswitches */
 		PORT_BIT( 0x03, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_DIPNAME( 0x04, 0x00, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
@@ -618,16 +618,16 @@ public class mcr3
 		PORT_DIPSETTING(    0x80, "1" );
 		PORT_DIPSETTING(    0x00, "2" );
 	
-		PORT_START	/* IN4 */
+		PORT_START(); 	/* IN4 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* AIN0 */
+		PORT_START(); 	/* AIN0 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_timber = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1 );
@@ -637,7 +637,7 @@ public class mcr3
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY | IPF_PLAYER1 );
@@ -646,7 +646,7 @@ public class mcr3
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY | IPF_PLAYER2 );
@@ -655,7 +655,7 @@ public class mcr3
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN3 -- dipswitches */
+		PORT_START(); 	/* IN3 -- dipswitches */
 		PORT_BIT( 0x03, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_DIPNAME( 0x04, 0x00, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
@@ -668,16 +668,16 @@ public class mcr3
 		PORT_DIPSETTING(    0x80, "1" );
 		PORT_DIPSETTING(    0x00, "2" );
 	
-		PORT_START	/* IN4 */
+		PORT_START(); 	/* IN4 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* AIN0 */
+		PORT_START(); 	/* AIN0 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_dotron = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1 );
@@ -687,10 +687,10 @@ public class mcr3
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_ANALOGX( 0xff, 0x00, IPT_DIAL | IPF_REVERSE, 50, 10, 0, 0, KEYCODE_Z, KEYCODE_X, 0, 0 );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY );
@@ -703,25 +703,25 @@ public class mcr3
 		PORT_DIPSETTING(    0x00, "Environmental" );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Upright") );
 	
-		PORT_START	/* IN3 -- dipswitches */
+		PORT_START(); 	/* IN3 -- dipswitches */
 		PORT_DIPNAME( 0x01, 0x01, "Coin Meters" );
 		PORT_DIPSETTING(    0x01, "1" );
 		PORT_DIPSETTING(    0x00, "2" );
 		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN4 */
+		PORT_START(); 	/* IN4 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* AIN0 */
+		PORT_START(); 	/* AIN0 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* fake port to make aiming up & down easier */
+		PORT_START(); 	/* fake port to make aiming up & down easier */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_Y, 100, 10, 0, 0 );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_demoderb = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1 );
@@ -731,17 +731,17 @@ public class mcr3
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_TILT );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN1 -- the high 6 bits contain the steering wheel value */
+		PORT_START(); 	/* IN1 -- the high 6 bits contain the steering wheel value */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_ANALOG( 0xfc, 0x00, IPT_DIAL | IPF_REVERSE | IPF_PLAYER1, 50, 10, 0, 0 );
 	
-		PORT_START	/* IN2 -- the high 6 bits contain the steering wheel value */
+		PORT_START(); 	/* IN2 -- the high 6 bits contain the steering wheel value */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_ANALOG( 0xfc, 0x00, IPT_DIAL | IPF_REVERSE | IPF_PLAYER2, 50, 10, 0, 0 );
 	
-		PORT_START	/* IN3 -- dipswitches */
+		PORT_START(); 	/* IN3 -- dipswitches */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x01, "2P Upright" );
 		PORT_DIPSETTING(    0x00, "4P Cocktail" );
@@ -761,7 +761,7 @@ public class mcr3
 		PORT_DIPSETTING(    0x10, DEF_STR( "1C_2C") );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* IN4 */
+		PORT_START(); 	/* IN4 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN3 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN4 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START3 );
@@ -771,15 +771,15 @@ public class mcr3
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER4 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER4 );
 	
-		PORT_START	/* AIN0 */
+		PORT_START(); 	/* AIN0 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* IN1 (muxed) -- the high 6 bits contain the steering wheel value */
+		PORT_START(); 	/* IN1 (muxed) -- the high 6 bits contain the steering wheel value */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_ANALOG( 0xfc, 0x00, IPT_DIAL | IPF_REVERSE | IPF_PLAYER3, 50, 10, 0, 0 );
 	
-		PORT_START	/* IN2 (muxed) -- the high 6 bits contain the steering wheel value */
+		PORT_START(); 	/* IN2 (muxed) -- the high 6 bits contain the steering wheel value */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_ANALOG( 0xfc, 0x00, IPT_DIAL | IPF_REVERSE | IPF_PLAYER4, 50, 10, 0, 0 );
@@ -787,7 +787,7 @@ public class mcr3
 	
 	
 	static InputPortPtr input_ports_sarge = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1 );
@@ -796,7 +796,7 @@ public class mcr3
 		PORT_SERVICE( 0x20, IP_ACTIVE_LOW );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_UP    | IPF_2WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_DOWN  | IPF_2WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_UP   | IPF_2WAY | IPF_PLAYER1 );
@@ -804,7 +804,7 @@ public class mcr3
 		PORT_BIT( 0x30, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_UP    | IPF_2WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_DOWN  | IPF_2WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_UP   | IPF_2WAY | IPF_PLAYER2 );
@@ -812,7 +812,7 @@ public class mcr3
 		PORT_BIT( 0x30, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 	
-		PORT_START	/* IN3 -- dipswitches */
+		PORT_START(); 	/* IN3 -- dipswitches */
 		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Free_Play") );
 		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -823,13 +823,13 @@ public class mcr3
 	/* 0x00 says 2 Coins/2 Credits in service mode, but gives 1 Coin/1 Credit */
 		PORT_BIT( 0xc7, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* IN4 */
+		PORT_START(); 	/* IN4 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* AIN0 */
+		PORT_START(); 	/* AIN0 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* fake port for single joystick control */
+		PORT_START(); 	/* fake port for single joystick control */
 		/* This fake port is handled via sarge_port_1_r and sarge_port_2_r */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_CHEAT | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_CHEAT | IPF_PLAYER1 );
@@ -843,7 +843,7 @@ public class mcr3
 	
 	
 	static InputPortPtr input_ports_maxrpm = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START2 );
@@ -853,13 +853,13 @@ public class mcr3
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* IN3 -- dipswitches */
+		PORT_START(); 	/* IN3 -- dipswitches */
 		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Free_Play") );
 		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -870,25 +870,25 @@ public class mcr3
 	/* 0x00 says 2 Coins/2 Credits in service mode, but gives 1 Coin/1 Credit */
 		PORT_BIT( 0xc7, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* IN4 */
+		PORT_START(); 	/* IN4 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* AIN0 */
+		PORT_START(); 	/* AIN0 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* new fake for acceleration */
+		PORT_START(); 	/* new fake for acceleration */
 		PORT_ANALOG( 0xff, 0x30, IPT_PEDAL | IPF_REVERSE | IPF_PLAYER2, 100, 10, 0x30, 0xff );
 	
-		PORT_START	/* new fake for acceleration */
+		PORT_START(); 	/* new fake for acceleration */
 		PORT_ANALOG( 0xff, 0x30, IPT_PEDAL | IPF_REVERSE | IPF_PLAYER1, 100, 10, 0x30, 0xff );
 	
-		PORT_START	/* new fake for steering */
+		PORT_START(); 	/* new fake for steering */
 		PORT_ANALOG( 0xff, 0x74, IPT_PADDLE | IPF_PLAYER2 | IPF_REVERSE, 40, 10, 0x34, 0xb4 );
 	
-		PORT_START	/* new fake for steering */
+		PORT_START(); 	/* new fake for steering */
 		PORT_ANALOG( 0xff, 0x74, IPT_PADDLE | IPF_PLAYER1 | IPF_REVERSE, 40, 10, 0x34, 0xb4 );
 	
-		PORT_START	/* fake for shifting */
+		PORT_START(); 	/* fake for shifting */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
@@ -898,7 +898,7 @@ public class mcr3
 	
 	
 	static InputPortPtr input_ports_rampage = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x0c, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -906,7 +906,7 @@ public class mcr3
 		PORT_SERVICE( 0x20, IP_ACTIVE_LOW );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -915,7 +915,7 @@ public class mcr3
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );
@@ -924,7 +924,7 @@ public class mcr3
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN3 -- dipswitches */
+		PORT_START(); 	/* IN3 -- dipswitches */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x02, "Easy" );
 		PORT_DIPSETTING(    0x03, "Normal" );
@@ -949,7 +949,7 @@ public class mcr3
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN4 */
+		PORT_START(); 	/* IN4 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_PLAYER3 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_PLAYER3 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY | IPF_PLAYER3 );
@@ -958,13 +958,13 @@ public class mcr3
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER3 );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* AIN0 */
+		PORT_START(); 	/* AIN0 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_powerdrv = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN3 );
@@ -974,7 +974,7 @@ public class mcr3
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN4 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER1 | IPF_TOGGLE );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
@@ -984,14 +984,14 @@ public class mcr3
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER3 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER3 | IPF_TOGGLE );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER3 );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER3 );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN3 -- dipswitches */
+		PORT_START(); 	/* IN3 -- dipswitches */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );
 	/*	PORT_DIPSETTING(    0x00, DEF_STR( "1C_1C") );*/
@@ -1010,16 +1010,16 @@ public class mcr3
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN4 */
+		PORT_START(); 	/* IN4 */
 		PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START	/* AIN0 */
+		PORT_START(); 	/* AIN0 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_stargrds = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1 );
@@ -1029,7 +1029,7 @@ public class mcr3
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_UP    | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_DOWN  | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_LEFT  | IPF_PLAYER1 );
@@ -1039,7 +1039,7 @@ public class mcr3
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_LEFT   | IPF_PLAYER1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_RIGHT  | IPF_PLAYER1 );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_UP    | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_DOWN  | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_LEFT  | IPF_PLAYER2 );
@@ -1049,7 +1049,7 @@ public class mcr3
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_LEFT   | IPF_PLAYER2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_RIGHT  | IPF_PLAYER2 );
 	
-		PORT_START	/* IN3 -- dipswitches */
+		PORT_START(); 	/* IN3 -- dipswitches */
 		PORT_BIT( 0x03, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_DIPNAME( 0x0c, 0x0c, "Energy Units" );
 		PORT_DIPSETTING(    0x08, "8" );
@@ -1066,7 +1066,7 @@ public class mcr3
 		PORT_DIPSETTING(    0x40, "Hard" );
 		PORT_DIPSETTING(    0x00, "Hardest" );
 	
-		PORT_START	/* IN4 */
+		PORT_START(); 	/* IN4 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_UP    | IPF_PLAYER3 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_DOWN  | IPF_PLAYER3 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_LEFT  | IPF_PLAYER3 );
@@ -1076,10 +1076,10 @@ public class mcr3
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_LEFT   | IPF_PLAYER3 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_RIGHT  | IPF_PLAYER3 );
 	
-		PORT_START	/* AIN0 */
+		PORT_START(); 	/* AIN0 */
 		PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START	/* IN0 (muxed) */
+		PORT_START(); 	/* IN0 (muxed) */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN3 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1 );
@@ -1092,7 +1092,7 @@ public class mcr3
 	
 	
 	static InputPortPtr input_ports_spyhunt = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x0c, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -1101,7 +1101,7 @@ public class mcr3
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_SERVICE );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* IN1 -- various buttons, low 5 bits */
+		PORT_START(); 	/* IN1 -- various buttons, low 5 bits */
 		PORT_BITX( 0x01, IP_ACTIVE_LOW, IPT_BUTTON4, "Oil Slick", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX( 0x02, IP_ACTIVE_LOW, IPT_BUTTON5, "Missiles", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX( 0x04, IP_ACTIVE_LOW, IPT_BUTTON3, "Weapon Truck", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
@@ -1110,10 +1110,10 @@ public class mcr3
 		PORT_BITX( 0x10, IP_ACTIVE_LOW, IPT_BUTTON1, "Machine Guns", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BIT(  0xe0, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* IN2 -- actually not used at all, but read as a trakport */
+		PORT_START(); 	/* IN2 -- actually not used at all, but read as a trakport */
 		PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* IN3 -- dipswitches -- low 4 bits only */
+		PORT_START(); 	/* IN3 -- dipswitches -- low 4 bits only */
 		PORT_DIPNAME( 0x01, 0x01, "Game Timer" );
 		PORT_DIPSETTING(    0x00, "1:00" );
 		PORT_DIPSETTING(    0x01, "1:30" );
@@ -1124,22 +1124,22 @@ public class mcr3
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN4 */
+		PORT_START(); 	/* IN4 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* AIN0 */
+		PORT_START(); 	/* AIN0 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* new fake for acceleration */
+		PORT_START(); 	/* new fake for acceleration */
 		PORT_ANALOG( 0xff, 0x30, IPT_PEDAL, 100, 10, 0x30, 0xff );
 	
-		PORT_START	/* new fake for steering */
+		PORT_START(); 	/* new fake for steering */
 		PORT_ANALOG( 0xff, 0x74, IPT_PADDLE, 40, 10, 0x34, 0xb4 );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_crater = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1 );
@@ -1149,10 +1149,10 @@ public class mcr3
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_ANALOGX( 0xff, 0x00, IPT_DIAL | IPF_REVERSE, 25, 10, 0, 0, KEYCODE_Z, KEYCODE_X, 0, 0 );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x03, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP   | IPF_2WAY );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_2WAY );
@@ -1161,19 +1161,19 @@ public class mcr3
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN3 -- dipswitches */
+		PORT_START(); 	/* IN3 -- dipswitches */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* IN4 */
+		PORT_START(); 	/* IN4 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* AIN0 */
+		PORT_START(); 	/* AIN0 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_turbotag = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x0c, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -1182,7 +1182,7 @@ public class mcr3
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_SERVICE );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* IN1 -- various buttons, low 5 bits */
+		PORT_START(); 	/* IN1 -- various buttons, low 5 bits */
 		PORT_BITX( 0x01, IP_ACTIVE_LOW, IPT_BUTTON4, "Left Button", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BITX( 0x02, IP_ACTIVE_LOW, IPT_BUTTON5, "Left Trigger", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
@@ -1191,10 +1191,10 @@ public class mcr3
 		PORT_BITX( 0x10, IP_ACTIVE_LOW, IPT_BUTTON1, "Right Trigger", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BIT(  0xe0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN2 -- actually not used at all, but read as a trakport */
+		PORT_START(); 	/* IN2 -- actually not used at all, but read as a trakport */
 		PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* IN3 -- dipswitches -- low 4 bits only */
+		PORT_START(); 	/* IN3 -- dipswitches -- low 4 bits only */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
@@ -1203,16 +1203,16 @@ public class mcr3
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN4 */
+		PORT_START(); 	/* IN4 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* AIN0 */
+		PORT_START(); 	/* AIN0 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* new fake for acceleration */
+		PORT_START(); 	/* new fake for acceleration */
 		PORT_ANALOG( 0xff, 0x30, IPT_PEDAL, 100, 10, 0x30, 0xc0 );
 	
-		PORT_START	/* new fake for steering */
+		PORT_START(); 	/* new fake for steering */
 		PORT_ANALOG( 0xff, 0x74, IPT_PADDLE, 40, 10, 0x34, 0xb4 );
 	INPUT_PORTS_END(); }}; 
 	

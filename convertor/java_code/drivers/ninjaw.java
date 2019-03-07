@@ -419,7 +419,7 @@ public class ninjaw
 	***********************************************************/
 	
 	#define NINJAW_DSWA \
-		PORT_START \
+		PORT_START();  \
 		PORT_DIPNAME( 0x01, 0x01, "Allow Continue" );\
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") ); \
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") ); \
@@ -432,7 +432,7 @@ public class ninjaw
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 	
 	#define NINJAW_DSWB \
-		PORT_START \
+		PORT_START();  \
 		TAITO_DIFFICULTY_8 \
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unused") );  /* all 6 in manual */ \
 		PORT_DIPSETTING(    0x04, DEF_STR( "Off") ); \
@@ -485,7 +485,7 @@ public class ninjaw
 		PORT_DIPSETTING(    0x00, "Hardest" );
 	
 	#define NINJAW_IN2 \
-		PORT_START \
+		PORT_START();  \
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* Stops working if this is high */ \
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_UNKNOWN );\
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN1 );\
@@ -496,7 +496,7 @@ public class ninjaw
 		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
 	#define NINJAW_IN3 \
-		PORT_START \
+		PORT_START();  \
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );\
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );\
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );\
@@ -507,7 +507,7 @@ public class ninjaw
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
 	
 	#define NINJAW_IN4 \
-		PORT_START \
+		PORT_START();  \
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SERVICE1 );\
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_TILT );\
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1 );\
@@ -544,7 +544,7 @@ public class ninjaw
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_darius2 = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -557,7 +557,7 @@ public class ninjaw
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x00, "every 500k" );

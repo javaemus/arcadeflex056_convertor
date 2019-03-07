@@ -61,7 +61,7 @@ public class beezer
 	
 	
 	static InputPortPtr input_ports_beezer = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_TILT );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START2 );
@@ -71,12 +71,12 @@ public class beezer
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_ANALOG( 0x0f, 0x00, IPT_TRACKBALL_X | IPF_REVERSE, 20, 10, 0, 0);
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_ANALOG( 0x0f, 0x00, IPT_TRACKBALL_Y | IPF_REVERSE, 20, 10, 0, 0);
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "1C_1C") );

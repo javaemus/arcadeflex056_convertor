@@ -265,7 +265,7 @@ public class nyny
 	
 	
 	static InputPortPtr input_ports_nyny = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );	/* PIA0 PA0 */
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_SERVICE1 );/* PIA0 PA1 */
 		PORT_BITX(0x04, IP_ACTIVE_HIGH, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )	/* PIA0 PA2 */
@@ -274,13 +274,13 @@ public class nyny
 		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_START1 );/* PIA0 PA5 */
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_START2 );/* PIA0 PA6 */
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_COCKTAIL );/* PIA0 PB0 */
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_COCKTAIL );/* PIA0 PB1 */
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY );/* PIA0 PB2 */
 		PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_2WAY );/* PIA0 PB3 */
 	
-		PORT_START	/* SW1 - port 2*/
+		PORT_START(); 	/* SW1 - port 2*/
 		PORT_DIPNAME( 0x03, 0x03, "Bombs from UFO (scr 3+);" )
 		PORT_DIPSETTING(	0x03, "9" );
 		PORT_DIPSETTING(	0x02, "12" );
@@ -293,7 +293,7 @@ public class nyny
 		PORT_DIPSETTING(	0x80, "High" );
 		PORT_DIPSETTING(	0x00, "Low" );
 	
-		PORT_START	/* SW2 - port 3*/
+		PORT_START(); 	/* SW2 - port 3*/
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(	0x02, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(	0x03, DEF_STR( "1C_1C") );
@@ -311,7 +311,7 @@ public class nyny
 		PORT_DIPSETTING(	0x80, DEF_STR( "On") );
 		PORT_DIPSETTING(	0x00, "No Extra Base" );
 	
-		PORT_START	/* SW3 - port 4*/
+		PORT_START(); 	/* SW3 - port 4*/
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "On") );
@@ -335,10 +335,10 @@ public class nyny
 		PORT_DIPSETTING(	0xc0, "-2" );
 		PORT_DIPSETTING(	0xa0, "-3" );
 	
-		PORT_START  /* Connected to PIA1 CA1 input - port 5 */
+		PORT_START();   /* Connected to PIA1 CA1 input - port 5 */
 		PORT_BIT( 0xFF, IP_ACTIVE_HIGH, IPT_COIN1 );
 	
-		PORT_START  /* Connected to PIA1 CA2 input - port 6 */
+		PORT_START();   /* Connected to PIA1 CA2 input - port 6 */
 		PORT_BIT( 0xFF, IP_ACTIVE_HIGH, IPT_SERVICE1 );
 	INPUT_PORTS_END(); }}; 
 	

@@ -94,7 +94,7 @@ public class bankp
 	
 	
 	static InputPortPtr input_ports_bankp = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused */
@@ -104,7 +104,7 @@ public class bankp
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_BUTTON2 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused */
@@ -114,13 +114,13 @@ public class bankp
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_BUTTON2 | IPF_COCKTAIL );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON3 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON3 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN3 );
 		PORT_BIT( 0xf8, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused */
 	
-		PORT_START	/* DSW */
+		PORT_START(); 	/* DSW */
 		PORT_DIPNAME( 0x03, 0x00, "Coin A/B" );
 		PORT_DIPSETTING(    0x03, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );

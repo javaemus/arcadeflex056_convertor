@@ -188,7 +188,7 @@ public class tankbatt
 	}
 	
 	static InputPortPtr input_ports_tankbatt = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_4WAY );
 		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_4WAY );
 		PORT_BIT ( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_4WAY );
@@ -197,7 +197,7 @@ public class tankbatt
 		PORT_BIT_IMPULSE( 0x60, IP_ACTIVE_LOW, IPT_COIN1, 2 );
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_TILT );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT ( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_4WAY | IPF_COCKTAIL );
@@ -207,7 +207,7 @@ public class tankbatt
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* DSW */
+		PORT_START(); 	/* DSW */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );

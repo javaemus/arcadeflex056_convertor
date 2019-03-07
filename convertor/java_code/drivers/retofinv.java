@@ -208,7 +208,7 @@ public class retofinv
 	
 	
 	static InputPortPtr input_ports_retofinv = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_TILT );
@@ -218,7 +218,7 @@ public class retofinv
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -228,7 +228,7 @@ public class retofinv
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -238,7 +238,7 @@ public class retofinv
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 	
-		PORT_START      /* DSW1 */
+		PORT_START();       /* DSW1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x03, "30k, 80k & every 80k" );
 		PORT_DIPSETTING(    0x02, "30k, 80k" );
@@ -262,7 +262,7 @@ public class retofinv
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START      /* DSW3 modified by Shingo Suzuki 1999/11/03 */
+		PORT_START();       /* DSW3 modified by Shingo Suzuki 1999/11/03 */
 		PORT_BITX(    0x01, 0x01, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Push Start to Skip Stage", IP_KEY_NONE, IP_JOY_NONE );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -288,7 +288,7 @@ public class retofinv
 		PORT_DIPSETTING(    0x80, "A and B" );
 		PORT_DIPSETTING(    0x00, "A only" );
 	
-	        PORT_START      /* DSW2 */
+	        PORT_START();       /* DSW2 */
 		PORT_DIPNAME( 0x0f, 0x00, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x0f, DEF_STR( "9C_1C") );
 		PORT_DIPSETTING(    0x0e, DEF_STR( "8C_1C") );

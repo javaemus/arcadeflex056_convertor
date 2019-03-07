@@ -141,7 +141,7 @@ public class raiden
 	static InputPortPtr input_ports_raiden = new InputPortPtr(){ public void handler() { 
 		SEIBU_COIN_INPUTS	/* Must be port 0: coin inputs read through sound cpu */
 	
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
@@ -151,7 +151,7 @@ public class raiden
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
@@ -161,7 +161,7 @@ public class raiden
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START	/* Dip switch A */
+		PORT_START(); 	/* Dip switch A */
 		PORT_DIPNAME( 0x01, 0x01, "Coin Mode" );
 		PORT_DIPSETTING(    0x01, "A" );
 		PORT_DIPSETTING(    0x00, "B" );
@@ -206,7 +206,7 @@ public class raiden
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* Dip switch B */
+		PORT_START(); 	/* Dip switch B */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x02, "1" );
 		PORT_DIPSETTING(    0x01, "2" );

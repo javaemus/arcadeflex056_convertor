@@ -185,7 +185,7 @@ public class thepit
 	
 	
 	static InputPortPtr input_ports_thepit = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_8WAY );
@@ -195,7 +195,7 @@ public class thepit
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_START1 );
@@ -205,7 +205,7 @@ public class thepit
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x03, 0x00, "Coinage P1/P2" );
 		PORT_DIPSETTING(    0x00, "1Cr/2Cr" );
 		PORT_DIPSETTING(    0x01, "2Cr/3Cr" );
@@ -232,7 +232,7 @@ public class thepit
 	
 		/* Since the real inputs are multiplexed, we used this fake port
 		   to read the 2nd player controls when the screen is flipped */
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_COCKTAIL );
@@ -245,7 +245,7 @@ public class thepit
 	
 	
 	static InputPortPtr input_ports_roundup = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_8WAY );
@@ -255,7 +255,7 @@ public class thepit
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_START1 );
@@ -265,7 +265,7 @@ public class thepit
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "1C_1C") );
@@ -289,7 +289,7 @@ public class thepit
 	
 		/* Since the real inputs are multiplexed, we used this fake port
 		   to read the 2nd player controls when the screen is flipped */
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_COCKTAIL );
@@ -302,7 +302,7 @@ public class thepit
 	
 	
 	static InputPortPtr input_ports_fitter = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_8WAY );
@@ -312,7 +312,7 @@ public class thepit
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_START1 );
@@ -322,7 +322,7 @@ public class thepit
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "1C_1C") );
@@ -348,7 +348,7 @@ public class thepit
 	
 		/* Since the real inputs are multiplexed, we used this fake port
 		   to read the 2nd player controls when the screen is flipped */
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_COCKTAIL );
@@ -361,7 +361,7 @@ public class thepit
 	
 	
 	static InputPortPtr input_ports_intrepid = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_8WAY );
@@ -371,7 +371,7 @@ public class thepit
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* Starts a timer, which, */
 	  												  /* after it runs down, doesn't */
-		PORT_START      /* IN2 */                     /* seem to do anything. See $0105 */
+		PORT_START();       /* IN2 */                     /* seem to do anything. See $0105 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_START1 );
@@ -381,7 +381,7 @@ public class thepit
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_BITX(    0x01, 0x01, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -408,7 +408,7 @@ public class thepit
 	
 		/* Since the real inputs are multiplexed, we used this fake port
 		   to read the 2nd player controls when the screen is flipped */
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_COCKTAIL );
@@ -421,7 +421,7 @@ public class thepit
 	
 	
 	static InputPortPtr input_ports_portman = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_8WAY );
@@ -431,7 +431,7 @@ public class thepit
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* unused? */
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* unused? */
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_START1 );
@@ -441,7 +441,7 @@ public class thepit
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "1C_1C") );
@@ -467,7 +467,7 @@ public class thepit
 	
 		/* Since the real inputs are multiplexed, we used this fake port
 		   to read the 2nd player controls when the screen is flipped */
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_COCKTAIL );
@@ -480,7 +480,7 @@ public class thepit
 	
 	
 	static InputPortPtr input_ports_suprmous = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_8WAY );
@@ -490,7 +490,7 @@ public class thepit
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_START1 );
@@ -500,7 +500,7 @@ public class thepit
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x07, 0x01, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "1C_1C") );
@@ -527,7 +527,7 @@ public class thepit
 	
 		/* Since the real inputs are multiplexed, we used this fake port
 		   to read the 2nd player controls when the screen is flipped */
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL);
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_COCKTAIL );

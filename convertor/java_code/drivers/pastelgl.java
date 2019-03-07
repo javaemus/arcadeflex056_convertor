@@ -162,7 +162,7 @@ public class pastelgl
 	
 	
 	static InputPortPtr input_ports_pastelgl = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x03, "1 (Easy); )
 		PORT_DIPSETTING(    0x02, "2" );
@@ -170,7 +170,7 @@ public class pastelgl
 		PORT_DIPSETTING(    0x00, "4 (Hard); )
 		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x03, 0x00, "Number of last chance" );
 		PORT_DIPSETTING(    0x03, "0" );
 		PORT_DIPSETTING(    0x02, "1" );
@@ -187,7 +187,7 @@ public class pastelgl
 		PORT_DIPSETTING(    0x00, "infinite" );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) DIPSW-C */
+		PORT_START(); 	/* (2) DIPSW-C */
 		PORT_DIPNAME( 0x03, 0x03, "Change Rate" );
 		PORT_DIPSETTING(    0x03, "Type-A" );
 		PORT_DIPSETTING(    0x02, "Type-B" );
@@ -206,7 +206,7 @@ public class pastelgl
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (3) PORT 0 */
+		PORT_START(); 	/* (3) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET

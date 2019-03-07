@@ -382,7 +382,7 @@ public class omegrace
 	};
 	
 	static InputPortPtr input_ports_omegrace = new InputPortPtr(){ public void handler() { 
-		PORT_START /* SW0 */
+		PORT_START();  /* SW0 */
 		PORT_DIPNAME( 0x03, 0x03, "1st Bonus Life" );
 		PORT_DIPSETTING (   0x00, "40k" );
 		PORT_DIPSETTING (   0x01, "50k" );
@@ -405,7 +405,7 @@ public class omegrace
 		PORT_DIPSETTING (   0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING (   0x80, DEF_STR( "On") );
 	
-		PORT_START /* SW1 */
+		PORT_START();  /* SW1 */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING (   0x06, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING (   0x07, DEF_STR( "1C_1C") );
@@ -431,7 +431,7 @@ public class omegrace
 		PORT_DIPSETTING (   0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING (   0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START /* IN2 -port 0x11 */
+		PORT_START();  /* IN2 -port 0x11 */
 		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT ( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -441,7 +441,7 @@ public class omegrace
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START /* IN3 - port 0x12 */
+		PORT_START();  /* IN3 - port 0x12 */
 		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
 		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT ( 0x04, IP_ACTIVE_LOW, IPT_START3 | IPF_COCKTAIL );
@@ -451,10 +451,10 @@ public class omegrace
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START /* IN4 - port 0x15 - spinner */
+		PORT_START();  /* IN4 - port 0x15 - spinner */
 		PORT_ANALOG(0x3f, 0x00, IPT_DIAL, 12, 10, 0, 0 );
 	
-		PORT_START /* IN5 - port 0x16 - second spinner */
+		PORT_START();  /* IN5 - port 0x16 - second spinner */
 		PORT_ANALOG(0x3f, 0x00, IPT_DIAL | IPF_COCKTAIL, 12, 10, 0, 0 );
 	INPUT_PORTS_END(); }}; 
 	

@@ -572,7 +572,7 @@ public class dkong
 	
 	
 	static InputPortPtr input_ports_dkong = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_4WAY );
@@ -582,7 +582,7 @@ public class dkong
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_COCKTAIL );
@@ -592,7 +592,7 @@ public class dkong
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	//	PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Service_Mode") );
 	//	PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
@@ -605,7 +605,7 @@ public class dkong
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* status from sound cpu */
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_COIN1 );
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "3" );
 		PORT_DIPSETTING(    0x01, "4" );
@@ -632,7 +632,7 @@ public class dkong
 	
 	
 	static InputPortPtr input_ports_dkong3 = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_4WAY );
@@ -643,7 +643,7 @@ public class dkong
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_COIN3 );
 	
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_COCKTAIL );
@@ -653,7 +653,7 @@ public class dkong
 		PORT_BIT_IMPULSE( 0x40, IP_ACTIVE_HIGH, IPT_COIN2, 1 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x07, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "2C_1C") );
@@ -677,7 +677,7 @@ public class dkong
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START      /* DSW1 */
+		PORT_START();       /* DSW1 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "3" );
 		PORT_DIPSETTING(    0x01, "4" );
@@ -702,7 +702,7 @@ public class dkong
 	
 	
 	static InputPortPtr input_ports_hunchbdk = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY );
@@ -712,7 +712,7 @@ public class dkong
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_COCKTAIL );
@@ -722,7 +722,7 @@ public class dkong
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -734,7 +734,7 @@ public class dkong
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* status from sound cpu */
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_COIN1 );
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -759,12 +759,12 @@ public class dkong
 		PORT_DIPSETTING(    0x80, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
 	
-	    PORT_START /* Sense */
+	    PORT_START();  /* Sense */
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_VBLANK );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_herbiedk = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY );
@@ -774,7 +774,7 @@ public class dkong
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_COCKTAIL );
@@ -784,7 +784,7 @@ public class dkong
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -796,7 +796,7 @@ public class dkong
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* status from sound cpu */
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_COIN1 );
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -822,7 +822,7 @@ public class dkong
 		PORT_DIPSETTING(    0x80, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
 	
-	    PORT_START /* Sense */
+	    PORT_START();  /* Sense */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_VBLANK );
 	INPUT_PORTS_END(); }}; 
 	

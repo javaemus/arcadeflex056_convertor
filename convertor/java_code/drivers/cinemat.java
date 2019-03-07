@@ -166,7 +166,7 @@ public class cinemat
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_spacewar = new InputPortPtr(){ public void handler() { 
-		PORT_START /* switches */
+		PORT_START();  /* switches */
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN1, 1 );
 		PORT_DIPNAME( SW2|SW1, SW2ON |SW1ON,  "Time" );
 		PORT_DIPSETTING( 	   SW2OFF|SW1OFF, "0:45/coin" );
@@ -181,7 +181,7 @@ public class cinemat
 		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER1 );
 		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 	
-		PORT_START /* inputs */
+		PORT_START();  /* inputs */
 		PORT_BIT ( 0x8000, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT ( 0x4000, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY | IPF_PLAYER2 );
 		PORT_BIT ( 0x2000, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_PLAYER1 );
@@ -199,10 +199,10 @@ public class cinemat
 		PORT_BITX( 0x0002, IP_ACTIVE_LOW, 0, "Option 8", KEYCODE_8_PAD, IP_JOY_NONE );
 		PORT_BITX( 0x0001, IP_ACTIVE_LOW, 0, "Option 3", KEYCODE_3_PAD, IP_JOY_NONE );
 	
-		PORT_START /* analog stick X - unused */
+		PORT_START();  /* analog stick X - unused */
 		PORT_BIT ( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START /* analog stick Y - unused */
+		PORT_START();  /* analog stick Y - unused */
 		PORT_BIT ( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 
 	
@@ -259,7 +259,7 @@ public class cinemat
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_barrier = new InputPortPtr(){ public void handler() { 
-		PORT_START /* switches */
+		PORT_START();  /* switches */
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN1, 1 );
 		PORT_DIPNAME( SW1, SW1ON,  DEF_STR( "Lives") );
 		PORT_DIPSETTING(   SW1ON,  "3" );
@@ -283,7 +283,7 @@ public class cinemat
 		PORT_DIPSETTING(   SW7OFF, DEF_STR( "Off") );
 		PORT_DIPSETTING(   SW7ON,  DEF_STR( "On") );
 	
-		PORT_START /* inputs */
+		PORT_START();  /* inputs */
 		PORT_BIT ( 0x8000, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_PLAYER2 );
 		PORT_BIT ( 0x4000, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_4WAY | IPF_PLAYER1 );
 		PORT_BIT ( 0x2000, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_4WAY | IPF_PLAYER2 );
@@ -301,10 +301,10 @@ public class cinemat
 		PORT_BIT ( 0x0002, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BITX( 0x0001, IP_ACTIVE_LOW, 0, "Skill A", KEYCODE_A, IP_JOY_NONE );
 	
-		PORT_START /* analog stick X - unused */
+		PORT_START();  /* analog stick X - unused */
 		PORT_BIT ( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START /* analog stick Y - unused */
+		PORT_START();  /* analog stick Y - unused */
 		PORT_BIT ( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 
 	
@@ -334,7 +334,7 @@ public class cinemat
 	
 	/* TODO: 4way or 8way stick? */
 	static InputPortPtr input_ports_starhawk = new InputPortPtr(){ public void handler() { 
-		PORT_START /* switches */
+		PORT_START();  /* switches */
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN1, 2 );
 		PORT_DIPNAME( SW7,	   SW7OFF,		  DEF_STR( "Unknown") );
 		PORT_DIPSETTING(	   SW7OFF,		  DEF_STR( "Off") );
@@ -349,7 +349,7 @@ public class cinemat
 		PORT_DIPSETTING(	   SW2OFF|SW1ON,  "1:00/2:00" );
 		PORT_DIPSETTING(	   SW2ON |SW1ON,  "0:45/1:30" );
 	
-		PORT_START /* input */
+		PORT_START();  /* input */
 		PORT_BIT ( 0x8000, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER2 );
 		PORT_BIT ( 0x4000, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT ( 0x2000, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );
@@ -367,10 +367,10 @@ public class cinemat
 		PORT_BIT ( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT ( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY | IPF_PLAYER1 );
 	
-		PORT_START /* analog stick X - unused */
+		PORT_START();  /* analog stick X - unused */
 		PORT_BIT ( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START /* analog stick Y - unused */
+		PORT_START();  /* analog stick Y - unused */
 		PORT_BIT ( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 
 	
@@ -400,7 +400,7 @@ public class cinemat
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_starcas = new InputPortPtr(){ public void handler() { 
-		PORT_START /* switches */
+		PORT_START();  /* switches */
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN1, 1 );
 		PORT_SERVICE( SW7,     SW7ON );
 		PORT_DIPNAME( SW4|SW3, SW4OFF|SW3OFF, DEF_STR( "Coinage") );
@@ -420,7 +420,7 @@ public class cinemat
 		PORT_DIPSETTING(       SW6OFF,        DEF_STR( "Off") );
 		PORT_DIPSETTING(       SW6ON,         DEF_STR( "On") );
 	
-		PORT_START /* inputs */
+		PORT_START();  /* inputs */
 		PORT_BIT ( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT ( 0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT ( 0x2000, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -438,10 +438,10 @@ public class cinemat
 		PORT_BIT ( 0x0002, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT ( 0x0001, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START /* analog stick X - unused */
+		PORT_START();  /* analog stick X - unused */
 		PORT_BIT ( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START /* analog stick Y - unused */
+		PORT_START();  /* analog stick Y - unused */
 		PORT_BIT ( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 
 	
@@ -466,7 +466,7 @@ public class cinemat
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_tailg = new InputPortPtr(){ public void handler() { 
-		PORT_START /* switches */
+		PORT_START();  /* switches */
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN1, 1 );
 		PORT_DIPNAME( SW6|SW2|SW1, SW6OFF|SW2OFF|SW1OFF, "Shield Points" );
 		PORT_DIPSETTING(		   SW6ON |SW2ON |SW1ON,  "15" );
@@ -490,7 +490,7 @@ public class cinemat
 		PORT_DIPSETTING(		   SW7OFF,				 DEF_STR( "Off") );
 		PORT_DIPSETTING(		   SW7ON, 				 DEF_STR( "On") );
 	
-		PORT_START /* inputs */
+		PORT_START();  /* inputs */
 		PORT_BIT ( 0x8000, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT ( 0x4000, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT ( 0x2000, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -508,10 +508,10 @@ public class cinemat
 		PORT_BIT ( 0x0002, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT ( 0x0001, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START /* analog stick X */
+		PORT_START();  /* analog stick X */
 		PORT_ANALOG( 0xfff, 0x800, IPT_AD_STICK_X, 100, 50, 0x200, 0xe00 );
 	
-		PORT_START /* analog stick Y */
+		PORT_START();  /* analog stick Y */
 		PORT_ANALOG( 0xfff, 0x800, IPT_AD_STICK_Y, 100, 50, 0x200, 0xe00 );
 	INPUT_PORTS_END(); }}; 
 	
@@ -539,7 +539,7 @@ public class cinemat
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_ripoff = new InputPortPtr(){ public void handler() { 
-		PORT_START /* switches */
+		PORT_START();  /* switches */
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN1, 1 );
 		PORT_SERVICE( SW7,	   SW7OFF );
 		PORT_DIPNAME( SW6,	   SW6ON,		  "Scores" );
@@ -559,7 +559,7 @@ public class cinemat
 		PORT_DIPSETTING(	   SW2ON |SW1ON,  "12" );
 		PORT_DIPSETTING(	   SW2OFF|SW1ON,  "16" );
 	
-		PORT_START /* inputs */
+		PORT_START();  /* inputs */
 		PORT_BIT ( 0x8000, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT ( 0x4000, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_PLAYER1 );
 		PORT_BIT ( 0x2000, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
@@ -577,10 +577,10 @@ public class cinemat
 		PORT_BIT ( 0x0002, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT ( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY | IPF_PLAYER2 );
 	
-		PORT_START /* analog stick X - unused */
+		PORT_START();  /* analog stick X - unused */
 		PORT_BIT ( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START /* analog stick Y - unused */
+		PORT_START();  /* analog stick Y - unused */
 		PORT_BIT ( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 
 	
@@ -648,7 +648,7 @@ public class cinemat
 	
 	
 	static InputPortPtr input_ports_speedfrk = new InputPortPtr(){ public void handler() { 
-		PORT_START /* switches */
+		PORT_START();  /* switches */
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN1, 1 );
 		PORT_DIPNAME( SW7,     SW7OFF,        DEF_STR( "Unknown") );
 		PORT_DIPSETTING(       SW7OFF,        DEF_STR( "Off") );
@@ -671,7 +671,7 @@ public class cinemat
 		PORT_DIPSETTING(       SW2OFF|SW1ON,  "129" );
 		PORT_DIPSETTING(       SW2OFF|SW1OFF, "159" );
 	
-		PORT_START /* inputs */
+		PORT_START();  /* inputs */
 		PORT_BIT (  0x8000, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT (  0x4000, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT (  0x2000, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -684,16 +684,16 @@ public class cinemat
 		PORT_BIT (  0x0070, IP_ACTIVE_LOW, IPT_UNUSED );/* gear shift, fake below */
 		PORT_BIT (  0x000f, IP_ACTIVE_LOW, IPT_UNUSED );/* steering wheel, fake below */
 	
-		PORT_START /* analog stick X - unused */
+		PORT_START();  /* analog stick X - unused */
 		PORT_BIT ( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START /* analog stick Y - unused */
+		PORT_START();  /* analog stick Y - unused */
 		PORT_BIT ( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START /* fake - steering wheel (in4) */
+		PORT_START();  /* fake - steering wheel (in4) */
 		PORT_ANALOG( 0xff, 0x00, IPT_DIAL, 100, 1, 0x00, 0xff );
 	
-		PORT_START /* fake - gear shift (in5) */
+		PORT_START();  /* fake - gear shift (in5) */
 		PORT_BIT ( 0x0f, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_BITX( 0x10, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER2, "1st gear", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER2, "2nd gear", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
@@ -728,7 +728,7 @@ public class cinemat
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_sundance = new InputPortPtr(){ public void handler() { 
-		PORT_START /* switches */
+		PORT_START();  /* switches */
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN1, 1 );
 		PORT_DIPNAME( SW5,	   SW5OFF,		 DEF_STR( "Unknown") );
 		PORT_DIPSETTING(	   SW5OFF,		 DEF_STR( "Off") );
@@ -751,7 +751,7 @@ public class cinemat
 		PORT_DIPSETTING(	   SW2ON |SW1OFF, "1:30/coin" );
 		PORT_DIPSETTING(	   SW2OFF|SW1OFF, "2:00/coin" );
 	
-		PORT_START /* inputs */
+		PORT_START();  /* inputs */
 		PORT_BIT ( 0x8000, IP_ACTIVE_LOW, IPT_UNUSED );/* player 1 motion */
 		PORT_BIT ( 0x4000, IP_ACTIVE_LOW, IPT_UNUSED );/* player 2 motion */
 		PORT_BIT ( 0x2000, IP_ACTIVE_LOW, IPT_UNUSED );/* player 1 motion */
@@ -769,10 +769,10 @@ public class cinemat
 		PORT_BIT ( 0x0002, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT ( 0x0001, IP_ACTIVE_LOW, IPT_UNUSED );/* player 2 motion */
 	
-		PORT_START /* analog stick X - unused */
+		PORT_START();  /* analog stick X - unused */
 		PORT_BIT ( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START /* analog stick Y - unused */
+		PORT_START();  /* analog stick Y - unused */
 		PORT_BIT ( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 
 	
@@ -801,7 +801,7 @@ public class cinemat
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_warrior = new InputPortPtr(){ public void handler() { 
-		PORT_START /* switches */
+		PORT_START();  /* switches */
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN1, 1 );
 		PORT_DIPNAME( SW7, SW7OFF, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(   SW7OFF, DEF_STR( "Off") );
@@ -823,7 +823,7 @@ public class cinemat
 		PORT_DIPSETTING(   SW1OFF, DEF_STR( "Off") );
 		PORT_DIPSETTING(   SW1ON,  DEF_STR( "On") );
 	
-		PORT_START /* inputs */
+		PORT_START();  /* inputs */
 		PORT_BIT ( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT ( 0x4000, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT ( 0x2000, IP_ACTIVE_LOW, IPT_START2 );
@@ -841,10 +841,10 @@ public class cinemat
 		PORT_BIT ( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_PLAYER2 );
 		PORT_BIT ( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER2 );
 	
-		PORT_START /* analog stick X - unused */
+		PORT_START();  /* analog stick X - unused */
 		PORT_BIT ( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START /* analog stick Y - unused */
+		PORT_START();  /* analog stick Y - unused */
 		PORT_BIT ( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 
 	
@@ -873,7 +873,7 @@ public class cinemat
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_armora = new InputPortPtr(){ public void handler() { 
-		PORT_START /* switches */
+		PORT_START();  /* switches */
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN1, 1 );
 		PORT_SERVICE( SW7,     SW7ON );
 		PORT_DIPNAME( SW5,     SW5ON,         DEF_STR( "Demo_Sounds") );
@@ -890,7 +890,7 @@ public class cinemat
 		PORT_DIPSETTING(       SW2ON |SW1OFF, "4" );
 		PORT_DIPSETTING(       SW2OFF|SW1OFF, "5" );
 	
-		PORT_START /* inputs */
+		PORT_START();  /* inputs */
 		PORT_BIT ( 0x8000, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT ( 0x4000, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_PLAYER1 );
 		PORT_BIT ( 0x2000, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
@@ -908,10 +908,10 @@ public class cinemat
 		PORT_BIT ( 0x0002, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT ( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY | IPF_PLAYER2 );
 	
-		PORT_START /* analog stick X - unused */
+		PORT_START();  /* analog stick X - unused */
 		PORT_BIT ( 0xff, IP_ACTIVE_LOW,  IPT_UNUSED );
 	
-		PORT_START /* analog stick Y - unused */
+		PORT_START();  /* analog stick Y - unused */
 		PORT_BIT ( 0xff, IP_ACTIVE_LOW,  IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 
 	
@@ -939,7 +939,7 @@ public class cinemat
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_solarq = new InputPortPtr(){ public void handler() { 
-		PORT_START /* switches */
+		PORT_START();  /* switches */
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN1, 1 );
 		PORT_SERVICE( SW7,	   SW7ON );
 		PORT_DIPNAME( SW2,	   SW2OFF,		  DEF_STR( "Bonus_Life") );
@@ -959,7 +959,7 @@ public class cinemat
 		PORT_DIPSETTING(	   SW5OFF|SW4ON,  "4" );
 		PORT_DIPSETTING(	   SW5ON |SW4ON,  "5" );
 	
-		PORT_START /* inputs */
+		PORT_START();  /* inputs */
 		PORT_BIT ( 0x8000, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT ( 0x4000, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT ( 0x2000, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -979,10 +979,10 @@ public class cinemat
 		PORT_BIT ( 0x0001, IP_ACTIVE_LOW, IPT_START2 );/* also nova */
 		PORT_BIT ( 0x0001, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER1 );
 	
-		PORT_START /* analog stick X - unused */
+		PORT_START();  /* analog stick X - unused */
 		PORT_BIT ( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START /* analog stick Y - unused */
+		PORT_START();  /* analog stick Y - unused */
 		PORT_BIT ( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 
 	
@@ -1010,7 +1010,7 @@ public class cinemat
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_demon = new InputPortPtr(){ public void handler() { 
-		PORT_START /* switches */
+		PORT_START();  /* switches */
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN1, 1 );
 		PORT_DIPNAME( SW7,     SW7OFF,        DEF_STR( "Free_Play") );
 		PORT_DIPSETTING(       SW7OFF,        DEF_STR( "Off") );
@@ -1032,7 +1032,7 @@ public class cinemat
 		PORT_DIPSETTING(       SW2OFF|SW1OFF, DEF_STR( "1C_1C") );
 		PORT_DIPSETTING(       SW2OFF|SW1ON,  DEF_STR( "2C_3C") );
 	
-		PORT_START /* inputs */
+		PORT_START();  /* inputs */
 		PORT_BIT ( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );/* also mapped to Button 3, player 2 */
 		PORT_BIT ( 0x4000, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT ( 0x2000, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
@@ -1050,10 +1050,10 @@ public class cinemat
 		PORT_BIT ( 0x0002, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT ( 0x0001, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START /* analog stick X - unused */
+		PORT_START();  /* analog stick X - unused */
 		PORT_BIT ( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START /* analog stick Y - unused */
+		PORT_START();  /* analog stick Y - unused */
 		PORT_BIT ( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 
 	
@@ -1146,7 +1146,7 @@ public class cinemat
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_wotw = new InputPortPtr(){ public void handler() { 
-		PORT_START /* switches */
+		PORT_START();  /* switches */
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN1, 1 );
 		PORT_SERVICE( SW7, SW7OFF );
 		PORT_DIPNAME( SW6, SW6OFF, DEF_STR( "Free_Play") );
@@ -1168,7 +1168,7 @@ public class cinemat
 		PORT_DIPSETTING(   SW5OFF, DEF_STR( "Off") );
 		PORT_DIPSETTING(   SW5ON,  DEF_STR( "On") );
 	
-		PORT_START /* inputs */
+		PORT_START();  /* inputs */
 		PORT_BIT ( 0x8000, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT ( 0x4000, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT ( 0x2000, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -1186,10 +1186,10 @@ public class cinemat
 		PORT_BIT ( 0x0002, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT ( 0x0001, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START /* analog stick X - unused */
+		PORT_START();  /* analog stick X - unused */
 		PORT_BIT ( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START /* analog stick Y - unused */
+		PORT_START();  /* analog stick Y - unused */
 		PORT_BIT ( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 
 	
@@ -1219,7 +1219,7 @@ public class cinemat
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_boxingb = new InputPortPtr(){ public void handler() { 
-		PORT_START /* switches */
+		PORT_START();  /* switches */
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN1, 1 );
 		PORT_SERVICE( SW7,	   SW7OFF );
 		PORT_DIPNAME( SW6,	   SW6OFF,		  DEF_STR( "Free_Play") );
@@ -1240,7 +1240,7 @@ public class cinemat
 		PORT_DIPSETTING(	   SW2OFF|SW1OFF, DEF_STR( "1C_1C") );
 		PORT_DIPSETTING(	   SW2OFF|SW1ON,  DEF_STR( "2C_3C") );
 	
-		PORT_START /* inputs */
+		PORT_START();  /* inputs */
 		PORT_BIT ( 0xf000, IP_ACTIVE_HIGH, IPT_UNUSED );/* dial */
 		PORT_BIT ( 0x0800, IP_ACTIVE_LOW,  IPT_UNUSED );
 		PORT_BIT ( 0x0400, IP_ACTIVE_LOW,  IPT_UNUSED );
@@ -1257,13 +1257,13 @@ public class cinemat
 		PORT_BIT ( 0x0002, IP_ACTIVE_LOW,  IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT ( 0x0001, IP_ACTIVE_LOW,  IPT_BUTTON1 | IPF_PLAYER2 );
 	
-		PORT_START /* analog stick X - unused */
+		PORT_START();  /* analog stick X - unused */
 		PORT_BIT ( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START /* analog stick Y - unused */
+		PORT_START();  /* analog stick Y - unused */
 		PORT_BIT ( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START /* fake (in4) */
+		PORT_START();  /* fake (in4) */
 		PORT_ANALOG( 0xff, 0x80, IPT_DIAL, 100, 5, 0x00, 0xff );
 	INPUT_PORTS_END(); }}; 
 	

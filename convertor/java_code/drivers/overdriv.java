@@ -349,7 +349,7 @@ public class overdriv
 	
 	
 	static InputPortPtr input_ports_overdriv = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_TOGGLE );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON2 );
@@ -359,7 +359,7 @@ public class overdriv
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_SPECIAL );/* EEPROM data */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1 );
@@ -369,7 +369,7 @@ public class overdriv
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_SPECIAL );// ?
 	
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOG( 0xff, 0x80, IPT_DIAL | IPF_CENTER, 100, 50, 0, 0 );
 	INPUT_PORTS_END(); }}; 
 	

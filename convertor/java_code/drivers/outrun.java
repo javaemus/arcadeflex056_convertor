@@ -984,13 +984,13 @@ public class outrun
 	/***************************************************************************/
 	
 	static InputPortPtr input_ports_outrun = new InputPortPtr(){ public void handler() { 
-	PORT_START	/* Steering */
+	PORT_START(); 	/* Steering */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_CENTER, 100, 3, 0x48, 0xb8 );
 	//	PORT_ANALOG( 0xff, 0x7f, IPT_PADDLE , 70, 3, 0x48, 0xb8 );
 	
 	#ifdef HANGON_DIGITAL_CONTROLS
 	
-	PORT_START	/* Buttons */
+	PORT_START(); 	/* Buttons */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON2 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON1 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_BUTTON3 );
@@ -998,12 +998,12 @@ public class outrun
 	
 	#else
 	
-	PORT_START	/* Accel / Decel */
+	PORT_START(); 	/* Accel / Decel */
 		PORT_ANALOG( 0xff, 0x30, IPT_AD_STICK_Y | IPF_CENTER | IPF_REVERSE, 100, 16, 0x30, 0x90 );
 	
 	#endif
 	
-	PORT_START
+	PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BITX(0x02, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -1015,7 +1015,7 @@ public class outrun
 	
 		SYS16_COINAGE
 	
-	PORT_START	/* DSW1 */
+	PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x03, 0x02, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x02, "Up Cockpit" );
 		PORT_DIPSETTING(    0x01, "Mini Up" );
@@ -1041,7 +1041,7 @@ public class outrun
 	
 	#ifndef HANGON_DIGITAL_CONTROLS
 	
-	PORT_START	/* Brake */
+	PORT_START(); 	/* Brake */
 		PORT_ANALOG( 0xff, 0x30, IPT_AD_STICK_Y | IPF_PLAYER2 | IPF_CENTER | IPF_REVERSE, 100, 16, 0x30, 0x90 );
 	
 	#endif
@@ -1241,23 +1241,23 @@ public class outrun
 	/***************************************************************************/
 	
 	static InputPortPtr input_ports_shangon = new InputPortPtr(){ public void handler() { 
-	PORT_START	/* Steering */
+	PORT_START(); 	/* Steering */
 		PORT_ANALOG( 0xff, 0x7f, IPT_AD_STICK_X | IPF_REVERSE | IPF_CENTER , 100, 3, 0x42, 0xbd );
 	
 	#ifdef HANGON_DIGITAL_CONTROLS
 	
-	PORT_START	/* Buttons */
+	PORT_START(); 	/* Buttons */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON2 );
 	
 	#else
 	
-	PORT_START	/* Accel / Decel */
+	PORT_START(); 	/* Accel / Decel */
 		PORT_ANALOG( 0xff, 0x1, IPT_AD_STICK_Y | IPF_CENTER | IPF_REVERSE, 100, 16, 1, 0xa2 );
 	
 	#endif
 	
-	PORT_START
+	PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BITX(0x04, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
@@ -1269,7 +1269,7 @@ public class outrun
 	
 		SYS16_COINAGE
 	
-	PORT_START	/* DSW1 */
+	PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1296,7 +1296,7 @@ public class outrun
 	
 	#ifndef HANGON_DIGITAL_CONTROLS
 	
-	PORT_START	/* Brake */
+	PORT_START(); 	/* Brake */
 		PORT_ANALOG( 0xff, 0x1, IPT_AD_STICK_Y | IPF_PLAYER2 | IPF_CENTER | IPF_REVERSE, 100, 16, 1, 0xa2 );
 	
 	#endif

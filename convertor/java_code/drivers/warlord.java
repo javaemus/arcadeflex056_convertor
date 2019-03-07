@@ -136,7 +136,7 @@ public class warlord
 	
 	
 	static InputPortPtr input_ports_warlord = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT ( 0x0f, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_DIPNAME(0x10, 0x00, "Diag Step" ); /* Not referenced */
 		PORT_DIPSETTING (	0x00, DEF_STR( "Off") );
@@ -147,7 +147,7 @@ public class warlord
 		PORT_DIPSETTING (	0x80, "Upright (no overlay); )
 		PORT_DIPSETTING (	0x00, "Cocktail (overlay); )
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT ( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER3 );
@@ -157,7 +157,7 @@ public class warlord
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_COIN3 );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_DIPNAME(0x03, 0x00, "Language" );
 		PORT_DIPSETTING (	0x00, "English" );
 		PORT_DIPSETTING (	0x01, "French" );
@@ -172,7 +172,7 @@ public class warlord
 		PORT_DIPSETTING (	0x10, "1p = 1, 2p = 2" );
 		PORT_DIPSETTING (	0x20, "1p/2p = 2 credits" );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_DIPNAME(0x03, 0x02, DEF_STR( "Coinage") );
 		PORT_DIPSETTING (	0x03, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING (	0x02, DEF_STR( "1C_1C") );
@@ -194,16 +194,16 @@ public class warlord
 		PORT_DIPSETTING (	0x80, "6 credits/5 coins" );
 	
 		/* IN4-7 fake to control player paddles */
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOG( 0xff, 0x80, IPT_PADDLE | IPF_PLAYER1, 50, 10, 0x1d, 0xcb );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOG( 0xff, 0x80, IPT_PADDLE | IPF_PLAYER2, 50, 10, 0x1d, 0xcb );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOG( 0xff, 0x80, IPT_PADDLE | IPF_PLAYER3, 50, 10, 0x1d, 0xcb );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOG( 0xff, 0x80, IPT_PADDLE | IPF_PLAYER4, 50, 10, 0x1d, 0xcb );
 	INPUT_PORTS_END(); }}; 
 	

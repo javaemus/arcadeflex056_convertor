@@ -242,7 +242,7 @@ public class atarig1
 	 *************************************/
 	
 	static InputPortPtr input_ports_hydra = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* fc0000 */
+		PORT_START(); 		/* fc0000 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_BUTTON5 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_BUTTON6 );
@@ -254,15 +254,15 @@ public class atarig1
 		PORT_SERVICE( 0x4000, IP_ACTIVE_LOW );
 		PORT_BIT( 0x8000, IP_ACTIVE_HIGH, IPT_VBLANK );
 	
-		PORT_START		/* ADC 0 @ fc8000 */
+		PORT_START(); 		/* ADC 0 @ fc8000 */
 		PORT_ANALOG( 0x00ff, 0x0080, IPT_AD_STICK_X, 50, 10, 0, 255 );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* ADC 1 @ fc8000 */
+		PORT_START(); 		/* ADC 1 @ fc8000 */
 		PORT_ANALOG( 0x00ff, 0x0080, IPT_AD_STICK_Y, 70, 10, 0, 255 );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* ADC 2 @ fc8000 */
+		PORT_START();       /* ADC 2 @ fc8000 */
 		PORT_ANALOG( 0xff, 0x00, IPT_PEDAL, 100, 16, 0x00, 0xff );
 	
 		JSA_II_PORT		/* audio board port */
@@ -270,7 +270,7 @@ public class atarig1
 	
 	
 	static InputPortPtr input_ports_pitfight = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* fc0000 */
+		PORT_START(); 		/* fc0000 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER1 );
@@ -285,7 +285,7 @@ public class atarig1
 		PORT_SERVICE( 0x4000, IP_ACTIVE_LOW );
 		PORT_BIT( 0x8000, IP_ACTIVE_HIGH, IPT_VBLANK );
 	
-		PORT_START      /* fc8000 */
+		PORT_START();       /* fc8000 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_PLAYER2 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_PLAYER2 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER2 );
@@ -305,10 +305,10 @@ public class atarig1
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_START3 );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* not used */
+		PORT_START();       /* not used */
 		PORT_BIT( 0xffff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* not used */
+		PORT_START();       /* not used */
 		PORT_BIT( 0xffff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
 		JSA_II_PORT		/* audio board port */

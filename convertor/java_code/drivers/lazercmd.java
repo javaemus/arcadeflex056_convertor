@@ -498,21 +498,21 @@ public class lazercmd
 	
 	
 	static InputPortPtr input_ports_lazercmd = new InputPortPtr(){ public void handler() { 
-		PORT_START					   /* IN0 player 1 controls */
+		PORT_START(); 					   /* IN0 player 1 controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER1 );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_PLAYER1 );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START					   /* IN1 player 2 controls */
+		PORT_START(); 					   /* IN1 player 2 controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER2 );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_PLAYER2 );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START					   /* IN2 dip switch */
+		PORT_START(); 					   /* IN2 dip switch */
 		PORT_DIPNAME( 0x03, 0x03, "Game Time" );
 		PORT_DIPSETTING(	0x00, "60 seconds" );
 		PORT_DIPSETTING(	0x01, "90 seconds" );
@@ -529,7 +529,7 @@ public class lazercmd
 		PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x80, DEF_STR( "On") );
 	
-		PORT_START					   /* IN3 coinage & start */
+		PORT_START(); 					   /* IN3 coinage & start */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "1C_1C") );
@@ -538,7 +538,7 @@ public class lazercmd
 		PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0xf0, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START					   /* IN4 player 1 + 2 buttons */
+		PORT_START(); 					   /* IN4 player 1 + 2 buttons */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
@@ -547,19 +547,19 @@ public class lazercmd
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_medlanes = new InputPortPtr(){ public void handler() { 
-		PORT_START					   /* IN0 player 1 controls */
+		PORT_START(); 					   /* IN0 player 1 controls */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START					   /* IN1 player 1 controls */
+		PORT_START(); 					   /* IN1 player 1 controls */
 		PORT_BITX(0x01, IP_ACTIVE_LOW, 0,"Hook Left", KEYCODE_Z, 0 );
 		PORT_BITX(0x02, IP_ACTIVE_LOW, 0,"Hook Right", KEYCODE_X, 0 );
 		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNUSED);
 	
-		PORT_START					   /* IN2 dip switch */
+		PORT_START(); 					   /* IN2 dip switch */
 		PORT_DIPNAME( 0x01, 0x01, "Game Timer" );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "On") );
@@ -577,7 +577,7 @@ public class lazercmd
 		PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x80, DEF_STR( "On") );
 	
-		PORT_START					   /* IN3 coinage & start */
+		PORT_START(); 					   /* IN3 coinage & start */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "1C_1C") );
@@ -585,26 +585,26 @@ public class lazercmd
 		PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0xf4, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START					   /* IN4 not used */
+		PORT_START(); 					   /* IN4 not used */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_bbonk = new InputPortPtr(){ public void handler() { 
-		PORT_START					   /* IN0 player 1 controls */
+		PORT_START(); 					   /* IN0 player 1 controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER1 );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_PLAYER1 );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START					   /* IN1 player 2 controls */
+		PORT_START(); 					   /* IN1 player 2 controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER2 );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_PLAYER2 );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START					   /* IN2 dip switch */
+		PORT_START(); 					   /* IN2 dip switch */
 		PORT_DIPNAME( 0x03, 0x02, "Games to win" );
 		PORT_DIPSETTING(	0x02, "2" );
 		PORT_DIPSETTING(	0x03, "3" );
@@ -619,7 +619,7 @@ public class lazercmd
 		PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x80, DEF_STR( "On") );
 	
-		PORT_START					   /* IN3 coinage & start */
+		PORT_START(); 					   /* IN3 coinage & start */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "1C_1C") );
@@ -627,7 +627,7 @@ public class lazercmd
 		PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0xf4, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START					   /* IN4 not used */
+		PORT_START(); 					   /* IN4 not used */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 
 	

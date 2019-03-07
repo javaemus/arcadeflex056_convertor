@@ -77,7 +77,7 @@ public class superqix
 	
 	
 	static InputPortPtr input_ports_superqix = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_4WAY );
@@ -87,7 +87,7 @@ public class superqix
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_VBLANK );/* ??? */
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_4WAY | IPF_COCKTAIL );
@@ -99,7 +99,7 @@ public class superqix
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "1C_1C") );
@@ -123,7 +123,7 @@ public class superqix
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START	/* DSW2 */
+		PORT_START(); 	/* DSW2 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x02, "Easy" );
 		PORT_DIPSETTING(    0x03, "Normal" );
@@ -145,7 +145,7 @@ public class superqix
 		PORT_DIPSETTING(    0x40, "80%" );
 		PORT_DIPSETTING(    0x00, "85%" );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1 );

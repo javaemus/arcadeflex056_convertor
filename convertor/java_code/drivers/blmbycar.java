@@ -164,7 +164,7 @@ public class blmbycar
 	
 	static InputPortPtr input_ports_blmbycar = new InputPortPtr(){ public void handler() { 
 	
-		PORT_START	// IN0 - $700000.w
+		PORT_START(); 	// IN0 - $700000.w
 		PORT_DIPNAME( 0x0003, 0x0003, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(      0x0002, "Easy"    );
 		PORT_DIPSETTING(      0x0003, "Normal"  );
@@ -211,7 +211,7 @@ public class blmbycar
 		PORT_DIPSETTING(      0x8000, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
 	
-		PORT_START	// IN1 - $700002.w
+		PORT_START(); 	// IN1 - $700002.w
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN	| IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER1 );
@@ -230,10 +230,10 @@ public class blmbycar
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_START1  );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_START2  );
 	
-		PORT_START	// IN2 - $700004.w
+		PORT_START(); 	// IN2 - $700004.w
 		PORT_ANALOG ( 0x00ff, 0x0080, IPT_AD_STICK_X, 30, 1, 0x00, 0xff );
 	
-		PORT_START	// IN3 - $700006.w
+		PORT_START(); 	// IN3 - $700006.w
 		PORT_BIT( 0xffff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 	INPUT_PORTS_END(); }}; 

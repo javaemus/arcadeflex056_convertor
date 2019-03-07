@@ -209,7 +209,7 @@ public class seicross
 	
 	
 	static InputPortPtr input_ports_friskyt = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY );
@@ -219,7 +219,7 @@ public class seicross
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_START2 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
@@ -231,7 +231,7 @@ public class seicross
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START      /* Test */
+		PORT_START();       /* Test */
 		PORT_DIPNAME( 0x01, 0x00, "Test Mode" );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -242,7 +242,7 @@ public class seicross
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_radrad = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY );
@@ -252,7 +252,7 @@ public class seicross
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_START2 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
@@ -262,12 +262,12 @@ public class seicross
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_BUTTON2 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START      /* Test */
+		PORT_START();       /* Test */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON2 | IPF_COCKTAIL );
 		PORT_BIT( 0xfc, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused */
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
@@ -281,7 +281,7 @@ public class seicross
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		PORT_BIT( 0xf0, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* DSW2 */
+		PORT_START(); 	/* DSW2 */
 		PORT_DIPNAME( 0x07, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x00, "0" );
 		PORT_DIPSETTING(    0x01, "1" );
@@ -296,7 +296,7 @@ public class seicross
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_BIT( 0xf0, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* DSW3 */
+		PORT_START(); 	/* DSW3 */
 		PORT_DIPNAME( 0x0f, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x08, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x09, DEF_STR( "2C_2C") );
@@ -318,7 +318,7 @@ public class seicross
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_seicross = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY );
@@ -328,7 +328,7 @@ public class seicross
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_START2 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
@@ -338,14 +338,14 @@ public class seicross
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_BUTTON1 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_COCKTAIL );
 	
-		PORT_START      /* Test */
+		PORT_START();       /* Test */
 		PORT_SERVICE( 0x01, IP_ACTIVE_HIGH );
 		PORT_DIPNAME( 0x02, 0x00, "Connection Error" );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "On") );
 		PORT_BIT( 0xfc, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused */
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -359,7 +359,7 @@ public class seicross
 		PORT_DIPSETTING(    0x0c, "3" );
 		PORT_BIT( 0xf0, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* DSW2 */
+		PORT_START(); 	/* DSW2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
@@ -373,7 +373,7 @@ public class seicross
 		PORT_DIPSETTING(    0x0c, "5" );
 		PORT_BIT( 0xf0, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* DSW3 */
+		PORT_START(); 	/* DSW3 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "3C_1C") );
@@ -386,7 +386,7 @@ public class seicross
 		PORT_DIPSETTING(    0x0c, DEF_STR( "1C_6C") );
 		PORT_BIT( 0xf0, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* Debug */
+		PORT_START(); 	/* Debug */
 		PORT_BIT( 0x1f, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_DIPNAME( 0x20, 0x20, "Debug Mode" );
 		PORT_DIPSETTING(    0x20, DEF_STR( "Off") );

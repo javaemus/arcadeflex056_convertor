@@ -42,7 +42,7 @@ public class minivadr
 	
 	
 	static InputPortPtr input_ports_minivadr = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 );

@@ -185,7 +185,7 @@ public class skullxbo
 	 *************************************/
 	
 	static InputPortPtr input_ports_skullxbo = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* ff5800 */
+		PORT_START();       /* ff5800 */
 		PORT_BIT( 0x00ff, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x0100, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0x0200, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
@@ -196,7 +196,7 @@ public class skullxbo
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_PLAYER1 );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_PLAYER1 );
 	
-		PORT_START      /* ff5802 */
+		PORT_START();       /* ff5802 */
 		PORT_BIT( 0x000f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x0010, IP_ACTIVE_HIGH, IPT_UNUSED );/* HBLANK */
 		PORT_BIT( 0x0020, IP_ACTIVE_HIGH, IPT_VBLANK );

@@ -90,7 +90,7 @@ public class z80bw
 	
 	
 	static InputPortPtr input_ports_astinvad = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_START1 );
@@ -100,7 +100,7 @@ public class z80bw
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "3" );
 		PORT_DIPSETTING(    0x01, "4" );
@@ -119,13 +119,13 @@ public class z80bw
 		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_2WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_PLAYER2 );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_DIPNAME( 0x01, 0x00, "Freeze" );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
 		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START	/* FAKE - select cabinet type */
+		PORT_START(); 	/* FAKE - select cabinet type */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
@@ -133,7 +133,7 @@ public class z80bw
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_kamikaze = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_START1 );
@@ -143,7 +143,7 @@ public class z80bw
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x03, "3" );
 		PORT_DIPSETTING(    0x01, "4" );
@@ -161,13 +161,13 @@ public class z80bw
 		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_2WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_PLAYER2 );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_DIPNAME( 0x01, 0x00, "Freeze" );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
 		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START	/* FAKE - select cabinet type */
+		PORT_START(); 	/* FAKE - select cabinet type */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
@@ -262,7 +262,7 @@ public class z80bw
 	
 	
 	static InputPortPtr input_ports_spaceint = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2  );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_2WAY);
@@ -272,7 +272,7 @@ public class z80bw
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_2WAY | IPF_PLAYER2);
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER2);
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -297,7 +297,7 @@ public class z80bw
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		/* The coin slots are not memory mapped. Coin insertion causes a NMI. */
 		/* This fake input port is used by the interrupt */
 		/* handler to be notified of coin insertions. We use IMPULSE to */
@@ -305,7 +305,7 @@ public class z80bw
 		/* user releases the key. */
 		PORT_BIT_IMPULSE( 0x01, IP_ACTIVE_HIGH, IPT_COIN1, 1 );
 	
-		PORT_START	/* FAKE - select cabinet type */
+		PORT_START(); 	/* FAKE - select cabinet type */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );

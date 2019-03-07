@@ -404,7 +404,7 @@ public class thunderx
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_scontra = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* COINSW */
+		PORT_START(); 	/* COINSW */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN3 );
@@ -414,7 +414,7 @@ public class thunderx
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* PLAYER 1 INPUTS */
+		PORT_START(); 	/* PLAYER 1 INPUTS */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
@@ -424,7 +424,7 @@ public class thunderx
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* PLAYER 2 INPUTS */
+		PORT_START(); 	/* PLAYER 2 INPUTS */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER2 );
@@ -434,7 +434,7 @@ public class thunderx
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* DSW #1 */
+		PORT_START(); 	/* DSW #1 */
 		PORT_DIPNAME( 0x0f, 0x0f, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x05, DEF_STR( "3C_1C") );
@@ -470,7 +470,7 @@ public class thunderx
 		PORT_DIPSETTING(    0x90, DEF_STR( "1C_7C") );
 	//	PORT_DIPSETTING(    0x00, "Invalid" );
 	
-		PORT_START	/* DSW #2 */
+		PORT_START(); 	/* DSW #2 */
 		PORT_DIPNAME( 0x03, 0x02, DEF_STR( "Lives") );
 		PORT_DIPSETTING(	0x03, "2" );
 		PORT_DIPSETTING(	0x02, "3" );
@@ -493,7 +493,7 @@ public class thunderx
 		PORT_DIPSETTING(	0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "On") );
 	
-		PORT_START	/* DSW #3 */
+		PORT_START(); 	/* DSW #3 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "On") );
@@ -508,7 +508,7 @@ public class thunderx
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_thunderx = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN3 );
@@ -518,7 +518,7 @@ public class thunderx
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* PLAYER 1 INPUTS */
+		PORT_START(); 	/* PLAYER 1 INPUTS */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
@@ -528,7 +528,7 @@ public class thunderx
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* PLAYER 2 INPUTS */
+		PORT_START(); 	/* PLAYER 2 INPUTS */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER2 );
@@ -538,7 +538,7 @@ public class thunderx
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x0f, 0x0f, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x05, DEF_STR( "3C_1C") );
@@ -574,7 +574,7 @@ public class thunderx
 		PORT_DIPSETTING(    0x90, DEF_STR( "1C_7C") );
 	//	PORT_DIPSETTING(    0x00, "Invalid" );
 	
-	 	PORT_START
+	 	PORT_START(); 
 		PORT_DIPNAME( 0x03, 0x02, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x03, "2" );
 		PORT_DIPSETTING(    0x02, "3" );
@@ -597,7 +597,7 @@ public class thunderx
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );

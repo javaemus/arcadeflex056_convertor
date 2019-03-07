@@ -150,7 +150,7 @@ public class galpanic
 	
 	
 	static InputPortPtr input_ports_galpanic = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x0001, 0x0001, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
@@ -180,7 +180,7 @@ public class galpanic
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x0003, 0x0003, "Difficulty?" );
 		PORT_DIPSETTING(      0x0002, "Easy?" );
 		PORT_DIPSETTING(      0x0003, "Normal?" );
@@ -212,7 +212,7 @@ public class galpanic
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x00ff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x0100, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x0200, IP_ACTIVE_LOW, IPT_START2 );
@@ -225,7 +225,7 @@ public class galpanic
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_newfant = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x0001, 0x0001, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
@@ -259,7 +259,7 @@ public class galpanic
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x0001, 0x0001, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
@@ -289,7 +289,7 @@ public class galpanic
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x00ff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x0100, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x0200, IP_ACTIVE_LOW, IPT_START2 );
@@ -302,7 +302,7 @@ public class galpanic
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_missw96 = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x0001, 0x0001, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
@@ -336,7 +336,7 @@ public class galpanic
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x0001, 0x0001, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
@@ -368,7 +368,7 @@ public class galpanic
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x00ff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x0100, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x0200, IP_ACTIVE_LOW, IPT_START2 );

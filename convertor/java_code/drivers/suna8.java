@@ -1353,13 +1353,13 @@ public class suna8
 	
 	static InputPortPtr input_ports_hardhead = new InputPortPtr(){ public void handler() { 
 	
-		PORT_START	// IN0 - Player 1 - $da00 (ip = 0)
+		PORT_START(); 	// IN0 - Player 1 - $da00 (ip = 0)
 		JOY(1)
 	
-		PORT_START	// IN1 - Player 2 - $da00 (ip = 1)
+		PORT_START(); 	// IN1 - Player 2 - $da00 (ip = 1)
 		JOY(2)
 	
-		PORT_START	// IN2 - DSW 1 - $da00 (ip = 2)
+		PORT_START(); 	// IN2 - DSW 1 - $da00 (ip = 2)
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1385,7 +1385,7 @@ public class suna8
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	// IN3 - DSW 2 - $da00 (ip = 3)
+		PORT_START(); 	// IN3 - DSW 2 - $da00 (ip = 3)
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1417,13 +1417,13 @@ public class suna8
 	
 	static InputPortPtr input_ports_rranger = new InputPortPtr(){ public void handler() { 
 	
-		PORT_START	// IN0 - Player 1 - $c002
+		PORT_START(); 	// IN0 - Player 1 - $c002
 		JOY(1)
 	
-		PORT_START	// IN1 - Player 2 - $c003
+		PORT_START(); 	// IN1 - Player 2 - $c003
 		JOY(2)
 	
-		PORT_START	// IN2 - DSW 1 - $c280
+		PORT_START(); 	// IN2 - DSW 1 - $c280
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "5C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "4C_1C") );
@@ -1448,7 +1448,7 @@ public class suna8
 		PORT_DIPSETTING(    0x40, "Harder" );
 		PORT_DIPSETTING(    0x00, "Hardest" );
 	
-		PORT_START	// IN3 - DSW 2 - $c2c0
+		PORT_START(); 	// IN3 - DSW 2 - $c2c0
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1482,13 +1482,13 @@ public class suna8
 	
 	static InputPortPtr input_ports_brickzn = new InputPortPtr(){ public void handler() { 
 	
-		PORT_START	// IN0 - Player 1 - $c100
+		PORT_START(); 	// IN0 - Player 1 - $c100
 		JOY(1)
 	
-		PORT_START	// IN1 - Player 2 - $c101
+		PORT_START(); 	// IN1 - Player 2 - $c101
 		JOY(2)
 	
-		PORT_START	// IN2 - DSW 1 - $c102
+		PORT_START(); 	// IN2 - DSW 1 - $c102
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coinage") );	// rom 38:b840
 		PORT_DIPSETTING(    0x00, DEF_STR( "5C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "4C_1C") );
@@ -1515,7 +1515,7 @@ public class suna8
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	// IN3 - DSW 2 - $c103
+		PORT_START(); 	// IN3 - DSW 2 - $c103
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1540,10 +1540,10 @@ public class suna8
 		PORT_DIPSETTING(    0x40, "4" );
 		PORT_DIPSETTING(    0x00, "5" );
 	
-		PORT_START	// IN4 - Player 1 - $c108
+		PORT_START(); 	// IN4 - Player 1 - $c108
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_X | IPF_REVERSE, 50, 0, 0, 0);
 	
-		PORT_START	// IN5 - Player 2 - $c10c
+		PORT_START(); 	// IN5 - Player 2 - $c10c
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_X | IPF_REVERSE, 50, 0, 0, 0);
 	
 	INPUT_PORTS_END(); }}; 
@@ -1555,13 +1555,13 @@ public class suna8
 	
 	static InputPortPtr input_ports_hardhea2 = new InputPortPtr(){ public void handler() { 
 	
-		PORT_START	// IN0 - Player 1 - $c000
+		PORT_START(); 	// IN0 - Player 1 - $c000
 		JOY(1)
 	
-		PORT_START	// IN1 - Player 2 - $c001
+		PORT_START(); 	// IN1 - Player 2 - $c001
 		JOY(2)
 	
-		PORT_START	// IN2 - DSW 1 - $c002
+		PORT_START(); 	// IN2 - DSW 1 - $c002
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "5C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "4C_1C") );
@@ -1585,7 +1585,7 @@ public class suna8
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	// IN3 - DSW 2 - $c003
+		PORT_START(); 	// IN3 - DSW 2 - $c003
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );

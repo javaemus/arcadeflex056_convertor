@@ -148,7 +148,7 @@ public class tail2nos
 	
 	
 	static InputPortPtr input_ports_tail2nos = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY );
@@ -166,7 +166,7 @@ public class tail2nos
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x000f, 0x0000, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(      0x0009, DEF_STR( "5C_1C") );
 		PORT_DIPSETTING(      0x0008, DEF_STR( "4C_1C") );

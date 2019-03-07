@@ -650,7 +650,7 @@ public class pstadium
 	
 	
 	static InputPortPtr input_ports_pstadium = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x03, "1 (Easy); )
 		PORT_DIPSETTING(    0x02, "2" );
@@ -675,10 +675,10 @@ public class pstadium
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -696,7 +696,7 @@ public class pstadium
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_triplew1 = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x03, "1 (Easy); )
 		PORT_DIPSETTING(    0x02, "2" );
@@ -721,10 +721,10 @@ public class pstadium
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -742,7 +742,7 @@ public class pstadium
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_ntopstar = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x03, "1 (Easy); )
 		PORT_DIPSETTING(    0x02, "2" );
@@ -767,10 +767,10 @@ public class pstadium
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -788,7 +788,7 @@ public class pstadium
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_mjlstory = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x03, "1 (Easy); )
 		PORT_DIPSETTING(    0x02, "2" );
@@ -813,10 +813,10 @@ public class pstadium
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -834,7 +834,7 @@ public class pstadium
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_vanilla = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x03, "1 (Easy); )
 		PORT_DIPSETTING(    0x02, "2" );
@@ -859,10 +859,10 @@ public class pstadium
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -883,7 +883,7 @@ public class pstadium
 	
 		// I don't have manual for this game.
 	
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x07, 0x07, "Game Out" );
 		PORT_DIPSETTING(    0x07, "90% (Easy); )
 		PORT_DIPSETTING(    0x06, "85%" );
@@ -909,7 +909,7 @@ public class pstadium
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -933,7 +933,7 @@ public class pstadium
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -951,7 +951,7 @@ public class pstadium
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_qmhayaku = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x03, "1 (Easy); )
 		PORT_DIPSETTING(    0x02, "2" );
@@ -976,10 +976,10 @@ public class pstadium
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -997,7 +997,7 @@ public class pstadium
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_galkoku = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "1 (Easy); )
 		PORT_DIPSETTING(    0x06, "2" );
@@ -1019,10 +1019,10 @@ public class pstadium
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -1043,7 +1043,7 @@ public class pstadium
 	
 		// I don't have manual for this game.
 	
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 1-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1069,7 +1069,7 @@ public class pstadium
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 2-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1095,7 +1095,7 @@ public class pstadium
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -1116,7 +1116,7 @@ public class pstadium
 	
 		// I don't have manual for this game.
 	
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 1-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1142,7 +1142,7 @@ public class pstadium
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 2-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1168,7 +1168,7 @@ public class pstadium
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -1189,7 +1189,7 @@ public class pstadium
 	
 		// I don't have manual for this game.
 	
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 1-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1215,7 +1215,7 @@ public class pstadium
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 2-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1241,7 +1241,7 @@ public class pstadium
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -1262,7 +1262,7 @@ public class pstadium
 	
 		// I don't have manual for this game.
 	
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 1-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1288,7 +1288,7 @@ public class pstadium
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1314,7 +1314,7 @@ public class pstadium
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -1335,7 +1335,7 @@ public class pstadium
 	
 		// I don't have manual for this game.
 	
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 1-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1361,7 +1361,7 @@ public class pstadium
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 2-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1387,7 +1387,7 @@ public class pstadium
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -1405,7 +1405,7 @@ public class pstadium
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_av2mj1 = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "1 (Easy); )
 		PORT_DIPSETTING(    0x06, "2" );
@@ -1426,7 +1426,7 @@ public class pstadium
 		PORT_DIPSETTING(    0x40, "Type-C" );
 		PORT_DIPSETTING(    0x00, "Type-D" );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x03, 0x03, "Attract mode" );
 		PORT_DIPSETTING(    0x03, "No attract mode" );
 		PORT_DIPSETTING(    0x02, "Once per 10min." );
@@ -1441,7 +1441,7 @@ public class pstadium
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET

@@ -352,14 +352,14 @@ public class bublbobl
 	
 	
 	static InputPortPtr input_ports_bublbobl = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_TILT );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, "Language" );
 		PORT_DIPSETTING(    0x01, "Japanese" );
 		PORT_DIPSETTING(    0x00, "English" );
@@ -381,7 +381,7 @@ public class bublbobl
 		PORT_DIPSETTING(    0x00, DEF_STR( "2C_3C") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_2C") );
 	
-		PORT_START      /* DSW1 */
+		PORT_START();       /* DSW1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x02, "Easy" );
 		PORT_DIPSETTING(    0x03, "Medium" );
@@ -404,7 +404,7 @@ public class bublbobl
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -414,7 +414,7 @@ public class bublbobl
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -426,7 +426,7 @@ public class bublbobl
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_boblbobl = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, "Language" );
 		PORT_DIPSETTING(    0x00, "English" );
 		PORT_DIPSETTING(    0x01, "Japanese" );
@@ -448,7 +448,7 @@ public class bublbobl
 		PORT_DIPSETTING(    0x00, DEF_STR( "2C_3C") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_2C") );
 	
-		PORT_START      /* DSW1 */
+		PORT_START();       /* DSW1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x02, "Easy" );
 		PORT_DIPSETTING(    0x03, "Medium" );
@@ -470,7 +470,7 @@ public class bublbobl
 		PORT_DIPSETTING(    0x80, "High" );
 		PORT_DIPSETTING(    0xc0, "Very High" );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN2 );
@@ -480,7 +480,7 @@ public class bublbobl
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_TILT );/* ?????*/
@@ -492,7 +492,7 @@ public class bublbobl
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_sboblbob = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, "Game" );
 		PORT_DIPSETTING(    0x01, "Bobble Bobble" );
 		PORT_DIPSETTING(    0x00, "Super Bobble Bobble" );
@@ -514,7 +514,7 @@ public class bublbobl
 		PORT_DIPSETTING(    0x00, DEF_STR( "2C_3C") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_2C") );
 	
-		PORT_START      /* DSW1 */
+		PORT_START();       /* DSW1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x02, "Easy" );
 		PORT_DIPSETTING(    0x03, "Medium" );
@@ -536,7 +536,7 @@ public class bublbobl
 		PORT_DIPSETTING(    0x80, "High" );
 		PORT_DIPSETTING(    0xc0, "Very High" );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN2 );
@@ -546,7 +546,7 @@ public class bublbobl
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_TILT );/* ?????*/
@@ -558,7 +558,7 @@ public class bublbobl
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_tokio = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
@@ -580,7 +580,7 @@ public class bublbobl
 		PORT_DIPSETTING(    0x00, DEF_STR( "2C_3C") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_2C") );
 	
-		PORT_START      /* DSW1 */
+		PORT_START();       /* DSW1 */
 		PORT_DIPNAME( 0x03, 0x02, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x03, "Easy" );
 		PORT_DIPSETTING(    0x02, "Medium" );
@@ -603,7 +603,7 @@ public class bublbobl
 		PORT_DIPSETTING(    0x00, "English" );
 		PORT_DIPSETTING(    0x80, "Japanese" );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_TILT );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN1 );
@@ -613,7 +613,7 @@ public class bublbobl
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_2WAY );
@@ -623,7 +623,7 @@ public class bublbobl
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_2WAY | IPF_COCKTAIL );

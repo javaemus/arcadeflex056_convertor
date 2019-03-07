@@ -477,7 +477,7 @@ public class playch10
 	/******************************************************************************/
 	
 	static InputPortPtr input_ports_playch10 = new InputPortPtr(){ public void handler() { 
-	    PORT_START	/* These are the BIOS buttons */
+	    PORT_START(); 	/* These are the BIOS buttons */
 	    PORT_BITX(0x01, IP_ACTIVE_HIGH, IPT_SERVICE2, "Channel Select", KEYCODE_9, IP_JOY_NONE );/* CHSelect 		*/
 	    PORT_BITX(0x02, IP_ACTIVE_HIGH, IPT_SERVICE3, "Enter", KEYCODE_0, IP_JOY_NONE );			/* Enter button 	*/
 	    PORT_BITX(0x04, IP_ACTIVE_HIGH, IPT_SERVICE4, "Reset", KEYCODE_MINUS, IP_JOY_NONE );		/* Reset button 	*/
@@ -487,7 +487,7 @@ public class playch10
 	    PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_SERVICE1 );											/* Service button	*/
 	    PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_COIN1 );												/* Coin 1			*/
 	
-	    PORT_START	/* DSW A */
+	    PORT_START(); 	/* DSW A */
 		PORT_DIPNAME( 0x3f, 0x00, "Units of time (coin A/coin B); )
 		PORT_DIPSETTING(    0x00, "300/0" );
 		PORT_DIPSETTING(    0x01, "300/100" );
@@ -558,7 +558,7 @@ public class playch10
 		PORT_DIPSETTING(    0x40, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_HIGH );
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		PORT_DIPNAME( 0x40, 0x00, "Coin Mode" );
 		PORT_DIPSETTING(    0x00, "Mode 1" );
 		PORT_DIPSETTING(    0x40, "Mode 2" );
@@ -577,7 +577,7 @@ public class playch10
 		PORT_DIPSETTING(    0x00, "1 unit every 4 seconds" );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Free_Play") );
 	
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON2 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON1 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_START1 );/* select button - masked */
@@ -587,7 +587,7 @@ public class playch10
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNUSED );/* wired to 1p select button */
@@ -597,10 +597,10 @@ public class playch10
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_PLAYER2 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_PLAYER2 );
 	
-		PORT_START	/* IN2 - FAKE - Gun X pos */
+		PORT_START(); 	/* IN2 - FAKE - Gun X pos */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 70, 30, 0, 255 );
 	
-		PORT_START	/* IN3 - FAKE - Gun Y pos */
+		PORT_START(); 	/* IN3 - FAKE - Gun Y pos */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 50, 30, 0, 255 );
 	INPUT_PORTS_END(); }}; 
 	

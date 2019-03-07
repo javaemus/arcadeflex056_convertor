@@ -100,7 +100,7 @@ public class pengo
 	
 	
 	static InputPortPtr input_ports_pengo = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY );
@@ -116,7 +116,7 @@ public class pengo
 		PORT_BIT_IMPULSE( 0x40, IP_ACTIVE_LOW, IPT_COIN3, 2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL );
@@ -126,7 +126,7 @@ public class pengo
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x00, "30000" );
 		PORT_DIPSETTING(    0x01, "50000" );
@@ -150,7 +150,7 @@ public class pengo
 		PORT_DIPSETTING(    0x40, "Hard" );
 		PORT_DIPSETTING(    0x00, "Hardest" );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x0f, 0x0c, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x08, DEF_STR( "3C_1C") );

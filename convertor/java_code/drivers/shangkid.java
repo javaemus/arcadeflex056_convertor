@@ -505,7 +505,7 @@ public class shangkid
 	/***************************************************************************************/
 	
 	static InputPortPtr input_ports_dynamski = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_SERVICE1 );/* service */
@@ -515,7 +515,7 @@ public class shangkid
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );
@@ -525,7 +525,7 @@ public class shangkid
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );
@@ -535,7 +535,7 @@ public class shangkid
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(	0x01, "A" );
 		PORT_DIPSETTING(	0x02, "B" );
@@ -561,7 +561,7 @@ public class shangkid
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_chinhero = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Lives") );
 		PORT_DIPSETTING(	0x01, "3" );
 		PORT_DIPSETTING(	0x02, "4" );
@@ -584,7 +584,7 @@ public class shangkid
 		PORT_DIPSETTING(	0x80, "Hard" );
 		PORT_DIPSETTING(	0xc0, "Hardest" );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_SERVICE1 );/* service */
@@ -594,7 +594,7 @@ public class shangkid
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_PLAYER2 );
@@ -604,7 +604,7 @@ public class shangkid
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_BUTTON3 | IPF_PLAYER2 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_BUTTON4 | IPF_PLAYER2 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_4WAY );
@@ -616,7 +616,7 @@ public class shangkid
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_shangkid = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		/*	There are also two potentiometers on the PCB for volume:
 		**	RV1 - Music
 		**	RV2 - Sound Effects
@@ -645,7 +645,7 @@ public class shangkid
 		PORT_DIPSETTING(	0x80, "Hard" );
 		PORT_DIPSETTING(	0xc0, "Hardest" );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_SERVICE1 );/* service */
@@ -655,7 +655,7 @@ public class shangkid
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );/* busy flag? */
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER2 );/* kick */
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON2 | IPF_PLAYER2 );/* punch */
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNUSED );
@@ -665,7 +665,7 @@ public class shangkid
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP | IPF_PLAYER2 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_PLAYER2 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON1 );/* kick */
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON2 );/* punch */
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNUSED );

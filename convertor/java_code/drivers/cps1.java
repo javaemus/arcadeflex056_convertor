@@ -388,7 +388,7 @@ public class cps1
 	
 	
 	static InputPortPtr input_ports_forgottn = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -398,7 +398,7 @@ public class cps1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSWA */
+		PORT_START();       /* DSWA */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "3C_1C") );
@@ -424,7 +424,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWB */
+		PORT_START();       /* DSWB */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -448,7 +448,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWC */
+		PORT_START();       /* DSWC */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -474,7 +474,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -492,15 +492,15 @@ public class cps1
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOGX( 0x0fff, 0x0000, IPT_DIAL | IPF_PLAYER1, 100, 20, 0, 0, KEYCODE_Z, KEYCODE_X, 0, 0 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOGX( 0x0fff, 0x0000, IPT_DIAL | IPF_PLAYER2, 100, 20, 0, 0, KEYCODE_N, KEYCODE_M, 0, 0 );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_ghouls = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 ); /* Service, but it doesn't give any credit */
@@ -510,7 +510,7 @@ public class cps1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSWA */
+		PORT_START();       /* DSWA */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "3C_1C") );
@@ -536,7 +536,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
 	
-		PORT_START      /* DSWB */
+		PORT_START();       /* DSWB */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x04, "Easier" );
 		PORT_DIPSETTING(    0x05, "Very Easy" );
@@ -561,7 +561,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWC */
+		PORT_START();       /* DSWC */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x03, "3" );
 		PORT_DIPSETTING(    0x02, "4" );
@@ -584,7 +584,7 @@ public class cps1
 		PORT_DIPSETTING(    0x40, DEF_STR( "Yes") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
@@ -604,7 +604,7 @@ public class cps1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_strider = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN1 );
@@ -614,7 +614,7 @@ public class cps1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSWA */
+		PORT_START();       /* DSWA */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "3C_1C") );
@@ -639,7 +639,7 @@ public class cps1
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
 		/* 0x40 Cocktail */
 	
-		PORT_START      /* DSWB */
+		PORT_START();       /* DSWB */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x04, "Easiest" );
 		PORT_DIPSETTING(    0x05, "Easier" );
@@ -665,7 +665,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWC */
+		PORT_START();       /* DSWC */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x03, "3" );
 		PORT_DIPSETTING(    0x02, "4" );
@@ -688,7 +688,7 @@ public class cps1
 		PORT_DIPSETTING(    0x40, DEF_STR( "Yes") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -708,7 +708,7 @@ public class cps1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_dwj = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -718,7 +718,7 @@ public class cps1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSWA */
+		PORT_START();       /* DSWA */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "3C_1C") );
@@ -743,7 +743,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWB */
+		PORT_START();       /* DSWB */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x04, "Very Easy" );
 		PORT_DIPSETTING(    0x05, "Easy 2" );
@@ -769,7 +769,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWC */
+		PORT_START();       /* DSWC */
 		PORT_DIPNAME( 0x01, 0x01, "Freeze" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -793,7 +793,7 @@ public class cps1
 		PORT_DIPSETTING(    0x40, DEF_STR( "Yes") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -813,7 +813,7 @@ public class cps1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_willow = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -823,7 +823,7 @@ public class cps1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSWA */
+		PORT_START();       /* DSWA */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "3C_1C") );
@@ -848,7 +848,7 @@ public class cps1
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
 		/* 0x40 Cocktail */
 	
-		PORT_START      /* DSWB */
+		PORT_START();       /* DSWB */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x04, "Very easy" );
 		PORT_DIPSETTING(    0x05, "Easier" );
@@ -876,7 +876,7 @@ public class cps1
 		 power up are on the player gets sword and magic item without having
 		 to buy them. To test */
 	
-		PORT_START      /* DSWC */
+		PORT_START();       /* DSWC */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x02, "1" );
 		PORT_DIPSETTING(    0x03, "2" );
@@ -898,7 +898,7 @@ public class cps1
 		PORT_DIPSETTING(    0x40, DEF_STR( "Yes") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -918,7 +918,7 @@ public class cps1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_unsquad = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -928,7 +928,7 @@ public class cps1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSWA */
+		PORT_START();       /* DSWA */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "3C_1C") );
@@ -954,7 +954,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWB */
+		PORT_START();       /* DSWB */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "Super Easy" );
 		PORT_DIPSETTING(    0x06, "Very Easy" );
@@ -980,7 +980,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWC */
+		PORT_START();       /* DSWC */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1004,7 +1004,7 @@ public class cps1
 		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -1024,7 +1024,7 @@ public class cps1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_ffight = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -1034,7 +1034,7 @@ public class cps1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSWA */
+		PORT_START();       /* DSWA */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "3C_1C") );
@@ -1060,7 +1060,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWB */
+		PORT_START();       /* DSWB */
 		PORT_DIPNAME( 0x07, 0x04, "Difficulty Level 1" );
 		PORT_DIPSETTING(    0x07, "Very easy" );
 		PORT_DIPSETTING(    0x06, "Easier" );
@@ -1084,7 +1084,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWC */
+		PORT_START();       /* DSWC */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "1" );
 		PORT_DIPSETTING(    0x03, "2" );
@@ -1107,7 +1107,7 @@ public class cps1
 		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -1127,7 +1127,7 @@ public class cps1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_1941 = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -1137,7 +1137,7 @@ public class cps1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSWA */
+		PORT_START();       /* DSWA */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "3C_1C") );
@@ -1163,7 +1163,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWB */
+		PORT_START();       /* DSWB */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "0 (Easier); )
 		PORT_DIPSETTING(    0x06, "1" );
@@ -1187,7 +1187,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, "3 Bars" );
 		PORT_DIPSETTING(    0x00, "4 Bars" );
 	
-		PORT_START      /* DSWC */
+		PORT_START();       /* DSWC */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1211,7 +1211,7 @@ public class cps1
 		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -1231,7 +1231,7 @@ public class cps1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_mercs = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -1241,7 +1241,7 @@ public class cps1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSWA */
+		PORT_START();       /* DSWA */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "3C_1C") );
@@ -1267,7 +1267,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWB */
+		PORT_START();       /* DSWB */
 		PORT_DIPNAME( 0x07, 0x04, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "Easiest" );
 		PORT_DIPSETTING(    0x06, "Very Easy" );
@@ -1293,7 +1293,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWC */
+		PORT_START();       /* DSWC */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x00, "0" );
 		PORT_DIPSETTING(    0x01, "1" );
@@ -1317,7 +1317,7 @@ public class cps1
 		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -1335,7 +1335,7 @@ public class cps1
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* Player 3 */
+		PORT_START();       /* Player 3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER3 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER3 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER3 );
@@ -1347,7 +1347,7 @@ public class cps1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_mtwins = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -1357,7 +1357,7 @@ public class cps1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSWA */
+		PORT_START();       /* DSWA */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "3C_1C") );
@@ -1383,7 +1383,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWB */
+		PORT_START();       /* DSWB */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "Super Easy" );
 		PORT_DIPSETTING(    0x06, "Very Easy" );
@@ -1408,7 +1408,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWC */
+		PORT_START();       /* DSWC */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1432,7 +1432,7 @@ public class cps1
 		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -1452,7 +1452,7 @@ public class cps1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_msword = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -1462,7 +1462,7 @@ public class cps1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSWA */
+		PORT_START();       /* DSWA */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "3C_1C") );
@@ -1488,7 +1488,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWB */
+		PORT_START();       /* DSWB */
 		PORT_DIPNAME( 0x07, 0x04, "Level 1" );
 		PORT_DIPSETTING(    0x07, "Easiest" );
 		PORT_DIPSETTING(    0x06, "Very Easy" );
@@ -1514,7 +1514,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWC */
+		PORT_START();       /* DSWC */
 		PORT_DIPNAME( 0x03, 0x03, "Vitality" );
 		PORT_DIPSETTING(    0x00, "1" );
 		PORT_DIPSETTING(    0x03, "2" );
@@ -1537,7 +1537,7 @@ public class cps1
 		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -1557,7 +1557,7 @@ public class cps1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_cawing = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -1567,7 +1567,7 @@ public class cps1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSWA */
+		PORT_START();       /* DSWA */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "3C_1C") );
@@ -1593,7 +1593,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWB */
+		PORT_START();       /* DSWB */
 		PORT_DIPNAME( 0x07, 0x07, "Difficulty Level (Enemy Strength); )
 		PORT_DIPSETTING(    0x07, "Very Easy" );
 		PORT_DIPSETTING(    0x06, "Easy 2" );
@@ -1618,7 +1618,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWC */
+		PORT_START();       /* DSWC */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1642,7 +1642,7 @@ public class cps1
 		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -1662,7 +1662,7 @@ public class cps1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_nemo = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -1672,7 +1672,7 @@ public class cps1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSWA */
+		PORT_START();       /* DSWA */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "3C_1C") );
@@ -1698,7 +1698,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWB */
+		PORT_START();       /* DSWB */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "Very Easy" );
 		PORT_DIPSETTING(    0x06, "Easy 1" );
@@ -1723,7 +1723,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWC */
+		PORT_START();       /* DSWC */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x02, "1" );
 		PORT_DIPSETTING(    0x03, "2" );
@@ -1746,7 +1746,7 @@ public class cps1
 		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -1766,7 +1766,7 @@ public class cps1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_sf2 = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -1776,7 +1776,7 @@ public class cps1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_SERVICE );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 	
-		PORT_START      /* DSWA */
+		PORT_START();       /* DSWA */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "3C_1C") );
@@ -1802,7 +1802,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWB */
+		PORT_START();       /* DSWB */
 		PORT_DIPNAME( 0x07, 0x04, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "Easier" );
 		PORT_DIPSETTING(    0x06, "Very Easy" );
@@ -1828,7 +1828,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWC */
+		PORT_START();       /* DSWC */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x00, "1" );
 		PORT_DIPSETTING(    0x03, "2" );
@@ -1851,7 +1851,7 @@ public class cps1
 		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -1869,7 +1869,7 @@ public class cps1
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* Extra buttons */
+		PORT_START();       /* Extra buttons */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON5 | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON6 | IPF_PLAYER1 );
@@ -1881,7 +1881,7 @@ public class cps1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_sf2j = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -1891,7 +1891,7 @@ public class cps1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_SERVICE );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 	
-		PORT_START      /* DSWA */
+		PORT_START();       /* DSWA */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "3C_1C") );
@@ -1917,7 +1917,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWB */
+		PORT_START();       /* DSWB */
 		PORT_DIPNAME( 0x07, 0x04, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "Easier" );
 		PORT_DIPSETTING(    0x06, "Very Easy" );
@@ -1943,7 +1943,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWC */
+		PORT_START();       /* DSWC */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x00, "1" );
 		PORT_DIPSETTING(    0x03, "2" );
@@ -1966,7 +1966,7 @@ public class cps1
 		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -1984,7 +1984,7 @@ public class cps1
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* Extra buttons */
+		PORT_START();       /* Extra buttons */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON5 | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON6 | IPF_PLAYER1 );
@@ -1996,7 +1996,7 @@ public class cps1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_3wonders = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -2006,7 +2006,7 @@ public class cps1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSWA */
+		PORT_START();       /* DSWA */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "3C_1C") );
@@ -2032,7 +2032,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWB */
+		PORT_START();       /* DSWB */
 		PORT_DIPNAME( 0x03, 0x03, "Action Lives" );
 		PORT_DIPSETTING(    0x03, "1" );
 		PORT_DIPSETTING(    0x02, "2" );
@@ -2054,7 +2054,7 @@ public class cps1
 		PORT_DIPSETTING(    0x40, "Hard" );
 		PORT_DIPSETTING(    0x00, "Hardest" );
 	
-		PORT_START      /* DSWC */
+		PORT_START();       /* DSWC */
 		PORT_DIPNAME( 0x03, 0x03, "Puzzle Lives" );
 		PORT_DIPSETTING(    0x03, "1" );
 		PORT_DIPSETTING(    0x02, "2" );
@@ -2076,7 +2076,7 @@ public class cps1
 		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -2096,7 +2096,7 @@ public class cps1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_kod = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );/* Service Coin, not player 3 */
@@ -2106,7 +2106,7 @@ public class cps1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );/* Test */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSWA */
+		PORT_START();       /* DSWA */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "3C_1C") );
@@ -2132,7 +2132,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWB */
+		PORT_START();       /* DSWB */
 		PORT_DIPNAME( 0x07, 0x04, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "Easiest" );
 		PORT_DIPSETTING(    0x06, "Very Easy" );
@@ -2157,7 +2157,7 @@ public class cps1
 		PORT_DIPSETTING(    0x40, "160k and every 450k" );
 		PORT_DIPSETTING(    0x00, "None" );
 	
-		PORT_START      /* DSWC */
+		PORT_START();       /* DSWC */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -2181,7 +2181,7 @@ public class cps1
 		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -2199,7 +2199,7 @@ public class cps1
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* Player 3 */
+		PORT_START();       /* Player 3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER3 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER3 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER3 );
@@ -2211,7 +2211,7 @@ public class cps1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_captcomm = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -2221,7 +2221,7 @@ public class cps1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSWA */
+		PORT_START();       /* DSWA */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "3C_1C") );
@@ -2247,7 +2247,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWB */
+		PORT_START();       /* DSWB */
 		PORT_DIPNAME( 0x07, 0x07, "Difficulty 1" );
 		PORT_DIPSETTING(    0x07, "Very Easy" );
 		PORT_DIPSETTING(    0x06, "Easy 1" );
@@ -2271,7 +2271,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, "3" );
 		PORT_DIPSETTING(    0x00, "4" );
 	
-		PORT_START      /* DSWC */
+		PORT_START();       /* DSWC */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "1" );
 		PORT_DIPSETTING(    0x03, "2" );
@@ -2294,7 +2294,7 @@ public class cps1
 		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -2314,7 +2314,7 @@ public class cps1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_knights = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN4 );/* service */
@@ -2324,7 +2324,7 @@ public class cps1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );/* TEST */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSWA */
+		PORT_START();       /* DSWA */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "3C_1C") );
@@ -2350,7 +2350,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWB */
+		PORT_START();       /* DSWB */
 		PORT_DIPNAME( 0x07, 0x04, "Player speed and vitality consumption" );
 		PORT_DIPSETTING(    0x07, "Very easy" );
 		PORT_DIPSETTING(    0x06, "Easier" );
@@ -2376,7 +2376,7 @@ public class cps1
 		PORT_DIPSETTING(    0x00, "2" );
 		PORT_DIPSETTING(    0x80, "3" );
 	
-		PORT_START      /* DSWC */
+		PORT_START();       /* DSWC */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "1" );
 		PORT_DIPSETTING(    0x03, "2" );
@@ -2399,7 +2399,7 @@ public class cps1
 		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -2417,7 +2417,7 @@ public class cps1
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* Player 3 */
+		PORT_START();       /* Player 3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER3 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER3 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER3 );
@@ -2429,7 +2429,7 @@ public class cps1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_varth = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -2439,7 +2439,7 @@ public class cps1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSWA */
+		PORT_START();       /* DSWA */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "3C_1C") );
@@ -2465,7 +2465,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWB */
+		PORT_START();       /* DSWB */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "Very Easy" );
 		PORT_DIPSETTING(    0x06, "Easy 1" );
@@ -2490,7 +2490,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWC */
+		PORT_START();       /* DSWC */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x02, "1" );
 		PORT_DIPSETTING(    0x01, "2" );
@@ -2513,7 +2513,7 @@ public class cps1
 		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -2533,7 +2533,7 @@ public class cps1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_cworld2j = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN3 );
@@ -2543,7 +2543,7 @@ public class cps1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START3 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START4 );
 	
-		PORT_START      /* DSWA */
+		PORT_START();       /* DSWA */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "3C_1C") );
@@ -2563,7 +2563,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWB */
+		PORT_START();       /* DSWB */
 		PORT_DIPNAME( 0x07, 0x06, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x06, "0" );
 		PORT_DIPSETTING(    0x05, "1" );
@@ -2581,7 +2581,7 @@ public class cps1
 		PORT_DIPSETTING(    0xa0, "4" );
 		PORT_DIPSETTING(    0xc0, "5" );
 	
-		PORT_START      /* DSWC */
+		PORT_START();       /* DSWC */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -2605,7 +2605,7 @@ public class cps1
 		PORT_DIPSETTING(    0x40, DEF_STR( "Yes") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -2625,7 +2625,7 @@ public class cps1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_wof = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -2635,19 +2635,19 @@ public class cps1
 		PORT_BITX(0x40, 0x40, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSWA (not used, EEPROM) */
+		PORT_START();       /* DSWA (not used, EEPROM) */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSWB (not used, EEPROM) */
+		PORT_START();       /* DSWB (not used, EEPROM) */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSWC */
+		PORT_START();       /* DSWC */
 		PORT_DIPNAME( 0x08, 0x08, "Freeze" );
 		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_BIT( 0xf7, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -2665,7 +2665,7 @@ public class cps1
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-	    PORT_START      /* Player 3 */
+	    PORT_START();       /* Player 3 */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER3 );
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER3 );
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER3 );
@@ -2677,7 +2677,7 @@ public class cps1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_dino = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -2687,19 +2687,19 @@ public class cps1
 		PORT_BITX(0x40, 0x40, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSWA (not used, EEPROM) */
+		PORT_START();       /* DSWA (not used, EEPROM) */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSWB (not used, EEPROM) */
+		PORT_START();       /* DSWB (not used, EEPROM) */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSWC */
+		PORT_START();       /* DSWC */
 		PORT_DIPNAME( 0x08, 0x08, "Freeze" );
 		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_BIT( 0xf7, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -2717,7 +2717,7 @@ public class cps1
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-	    PORT_START      /* Player 3 */
+	    PORT_START();       /* Player 3 */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER3 );
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER3 );
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER3 );
@@ -2729,7 +2729,7 @@ public class cps1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_punisher = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -2739,19 +2739,19 @@ public class cps1
 		PORT_BITX(0x40, 0x40, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSWA (not used, EEPROM) */
+		PORT_START();       /* DSWA (not used, EEPROM) */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSWB (not used, EEPROM) */
+		PORT_START();       /* DSWB (not used, EEPROM) */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSWC */
+		PORT_START();       /* DSWC */
 		PORT_DIPNAME( 0x08, 0x08, "Freeze" );
 		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_BIT( 0xf7, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -2771,7 +2771,7 @@ public class cps1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_slammast = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -2781,19 +2781,19 @@ public class cps1
 		PORT_BITX(0x40, 0x40, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSWA (not used, EEPROM) */
+		PORT_START();       /* DSWA (not used, EEPROM) */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSWB (not used, EEPROM) */
+		PORT_START();       /* DSWB (not used, EEPROM) */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSWC */
+		PORT_START();       /* DSWC */
 		PORT_DIPNAME( 0x08, 0x08, "Freeze" );
 		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_BIT( 0xf7, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -2811,7 +2811,7 @@ public class cps1
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER4 );
 	
-		PORT_START     /* Player 3 */
+		PORT_START();      /* Player 3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER3 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER3 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER3 );
@@ -2821,7 +2821,7 @@ public class cps1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN3 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START3 );
 	
-		PORT_START     /* Player 4 */
+		PORT_START();      /* Player 4 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER4 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER4 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER4 );
@@ -2833,7 +2833,7 @@ public class cps1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_pnickj = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -2843,7 +2843,7 @@ public class cps1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSWA */
+		PORT_START();       /* DSWA */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "3C_1C") );
@@ -2869,7 +2869,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWB */
+		PORT_START();       /* DSWB */
 		PORT_DIPNAME( 0x07, 0x04, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "Easiest" );
 		PORT_DIPSETTING(    0x06, "Very Easy" );
@@ -2893,7 +2893,7 @@ public class cps1
 		PORT_DIPSETTING(    0x40, "5 Games Match" );
 		PORT_DIPSETTING(    0x00, "7 Games Match" );
 	
-		PORT_START      /* DSWC */
+		PORT_START();       /* DSWC */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x03, "1" );
 		PORT_DIPSETTING(    0x02, "2" );
@@ -2916,7 +2916,7 @@ public class cps1
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -2936,7 +2936,7 @@ public class cps1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_qad = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN3 );
@@ -2946,7 +2946,7 @@ public class cps1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START3 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START4 );
 	
-		PORT_START      /* DSWA */
+		PORT_START();       /* DSWA */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "3C_1C") );
@@ -2972,7 +2972,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWB */
+		PORT_START();       /* DSWB */
 		PORT_DIPNAME( 0x07, 0x06, DEF_STR( "Difficulty") );
 	//	PORT_DIPSETTING(    0x07, "Very Easy" );
 		PORT_DIPSETTING(    0x06, "Very Easy" );
@@ -2997,7 +2997,7 @@ public class cps1
 	//	PORT_DIPSETTING(    0x20, "1" );
 	//	PORT_DIPSETTING(    0x00, "1" );
 	
-		PORT_START      /* DSWC */
+		PORT_START();       /* DSWC */
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Free_Play") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -3015,7 +3015,7 @@ public class cps1
 		PORT_DIPSETTING(    0x40, DEF_STR( "Yes") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -3035,7 +3035,7 @@ public class cps1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_qadj = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN3 );
@@ -3045,7 +3045,7 @@ public class cps1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START3 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START4 );
 	
-		PORT_START      /* DSWA */
+		PORT_START();       /* DSWA */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "3C_1C") );
@@ -3071,7 +3071,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWB */
+		PORT_START();       /* DSWB */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "0" );
 		PORT_DIPSETTING(    0x06, "1" );
@@ -3097,7 +3097,7 @@ public class cps1
 	//	PORT_DIPSETTING(    0x40, "2" );
 	//	PORT_DIPSETTING(    0x60, "3" );
 	
-		PORT_START      /* DSWC */
+		PORT_START();       /* DSWC */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -3121,7 +3121,7 @@ public class cps1
 		PORT_DIPSETTING(    0x40, DEF_STR( "Yes") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -3141,7 +3141,7 @@ public class cps1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_qtono2 = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN3 );
@@ -3151,7 +3151,7 @@ public class cps1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START3 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START4 );
 	
-		PORT_START      /* DSWA */
+		PORT_START();       /* DSWA */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "3C_1C") );
@@ -3177,7 +3177,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWB */
+		PORT_START();       /* DSWB */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "1" );
 		PORT_DIPSETTING(    0x06, "2" );
@@ -3203,7 +3203,7 @@ public class cps1
 	//	PORT_DIPSETTING(    0x20, "?" );
 	//	PORT_DIPSETTING(    0x00, "?" );
 	
-		PORT_START      /* DSWC */
+		PORT_START();       /* DSWC */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -3227,7 +3227,7 @@ public class cps1
 		PORT_DIPSETTING(    0x40, DEF_STR( "Yes") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -3247,7 +3247,7 @@ public class cps1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_pang3 = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -3257,18 +3257,18 @@ public class cps1
 		PORT_BITX(0x40, 0x40, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSWA (not used, EEPROM) */
+		PORT_START();       /* DSWA (not used, EEPROM) */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSWB (not used, EEPROM) */
+		PORT_START();       /* DSWB (not used, EEPROM) */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSWC */
+		PORT_START();       /* DSWC */
 		PORT_DIPNAME( 0x08, 0x08, "Freeze" );
 		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -3288,7 +3288,7 @@ public class cps1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_megaman = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -3298,7 +3298,7 @@ public class cps1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSWA */
+		PORT_START();       /* DSWA */
 		PORT_DIPNAME( 0x1f, 0x1f, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x0f, DEF_STR( "9C_1C") );
 		PORT_DIPSETTING(    0x10, DEF_STR( "8C_1C") );
@@ -3329,7 +3329,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWB */
+		PORT_START();       /* DSWB */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x03, "Easy" );
 		PORT_DIPSETTING(    0x02, "Normal" );
@@ -3353,7 +3353,7 @@ public class cps1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* DSWC */
+		PORT_START();       /* DSWC */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -3377,7 +3377,7 @@ public class cps1
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );

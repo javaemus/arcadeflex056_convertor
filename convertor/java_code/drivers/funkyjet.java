@@ -180,7 +180,7 @@ public class funkyjet
 	/******************************************************************************/
 	
 	static InputPortPtr input_ports_funkyjet = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* Player 1 controls */
+		PORT_START(); 	/* Player 1 controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY );
@@ -190,7 +190,7 @@ public class funkyjet
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );/* button 3 - unused? */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	/* Player 2 controls */
+		PORT_START(); 	/* Player 2 controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_COCKTAIL );
@@ -200,7 +200,7 @@ public class funkyjet
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );/* button 3 - unused? */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START	/* Credits */
+		PORT_START(); 	/* Credits */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN3 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN1 );
@@ -210,7 +210,7 @@ public class funkyjet
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* Dip switch bank 1 */
+		PORT_START(); 	/* Dip switch bank 1 */
 	
 		/* Dips seem inverted with respect to other Deco games */
 	
@@ -240,7 +240,7 @@ public class funkyjet
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* Dip switch bank 2 */
+		PORT_START(); 	/* Dip switch bank 2 */
 		PORT_DIPNAME( 0xc0, 0xc0, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x80, "1" );
 		PORT_DIPSETTING(    0x00, "2" );
@@ -266,7 +266,7 @@ public class funkyjet
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_sotsugyo = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* Player 1 controls */
+		PORT_START(); 	/* Player 1 controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY );
@@ -276,7 +276,7 @@ public class funkyjet
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	/* Player 2 controls */
+		PORT_START(); 	/* Player 2 controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_COCKTAIL );
@@ -286,7 +286,7 @@ public class funkyjet
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START	/* Credits */
+		PORT_START(); 	/* Credits */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN3 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN1 );
@@ -296,7 +296,7 @@ public class funkyjet
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* Dip switch bank 1 */
+		PORT_START(); 	/* Dip switch bank 1 */
 		PORT_DIPNAME( 0xe0, 0xe0, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(    0x40, DEF_STR( "2C_1C") );
@@ -320,7 +320,7 @@ public class funkyjet
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_SERVICE( 0x01, IP_ACTIVE_LOW );
 	
-		PORT_START	/* Dip switch bank 2 */
+		PORT_START(); 	/* Dip switch bank 2 */
 		PORT_DIPNAME( 0x80, 0x80, "Pause" );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );

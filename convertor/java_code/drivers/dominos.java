@@ -65,7 +65,7 @@ public class dominos
 	};
 	
 	static InputPortPtr input_ports_dominos = new InputPortPtr(){ public void handler() { 
-			PORT_START		/* DSW - fake port, gets mapped to Dominos ports */
+			PORT_START(); 		/* DSW - fake port, gets mapped to Dominos ports */
 			PORT_DIPNAME( 0x03, 0x01, "Points To Win" );
 			PORT_DIPSETTING(	0x03, "6" );
 			PORT_DIPSETTING(	0x02, "5" );
@@ -77,14 +77,14 @@ public class dominos
 			PORT_DIPSETTING(	0x04, "2 coins/player" );
 			PORT_DIPSETTING(	0x00, "2 coins/player" );/* not a typo */
 	
-			PORT_START		/* IN0 - fake port, gets mapped to Dominos ports */
+			PORT_START(); 		/* IN0 - fake port, gets mapped to Dominos ports */
 			PORT_BIT (0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_4WAY | IPF_PLAYER2);
 			PORT_BIT (0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_PLAYER2);
 			PORT_BIT (0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_4WAY | IPF_PLAYER2);
 			PORT_BIT (0x08, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_4WAY | IPF_PLAYER2);
 			PORT_BIT (0xF0, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-			PORT_START		/* IN1 - fake port, gets mapped to Dominos ports */
+			PORT_START(); 		/* IN1 - fake port, gets mapped to Dominos ports */
 			PORT_BIT (0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_4WAY );
 			PORT_BIT (0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
 			PORT_BIT (0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_4WAY );
@@ -93,11 +93,11 @@ public class dominos
 			PORT_BIT (0x20, IP_ACTIVE_LOW, IPT_START2 );
 			PORT_BITX(0x40, IP_ACTIVE_LOW, IPT_SERVICE | IPF_TOGGLE, "Self Test", KEYCODE_F2, IP_JOY_NONE );
 	
-			PORT_START		/* IN2 */
+			PORT_START(); 		/* IN2 */
 			PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 			PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-			PORT_START		/* IN3 */
+			PORT_START(); 		/* IN3 */
 			PORT_BIT ( 0x0F, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 			PORT_BIT ( 0x10, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* ATTRACT */
 			PORT_BIT ( 0x20, IP_ACTIVE_HIGH, IPT_VBLANK );/* VRESET */

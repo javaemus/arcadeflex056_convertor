@@ -307,7 +307,7 @@ public class aburner
 	}
 	
 	static InputPortPtr input_ports_aburner = new InputPortPtr(){ public void handler() { 
-		PORT_START /* player 1 */
+		PORT_START();  /* player 1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON3 );/* unknown */
 		PORT_BITX(0x02, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN3 );/* service */
@@ -319,7 +319,7 @@ public class aburner
 	
 		SYS16_COINAGE /* DSWA */ /* wrong! */
 	
-		PORT_START /* DSWB */
+		PORT_START();  /* DSWB */
 		PORT_DIPNAME( 0x03, 0x01, "Cabinet Type" );
 		PORT_DIPSETTING(    0x01, "Upright 1" );
 		PORT_DIPSETTING(    0x00, "N/A" );
@@ -343,18 +343,18 @@ public class aburner
 		PORT_DIPSETTING(    0x40, "Hard" );
 		PORT_DIPSETTING(    0x00, "Hardest" );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOG( 0xff, 0x7f, IPT_AD_STICK_X | IPF_CENTER, 100, 4, 0x00, 0xff );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOG( 0xff, 0x7f, IPT_AD_STICK_Y | IPF_CENTER | IPF_REVERSE, 100, 4, 0x00, 0xff );
 	
-		PORT_START /* throttle (hack - mapped as player2 stick) */
+		PORT_START();  /* throttle (hack - mapped as player2 stick) */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y | IPF_CENTER | IPF_PLAYER2, 100, 79, 0x00, 0xff );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_aburner2 = new InputPortPtr(){ public void handler() { 
-		PORT_START /* player 1 */
+		PORT_START();  /* player 1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON3 );/* unknown */
 		PORT_BITX(0x02, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN3 );/* service */
@@ -364,7 +364,7 @@ public class aburner
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START /* DSWA */
+		PORT_START();  /* DSWA */
 		PORT_DIPNAME( 0x0f, 0x0f, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x0a, DEF_STR( "7C_1C") );
 		PORT_DIPSETTING(    0x0b, DEF_STR( "6C_1C") );
@@ -402,7 +402,7 @@ public class aburner
 		PORT_DIPSETTING(    0x00, "Free Play (if Coin A too);or 1/1" )
 		/* note that Free Play doesn't seem to work! */
 	
-		PORT_START /* DSWB */
+		PORT_START();  /* DSWB */
 		PORT_DIPNAME( 0x03, 0x01, "Cabinet Type" );
 		PORT_DIPSETTING(    0x01, "Upright 1" );
 		PORT_DIPSETTING(    0x00, "Upright 2" );
@@ -426,18 +426,18 @@ public class aburner
 		PORT_DIPSETTING(    0x40, "Hard" );
 		PORT_DIPSETTING(    0x00, "Hardest" );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOG( 0xff, 0x7f, IPT_AD_STICK_X | IPF_CENTER, 100, 4, 0x00, 0xff );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOG( 0xff, 0x7f, IPT_AD_STICK_Y | IPF_CENTER | IPF_REVERSE, 100, 4, 0x00, 0xff );
 	
-		PORT_START /* throttle (hack - mapped as player2 stick) */
+		PORT_START();  /* throttle (hack - mapped as player2 stick) */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y | IPF_CENTER | IPF_PLAYER2, 100, 79, 0x00, 0xff );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_thndrbld = new InputPortPtr(){ public void handler() { 
-		PORT_START /* player 1 */
+		PORT_START();  /* player 1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON3 );/* unknown */
 		PORT_BITX(0x02, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN3 );/* service */
@@ -449,7 +449,7 @@ public class aburner
 	
 		SYS16_COINAGE /* DSWA */ /* wrong! */
 	
-		PORT_START /* DSWB */
+		PORT_START();  /* DSWB */
 		PORT_DIPNAME( 0x01, 0x01, "Cabinet Type" );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, "Deluxe" );
@@ -473,13 +473,13 @@ public class aburner
 		PORT_DIPSETTING(    0x80, "Hard" );
 		PORT_DIPSETTING(    0x00, "Hardest" );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOG( 0xff, 0x7f, IPT_AD_STICK_X | IPF_CENTER | IPF_REVERSE, 100, 4, 0x00, 0xff );
 	
-		PORT_START /* throttle (hack - mapped as player2 stick) */
+		PORT_START();  /* throttle (hack - mapped as player2 stick) */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y | IPF_CENTER | IPF_PLAYER2, 100, 79, 0x00, 0xff );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOG( 0xff, 0x7f, IPT_AD_STICK_Y | IPF_CENTER, 100, 4, 0x00, 0xff );
 	INPUT_PORTS_END(); }}; 
 	

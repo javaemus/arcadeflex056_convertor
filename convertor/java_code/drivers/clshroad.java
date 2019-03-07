@@ -114,7 +114,7 @@ public class clshroad
 	
 	
 	static InputPortPtr input_ports_clshroad = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1
+		PORT_START(); 	// IN0 - Player 1
 		PORT_BIT(  0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP );
 		PORT_BIT(  0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN );
 		PORT_BIT(  0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT );
@@ -124,7 +124,7 @@ public class clshroad
 		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 	
-		PORT_START	// IN1 - Player 2
+		PORT_START(); 	// IN1 - Player 2
 		PORT_BIT(  0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_COCKTAIL );
 		PORT_BIT(  0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_COCKTAIL );
 		PORT_BIT(  0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_COCKTAIL );
@@ -134,7 +134,7 @@ public class clshroad
 		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START	// IN2 - DSW 1
+		PORT_START(); 	// IN2 - DSW 1
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "2C_1C") );
@@ -158,7 +158,7 @@ public class clshroad
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	// IN3 - DSW 2
+		PORT_START(); 	// IN3 - DSW 2
 	/*
 	first bit OFF is:	0 			0	<- value
 						1			1

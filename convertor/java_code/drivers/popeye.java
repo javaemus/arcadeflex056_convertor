@@ -141,7 +141,7 @@ public class popeye
 	
 	
 	static InputPortPtr input_ports_popeye = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_4WAY );
@@ -151,7 +151,7 @@ public class popeye
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused */
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_COCKTAIL );
@@ -161,7 +161,7 @@ public class popeye
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused */
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_START1 );
@@ -171,7 +171,7 @@ public class popeye
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_SERVICE1 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_COIN1 );
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x0f, 0x0f, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x03, "A 3/1 B 1/2" );
 		PORT_DIPSETTING(    0x0e, DEF_STR( "2C_1C") );
@@ -199,7 +199,7 @@ public class popeye
 	//	PORT_DIPSETTING(    0x00, "Nintendo of America" );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_SPECIAL );/* scans DSW1 one bit at a time */
 	
-		PORT_START	/* DSW1 (FAKE - appears as bit 7 of DSW0, see code below) */
+		PORT_START(); 	/* DSW1 (FAKE - appears as bit 7 of DSW0, see code below) */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x03, "1" );
 		PORT_DIPSETTING(    0x02, "2" );
@@ -225,7 +225,7 @@ public class popeye
 	
 	
 	static InputPortPtr input_ports_popeyef = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_4WAY );
@@ -235,7 +235,7 @@ public class popeye
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused */
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_COCKTAIL );
@@ -245,7 +245,7 @@ public class popeye
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused */
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_START1 );
@@ -255,7 +255,7 @@ public class popeye
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_SERVICE1 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_COIN1 );
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x0f, 0x0f, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x03, "A 3/1 B 1/2" );
 		PORT_DIPSETTING(    0x0e, DEF_STR( "2C_1C") );
@@ -283,7 +283,7 @@ public class popeye
 	//	PORT_DIPSETTING(    0x00, "Nintendo of America" );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_SPECIAL );/* scans DSW1 one bit at a time */
 	
-		PORT_START	/* DSW1 (FAKE - appears as bit 7 of DSW0, see code below) */
+		PORT_START(); 	/* DSW1 (FAKE - appears as bit 7 of DSW0, see code below) */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x03, "1" );
 		PORT_DIPSETTING(    0x02, "2" );

@@ -104,11 +104,11 @@ public class hanaawas
 	
 	
 	static InputPortPtr input_ports_hanaawas = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x0f, IP_ACTIVE_HIGH, IPT_SPECIAL );
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_HIGH, IPT_COIN1, 1 );
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -133,7 +133,7 @@ public class hanaawas
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_2C") );
 	
 		/* fake port.  The button depressed gets converted to an integer in the 1-10 range */
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x001, IP_ACTIVE_HIGH, IPT_BUTTON1 );
 		PORT_BIT( 0x001, IP_ACTIVE_HIGH, IPT_START1 );	/* same as button 1 */
 		PORT_BIT( 0x002, IP_ACTIVE_HIGH, IPT_BUTTON2 );

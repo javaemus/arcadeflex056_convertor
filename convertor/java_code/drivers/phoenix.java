@@ -124,7 +124,7 @@ public class phoenix
 	
 	
 	static InputPortPtr input_ports_phoenix = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START2 );
@@ -134,7 +134,7 @@ public class phoenix
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 );
 	
-		PORT_START		/* IN1 */
+		PORT_START(); 		/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -144,7 +144,7 @@ public class phoenix
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_COCKTAIL  );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL  );
 	
-		PORT_START		/* DSW0 */
+		PORT_START(); 		/* DSW0 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(	0x00, "3" );
 		PORT_DIPSETTING(	0x01, "4" );
@@ -166,14 +166,14 @@ public class phoenix
 		PORT_DIPSETTING(	0x00, DEF_STR( "On") );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_VBLANK );
 	
-		PORT_START		/* fake port for non-memory mapped dip switch */
+		PORT_START(); 		/* fake port for non-memory mapped dip switch */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_phoenixa = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START2 );
@@ -183,7 +183,7 @@ public class phoenix
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 );
 	
-		PORT_START		/* IN1 */
+		PORT_START(); 		/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -193,7 +193,7 @@ public class phoenix
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_COCKTAIL  );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL  );
 	
-		PORT_START		/* DSW0 */
+		PORT_START(); 		/* DSW0 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(	0x00, "3" );
 		PORT_DIPSETTING(	0x01, "4" );
@@ -216,14 +216,14 @@ public class phoenix
 		PORT_DIPSETTING(	0x00, DEF_STR( "On") );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_VBLANK );
 	
-		PORT_START		/* fake port for non-memory mapped dip switch */
+		PORT_START(); 		/* fake port for non-memory mapped dip switch */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_phoenixt = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START2 );
@@ -233,7 +233,7 @@ public class phoenix
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 );
 	
-		PORT_START		/* IN1 */
+		PORT_START(); 		/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -243,7 +243,7 @@ public class phoenix
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_COCKTAIL  );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL  );
 	
-		PORT_START		/* DSW0 */
+		PORT_START(); 		/* DSW0 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(	0x00, "3" );
 		PORT_DIPSETTING(	0x01, "4" );
@@ -265,14 +265,14 @@ public class phoenix
 		PORT_DIPSETTING(	0x00, DEF_STR( "On") );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_VBLANK );
 	
-		PORT_START		/* fake port for non-memory mapped dip switch */
+		PORT_START(); 		/* fake port for non-memory mapped dip switch */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_phoenix3 = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START2 );
@@ -282,7 +282,7 @@ public class phoenix
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 );
 	
-		PORT_START		/* IN1 */
+		PORT_START(); 		/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -292,7 +292,7 @@ public class phoenix
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_COCKTAIL  );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL  );
 	
-		PORT_START		/* DSW0 */
+		PORT_START(); 		/* DSW0 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(	0x00, "3" );
 		PORT_DIPSETTING(	0x01, "4" );
@@ -314,14 +314,14 @@ public class phoenix
 		PORT_DIPSETTING(	0x00, DEF_STR( "1C_1C") );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_VBLANK );
 	
-		PORT_START		/* fake port for non-memory mapped dip switch */
+		PORT_START(); 		/* fake port for non-memory mapped dip switch */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_pleiads = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START2 );
@@ -331,7 +331,7 @@ public class phoenix
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 );
 	
-		PORT_START		/* IN1 */
+		PORT_START(); 		/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -341,7 +341,7 @@ public class phoenix
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_COCKTAIL  );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL  );
 	
-		PORT_START		/* DSW0 */
+		PORT_START(); 		/* DSW0 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(	0x00, "3" );
 		PORT_DIPSETTING(	0x01, "4" );
@@ -363,14 +363,14 @@ public class phoenix
 		PORT_DIPSETTING(	0x40, DEF_STR( "On") );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_VBLANK );
 	
-		PORT_START		/* fake port for non-memory mapped dip switch */
+		PORT_START(); 		/* fake port for non-memory mapped dip switch */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_pleiadce = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START2 );
@@ -380,7 +380,7 @@ public class phoenix
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 );
 	
-		PORT_START		/* IN1 */
+		PORT_START(); 		/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -390,7 +390,7 @@ public class phoenix
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_COCKTAIL  );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL  );
 	
-		PORT_START		/* DSW0 */
+		PORT_START(); 		/* DSW0 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(	0x00, "3" );
 		PORT_DIPSETTING(	0x01, "4" );
@@ -412,14 +412,14 @@ public class phoenix
 		PORT_DIPSETTING(	0x40, DEF_STR( "On") );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_VBLANK );
 	
-		PORT_START		/* fake port for non-memory mapped dip switch */
+		PORT_START(); 		/* fake port for non-memory mapped dip switch */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_survival = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START2 );
@@ -429,7 +429,7 @@ public class phoenix
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_UP );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN );
 	
-		PORT_START		/* IN1 */
+		PORT_START(); 		/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -439,7 +439,7 @@ public class phoenix
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_COCKTAIL  );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_COCKTAIL  );
 	
-	    PORT_START
+	    PORT_START(); 
 		PORT_DIPNAME( 0x03, 0x02, DEF_STR( "Lives") );
 		PORT_DIPSETTING(	0x03, "2" );
 		PORT_DIPSETTING(	0x02, "3" );
@@ -460,7 +460,7 @@ public class phoenix
 		PORT_DIPSETTING(	0x60, DEF_STR( "1C_1C") );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_VBLANK );
 	
-		PORT_START		/* fake port for non-memory mapped dip switch */
+		PORT_START(); 		/* fake port for non-memory mapped dip switch */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );

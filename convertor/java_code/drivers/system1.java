@@ -319,7 +319,7 @@ public class system1
 	
 	
 	static InputPortPtr input_ports_starjack = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* IN1 */
+		PORT_START();   /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 );
@@ -329,7 +329,7 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 	
-		PORT_START  /* IN2 */
+		PORT_START();   /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
@@ -339,13 +339,13 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		IN0_PORT
 	
-		PORT_START	  /* DSW1 */
+		PORT_START(); 	  /* DSW1 */
 		DSW1_PORT
 	
-		PORT_START  /* DSW0 */
+		PORT_START();   /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Cocktail") );
@@ -371,7 +371,7 @@ public class system1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_starjacs = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* IN1 */
+		PORT_START();   /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 );
@@ -381,7 +381,7 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 	
-		PORT_START  /* IN2 */
+		PORT_START();   /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
@@ -391,13 +391,13 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		IN0_PORT
 	
-		PORT_START	  /* DSW1 */
+		PORT_START(); 	  /* DSW1 */
 		DSW1_PORT
 	
-		PORT_START  /* DSW0 */
+		PORT_START();   /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Cocktail") );
@@ -422,7 +422,7 @@ public class system1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_regulus = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* IN1 */
+		PORT_START();   /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 );
@@ -432,7 +432,7 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 	
-		PORT_START  /* IN2 */
+		PORT_START();   /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
@@ -442,13 +442,13 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		IN0_PORT
 	
-		PORT_START	  /* DSW1 */
+		PORT_START(); 	  /* DSW1 */
 		DSW1_PORT
 	
-		PORT_START  /* DSW0 */
+		PORT_START();   /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Cocktail") );
@@ -475,7 +475,7 @@ public class system1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_upndown = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* IN1 */
+		PORT_START();   /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 );
@@ -485,7 +485,7 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 	
-		PORT_START  /* IN2 */
+		PORT_START();   /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
@@ -495,13 +495,13 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		IN0_PORT
 	
-		PORT_START	  /* DSW1 */
+		PORT_START(); 	  /* DSW1 */
 		DSW1_PORT
 	
-		PORT_START  /* DSW0 */
+		PORT_START();   /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Cocktail") );
@@ -527,7 +527,7 @@ public class system1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_mrviking = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* IN1 */
+		PORT_START();   /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON2 );
@@ -537,7 +537,7 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 	
-		PORT_START  /* IN2 */
+		PORT_START();   /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
@@ -547,13 +547,13 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		IN0_PORT
 	
-		PORT_START	  /* DSW1 */
+		PORT_START(); 	  /* DSW1 */
 		DSW1_PORT
 	
-		PORT_START  /* DSW0 */
+		PORT_START();   /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Cocktail") );
@@ -579,7 +579,7 @@ public class system1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_swat = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* IN1 */
+		PORT_START();   /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 );
@@ -589,7 +589,7 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 	
-		PORT_START  /* IN2 */
+		PORT_START();   /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
@@ -599,13 +599,13 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL );
 	
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		IN0_PORT
 	
-		PORT_START	  /* DSW1 */
+		PORT_START(); 	  /* DSW1 */
 		DSW1_PORT
 	
-		PORT_START  /* DSW0 */
+		PORT_START();   /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Cocktail") );
@@ -632,7 +632,7 @@ public class system1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_flicky = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* IN1 */
+		PORT_START();   /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 );
@@ -642,7 +642,7 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY );
 	
-		PORT_START  /* IN2 */
+		PORT_START();   /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
@@ -652,13 +652,13 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		IN0_PORT
 	
-		PORT_START	  /* DSW1 */
+		PORT_START(); 	  /* DSW1 */
 		DSW1_PORT
 	
-		PORT_START  /* DSW0 */
+		PORT_START();   /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Cocktail") );
@@ -684,7 +684,7 @@ public class system1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_wmatch = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* IN1 */
+		PORT_START();   /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_UP    | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_RIGHT | IPF_8WAY );
@@ -694,7 +694,7 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_LEFT  | IPF_8WAY );
 	
-		PORT_START  /* IN2 */
+		PORT_START();   /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_DOWN  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_UP    | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_RIGHT | IPF_8WAY | IPF_COCKTAIL );
@@ -704,7 +704,7 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BITX(0x04, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
@@ -714,10 +714,10 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 );/* TURN P1 */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );/* TURN P2 */
 	
-		PORT_START	  /* DSW1 */
+		PORT_START(); 	  /* DSW1 */
 		DSW1_PORT
 	
-		PORT_START  /* DSW0 */
+		PORT_START();   /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Cocktail") );
@@ -744,7 +744,7 @@ public class system1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_bullfgtj = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* IN1 */
+		PORT_START();   /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 );
@@ -754,7 +754,7 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 	
-		PORT_START  /* IN2 */
+		PORT_START();   /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
@@ -764,13 +764,13 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		IN0_PORT
 	
-		PORT_START	  /* DSW1 */
+		PORT_START(); 	  /* DSW1 */
 		DSW1_PORT
 	
-		PORT_START  /* DSW0 */
+		PORT_START();   /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Cocktail") );
@@ -796,7 +796,7 @@ public class system1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_spatter = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* IN1 */
+		PORT_START();   /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 );
@@ -806,7 +806,7 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 	
-		PORT_START  /* IN2 */
+		PORT_START();   /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
@@ -816,13 +816,13 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		IN0_PORT
 	
-		PORT_START	  /* DSW1 */
+		PORT_START(); 	  /* DSW1 */
 		DSW1_PORT
 	
-		PORT_START  /* DSW0 */
+		PORT_START();   /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Cocktail") );
@@ -849,7 +849,7 @@ public class system1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_pitfall2 = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* IN1 */
+		PORT_START();   /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 );
@@ -859,7 +859,7 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 	
-		PORT_START  /* IN2 */
+		PORT_START();   /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
@@ -869,13 +869,13 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		IN0_PORT
 	
-		PORT_START	  /* DSW1 */
+		PORT_START(); 	  /* DSW1 */
 		DSW1_PORT
 	
-		PORT_START  /* DSW0 */
+		PORT_START();   /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Cocktail") );
@@ -902,7 +902,7 @@ public class system1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_pitfallu = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* IN1 */
+		PORT_START();   /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 );
@@ -912,7 +912,7 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 	
-		PORT_START  /* IN2 */
+		PORT_START();   /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
@@ -922,13 +922,13 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		IN0_PORT
 	
-		PORT_START	  /* DSW1 */
+		PORT_START(); 	  /* DSW1 */
 		DSW1_PORT
 	
-		PORT_START  /* DSW0 */
+		PORT_START();   /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Cocktail") );
@@ -954,7 +954,7 @@ public class system1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_seganinj = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* IN1 */
+		PORT_START();   /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON3 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 );
@@ -964,7 +964,7 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 	
-		PORT_START  /* IN2 */
+		PORT_START();   /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
@@ -974,13 +974,13 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		IN0_PORT
 	
-		PORT_START	  /* DSW1 */
+		PORT_START(); 	  /* DSW1 */
 		DSW1_PORT
 	
-		PORT_START  /* DSW0 */
+		PORT_START();   /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Cocktail") );
@@ -1007,7 +1007,7 @@ public class system1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_imsorry = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* IN1 */
+		PORT_START();   /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 );
@@ -1017,7 +1017,7 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 	
-		PORT_START  /* IN2 */
+		PORT_START();   /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
@@ -1027,13 +1027,13 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		IN0_PORT
 	
-		PORT_START	  /* DSW1 */
+		PORT_START(); 	  /* DSW1 */
 		DSW1_PORT
 	
-		PORT_START  /* DSW0 */
+		PORT_START();   /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Cocktail") );
@@ -1059,7 +1059,7 @@ public class system1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_teddybb = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* IN1 */
+		PORT_START();   /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON2 );
@@ -1069,7 +1069,7 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 	
-		PORT_START  /* IN2 */
+		PORT_START();   /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
@@ -1079,13 +1079,13 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		IN0_PORT
 	
-		PORT_START	  /* DSW1 */
+		PORT_START(); 	  /* DSW1 */
 		DSW1_PORT
 	
-		PORT_START  /* DSW0 */
+		PORT_START();   /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Cocktail") );
@@ -1111,7 +1111,7 @@ public class system1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_hvymetal = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* IN1 */
+		PORT_START();   /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON2 );
@@ -1121,7 +1121,7 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 	
-		PORT_START  /* IN2 */
+		PORT_START();   /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
@@ -1131,13 +1131,13 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		IN0_PORT
 	
-		PORT_START	  /* DSW1 */
+		PORT_START(); 	  /* DSW1 */
 		DSW1_PORT
 	
-		PORT_START  /* DSW1 */
+		PORT_START();   /* DSW1 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Cocktail") );
@@ -1163,7 +1163,7 @@ public class system1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_myhero = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* IN1 */
+		PORT_START();   /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON2 );
@@ -1173,7 +1173,7 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 	
-		PORT_START  /* IN2 */
+		PORT_START();   /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
@@ -1183,13 +1183,13 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		IN0_PORT
 	
-		PORT_START	  /* DSW1 */
+		PORT_START(); 	  /* DSW1 */
 		DSW1_PORT
 	
-		PORT_START  /* DSW0 */
+		PORT_START();   /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Cocktail") );
@@ -1215,7 +1215,7 @@ public class system1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_chplft = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* IN1 */
+		PORT_START();   /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 );
@@ -1225,7 +1225,7 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 	
-		PORT_START  /* IN2 */
+		PORT_START();   /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
@@ -1235,10 +1235,10 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		IN0_PORT
 	
-		PORT_START  /* DSW1 */
+		PORT_START();   /* DSW1 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Cocktail") );
@@ -1263,12 +1263,12 @@ public class system1
 		PORT_DIPSETTING(	0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "On") );
 	
-		PORT_START	  /* DSW0 */
+		PORT_START(); 	  /* DSW0 */
 		DSW1_PORT
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_4dwarrio = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* IN1 */
+		PORT_START();   /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 );
@@ -1278,7 +1278,7 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 	
-		PORT_START  /* IN2 */
+		PORT_START();   /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
@@ -1288,13 +1288,13 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		IN0_PORT
 	
-		PORT_START	  /* DSW1 */
+		PORT_START(); 	  /* DSW1 */
 		DSW1_PORT
 	
-		PORT_START  /* DSW0 */
+		PORT_START();   /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Cocktail") );
@@ -1321,7 +1321,7 @@ public class system1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_brain = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* IN1 */
+		PORT_START();   /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 );
@@ -1331,7 +1331,7 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 	
-		PORT_START  /* IN2 */
+		PORT_START();   /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
@@ -1341,13 +1341,13 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		IN0_PORT
 	
-		PORT_START	  /* DSW1 */
+		PORT_START(); 	  /* DSW1 */
 		DSW1_PORT
 	
-		PORT_START  /* DSW0 */
+		PORT_START();   /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Cocktail") );
@@ -1374,7 +1374,7 @@ public class system1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_raflesia = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* IN1 */
+		PORT_START();   /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 );
@@ -1384,7 +1384,7 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 	
-		PORT_START  /* IN2 */
+		PORT_START();   /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
@@ -1394,13 +1394,13 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		IN0_PORT
 	
-		PORT_START	  /* DSW1 */
+		PORT_START(); 	  /* DSW1 */
 		DSW1_PORT
 	
-		PORT_START  /* DSW0 */
+		PORT_START();   /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Cocktail") );
@@ -1425,7 +1425,7 @@ public class system1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_wboy = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* IN1 */
+		PORT_START();   /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON2 );
@@ -1435,7 +1435,7 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY );
 	
-		PORT_START  /* IN2 */
+		PORT_START();   /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
@@ -1445,13 +1445,13 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_COCKTAIL );
 	
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		IN0_PORT
 	
-		PORT_START	  /* DSW1 */
+		PORT_START(); 	  /* DSW1 */
 		DSW1_PORT
 	
-		PORT_START  /* DSW0 */
+		PORT_START();   /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Cocktail") );
@@ -1479,7 +1479,7 @@ public class system1
 	
 	/* same as wboy, additional Energy Consumption switch */
 	static InputPortPtr input_ports_wbdeluxe = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* IN1 */
+		PORT_START();   /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* Has to be 0 otherwise the game resets */
 													/* if you die after level 1. */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
@@ -1490,7 +1490,7 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY );
 	
-		PORT_START  /* IN2 */
+		PORT_START();   /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
@@ -1500,13 +1500,13 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_COCKTAIL );
 	
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		IN0_PORT
 	
-		PORT_START	  /* DSW1 */
+		PORT_START(); 	  /* DSW1 */
 		DSW1_PORT
 	
-		PORT_START  /* DSW0 */
+		PORT_START();   /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Cocktail") );
@@ -1533,7 +1533,7 @@ public class system1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_wboyu = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* IN1 */
+		PORT_START();   /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON2 );
@@ -1543,7 +1543,7 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY );
 	
-		PORT_START  /* IN2 */
+		PORT_START();   /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
@@ -1553,10 +1553,10 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_COCKTAIL );
 	
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		IN0_PORT
 	
-		PORT_START  /* DSW0 */
+		PORT_START();   /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Cocktail") );
@@ -1581,7 +1581,7 @@ public class system1
 		PORT_DIPSETTING(	0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "On") );
 	
-		PORT_START	  /* DSW1 */
+		PORT_START(); 	  /* DSW1 */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(	0x04, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(	0x05, DEF_STR( "3C_1C") );
@@ -1608,13 +1608,13 @@ public class system1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_blockgal = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* IN1 */
+		PORT_START();   /* IN1 */
 		PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_REVERSE, 60, 15, 0, 0);
 	
-		PORT_START  /* IN2 */
+		PORT_START();   /* IN2 */
 		PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_REVERSE | IPF_COCKTAIL, 60, 15, 0, 0);
 	
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN3 );
@@ -1624,7 +1624,7 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 	
-		PORT_START  /* DSW0 */
+		PORT_START();   /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "On") );
@@ -1648,7 +1648,7 @@ public class system1
 		PORT_DIPSETTING(	0x00, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	  /* DSW1 */
+		PORT_START(); 	  /* DSW1 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "On") );
@@ -1676,7 +1676,7 @@ public class system1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_tokisens = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* IN1 */
+		PORT_START();   /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 );
@@ -1686,7 +1686,7 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 	
-		PORT_START  /* IN2 */
+		PORT_START();   /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
@@ -1696,10 +1696,10 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		IN0_PORT
 	
-		PORT_START  /* DSW0 */
+		PORT_START();   /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Cocktail") );
@@ -1724,12 +1724,12 @@ public class system1
 		PORT_DIPSETTING(	0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "On") );
 	
-		PORT_START	  /* DSW1 */
+		PORT_START(); 	  /* DSW1 */
 		DSW1_PORT
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_wbml = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* IN1 */
+		PORT_START();   /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 );
@@ -1739,7 +1739,7 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 	
-		PORT_START  /* IN2 */
+		PORT_START();   /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
@@ -1749,10 +1749,10 @@ public class system1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		IN0_PORT
 	
-		PORT_START  /* DSW1 */
+		PORT_START();   /* DSW1 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Cocktail") );
@@ -1777,7 +1777,7 @@ public class system1
 		PORT_DIPSETTING(	0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "On") );
 	
-		PORT_START	  /* DSW0 */
+		PORT_START(); 	  /* DSW0 */
 		DSW1_PORT
 	INPUT_PORTS_END(); }}; 
 	

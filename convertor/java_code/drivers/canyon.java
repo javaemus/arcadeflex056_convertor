@@ -109,7 +109,7 @@ public class canyon
 	};
 	
 	static InputPortPtr input_ports_canyon = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* DSW - fake port, gets mapped to Canyon Bomber ports */
+		PORT_START();       /* DSW - fake port, gets mapped to Canyon Bomber ports */
 		PORT_DIPNAME( 0x03, 0x00, "Language" );
 		PORT_DIPSETTING(    0x00, "English" );
 		PORT_DIPSETTING(    0x01, "Spanish" );
@@ -126,15 +126,15 @@ public class canyon
 		PORT_DIPSETTING(    0x40, "2 players/coin" );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Free_Play") );
 	
-		PORT_START      /* IN1 - fake port, gets mapped */
+		PORT_START();       /* IN1 - fake port, gets mapped */
 		PORT_BIT(0x01, IP_ACTIVE_HIGH, IPT_BUTTON1 );
 		PORT_BIT(0xFE, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 - fake port, gets mapped */
+		PORT_START();       /* IN2 - fake port, gets mapped */
 		PORT_BIT(0x01, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT(0xFE, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START      /* IN3 - fake port, gets mapped */
+		PORT_START();       /* IN3 - fake port, gets mapped */
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT ( 0x04, IP_ACTIVE_HIGH, IPT_START1 );

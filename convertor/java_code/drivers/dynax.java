@@ -389,7 +389,7 @@ public class dynax
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_sprtmtch = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1
+		PORT_START(); 	// IN0 - Player 1
 		PORT_BIT(  0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER1 );
 		PORT_BIT(  0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER1 );
 		PORT_BIT(  0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER1 );
@@ -399,7 +399,7 @@ public class dynax
 		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_BUTTON3        | IPF_PLAYER1 );
 		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	// IN1 - Player 2
+		PORT_START(); 	// IN1 - Player 2
 		PORT_BIT(  0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER2 );
 		PORT_BIT(  0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER2 );
 		PORT_BIT(  0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER2 );
@@ -409,7 +409,7 @@ public class dynax
 		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_BUTTON3        | IPF_PLAYER2 );
 		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START	// IN2 - Coins
+		PORT_START(); 	// IN2 - Coins
 		PORT_BIT_IMPULSE(  0x01, IP_ACTIVE_LOW, IPT_COIN1, 10);
 		PORT_BIT_IMPULSE(  0x02, IP_ACTIVE_LOW, IPT_COIN2, 10);
 		PORT_BIT(  0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -419,7 +419,7 @@ public class dynax
 		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 	
-		PORT_START	// IN3 - DSW
+		PORT_START(); 	// IN3 - DSW
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "5C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "4C_1C") );
@@ -443,7 +443,7 @@ public class dynax
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	// IN4 - DSW
+		PORT_START(); 	// IN4 - DSW
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );	// Time
 		PORT_DIPSETTING(    0x00, "1 (Easy); )
 		PORT_DIPSETTING(    0x01, "2" );
@@ -474,7 +474,7 @@ public class dynax
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_ddenlovr = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1
+		PORT_START(); 	// IN0 - Player 1
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER1 );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER1 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER1 );
@@ -485,7 +485,7 @@ public class dynax
 		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_BUTTON4        | IPF_PLAYER1 );
 		PORT_BIT(  0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN1 - Player 2
+		PORT_START(); 	// IN1 - Player 2
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER2 );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER2 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER2 );
@@ -496,7 +496,7 @@ public class dynax
 		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_BUTTON4        | IPF_PLAYER2 );
 		PORT_BIT(  0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN2 - Coins + ?
+		PORT_START(); 	// IN2 - Coins + ?
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW,  IPT_COIN1    );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW,  IPT_COIN2    );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW,  IPT_SERVICE1 );
@@ -504,7 +504,7 @@ public class dynax
 		PORT_BIT(  0x00f0, IP_ACTIVE_HIGH, IPT_SPECIAL  );
 		PORT_BIT(  0xff00, IP_ACTIVE_LOW,  IPT_UNKNOWN  );
 	
-		PORT_START	// IN3 - DSW
+		PORT_START(); 	// IN3 - DSW
 		PORT_SERVICE( 0x0001, IP_ACTIVE_LOW );
 		PORT_DIPNAME( 0x0002, 0x0002, "Unknown 1-1" );
 		PORT_DIPSETTING(      0x0002, DEF_STR( "Off") );
@@ -537,7 +537,7 @@ public class dynax
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_rongrong = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1
+		PORT_START(); 	// IN0 - Player 1
 		PORT_BIT(  0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER1 );
 		PORT_BIT(  0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER1 );
 		PORT_BIT(  0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER1 );
@@ -547,7 +547,7 @@ public class dynax
 		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_BUTTON3        | IPF_PLAYER1 );
 		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	// IN1 - Player 2
+		PORT_START(); 	// IN1 - Player 2
 		PORT_BIT(  0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER2 );
 		PORT_BIT(  0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER2 );
 		PORT_BIT(  0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER2 );
@@ -557,7 +557,7 @@ public class dynax
 		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_BUTTON3        | IPF_PLAYER2 );
 		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START	// IN2 - Coins
+		PORT_START(); 	// IN2 - Coins
 		PORT_BIT_IMPULSE(  0x01, IP_ACTIVE_LOW, IPT_COIN1, 10);
 		PORT_BIT_IMPULSE(  0x02, IP_ACTIVE_LOW, IPT_COIN2, 10);
 		PORT_BIT(  0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -567,7 +567,7 @@ public class dynax
 		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 	
-		PORT_START	// IN3 - DSW
+		PORT_START(); 	// IN3 - DSW
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "2C_1C") );
@@ -591,7 +591,7 @@ public class dynax
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	// IN4 - DSW
+		PORT_START(); 	// IN4 - DSW
 		PORT_DIPNAME( 0x03, 0x03, "Lives?" );
 		PORT_DIPSETTING(    0x02, "0" );
 		PORT_DIPSETTING(    0x03, "1" );

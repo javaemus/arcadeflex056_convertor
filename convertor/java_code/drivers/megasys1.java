@@ -971,10 +971,10 @@ public class megasys1
 		RESERVE				// Unused
 		JOY_2BUTTONS(IPF_PLAYER2)
 	
-		PORT_START
+		PORT_START(); 
 		COINAGE_8BITS
 	
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1104,7 +1104,7 @@ public class megasys1
 		RESERVE						/* IN2 0x80004.b */
 		JOY_3BUTTONS(IPF_PLAYER2)	/* IN3 0x80005.b */
 	
-		PORT_START			/* IN4 0x80006.b */
+		PORT_START(); 			/* IN4 0x80006.b */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "3C_1C") );
@@ -1130,7 +1130,7 @@ public class megasys1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START			/* IN5 0x80007.b */
+		PORT_START(); 			/* IN5 0x80007.b */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") ); // according to manual
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1261,10 +1261,10 @@ public class megasys1
 		RESERVE
 		JOY_2BUTTONS(IPF_PLAYER2)
 	
-		PORT_START
+		PORT_START(); 
 		COINAGE_8BITS
 	
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1345,7 +1345,7 @@ public class megasys1
 		RESERVE
 		JOY_3BUTTONS(IPF_PLAYER2)
 	
-		PORT_START			/* IN4 */
+		PORT_START(); 			/* IN4 */
 		PORT_DIPNAME( 0x0f, 0x0f, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x07, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x08, DEF_STR( "3C_1C") );
@@ -1381,7 +1381,7 @@ public class megasys1
 		PORT_DIPSETTING(    0xa0, DEF_STR( "1C_6C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Free_Play") );
 	
-		PORT_START			/* IN5 */
+		PORT_START(); 			/* IN5 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1458,7 +1458,7 @@ public class megasys1
 		RESERVE				// Unused
 		JOY_2BUTTONS(IPF_PLAYER2)
 	
-		PORT_START			/* DSW A */
+		PORT_START(); 			/* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1480,7 +1480,7 @@ public class megasys1
 		PORT_DIPSETTING(    0x00, "4" );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START			/* DSW B */
+		PORT_START(); 			/* DSW B */
 		COINAGE_8BITS
 	
 	INPUT_PORTS_END(); }}; 
@@ -1557,7 +1557,7 @@ public class megasys1
 		RESERVE				// Unused
 		JOY_2BUTTONS(IPF_PLAYER2)
 	
-		PORT_START			/* IN - DSW 1 - 1fd2d9.b, !1fd009.b */
+		PORT_START(); 			/* IN - DSW 1 - 1fd2d9.b, !1fd009.b */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "3C_1C") );
@@ -1581,7 +1581,7 @@ public class megasys1
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START			/* IN - DSW 2 - 1fd2d7.b, !1fd007.b */
+		PORT_START(); 			/* IN - DSW 2 - 1fd2d7.b, !1fd007.b */
 		PORT_DIPNAME( 0x01, 0x01, "Unknown 2-0" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1669,14 +1669,14 @@ public class megasys1
 		RESERVE
 		JOY_2BUTTONS(IPF_PLAYER2)
 	
-		PORT_START			/* IN4 */
+		PORT_START(); 			/* IN4 */
 		COINAGE_6BITS
 		PORT_DIPNAME( 0x40, 0x40, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x40, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START			/* IN5 0x66007.b */
+		PORT_START(); 			/* IN5 0x66007.b */
 		PORT_DIPNAME( 0x07, 0x07, "DSW-B bits 2-0" );
 		PORT_DIPSETTING(    0x00, "0" );
 		PORT_DIPSETTING(    0x01, "1" );
@@ -1759,7 +1759,7 @@ public class megasys1
 		RESERVE						/* IN2 0x80004.b */
 		JOY_2BUTTONS(IPF_PLAYER2)	/* IN3 0x80005.b */
 	
-		PORT_START			/* IN4 0x80006.b */
+		PORT_START(); 			/* IN4 0x80006.b */
 		COINAGE_6BITS
 		PORT_DIPNAME( 0x40, 0x40, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
@@ -1768,7 +1768,7 @@ public class megasys1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START			/* IN5 0x80007.b */
+		PORT_START(); 			/* IN5 0x80007.b */
 		PORT_DIPNAME( 0x01, 0x01, "Unknown 2-0" );// unused?
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1855,7 +1855,7 @@ public class megasys1
 		RESERVE						/* IN2 0x80004.b */
 		JOY_2BUTTONS(IPF_PLAYER2)	/* IN3 0x80005.b */
 	
-		PORT_START 			/* IN4 0x80006.b */
+		PORT_START();  			/* IN4 0x80006.b */
 		COINAGE_6BITS
 		PORT_DIPNAME( 0x40, 0x00, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
@@ -1864,7 +1864,7 @@ public class megasys1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START			/* IN5 - 0x80007.b */
+		PORT_START(); 			/* IN5 - 0x80007.b */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x03, "2" );
 		PORT_DIPSETTING(    0x01, "3" );
@@ -1957,7 +1957,7 @@ public class megasys1
 		RESERVE						/* IN2 0x80004.b */
 		JOY_3BUTTONS(IPF_PLAYER2)	/* IN3 0x80005.b */
 	
-		PORT_START			/* IN4 0x80006.b */
+		PORT_START(); 			/* IN4 0x80006.b */
 		COINAGE_6BITS
 		PORT_DIPNAME( 0x40, 0x00, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
@@ -1966,7 +1966,7 @@ public class megasys1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START			/* IN5 0x80007.b */
+		PORT_START(); 			/* IN5 0x80007.b */
 		PORT_DIPNAME( 0x01, 0x01, "Unknown 2-0*" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -2072,7 +2072,7 @@ public class megasys1
 		RESERVE						/* IN2 0x80004.b --> !f0010/11.w */
 		JOY_2BUTTONS(IPF_PLAYER2)	/* IN3 0x80005.b /               */
 	
-		PORT_START			/* IN4 0x80006.b */
+		PORT_START(); 			/* IN4 0x80006.b */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "3C_1C") );
@@ -2098,7 +2098,7 @@ public class megasys1
 		PORT_DIPSETTING(    0x80, "Japanese" );
 		PORT_DIPSETTING(    0x00, "English" );// show "Japan Only" warning
 	
-		PORT_START			/* IN5 0x80007.b */
+		PORT_START(); 			/* IN5 0x80007.b */
 		PORT_DIPNAME( 0x03, 0x03, "Time" );// -> !f0082.w
 		PORT_DIPSETTING(    0x03, "3'" );
 		PORT_DIPSETTING(    0x02, "4'" );
@@ -2182,7 +2182,7 @@ public class megasys1
 		RESERVE						/* IN2 0x80004.b */
 		JOY_2BUTTONS(IPF_PLAYER2)	/* IN3 0x80005.b */
 	
-		PORT_START			/* IN4 0x80006.b */
+		PORT_START(); 			/* IN4 0x80006.b */
 		COINAGE_6BITS_2
 		PORT_DIPNAME( 0x40, 0x00, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
@@ -2191,7 +2191,7 @@ public class megasys1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START			/* IN5 0x80007.b */
+		PORT_START(); 			/* IN5 0x80007.b */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "2" );
 		PORT_DIPSETTING(    0x03, "3" );
@@ -2362,7 +2362,7 @@ public class megasys1
 		RESERVE						/* IN2 0x80004.b */
 		JOY_2BUTTONS(IPF_PLAYER2)	/* IN3 0x80005.b */
 	
-		PORT_START			/* IN4 0x80006.b */
+		PORT_START(); 			/* IN4 0x80006.b */
 		COINAGE_6BITS_2
 		PORT_DIPNAME( 0x40, 0x40, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
@@ -2371,7 +2371,7 @@ public class megasys1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START			/* IN5 0x80007.b */
+		PORT_START(); 			/* IN5 0x80007.b */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x02, "2" );
 		PORT_DIPSETTING(    0x03, "3" );
@@ -2511,7 +2511,7 @@ public class megasys1
 	
 	static InputPortPtr input_ports_peekaboo = new InputPortPtr(){ public void handler() { 
 	
-		PORT_START		/* IN0 - COINS + P1&P2 Buttons - .b */
+		PORT_START(); 		/* IN0 - COINS + P1&P2 Buttons - .b */
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_COIN3 );	// called "service"
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_COIN4 );	// called "test"
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_COIN1 );
@@ -2532,14 +2532,14 @@ public class megasys1
 	#define PEEKABOO_PADDLE(_FLAG_)	\
 		PORT_ANALOG( 0x00ff, 0x0080, IPT_PADDLE | _FLAG_, 50, 10, 0x0018, 0x00e0 );
 	
-		PORT_START      	/* IN1 - paddle p1 */
+		PORT_START();       	/* IN1 - paddle p1 */
 		PEEKABOO_PADDLE(IPF_PLAYER1)
 	
 		RESERVE				/* IN2 - fake port */
-		PORT_START      	/* IN3 - paddle p2 */
+		PORT_START();       	/* IN3 - paddle p2 */
 		PEEKABOO_PADDLE(/*IPF_PLAYER2*/ IPF_COCKTAIL)
 	
-		PORT_START			/* IN4 - DSW 1 - 1f003a.b<-e0000.b */
+		PORT_START(); 			/* IN4 - DSW 1 - 1f003a.b<-e0000.b */
 		COINAGE_6BITS_2
 		PORT_DIPNAME( 0x40, 0x40, DEF_STR( "Demo_Sounds") );		// 1f0354<-
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
@@ -2548,7 +2548,7 @@ public class megasys1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START			/* IN5 - DSW 2 - 1f003b.b<-e0001.b */
+		PORT_START(); 			/* IN5 - DSW 2 - 1f003b.b<-e0001.b */
 		PORT_DIPNAME( 0x03, 0x03, "Unknown 2-0&1" );			// 1f0358<-!
 		PORT_DIPSETTING(    0x03, "3" );
 		PORT_DIPSETTING(    0x02, "2" );
@@ -2672,7 +2672,7 @@ public class megasys1
 		RESERVE						/* IN2 0x80004.b */
 		JOY_2BUTTONS(IPF_PLAYER2)	/* IN3 0x80005.b */
 	
-		PORT_START			/* IN4 0x80006.b */
+		PORT_START(); 			/* IN4 0x80006.b */
 		COINAGE_6BITS
 		PORT_DIPNAME( 0x40, 0x40, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
@@ -2681,7 +2681,7 @@ public class megasys1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START			/* IN5 0x80007.b */
+		PORT_START(); 			/* IN5 0x80007.b */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x03, "3" );
 		PORT_DIPSETTING(    0x02, "4" );
@@ -2849,14 +2849,14 @@ public class megasys1
 		RESERVE						/* IN2 0x80004.b */
 		JOY_2BUTTONS(IPF_PLAYER2)	/* IN3 0x80005.b */
 	
-		PORT_START			/* IN4 0x80006.b */
+		PORT_START(); 			/* IN4 0x80006.b */
 		COINAGE_6BITS
 		PORT_DIPNAME( 0x40, 0x00, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START			/* IN5 0x80007.b */
+		PORT_START(); 			/* IN5 0x80007.b */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") ); /* according to manual */
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -2942,7 +2942,7 @@ public class megasys1
 		RESERVE						/* IN2 0x80004.b */
 		JOY_2BUTTONS(IPF_PLAYER2)	/* IN3 0x80005.b */
 	
-		PORT_START			/* IN4 0x80006.b */
+		PORT_START(); 			/* IN4 0x80006.b */
 		COINAGE_6BITS_2
 		PORT_DIPNAME( 0x40, 0x40, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
@@ -2951,7 +2951,7 @@ public class megasys1
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START			/* IN5 0x80007.b */
+		PORT_START(); 			/* IN5 0x80007.b */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x02, "2" );
 		PORT_DIPSETTING(    0x03, "3" );
@@ -3031,14 +3031,14 @@ public class megasys1
 		RESERVE						/* IN2 0x80004.b */
 		JOY_2BUTTONS(IPF_PLAYER2)	/* IN3 0x80005.b */
 	
-		PORT_START			/* IN4 0x80006.b */
+		PORT_START(); 			/* IN4 0x80006.b */
 		COINAGE_6BITS_2
 		PORT_DIPNAME( 0x40, 0x40, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x40, DEF_STR( "On") ); )
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START			/* IN5 0x80007.b */
+		PORT_START(); 			/* IN5 0x80007.b */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x00, "Easy"   );
 		PORT_DIPSETTING(    0x03, "Normal" );
@@ -3166,7 +3166,7 @@ public class megasys1
 		RESERVE						/* IN2 0x80004.b */
 		JOY_3BUTTONS(IPF_PLAYER2)	/* IN3 0x80005.b */
 	
-		PORT_START			/* IN4 0x80006.b */
+		PORT_START(); 			/* IN4 0x80006.b */
 		COINAGE_6BITS
 		PORT_DIPNAME( 0x40, 0x40, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
@@ -3175,7 +3175,7 @@ public class megasys1
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") ); )
 	
-		PORT_START			/* IN5 0x80007.b */
+		PORT_START(); 			/* IN5 0x80007.b */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x03, "2" );
 		PORT_DIPSETTING(    0x01, "3" );

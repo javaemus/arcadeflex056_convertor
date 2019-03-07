@@ -139,15 +139,15 @@ public class blstroid
 	 *************************************/
 	
 	static InputPortPtr input_ports_blstroid = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* ff9800 */
+		PORT_START();       /* ff9800 */
 		PORT_ANALOG( 0x00ff, 0, IPT_DIAL | IPF_PLAYER1, 60, 10, 0, 0 );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* ff9804 */
+		PORT_START();       /* ff9804 */
 		PORT_ANALOG( 0x00ff, 0, IPT_DIAL | IPF_PLAYER2, 60, 10, 0, 0 );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* ff9c00 */
+		PORT_START(); 		/* ff9c00 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER1 );
@@ -158,7 +158,7 @@ public class blstroid
 		PORT_SERVICE( 0x0080, IP_ACTIVE_LOW );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* ff9c02 */
+		PORT_START(); 		/* ff9c02 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );

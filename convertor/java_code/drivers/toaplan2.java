@@ -1739,7 +1739,7 @@ public class toaplan2
 	*****************************************************************************/
 	
 	#define  TOAPLAN2_PLAYER_INPUT( player, button3 )								\
-		PORT_START																	\
+		PORT_START(); 																	\
 		PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY | player );\
 		PORT_BIT( 0x0002, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY | player );\
 		PORT_BIT( 0x0004, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | player );\
@@ -1750,7 +1750,7 @@ public class toaplan2
 		PORT_BIT( 0xff80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
 	#define  TOAPLAN2_SYSTEM_INPUTS						\
-		PORT_START										\
+		PORT_START(); 										\
 		PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_COIN3 );\
 		PORT_BIT( 0x0002, IP_ACTIVE_HIGH, IPT_TILT );\
 		PORT_BIT( 0x0004, IP_ACTIVE_HIGH, IPT_SERVICE1 );
@@ -1761,7 +1761,7 @@ public class toaplan2
 		PORT_BIT( 0xff80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
 	#define DSWA_8											\
-		PORT_START		/* (4) DSWA */						\
+		PORT_START(); 		/* (4) DSWA */						\
 		PORT_DIPNAME( 0x01,	0x00, DEF_STR( "Unused") );		\
 		PORT_DIPSETTING(	0x00, DEF_STR( "Off") );			\
 		PORT_DIPSETTING(	0x01, DEF_STR( "On") );			\
@@ -1853,7 +1853,7 @@ public class toaplan2
 	
 	
 	static InputPortPtr input_ports_tekipaki = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* (0) VBlank */
+		PORT_START(); 		/* (0) VBlank */
 		PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_VBLANK );
 		PORT_BIT( 0xfffe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
@@ -1867,7 +1867,7 @@ public class toaplan2
 		EUROPEAN_COINAGE_8
 	//	NONEUROPEAN_COINAGE_8
 	
-		PORT_START		/* (5) DSWB */
+		PORT_START(); 		/* (5) DSWB */
 		DIFFICULTY_8
 		PORT_DIPNAME( 0x04,	0x00, DEF_STR( "Unused") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
@@ -1888,7 +1888,7 @@ public class toaplan2
 		PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x80, DEF_STR( "On") );
 	
-		PORT_START		/* (6) Territory Jumper block */
+		PORT_START(); 		/* (6) Territory Jumper block */
 		PORT_DIPNAME( 0x0f,	0x02, "Territory" );
 		PORT_DIPSETTING(	0x02, "Europe" );
 		PORT_DIPSETTING(	0x01, "USA" );
@@ -1903,7 +1903,7 @@ public class toaplan2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_ghox = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* (0) VBlank */
+		PORT_START(); 		/* (0) VBlank */
 		PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_VBLANK );
 		PORT_BIT( 0xfffe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
@@ -1917,7 +1917,7 @@ public class toaplan2
 		EUROPEAN_COINAGE_8
 	//	NONEUROPEAN_COINAGE_8
 	
-		PORT_START		/* (5) DSWB */
+		PORT_START(); 		/* (5) DSWB */
 		DIFFICULTY_8
 		PORT_DIPNAME( 0x0c,	0x00, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(	0x00, "100k and every 200k" );
@@ -1932,7 +1932,7 @@ public class toaplan2
 		PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x80, DEF_STR( "On") );
 	
-		PORT_START		/* (6) Territory Jumper block */
+		PORT_START(); 		/* (6) Territory Jumper block */
 		PORT_DIPNAME( 0x0f,	0x02, "Territory" );
 		PORT_DIPSETTING(	0x02, "Europe" );
 		PORT_DIPSETTING(	0x01, "USA" );
@@ -1951,21 +1951,21 @@ public class toaplan2
 		PORT_DIPSETTING(	0x0e, "Japan (Taito Corporation); )
 		PORT_BIT( 0xf0, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START		/* (7)  Paddle 1 (left-right)  read at $100000 */
+		PORT_START(); 		/* (7)  Paddle 1 (left-right)  read at $100000 */
 		PORT_ANALOG( 0xff,	0x00, IPT_DIAL | IPF_PLAYER1, 25, 15, 0, 0xff );
 	
-		PORT_START		/* (8)  Paddle 2 (left-right)  read at $040000 */
+		PORT_START(); 		/* (8)  Paddle 2 (left-right)  read at $040000 */
 		PORT_ANALOG( 0xff,	0x00, IPT_DIAL | IPF_PLAYER2, 25, 15, 0, 0xff );
 	
-		PORT_START		/* (9)  Paddle 1 (fake up-down) */
+		PORT_START(); 		/* (9)  Paddle 1 (fake up-down) */
 		PORT_ANALOG( 0xff,	0x00, IPT_DIAL_V | IPF_PLAYER1, 15, 0, 0, 0xff );
 	
-		PORT_START		/* (10) Paddle 2 (fake up-down) */
+		PORT_START(); 		/* (10) Paddle 2 (fake up-down) */
 		PORT_ANALOG( 0xff,	0x00, IPT_DIAL_V | IPF_PLAYER2, 15, 0, 0, 0xff );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_dogyuun = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* (0) VBlank */
+		PORT_START(); 		/* (0) VBlank */
 		PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_VBLANK );
 		PORT_BIT( 0xfffe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
@@ -1975,7 +1975,7 @@ public class toaplan2
 	
 		TOAPLAN2_SYSTEM_INPUTS
 	
-		PORT_START		/* (4) DSWA */
+		PORT_START(); 		/* (4) DSWA */
 		PORT_DIPNAME( 0x0001,	0x0000, DEF_STR( "Free_Play"));
 		PORT_DIPSETTING(		0x0000, DEF_STR( "Off") );
 		PORT_DIPSETTING(		0x0001, DEF_STR( "On") );
@@ -1990,7 +1990,7 @@ public class toaplan2
 	//	NONEUROPEAN_COINAGE_16
 		PORT_BIT( 0xff00, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START		/* (5) DSWB */
+		PORT_START(); 		/* (5) DSWB */
 		DIFFICULTY_16
 		PORT_DIPNAME( 0x000c,	0x0000, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(		0x0004, "200k, 400k and 600k" );
@@ -2005,7 +2005,7 @@ public class toaplan2
 		PORT_DIPSETTING(		0x0080, DEF_STR( "No") );
 		PORT_DIPSETTING(		0x0000, DEF_STR( "Yes") );
 	
-		PORT_START		/* (6) Territory Jumper block */
+		PORT_START(); 		/* (6) Territory Jumper block */
 		PORT_DIPNAME( 0x0f,	0x03, "Territory" );
 		PORT_DIPSETTING(	0x03, "Europe" );
 		PORT_DIPSETTING(	0x01, "USA" );
@@ -2029,7 +2029,7 @@ public class toaplan2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_kbash = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* (0) VBlank */
+		PORT_START(); 		/* (0) VBlank */
 		PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_VBLANK );
 		PORT_BIT( 0xfffe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
@@ -2039,7 +2039,7 @@ public class toaplan2
 	
 		TOAPLAN2_SYSTEM_INPUTS
 	
-		PORT_START		/* (4) DSWA */
+		PORT_START(); 		/* (4) DSWA */
 		PORT_DIPNAME( 0x0001,	0x0000, "Continue Mode" );
 		PORT_DIPSETTING(		0x0000, "Normal" );
 		PORT_DIPSETTING(		0x0001, "Discount" );
@@ -2054,7 +2054,7 @@ public class toaplan2
 	//	NONEUROPEAN_COINAGE_16
 		PORT_BIT( 0xff00, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START		/* (5) DSWB */
+		PORT_START(); 		/* (5) DSWB */
 		DIFFICULTY_16
 		PORT_DIPNAME( 0x000c,	0x0000, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(		0x0000, "100k and every 400k" );
@@ -2075,7 +2075,7 @@ public class toaplan2
 		PORT_DIPSETTING(		0x0000, DEF_STR( "Yes") );
 		PORT_BIT( 0xff00, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START		/* (6) Territory Jumper block */
+		PORT_START(); 		/* (6) Territory Jumper block */
 		PORT_DIPNAME( 0x000f,	0x000a, "Territory" );
 		PORT_DIPSETTING(		0x000a, "Europe" );
 		PORT_DIPSETTING(		0x0009, "USA" );
@@ -2090,7 +2090,7 @@ public class toaplan2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_truxton2 = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* (0) VBlank */
+		PORT_START(); 		/* (0) VBlank */
 		PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_VBLANK );
 		PORT_BIT( 0xfffe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
@@ -2100,7 +2100,7 @@ public class toaplan2
 	
 		TOAPLAN2_SYSTEM_INPUTS
 	
-		PORT_START		/* (4) DSWA */
+		PORT_START(); 		/* (4) DSWA */
 		PORT_DIPNAME( 0x0002,	0x0000, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(		0x0000, DEF_STR( "Off") );
 		PORT_DIPSETTING(		0x0002, DEF_STR( "On") );
@@ -2112,7 +2112,7 @@ public class toaplan2
 	//	NONEUROPEAN_COINAGE_16
 		PORT_BIT( 0xff00, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START		/* (5) DSWB */
+		PORT_START(); 		/* (5) DSWB */
 		DIFFICULTY_16
 		PORT_DIPNAME( 0x000c,	0x0000, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(		0x0000, "70k and 200k" );
@@ -2127,7 +2127,7 @@ public class toaplan2
 		PORT_DIPSETTING(		0x0080, DEF_STR( "No") );
 		PORT_DIPSETTING(		0x0000, DEF_STR( "Yes") );
 	
-		PORT_START		/* (6) Territory Jumper block */
+		PORT_START(); 		/* (6) Territory Jumper block */
 		PORT_DIPNAME( 0x07,	0x02, "Territory" );
 		PORT_DIPSETTING(	0x02, "Europe" );
 		PORT_DIPSETTING(	0x01, "USA" );
@@ -2139,7 +2139,7 @@ public class toaplan2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_pipibibs = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* (0) VBlank */
+		PORT_START(); 		/* (0) VBlank */
 		PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_VBLANK );
 		PORT_BIT( 0xfffe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
@@ -2153,7 +2153,7 @@ public class toaplan2
 		EUROPEAN_COINAGE_8
 	//	NONEUROPEAN_COINAGE_8
 	
-		PORT_START		/* (5) DSWB */
+		PORT_START(); 		/* (5) DSWB */
 		DIFFICULTY_8
 		PORT_DIPNAME( 0x0c,	0x00, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(	0x04, "150k and every 200k" );
@@ -2168,7 +2168,7 @@ public class toaplan2
 		PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x80, DEF_STR( "On") );
 	
-		PORT_START		/* (6) Territory Jumper block */
+		PORT_START(); 		/* (6) Territory Jumper block */
 		PORT_DIPNAME( 0x07,	0x06, "Territory" );
 		PORT_DIPSETTING(	0x06, "Europe" );
 		PORT_DIPSETTING(	0x04, "USA" );
@@ -2185,7 +2185,7 @@ public class toaplan2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_whoopee = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* (0) VBlank */
+		PORT_START(); 		/* (0) VBlank */
 		PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_VBLANK );
 		PORT_BIT( 0xfffe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
@@ -2199,7 +2199,7 @@ public class toaplan2
 	//	EUROPEAN_COINAGE_8
 		NONEUROPEAN_COINAGE_8
 	
-		PORT_START		/* (5) DSWB */
+		PORT_START(); 		/* (5) DSWB */
 		DIFFICULTY_8
 		PORT_DIPNAME( 0x0c,	0x00, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(	0x04, "150k and every 200k" );
@@ -2214,7 +2214,7 @@ public class toaplan2
 		PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x80, DEF_STR( "On") );
 	
-		PORT_START		/* (6) Territory Jumper block */
+		PORT_START(); 		/* (6) Territory Jumper block */
 		PORT_DIPNAME( 0x07,	0x00, "Territory" );
 		PORT_DIPSETTING(	0x06, "Europe" );
 		PORT_DIPSETTING(	0x04, "USA" );
@@ -2231,7 +2231,7 @@ public class toaplan2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_pipibibi = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* (0) VBlank */
+		PORT_START(); 		/* (0) VBlank */
 	//	PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_VBLANK );	/* This video HW */
 	//	PORT_BIT( 0xfffe, IP_ACTIVE_HIGH, IPT_UNKNOWN );	/* doesnt wait for VBlank */
 	
@@ -2241,7 +2241,7 @@ public class toaplan2
 	
 		TOAPLAN2_SYSTEM_INPUTS
 	
-		PORT_START		/* (4) DSWA */
+		PORT_START(); 		/* (4) DSWA */
 		PORT_DIPNAME( 0x01,	0x00, DEF_STR( "Unused") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "On") );
@@ -2256,7 +2256,7 @@ public class toaplan2
 	//	EUROPEAN_COINAGE_8
 		NONEUROPEAN_COINAGE_8
 	
-		PORT_START		/* (5) DSWB */
+		PORT_START(); 		/* (5) DSWB */
 		DIFFICULTY_8
 		PORT_DIPNAME( 0x0c,	0x00, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(	0x04, "150k and every 200k" );
@@ -2271,7 +2271,7 @@ public class toaplan2
 		PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x80, DEF_STR( "On") );
 	
-		PORT_START		/* (6) Territory Jumper block */
+		PORT_START(); 		/* (6) Territory Jumper block */
 		PORT_DIPNAME( 0x07,	0x05, "Territory" );
 		PORT_DIPSETTING(	0x07, "World (Ryouta Kikaku); )
 		PORT_DIPSETTING(	0x00, "Japan (Ryouta Kikaku); )
@@ -2288,7 +2288,7 @@ public class toaplan2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_fixeight = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* (0) VBlank */
+		PORT_START(); 		/* (0) VBlank */
 		PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_VBLANK );
 		PORT_BIT( 0xfffe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
@@ -2298,7 +2298,7 @@ public class toaplan2
 	
 		TOAPLAN2_PLAYER_INPUT( IPF_PLAYER3, IPT_START3 )
 	
-		PORT_START		/* service input is a push-button marked 'Test SW' */
+		PORT_START(); 		/* service input is a push-button marked 'Test SW' */
 		PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_COIN3 );
 		PORT_BIT( 0x0002, IP_ACTIVE_HIGH, IPT_TILT );
 		PORT_BITX(0x0004, IP_ACTIVE_HIGH, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
@@ -2309,7 +2309,7 @@ public class toaplan2
 		PORT_BIT( 0xff80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
 	#if 0
-		PORT_START		/* Fake input, to display message */
+		PORT_START(); 		/* Fake input, to display message */
 		PORT_DIPNAME( 0x00,	0x00, "    Press service button" );
 		PORT_DIPSETTING(	0x00, "" );
 		PORT_DIPNAME( 0x00,	0x00, "  for game keeping options" );
@@ -2318,7 +2318,7 @@ public class toaplan2
 		PORT_DIPSETTING(	0x00, "" );
 	#endif
 	
-		PORT_START		/* (4) DSWA */
+		PORT_START(); 		/* (4) DSWA */
 		PORT_DIPNAME( 0x0001,	0x0000, "Maximum Players" );
 		PORT_DIPSETTING(		0x0000, "2" );
 		PORT_DIPSETTING(		0x0001, "3" );
@@ -2335,7 +2335,7 @@ public class toaplan2
 	//	NONEUROPEAN_COINAGE_16
 		PORT_BIT( 0xff00, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START		/* (5) DSWB */
+		PORT_START(); 		/* (5) DSWB */
 		DIFFICULTY_16
 		PORT_DIPNAME( 0x000c,	0x0000, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(		0x0004, "300k and every 300k" );
@@ -2350,7 +2350,7 @@ public class toaplan2
 		PORT_DIPSETTING(		0x0080, DEF_STR( "No") );
 		PORT_DIPSETTING(		0x0000, DEF_STR( "Yes") );
 	
-		PORT_START		/* (6) Territory Jumper block */
+		PORT_START(); 		/* (6) Territory Jumper block */
 		PORT_DIPNAME( 0x0f,	0x09, "Territory" );
 		PORT_DIPSETTING(	0x09, "Europe" );
 		PORT_DIPSETTING(	0x08, "Europe (Taito Corp); )
@@ -2370,7 +2370,7 @@ public class toaplan2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_grindstm = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* (0) VBlank */
+		PORT_START(); 		/* (0) VBlank */
 		PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_VBLANK );
 		PORT_BIT( 0xfffe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
@@ -2380,7 +2380,7 @@ public class toaplan2
 	
 		TOAPLAN2_SYSTEM_INPUTS
 	
-		PORT_START		/* (4) DSWA */
+		PORT_START(); 		/* (4) DSWA */
 		PORT_DIPNAME( 0x0001,	0x0000, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(		0x0000, DEF_STR( "Upright") );
 		PORT_DIPSETTING(		0x0001, DEF_STR( "Cocktail") );
@@ -2395,7 +2395,7 @@ public class toaplan2
 	//	NONEUROPEAN_COINAGE_16
 		PORT_BIT( 0xff00, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START		/* (5) DSWB */
+		PORT_START(); 		/* (5) DSWB */
 		DIFFICULTY_16
 		PORT_DIPNAME( 0x000c,	0x0000, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(		0x0008, "200k only" );
@@ -2410,7 +2410,7 @@ public class toaplan2
 		PORT_DIPSETTING(		0x0080, DEF_STR( "No") );
 		PORT_DIPSETTING(		0x0000, DEF_STR( "Yes") );
 	
-		PORT_START		/* (6) Territory Jumper block */
+		PORT_START(); 		/* (6) Territory Jumper block */
 		PORT_DIPNAME( 0x0f,	0x08, "Territory" );
 		PORT_DIPSETTING(	0x08, "Europe" );
 		PORT_DIPSETTING(	0x0b, "USA" );
@@ -2434,7 +2434,7 @@ public class toaplan2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_vfive = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* (0) VBlank */
+		PORT_START(); 		/* (0) VBlank */
 		PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_VBLANK );
 		PORT_BIT( 0xfffe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
@@ -2444,7 +2444,7 @@ public class toaplan2
 	
 		TOAPLAN2_SYSTEM_INPUTS
 	
-		PORT_START		/* (4) DSWA */
+		PORT_START(); 		/* (4) DSWA */
 		PORT_DIPNAME( 0x0001,	0x0000, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(		0x0000, DEF_STR( "Upright") );
 		PORT_DIPSETTING(		0x0001, DEF_STR( "Cocktail") );
@@ -2458,7 +2458,7 @@ public class toaplan2
 		NONEUROPEAN_COINAGE_16
 		PORT_BIT( 0xff00, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START		/* (5) DSWB */
+		PORT_START(); 		/* (5) DSWB */
 		DIFFICULTY_16
 		PORT_DIPNAME( 0x000c,	0x0000, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(		0x0008, "200k only" );
@@ -2473,13 +2473,13 @@ public class toaplan2
 		PORT_DIPSETTING(		0x0080, DEF_STR( "No") );
 		PORT_DIPSETTING(		0x0000, DEF_STR( "Yes") );
 	
-		PORT_START		/* (6) Territory Jumper block */
+		PORT_START(); 		/* (6) Territory Jumper block */
 		/* Territory is forced to Japan in this set. */
 		PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* bit 0x10 sound ready */
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_batsugun = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* (0) VBlank */
+		PORT_START(); 		/* (0) VBlank */
 		PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_VBLANK );
 		PORT_BIT( 0xfffe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
@@ -2489,7 +2489,7 @@ public class toaplan2
 	
 		TOAPLAN2_SYSTEM_INPUTS
 	
-		PORT_START		/* (4) DSWA */
+		PORT_START(); 		/* (4) DSWA */
 		PORT_DIPNAME( 0x0001,	0x0000, "Continue Mode" );
 		PORT_DIPSETTING(		0x0000, "Normal" );
 		PORT_DIPSETTING(		0x0001, "Discount" );
@@ -2504,7 +2504,7 @@ public class toaplan2
 	//	NONEUROPEAN_COINAGE_16
 		PORT_BIT( 0xff00, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START		/* (5) DSWB */
+		PORT_START(); 		/* (5) DSWB */
 		DIFFICULTY_16
 		PORT_DIPNAME( 0x000c,	0x0000, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(		0x0004, "500k and every 600k" );
@@ -2519,7 +2519,7 @@ public class toaplan2
 		PORT_DIPSETTING(		0x0080, DEF_STR( "No") );
 		PORT_DIPSETTING(		0x0000, DEF_STR( "Yes") );
 	
-		PORT_START		/* (6) Territory Jumper block */
+		PORT_START(); 		/* (6) Territory Jumper block */
 		PORT_DIPNAME( 0x000f,	0x0009, "Territory" );
 		PORT_DIPSETTING(		0x0009, "Europe" );
 		PORT_DIPSETTING(		0x000b, "USA" );
@@ -2541,7 +2541,7 @@ public class toaplan2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_snowbro2 = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* (0) VBlank */
+		PORT_START(); 		/* (0) VBlank */
 		PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_VBLANK );
 		PORT_BIT( 0xfffe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
@@ -2555,7 +2555,7 @@ public class toaplan2
 	
 		TOAPLAN2_SYSTEM_INPUTS
 	
-		PORT_START		/* (6) DSWA */
+		PORT_START(); 		/* (6) DSWA */
 		PORT_DIPNAME( 0x0001,	0x0000, "Continue Mode" );
 		PORT_DIPSETTING(		0x0000, "Normal" );
 		PORT_DIPSETTING(		0x0001, "Discount" );
@@ -2572,7 +2572,7 @@ public class toaplan2
 	//	EUROPEAN_COINAGE_16
 		PORT_BIT( 0xff00, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START		/* (7) DSWB */
+		PORT_START(); 		/* (7) DSWB */
 		DIFFICULTY_16
 		PORT_DIPNAME( 0x000c,	0x0000, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(		0x0004, "100k and every 500k" );
@@ -2593,7 +2593,7 @@ public class toaplan2
 		PORT_DIPSETTING(		0x0000, "4" );
 		PORT_BIT( 0xff00, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START		/* (8) Territory Jumper block */
+		PORT_START(); 		/* (8) Territory Jumper block */
 		PORT_DIPNAME( 0x1c00,	0x0800, "Territory" );
 		PORT_DIPSETTING(		0x0800, "Europe" );
 		PORT_DIPSETTING(		0x0400, "USA" );
@@ -2610,7 +2610,7 @@ public class toaplan2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_mahoudai = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* (0) VBlank */
+		PORT_START(); 		/* (0) VBlank */
 		PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_VBLANK );
 		PORT_BIT( 0xfffe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
@@ -2620,7 +2620,7 @@ public class toaplan2
 	
 		TOAPLAN2_SYSTEM_INPUTS
 	
-		PORT_START		/* (4) DSWA */
+		PORT_START(); 		/* (4) DSWA */
 		PORT_DIPNAME( 0x0001,	0x0000, DEF_STR( "Free_Play") );
 		PORT_DIPSETTING(		0x0000, DEF_STR( "Off") );
 		PORT_DIPSETTING(		0x0001, DEF_STR( "On") );
@@ -2634,7 +2634,7 @@ public class toaplan2
 		NONEUROPEAN_COINAGE_16
 		PORT_BIT( 0xff00, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START		/* (5) DSWB */
+		PORT_START(); 		/* (5) DSWB */
 		DIFFICULTY_16
 		PORT_DIPNAME( 0x000c,	0x0000, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(		0x0004, "200k and 500k" );
@@ -2649,12 +2649,12 @@ public class toaplan2
 		PORT_DIPSETTING(		0x0080, DEF_STR( "No") );
 		PORT_DIPSETTING(		0x0000, DEF_STR( "Yes") );
 	
-		PORT_START		/* (6) Territory Jumper block */
+		PORT_START(); 		/* (6) Territory Jumper block */
 		PORT_BIT( 0xffff, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* not used, it seems */
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_shippumd = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* (0) VBlank */
+		PORT_START(); 		/* (0) VBlank */
 		PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_VBLANK );
 		PORT_BIT( 0xfffe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
@@ -2664,7 +2664,7 @@ public class toaplan2
 	
 		TOAPLAN2_SYSTEM_INPUTS
 	
-		PORT_START		/* (4) DSWA */
+		PORT_START(); 		/* (4) DSWA */
 		PORT_DIPNAME( 0x0001,	0x0000, DEF_STR( "Free_Play") );
 		PORT_DIPSETTING(		0x0000, DEF_STR( "Off") );
 		PORT_DIPSETTING(		0x0001, DEF_STR( "On") );
@@ -2681,7 +2681,7 @@ public class toaplan2
 	//	EUROPEAN_COINAGE_16
 		PORT_BIT( 0xff00, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START		/* (5) DSWB */
+		PORT_START(); 		/* (5) DSWB */
 		DIFFICULTY_16
 		PORT_DIPNAME( 0x000c,	0x0000, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(		0x0004, "200k and 500k" );
@@ -2697,7 +2697,7 @@ public class toaplan2
 		PORT_DIPSETTING(		0x0000, DEF_STR( "Yes") );
 		PORT_BIT( 0xff00, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START		/* (6) Territory Jumper block */
+		PORT_START(); 		/* (6) Territory Jumper block */
 		/* Title screen is wrong when set to other countries */
 		/* It suggests text ROM may be different for other territories */
 		PORT_DIPNAME( 0x000e,	0x0000, "Territory" );
@@ -2713,7 +2713,7 @@ public class toaplan2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_battleg = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* (0) VBlank */
+		PORT_START(); 		/* (0) VBlank */
 		PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_VBLANK );
 		PORT_BIT( 0xfffe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
@@ -2723,7 +2723,7 @@ public class toaplan2
 	
 		TOAPLAN2_SYSTEM_INPUTS
 	
-		PORT_START		/* (4) DSWA */
+		PORT_START(); 		/* (4) DSWA */
 		PORT_SERVICE( 0x0001,	IP_ACTIVE_HIGH );	/* Service Mode */
 		PORT_DIPNAME( 0x0002,	0x0000, "Credits to Start" );
 		PORT_DIPSETTING(		0x0000, "1" );
@@ -2759,7 +2759,7 @@ public class toaplan2
 	//	PORT_DIPSETTING(		0x0080, DEF_STR( "On") );
 		PORT_BIT( 0xff00, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START		/* (5) DSWB */
+		PORT_START(); 		/* (5) DSWB */
 		DIFFICULTY_16
 		PORT_DIPNAME( 0x0004,	0x0000, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(		0x0000, DEF_STR( "Off") );
@@ -2785,7 +2785,7 @@ public class toaplan2
 		PORT_DIPSETTING(		0x0000, "None" );
 		PORT_BIT( 0xff00, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START		/* (6) DSWC / Territory Jumper block */
+		PORT_START(); 		/* (6) DSWC / Territory Jumper block */
 		PORT_DIPNAME( 0x0004,	0x0000, "Allow Continue" );
 		PORT_DIPSETTING(		0x0004, DEF_STR( "Off") );
 		PORT_DIPSETTING(		0x0000, DEF_STR( "On") );
@@ -2801,11 +2801,11 @@ public class toaplan2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_batrider = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* (0) VBlank */
+		PORT_START(); 		/* (0) VBlank */
 		PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_VBLANK );
 		PORT_BIT( 0xfffe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START		/* (1) Player Inputs */
+		PORT_START(); 		/* (1) Player Inputs */
 		PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
@@ -2822,7 +2822,7 @@ public class toaplan2
 		PORT_BIT( 0x4000, IP_ACTIVE_HIGH, IPT_BUTTON3 | IPF_PLAYER2 );
 		PORT_BIT( 0x8080, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START		/* (2) Coin/System and DSWC */
+		PORT_START(); 		/* (2) Coin/System and DSWC */
 		PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_COIN3 );
 		PORT_BIT( 0x0002, IP_ACTIVE_HIGH, IPT_TILT );
 		PORT_BIT( 0x0004, IP_ACTIVE_HIGH, IPT_SERVICE1 );
@@ -2866,7 +2866,7 @@ public class toaplan2
 		PORT_DIPSETTING(		0x0000, DEF_STR( "Off") );
 		PORT_DIPSETTING(		0x8000, DEF_STR( "On") );
 	
-		PORT_START		/* (3) DSWA and DSWB */
+		PORT_START(); 		/* (3) DSWA and DSWB */
 		PORT_SERVICE( 0x0001,	IP_ACTIVE_HIGH );	/* Service Mode */
 		PORT_DIPNAME( 0x0002,	0x0000, "Credits to Start" );
 		PORT_DIPSETTING(		0x0000, "1" );

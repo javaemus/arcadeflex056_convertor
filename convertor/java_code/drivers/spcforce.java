@@ -144,7 +144,7 @@ public class spcforce
 	
 	
 	static InputPortPtr input_ports_spcforce = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* DSW */
+		PORT_START();       /* DSW */
 		PORT_DIPNAME( 0x03, 0x02, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "1C_1C") );
@@ -168,7 +168,7 @@ public class spcforce
 		PORT_DIPSETTING(    0x80, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT ( 0x04, IP_ACTIVE_LOW, IPT_COIN1 );
@@ -178,7 +178,7 @@ public class spcforce
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_COCKTAIL | IPF_2WAY );
 		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT ( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -191,7 +191,7 @@ public class spcforce
 	
 	/* same as spcforce, but no cocktail mode */
 	static InputPortPtr input_ports_spcforc2 = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* DSW */
+		PORT_START();       /* DSW */
 		PORT_DIPNAME( 0x03, 0x02, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "1C_1C") );
@@ -215,7 +215,7 @@ public class spcforce
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT ( 0x04, IP_ACTIVE_LOW, IPT_COIN1 );
@@ -225,7 +225,7 @@ public class spcforce
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BITX( 0x08, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_VBLANK );
 	INPUT_PORTS_END(); }}; 

@@ -99,39 +99,39 @@ public class qwakprot
 	
 	
 	static InputPortPtr input_ports_qwakprot = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_UP );
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );		/* ??? */
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN );
 		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_VBLANK );		/* ??? */
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT );
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_VBLANK );		/* ??? */
 	
-		PORT_START      /* IN3 */
+		PORT_START();       /* IN3 */
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT );
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );		/* ??? */
 	
-		PORT_START      /* IN4 */
+		PORT_START();       /* IN4 */
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );		/* ??? */
 	
-		PORT_START      /* IN5 */
+		PORT_START();       /* IN5 */
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START      /* IN6 */
+		PORT_START();       /* IN6 */
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START      /* IN7 */
+		PORT_START();       /* IN7 */
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );		/* ??? */
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_COIN3 );
 	
-		PORT_START      /* IN8 */
+		PORT_START();       /* IN8 */
 		PORT_DIPNAME( 0x01, 0x00, "DIP 1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );

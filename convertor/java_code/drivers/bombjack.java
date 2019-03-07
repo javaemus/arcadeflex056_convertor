@@ -167,7 +167,7 @@ public class bombjack
 	
 	
 	static InputPortPtr input_ports_bombjack = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP | IPF_8WAY );
@@ -177,7 +177,7 @@ public class bombjack
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused */
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP | IPF_8WAY | IPF_COCKTAIL );
@@ -187,14 +187,14 @@ public class bombjack
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused */
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "1C_2C") );
@@ -217,7 +217,7 @@ public class bombjack
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x07, 0x00, "Initial High Score?" );
 		PORT_DIPSETTING(    0x00, "10000" );
 		PORT_DIPSETTING(    0x01, "100000" );

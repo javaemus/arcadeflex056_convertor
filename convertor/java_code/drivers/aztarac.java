@@ -110,16 +110,16 @@ public class aztarac
 	
 	
 	static InputPortPtr input_ports_aztarac = new InputPortPtr(){ public void handler() { 
-		PORT_START /* IN0 */
+		PORT_START();  /* IN0 */
 		PORT_ANALOG( 0x1f, 0xf, IPT_AD_STICK_X | IPF_CENTER, 100, 1, 0, 0x1e );
 	
-		PORT_START /* IN1 */
+		PORT_START();  /* IN1 */
 		PORT_ANALOG( 0x1f, 0xf, IPT_AD_STICK_Y | IPF_CENTER | IPF_REVERSE, 100, 1, 0, 0x1e );
 	
-		PORT_START /* IN2 */
+		PORT_START();  /* IN2 */
 		PORT_ANALOGX( 0xff, 0x00, IPT_DIAL | IPF_REVERSE, 25, 10, 0, 0, KEYCODE_Z, KEYCODE_X, 0, 0 );
 	
-		PORT_START /* IN3 */
+		PORT_START();  /* IN3 */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1 );

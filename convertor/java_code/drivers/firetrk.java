@@ -782,7 +782,7 @@ public class firetrk
 	ROM_END(); }}; 
 	
 	static InputPortPtr input_ports_firetruck = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x03, 0x02, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "1C_1C") );
@@ -806,7 +806,7 @@ public class firetrk
 		PORT_DIPSETTING(    0x80, "Spanish" );
 		PORT_DIPSETTING(    0xc0, "German" );
 	
-		PORT_START /* bit 0 */
+		PORT_START();  /* bit 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,	IPT_UNUSED );/* SPARE */
 		PORT_BITX(0x02, IP_ACTIVE_HIGH,	IPT_BUTTON1,"Gas",IP_KEY_DEFAULT,IP_JOY_DEFAULT );/* GAS */
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH,	IPT_UNUSED );/* STEER DIR1 */
@@ -816,7 +816,7 @@ public class firetrk
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH,	IPT_UNUSED );/* SKIDIN */
 		PORT_BITX(0x80, IP_ACTIVE_HIGH,	IPT_SERVICE|IPF_TOGGLE, DEF_STR(Service_Mode); KEYCODE_F2, IP_JOY_NONE )
 	
-		PORT_START /* bit 6 */
+		PORT_START();  /* bit 6 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH,	IPT_START1 );/* START1 */
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH,	IPT_START2 );/* START2 */
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH,	IPT_START3 );/* START3 */
@@ -828,7 +828,7 @@ public class firetrk
 		PORT_DIPSETTING(	0x40, "2 Players" );
 		PORT_BITX(0x80, IP_ACTIVE_HIGH,	IPT_SERVICE, "Diag Hold", KEYCODE_F6, IP_JOY_NONE);
 	
-		PORT_START /* bit 7 */
+		PORT_START();  /* bit 7 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,	IPT_UNUSED );/* SPARE */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,	IPT_UNUSED );/* SPARE */
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH,	IPT_UNUSED );/* STEER FLAG1 */
@@ -838,13 +838,13 @@ public class firetrk
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH,	IPT_UNUSED );/* CRASHIN */
 		PORT_BITX(0x80, IP_ACTIVE_HIGH,	IPT_SERVICE, "Diag Step", KEYCODE_F1, IP_JOY_NONE);
 	
-		PORT_START /* p1 steering */
+		PORT_START();  /* p1 steering */
 		PORT_ANALOG ( 0xff, 0x80, IPT_DIAL, 100, 0, 0 ,255 );
 	
-		PORT_START /* p2 steering */
+		PORT_START();  /* p2 steering */
 		PORT_ANALOG ( 0xff, 0x80, IPT_DIAL | IPF_PLAYER2, 100, 0, 0, 255 );
 	
-		PORT_START /* Mechanical Horn switch */
+		PORT_START();  /* Mechanical Horn switch */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, IPT_BUTTON4,"Horn Button",IP_KEY_DEFAULT,IP_JOY_DEFAULT);
 	
 	INPUT_PORTS_END(); }}; 

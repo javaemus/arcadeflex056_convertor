@@ -131,7 +131,7 @@ public class pcktgal
 	/***************************************************************************/
 	
 	static InputPortPtr input_ports_pcktgal = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY );
@@ -141,7 +141,7 @@ public class pcktgal
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_PLAYER2 );
@@ -151,7 +151,7 @@ public class pcktgal
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 	
-		PORT_START	/* Dip switch */
+		PORT_START(); 	/* Dip switch */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(	0x03, DEF_STR( "1C_1C") );

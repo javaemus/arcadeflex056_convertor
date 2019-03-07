@@ -300,7 +300,7 @@ public class bzone
 	
 	
 	static InputPortPtr input_ports_bzone = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT ( 0x0c, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -314,7 +314,7 @@ public class bzone
 	 	/* handled by bzone_IN0_r() */
 		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME(0x03, 0x01, DEF_STR( "Lives") );
 		PORT_DIPSETTING (  0x00, "2" );
 		PORT_DIPSETTING (  0x01, "3" );
@@ -336,7 +336,7 @@ public class bzone
 		PORT_DIPSETTING (  0x80, "French" );
 		PORT_DIPSETTING (  0xc0, "Spanish" );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME(0x03, 0x02, DEF_STR( "Coinage") );
 		PORT_DIPSETTING (  0x03, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING (  0x02, DEF_STR( "1C_1C") );
@@ -357,7 +357,7 @@ public class bzone
 		PORT_DIPSETTING (  0x60, "6 credits/4 coins" );
 		PORT_DIPSETTING (  0x80, "6 credits/5 coins" );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICKRIGHT_DOWN | IPF_2WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICKRIGHT_UP   | IPF_2WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICKLEFT_DOWN  | IPF_2WAY );
@@ -367,7 +367,7 @@ public class bzone
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* fake port for single joystick control */
+		PORT_START(); 	/* fake port for single joystick control */
 		/* This fake port is handled via bzone_IN3_r */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_CHEAT );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_CHEAT );
@@ -417,7 +417,7 @@ public class bzone
 	
 	
 	static InputPortPtr input_ports_redbaron = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_COIN1);
 		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_COIN2);
 		PORT_BIT ( 0x0c, IP_ACTIVE_LOW, IPT_UNUSED);
@@ -431,12 +431,12 @@ public class bzone
 	 	/* handled by bzone_IN0_r() */
 		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		/* See the table above if you are really interested */
 		PORT_DIPNAME(0xff, 0xfd, DEF_STR( "Coinage") );
 		PORT_DIPSETTING (  0xfd, "Normal" );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME(0x03, 0x03, "Language" );
 		PORT_DIPSETTING (  0x00, "German" );
 		PORT_DIPSETTING (  0x01, "French" );
@@ -462,23 +462,23 @@ public class bzone
 		/* IN3 - the real machine reads either the X or Y axis from this port */
 		/* Instead, we use the two fake 5 & 6 ports and bank-switch the proper */
 		/* value based on the lsb of the byte written to the sound port */
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP | IPF_4WAY );
 		PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_4WAY );
 	
-		PORT_START	/* IN4 - misc controls */
+		PORT_START(); 	/* IN4 - misc controls */
 		PORT_BIT( 0x3f, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_BUTTON1 );
 	
 		/* These 2 are fake - they are bank-switched from reads to IN3 */
 		/* Red Baron doesn't seem to use the full 0-255 range. */
-		PORT_START	/* IN5 */
+		PORT_START(); 	/* IN5 */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 25, 10, 64, 192 );
 	
-		PORT_START	/* IN6 */
+		PORT_START(); 	/* IN6 */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 25, 10, 64, 192 );
 	INPUT_PORTS_END(); }}; 
 	

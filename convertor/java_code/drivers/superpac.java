@@ -131,7 +131,7 @@ public class superpac
 	 *************************************/
 	
 	static InputPortPtr input_ports_superpac = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x0f, 0x00, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x00, "Rank 0-Normal" );
 		PORT_DIPSETTING(    0x01, "Rank 1-Easiest" );
@@ -161,7 +161,7 @@ public class superpac
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x07, 0x00, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x07, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(    0x05, DEF_STR( "2C_1C") );
@@ -196,7 +196,7 @@ public class superpac
 		PORT_DIPSETTING(    0x00, "3" );
 		PORT_DIPSETTING(    0xc0, "5" );
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		/* The player inputs are not memory mapped, they are handled by an I/O chip. */
 		/* These fake input ports are read by mappy_customio_data_r() */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP | IPF_4WAY );
@@ -207,7 +207,7 @@ public class superpac
 		PORT_BITX(0x20, IP_ACTIVE_HIGH, IPT_BUTTON1, 0, IP_KEY_PREVIOUS, IP_JOY_PREVIOUS );
 		PORT_BIT( 0xc0, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		PORT_BIT_IMPULSE( 0x01, IP_ACTIVE_HIGH, IPT_COIN1, 1 );
 		PORT_BIT_IMPULSE( 0x02, IP_ACTIVE_HIGH, IPT_COIN2, 1 );
 		PORT_BIT( 0x0c, IP_ACTIVE_HIGH, IPT_UNUSED );
@@ -218,7 +218,7 @@ public class superpac
 		PORT_DIPSETTING(    0x40, DEF_STR( "Cocktail") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_HIGH );
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_4WAY | IPF_COCKTAIL );
@@ -230,7 +230,7 @@ public class superpac
 	
 	
 	static InputPortPtr input_ports_pacnpal = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_1C") );
@@ -243,7 +243,7 @@ public class superpac
 		PORT_DIPSETTING(    0x0c, "D" );
 		PORT_BIT( 0xf0, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x07, 0x00, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x07, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(    0x05, DEF_STR( "2C_1C") );
@@ -278,7 +278,7 @@ public class superpac
 		PORT_DIPSETTING(    0x80, "3" );
 		PORT_DIPSETTING(    0xc0, "5" );
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		/* The player inputs are not memory mapped, they are handled by an I/O chip. */
 		/* These fake input ports are read by mappy_customio_data_r() */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP | IPF_4WAY );
@@ -289,7 +289,7 @@ public class superpac
 		PORT_BIT_IMPULSE( 0x20, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_COCKTAIL, 2 );
 		PORT_BIT( 0xc0, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		PORT_BIT_IMPULSE( 0x01, IP_ACTIVE_HIGH, IPT_COIN1, 2 );
 		PORT_BIT_IMPULSE( 0x02, IP_ACTIVE_HIGH, IPT_COIN2, 2 );
 		PORT_BIT( 0x0c, IP_ACTIVE_HIGH, IPT_UNUSED );
@@ -300,7 +300,7 @@ public class superpac
 		PORT_DIPSETTING(    0x40, DEF_STR( "Cocktail") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_HIGH );
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_4WAY | IPF_COCKTAIL );

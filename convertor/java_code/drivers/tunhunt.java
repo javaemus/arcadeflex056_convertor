@@ -590,7 +590,7 @@ public class tunhunt
 	};
 	
 	static InputPortPtr input_ports_tunhunt = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_TILT );
 		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON1 );
 		PORT_DIPNAME( 0x04, 0x00, DEF_STR( "Service_Mode") );
@@ -602,13 +602,13 @@ public class tunhunt
 		PORT_BIT ( 0x40, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_VBLANK );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOG( 0xff, 0x00, IPT_AD_STICK_Y, 100, 4, 0x00, 0xff );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOG( 0xff, 0x00, IPT_AD_STICK_X | IPF_REVERSE, 100, 4, 0x00, 0xff );
 	
-		PORT_START /* dip switches */
+		PORT_START();  /* dip switches */
 		PORT_DIPNAME (0x0003, 0x0002, DEF_STR( "Coinage") );
 		PORT_DIPSETTING (     0x0003, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING (     0x0002, DEF_STR( "1C_1C") );

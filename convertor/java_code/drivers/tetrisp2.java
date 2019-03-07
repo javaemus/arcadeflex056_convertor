@@ -206,7 +206,7 @@ public class tetrisp2
 	
 	static InputPortPtr input_ports_tetrisp2 = new InputPortPtr(){ public void handler() { 
 	
-		PORT_START	// IN0 - $be0002.w
+		PORT_START(); 	// IN0 - $be0002.w
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER1 );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER1 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER1 );
@@ -225,7 +225,7 @@ public class tetrisp2
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_BUTTON3        | IPF_PLAYER2 );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );// unused button
 	
-		PORT_START	// IN1 - $be0004.w
+		PORT_START(); 	// IN1 - $be0004.w
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_START1   );
@@ -244,7 +244,7 @@ public class tetrisp2
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 	
-		PORT_START	// IN2 - $be0008.w
+		PORT_START(); 	// IN2 - $be0008.w
 		PORT_DIPNAME( 0x0007, 0x0007, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "5C_1C") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "4C_1C") );
@@ -302,7 +302,7 @@ public class tetrisp2
 	
 	static InputPortPtr input_ports_teplus2j = new InputPortPtr(){ public void handler() { 
 	
-		PORT_START	// IN0 - $be0002.w
+		PORT_START(); 	// IN0 - $be0002.w
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER1 );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER1 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER1 );
@@ -321,7 +321,7 @@ public class tetrisp2
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_BUTTON3        | IPF_PLAYER2 );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );// unused button
 	
-		PORT_START	// IN1 - $be0004.w
+		PORT_START(); 	// IN1 - $be0004.w
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_START1   );
@@ -344,7 +344,7 @@ public class tetrisp2
 		The code for checking the "service mode" and "free play" DSWs
 		is (deliberately?) bugged in this set
 	*/
-		PORT_START	// IN2 - $be0008.w
+		PORT_START(); 	// IN2 - $be0008.w
 		PORT_DIPNAME( 0x0007, 0x0007, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "5C_1C") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "4C_1C") );

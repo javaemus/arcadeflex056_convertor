@@ -1163,7 +1163,7 @@ public class atarigx2
 	 *************************************/
 	
 	static InputPortPtr input_ports_spclords = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* 68.SW (A1=0) */
+		PORT_START(); 		/* 68.SW (A1=0) */
 		PORT_BIT( 0x00ff, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x0100, IP_ACTIVE_LOW, IPT_START1 );					/* BLUE button */
 		PORT_BIT( 0x0200, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );	/* Left thumb */
@@ -1174,7 +1174,7 @@ public class atarigx2
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );	/* Throttle button */
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_PLAYER1 );
 	
-		PORT_START		/* 68.SW (A1=1) */
+		PORT_START(); 		/* 68.SW (A1=1) */
 		PORT_BIT( 0x00ff, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x0100, IP_ACTIVE_LOW, IPT_START2 );					/* RED button */
 		PORT_BIT( 0x0200, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER1 );	/* Right thumb */
@@ -1185,7 +1185,7 @@ public class atarigx2
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_PLAYER2 );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_PLAYER2 );
 	
-		PORT_START      /* 68.STATUS (A2=0) */
+		PORT_START();       /* 68.STATUS (A2=0) */
 		PORT_BIT( 0x0007, IP_ACTIVE_LOW, IPT_UNUSED );/* +5V */
 		PORT_BIT( 0x0008, IP_ACTIVE_HIGH, IPT_UNUSED );/* A2D.EOC */
 		PORT_BIT( 0x0010, IP_ACTIVE_LOW, IPT_UNUSED );/* /AUDIRQ */
@@ -1194,7 +1194,7 @@ public class atarigx2
 		PORT_BIT( 0x0080, IP_ACTIVE_HIGH, IPT_VBLANK );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* 68.STATUS (A2=1) */
+		PORT_START();       /* 68.STATUS (A2=1) */
 		PORT_BIT( 0x0003, IP_ACTIVE_LOW, IPT_UNUSED );/* +5V */
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_UNUSED );/* /XIRQ */
 		PORT_BIT( 0x0008, IP_ACTIVE_LOW, IPT_UNUSED );/* /XFULL */
@@ -1205,19 +1205,19 @@ public class atarigx2
 	
 		JSA_III_PORT	/* audio board port */
 	
-		PORT_START		/* A2D @ 0xD00002 */
+		PORT_START(); 		/* A2D @ 0xD00002 */
 		PORT_ANALOG ( 0x00ff, 0x0080, IPT_AD_STICK_X | IPF_PLAYER1, 100, 10, 0x10, 0xf0 );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* A2D @ 0xD00004 */
+		PORT_START(); 		/* A2D @ 0xD00004 */
 		PORT_ANALOG ( 0x00ff, 0x0080, IPT_AD_STICK_Y | IPF_PLAYER1, 100, 10, 0x10, 0xf0 );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* A2D @ 0xD00006 */
+		PORT_START(); 		/* A2D @ 0xD00006 */
 		PORT_ANALOG ( 0x00ff, 0x0080, IPT_AD_STICK_X | IPF_PLAYER2, 100, 10, 0x10, 0xf0 );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* A2D @ 0xD00008 */
+		PORT_START(); 		/* A2D @ 0xD00008 */
 		PORT_ANALOG ( 0x00ff, 0x0080, IPT_AD_STICK_Y | IPF_PLAYER2, 100, 10, 0x10, 0xf0 );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 

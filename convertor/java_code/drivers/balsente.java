@@ -1420,14 +1420,14 @@ public class balsente
 	    PORT_ANALOG( 0xff, 0, IPT_DIAL | IPF_PLAYER1 | IPF_CENTER, 100, 20, 0, 0 );
 	
 	#define PLAYER1_CROSSHAIRS \
-		PORT_START				/* fake analog X */\
+		PORT_START(); 				/* fake analog X */\
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 50, 10, 0, 255 );
-		PORT_START				/* fake analog Y */\
+		PORT_START(); 				/* fake analog Y */\
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 70, 10, 0, 255 );
 	
 	
 	static InputPortPtr input_ports_sentetst = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "1C_1C") );
@@ -1438,7 +1438,7 @@ public class balsente
 		PORT_DIPSETTING(    0x80, "Keep Top 5" );
 		PORT_DIPSETTING(    0x00, "Keep All" );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x00, "Every 10,000" );
 		PORT_DIPSETTING(    0x01, "Every 15,000" );
@@ -1457,7 +1457,7 @@ public class balsente
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_UP    | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_DOWN  | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_RIGHT | IPF_PLAYER1 );
@@ -1466,7 +1466,7 @@ public class balsente
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 );
@@ -1481,7 +1481,7 @@ public class balsente
 	
 	
 	static InputPortPtr input_ports_cshift = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "1C_1C") );
@@ -1492,7 +1492,7 @@ public class balsente
 		PORT_DIPSETTING(    0x80, "Keep Top 5" );
 		PORT_DIPSETTING(    0x00, "Keep All" );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x03, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "2" );
@@ -1502,14 +1502,14 @@ public class balsente
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x3c, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x3c, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -1522,7 +1522,7 @@ public class balsente
 	
 	
 	static InputPortPtr input_ports_gghost = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "1C_1C") );
@@ -1533,7 +1533,7 @@ public class balsente
 		PORT_DIPSETTING(    0x04, "1 or 2" );
 		PORT_BIT( 0xf8, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_DIPNAME( 0x07, 0x05, "Game Duration" );
 		PORT_DIPSETTING(    0x00, "9 points" );
 		PORT_DIPSETTING(    0x02, "11 points" );
@@ -1548,14 +1548,14 @@ public class balsente
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x0f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
@@ -1571,7 +1571,7 @@ public class balsente
 	
 	
 	static InputPortPtr input_ports_hattrick = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "1C_1C") );
@@ -1582,7 +1582,7 @@ public class balsente
 		PORT_DIPSETTING(    0x04, "1 or 2" );
 		PORT_BIT( 0xf8, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_DIPNAME( 0x07, 0x02, "Game Time" );
 		PORT_DIPSETTING(    0x00, "1:15" );
 		PORT_DIPSETTING(    0x01, "1:30" );
@@ -1597,7 +1597,7 @@ public class balsente
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER1 );
@@ -1607,7 +1607,7 @@ public class balsente
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER2 );
@@ -1623,7 +1623,7 @@ public class balsente
 	
 	
 	static InputPortPtr input_ports_otwalls = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "1C_1C") );
@@ -1634,13 +1634,13 @@ public class balsente
 		PORT_DIPSETTING(    0x04, "1 or 2" );
 		PORT_BIT( 0xf8, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x7f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_DIPNAME( 0x80, 0x00, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_LEFT  | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_RIGHT | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_LEFT  | IPF_PLAYER1 );
@@ -1649,7 +1649,7 @@ public class balsente
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x3c, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -1664,7 +1664,7 @@ public class balsente
 	
 	
 	static InputPortPtr input_ports_snakepit = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "1C_1C") );
@@ -1675,7 +1675,7 @@ public class balsente
 		PORT_DIPSETTING(    0x80, "Keep Top 5" );
 		PORT_DIPSETTING(    0x00, "Keep All" );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x00, "Every 10,000" );
 		PORT_DIPSETTING(    0x01, "Every 15,000" );
@@ -1694,7 +1694,7 @@ public class balsente
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_UP    | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_DOWN  | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_RIGHT | IPF_PLAYER1 );
@@ -1703,7 +1703,7 @@ public class balsente
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 );
@@ -1718,7 +1718,7 @@ public class balsente
 	
 	
 	static InputPortPtr input_ports_snakjack = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "1C_1C") );
@@ -1729,7 +1729,7 @@ public class balsente
 		PORT_DIPSETTING(    0x80, "Keep Top 5" );
 		PORT_DIPSETTING(    0x00, "Keep All" );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x00, "Every 15,000" );
 		PORT_DIPSETTING(    0x01, "Every 20,000" );
@@ -1745,12 +1745,12 @@ public class balsente
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x3f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 );
@@ -1765,7 +1765,7 @@ public class balsente
 	
 	
 	static InputPortPtr input_ports_stocker = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "1C_1C") );
@@ -1789,7 +1789,7 @@ public class balsente
 		PORT_DIPSETTING(    0x80, "x5" );
 		PORT_DIPSETTING(    0xc0, "x6" );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x3f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_DIPNAME( 0x40, 0x40, "End of Game" );
 		PORT_DIPSETTING(    0x40, "Normal" );
@@ -1798,12 +1798,12 @@ public class balsente
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x3f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x3c, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -1817,7 +1817,7 @@ public class balsente
 	
 	
 	static InputPortPtr input_ports_triviag1 = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "1C_1C") );
@@ -1834,7 +1834,7 @@ public class balsente
 		PORT_DIPSETTING(    0x00, "Keep Top 5" );
 		PORT_DIPSETTING(    0x80, "Keep Top 10" );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x03, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_DIPNAME( 0x0c, 0x04, "Guesses" );
 		PORT_DIPSETTING(    0x00, "3" );
@@ -1846,7 +1846,7 @@ public class balsente
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER1 );
@@ -1856,7 +1856,7 @@ public class balsente
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START3 );
@@ -1878,7 +1878,7 @@ public class balsente
 	
 	
 	static InputPortPtr input_ports_gimeabrk = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "1C_1C") );
@@ -1902,7 +1902,7 @@ public class balsente
 		PORT_DIPSETTING(    0x80, "x5" );
 		PORT_DIPSETTING(    0xc0, "x6" );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_DIPNAME( 0x03, 0x01, "Bonus Shot" );
 		PORT_DIPSETTING(    0x00, "Every 6 Balls" );
 		PORT_DIPSETTING(    0x01, "Every 8 Balls" );
@@ -1926,12 +1926,12 @@ public class balsente
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x3f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -1947,7 +1947,7 @@ public class balsente
 	
 	
 	static InputPortPtr input_ports_minigolf = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );
@@ -1971,7 +1971,7 @@ public class balsente
 		PORT_DIPSETTING(    0x80, "x5" );
 		PORT_DIPSETTING(    0xc0, "x6" );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_DIPNAME( 0x01, 0x01, "Add-A-Coin" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1997,12 +1997,12 @@ public class balsente
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x3f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x0c, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -2018,7 +2018,7 @@ public class balsente
 	
 	
 	static InputPortPtr input_ports_minigol2 = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "1C_1C") );
@@ -2042,7 +2042,7 @@ public class balsente
 		PORT_DIPSETTING(    0x80, "x5" );
 		PORT_DIPSETTING(    0xc0, "x6" );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_DIPNAME( 0x01, 0x01, "Add-A-Coin" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -2068,12 +2068,12 @@ public class balsente
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x3f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x0c, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -2089,7 +2089,7 @@ public class balsente
 	
 	
 	static InputPortPtr input_ports_toggle = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "1C_1C") );
@@ -2100,7 +2100,7 @@ public class balsente
 		PORT_DIPSETTING(    0x80, "Keep Top 5" );
 		PORT_DIPSETTING(    0x00, "Keep All" );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x03, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "2" );
@@ -2110,7 +2110,7 @@ public class balsente
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER1 );
@@ -2120,7 +2120,7 @@ public class balsente
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER2 );
@@ -2136,7 +2136,7 @@ public class balsente
 	
 	
 	static InputPortPtr input_ports_nametune = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "3C_2C") );
@@ -2160,7 +2160,7 @@ public class balsente
 		PORT_DIPSETTING(    0x80, "x5" );
 		PORT_DIPSETTING(    0xc0, "x6" );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -2186,7 +2186,7 @@ public class balsente
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BITX(0x01, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER1, "P1 Blue Button", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x02, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER1, "P1 Green Button", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x04, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1, "P1 Yellow Button", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
@@ -2195,7 +2195,7 @@ public class balsente
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BITX(0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2, "P2 Red Button", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
@@ -2211,7 +2211,7 @@ public class balsente
 	
 	
 	static InputPortPtr input_ports_nstocker = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );
@@ -2235,7 +2235,7 @@ public class balsente
 		PORT_DIPSETTING(    0x80, "x5" );
 		PORT_DIPSETTING(    0xc0, "x6" );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x01, "Easy" );
 		PORT_DIPSETTING(    0x00, "Hard" );
@@ -2244,12 +2244,12 @@ public class balsente
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x3f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x3c, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -2260,7 +2260,7 @@ public class balsente
 		UNUSED_ANALOG_X3
 		/* cheese alert -- we have to map this to player 2 so that it doesn't interfere with */
 		/* the crosshair controls */
-		PORT_START
+		PORT_START(); 
 	    PORT_ANALOGX( 0xff, 0, IPT_DIAL | IPF_PLAYER2 | IPF_CENTER, 100, 20, 0, 0,
 	    				KEYCODE_S, KEYCODE_F, JOYCODE_1_LEFT, JOYCODE_1_RIGHT );
 	
@@ -2270,7 +2270,7 @@ public class balsente
 	
 	
 	static InputPortPtr input_ports_sfootbal = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );
@@ -2294,7 +2294,7 @@ public class balsente
 		PORT_DIPSETTING(    0x80, "x5" );
 		PORT_DIPSETTING(    0xc0, "x6" );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_DIPNAME( 0x07, 0x03, "Game Duration" );
 		PORT_DIPSETTING(    0x00, "1:30" );
 		PORT_DIPSETTING(    0x01, "1:40" );
@@ -2312,14 +2312,14 @@ public class balsente
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x3c, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x3c, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -2333,7 +2333,7 @@ public class balsente
 	
 	
 	static InputPortPtr input_ports_spiker = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );
@@ -2357,7 +2357,7 @@ public class balsente
 		PORT_DIPSETTING(    0x80, "x5" );
 		PORT_DIPSETTING(    0xc0, "x6" );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_DIPNAME( 0x01, 0x00, "Game Duration" );
 		PORT_DIPSETTING(    0x00, "11 points" );
 		PORT_DIPSETTING(    0x01, "15 points" );
@@ -2383,14 +2383,14 @@ public class balsente
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x0f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
@@ -2405,7 +2405,7 @@ public class balsente
 	
 	
 	static InputPortPtr input_ports_stompin = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );
@@ -2429,7 +2429,7 @@ public class balsente
 		PORT_DIPSETTING(    0x80, "x5" );
 		PORT_DIPSETTING(    0xc0, "x6" );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_DIPNAME( 0x01, 0x00, "Display Kids" );
 		PORT_DIPSETTING(    0x00, DEF_STR( "No") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Yes") );
@@ -2455,7 +2455,7 @@ public class balsente
 		PORT_DIPSETTING(    0x00, "Regular" );
 		PORT_DIPSETTING(    0x80, "None" );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_UP    | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_DOWN  | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_RIGHT | IPF_PLAYER1 );
@@ -2465,7 +2465,7 @@ public class balsente
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_UP    | IPF_PLAYER1 );
@@ -2476,19 +2476,19 @@ public class balsente
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_VBLANK );
 	
 		/* "analog" ports */
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x1f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BITX(0x20, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1, "Top-Right", KEYCODE_9_PAD, IP_JOY_DEFAULT );
 		PORT_BITX(0x40, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1, "Top",       KEYCODE_8_PAD, IP_JOY_DEFAULT );
 		PORT_BITX(0x80, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER1, "Top-Left",  KEYCODE_7_PAD, IP_JOY_DEFAULT );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x1f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BITX(0x20, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER1, "Right",     KEYCODE_6_PAD, IP_JOY_DEFAULT );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BITX(0x80, IP_ACTIVE_LOW, IPT_BUTTON5 | IPF_PLAYER1, "Left",      KEYCODE_4_PAD, IP_JOY_DEFAULT );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x1f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BITX(0x20, IP_ACTIVE_LOW, IPT_BUTTON6 | IPF_PLAYER1, "Bot-Right", KEYCODE_3_PAD, IP_JOY_DEFAULT );
 		PORT_BITX(0x40, IP_ACTIVE_LOW, IPT_BUTTON7 | IPF_PLAYER1, "Bottom",    KEYCODE_2_PAD, IP_JOY_DEFAULT );
@@ -2499,7 +2499,7 @@ public class balsente
 	
 	
 	static InputPortPtr input_ports_rescraid = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );
@@ -2523,7 +2523,7 @@ public class balsente
 		PORT_DIPSETTING(    0x80, "x5" );
 		PORT_DIPSETTING(    0xc0, "x6" );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "4" );
 		PORT_DIPSETTING(    0x01, "5" );
@@ -2545,7 +2545,7 @@ public class balsente
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_UP    | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_DOWN  | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_RIGHT | IPF_PLAYER1 );
@@ -2555,7 +2555,7 @@ public class balsente
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_UP    | IPF_PLAYER1 );

@@ -149,7 +149,7 @@ public class rallyx
 	
 	
 	static InputPortPtr input_ports_rallyx = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN3 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_4WAY );
@@ -159,7 +159,7 @@ public class rallyx
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START		/* IN1 */
+		PORT_START(); 		/* IN1 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Cocktail") );
@@ -171,7 +171,7 @@ public class rallyx
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START		/* DSW0 */
+		PORT_START(); 		/* DSW0 */
 		PORT_SERVICE( 0x01, IP_ACTIVE_LOW );
 		/* TODO: the bonus score depends on the number of lives */
 		PORT_DIPNAME( 0x06, 0x02, DEF_STR( "Bonus_Life") );
@@ -196,7 +196,7 @@ public class rallyx
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_nrallyx = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN3 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_4WAY );
@@ -206,7 +206,7 @@ public class rallyx
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START		/* IN1 */
+		PORT_START(); 		/* IN1 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Cocktail") );
@@ -218,7 +218,7 @@ public class rallyx
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START		/* DSW0 */
+		PORT_START(); 		/* DSW0 */
 		PORT_SERVICE( 0x01, IP_ACTIVE_LOW );
 		/* TODO: the bonus score depends on the number of lives */
 		PORT_DIPNAME( 0x06, 0x02, DEF_STR( "Bonus_Life") );

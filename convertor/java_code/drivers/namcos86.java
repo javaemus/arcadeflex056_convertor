@@ -569,7 +569,7 @@ public class namcos86
 	/*******************************************************************/
 	
 	static InputPortPtr input_ports_hopmappy = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* button 3 player 2 */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* button 2 player 1 */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
@@ -579,7 +579,7 @@ public class namcos86
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BITX( 0x80, 0x80, IPT_SERVICE, "Service Switch", KEYCODE_F1, IP_JOY_NONE );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* button 3 player 1 */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* button 2 player 2 */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY );
@@ -589,7 +589,7 @@ public class namcos86
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* DSWA */
+		PORT_START();       /* DSWA */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );
@@ -610,7 +610,7 @@ public class namcos86
 		PORT_DIPSETTING(    0x20, DEF_STR( "1C_2C") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_HIGH );
 	
-		PORT_START      /* DSWB */
+		PORT_START();       /* DSWB */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
@@ -636,7 +636,7 @@ public class namcos86
 		PORT_DIPSETTING(    0x00, "Easy" );
 		PORT_DIPSETTING(    0x80, "Hard" );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SPECIAL );/* OUT:coin lockout */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SPECIAL );/* OUT:coin counter 1 */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SPECIAL );/* OUT:coin counter 2 */
@@ -648,7 +648,7 @@ public class namcos86
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_skykiddx = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* button 3 player 2 */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
@@ -658,7 +658,7 @@ public class namcos86
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BITX( 0x80, 0x80, IPT_SERVICE, "Service Switch", KEYCODE_F1, IP_JOY_NONE );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* button 3 player 1 */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY );
@@ -668,7 +668,7 @@ public class namcos86
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* DSWA */
+		PORT_START();       /* DSWA */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );
@@ -690,7 +690,7 @@ public class namcos86
 		PORT_DIPSETTING(    0x20, DEF_STR( "1C_2C") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_HIGH );
 	
-		PORT_START      /* DSWB */
+		PORT_START();       /* DSWB */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -715,7 +715,7 @@ public class namcos86
 		PORT_DIPSETTING(    0x00, "3" );
 		PORT_DIPSETTING(    0xc0, "5" );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SPECIAL );/* OUT:coin lockout */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SPECIAL );/* OUT:coin counter 1 */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SPECIAL );/* OUT:coin counter 2 */
@@ -727,7 +727,7 @@ public class namcos86
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_roishtar = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* button 3 player 2 */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_DOWN   | IPF_8WAY );
@@ -737,7 +737,7 @@ public class namcos86
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* button 3 player 1 */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_UP  | IPF_8WAY );
@@ -747,7 +747,7 @@ public class namcos86
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* DSWA */
+		PORT_START();       /* DSWA */
 		PORT_DIPNAME( 0x07, 0x00, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x07, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(    0x05, DEF_STR( "2C_1C") );
@@ -771,7 +771,7 @@ public class namcos86
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_HIGH );
 	
-		PORT_START      /* DSWB */
+		PORT_START();       /* DSWB */
 		PORT_DIPNAME( 0x07, 0x00, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(    0x07, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(    0x05, DEF_STR( "2C_1C") );
@@ -797,7 +797,7 @@ public class namcos86
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SPECIAL );/* OUT:coin lockout */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SPECIAL );/* OUT:coin counter 1 */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SPECIAL );/* OUT:coin counter 2 */
@@ -809,7 +809,7 @@ public class namcos86
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_genpeitd = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* button 3 player 2 */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY );
@@ -819,7 +819,7 @@ public class namcos86
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BITX( 0x80, 0x80, IPT_SERVICE, "Service Switch", KEYCODE_F1, IP_JOY_NONE );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* button 3 player 1 */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY );
@@ -829,7 +829,7 @@ public class namcos86
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* DSWA */
+		PORT_START();       /* DSWA */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );
@@ -851,7 +851,7 @@ public class namcos86
 		PORT_DIPSETTING(    0x20, DEF_STR( "1C_2C") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_HIGH );
 	
-		PORT_START      /* DSWB */
+		PORT_START();       /* DSWB */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -875,7 +875,7 @@ public class namcos86
 		PORT_DIPSETTING(    0x80, "60" );
 		PORT_DIPSETTING(    0xc0, "70" );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SPECIAL );/* OUT:coin lockout */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SPECIAL );/* OUT:coin counter 1 */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SPECIAL );/* OUT:coin counter 2 */
@@ -887,7 +887,7 @@ public class namcos86
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_rthunder = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* button 3 player 2 */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_4WAY );
@@ -897,7 +897,7 @@ public class namcos86
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BITX( 0x80, 0x80, IPT_SERVICE, "Service Switch", KEYCODE_F1, IP_JOY_NONE );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* button 3 player 1 */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_4WAY );
@@ -907,7 +907,7 @@ public class namcos86
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* DSWA */
+		PORT_START();       /* DSWA */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );
@@ -929,7 +929,7 @@ public class namcos86
 		PORT_DIPSETTING(    0x20, DEF_STR( "1C_2C") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_HIGH );
 	
-		PORT_START      /* DSWB */
+		PORT_START();       /* DSWB */
 		PORT_DIPNAME( 0x01, 0x00, "Continues" );
 		PORT_DIPSETTING(    0x01, "3" );
 		PORT_DIPSETTING(    0x00, "6" );
@@ -954,7 +954,7 @@ public class namcos86
 		PORT_DIPSETTING(    0x00, "3" );
 		PORT_DIPSETTING(    0x80, "5" );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SPECIAL );/* OUT:coin lockout */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SPECIAL );/* OUT:coin counter 1 */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SPECIAL );/* OUT:coin counter 2 */
@@ -966,7 +966,7 @@ public class namcos86
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_rthundro = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* button 3 player 2 */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_4WAY );
@@ -976,7 +976,7 @@ public class namcos86
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BITX( 0x80, 0x80, IPT_SERVICE, "Service Switch", KEYCODE_F1, IP_JOY_NONE );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* button 3 player 1 */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_4WAY );
@@ -986,7 +986,7 @@ public class namcos86
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* DSWA */
+		PORT_START();       /* DSWA */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );
@@ -1008,7 +1008,7 @@ public class namcos86
 		PORT_DIPSETTING(    0x20, DEF_STR( "1C_2C") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_HIGH );
 	
-		PORT_START      /* DSWB */
+		PORT_START();       /* DSWB */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1033,7 +1033,7 @@ public class namcos86
 		PORT_DIPSETTING(    0x00, "3" );
 		PORT_DIPSETTING(    0xc0, "5" );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SPECIAL );/* OUT:coin lockout */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SPECIAL );/* OUT:coin counter 1 */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SPECIAL );/* OUT:coin counter 2 */
@@ -1045,7 +1045,7 @@ public class namcos86
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_wndrmomo = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* button 3 player 2 */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY );
@@ -1055,7 +1055,7 @@ public class namcos86
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BITX( 0x80, 0x80, IPT_SERVICE, "Service Switch", KEYCODE_F1, IP_JOY_NONE );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* button 3 player 1 */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_4WAY );
@@ -1065,7 +1065,7 @@ public class namcos86
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* DSWA */
+		PORT_START();       /* DSWA */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );
@@ -1087,7 +1087,7 @@ public class namcos86
 		PORT_DIPSETTING(    0x20, DEF_STR( "1C_2C") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_HIGH );
 	
-		PORT_START      /* DSWB */
+		PORT_START();       /* DSWB */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1112,7 +1112,7 @@ public class namcos86
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SPECIAL );/* OUT:coin lockout */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SPECIAL );/* OUT:coin counter 1 */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SPECIAL );/* OUT:coin counter 2 */

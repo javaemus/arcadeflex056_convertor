@@ -177,7 +177,7 @@ public class missile
 	
 	
 	static InputPortPtr input_ports_missile = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
@@ -187,7 +187,7 @@ public class missile
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN3 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON3 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 );
@@ -196,7 +196,7 @@ public class missile
 		PORT_BITX(0x40, IP_ACTIVE_LOW, IPT_SERVICE , DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_VBLANK );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_DIPNAME(0x03, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(   0x01, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(   0x00, DEF_STR( "1C_1C") );
@@ -219,7 +219,7 @@ public class missile
 		PORT_DIPSETTING(   0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(   0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_DIPNAME(0x03, 0x00, "Cities" );
 		PORT_DIPSETTING(   0x02, "4" );
 		PORT_DIPSETTING(   0x01, "5" );
@@ -244,21 +244,21 @@ public class missile
 		PORT_DIPSETTING(   0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(   0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		PORT_ANALOG( 0x0f, 0x00, IPT_TRACKBALL_X, 20, 10, 0, 0);
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		PORT_ANALOG( 0x0f, 0x00, IPT_TRACKBALL_Y | IPF_REVERSE, 20, 10, 0, 0);
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		PORT_ANALOG( 0x0f, 0x00, IPT_TRACKBALL_X | IPF_REVERSE | IPF_COCKTAIL, 20, 10, 0, 0);
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		PORT_ANALOG( 0x0f, 0x00, IPT_TRACKBALL_Y | IPF_REVERSE | IPF_COCKTAIL, 20, 10, 0, 0);
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_suprmatk = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
@@ -268,7 +268,7 @@ public class missile
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN3 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON3 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 );
@@ -277,7 +277,7 @@ public class missile
 		PORT_BITX(0x40, IP_ACTIVE_LOW, IPT_SERVICE , DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_VBLANK );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_DIPNAME(0x03, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(   0x01, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(   0x00, DEF_STR( "1C_1C") );
@@ -300,7 +300,7 @@ public class missile
 		PORT_DIPSETTING(   0x80, "Reg. Super Missile Attack" );
 		PORT_DIPSETTING(   0xc0, "Hard Super Missile Attack" );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_DIPNAME(0x03, 0x00, "Cities" );
 		PORT_DIPSETTING(   0x02, "4" );
 		PORT_DIPSETTING(   0x01, "5" );
@@ -325,16 +325,16 @@ public class missile
 		PORT_DIPSETTING(   0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(   0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		PORT_ANALOG( 0x0f, 0x00, IPT_TRACKBALL_X, 20, 10, 0, 0);
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		PORT_ANALOG( 0x0f, 0x00, IPT_TRACKBALL_Y | IPF_REVERSE, 20, 10, 0, 0);
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		PORT_ANALOG( 0x0f, 0x00, IPT_TRACKBALL_X | IPF_REVERSE | IPF_COCKTAIL, 20, 10, 0, 0);
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		PORT_ANALOG( 0x0f, 0x00, IPT_TRACKBALL_Y | IPF_REVERSE | IPF_COCKTAIL, 20, 10, 0, 0);
 	INPUT_PORTS_END(); }}; 
 	

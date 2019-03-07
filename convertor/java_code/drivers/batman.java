@@ -167,7 +167,7 @@ public class batman
 	 *************************************/
 	
 	static InputPortPtr input_ports_batman = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* 26000 */
+		PORT_START(); 		/* 26000 */
 		PORT_BIT( 0x01ff, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x0200, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x0200, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
@@ -178,10 +178,10 @@ public class batman
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_PLAYER1 );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_PLAYER1 );
 	
-		PORT_START		/* 26002 */
+		PORT_START(); 		/* 26002 */
 		PORT_BIT( 0xffff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* 26010 */
+		PORT_START(); 		/* 26010 */
 		PORT_BIT( 0x000f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x0010, IP_ACTIVE_LOW, IPT_UNUSED );/* Input buffer full (@260030) */
 		PORT_BIT( 0x0020, IP_ACTIVE_LOW, IPT_UNUSED );/* Output buffer full (@260040) */

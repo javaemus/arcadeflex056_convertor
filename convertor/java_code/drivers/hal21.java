@@ -214,7 +214,7 @@ public class hal21
 	
 	
 	static InputPortPtr input_ports_hal21 = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN3 );
@@ -224,7 +224,7 @@ public class hal21
 		PORT_BIT( 0x40, IP_ACTIVE_LOW,  IPT_BUTTON3 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
-		PORT_START /* P1 controls */
+		PORT_START();  /* P1 controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY );
@@ -233,7 +233,7 @@ public class hal21
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START /* P2 controls */
+		PORT_START();  /* P2 controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_COCKTAIL );
@@ -242,7 +242,7 @@ public class hal21
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") ); /* unused */
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -265,7 +265,7 @@ public class hal21
 		PORT_DIPSETTING(	0x40, "50000 120000" );
 		PORT_DIPSETTING(    0x00, "None" );
 	
-		PORT_START	/* DSW2 */
+		PORT_START(); 	/* DSW2 */
 		PORT_DIPNAME( 0x01, 0x01, "Bonus Type" );
 		PORT_DIPSETTING(    0x00, "Every Bonus Set" );
 		PORT_DIPSETTING(    0x01, "Second Bonus Set" );
@@ -293,7 +293,7 @@ public class hal21
 	/**************************************************************************/
 	
 	static InputPortPtr input_ports_aso = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN1 );
@@ -303,7 +303,7 @@ public class hal21
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
@@ -313,7 +313,7 @@ public class hal21
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
@@ -323,7 +323,7 @@ public class hal21
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x01, 0x01, "Allow Continue" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "No") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
@@ -348,7 +348,7 @@ public class hal21
 		PORT_DIPSETTING(    0x40, "100k 200k" );
 		PORT_DIPSETTING(    0x00, "None" );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x01, 0x01, "Bonus Occurrence" );
 		PORT_DIPSETTING(    0x01, "1st & every 2nd" );
 		PORT_DIPSETTING(    0x00, "1st & 2nd only" );

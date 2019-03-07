@@ -226,7 +226,7 @@ public class cps2
 	
 	
 	static InputPortPtr input_ports_19xx = new InputPortPtr(){ public void handler() { 
-	    PORT_START      /* IN0 (0x00) */
+	    PORT_START();       /* IN0 (0x00) */
 	    PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 	    PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 	    PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -244,7 +244,7 @@ public class cps2
 	    PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-	    PORT_START      /* IN1 (0x10) */
+	    PORT_START();       /* IN1 (0x10) */
 	    PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -255,7 +255,7 @@ public class cps2
 	    PORT_BIT( 0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-	    PORT_START      /* IN2 (0x20) */
+	    PORT_START();       /* IN2 (0x20) */
 	    PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_SPECIAL );  /* EEPROM bit */
 		PORT_BITX(0x0002, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	    PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -271,7 +271,7 @@ public class cps2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_cybotsj = new InputPortPtr(){ public void handler() { 
-	    PORT_START      /* IN0 (0x00) */
+	    PORT_START();       /* IN0 (0x00) */
 	    PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 	    PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 	    PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -289,7 +289,7 @@ public class cps2
 	    PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );
 	    PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-	    PORT_START      /* IN1 (0x10) */
+	    PORT_START();       /* IN1 (0x10) */
 	    PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER1 );
 	    PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -300,7 +300,7 @@ public class cps2
 	    PORT_BIT( 0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-	    PORT_START      /* IN2 (0x20) */
+	    PORT_START();       /* IN2 (0x20) */
 	    PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_SPECIAL );  /* EEPROM bit */
 		PORT_BITX(0x0002, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	    PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -316,7 +316,7 @@ public class cps2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_ssf2 = new InputPortPtr(){ public void handler() { 
-	    PORT_START      /* IN0 (0x00) */
+	    PORT_START();       /* IN0 (0x00) */
 	    PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 	    PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 	    PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -334,7 +334,7 @@ public class cps2
 	    PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );
 	    PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-	    PORT_START      /* IN1 (0x10) */
+	    PORT_START();       /* IN1 (0x10) */
 	    PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER1 );
 	    PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_BUTTON5 | IPF_PLAYER1 );
 	    PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_BUTTON6 | IPF_PLAYER1 );
@@ -345,7 +345,7 @@ public class cps2
 	    PORT_BIT( 0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-	    PORT_START      /* IN2 (0x20) */
+	    PORT_START();       /* IN2 (0x20) */
 	    PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_SPECIAL );  /* EEPROM bit */
 		PORT_BITX(0x0002, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	    PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -361,7 +361,7 @@ public class cps2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_ddtod = new InputPortPtr(){ public void handler() { 
-	    PORT_START      /* IN0 (0x00) */
+	    PORT_START();       /* IN0 (0x00) */
 	    PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 	    PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 	    PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -379,7 +379,7 @@ public class cps2
 	    PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );
 	    PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER2 );
 	
-	    PORT_START      /* IN1 (0x10) */
+	    PORT_START();       /* IN1 (0x10) */
 	    PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER3 );
 	    PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER3 );
 	    PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER3 );
@@ -397,7 +397,7 @@ public class cps2
 	    PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER4 );
 	    PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER4 );
 	
-	    PORT_START      /* IN2 (0x20) */
+	    PORT_START();       /* IN2 (0x20) */
 	    PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_SPECIAL );  /* EEPROM bit */
 		PORT_BITX(0x0002, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	    PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -413,7 +413,7 @@ public class cps2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_avsp = new InputPortPtr(){ public void handler() { 
-	    PORT_START      /* IN0 (0x00) */
+	    PORT_START();       /* IN0 (0x00) */
 	    PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 	    PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 	    PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -431,7 +431,7 @@ public class cps2
 	    PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );
 	    PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-	    PORT_START      /* IN1 (0x10) */
+	    PORT_START();       /* IN1 (0x10) */
 	    PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER3 );
 	    PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER3 );
 	    PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER3 );
@@ -442,7 +442,7 @@ public class cps2
 	    PORT_BIT( 0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-	    PORT_START      /* IN2 (0x20) */
+	    PORT_START();       /* IN2 (0x20) */
 	    PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_SPECIAL );  /* EEPROM bit */
 		PORT_BITX(0x0002, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	    PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -458,7 +458,7 @@ public class cps2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_qndream = new InputPortPtr(){ public void handler() { 
-	    PORT_START      /* IN0 (0x00) */
+	    PORT_START();       /* IN0 (0x00) */
 	    PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER1 );
 	    PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER1 );
 	    PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
@@ -476,10 +476,10 @@ public class cps2
 	    PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-	    PORT_START      /* IN1 (0x10) */
+	    PORT_START();       /* IN1 (0x10) */
 	    PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-	    PORT_START      /* IN2 (0x20) */
+	    PORT_START();       /* IN2 (0x20) */
 	    PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_SPECIAL );  /* EEPROM bit */
 		PORT_BITX(0x0002, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	    PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -495,7 +495,7 @@ public class cps2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_batcir = new InputPortPtr(){ public void handler() { 
-	    PORT_START      /* IN0 (0x00) */
+	    PORT_START();       /* IN0 (0x00) */
 	    PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 	    PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 	    PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -513,7 +513,7 @@ public class cps2
 	    PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-	    PORT_START      /* IN1 (0x10) */
+	    PORT_START();       /* IN1 (0x10) */
 	    PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER3 );
 	    PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER3 );
 	    PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER3 );
@@ -531,7 +531,7 @@ public class cps2
 	    PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-	    PORT_START      /* IN2 (0x20) */
+	    PORT_START();       /* IN2 (0x20) */
 	    PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_SPECIAL );  /* EEPROM bit */
 		PORT_BITX(0x0002, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	    PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -547,7 +547,7 @@ public class cps2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_sgemf = new InputPortPtr(){ public void handler() { 
-	    PORT_START      /* IN0 (0x00) */
+	    PORT_START();       /* IN0 (0x00) */
 	    PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 	    PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 	    PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -565,7 +565,7 @@ public class cps2
 	    PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );
 	    PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-	    PORT_START      /* IN1 (0x10) */
+	    PORT_START();       /* IN1 (0x10) */
 	    PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -576,7 +576,7 @@ public class cps2
 	    PORT_BIT( 0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-	    PORT_START      /* IN2 (0x20) */
+	    PORT_START();       /* IN2 (0x20) */
 	    PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_SPECIAL );  /* EEPROM bit */
 		PORT_BITX(0x0002, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	    PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -592,7 +592,7 @@ public class cps2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_cps2 = new InputPortPtr(){ public void handler() { 
-	    PORT_START      /* IN0 (0x00) */
+	    PORT_START();       /* IN0 (0x00) */
 	    PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 	    PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 	    PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -610,7 +610,7 @@ public class cps2
 	    PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );
 	    PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-	    PORT_START      /* IN1 (0x10) */
+	    PORT_START();       /* IN1 (0x10) */
 	    PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER1 );
 	    PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_BUTTON5 | IPF_PLAYER1 );
 	    PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_BUTTON6 | IPF_PLAYER1 );
@@ -621,7 +621,7 @@ public class cps2
 	    PORT_BIT( 0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-	    PORT_START      /* IN2 (0x20) */
+	    PORT_START();       /* IN2 (0x20) */
 	    PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_SPECIAL );  /* EEPROM bit */
 		PORT_BITX(0x0002, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	    PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 );

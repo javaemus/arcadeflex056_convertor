@@ -388,7 +388,7 @@ public class slapfght
 	
 	
 	static InputPortPtr input_ports_perfrman = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
@@ -398,7 +398,7 @@ public class slapfght
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
@@ -408,7 +408,7 @@ public class slapfght
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START  /* DSW1 */
+		PORT_START();   /* DSW1 */
 		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Unused") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -435,7 +435,7 @@ public class slapfght
 		PORT_DIPSETTING(    0x05, DEF_STR( "1C_3C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Free_Play") );
 	
-		PORT_START  /* DSW2 */
+		PORT_START();   /* DSW2 */
 		PORT_DIPNAME( 0xf0, 0x70, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0xb0, "20k, then each 100k" );
 		PORT_DIPSETTING(    0xa0, "40k, then each 100k" );
@@ -463,7 +463,7 @@ public class slapfght
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_tigerh = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
@@ -473,7 +473,7 @@ public class slapfght
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
@@ -483,7 +483,7 @@ public class slapfght
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START  /* DSW1 */
+		PORT_START();   /* DSW1 */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "3C_1C") );
 	//	PORT_DIPSETTING(    0x02, DEF_STR( "3C_1C") );
@@ -509,7 +509,7 @@ public class slapfght
 		PORT_DIPSETTING(    0x80, "Normal" );
 		PORT_DIPSETTING(    0x00, "Fast" );
 	
-		PORT_START  /* DSW2 */
+		PORT_START();   /* DSW2 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x01, "1" );
 		PORT_DIPSETTING(    0x00, "2" );
@@ -535,7 +535,7 @@ public class slapfght
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_slapfigh = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
@@ -545,7 +545,7 @@ public class slapfght
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
@@ -555,7 +555,7 @@ public class slapfght
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START  /* DSW1 */
+		PORT_START();   /* DSW1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "1C_1C") );
@@ -579,7 +579,7 @@ public class slapfght
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START  /* DSW2 */
+		PORT_START();   /* DSW2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -605,7 +605,7 @@ public class slapfght
 	
 	
 	static InputPortPtr input_ports_getstar = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
@@ -615,7 +615,7 @@ public class slapfght
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
@@ -625,7 +625,7 @@ public class slapfght
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START  /* DSW1 */
+		PORT_START();   /* DSW1 */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "3C_1C") );
 	//	PORT_DIPSETTING(    0x02, DEF_STR( "3C_1C") );
@@ -651,7 +651,7 @@ public class slapfght
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START  /* DSW2 */
+		PORT_START();   /* DSW2 */
 		PORT_DIPNAME( 0x03, 0x02, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x02, "3" );
 		PORT_DIPSETTING(    0x01, "4" );

@@ -660,7 +660,7 @@ public class galaxian
 	
 	
 	static InputPortPtr input_ports_galaxian = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY );
@@ -672,7 +672,7 @@ public class galaxian
 		PORT_SERVICE( 0x40, IP_ACTIVE_HIGH );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_SERVICE1 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_COCKTAIL );
@@ -685,7 +685,7 @@ public class galaxian
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_2C") );
 		PORT_DIPSETTING(    0xc0, DEF_STR( "Free_Play") );
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x00, "7000" );
 		PORT_DIPSETTING(    0x01, "10000" );
@@ -701,7 +701,7 @@ public class galaxian
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_superg = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY );
@@ -713,7 +713,7 @@ public class galaxian
 		PORT_SERVICE( 0x40, IP_ACTIVE_HIGH );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_SERVICE1 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_COCKTAIL );
@@ -726,7 +726,7 @@ public class galaxian
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_2C") );
 		PORT_DIPSETTING(    0xc0, DEF_STR( "Free_Play") );
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x01, "4000" );
 		PORT_DIPSETTING(    0x02, "5000" );
@@ -742,7 +742,7 @@ public class galaxian
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_gteikokb = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY );
@@ -750,7 +750,7 @@ public class galaxian
 		PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_BUTTON1 );
 		PORT_BIT( 0xe0, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused */
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_COCKTAIL );
@@ -764,7 +764,7 @@ public class galaxian
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_3C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_5C") );
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x00, "7000" );
 		PORT_DIPSETTING(    0x01, "None" );
@@ -782,7 +782,7 @@ public class galaxian
 	
 	/* same as gteikokb with cabinet reversed */
 	static InputPortPtr input_ports_gteikob2 = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY );
@@ -790,7 +790,7 @@ public class galaxian
 		PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_BUTTON1 );
 		PORT_BIT( 0xe0, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused */
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_COCKTAIL );
@@ -804,7 +804,7 @@ public class galaxian
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_3C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_5C") );
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x00, "7000" );
 		PORT_DIPSETTING(    0x01, "None" );
@@ -821,7 +821,7 @@ public class galaxian
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_zerotime = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY );
@@ -833,7 +833,7 @@ public class galaxian
 		PORT_SERVICE( 0x40, IP_ACTIVE_HIGH );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_SERVICE1 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_COCKTAIL );
@@ -846,7 +846,7 @@ public class galaxian
 		PORT_DIPSETTING(    0x00, "A 1C/2C  B 1C/4C " );
 		PORT_DIPSETTING(    0x80, "A 1C/2C  B 1C/5C " );
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x03, "6000" );
 		PORT_DIPSETTING(    0x02, "7000" );
@@ -862,7 +862,7 @@ public class galaxian
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_pisces = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY );
@@ -878,7 +878,7 @@ public class galaxian
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_COCKTAIL );
@@ -894,7 +894,7 @@ public class galaxian
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x00, "10000" );
 		PORT_DIPSETTING(    0x01, "20000" );
@@ -911,7 +911,7 @@ public class galaxian
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_batman2 = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY );
@@ -921,7 +921,7 @@ public class galaxian
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_BUTTON2 | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_BUTTON2 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_COCKTAIL );
@@ -935,7 +935,7 @@ public class galaxian
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_3C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_5C") );
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x00, "30000" );
 		PORT_DIPSETTING(    0x01, "50000" );
@@ -952,7 +952,7 @@ public class galaxian
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_warofbug = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY );
@@ -962,7 +962,7 @@ public class galaxian
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP   | IPF_8WAY );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );
@@ -975,7 +975,7 @@ public class galaxian
 		PORT_DIPSETTING(    0xc0, DEF_STR( "Free_Play") );
 	/* 0x80 gives 2 Coins/1 Credit */
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x03, 0x02, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "1" );
 		PORT_DIPSETTING(    0x01, "2" );
@@ -991,7 +991,7 @@ public class galaxian
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_redufo = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY );
@@ -1003,7 +1003,7 @@ public class galaxian
 		PORT_SERVICE( 0x40, IP_ACTIVE_HIGH );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_SERVICE1 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_COCKTAIL );
@@ -1016,7 +1016,7 @@ public class galaxian
 		PORT_DIPSETTING(    0x80, "A 1C/2C  B 1C/12C" );
 		PORT_DIPSETTING(    0xc0, DEF_STR( "Free_Play") );
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x01, "4000" );
 		PORT_DIPSETTING(    0x02, "5000" );
@@ -1032,7 +1032,7 @@ public class galaxian
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_exodus = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY );
@@ -1044,7 +1044,7 @@ public class galaxian
 		PORT_SERVICE( 0x40, IP_ACTIVE_HIGH );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_SERVICE1 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_COCKTAIL );
@@ -1058,7 +1058,7 @@ public class galaxian
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_3C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_5C") );
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x00, "7000" );
 		PORT_DIPSETTING(    0x01, "None" );
@@ -1075,7 +1075,7 @@ public class galaxian
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_pacmanbl = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_4WAY );
@@ -1085,7 +1085,7 @@ public class galaxian
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_4WAY );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL );
@@ -1099,7 +1099,7 @@ public class galaxian
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_3C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_5C") );
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x00, "15000" );
 		PORT_DIPSETTING(    0x01, "20000" );
@@ -1116,7 +1116,7 @@ public class galaxian
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_devilfsg = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_4WAY );
@@ -1126,7 +1126,7 @@ public class galaxian
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_4WAY );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL );
@@ -1140,7 +1140,7 @@ public class galaxian
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_3C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_5C") );
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x00, "10000" );
 		PORT_DIPSETTING(    0x01, "15000" );
@@ -1157,7 +1157,7 @@ public class galaxian
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_zigzag = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_4WAY );
@@ -1167,7 +1167,7 @@ public class galaxian
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_4WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_4WAY | IPF_COCKTAIL );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL );
@@ -1180,7 +1180,7 @@ public class galaxian
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_2C") );
 		PORT_DIPSETTING(    0xc0, DEF_STR( "Free_Play") );
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "3" );
 		PORT_DIPSETTING(    0x01, "4" );
@@ -1196,7 +1196,7 @@ public class galaxian
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_mooncrgx = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY );
@@ -1204,7 +1204,7 @@ public class galaxian
 		PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_BUTTON1 );
 		PORT_BIT( 0xe0, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused */
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_COCKTAIL );
@@ -1218,7 +1218,7 @@ public class galaxian
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_3C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_5C") );
 	
-		PORT_START	/* DSW */
+		PORT_START(); 	/* DSW */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x01, "30000" );
 		PORT_DIPSETTING(    0x00, "50000" );
@@ -1232,7 +1232,7 @@ public class galaxian
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_omega = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY );
@@ -1240,7 +1240,7 @@ public class galaxian
 		PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_BUTTON1 );
 		PORT_BIT( 0xe0, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused */
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_COCKTAIL );
@@ -1254,7 +1254,7 @@ public class galaxian
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_3C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_5C") );
 	
-		PORT_START	/* DSW */
+		PORT_START(); 	/* DSW */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x00, "10000" );
 		PORT_DIPSETTING(    0x01, "20000" );
@@ -1271,7 +1271,7 @@ public class galaxian
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_scramblb = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY );
@@ -1281,7 +1281,7 @@ public class galaxian
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP   | IPF_8WAY );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
@@ -1293,7 +1293,7 @@ public class galaxian
 		PORT_DIPSETTING(    0x40, DEF_STR( "Cocktail") );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_1C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_2C") );
@@ -1319,7 +1319,7 @@ public class galaxian
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_jumpbug = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY );
@@ -1331,7 +1331,7 @@ public class galaxian
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP   | IPF_8WAY );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
@@ -1343,7 +1343,7 @@ public class galaxian
 		PORT_DIPSETTING(    0x40, "Easy?" );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x01, "3" );
 		PORT_DIPSETTING(    0x02, "4" );
@@ -1369,7 +1369,7 @@ public class galaxian
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_levers = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
@@ -1379,7 +1379,7 @@ public class galaxian
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
@@ -1389,7 +1389,7 @@ public class galaxian
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );	/* probably unused */
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1417,7 +1417,7 @@ public class galaxian
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_azurian = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY );
@@ -1427,7 +1427,7 @@ public class galaxian
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );
@@ -1441,7 +1441,7 @@ public class galaxian
 		PORT_DIPSETTING(    0x00, "3" );
 		PORT_DIPSETTING(    0x80, "5" );
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_1C") );
@@ -1458,7 +1458,7 @@ public class galaxian
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_orbitron = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY );
@@ -1468,7 +1468,7 @@ public class galaxian
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
@@ -1482,7 +1482,7 @@ public class galaxian
 		PORT_DIPSETTING(    0x40, "A 1C/1C  B 1C/6C" );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1499,7 +1499,7 @@ public class galaxian
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_checkmaj = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT );
@@ -1509,7 +1509,7 @@ public class galaxian
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_COCKTAIL );
@@ -1523,7 +1523,7 @@ public class galaxian
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START	/* DSW */
+		PORT_START(); 	/* DSW */
 	 	PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "3" );
 		PORT_DIPSETTING(    0x01, "4" );
@@ -1540,7 +1540,7 @@ public class galaxian
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_swarm = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY );
@@ -1552,7 +1552,7 @@ public class galaxian
 		PORT_SERVICE( 0x40, IP_ACTIVE_HIGH );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_SERVICE1 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_COCKTAIL );
@@ -1565,7 +1565,7 @@ public class galaxian
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_2C") );
 		PORT_DIPSETTING(    0xc0, DEF_STR( "Free_Play") );
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x01, "10000" );
 		PORT_DIPSETTING(    0x02, "20000" );
@@ -1581,7 +1581,7 @@ public class galaxian
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_streakng = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP | IPF_4WAY | IPF_COCKTAIL);
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_4WAY );
@@ -1593,7 +1593,7 @@ public class galaxian
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_4WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP | IPF_4WAY );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL );
@@ -1606,7 +1606,7 @@ public class galaxian
 		PORT_DIPSETTING(    0xc0, "20000" );
 		PORT_DIPSETTING(    0x00, "None" );
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x03, 0x02, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "1C_1C") );
@@ -1621,7 +1621,7 @@ public class galaxian
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_blkhole = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY );
@@ -1631,7 +1631,7 @@ public class galaxian
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_SERVICE1 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_COCKTAIL );
@@ -1644,7 +1644,7 @@ public class galaxian
 		PORT_DIPSETTING(    0x40, DEF_STR( "1C_2C") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_3C") );
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );	/* Bonus Life? */
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -1661,7 +1661,7 @@ public class galaxian
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_mooncrst = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY );
@@ -1673,7 +1673,7 @@ public class galaxian
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* "reset" on schematics */
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_SERVICE1 );/* works only in the Gremlin version */
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_COCKTAIL );
@@ -1687,7 +1687,7 @@ public class galaxian
 		PORT_DIPSETTING(    0x80, "English" );
 		PORT_DIPSETTING(    0x00, "Japanese" );
 	
-		PORT_START	/* DSW */
+		PORT_START(); 	/* DSW */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "3C_1C") );
@@ -1702,7 +1702,7 @@ public class galaxian
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_eagle = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY );
@@ -1714,7 +1714,7 @@ public class galaxian
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* "reset" on schematics */
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_COCKTAIL );
@@ -1728,7 +1728,7 @@ public class galaxian
 		PORT_DIPSETTING(    0x80, "English" );
 		PORT_DIPSETTING(    0x00, "Japanese" );
 	
-		PORT_START	/* DSW */
+		PORT_START(); 	/* DSW */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -1744,7 +1744,7 @@ public class galaxian
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_eagle2 = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY );
@@ -1756,7 +1756,7 @@ public class galaxian
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* "reset" on schematics */
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_COCKTAIL );
@@ -1770,7 +1770,7 @@ public class galaxian
 		PORT_DIPSETTING(    0x80, "English" );
 		PORT_DIPSETTING(    0x00, "Japanese" );
 	
-		PORT_START	/* DSW */
+		PORT_START(); 	/* DSW */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "3C_1C") );
@@ -1785,7 +1785,7 @@ public class galaxian
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_moonqsr = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY );
@@ -1797,7 +1797,7 @@ public class galaxian
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* "reset" on schematics */
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_SERVICE1 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_2WAY | IPF_PLAYER2 );
@@ -1810,7 +1810,7 @@ public class galaxian
 		PORT_DIPSETTING(    0x80, "Hard" );
 		PORT_DIPSETTING(    0xc0, "Hardest" );
 	
-		PORT_START      /* DSW1 */
+		PORT_START();       /* DSW1 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "3C_1C") );
@@ -1825,7 +1825,7 @@ public class galaxian
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_checkman = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT );
@@ -1835,7 +1835,7 @@ public class galaxian
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );/* also p1 tiles left */
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );/* also p1 tiles right */
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_COCKTAIL );
@@ -1849,7 +1849,7 @@ public class galaxian
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START	/* DSW */
+		PORT_START(); 	/* DSW */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "3" );
 		PORT_DIPSETTING(    0x01, "4" );
@@ -1865,7 +1865,7 @@ public class galaxian
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_moonal2 = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_2WAY );
@@ -1877,7 +1877,7 @@ public class galaxian
 		PORT_SERVICE( 0x40, IP_ACTIVE_HIGH );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_SERVICE1 );/* works only in the Gremlin version */
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_2WAY | IPF_COCKTAIL );
@@ -1890,7 +1890,7 @@ public class galaxian
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_2C") );
 		PORT_DIPSETTING(    0xc0, DEF_STR( "Free_Play") );
 	
-		PORT_START	/* DSW */
+		PORT_START(); 	/* DSW */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x01, "4000" );
 		PORT_DIPSETTING(    0x02, "5000" );
@@ -1906,7 +1906,7 @@ public class galaxian
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_kingball = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_2WAY );
@@ -1922,7 +1922,7 @@ public class galaxian
 		//PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		//PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_2WAY | IPF_COCKTAIL );
@@ -1935,7 +1935,7 @@ public class galaxian
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_2C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Free_Play") );
 	
-		PORT_START	/* DSW */
+		PORT_START(); 	/* DSW */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x00, "10000" );
 		PORT_DIPSETTING(    0x01, "12000" );
@@ -1948,7 +1948,7 @@ public class galaxian
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0xf8, DEF_STR( "On") );
 	
-		PORT_START      /* IN3 (fake) */
+		PORT_START();       /* IN3 (fake) */
 		/* Hack? - possibly multiplexed via writes to $b003 - marked as SLAM */
 		PORT_DIPNAME( 0x01, 0x01, "Speech" );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );

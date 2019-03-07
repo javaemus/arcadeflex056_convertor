@@ -350,7 +350,7 @@ public class taito_h
 		PORT_DIPSETTING(    0x00, "Hardest" );
 	
 	static InputPortPtr input_ports_syvalion = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* DSW1 (0) */
+		PORT_START();   /* DSW1 (0) */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
@@ -363,7 +363,7 @@ public class taito_h
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_8
 	
-		PORT_START  /* DSW2 (1) */
+		PORT_START();   /* DSW2 (1) */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x08, "1000k only" );
@@ -382,7 +382,7 @@ public class taito_h
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN0 (2) */
+		PORT_START(); 	/* IN0 (2) */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN1 );
@@ -392,27 +392,27 @@ public class taito_h
 		PORT_BIT( 0x40, IP_ACTIVE_LOW,  IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_START2 );
 	
-		PORT_START	/* IN1 (3) */
+		PORT_START(); 	/* IN1 (3) */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x0e, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0xe0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START  /* TRACKBALL1 X (4) */
+		PORT_START();   /* TRACKBALL1 X (4) */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_X | IPF_PLAYER1 | IPF_CENTER, 30, 30, 0, 0 );
 	
-		PORT_START  /* TRACKBALL1 Y (5) */
+		PORT_START();   /* TRACKBALL1 Y (5) */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_Y | IPF_PLAYER1 | IPF_CENTER | IPF_REVERSE, 30, 30, 0, 0 );
 	
-		PORT_START  /* TRACKBALL2 X (6) */
+		PORT_START();   /* TRACKBALL2 X (6) */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_X | IPF_PLAYER2 | IPF_CENTER, 30, 30, 0, 0 );
 	
-		PORT_START  /* TRACKBALL2 Y (7) */
+		PORT_START();   /* TRACKBALL2 Y (7) */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_Y | IPF_PLAYER2 | IPF_CENTER | IPF_REVERSE, 30, 30, 0, 0 );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_recordbr = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* DSW1 (0) */
+		PORT_START();   /* DSW1 (0) */
 		PORT_DIPNAME( 0x00, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -425,7 +425,7 @@ public class taito_h
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_8
 	
-		PORT_START  /* DSW2 (1) */
+		PORT_START();   /* DSW2 (1) */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
@@ -446,7 +446,7 @@ public class taito_h
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN0 (2) */
+		PORT_START(); 	/* IN0 (2) */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN1 );
@@ -456,14 +456,14 @@ public class taito_h
 		PORT_BIT( 0x40, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
-		PORT_START	/* IN1 (3) */
+		PORT_START(); 	/* IN1 (3) */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START3 );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_START4 );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* IN2 (4) */
+		PORT_START(); 	/* IN2 (4) */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER1 );
@@ -475,7 +475,7 @@ public class taito_h
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_dleague = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* DSW1 (0) */
+		PORT_START();   /* DSW1 (0) */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unused") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -488,7 +488,7 @@ public class taito_h
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_8
 	
-		PORT_START  /* DSW2 (1) */
+		PORT_START();   /* DSW2 (1) */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unused") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -513,7 +513,7 @@ public class taito_h
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN0 (2) */
+		PORT_START(); 	/* IN0 (2) */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_SERVICE1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_TILT );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_COIN1 );
@@ -523,7 +523,7 @@ public class taito_h
 		PORT_BIT( 0x40, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
-		PORT_START	/* IN1 (3) */
+		PORT_START(); 	/* IN1 (3) */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER1 );
@@ -533,7 +533,7 @@ public class taito_h
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER2 );
 	
-		PORT_START	/* IN2 (4) */
+		PORT_START(); 	/* IN2 (4) */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER1 );

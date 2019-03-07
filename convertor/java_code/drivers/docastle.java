@@ -260,7 +260,7 @@ public class docastle
 	
 	/* Coinage used for all games */
 	#define COINAGE_PORT \
-		PORT_START \
+		PORT_START();  \
 		PORT_DIPNAME( 0x0f, 0x0f, DEF_STR( "Coin_B") ); \
 		PORT_DIPSETTING(    0x06, DEF_STR( "4C_1C") ); \
 		PORT_DIPSETTING(    0x08, DEF_STR( "3C_1C") ); \
@@ -290,7 +290,7 @@ public class docastle
 	
 	
 	static InputPortPtr input_ports_docastle = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_4WAY );
@@ -300,7 +300,7 @@ public class docastle
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_4WAY | IPF_COCKTAIL );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );/* reported as not used */
@@ -310,7 +310,7 @@ public class docastle
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );/* reported as not used */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_TILT );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* reported as test */
 	/* coin input must be active for 32 frames to be consistently recognized */
@@ -323,7 +323,7 @@ public class docastle
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );/* reported as not used */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );/* reported as not used */
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x03, "Easy" );
 		PORT_DIPSETTING(    0x02, "Medium" );
@@ -351,7 +351,7 @@ public class docastle
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_dorunrun = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_4WAY );
@@ -361,7 +361,7 @@ public class docastle
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_4WAY | IPF_COCKTAIL );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -371,7 +371,7 @@ public class docastle
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_TILT );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* Reported as Test */
 	/* coin input must be active for 32 frames to be consistently recognized */
@@ -384,7 +384,7 @@ public class docastle
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x03, "Easy" );
 		PORT_DIPSETTING(    0x02, "Medium" );
@@ -413,7 +413,7 @@ public class docastle
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_dowild = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_4WAY );
@@ -423,7 +423,7 @@ public class docastle
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_4WAY | IPF_COCKTAIL );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );/* reported as not used */
@@ -433,7 +433,7 @@ public class docastle
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );/* reported as not used */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_TILT );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* reported as test */
 	/* coin input must be active for 32 frames to be consistently recognized */
@@ -446,7 +446,7 @@ public class docastle
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );/* reported as not used */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );/* reported as not used */
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x03, "Easy" );
 		PORT_DIPSETTING(    0x02, "Medium" );
@@ -476,7 +476,7 @@ public class docastle
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_jjack = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_4WAY );
@@ -486,7 +486,7 @@ public class docastle
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_4WAY | IPF_COCKTAIL );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );/* reported as not used */
@@ -496,7 +496,7 @@ public class docastle
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );/* reported as not used */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_TILT );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* reported as test */
 	/* coin input must be active for 32 frames to be consistently recognized */
@@ -509,7 +509,7 @@ public class docastle
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );/* reported as not used */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );/* reported as not used */
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x03, 0x03, "Difficulty?" );
 		PORT_DIPSETTING(    0x03, "Easy" );
 		PORT_DIPSETTING(    0x02, "Medium" );
@@ -537,7 +537,7 @@ public class docastle
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_kickridr = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY );
@@ -547,7 +547,7 @@ public class docastle
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -557,7 +557,7 @@ public class docastle
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_TILT );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* Reported as Test */
 	/* coin input must be active for 32 frames to be consistently recognized */
@@ -570,7 +570,7 @@ public class docastle
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x03, 0x03, "Difficulty?" );
 		PORT_DIPSETTING(    0x03, "Easy" );
 		PORT_DIPSETTING(    0x02, "Medium" );

@@ -108,7 +108,7 @@ public class astrof
 	
 	
 	static InputPortPtr input_ports_astrof = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 	/* Player 1 Controls */
@@ -120,7 +120,7 @@ public class astrof
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "3" );
 		PORT_DIPSETTING(    0x01, "4" );
@@ -145,7 +145,7 @@ public class astrof
 	
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_VBLANK );
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		/* The coin slots are not memory mapped. Coin insertion causes a NMI. */
 		/* This fake input port is used by the interrupt */
 		/* handler to be notified of coin insertions. We use IMPULSE to */
@@ -161,7 +161,7 @@ public class astrof
 	
 	
 	static InputPortPtr input_ports_tomahawk = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY );
@@ -171,7 +171,7 @@ public class astrof
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "3" );
 		PORT_DIPSETTING(    0x01, "4" );
@@ -196,7 +196,7 @@ public class astrof
 	
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_VBLANK );
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		/* The coin slots are not memory mapped. Coin insertion causes a NMI. */
 		/* This fake input port is used by the interrupt */
 		/* handler to be notified of coin insertions. We use IMPULSE to */

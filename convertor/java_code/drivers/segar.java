@@ -361,7 +361,7 @@ public class segar
 	
 	/* This fake input port is used for DIP Switch 2
 	   For all games except Sindbad Mystery that has different coinage */
-	#define COINAGE PORT_START \
+	#define COINAGE PORT_START();  \
 		PORT_DIPNAME( 0x0f, 0x0c, DEF_STR( "Coin_B") ); \
 		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") ); \
 		PORT_DIPSETTING(    0x08, DEF_STR( "3C_1C") ); \
@@ -399,31 +399,31 @@ public class segar
 	
 	
 	static InputPortPtr input_ports_astrob = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT_IMPULSE( 0x40, IP_ACTIVE_LOW, IPT_COIN2, 3 );
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN1, 3 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN3 */
+		PORT_START();       /* IN3 */
 		PORT_BITX(0x10, IP_ACTIVE_LOW, IPT_BUTTON2, "Warp", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x20, IP_ACTIVE_LOW, IPT_BUTTON1, "Fire", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN4 */
+		PORT_START();       /* IN4 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );
@@ -433,12 +433,12 @@ public class segar
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_COCKTAIL);
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_COCKTAIL);
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		/* This fake input port is used to get the status of the F2 key, */
 		/* and activate the test mode, which is triggered by a NMI */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -469,31 +469,31 @@ public class segar
 	
 	
 	static InputPortPtr input_ports_astrob2 = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT_IMPULSE( 0x40, IP_ACTIVE_LOW, IPT_COIN2, 3 );
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN1, 3 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN3 */
+		PORT_START();       /* IN3 */
 		PORT_BITX(0x10, IP_ACTIVE_LOW, IPT_BUTTON2, "Warp", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x20, IP_ACTIVE_LOW, IPT_BUTTON1, "Fire", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN4 */
+		PORT_START();       /* IN4 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );
@@ -503,12 +503,12 @@ public class segar
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_COCKTAIL);
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_COCKTAIL);
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		/* This fake input port is used to get the status of the F2 key, */
 		/* and activate the test mode, which is triggered by a NMI */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -539,31 +539,31 @@ public class segar
 	
 	
 	static InputPortPtr input_ports_astrob1 = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT_IMPULSE( 0x40, IP_ACTIVE_LOW, IPT_COIN2, 3 );
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN1, 3 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN3 */
+		PORT_START();       /* IN3 */
 		PORT_BITX(0x10, IP_ACTIVE_LOW, IPT_BUTTON2, "Warp", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x20, IP_ACTIVE_LOW, IPT_BUTTON1, "Fire", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN4 */
+		PORT_START();       /* IN4 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );
@@ -573,12 +573,12 @@ public class segar
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_COCKTAIL);
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_COCKTAIL);
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		/* This fake input port is used to get the status of the F2 key, */
 		/* and activate the test mode, which is triggered by a NMI */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -609,32 +609,32 @@ public class segar
 	
 	
 	static InputPortPtr input_ports_005 = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT_IMPULSE( 0x40, IP_ACTIVE_LOW, IPT_COIN2, 3 );
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN1, 3 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		/* better test those impulse */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN3 */
+		PORT_START();       /* IN3 */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN4 */
+		PORT_START();       /* IN4 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );
@@ -644,12 +644,12 @@ public class segar
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL);
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL);
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		/* This fake input port is used to get the status of the F2 key, */
 		/* and activate the test mode, which is triggered by a NMI */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		/* This fake input port is used for DIP Switch 1 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
@@ -681,31 +681,31 @@ public class segar
 	
 	
 	static InputPortPtr input_ports_monsterb = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT_IMPULSE( 0x40, IP_ACTIVE_LOW, IPT_COIN2, 3 );
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN1, 3 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN3 */
+		PORT_START();       /* IN3 */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY );
 		PORT_BITX(0x20, IP_ACTIVE_LOW, IPT_BUTTON1, "Zap", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN4 */
+		PORT_START();       /* IN4 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );
@@ -715,12 +715,12 @@ public class segar
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL);
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL);
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		/* This fake input port is used to get the status of the F2 key, */
 		/* and activate the test mode, which is triggered by a NMI */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		/* This fake input port is used for DIP Switch 1 */
 		PORT_BITX( 0x01,    0x01, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Infinite Lives", IP_KEY_NONE, IP_JOY_NONE );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
@@ -749,31 +749,31 @@ public class segar
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_spaceod = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT_IMPULSE( 0x40, IP_ACTIVE_LOW, IPT_COIN2, 3 );
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN1, 3 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BITX(0x20, IP_ACTIVE_LOW, IPT_BUTTON2, "Bomb", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN3 */
+		PORT_START();       /* IN3 */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN4 */
+		PORT_START();       /* IN4 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY );
@@ -783,12 +783,12 @@ public class segar
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_COCKTAIL);
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_COCKTAIL);
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		/* This fake input port is used to get the status of the F2 key, */
 		/* and activate the test mode, which is triggered by a NMI */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		/* This fake input port is used for DIP Switch 1 */
 		PORT_BITX( 0x01,    0x01, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Infinite Lives", IP_KEY_NONE, IP_JOY_NONE );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
@@ -819,31 +819,31 @@ public class segar
 	
 	
 	static InputPortPtr input_ports_pignewt = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT_IMPULSE( 0x40, IP_ACTIVE_LOW, IPT_COIN2, 3 );
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN1, 3 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN3 */
+		PORT_START();       /* IN3 */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN4 */
+		PORT_START();       /* IN4 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );
@@ -853,12 +853,12 @@ public class segar
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL);
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL);
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		/* This fake input port is used to get the status of the F2 key, */
 		/* and activate the test mode, which is triggered by a NMI */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		/* This fake input port is used for DIP Switch 1 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
@@ -890,43 +890,43 @@ public class segar
 	
 	
 	static InputPortPtr input_ports_pignewta = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT_IMPULSE( 0x40, IP_ACTIVE_LOW, IPT_COIN2, 3 );
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN1, 3 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN3 */
+		PORT_START();       /* IN3 */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN4 */
+		PORT_START();       /* IN4 */
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_BUTTON1 );
 		PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_4WAY );
 		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_4WAY );
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_4WAY );
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		/* This fake input port is used to get the status of the F2 key, */
 		/* and activate the test mode, which is triggered by a NMI */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		/* This fake input port is used for DIP Switch 1 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
@@ -959,39 +959,39 @@ public class segar
 	
 	
 	static InputPortPtr input_ports_sindbadm = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT_IMPULSE( 0x40, IP_ACTIVE_LOW, IPT_COIN2, 3 );
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN1, 3 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN3 */
+		PORT_START();       /* IN3 */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN4 */
+		PORT_START();       /* IN4 */
 		PORT_BIT( 0xFF, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		/* This fake input port is used to get the status of the F2 key, */
 		/* and activate the test mode, which is triggered by a NMI */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		/* This fake input port is used for DIP Switch 1 */
 		PORT_BITX( 0x01,    0x01, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Infinite Lives", IP_KEY_NONE, IP_JOY_NONE );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
@@ -1017,7 +1017,7 @@ public class segar
 		PORT_DIPSETTING(    0x80, "5" );
 		PORT_DIPSETTING(    0xc0, "6" );
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		/* This fake input port is used for DIP Switch 2 */
 		PORT_DIPNAME( 0x0f, 0x0f, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x07, DEF_STR( "4C_1C") );
@@ -1055,7 +1055,7 @@ public class segar
 		PORT_DIPSETTING(    0xb0, DEF_STR( "1C_5C") );
 		PORT_DIPSETTING(    0xa0, DEF_STR( "1C_6C") );
 	
-		PORT_START      /* IN8 */
+		PORT_START();       /* IN8 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL);
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL);
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL);

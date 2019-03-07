@@ -241,7 +241,7 @@ public class blockade
 	/* some pins were unused.                         */
 	
 	static InputPortPtr input_ports_blockade = new InputPortPtr(){ public void handler() { 
-	    PORT_START  /* IN0 */
+	    PORT_START();   /* IN0 */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_DIPNAME(    0x04, 0x04, "Boom Switch" );
@@ -257,7 +257,7 @@ public class blockade
 	                                /* this is really used for the coin latch,  */
 	                                /* see blockade_interrupt()                 */
 	
-	    PORT_START  /* IN1 */
+	    PORT_START();   /* IN1 */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_PLAYER2 );
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_PLAYER2 );
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY | IPF_PLAYER2 );
@@ -267,7 +267,7 @@ public class blockade
 	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY | IPF_PLAYER1 );
 	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_PLAYER1 );
 	
-	    PORT_START  /* IN2 */
+	    PORT_START();   /* IN2 */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -277,13 +277,13 @@ public class blockade
 	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_VBLANK );
 		PORT_BIT( 0x7f, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_comotion = new InputPortPtr(){ public void handler() { 
-	    PORT_START  /* IN0 */
+	    PORT_START();   /* IN0 */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_DIPNAME(    0x04, 0x04, "Boom Switch" );
@@ -299,7 +299,7 @@ public class blockade
 	                                /* this is really used for the coin latch,  */
 	                                /* see blockade_interrupt()                 */
 	
-	    PORT_START  /* IN1 */
+	    PORT_START();   /* IN1 */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_PLAYER1 );
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_PLAYER1 );
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY | IPF_PLAYER1 );
@@ -309,7 +309,7 @@ public class blockade
 	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY | IPF_PLAYER3 );
 	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_PLAYER3 );
 	
-	    PORT_START  /* IN2 */
+	    PORT_START();   /* IN2 */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_PLAYER2 );
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_PLAYER2 );
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY | IPF_PLAYER2 );
@@ -319,13 +319,13 @@ public class blockade
 	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY | IPF_PLAYER4 );
 	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_PLAYER4 );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x7f, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_VBLANK );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_blasto = new InputPortPtr(){ public void handler() { 
-	    PORT_START  /* IN0 */
+	    PORT_START();   /* IN0 */
 	    PORT_DIPNAME(    0x03, 0x03, DEF_STR( "Coinage") );
 	    PORT_DIPSETTING( 0x00, DEF_STR( "4C_1C") );
 	    PORT_DIPSETTING( 0x01, DEF_STR( "3C_1C") );
@@ -344,7 +344,7 @@ public class blockade
 	                                /* this is really used for the coin latch,  */
 	                                /* see blockade_interrupt()                 */
 	
-	    PORT_START  /* IN1 */
+	    PORT_START();   /* IN1 */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -354,7 +354,7 @@ public class blockade
 	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 	
-	    PORT_START  /* IN2 */
+	    PORT_START();   /* IN2 */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_PLAYER2 );
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY | IPF_PLAYER2 );
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_PLAYER2 );
@@ -364,13 +364,13 @@ public class blockade
 	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_PLAYER1 );
 	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_PLAYER1 );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x7f, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_VBLANK );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_hustle = new InputPortPtr(){ public void handler() { 
-	    PORT_START  /* IN0 */
+	    PORT_START();   /* IN0 */
 	    PORT_DIPNAME(    0x03, 0x03, DEF_STR( "Coinage") );
 	    PORT_DIPSETTING( 0x00, DEF_STR( "4C_1C") );
 	    PORT_DIPSETTING( 0x01, DEF_STR( "3C_1C") );
@@ -387,7 +387,7 @@ public class blockade
 	                                /* this is really used for the coin latch,  */
 	                                /* see blockade_interrupt()                 */
 	
-	    PORT_START  /* IN1 */
+	    PORT_START();   /* IN1 */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_PLAYER2 );
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_PLAYER2 );
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY | IPF_PLAYER2 );
@@ -397,7 +397,7 @@ public class blockade
 	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY | IPF_PLAYER1 );
 	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_PLAYER1 );
 	
-	    PORT_START  /* IN2 */
+	    PORT_START();   /* IN2 */
 		PORT_DIPNAME( 0xf1, 0xf0, "Free Game" );
 		PORT_DIPSETTING ( 0x71, "11000" );
 	    PORT_DIPSETTING ( 0xb1, "13000" );
@@ -408,7 +408,7 @@ public class blockade
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x7f, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_VBLANK );
 	INPUT_PORTS_END(); }}; 

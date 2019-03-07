@@ -186,7 +186,7 @@ public class sidearms
 	
 	
 	static InputPortPtr input_ports_sidearms = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -198,7 +198,7 @@ public class sidearms
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
@@ -208,7 +208,7 @@ public class sidearms
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON3 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );
@@ -218,7 +218,7 @@ public class sidearms
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "0 (Easiest); )
 		PORT_DIPSETTING(    0x06, "1" );
@@ -241,7 +241,7 @@ public class sidearms
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START      /* DSW1 */
+		PORT_START();       /* DSW1 */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "3C_1C") );
@@ -267,13 +267,13 @@ public class sidearms
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START      /* DSW2 */
+		PORT_START();       /* DSW2 */
 		PORT_BIT( 0x7f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_VBLANK );    /* not sure, but likely */
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_turtship = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -283,7 +283,7 @@ public class sidearms
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
@@ -293,7 +293,7 @@ public class sidearms
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON3 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );
@@ -303,7 +303,7 @@ public class sidearms
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_BITX( 0x01, 0x01, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", 0, IP_JOY_NONE );
 		PORT_DIPSETTING( 0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING( 0x00, DEF_STR( "On") );
@@ -329,7 +329,7 @@ public class sidearms
 		PORT_DIPSETTING(    0x80, "7" );
 		PORT_DIPSETTING(    0x00, "8" );
 	
-		PORT_START      /* DSW1 */
+		PORT_START();       /* DSW1 */
 		PORT_SERVICE( 0x01, IP_ACTIVE_LOW );
 		PORT_DIPNAME( 0x02, 0x02, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
@@ -354,7 +354,7 @@ public class sidearms
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_dyger = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* seems to be 1-player only */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -364,7 +364,7 @@ public class sidearms
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
@@ -374,10 +374,10 @@ public class sidearms
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON3 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );/* seems to be 1-player only */
 	
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -403,7 +403,7 @@ public class sidearms
 		PORT_DIPSETTING(    0x80, "7" );
 		PORT_DIPSETTING(    0x00, "8" );
 	
-		PORT_START      /* DSW1 */
+		PORT_START();       /* DSW1 */
 		PORT_SERVICE( 0x01, IP_ACTIVE_LOW );
 		PORT_DIPNAME( 0x02, 0x02, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );

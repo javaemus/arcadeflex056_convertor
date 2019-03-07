@@ -159,7 +159,7 @@ public class exerion
 	 *********************************************************************/
 	
 	static InputPortPtr input_ports_exerion = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* player 1 inputs (muxed on 0xa000) */
+		PORT_START();       /* player 1 inputs (muxed on 0xa000) */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
@@ -169,7 +169,7 @@ public class exerion
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START      /* player 2 inputs (muxed on 0xa000) */
+		PORT_START();       /* player 2 inputs (muxed on 0xa000) */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER2 );
@@ -179,7 +179,7 @@ public class exerion
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START      /* dip switches (0xa800) */
+		PORT_START();       /* dip switches (0xa800) */
 		PORT_DIPNAME( 0x07, 0x02, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "1" );
 		PORT_DIPSETTING(    0x01, "2" );
@@ -202,7 +202,7 @@ public class exerion
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START      /* dip switches/VBLANK (0xb000) */
+		PORT_START();       /* dip switches/VBLANK (0xb000) */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNUSED );	/* VBLANK */
 		PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
@@ -214,7 +214,7 @@ public class exerion
 		PORT_DIPSETTING(    0x0c, DEF_STR( "1C_4C") );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		/* The coin slots are not memory mapped. */
 		/* This fake input port is used by the interrupt */
 		/* handler to be notified of coin insertions. We use IMPULSE to */

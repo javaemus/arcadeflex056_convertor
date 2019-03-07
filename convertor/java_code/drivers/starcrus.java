@@ -70,7 +70,7 @@ public class starcrus
 	
 	
 	static InputPortPtr input_ports_starcrus = new InputPortPtr(){ public void handler() { 
-			PORT_START	/* player 1 */
+			PORT_START(); 	/* player 1 */
 			PORT_BIT (0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY );/* ccw */
 			PORT_BIT (0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );/* engine */
 			PORT_BIT (0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY );/* cw */
@@ -80,7 +80,7 @@ public class starcrus
 	        PORT_BIT (0x40, IP_ACTIVE_LOW, IPT_BUTTON1 );/* phaser */
 	        PORT_BIT (0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-	        PORT_START  /* player 2 */
+	        PORT_START();   /* player 2 */
 	        PORT_BIT (0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY | IPF_PLAYER2 );/* ccw */
 	        PORT_BIT (0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );/* engine */
 	        PORT_BIT (0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_PLAYER2 );/* cw */
@@ -90,7 +90,7 @@ public class starcrus
 	        PORT_BIT (0x40, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );/* phaser */
 	        PORT_BIT (0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-			PORT_START
+			PORT_START(); 
 	        PORT_DIPNAME ( 0x03, 0x02, "Game Time" );
 	        PORT_DIPSETTING ( 0x03, "60 secs" );
 	        PORT_DIPSETTING ( 0x02, "90 secs" );

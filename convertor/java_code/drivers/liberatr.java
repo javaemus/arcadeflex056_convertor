@@ -274,7 +274,7 @@ public class liberatr
 	
 	
 	static InputPortPtr input_ports_liberatr = new InputPortPtr(){ public void handler() { 
-		PORT_START			/* IN0 - $5000 */
+		PORT_START(); 			/* IN0 - $5000 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN3 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN2 );
@@ -286,7 +286,7 @@ public class liberatr
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START			/* IN1 - $5001 */
+		PORT_START(); 			/* IN1 - $5001 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON2 );
@@ -296,7 +296,7 @@ public class liberatr
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH,IPT_VBLANK );
 	
-		PORT_START			/* IN2  -  Game Option switches DSW @ D4 on PCB */
+		PORT_START(); 			/* IN2  -  Game Option switches DSW @ D4 on PCB */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "4" );
 		PORT_DIPSETTING(    0x01, "5" );
@@ -319,7 +319,7 @@ public class liberatr
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START			/* IN3  -  Pricing Option switches DSW @ A4 on PCB */
+		PORT_START(); 			/* IN3  -  Pricing Option switches DSW @ A4 on PCB */
 		PORT_DIPNAME( 0x03, 0x02, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "1C_1C") );
@@ -344,10 +344,10 @@ public class liberatr
 		PORT_DIPSETTING (   0xc0, "Freeze Mode" );
 		PORT_DIPSETTING (   0xe0, "Freeze Mode" );
 	
-		PORT_START	/* IN4 - FAKE - overlaps IN0 in the HW */
+		PORT_START(); 	/* IN4 - FAKE - overlaps IN0 in the HW */
 		PORT_ANALOG( 0x0f, 0x0, IPT_TRACKBALL_X, 30, 10, 0, 0 );
 	
-		PORT_START	/* IN5 - FAKE - overlaps IN0 in the HW */
+		PORT_START(); 	/* IN5 - FAKE - overlaps IN0 in the HW */
 		PORT_ANALOG( 0x0f, 0x0, IPT_TRACKBALL_Y, 30, 10, 0, 0 );
 	INPUT_PORTS_END(); }}; 
 	

@@ -460,7 +460,7 @@ public class argus
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_argus = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* System control (0) */
+		PORT_START();       /* System control (0) */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -470,7 +470,7 @@ public class argus
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START      /* Player 1 control (1) */
+		PORT_START();       /* Player 1 control (1) */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
@@ -480,7 +480,7 @@ public class argus
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* Player 2 controls (2) */
+		PORT_START(); 	/* Player 2 controls (2) */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );
@@ -490,7 +490,7 @@ public class argus
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START  /* DSW 1 (3) */
+		PORT_START();   /* DSW 1 (3) */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -514,7 +514,7 @@ public class argus
 		PORT_DIPSETTING(    0x40, "4" );
 		PORT_DIPSETTING(    0x00, "5" );
 	
-		PORT_START  /* DSW 2 (4) */
+		PORT_START();   /* DSW 2 (4) */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unused") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -542,7 +542,7 @@ public class argus
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_valtric = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* System control (0) */
+		PORT_START();       /* System control (0) */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -552,7 +552,7 @@ public class argus
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START      /* Player 1 control (1) */
+		PORT_START();       /* Player 1 control (1) */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
@@ -562,7 +562,7 @@ public class argus
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START		/* Player 2 controls (2) */
+		PORT_START(); 		/* Player 2 controls (2) */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );
@@ -572,7 +572,7 @@ public class argus
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START		/* DSW 1 (3) */
+		PORT_START(); 		/* DSW 1 (3) */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -596,7 +596,7 @@ public class argus
 		PORT_DIPSETTING(    0x80, "4" );
 		PORT_DIPSETTING(    0x40, "5" );
 	
-		PORT_START		/* DSW 2 (4) */
+		PORT_START(); 		/* DSW 2 (4) */
 		PORT_BITX(    0x01, 0x01, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -624,7 +624,7 @@ public class argus
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_butasan = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* System control (0) */
+		PORT_START();       /* System control (0) */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -634,7 +634,7 @@ public class argus
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START      /* Player 1 control (1) */
+		PORT_START();       /* Player 1 control (1) */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
@@ -644,7 +644,7 @@ public class argus
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START		/* Player 2 controls (2) */
+		PORT_START(); 		/* Player 2 controls (2) */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );
@@ -654,7 +654,7 @@ public class argus
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START		/* DSW 1 (3) */
+		PORT_START(); 		/* DSW 1 (3) */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Free_Play") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -678,7 +678,7 @@ public class argus
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START		/* DSW 2 (4) */
+		PORT_START(); 		/* DSW 2 (4) */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );

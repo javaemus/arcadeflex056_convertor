@@ -138,7 +138,7 @@ public class flstory
 	
 	
 	static InputPortPtr input_ports_flstory = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* D800: DSW0 */
+		PORT_START();       /* D800: DSW0 */
 		PORT_DIPNAME(0x03, 0x00, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(   0x00, "30000 100000" );
 		PORT_DIPSETTING(   0x01, "30000 150000" );
@@ -162,7 +162,7 @@ public class flstory
 		PORT_DIPSETTING(   0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(   0x00, DEF_STR( "On") );
 	
-		PORT_START      /* D801: DSW1 */
+		PORT_START();       /* D801: DSW1 */
 		PORT_DIPNAME(0x0f, 0x00, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(   0x0f, DEF_STR( "9C_1C") );
 		PORT_DIPSETTING(   0x0e, DEF_STR( "8C_1C") );
@@ -198,7 +198,7 @@ public class flstory
 		PORT_DIPSETTING(   0x60, DEF_STR( "1C_7C") );
 		PORT_DIPSETTING(   0x70, DEF_STR( "1C_8C") );
 	
-		PORT_START      /* D802: COINS */
+		PORT_START();       /* D802: COINS */
 		PORT_DIPNAME(0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(   0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(   0x00, DEF_STR( "On") );
@@ -224,7 +224,7 @@ public class flstory
 		PORT_DIPSETTING(    0x80, "A and B" );
 		PORT_DIPSETTING(    0x00, "A only" );
 	
-		PORT_START      /* D803: START BUTTONS */
+		PORT_START();       /* D803: START BUTTONS */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -234,7 +234,7 @@ public class flstory
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* "BAD IO" if low */
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* "BAD IO" if low */
 	
-		PORT_START      /* D804: P1? */
+		PORT_START();       /* D804: P1? */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY );
@@ -244,7 +244,7 @@ public class flstory
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* D806: P2? */
+		PORT_START();       /* D806: P2? */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );                            /* This is a bit of a guess - but without these here */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );                            /* Player 2 still functions normally */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY | IPF_COCKTAIL );

@@ -163,7 +163,7 @@ public class sauro
 	
 	
 	static InputPortPtr input_ports_sauro = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN1 );
@@ -173,7 +173,7 @@ public class sauro
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY  );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY  );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON2 | IPF_COCKTAIL);
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_START1 );
@@ -183,7 +183,7 @@ public class sauro
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_COCKTAIL | IPF_8WAY  );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_COCKTAIL | IPF_8WAY  );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_SERVICE( 0x01, IP_ACTIVE_HIGH );
 		PORT_DIPNAME( 0x02, 0x02, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
@@ -206,7 +206,7 @@ public class sauro
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "3C_1C") );

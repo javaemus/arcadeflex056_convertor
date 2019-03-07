@@ -200,7 +200,7 @@ public class vsnes
 	/******************************************************************************/
 	
 	#define VS_CONTROLS \
-		PORT_START	/* IN0 */ \
+		PORT_START(); 	/* IN0 */ \
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON2 );				/* BUTTON A on a nes */ \
 		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON1 );				/* BUTTON B on a nes */ \
 		PORT_BIT ( 0x04, IP_ACTIVE_HIGH, IPT_START1 );				/* SELECT on a nes */ \
@@ -211,7 +211,7 @@ public class vsnes
 		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT );\
 	\
 	\
-		PORT_START	/* IN1 */ \
+		PORT_START(); 	/* IN1 */ \
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON2 | IPF_PLAYER2 );/* BUTTON A on a nes */ \
 		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER2 );/* BUTTON B on a nes */ \
 		PORT_BIT ( 0x04, IP_ACTIVE_HIGH, IPT_START2 );				/* SELECT on a nes */ \
@@ -222,7 +222,7 @@ public class vsnes
 		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_PLAYER2 );\
 	\
 	\
-		PORT_START	/* IN2 */ \
+		PORT_START(); 	/* IN2 */ \
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_UNUSED );/* serial pin from controller */ \
 		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );\
 		PORT_BIT ( 0x04, IP_ACTIVE_HIGH, IPT_SERVICE1 );/* service credit? */ \
@@ -234,7 +234,7 @@ public class vsnes
 	
 	
 	#define VS_CONTROLS_REVERSE \
-		PORT_START	/* IN0 */ \
+		PORT_START(); 	/* IN0 */ \
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON2 | IPF_PLAYER2);				/* BUTTON A on a nes */ \
 		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER2 );				/* BUTTON B on a nes */ \
 		PORT_BIT ( 0x04, IP_ACTIVE_HIGH, IPT_START1 );				/* SELECT on a nes */ \
@@ -244,7 +244,7 @@ public class vsnes
 		PORT_BIT ( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_PLAYER2);\
 		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_PLAYER2);\
 	 	\
-		PORT_START	/* IN1 */ \
+		PORT_START(); 	/* IN1 */ \
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON2  );/* BUTTON A on a nes */ \
 		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON1 );/* BUTTON B on a nes */ \
 		PORT_BIT ( 0x04, IP_ACTIVE_HIGH, IPT_START2 );				/* SELECT on a nes */ \
@@ -254,7 +254,7 @@ public class vsnes
 		PORT_BIT ( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  );\
 		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT  );\
 	 	\
-		PORT_START	/* IN2 */ \
+		PORT_START(); 	/* IN2 */ \
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_UNUSED );/* serial pin from controller */ \
 		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );\
 		PORT_BIT ( 0x04, IP_ACTIVE_HIGH, IPT_SERVICE1 );/* service credit? */ \
@@ -266,7 +266,7 @@ public class vsnes
 	
 	
 	#define VS_ZAPPER \
-	PORT_START	/* IN0 */ \
+	PORT_START(); 	/* IN0 */ \
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_UNUSED );\
 		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_UNUSED );\
 		PORT_BIT ( 0x04, IP_ACTIVE_HIGH, IPT_UNUSED );\
@@ -276,7 +276,7 @@ public class vsnes
 		PORT_BIT ( 0x40, IP_ACTIVE_HIGH, IPT_UNUSED );/* sprite hit */ \
 		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_BUTTON1 );/* gun trigger */ \
 		\
-		PORT_START	/* IN1 */ \
+		PORT_START(); 	/* IN1 */ \
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_UNUSED );\
 		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_UNUSED );\
 		PORT_BIT ( 0x04, IP_ACTIVE_HIGH, IPT_UNUSED );\
@@ -289,7 +289,7 @@ public class vsnes
 	
 	#define VS_DUAL_CONTROLS_L \
 		\
-		PORT_START	/* IN0 */ \
+		PORT_START(); 	/* IN0 */ \
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON2 );				/* BUTTON A on a nes */ \
 		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON1 );				/* BUTTON B on a nes */ \
 		PORT_BIT ( 0x04, IP_ACTIVE_HIGH, IPT_START1 );				/* SELECT on a nes */ \
@@ -299,7 +299,7 @@ public class vsnes
 		PORT_BIT ( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT );\
 		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT );\
 	 	\
-		PORT_START	/* IN1 */ \
+		PORT_START(); 	/* IN1 */ \
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON2 | IPF_PLAYER2 );/* BUTTON A on a nes */ \
 		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER2 );/* BUTTON B on a nes */ \
 		PORT_BIT ( 0x04, IP_ACTIVE_HIGH, IPT_START2 );				/* SELECT on a nes */ \
@@ -309,7 +309,7 @@ public class vsnes
 		PORT_BIT ( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_PLAYER2 );\
 		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_PLAYER2 );\
 	 	\
-		PORT_START	/* IN2 */ \
+		PORT_START(); 	/* IN2 */ \
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_UNUSED );/* serial pin from controller */ \
 		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );\
 		PORT_BIT ( 0x04, IP_ACTIVE_HIGH, IPT_SERVICE1 );/* service credit? */ \
@@ -320,7 +320,7 @@ public class vsnes
 		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_UNUSED );/* this bit masks irqs - dont change */
 	
 		#define VS_DUAL_CONTROLS_R \
-		PORT_START	/* IN3 */ \
+		PORT_START(); 	/* IN3 */ \
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON2 | IPF_PLAYER3 );/* BUTTON A on a nes */ \
 		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER3 );/* BUTTON B on a nes */ \
 		PORT_BITX(0x04, IP_ACTIVE_HIGH, 0, "2nd Side 1 Player Start", KEYCODE_MINUS, IP_JOY_NONE );/* SELECT on a nes */ \
@@ -330,7 +330,7 @@ public class vsnes
 		PORT_BIT ( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_PLAYER3 );\
 		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_PLAYER3 );\
 	 	\
-		PORT_START	/* IN4 */ \
+		PORT_START(); 	/* IN4 */ \
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON2 | IPF_PLAYER4 );/* BUTTON A on a nes */ \
 		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER4 );/* BUTTON B on a nes */ \
 		PORT_BITX(0x04, IP_ACTIVE_HIGH, 0, "2nd Side 2 Player Start", KEYCODE_EQUALS, IP_JOY_NONE );/* SELECT on a nes */ \
@@ -340,7 +340,7 @@ public class vsnes
 		PORT_BIT ( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_PLAYER4 );\
 		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_PLAYER4 );\
 		\
-		PORT_START	/* IN5 */ \
+		PORT_START(); 	/* IN5 */ \
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_UNUSED );/* serial pin from controller */ \
 		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );\
 		PORT_BIT ( 0x04, IP_ACTIVE_HIGH, IPT_SERVICE2 );/* service credit? */ \
@@ -354,7 +354,7 @@ public class vsnes
 	static InputPortPtr input_ports_vsnes = new InputPortPtr(){ public void handler() { 
 		VS_CONTROLS
 	
-		PORT_START /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
+		PORT_START();  /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "On") );
@@ -385,7 +385,7 @@ public class vsnes
 	static InputPortPtr input_ports_platoon = new InputPortPtr(){ public void handler() { 
 		VS_CONTROLS
 	
-		PORT_START /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
+		PORT_START();  /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "On") );
@@ -432,7 +432,7 @@ public class vsnes
 	static InputPortPtr input_ports_golf = new InputPortPtr(){ public void handler() { 
 		VS_CONTROLS
 	
-		PORT_START /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
+		PORT_START();  /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
 		PORT_DIPNAME( 0x07, 0x01, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(	0x07, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(	0x03, DEF_STR( "3C_1C") );
@@ -463,7 +463,7 @@ public class vsnes
 	static InputPortPtr input_ports_vstennis = new InputPortPtr(){ public void handler() { 
 		VS_DUAL_CONTROLS_L /* left side controls */
 	
-		PORT_START /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
+		PORT_START();  /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
 		PORT_DIPNAME( 0x03, 0x00, "Difficulty Vs. Computer" );
 		PORT_DIPSETTING(	0x00, "Easy" );
 		PORT_DIPSETTING(	0x01, "Normal" );
@@ -489,7 +489,7 @@ public class vsnes
 	
 		VS_DUAL_CONTROLS_R /* Right Side Controls */
 	
-	PORT_START /* DSW1 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
+	PORT_START();  /* DSW1 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR(Service_Mode);
 		PORT_DIPSETTING(	0x00, DEF_STR(Off);
 		PORT_DIPSETTING(	0x01, DEF_STR(On);
@@ -517,7 +517,7 @@ public class vsnes
 	static InputPortPtr input_ports_wrecking = new InputPortPtr(){ public void handler() { 
 		VS_DUAL_CONTROLS_L /* left side controls */
 	
-		PORT_START /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
+		PORT_START();  /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
 			PORT_DIPNAME( 0x03, 0x02, DEF_STR( "Lives") );
 			PORT_DIPSETTING(	0x00, "3" );
 			PORT_DIPSETTING(	0x02, "4" );
@@ -546,7 +546,7 @@ public class vsnes
 	
 		VS_DUAL_CONTROLS_R /* right side controls */
 	
-		PORT_START /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
+		PORT_START();  /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
 			PORT_DIPNAME( 0x07, 0x01, DEF_STR( "Coinage") );
 			PORT_DIPSETTING(	0x07, DEF_STR( "4C_1C") );
 			PORT_DIPSETTING(	0x03, DEF_STR( "3C_1C"));
@@ -576,7 +576,7 @@ public class vsnes
 	static InputPortPtr input_ports_balonfgt = new InputPortPtr(){ public void handler() { 
 	VS_DUAL_CONTROLS_L /* left side controls */
 	
-		PORT_START /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
+		PORT_START();  /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
 			PORT_DIPNAME( 0x07, 0x00, DEF_STR( "Coinage") );
 			PORT_DIPSETTING(	0x03, DEF_STR( "4C_1C") );
 			PORT_DIPSETTING(	0x05, DEF_STR( "3C_1C") );
@@ -604,7 +604,7 @@ public class vsnes
 	
 	VS_DUAL_CONTROLS_R /* right side controls */
 	
-			PORT_START /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
+			PORT_START();  /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
 			PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Lives") );
 			PORT_DIPSETTING(	0x00, "3");
 			PORT_DIPSETTING(	0x02, "4");
@@ -634,7 +634,7 @@ public class vsnes
 	static InputPortPtr input_ports_vsmahjng = new InputPortPtr(){ public void handler() { 
 	VS_DUAL_CONTROLS_L /* left side controls */
 	
-		PORT_START /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
+		PORT_START();  /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
 			PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 			PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 			PORT_DIPSETTING(	0x01, DEF_STR( "On") );
@@ -662,7 +662,7 @@ public class vsnes
 	
 		VS_DUAL_CONTROLS_R /* right side controls */
 	
-			PORT_START /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
+			PORT_START();  /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
 			PORT_DIPNAME( 0x01, 0x00, DEF_STR(Service_Mode);
 			PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 			PORT_DIPSETTING(	0x01, DEF_STR( "On") );
@@ -691,7 +691,7 @@ public class vsnes
 	static InputPortPtr input_ports_vsbball = new InputPortPtr(){ public void handler() { 
 	VS_DUAL_CONTROLS_L /* left side controls */
 	
-		PORT_START /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
+		PORT_START();  /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
 			PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Service_Mode") );
 			PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 			PORT_DIPSETTING(	0x01, DEF_STR( "On") );
@@ -718,7 +718,7 @@ public class vsnes
 	
 		VS_DUAL_CONTROLS_R /* right side controls */
 	
-			PORT_START /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
+			PORT_START();  /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
 			PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 			PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 			PORT_DIPSETTING(	0x01, DEF_STR( "On") );
@@ -748,7 +748,7 @@ public class vsnes
 	static InputPortPtr input_ports_vsbballj = new InputPortPtr(){ public void handler() { 
 	VS_DUAL_CONTROLS_L /* left side controls */
 	
-		PORT_START /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
+		PORT_START();  /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
 			PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 			PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 			PORT_DIPSETTING(	0x01, DEF_STR( "On") );
@@ -776,7 +776,7 @@ public class vsnes
 	
 		VS_DUAL_CONTROLS_R /* right side controls */
 	
-			PORT_START /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
+			PORT_START();  /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
 			PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Service_Mode") );
 			PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 			PORT_DIPSETTING(	0x01, DEF_STR( "On") );
@@ -806,7 +806,7 @@ public class vsnes
 	
 	
 	static InputPortPtr input_ports_iceclmrj = new InputPortPtr(){ public void handler() { 
-	PORT_START /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
+	PORT_START();  /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
 		VS_DUAL_CONTROLS_L
 	
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
@@ -836,7 +836,7 @@ public class vsnes
 	
 		VS_DUAL_CONTROLS_R
 	
-		PORT_START /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
+		PORT_START();  /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "On") );
@@ -867,7 +867,7 @@ public class vsnes
 	
 		VS_CONTROLS_REVERSE
 	
-		PORT_START /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
+		PORT_START();  /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
 		PORT_DIPNAME( 0x03, 0x00, "Drop Rate Increases After" );
 		PORT_DIPSETTING(	0x00, "7 Pills");
 		PORT_DIPSETTING(	0x01, "8 Pills" );
@@ -896,7 +896,7 @@ public class vsnes
 	
 		VS_CONTROLS_REVERSE
 	
-		PORT_START /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
+		PORT_START();  /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(	0x03, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(	0x02, DEF_STR( "2C_1C") );
@@ -922,7 +922,7 @@ public class vsnes
 	static InputPortPtr input_ports_btlecity = new InputPortPtr(){ public void handler() { 
 		VS_CONTROLS
 	
-		PORT_START /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
+		PORT_START();  /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "On") );
@@ -952,7 +952,7 @@ public class vsnes
 	static InputPortPtr input_ports_cluclu = new InputPortPtr(){ public void handler() { 
 		VS_CONTROLS
 	
-		PORT_START /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
+		PORT_START();  /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
 		PORT_DIPNAME( 0x07, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(	0x03, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(	0x05, DEF_STR( "3C_1C"));
@@ -983,7 +983,7 @@ public class vsnes
 	static InputPortPtr input_ports_cstlevna = new InputPortPtr(){ public void handler() { 
 		VS_CONTROLS
 	
-		PORT_START /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
+		PORT_START();  /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
 		PORT_DIPNAME( 0x07, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(	0x03, DEF_STR( "5C_1C") );
 		PORT_DIPSETTING(	0x05, DEF_STR( "4C_1C") );
@@ -1014,7 +1014,7 @@ public class vsnes
 	static InputPortPtr input_ports_iceclimb = new InputPortPtr(){ public void handler() { 
 		VS_CONTROLS
 	
-		PORT_START /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
+		PORT_START();  /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
 		PORT_DIPNAME( 0x07, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(	0x03, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(	0x05, DEF_STR( "3C_1C") );
@@ -1043,7 +1043,7 @@ public class vsnes
 	static InputPortPtr input_ports_excitebk = new InputPortPtr(){ public void handler() { 
 		VS_CONTROLS
 	
-		PORT_START /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
+		PORT_START();  /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
 		PORT_DIPNAME( 0x07, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(	0x03, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(	0x05, DEF_STR( "3C_1C") );
@@ -1071,7 +1071,7 @@ public class vsnes
 	static InputPortPtr input_ports_machridr = new InputPortPtr(){ public void handler() { 
 		VS_CONTROLS
 	
-		PORT_START /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
+		PORT_START();  /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
 		PORT_DIPNAME( 0x07, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(	0x03, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(	0x05, DEF_STR( "3C_1C") );
@@ -1101,7 +1101,7 @@ public class vsnes
 	static InputPortPtr input_ports_suprmrio = new InputPortPtr(){ public void handler() { 
 		VS_CONTROLS
 	
-		PORT_START /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
+		PORT_START();  /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
 		PORT_DIPNAME( 0x07, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "2C_1C") );
@@ -1131,7 +1131,7 @@ public class vsnes
 	static InputPortPtr input_ports_duckhunt = new InputPortPtr(){ public void handler() { 
 		VS_ZAPPER
 	
-		PORT_START	/* IN2 */ \
+		PORT_START(); 	/* IN2 */ \
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_UNUSED );/* serial pin from controller */
 		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT ( 0x04, IP_ACTIVE_HIGH, IPT_SERVICE1 );/* service credit? */
@@ -1141,7 +1141,7 @@ public class vsnes
 		PORT_BIT ( 0x40, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START /* IN3 */
+		PORT_START();  /* IN3 */
 		PORT_DIPNAME( 0x07, 0x00, DEF_STR(Coinage);
 		PORT_DIPSETTING(	0X03, DEF_STR(5C_1C);
 		PORT_DIPSETTING(	0x05, DEF_STR(4C_1C);
@@ -1167,10 +1167,10 @@ public class vsnes
 		PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x80, DEF_STR( "On") );
 	
-		PORT_START	/* IN4 - FAKE - Gun X pos */
+		PORT_START(); 	/* IN4 - FAKE - Gun X pos */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 70, 30, 0, 255 );
 	
-		PORT_START	/* IN5 - FAKE - Gun Y pos */
+		PORT_START(); 	/* IN5 - FAKE - Gun Y pos */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 50, 30, 0, 255 );
 	
 	INPUT_PORTS_END(); }}; 
@@ -1179,7 +1179,7 @@ public class vsnes
 	static InputPortPtr input_ports_hogalley = new InputPortPtr(){ public void handler() { 
 		VS_ZAPPER
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_UNUSED );/* serial pin from controller */
 		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT ( 0x04, IP_ACTIVE_HIGH, IPT_SERVICE1 );/* service credit? */
@@ -1189,7 +1189,7 @@ public class vsnes
 		PORT_BIT ( 0x40, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START /* IN3 */
+		PORT_START();  /* IN3 */
 		PORT_DIPNAME( 0x07, 0x00, DEF_STR(Coinage);
 		PORT_DIPSETTING(	0X03, DEF_STR(5C_1C);
 		PORT_DIPSETTING(	0x05, DEF_STR(4C_1C);
@@ -1213,10 +1213,10 @@ public class vsnes
 		PORT_DIPSETTING(	0x80, "80000 " );
 		PORT_DIPSETTING(	0xc0, "100000 " );
 	
-		PORT_START	/* IN4 - FAKE - Gun X pos */
+		PORT_START(); 	/* IN4 - FAKE - Gun X pos */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 70, 30, 0, 255 );
 	
-		PORT_START	/* IN5 - FAKE - Gun Y pos */
+		PORT_START(); 	/* IN5 - FAKE - Gun Y pos */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 50, 30, 0, 255 );
 	
 	INPUT_PORTS_END(); }}; 
@@ -1226,7 +1226,7 @@ public class vsnes
 	
 		VS_CONTROLS_REVERSE
 	
-		PORT_START /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
+		PORT_START();  /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "On") );
@@ -1256,7 +1256,7 @@ public class vsnes
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_vsskykid = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON2 | IPF_PLAYER2);				/* BUTTON A on a nes */
 		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER2 );				/* BUTTON B on a nes */
 		PORT_BIT ( 0x04, IP_ACTIVE_HIGH, IPT_START1 );				/* SELECT on a nes */
@@ -1266,7 +1266,7 @@ public class vsnes
 		PORT_BIT ( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_PLAYER2);
 		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_PLAYER2);
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON2  );/* BUTTON A on a nes */
 		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON1 );/* BUTTON B on a nes */
 		PORT_BIT ( 0x04, IP_ACTIVE_HIGH, IPT_START2 );					/* SELECT on a nes */
@@ -1276,7 +1276,7 @@ public class vsnes
 		PORT_BIT ( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  );
 		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT  );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_UNUSED );/* serial pin from controller */
 		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT ( 0x04, IP_ACTIVE_HIGH, IPT_SERVICE1 );/* service credit? */
@@ -1287,7 +1287,7 @@ public class vsnes
 		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
 	
-		PORT_START /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
+		PORT_START();  /* DSW0 - bit 0 and 1 read from bit 3 and 4 on $4016, rest of the bits read on $4017 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "On") );

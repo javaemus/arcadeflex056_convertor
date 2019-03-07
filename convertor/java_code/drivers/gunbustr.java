@@ -270,7 +270,7 @@ public class gunbustr
 	***********************************************************/
 	
 	static InputPortPtr input_ports_gunbustr = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW,  IPT_UNKNOWN );
@@ -288,7 +288,7 @@ public class gunbustr
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_BUTTON3 | IPF_PLAYER1 );/* Freeze input */
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW,  IPT_UNKNOWN );
@@ -306,7 +306,7 @@ public class gunbustr
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW,  IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW,  IPT_BUTTON2 | IPF_PLAYER2 );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BITX(0x0001, IP_ACTIVE_LOW,  IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW,  IPT_SERVICE1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW,  IPT_COIN1 );
@@ -326,16 +326,16 @@ public class gunbustr
 	
 		/* Light gun inputs */
 	
-		PORT_START	/* IN 3, P1X */
+		PORT_START(); 	/* IN 3, P1X */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_PLAYER1, 30, 20, 0, 0xff);
 	
-		PORT_START	/* IN 4, P1Y */
+		PORT_START(); 	/* IN 4, P1Y */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y | IPF_REVERSE | IPF_PLAYER1, 30, 20, 0, 0xff);
 	
-		PORT_START	/* IN 5, P2X */
+		PORT_START(); 	/* IN 5, P2X */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_PLAYER2, 30, 20, 0, 0xff);
 	
-		PORT_START	/* IN 6, P2Y */
+		PORT_START(); 	/* IN 6, P2Y */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y | IPF_REVERSE | IPF_PLAYER2, 30, 20, 0, 0xff);
 	INPUT_PORTS_END(); }}; 
 	

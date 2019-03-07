@@ -239,10 +239,10 @@ public class thunderj
 	 *************************************/
 	
 	static InputPortPtr input_ports_thunderj = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* 260000 */
+		PORT_START(); 		/* 260000 */
 		PORT_BIT( 0xffff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* 260010 */
+		PORT_START(); 		/* 260010 */
 		PORT_BIT( 0x00ff, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x0100, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x0100, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
@@ -253,7 +253,7 @@ public class thunderj
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_PLAYER1 );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_PLAYER1 );
 	
-		PORT_START		/* 260012 */
+		PORT_START(); 		/* 260012 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_VBLANK );
 		PORT_SERVICE( 0x0002, IP_ACTIVE_LOW );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_UNUSED );/* Input buffer full (@260030) */

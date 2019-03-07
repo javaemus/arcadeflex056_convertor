@@ -357,7 +357,7 @@ public class centiped
 	#define PORTS(GAMENAME, FOURTH_LANGUAGE)										\
 																					\
 	static InputPortPtr input_ports_GAMENAME = new InputPortPtr(){ public void handler() { 													\
-		PORT_START	/* IN0 */														\
+		PORT_START(); 	/* IN0 */														\
 		/* The lower 4 bits and bit 7 are for trackball x input. */					\
 		/* They are handled by fake input port 6 and a custom routine. */			\
 		PORT_BIT ( 0x0f, IP_ACTIVE_HIGH, IPT_UNKNOWN );							\
@@ -368,7 +368,7 @@ public class centiped
 		PORT_BIT ( 0x40, IP_ACTIVE_HIGH, IPT_VBLANK );							\
 		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );							\
 																					\
-		PORT_START	/* IN1 */														\
+		PORT_START(); 	/* IN1 */														\
 		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_START1 );							\
 		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_START2 );							\
 		PORT_BIT ( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 );							\
@@ -378,12 +378,12 @@ public class centiped
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );								\
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_COIN3 );								\
 																					\
-		PORT_START	/* IN2 */														\
+		PORT_START(); 	/* IN2 */														\
 		PORT_ANALOGX( 0xff, 0x00, IPT_TRACKBALL_Y, 50, 10, 0, 0, IP_KEY_NONE, IP_KEY_NONE, IP_JOY_NONE, IP_JOY_NONE ); \
 		/* The lower 4 bits are the input, and bit 7 is the direction. */			\
 		/* The state of bit 7 does not change if the trackball is not moved.*/		\
 																					\
-		PORT_START	/* IN3 */														\
+		PORT_START(); 	/* IN3 */														\
 		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_COCKTAIL );\
 		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY | IPF_COCKTAIL );	\
 		PORT_BIT ( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_COCKTAIL );\
@@ -393,7 +393,7 @@ public class centiped
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY );			\
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );			\
 																					\
-		PORT_START	/* IN4 */														\
+		PORT_START(); 	/* IN4 */														\
 		PORT_DIPNAME(0x03, 0x00, "Language" );									\
 		PORT_DIPSETTING (   0x00, "English" );									\
 		PORT_DIPSETTING (   0x01, "German" );									\
@@ -416,7 +416,7 @@ public class centiped
 		PORT_DIPSETTING (   0x00, "1" );											\
 		PORT_DIPSETTING (   0x80, "2" );											\
 																					\
-		PORT_START	/* IN5 */														\
+		PORT_START(); 	/* IN5 */														\
 		PORT_DIPNAME(0x03, 0x02, DEF_STR( "Coinage") );								\
 		PORT_DIPSETTING (   0x03, DEF_STR( "2C_1C") );								\
 		PORT_DIPSETTING (   0x02, DEF_STR( "1C_1C") );								\
@@ -438,7 +438,7 @@ public class centiped
 		PORT_DIPSETTING (   0x80, "6 credits/5 coins" );							\
 		PORT_DIPSETTING (   0xa0, "4 credits/3 coins" );							\
 																					\
-		PORT_START	/* IN6, fake trackball input port. */							\
+		PORT_START(); 	/* IN6, fake trackball input port. */							\
 		PORT_ANALOGX( 0xff, 0x00, IPT_TRACKBALL_X | IPF_REVERSE, 50, 10, 0, 0, IP_KEY_NONE, IP_KEY_NONE, IP_JOY_NONE, IP_JOY_NONE );\
 	INPUT_PORTS_END(); }}; 
 	

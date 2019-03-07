@@ -343,7 +343,7 @@ public class karnov
 	/******************************************************************************/
 	
 	static InputPortPtr input_ports_karnov = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* Player 1 controls */
+		PORT_START(); 	/* Player 1 controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
@@ -353,7 +353,7 @@ public class karnov
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON3 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );/* Button 4 on schematics */
 	
-		PORT_START	/* Player 2 controls */
+		PORT_START(); 	/* Player 2 controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
@@ -363,7 +363,7 @@ public class karnov
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );/* Button 4 on schematics */
 	
-		PORT_START	/* start buttons */
+		PORT_START(); 	/* start buttons */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );/* PL1 Button 5 on schematics */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );/* PL2 Button 5 on schematics */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1  );
@@ -373,12 +373,12 @@ public class karnov
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_VBLANK );
 	
-		PORT_START	/* Dummy input for i8751 */
+		PORT_START(); 	/* Dummy input for i8751 */
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_SERVICE1 );
 	
-		PORT_START	/* Dip switch bank 1 */
+		PORT_START(); 	/* Dip switch bank 1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "1C_1C") );
@@ -404,7 +404,7 @@ public class karnov
 	/* 0x80 called No Die Mode according to the manual, but it doesn't seem
 	to have any effect */
 	
-		PORT_START	/* Dip switch bank 2 */
+		PORT_START(); 	/* Dip switch bank 2 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x01, "1" );
 		PORT_DIPSETTING(    0x03, "3" );
@@ -429,7 +429,7 @@ public class karnov
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_wndrplnt = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* Player 1 controls */
+		PORT_START(); 	/* Player 1 controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
@@ -439,7 +439,7 @@ public class karnov
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON3 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* Player 2 controls */
+		PORT_START(); 	/* Player 2 controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
@@ -449,7 +449,7 @@ public class karnov
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* start buttons */
+		PORT_START(); 	/* start buttons */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1  );
@@ -459,12 +459,12 @@ public class karnov
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_VBLANK );
 	
-		PORT_START	/* Dummy input for i8751 */
+		PORT_START(); 	/* Dummy input for i8751 */
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_SERVICE1 );
 	
-		PORT_START	/* Dip switch bank 1 */
+		PORT_START(); 	/* Dip switch bank 1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "1C_1C") );
@@ -488,7 +488,7 @@ public class karnov
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START	/* Dip switch bank 2 */
+		PORT_START(); 	/* Dip switch bank 2 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x01, "1" );
 		PORT_DIPSETTING(    0x03, "3" );
@@ -515,7 +515,7 @@ public class karnov
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_chelnov = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* Player controls */
+		PORT_START(); 	/* Player controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
@@ -525,7 +525,7 @@ public class karnov
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON3 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* Player 2 controls */
+		PORT_START(); 	/* Player 2 controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
@@ -535,7 +535,7 @@ public class karnov
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* start buttons */
+		PORT_START(); 	/* start buttons */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1  );
@@ -545,12 +545,12 @@ public class karnov
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_VBLANK );  /* Active_low is strange! */
 	
-		PORT_START	/* Dummy input for i8751 */
+		PORT_START(); 	/* Dummy input for i8751 */
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_SERVICE1 );
 	
-		PORT_START	/* Dip switch bank 1 */
+		PORT_START(); 	/* Dip switch bank 1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "1C_1C") );
@@ -574,7 +574,7 @@ public class karnov
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START	/* Dip switch bank 2 */
+		PORT_START(); 	/* Dip switch bank 2 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x01, "1" );
 		PORT_DIPSETTING(    0x03, "3" );

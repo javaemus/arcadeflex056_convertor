@@ -110,7 +110,7 @@ public class sbrkout
 	};
 	
 	static InputPortPtr input_ports_sbrkout = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* DSW - fake port, gets mapped to Super Breakout ports */
+		PORT_START(); 		/* DSW - fake port, gets mapped to Super Breakout ports */
 		PORT_DIPNAME( 0x03, 0x00, "Language" );
 		PORT_DIPSETTING(	0x00, "English" );
 		PORT_DIPSETTING(	0x01, "German" );
@@ -134,28 +134,28 @@ public class sbrkout
 		PORT_DIPSETTING(	0x80, "3" );
 		PORT_DIPSETTING(	0x00, "5" );
 	
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT ( 0x40, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_COIN2 );
 	
-		PORT_START		/* IN1 */
+		PORT_START(); 		/* IN1 */
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START		/* IN2 */
+		PORT_START(); 		/* IN2 */
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_TILT );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START		/* IN3 */
+		PORT_START(); 		/* IN3 */
 		PORT_BIT ( 0xFF, IP_ACTIVE_LOW, IPT_VBLANK );
 	
-		PORT_START		/* IN4 */
+		PORT_START(); 		/* IN4 */
 		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_BUTTON1 );
 	
-		PORT_START		/* IN5 */
+		PORT_START(); 		/* IN5 */
 		PORT_ANALOG( 0xff, 0x00, IPT_PADDLE | IPF_REVERSE, 50, 10, 0, 255 );
 	
-		PORT_START		/* IN6 - fake port, used to set the game select dial */
+		PORT_START(); 		/* IN6 - fake port, used to set the game select dial */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN, "Progressive", KEYCODE_E, IP_JOY_NONE );
 		PORT_BITX(0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN, "Double", KEYCODE_D, IP_JOY_NONE );
 		PORT_BITX(0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN, "Cavity", KEYCODE_C, IP_JOY_NONE );

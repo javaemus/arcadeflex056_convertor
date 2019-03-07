@@ -137,7 +137,7 @@ public class munchmo
 	);
 	
 	static InputPortPtr input_ports_mnchmobl = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN2 );/* service */
@@ -147,7 +147,7 @@ public class munchmo
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START /* P1 controls */
+		PORT_START();  /* P1 controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_UP | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_DOWN | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_LEFT | IPF_8WAY );
@@ -156,7 +156,7 @@ public class munchmo
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_RIGHT | IPF_2WAY );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START /* P2 controls */
+		PORT_START();  /* P2 controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_UP | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_DOWN | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_LEFT | IPF_8WAY | IPF_COCKTAIL );
@@ -165,7 +165,7 @@ public class munchmo
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_RIGHT | IPF_2WAY | IPF_COCKTAIL );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* DSW1 0xbe02 */
+		PORT_START(); 	/* DSW1 0xbe02 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -196,7 +196,7 @@ public class munchmo
 		PORT_DIPSETTING(    0xc0, "20000" );
 		PORT_DIPSETTING(    0xe0, "10000" );
 	
-		PORT_START	/* DSW2 0xbe03 */
+		PORT_START(); 	/* DSW2 0xbe03 */
 		PORT_DIPNAME( 0x03, 0x00, "Second Bonus Life" );
 		PORT_DIPSETTING(    0x00, "No Bonus?" );
 		PORT_DIPSETTING(    0x01, "100000?" );

@@ -289,7 +289,7 @@ public class vicdual
 	
 	
 	static InputPortPtr input_ports_depthch = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY );
@@ -301,14 +301,14 @@ public class vicdual
 		PORT_DIPSETTING (   0x30, DEF_STR( "1C_1C") );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNUSED ); /* 64V */
 		PORT_BIT( 0x7e, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN1 | IPF_RESETCPU, 30 );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_safari = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
@@ -318,7 +318,7 @@ public class vicdual
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_VBLANK );
 		PORT_BIT( 0x0e, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_DIPNAME (0x30, 0x30, DEF_STR( "Coinage") );
@@ -331,7 +331,7 @@ public class vicdual
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_frogs = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY );
@@ -349,14 +349,14 @@ public class vicdual
 		PORT_DIPSETTING(    0x40, DEF_STR( "1C_1C") );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_VBLANK );
 		PORT_BIT( 0x7e, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN1 | IPF_RESETCPU, 30 );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_sspaceat = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1 );
@@ -366,7 +366,7 @@ public class vicdual
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_DIPNAME( 0x01, 0x00, "Bonus Life After 1st Stage" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "No") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
@@ -388,14 +388,14 @@ public class vicdual
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_VBLANK );
 		PORT_BIT( 0x7e, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN1 | IPF_RESETCPU, 30 );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_headon = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "3" );
 		PORT_DIPSETTING(    0x01, "4" );
@@ -410,14 +410,14 @@ public class vicdual
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_VBLANK );
 		PORT_BIT( 0x7e, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN1 | IPF_RESETCPU, 30 );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_headon2 = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
@@ -427,7 +427,7 @@ public class vicdual
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x07, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_DIPNAME( 0x18, 0x18, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x18, "4" );
@@ -436,7 +436,7 @@ public class vicdual
 	/*	PORT_DIPSETTING(    0x08, "5" );/
 		PORT_BIT( 0xe0, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_VBLANK );
 		PORT_DIPNAME( 0x02, 0x02, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
@@ -446,7 +446,7 @@ public class vicdual
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_invho2 = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_DIPNAME( 0x04, 0x04, "Head On Lives (1/2); )
@@ -459,7 +459,7 @@ public class vicdual
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_DIPNAME( 0x04, 0x00, "Head On Lives (2/2); )
@@ -470,7 +470,7 @@ public class vicdual
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_DIPNAME( 0x04, 0x00, "Invinco Lives" );
@@ -481,7 +481,7 @@ public class vicdual
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );/* probably unused */
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		/* There's probably a bug in the code: this would likely be the second */
@@ -497,7 +497,7 @@ public class vicdual
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_samurai = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Lives") );
@@ -510,7 +510,7 @@ public class vicdual
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* protection, see samurai_input_r() */
 		PORT_DIPNAME( 0x04, 0x00, DEF_STR( "Unknown") ); /* unknown, but used */
@@ -521,7 +521,7 @@ public class vicdual
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* protection, see samurai_input_r() */
 		PORT_DIPNAME( 0x04, 0x00, DEF_STR( "Unused") );
@@ -534,7 +534,7 @@ public class vicdual
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* protection, see samurai_input_r() */
 		PORT_DIPNAME( 0x04, 0x00, DEF_STR( "Unused") );
@@ -547,7 +547,7 @@ public class vicdual
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_invinco = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
@@ -557,7 +557,7 @@ public class vicdual
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "3" );
 		PORT_DIPSETTING(    0x01, "4" );
@@ -577,14 +577,14 @@ public class vicdual
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_VBLANK );
 		PORT_BIT( 0x7e, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN1 | IPF_RESETCPU, 30 );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_invds = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_DIPNAME( 0x04, 0x00, "Invinco Lives (1/2); )
@@ -597,7 +597,7 @@ public class vicdual
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_DIPNAME( 0x04, 0x00, "Invinco Lives (2/2); )
@@ -608,7 +608,7 @@ public class vicdual
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_DIPNAME( 0x04, 0x00, "Deep Scan Lives (1/2); )
@@ -619,7 +619,7 @@ public class vicdual
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		/* +1 and +2 gives 2 lives instead of 6 */
@@ -633,7 +633,7 @@ public class vicdual
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_tranqgun = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_DIPNAME( 0x04, 0x00, DEF_STR( "Unknown") );
@@ -646,7 +646,7 @@ public class vicdual
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_DIPNAME( 0x04, 0x00, DEF_STR( "Unknown") );
@@ -657,7 +657,7 @@ public class vicdual
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_DIPNAME( 0x04, 0x00, DEF_STR( "Unknown") );
@@ -668,7 +668,7 @@ public class vicdual
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_DIPNAME( 0x04, 0x00, DEF_STR( "Unknown") );
@@ -681,7 +681,7 @@ public class vicdual
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_spacetrk = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Lives") );
@@ -694,7 +694,7 @@ public class vicdual
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_DIPNAME( 0x04, 0x00, DEF_STR( "Unknown") ); /* unknown, but used */
@@ -705,7 +705,7 @@ public class vicdual
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* must be high for bonus life to work */
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Bonus_Life") );
@@ -716,7 +716,7 @@ public class vicdual
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* must be high for bonus life to work */
 		PORT_DIPNAME( 0x04, 0x00, DEF_STR( "Unused") );
@@ -729,7 +729,7 @@ public class vicdual
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_sptrekct = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Lives") );
@@ -742,7 +742,7 @@ public class vicdual
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
 		PORT_DIPNAME( 0x04, 0x00, DEF_STR( "Unknown") ); /* unknown, but used */
@@ -753,7 +753,7 @@ public class vicdual
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* must be high for bonus life to work */
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Bonus_Life") );
@@ -764,7 +764,7 @@ public class vicdual
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* must be high for bonus life to work */
 		PORT_DIPNAME( 0x04, 0x00, DEF_STR( "Unused") );
@@ -777,7 +777,7 @@ public class vicdual
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_carnival = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_DIPNAME( 0x04, 0x00, DEF_STR( "Unused") );
@@ -792,7 +792,7 @@ public class vicdual
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_DIPNAME( 0x04, 0x00, DEF_STR( "Unused") );
@@ -803,7 +803,7 @@ public class vicdual
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_DIPNAME( 0x04, 0x00, DEF_STR( "Unused") );
@@ -814,7 +814,7 @@ public class vicdual
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_DIPNAME( 0x04, 0x00, DEF_STR( "Unused") );
@@ -827,7 +827,7 @@ public class vicdual
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_carnvckt = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_DIPNAME( 0x04, 0x00, DEF_STR( "Unused") );
@@ -842,7 +842,7 @@ public class vicdual
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT    | IPF_2WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_DIPNAME( 0x04, 0x00, DEF_STR( "Unused") );
@@ -853,7 +853,7 @@ public class vicdual
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_DIPNAME( 0x04, 0x00, DEF_STR( "Unused") );
@@ -864,7 +864,7 @@ public class vicdual
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_DIPNAME( 0x04, 0x00, DEF_STR( "Unused") );
@@ -877,7 +877,7 @@ public class vicdual
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_digger = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 );
@@ -887,7 +887,7 @@ public class vicdual
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x03, "3" );
 		PORT_DIPSETTING(    0x02, "4" );
@@ -907,14 +907,14 @@ public class vicdual
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_VBLANK );
 		PORT_BIT( 0x7e, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN1 | IPF_RESETCPU, 30 );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_pulsar = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_DIPNAME( 0x04, 0x04, "Lives (1/2); )
@@ -927,7 +927,7 @@ public class vicdual
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_DIPNAME( 0x04, 0x04, "Lives (2/2); )
@@ -938,7 +938,7 @@ public class vicdual
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_DIPNAME( 0x04, 0x00, DEF_STR( "Unused") );
@@ -949,7 +949,7 @@ public class vicdual
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_DIPNAME( 0x04, 0x00, DEF_STR( "Unused") );
@@ -962,7 +962,7 @@ public class vicdual
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_heiankyo = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") ); /* bonus life? */
@@ -975,7 +975,7 @@ public class vicdual
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") ); /* bonus life? */
@@ -986,7 +986,7 @@ public class vicdual
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") ); /* bonus life? */
@@ -997,7 +997,7 @@ public class vicdual
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );/* probably unused */
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_DIPNAME( 0x04, 0x00, DEF_STR( "Lives") );

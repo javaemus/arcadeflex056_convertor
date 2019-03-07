@@ -367,7 +367,7 @@ public class bwidow
 	};
 	
 	static InputPortPtr input_ports_bwidow = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_COIN1);
 		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_COIN2);
 		PORT_BIT ( 0x0c, IP_ACTIVE_LOW, IPT_UNUSED);
@@ -379,7 +379,7 @@ public class bwidow
 		/* bit 7 is tied to a 3kHz clock */
 		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME(0x03, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING (  0x01, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING (  0x00, DEF_STR( "1C_1C") );
@@ -401,7 +401,7 @@ public class bwidow
 		PORT_DIPSETTING (  0x80, "6 credits/6 coins" );
 		PORT_DIPSETTING (  0xa0, "4 credits/3 coins" );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME(0x03, 0x01, "Max Start" );
 		PORT_DIPSETTING (  0x00, "Lev 13" );
 		PORT_DIPSETTING (  0x01, "Lev 21" );
@@ -423,7 +423,7 @@ public class bwidow
 		PORT_DIPSETTING (  0x80, "40000" );
 		PORT_DIPSETTING (  0xc0, "None" );
 	
-		PORT_START	/* IN3 - Movement joystick */
+		PORT_START(); 	/* IN3 - Movement joystick */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_LEFT  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_DOWN  | IPF_8WAY );
@@ -433,7 +433,7 @@ public class bwidow
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN4 - Firing joystick */
+		PORT_START(); 	/* IN4 - Firing joystick */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_LEFT  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_DOWN  | IPF_8WAY );
@@ -446,7 +446,7 @@ public class bwidow
 	
 	
 	static InputPortPtr input_ports_gravitar = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_COIN1);
 		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_COIN2);
 		PORT_BIT ( 0x0c, IP_ACTIVE_LOW, IPT_UNUSED);
@@ -458,7 +458,7 @@ public class bwidow
 		/* bit 7 is tied to a 3kHz clock */
 		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_BIT( 0x03, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_DIPNAME(0x0c, 0x04, DEF_STR( "Lives") );
 		PORT_DIPSETTING (  0x00, "3" );
@@ -475,7 +475,7 @@ public class bwidow
 		PORT_DIPSETTING (  0x80, "30000" );
 		PORT_DIPSETTING (  0xc0, "None" );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME(0x03, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING (  0x01, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING (  0x00, DEF_STR( "1C_1C") );
@@ -497,7 +497,7 @@ public class bwidow
 		PORT_DIPSETTING (  0x80, "6 credits/6 coins" );
 		PORT_DIPSETTING (  0xa0, "4 credits/3 coins" );
 	
-		PORT_START	/* IN3 - Player 1 */
+		PORT_START(); 	/* IN3 - Player 1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON3 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY );
@@ -507,7 +507,7 @@ public class bwidow
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN4 - Player 2 */
+		PORT_START(); 	/* IN4 - Player 2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER2 | IPF_2WAY );
@@ -520,7 +520,7 @@ public class bwidow
 	
 	
 	static InputPortPtr input_ports_spacduel = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_COIN1);
 		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_COIN2);
 		PORT_BIT ( 0x0c, IP_ACTIVE_LOW, IPT_UNUSED);
@@ -532,7 +532,7 @@ public class bwidow
 		/* bit 7 is tied to a 3kHz clock */
 		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME(0x03, 0x01, DEF_STR( "Lives") );
 		PORT_DIPSETTING (  0x01, "3" );
 		PORT_DIPSETTING (  0x00, "4" );
@@ -554,7 +554,7 @@ public class bwidow
 		PORT_DIPSETTING (  0x40, "15000" );
 		PORT_DIPSETTING (  0x80, "None" );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME(0x03, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING (  0x01, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING (  0x00, DEF_STR( "1C_1C") );
@@ -577,7 +577,7 @@ public class bwidow
 		PORT_DIPSETTING (  0x80, "6 credits/6 coins" );
 	
 		/* See machine/spacduel.c for more info on these 2 ports */
-		PORT_START	/* IN3 - Player 1 - spread over 8 memory locations */
+		PORT_START(); 	/* IN3 - Player 1 - spread over 8 memory locations */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_BUTTON1 );
@@ -587,7 +587,7 @@ public class bwidow
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* IN4 - Player 2 - spread over 8 memory locations */
+		PORT_START(); 	/* IN4 - Player 2 - spread over 8 memory locations */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER2 );

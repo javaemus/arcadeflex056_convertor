@@ -164,7 +164,7 @@ public class actfancr
 	/******************************************************************************/
 	
 	static InputPortPtr input_ports_actfancr = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* Player 1 controls */
+		PORT_START(); 	/* Player 1 controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
@@ -174,7 +174,7 @@ public class actfancr
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	/* Player 2 controls */
+		PORT_START(); 	/* Player 2 controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
@@ -184,7 +184,7 @@ public class actfancr
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START	/* start buttons */
+		PORT_START(); 	/* start buttons */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -194,7 +194,7 @@ public class actfancr
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_VBLANK );
 	
-		PORT_START	/* Dip switch bank 1 */
+		PORT_START(); 	/* Dip switch bank 1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "2C_1C") );
@@ -218,7 +218,7 @@ public class actfancr
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START	/* Dip switch bank 2 */
+		PORT_START(); 	/* Dip switch bank 2 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x03, "3" );
 		PORT_DIPSETTING(    0x02, "4" );
@@ -244,7 +244,7 @@ public class actfancr
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_triothep = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* Player 1 controls */
+		PORT_START(); 	/* Player 1 controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
@@ -254,7 +254,7 @@ public class actfancr
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON3 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	/* Player 2 controls */
+		PORT_START(); 	/* Player 2 controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
@@ -264,7 +264,7 @@ public class actfancr
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START	/* start buttons */
+		PORT_START(); 	/* start buttons */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -274,7 +274,7 @@ public class actfancr
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_VBLANK );
 	
-		PORT_START	/* Dip switch bank 1 */
+		PORT_START(); 	/* Dip switch bank 1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "2C_1C") );
@@ -298,7 +298,7 @@ public class actfancr
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START	/* Dip switch bank 2 */
+		PORT_START(); 	/* Dip switch bank 2 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "8" );
 		PORT_DIPSETTING(    0x01, "10" );

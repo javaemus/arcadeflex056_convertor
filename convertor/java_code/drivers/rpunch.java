@@ -312,7 +312,7 @@ public class rpunch
 	 *************************************/
 	
 	static InputPortPtr input_ports_rpunch = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* c0018 lower 8 bits */
+		PORT_START(); 	/* c0018 lower 8 bits */
 		PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
@@ -321,7 +321,7 @@ public class rpunch
 		PORT_BIT( 0x0020, IP_ACTIVE_HIGH, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT( 0xffc0, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* c001a lower 8 bits */
+		PORT_START(); 	/* c001a lower 8 bits */
 		PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x0002, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x0004, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
@@ -330,7 +330,7 @@ public class rpunch
 		PORT_BIT( 0x0020, IP_ACTIVE_HIGH, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT( 0xffc0, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* c0018/c001a upper 8 bits */
+		PORT_START(); 	/* c0018/c001a upper 8 bits */
 		PORT_BIT( 0x00ff, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_BIT( 0x0100, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_SERVICE( 0x0200, IP_ACTIVE_HIGH );
@@ -341,7 +341,7 @@ public class rpunch
 		PORT_BIT( 0x4000, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x8000, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* c001c DIP switches */
+		PORT_START(); 	/* c001c DIP switches */
 		PORT_DIPNAME( 0x000f, 0x0000, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(      0x000d, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(      0x000c, DEF_STR( "2C_1C") );
@@ -395,7 +395,7 @@ public class rpunch
 	
 	
 	static InputPortPtr input_ports_rabiolep = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* c0018 lower 8 bits */
+		PORT_START(); 	/* c0018 lower 8 bits */
 		PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
@@ -404,7 +404,7 @@ public class rpunch
 		PORT_BIT( 0x0020, IP_ACTIVE_HIGH, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT( 0xffc0, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* c001a lower 8 bits */
+		PORT_START(); 	/* c001a lower 8 bits */
 		PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x0002, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x0004, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
@@ -413,7 +413,7 @@ public class rpunch
 		PORT_BIT( 0x0020, IP_ACTIVE_HIGH, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT( 0xffc0, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* c0018/c001a upper 8 bits */
+		PORT_START(); 	/* c0018/c001a upper 8 bits */
 		PORT_BIT( 0x00ff, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_BIT( 0x0100, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_SERVICE( 0x0200, IP_ACTIVE_HIGH );
@@ -424,7 +424,7 @@ public class rpunch
 		PORT_BIT( 0x4000, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x8000, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* c001c DIP switches */
+		PORT_START(); 	/* c001c DIP switches */
 		PORT_DIPNAME( 0x000f, 0x0000, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(      0x000d, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(      0x000c, DEF_STR( "2C_1C") );
@@ -479,7 +479,7 @@ public class rpunch
 	
 	
 	static InputPortPtr input_ports_svolley = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* c0018 lower 8 bits */
+		PORT_START(); 	/* c0018 lower 8 bits */
 		PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
@@ -488,7 +488,7 @@ public class rpunch
 		PORT_BIT( 0x0020, IP_ACTIVE_HIGH, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT( 0xffc0, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* c001a lower 8 bits */
+		PORT_START(); 	/* c001a lower 8 bits */
 		PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x0002, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x0004, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
@@ -497,7 +497,7 @@ public class rpunch
 		PORT_BIT( 0x0020, IP_ACTIVE_HIGH, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT( 0xffc0, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* c0018/c001a upper 8 bits */
+		PORT_START(); 	/* c0018/c001a upper 8 bits */
 		PORT_BIT( 0x00ff, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_BIT( 0x0700, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_BIT( 0x0800, IP_ACTIVE_HIGH, IPT_COIN2 );
@@ -506,7 +506,7 @@ public class rpunch
 		PORT_BIT( 0x4000, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x8000, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* c001c DIP switches */
+		PORT_START(); 	/* c001c DIP switches */
 		PORT_DIPNAME( 0x000f, 0x0000, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(      0x000d, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(      0x000c, DEF_STR( "2C_1C") );

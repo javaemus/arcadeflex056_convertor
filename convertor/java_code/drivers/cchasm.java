@@ -83,7 +83,7 @@ public class cchasm
 	
 	
 	static InputPortPtr input_ports_cchasm = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW */
+		PORT_START();  /* DSW */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x01, "3" );
 		PORT_DIPSETTING(    0x00, "5" );
@@ -106,10 +106,10 @@ public class cchasm
 		PORT_DIPSETTING(    0x40, DEF_STR( "1C_1C") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START /* IN1 */
+		PORT_START();  /* IN1 */
 		PORT_ANALOG( 0xff, 0, IPT_DIAL, 100, 10, 0, 0);
 	
-		PORT_START /* IN2 */
+		PORT_START();  /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_BUTTON2 );
@@ -119,7 +119,7 @@ public class cchasm
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START /* IN3 */
+		PORT_START();  /* IN3 */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN3 );

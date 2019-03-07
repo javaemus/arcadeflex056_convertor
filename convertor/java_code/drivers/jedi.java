@@ -467,7 +467,7 @@ public class jedi
 	 *************************************/
 	
 	static InputPortPtr input_ports_jedi = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* 0C00 */
+		PORT_START(); 	/* 0C00 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_BUTTON3 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_BUTTON1 );
@@ -477,17 +477,17 @@ public class jedi
 		PORT_BIT( 0x40, IP_ACTIVE_LOW,  IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_COIN1 );
 	
-		PORT_START	/* 0C01 */
+		PORT_START(); 	/* 0C01 */
 		PORT_BIT( 0x03, IP_ACTIVE_LOW,  IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_TILT );
 		PORT_BIT( 0x18, IP_ACTIVE_LOW,  IPT_UNUSED );
 		PORT_BIT( 0x60, IP_ACTIVE_HIGH, IPT_SPECIAL );/* sound comm */
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_VBLANK );
 	
-		PORT_START	/* analog Y */
+		PORT_START(); 	/* analog Y */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 100, 10, 0, 255 );
 	
-		PORT_START	/* analog X */
+		PORT_START(); 	/* analog X */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 100, 10, 0, 255 );
 	INPUT_PORTS_END(); }}; 
 	

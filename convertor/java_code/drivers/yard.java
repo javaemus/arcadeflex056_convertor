@@ -64,7 +64,7 @@ public class yard
 	
 	
 	static InputPortPtr input_ports_yard = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		/* coin input must be active for 19 frames to be consistently recognized */
@@ -75,7 +75,7 @@ public class yard
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY );
@@ -85,7 +85,7 @@ public class yard
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_COCKTAIL );
@@ -95,7 +95,7 @@ public class yard
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unused") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -109,7 +109,7 @@ public class yard
 		PORT_DIPSETTING(    0x00, "x 1.8" );
 		PORT_BIT( 0xf0, IP_ACTIVE_HIGH, IPT_UNUSED ); /* Gets filled in based on the coin mode */
 	
-		PORT_START	/* DSW2 */
+		PORT_START(); 	/* DSW2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -136,7 +136,7 @@ public class yard
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
 		/* Fake port to support the two different coin modes */
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x0f, 0x0f, "Coinage Mode 1" );/* mapped on coin mode 1 */
 		PORT_DIPSETTING(    0x0a, DEF_STR( "6C_1C") );
 		PORT_DIPSETTING(    0x0b, DEF_STR( "5C_1C") );
@@ -166,7 +166,7 @@ public class yard
 	/* exactly the same as yard, only difference is the Allow Continue dip switch */
 	/* Also, the Cabinet dip switch doesn't seem to work. */
 	static InputPortPtr input_ports_vsyard = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		/* coin input must be active for 19 frames to be consistently recognized */
@@ -177,7 +177,7 @@ public class yard
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY );
@@ -187,7 +187,7 @@ public class yard
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_COCKTAIL );
@@ -197,7 +197,7 @@ public class yard
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x01, 0x00, "Continue (Vs. Mode Only); )
 		PORT_DIPSETTING( 0x01, DEF_STR( "No") );
 		PORT_DIPSETTING( 0x00, DEF_STR( "Yes") );
@@ -211,7 +211,7 @@ public class yard
 		PORT_DIPSETTING( 0x00, "x 1.8" );
 		PORT_BIT( 0xf0, IP_ACTIVE_HIGH, IPT_UNUSED ); /* Gets filled in based on the coin mode */
 	
-		PORT_START	/* DSW2 */
+		PORT_START(); 	/* DSW2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -238,7 +238,7 @@ public class yard
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
 		/* Fake port to support the two different coin modes */
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x0f, 0x0f, "Coinage Mode 1" );/* mapped on coin mode 1 */
 		PORT_DIPSETTING(    0x0a, DEF_STR( "6C_1C") );
 		PORT_DIPSETTING(    0x0b, DEF_STR( "5C_1C") );

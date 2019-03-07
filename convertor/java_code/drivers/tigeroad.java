@@ -259,7 +259,7 @@ public class tigeroad
 	
 	
 	static InputPortPtr input_ports_tigeroad = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY );
@@ -277,7 +277,7 @@ public class tigeroad
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x00ff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x0100, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x0200, IP_ACTIVE_LOW, IPT_START2 );
@@ -288,7 +288,7 @@ public class tigeroad
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START  /* dipswitch */
+		PORT_START();   /* dipswitch */
 		PORT_DIPNAME( 0x0007, 0x0007, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "3C_1C") );
@@ -335,7 +335,7 @@ public class tigeroad
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_toramich = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY );
@@ -353,7 +353,7 @@ public class tigeroad
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x00ff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x0100, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x0200, IP_ACTIVE_LOW, IPT_START2 );
@@ -364,7 +364,7 @@ public class tigeroad
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START  /* dipswitch */
+		PORT_START();   /* dipswitch */
 		PORT_DIPNAME( 0x0007, 0x0007, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "3C_1C") );
@@ -412,7 +412,7 @@ public class tigeroad
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_f1dream = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY );
@@ -430,7 +430,7 @@ public class tigeroad
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x00ff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x0100, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x0200, IP_ACTIVE_LOW, IPT_START2 );
@@ -441,7 +441,7 @@ public class tigeroad
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START  /* dipswitch */
+		PORT_START();   /* dipswitch */
 		PORT_DIPNAME( 0x0007, 0x0007, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "3C_1C") );

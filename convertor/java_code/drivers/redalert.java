@@ -98,7 +98,7 @@ public class redalert
 	
 	
 	static InputPortPtr input_ports_redalert = new InputPortPtr(){ public void handler() { 
-		PORT_START			   /* DIP Switches */
+		PORT_START(); 			   /* DIP Switches */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "3" );
 		PORT_DIPSETTING(    0x01, "4" );
@@ -120,7 +120,7 @@ public class redalert
 		PORT_DIPSETTING(    0x40, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_HIGH );
 	
-		PORT_START			   /* IN1 */
+		PORT_START(); 			   /* IN1 */
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT ( 0x04, IP_ACTIVE_HIGH, IPT_BUTTON1 );
@@ -130,7 +130,7 @@ public class redalert
 		PORT_BIT ( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT );
 		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* Meter */
 	
-		PORT_START			   /* IN2  */
+		PORT_START(); 			   /* IN2  */
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* Meter */
 		PORT_BIT ( 0x04, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER2 );
@@ -140,7 +140,7 @@ public class redalert
 		PORT_BIT ( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_PLAYER2 );
 		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* Meter */
 	
-		PORT_START			   /* IN3 - some type of video counter? */
+		PORT_START(); 			   /* IN3 - some type of video counter? */
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT ( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );
@@ -150,7 +150,7 @@ public class redalert
 		PORT_BIT ( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START			   /* Fake input for coins */
+		PORT_START(); 			   /* Fake input for coins */
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_SERVICE );
 	INPUT_PORTS_END(); }}; 

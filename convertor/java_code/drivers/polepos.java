@@ -206,7 +206,7 @@ public class polepos
 	 *********************************************************************/
 	
 	static InputPortPtr input_ports_polepos = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 - Mostly Fake - Handled by the MCU */
+		PORT_START(); 	/* IN0 - Mostly Fake - Handled by the MCU */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_BITX(0x02, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_TOGGLE, "Gear Change", KEYCODE_SPACE, IP_JOY_DEFAULT );/* Gear */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -218,7 +218,7 @@ public class polepos
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_SERVICE( 0x80, IP_ACTIVE_HIGH );
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x01, 0x01, "Nr. of Laps" );
 		PORT_DIPSETTING(	0x00, "3" );
 		PORT_DIPSETTING(	0x01, "4" );
@@ -242,7 +242,7 @@ public class polepos
 		PORT_DIPSETTING(	0x40, DEF_STR( "1C_3C") );
 		PORT_DIPSETTING(	0xe0, DEF_STR( "Free_Play") );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "On") );
@@ -268,19 +268,19 @@ public class polepos
 		PORT_DIPSETTING(	0x60, "G" );
 		PORT_DIPSETTING(	0xe0, "H" );
 	
-		PORT_START /* IN1 - Brake */
+		PORT_START();  /* IN1 - Brake */
 		PORT_ANALOGX( 0xff, 0x00, IPT_PEDAL | IPF_PLAYER2, 100, 50, 0, 0xff, KEYCODE_LALT, IP_JOY_DEFAULT, IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 	
-		PORT_START /* IN2 - Accel */
+		PORT_START();  /* IN2 - Accel */
 		PORT_ANALOGX( 0xff, 0x00, IPT_PEDAL, 100, 16, 0, 0x90, KEYCODE_LCONTROL, IP_JOY_DEFAULT, IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 	
-		PORT_START /* IN3 - Steering */
+		PORT_START();  /* IN3 - Steering */
 		PORT_ANALOG ( 0xff, 0x80, IPT_DIAL, 60, 1, 0x00, 0xff );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_polepos2 = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 - Mostly Fake - Handled by the MCU */
+		PORT_START(); 	/* IN0 - Mostly Fake - Handled by the MCU */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_BITX(0x02, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_TOGGLE, "Gear Change", KEYCODE_SPACE, IP_JOY_DEFAULT );/* Gear */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -292,7 +292,7 @@ public class polepos
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNUSED );/* TEST button */
 		PORT_SERVICE( 0x80, IP_ACTIVE_HIGH );
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );	/* docs say "freeze", but it doesn't seem to work */
 		PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "On") );
@@ -317,7 +317,7 @@ public class polepos
 		PORT_DIPSETTING(	0x40, DEF_STR( "1C_3C") );
 		PORT_DIPSETTING(	0xe0, DEF_STR( "Free_Play") );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x01, 0x01, "Speed" );
 		PORT_DIPSETTING(	0x00, "Average" );
 		PORT_DIPSETTING(	0x01, "High" );
@@ -340,13 +340,13 @@ public class polepos
 		PORT_DIPSETTING(	0x00, "90 secs." );
 		PORT_DIPSETTING(	0x80, "120 secs." );
 	
-		PORT_START /* IN1 - Brake */
+		PORT_START();  /* IN1 - Brake */
 		PORT_ANALOGX( 0xff, 0x00, IPT_PEDAL | IPF_PLAYER2, 100, 50, 0, 0xff, KEYCODE_LALT, IP_JOY_DEFAULT, IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 	
-		PORT_START /* IN2 - Accel */
+		PORT_START();  /* IN2 - Accel */
 		PORT_ANALOGX( 0xff, 0x00, IPT_PEDAL, 100, 16, 0, 0x90, KEYCODE_LCONTROL, IP_JOY_DEFAULT, IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 	
-		PORT_START /* IN3 - Steering */
+		PORT_START();  /* IN3 - Steering */
 		PORT_ANALOG ( 0xff, 0x80, IPT_DIAL, 60, 1, 0x00, 0xff );
 	INPUT_PORTS_END(); }}; 
 	

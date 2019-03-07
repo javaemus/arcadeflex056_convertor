@@ -375,7 +375,7 @@ public class gladiatr
 	};
 	
 	static InputPortPtr input_ports_gladiatr = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* DSW1 (8741-0 parallel port)*/
+		PORT_START(); 		/* DSW1 (8741-0 parallel port)*/
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x00, "Easy" );
 		PORT_DIPSETTING(    0x01, "Medium" );
@@ -399,7 +399,7 @@ public class gladiatr
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START      /* DSW2  (8741-1 parallel port) - Dips 6 Unused */
+		PORT_START();       /* DSW2  (8741-1 parallel port) - Dips 6 Unused */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "1C_2C") );
@@ -420,7 +420,7 @@ public class gladiatr
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START      /* DSW3 (YM2203 port B) - Dips 5,6,7 Unused */
+		PORT_START();       /* DSW3 (YM2203 port B) - Dips 5,6,7 Unused */
 		PORT_BITX(    0x01, 0x00, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -434,7 +434,7 @@ public class gladiatr
 		PORT_DIPSETTING(    0x0c, "4" );
 		PORT_SERVICE( 0x80, IP_ACTIVE_HIGH );
 	
-		PORT_START	/* IN0 (8741-3 parallel port 1) */
+		PORT_START(); 	/* IN0 (8741-3 parallel port 1) */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );
@@ -445,7 +445,7 @@ public class gladiatr
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* COINS */
 	
-		PORT_START	/* COINS (8741-3 parallel port bit7) */
+		PORT_START(); 	/* COINS (8741-3 parallel port bit7) */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );
@@ -455,7 +455,7 @@ public class gladiatr
 		PORT_BIT_IMPULSE( 0x40, IP_ACTIVE_HIGH, IPT_COIN1, 1 );
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_HIGH, IPT_COIN2, 1 );
 	
-		PORT_START	/* IN1 (8741-3 parallel port 2) */
+		PORT_START(); 	/* IN1 (8741-3 parallel port 2) */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP | IPF_8WAY );
@@ -465,7 +465,7 @@ public class gladiatr
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* COINS */
 	
-		PORT_START	/* IN2 (8741-3 parallel port 4) */
+		PORT_START(); 	/* IN2 (8741-3 parallel port 4) */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP | IPF_8WAY | IPF_COCKTAIL );
@@ -476,7 +476,7 @@ public class gladiatr
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* COINS */
 	
-		PORT_START	/* IN3 (8741-2 parallel port 1) */
+		PORT_START(); 	/* IN3 (8741-2 parallel port 1) */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON3 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON3 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );

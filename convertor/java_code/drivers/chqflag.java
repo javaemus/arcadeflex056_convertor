@@ -233,7 +233,7 @@ public class chqflag
 	
 	
 	static InputPortPtr input_ports_chqflag = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* DSW #1 */
+		PORT_START(); 	/* DSW #1 */
 		PORT_DIPNAME( 0x0f, 0x0f, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x05, DEF_STR( "3C_1C") );
@@ -269,7 +269,7 @@ public class chqflag
 		PORT_DIPSETTING(    0x90, DEF_STR( "1C_7C") );
 	//	PORT_DIPSETTING(    0x00, "Coin Slot 2 Invalidity" );
 	
-		PORT_START	/* DSW #2 (according to the manual SW1 thru SW5 are not used) */
+		PORT_START(); 	/* DSW #2 (according to the manual SW1 thru SW5 are not used) */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unused") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "On") );
@@ -294,13 +294,13 @@ public class chqflag
 		PORT_DIPSETTING(	0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "On") );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x7f, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Unused") );	/* DIPSW #3 - SW4 */
 		PORT_DIPSETTING(	0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "On") );
 	
-		PORT_START
+		PORT_START(); 
 		/* COINSW + STARTSW */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
@@ -316,16 +316,16 @@ public class chqflag
 		PORT_DIPSETTING(	0x00, "Checkered Flag" );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* Brake, Shift + ??? */
+		PORT_START(); 	/* Brake, Shift + ??? */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_TOGGLE );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x0c, IP_ACTIVE_LOW, IPT_UNKNOWN );/* if this is set, it goes directly to test mode */
 		PORT_BIT( 0xf0, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* if bit 7 == 0, the game resets */
 	
-		PORT_START	/* Accelerator */
+		PORT_START(); 	/* Accelerator */
 		PORT_ANALOG( 0xff, 0x00, IPT_PEDAL, 50, 5, 0, 0xff );
 	
-		PORT_START	/* Driving wheel */
+		PORT_START(); 	/* Driving wheel */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_CENTER, 80, 8, 0, 0xff);
 	INPUT_PORTS_END(); }}; 
 	

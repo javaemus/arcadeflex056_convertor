@@ -233,7 +233,7 @@ public class fastfred
 	
 	
 	static InputPortPtr input_ports_fastfred = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_SERVICE( 0x04, IP_ACTIVE_HIGH );
@@ -243,7 +243,7 @@ public class fastfred
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_COCKTAIL );
@@ -253,7 +253,7 @@ public class fastfred
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START      /* DSW 1 */
+		PORT_START();       /* DSW 1 */
 		PORT_DIPNAME( 0x0f, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x01, "A 2/1 B 2/1" );
 		PORT_DIPSETTING(    0x02, "A 2/1 B 1/3" );
@@ -285,7 +285,7 @@ public class fastfred
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_flyboy = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNUSED );
@@ -295,7 +295,7 @@ public class fastfred
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_COCKTAIL );
@@ -305,7 +305,7 @@ public class fastfred
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START      /* DSW 1 */
+		PORT_START();       /* DSW 1 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "6C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );
@@ -330,7 +330,7 @@ public class fastfred
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_jumpcoas = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* DSW 0 */
+		PORT_START();       /* DSW 0 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "6C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );
@@ -353,7 +353,7 @@ public class fastfred
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );
@@ -363,7 +363,7 @@ public class fastfred
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_BUTTON1 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_COCKTAIL );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_COCKTAIL );

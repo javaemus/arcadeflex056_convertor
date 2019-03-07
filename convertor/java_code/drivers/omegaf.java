@@ -121,7 +121,7 @@ public class omegaf
 	**************************************************************************/
 	
 	static InputPortPtr input_ports_omegaf = new InputPortPtr(){ public void handler() { 
-		PORT_START			/* Player 1 inputs */
+		PORT_START(); 			/* Player 1 inputs */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
@@ -131,7 +131,7 @@ public class omegaf
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START			/* Player 2 inputs */
+		PORT_START(); 			/* Player 2 inputs */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );
@@ -141,7 +141,7 @@ public class omegaf
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START			/* System inputs */
+		PORT_START(); 			/* System inputs */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -151,7 +151,7 @@ public class omegaf
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START			/* DSW 0 */
+		PORT_START(); 			/* DSW 0 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -173,7 +173,7 @@ public class omegaf
 		PORT_DIPSETTING(    0x40, "4" );
 		PORT_DIPSETTING(    0x80, "5" );
 	
-		PORT_START 			/* DSW 1 */
+		PORT_START();  			/* DSW 1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x00, "20k" );
 		PORT_DIPSETTING(    0x03, "30k" );
@@ -200,7 +200,7 @@ public class omegaf
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_robokid = new InputPortPtr(){ public void handler() { 
-		PORT_START			/* Player 1 inputs */
+		PORT_START(); 			/* Player 1 inputs */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
@@ -210,7 +210,7 @@ public class omegaf
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START			/* Player 2 inputs */
+		PORT_START(); 			/* Player 2 inputs */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );
@@ -220,7 +220,7 @@ public class omegaf
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START			/* System inputs */
+		PORT_START(); 			/* System inputs */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -230,7 +230,7 @@ public class omegaf
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START			/* DSW 0 */
+		PORT_START(); 			/* DSW 0 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -255,7 +255,7 @@ public class omegaf
 		PORT_DIPSETTING(    0x40, "4" );
 		PORT_DIPSETTING(    0x00, "5" );
 	
-		PORT_START 			/* DSW 1 */
+		PORT_START();  			/* DSW 1 */
 		PORT_SERVICE( 0x01, IP_ACTIVE_LOW );
 		PORT_DIPNAME( 0x02, 0x02, DEF_STR( "Unused") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
@@ -281,7 +281,7 @@ public class omegaf
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_robokidj = new InputPortPtr(){ public void handler() { 
-		PORT_START			/* Player 1 inputs */
+		PORT_START(); 			/* Player 1 inputs */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
@@ -291,7 +291,7 @@ public class omegaf
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START			/* Player 2 inputs */
+		PORT_START(); 			/* Player 2 inputs */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );
@@ -301,7 +301,7 @@ public class omegaf
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START			/* System inputs */
+		PORT_START(); 			/* System inputs */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -311,7 +311,7 @@ public class omegaf
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START			/* DSW 0 */
+		PORT_START(); 			/* DSW 0 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -336,7 +336,7 @@ public class omegaf
 		PORT_DIPSETTING(    0x40, "4" );
 		PORT_DIPSETTING(    0x00, "5" );
 	
-		PORT_START 			/* DSW 1 */
+		PORT_START();  			/* DSW 1 */
 		PORT_SERVICE( 0x01, IP_ACTIVE_LOW );
 		PORT_DIPNAME( 0x02, 0x02, DEF_STR( "Unused") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );

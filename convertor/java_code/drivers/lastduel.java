@@ -378,7 +378,7 @@ public class lastduel
 	/******************************************************************************/
 	
 	static InputPortPtr input_ports_lastduel = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
@@ -396,7 +396,7 @@ public class lastduel
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -406,7 +406,7 @@ public class lastduel
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x0007, 0x0007, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "3C_1C") );
@@ -454,7 +454,7 @@ public class lastduel
 		PORT_DIPSETTING(      0x8000, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x03, "3" );
 		PORT_DIPSETTING(    0x02, "4" );
@@ -481,7 +481,7 @@ public class lastduel
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_madgear = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x0001, 0x0001, "Allow Continue" );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "No") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "Yes") );
@@ -527,7 +527,7 @@ public class lastduel
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
 		PORT_SERVICE( 0x8000, IP_ACTIVE_LOW );
 	
-		PORT_START /* Dip switch C, free play is COIN B all off, COIN A all on */
+		PORT_START();  /* Dip switch C, free play is COIN B all off, COIN A all on */
 		PORT_DIPNAME( 0x0f00, 0x0f00, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(      0x0200, DEF_STR( "6C_1C") );
 		PORT_DIPSETTING(      0x0400, DEF_STR( "5C_1C") );
@@ -563,7 +563,7 @@ public class lastduel
 		PORT_DIPSETTING(      0xa000, DEF_STR( "1C_6C") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "Free_Play") );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -581,7 +581,7 @@ public class lastduel
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0100, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x0200, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x0400, IP_ACTIVE_LOW, IPT_START1 );

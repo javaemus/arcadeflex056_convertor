@@ -571,10 +571,10 @@ public class m62
 	
 	
 	static InputPortPtr input_ports_kungfum = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		IN0_PORT
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY );
@@ -584,7 +584,7 @@ public class m62
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY | IPF_COCKTAIL );
@@ -594,7 +594,7 @@ public class m62
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x01, "Easy" );
 		PORT_DIPSETTING(    0x00, "Hard" );
@@ -608,7 +608,7 @@ public class m62
 		PORT_DIPSETTING(    0x00, "5" );
 		COINAGE_DSW
 	
-		PORT_START	/* DSW2 */
+		PORT_START(); 	/* DSW2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -638,16 +638,16 @@ public class m62
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_battroad = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		IN0_PORT
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		IN1_PORT
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		IN2_PORT
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x03, 0x03, "Fuel Decrease" );
 		PORT_DIPSETTING(    0x03, "Slow" );
 		PORT_DIPSETTING(    0x02, "Medium" );
@@ -661,7 +661,7 @@ public class m62
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		COINAGE_DSW
 	
-		PORT_START	/* DSW2 */
+		PORT_START(); 	/* DSW2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -689,16 +689,16 @@ public class m62
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_ldrun = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		IN0_PORT
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		IN1_PORT
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		IN2_PORT
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x03, 0x03, "Timer" );
 		PORT_DIPSETTING(    0x03, "Slow" );
 		PORT_DIPSETTING(    0x02, "Medium" );
@@ -711,7 +711,7 @@ public class m62
 		PORT_DIPSETTING(    0x00, "5" );
 		COINAGE_DSW
 	
-		PORT_START	/* DSW2 */
+		PORT_START(); 	/* DSW2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -740,16 +740,16 @@ public class m62
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_ldrun2 = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		IN0_PORT
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		IN1_PORT
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		IN2_PORT
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x01, 0x01, "Timer" );
 		PORT_DIPSETTING(    0x01, "Slow" );
 		PORT_DIPSETTING(    0x00, "Fast" );
@@ -763,7 +763,7 @@ public class m62
 		PORT_DIPSETTING(    0x00, "5" );
 		COINAGE_DSW
 	
-		PORT_START	/* DSW2 */
+		PORT_START(); 	/* DSW2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -792,16 +792,16 @@ public class m62
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_ldrun3 = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		IN0_PORT
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		IN1_PORT
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		IN2_PORT
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x01, 0x01, "Timer" );
 		PORT_DIPSETTING(    0x01, "Slow" );
 		PORT_DIPSETTING(    0x00, "Fast" );
@@ -815,7 +815,7 @@ public class m62
 		PORT_DIPSETTING(    0x00, "5" );
 		COINAGE_DSW
 	
-		PORT_START	/* DSW2 */
+		PORT_START(); 	/* DSW2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -844,16 +844,16 @@ public class m62
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_ldrun4 = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		IN0_PORT
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		IN1_PORT
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		IN2_PORT
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x01, 0x01, "Timer" );
 		PORT_DIPSETTING(    0x01, "Slow" );
 		PORT_DIPSETTING(    0x00, "Fast" );
@@ -867,7 +867,7 @@ public class m62
 		PORT_DIPSETTING(    0x00, "5" );
 		COINAGE_DSW
 	
-		PORT_START	/* DSW2 */
+		PORT_START(); 	/* DSW2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -897,16 +897,16 @@ public class m62
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_lotlot = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		IN0_PORT
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		IN1_PORT
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		IN2_PORT
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x03, 0x03, "Speed" );
 		PORT_DIPSETTING(    0x03, "Very Slow" );
 		PORT_DIPSETTING(    0x02, "Slow" );
@@ -919,7 +919,7 @@ public class m62
 		PORT_DIPSETTING(    0x00, "4" );
 		COINAGE2_DSW
 	
-		PORT_START	/* DSW2 */
+		PORT_START(); 	/* DSW2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -947,16 +947,16 @@ public class m62
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_kidniki = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		IN0_PORT
 	
-		PORT_START
+		PORT_START(); 
 		IN1_PORT
 	
-		PORT_START
+		PORT_START(); 
 		IN2_PORT
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x02, "2" );
 		PORT_DIPSETTING(    0x03, "3" );
@@ -970,7 +970,7 @@ public class m62
 		PORT_DIPSETTING(    0x00, "80000" );
 		COINAGE2_DSW
 	
-		PORT_START	/* DSW2 */
+		PORT_START(); 	/* DSW2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -997,16 +997,16 @@ public class m62
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_spelunkr = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		IN0_PORT
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		IN1_PORT
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		IN2_PORT
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x03, 0x03, "Energy Decrease" );
 		PORT_DIPSETTING(    0x03, "Slow" );
 		PORT_DIPSETTING(    0x02, "Medium" );
@@ -1019,7 +1019,7 @@ public class m62
 		PORT_DIPSETTING(    0x00, "5" );
 		COINAGE2_DSW
 	
-		PORT_START	/* DSW2 */
+		PORT_START(); 	/* DSW2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1048,16 +1048,16 @@ public class m62
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_spelunk2 = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		IN0_PORT
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		IN1_PORT
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		IN2_PORT
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x03, 0x03, "Energy Decrease" );
 		PORT_DIPSETTING(    0x03, "Slow" );
 		PORT_DIPSETTING(    0x02, "Medium" );
@@ -1070,7 +1070,7 @@ public class m62
 		PORT_DIPSETTING(    0x00, "5" );
 		COINAGE2_DSW
 	
-		PORT_START	/* DSW2 */
+		PORT_START(); 	/* DSW2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1098,16 +1098,16 @@ public class m62
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_youjyudn = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		IN0_PORT
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		IN1_PORT
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		IN2_PORT
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x02, "2" );
 		PORT_DIPSETTING(    0x03, "3" );
@@ -1121,7 +1121,7 @@ public class m62
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		COINAGE2_DSW
 	
-		PORT_START	/* DSW2 */
+		PORT_START(); 	/* DSW2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );

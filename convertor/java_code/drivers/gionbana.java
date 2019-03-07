@@ -758,7 +758,7 @@ public class gionbana
 	
 	
 	static InputPortPtr input_ports_hanamomo = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "1 (Easy); )
 		PORT_DIPSETTING(    0x06, "2" );
@@ -782,10 +782,10 @@ public class gionbana
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -803,7 +803,7 @@ public class gionbana
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_msjiken = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "1 (Easy); )
 		PORT_DIPSETTING(    0x06, "2" );
@@ -829,10 +829,10 @@ public class gionbana
 		PORT_DIPSETTING(    0x80, "ROYAL" );
 		PORT_DIPSETTING(    0x00, "JAMMA" );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -848,7 +848,7 @@ public class gionbana
 		NBMJCTRL_PORT4	/* (6) PORT 1-4 */
 		NBMJCTRL_PORT5	/* (7) PORT 1-5 */
 	
-		PORT_START	/* (8) JAMMA-1 */
+		PORT_START(); 	/* (8) JAMMA-1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -858,7 +858,7 @@ public class gionbana
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (9) JAMMA-2 */
+		PORT_START(); 	/* (9) JAMMA-2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY);
@@ -870,7 +870,7 @@ public class gionbana
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_telmahjn = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "1 (Easy); )
 		PORT_DIPSETTING(    0x06, "2" );
@@ -896,10 +896,10 @@ public class gionbana
 		PORT_DIPSETTING(    0x80, "ROYAL" );
 		PORT_DIPSETTING(    0x00, "JAMMA" );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -915,7 +915,7 @@ public class gionbana
 		NBMJCTRL_PORT4	/* (6) PORT 1-4 */
 		NBMJCTRL_PORT5	/* (7) PORT 1-5 */
 	
-		PORT_START	/* (8) JAMMA-1 */
+		PORT_START(); 	/* (8) JAMMA-1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -925,7 +925,7 @@ public class gionbana
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (9) JAMMA-2 */
+		PORT_START(); 	/* (9) JAMMA-2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY);
@@ -937,7 +937,7 @@ public class gionbana
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_gionbana = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "1 (Easy); )
 		PORT_DIPSETTING(    0x06, "2" );
@@ -960,7 +960,7 @@ public class gionbana
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x00, "Oyaken" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -978,7 +978,7 @@ public class gionbana
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_BIT( 0xe0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -996,7 +996,7 @@ public class gionbana
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_mgmen89 = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "1 (Easy); )
 		PORT_DIPSETTING(    0x06, "2" );
@@ -1022,10 +1022,10 @@ public class gionbana
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -1046,7 +1046,7 @@ public class gionbana
 	
 		// I don't have manual for this game.
 	
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "1 (Easy); )
 		PORT_DIPSETTING(    0x06, "2" );
@@ -1068,10 +1068,10 @@ public class gionbana
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -1089,7 +1089,7 @@ public class gionbana
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_mjfocusm = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x07, 0x07, "Game Out" );
 		PORT_DIPSETTING(    0x07, "95% (Easy); )
 		PORT_DIPSETTING(    0x06, "90%" );
@@ -1115,7 +1115,7 @@ public class gionbana
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "1C_1C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_2C") );
@@ -1139,7 +1139,7 @@ public class gionbana
 		PORT_DIPSETTING(    0x80, "A" );
 		PORT_DIPSETTING(    0x00, "B" );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -1157,7 +1157,7 @@ public class gionbana
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_peepshow = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "1 (Easy); )
 		PORT_DIPSETTING(    0x06, "2" );
@@ -1178,10 +1178,10 @@ public class gionbana
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -1199,7 +1199,7 @@ public class gionbana
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_scandal = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "1 (Easy); )
 		PORT_DIPSETTING(    0x06, "2" );
@@ -1217,13 +1217,13 @@ public class gionbana
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_BIT( 0xd0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x01, "Character Display Test" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -1241,7 +1241,7 @@ public class gionbana
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_scandalm = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x07, 0x07, "Game Out" );
 		PORT_DIPSETTING(    0x07, "90% (Easy); )
 		PORT_DIPSETTING(    0x06, "85%" );
@@ -1265,7 +1265,7 @@ public class gionbana
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "1C_1C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_2C") );
@@ -1287,7 +1287,7 @@ public class gionbana
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -1305,7 +1305,7 @@ public class gionbana
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_mjnanpas = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "1 (Easy); )
 		PORT_DIPSETTING(    0x06, "2" );
@@ -1331,10 +1331,10 @@ public class gionbana
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -1352,7 +1352,7 @@ public class gionbana
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_mjnanpaa = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "1 (Easy); )
 		PORT_DIPSETTING(    0x06, "2" );
@@ -1376,10 +1376,10 @@ public class gionbana
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -1400,7 +1400,7 @@ public class gionbana
 	
 		// I don't have manual for this game.
 	
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 1-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1426,7 +1426,7 @@ public class gionbana
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 2-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1452,7 +1452,7 @@ public class gionbana
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -1470,7 +1470,7 @@ public class gionbana
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_club90s = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x03, "1" );
 		PORT_DIPSETTING(    0x02, "2" );
@@ -1495,10 +1495,10 @@ public class gionbana
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -1516,7 +1516,7 @@ public class gionbana
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_mladyhtr = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x03, "1" );
 		PORT_DIPSETTING(    0x02, "2" );
@@ -1541,10 +1541,10 @@ public class gionbana
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -1562,7 +1562,7 @@ public class gionbana
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_chinmoku = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x03, "1" );
 		PORT_DIPSETTING(    0x02, "2" );
@@ -1587,10 +1587,10 @@ public class gionbana
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -1608,7 +1608,7 @@ public class gionbana
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_maiko = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "1 (Easy); )
 		PORT_DIPSETTING(    0x06, "2" );
@@ -1627,7 +1627,7 @@ public class gionbana
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_BIT( 0x03, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_DIPNAME( 0x04, 0x00, "Oyaken" );
 		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
@@ -1640,7 +1640,7 @@ public class gionbana
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_BIT( 0xe0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) PORT 0-1 */
+		PORT_START(); 	/* (2) PORT 0-1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );	//
@@ -1656,7 +1656,7 @@ public class gionbana
 		NBMJCTRL_PORT4	/* (6) PORT 1-4 */
 		NBMJCTRL_PORT5	/* (7) PORT 1-5 */
 	
-		PORT_START	/* (8) PORT 0-2 */
+		PORT_START(); 	/* (8) PORT 0-2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	// OUT COIN
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -1668,7 +1668,7 @@ public class gionbana
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_hanaoji = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 1-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1694,7 +1694,7 @@ public class gionbana
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 2-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1720,7 +1720,7 @@ public class gionbana
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (2) PORT 0-1 */
+		PORT_START(); 	/* (2) PORT 0-1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );	//
@@ -1736,7 +1736,7 @@ public class gionbana
 		NBMJCTRL_PORT4	/* (6) PORT 1-4 */
 		NBMJCTRL_PORT5	/* (7) PORT 1-5 */
 	
-		PORT_START	/* (8) PORT 0-2 */
+		PORT_START(); 	/* (8) PORT 0-2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	// OUT COIN
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET

@@ -155,7 +155,7 @@ public class gameplan
 	}
 	
 	static InputPortPtr input_ports_kaos = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 - from "TEST NO.7 - status locator - coin-door" */
+		PORT_START();       /* IN0 - from "TEST NO.7 - status locator - coin-door" */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* unused */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* unused */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_TILT );
@@ -165,7 +165,7 @@ public class gameplan
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_COIN1 );
 	
-		PORT_START      /* IN1 - from "TEST NO.7 - status locator - start sws." */
+		PORT_START();       /* IN1 - from "TEST NO.7 - status locator - start sws." */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN ); /* unused */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN ); /* unused */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN ); /* unused */
@@ -175,7 +175,7 @@ public class gameplan
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );/* unused */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START      /* IN2 - from "TEST NO.8 - status locator - player no.1" */
+		PORT_START();       /* IN2 - from "TEST NO.8 - status locator - player no.1" */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN ); /* unused */
 		PORT_BITX(0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1, "P1 Jump", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER1, "P1 Right", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
@@ -185,7 +185,7 @@ public class gameplan
 		PORT_BITX(0x40, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER1, "P1 Fire Right", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN ); /* unused */
 	
-		PORT_START      /* IN3 - from "TEST NO.8 - status locator - player no.2" */
+		PORT_START();       /* IN3 - from "TEST NO.8 - status locator - player no.2" */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN ); /* unused */
 		PORT_BITX(0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2, "P2 Fire Up", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x04, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2, "P2 Fire Right", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
@@ -195,7 +195,7 @@ public class gameplan
 		PORT_BITX(0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER2, "P2 Right", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN ); /* unused */
 	
-		PORT_START      /* IN4 - from "TEST NO.6 - dip switch A" */
+		PORT_START();       /* IN4 - from "TEST NO.6 - dip switch A" */
 	
 		PORT_DIPNAME(0x0f, 0x0f, DEF_STR( "Coinage") ); /* -> 039F */
 		PORT_DIPSETTING(   0x00, DEF_STR( "2C_1C") );
@@ -229,7 +229,7 @@ public class gameplan
 		PORT_DIPSETTING(   0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(   0x00, DEF_STR( "On") );
 	
-		PORT_START      /* IN5 - from "TEST NO.6 - dip switch B" */
+		PORT_START();       /* IN5 - from "TEST NO.6 - dip switch B" */
 	
 		PORT_DIPNAME(0x01, 0x01, DEF_STR( "Lives") );
 		PORT_DIPSETTING(   0x01, "3" );
@@ -264,7 +264,7 @@ public class gameplan
 	
 	
 	static InputPortPtr input_ports_killcom = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 - from "TEST NO.7 - status locator - coin-door" */
+		PORT_START();       /* IN0 - from "TEST NO.7 - status locator - coin-door" */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* unused */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* unused */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_TILT );
@@ -274,7 +274,7 @@ public class gameplan
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_COIN1 );
 	
-		PORT_START      /* IN1 - from "TEST NO.7 - status locator - start sws." */
+		PORT_START();       /* IN1 - from "TEST NO.7 - status locator - start sws." */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN ); /* unused */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN ); /* unused */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN ); /* unused */
@@ -284,7 +284,7 @@ public class gameplan
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );/* unused */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START      /* IN2 - from "TEST NO.8 - status locator - player no.1" */
+		PORT_START();       /* IN2 - from "TEST NO.8 - status locator - player no.1" */
 		PORT_BITX(0x01, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER1, "P1 Hyperspace", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1, "P1 Fire Up", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x04, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER1, "P1 Fire Right", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
@@ -294,7 +294,7 @@ public class gameplan
 		PORT_BITX(0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER1, "P1 Right", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_PLAYER1, "P1 Up", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 	
-		PORT_START      /* IN3 - from "TEST NO.8 - status locator - player no.2" */
+		PORT_START();       /* IN3 - from "TEST NO.8 - status locator - player no.2" */
 		PORT_BITX(0x01, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER2, "P2 Hyperspace", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2, "P2 Fire Up", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x04, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2, "P2 Fire Right", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
@@ -304,7 +304,7 @@ public class gameplan
 		PORT_BITX(0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER2, "P2 Right", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_PLAYER2, "P2 Up", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 	
-		PORT_START      /* IN4 - from "TEST NO.6 - dip switch A" */
+		PORT_START();       /* IN4 - from "TEST NO.6 - dip switch A" */
 	
 		PORT_DIPNAME(0x03, 0x03, "Coinage P1/P2" );
 		PORT_DIPSETTING(   0x03, "1 Credit/2 Credits" );
@@ -322,7 +322,7 @@ public class gameplan
 		PORT_DIPSETTING(   0x40, "Fast" );
 		PORT_DIPSETTING(   0x00, "Fastest" );
 	
-		PORT_START      /* IN5 - from "TEST NO.6 - dip switch B" */
+		PORT_START();       /* IN5 - from "TEST NO.6 - dip switch B" */
 	
 		PORT_DIPNAME(0x40, 0x40, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(   0x40, DEF_STR( "Off") );
@@ -335,7 +335,7 @@ public class gameplan
 	
 	
 	static InputPortPtr input_ports_megatack = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 - from "TEST NO.7 - status locator - coin-door" */
+		PORT_START();       /* IN0 - from "TEST NO.7 - status locator - coin-door" */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* unused */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* unused */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_TILT );
@@ -345,7 +345,7 @@ public class gameplan
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_COIN1 );
 	
-		PORT_START      /* IN1 - from "TEST NO.7 - status locator - start sws." */
+		PORT_START();       /* IN1 - from "TEST NO.7 - status locator - start sws." */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN ); /* unused */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN ); /* unused */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN ); /* unused */
@@ -355,7 +355,7 @@ public class gameplan
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );/* unused */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START      /* IN2 - from "TEST NO.8 - status locator - player no.1" */
+		PORT_START();       /* IN2 - from "TEST NO.8 - status locator - player no.1" */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN ); /* unused */
 		PORT_BITX(0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1, "P1 Fire", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 	/* PORT_BITX(0x04, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER1, "P1 Fire Right", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
@@ -365,7 +365,7 @@ public class gameplan
 		PORT_BITX(0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER1, "P1 Right", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN ); /* unused */
 	
-		PORT_START      /* IN3 - from "TEST NO.8 - status locator - player no.2" */
+		PORT_START();       /* IN3 - from "TEST NO.8 - status locator - player no.2" */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN ); /* unused */
 		PORT_BITX(0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2, "P2 Fire", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 	/* PORT_BITX(0x04, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2, "P2 Fire Right", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
@@ -375,7 +375,7 @@ public class gameplan
 		PORT_BITX(0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER2, "P2 Right", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN ); /* unused */
 	
-		PORT_START      /* IN4 - from "TEST NO.6 - dip switch A" */
+		PORT_START();       /* IN4 - from "TEST NO.6 - dip switch A" */
 		PORT_DIPNAME(0x03, 0x03, "Coinage P1/P2" );
 		PORT_DIPSETTING(   0x03, "1 Credit/2 Credits" );
 		PORT_DIPSETTING(   0x02, "2 Credits/3 Credits" );
@@ -386,7 +386,7 @@ public class gameplan
 		PORT_DIPSETTING(   0x08, "3" );
 		PORT_DIPSETTING(   0x00, "4" );
 	
-		PORT_START      /* IN5 - from "TEST NO.6 - dip switch B" */
+		PORT_START();       /* IN5 - from "TEST NO.6 - dip switch B" */
 	
 		PORT_DIPNAME(0x07, 0x07, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(   0x07, "20000" );
@@ -417,7 +417,7 @@ public class gameplan
 	
 	
 	static InputPortPtr input_ports_challeng = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 - from "TEST NO.7 - status locator - coin-door" */
+		PORT_START();       /* IN0 - from "TEST NO.7 - status locator - coin-door" */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* unused */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* unused */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_TILT );
@@ -427,7 +427,7 @@ public class gameplan
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START      /* IN1 - from "TEST NO.7 - status locator - start sws." */
+		PORT_START();       /* IN1 - from "TEST NO.7 - status locator - start sws." */
 	
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN ); /* unused */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN ); /* unused */
@@ -438,7 +438,7 @@ public class gameplan
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );/* unused */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-	PORT_START      /* IN2 - from "TEST NO.8 - status locator - player no.1" */
+	PORT_START();       /* IN2 - from "TEST NO.8 - status locator - player no.1" */
 	
 		PORT_BITX(0x01, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER1, "P1 Warp", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1, "P1 Fire", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
@@ -449,7 +449,7 @@ public class gameplan
 		PORT_BITX(0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER1, "P1 Right", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN ); /* unused */
 	
-		PORT_START      /* IN3 - from "TEST NO.8 - status locator - player no.2" */
+		PORT_START();       /* IN3 - from "TEST NO.8 - status locator - player no.2" */
 	
 		PORT_BITX(0x01, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2, "P2 Warp", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2, "P2 Fire", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
@@ -460,7 +460,7 @@ public class gameplan
 		PORT_BITX(0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER2, "P2 Right", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN ); /* unused */
 	
-		PORT_START      /* IN4 - from "TEST NO.6 - dip switch A" */
+		PORT_START();       /* IN4 - from "TEST NO.6 - dip switch A" */
 	
 		PORT_DIPNAME(0x03, 0x03, "Coinage P1/P2" );
 		PORT_DIPSETTING(   0x03, "1 Credit/2 Credits" );
@@ -474,7 +474,7 @@ public class gameplan
 		PORT_DIPSETTING(   0x40, "5" );
 		PORT_DIPSETTING(   0x00, "6" );
 	
-		PORT_START      /* IN5 - from "TEST NO.6 - dip switch B" */
+		PORT_START();       /* IN5 - from "TEST NO.6 - dip switch B" */
 		PORT_DIPNAME(0x07, 0x07, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(   0x01, "20000" );
 		PORT_DIPSETTING(   0x00, "30000" );

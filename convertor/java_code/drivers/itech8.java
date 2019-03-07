@@ -893,12 +893,12 @@ public class itech8
 		PORT_BITX(    mask, mask  default, IPT_SERVICE1, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	
 	#define UNUSED_ANALOG	\
-		PORT_START	\
+		PORT_START(); 	\
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
 	
 	static InputPortPtr input_ports_stratab = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* 40 */
+		PORT_START(); 	/* 40 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_SPECIAL );/* input from sound board */
 		PORT_BIT( 0x06, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Cabinet") );
@@ -907,7 +907,7 @@ public class itech8
 		PORT_BIT( 0x70, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_SERVICE_NO_TOGGLE( 0x80, IP_ACTIVE_LOW )
 	
-		PORT_START	/* 60 */
+		PORT_START(); 	/* 60 */
 		PORT_BIT_NAME( 0x01, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 | IPF_COCKTAIL, "P2 Right Hook" )
 		PORT_BIT_NAME( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 | IPF_COCKTAIL, "P2 Left Hook" )
 		PORT_BIT_NAME( 0x04, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1, "P1 Right Hook" )
@@ -917,30 +917,30 @@ public class itech8
 		PORT_BIT     ( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT     ( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START	/* 80 */
+		PORT_START(); 	/* 80 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* analog C */
+		PORT_START(); 	/* analog C */
 	    PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_Y | IPF_PLAYER1 | IPF_CENTER, 25, 32, 0x80, 0x7f );
 	
-		PORT_START	/* analog D */
+		PORT_START(); 	/* analog D */
 	    PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_X | IPF_PLAYER1 | IPF_REVERSE | IPF_CENTER, 25, 32, 0x80, 0x7f );
 	
-		PORT_START	/* analog E */
+		PORT_START(); 	/* analog E */
 	    PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_Y | IPF_PLAYER2 | IPF_COCKTAIL | IPF_CENTER, 25, 32, 0x80, 0x7f );
 	
-		PORT_START	/* analog F */
+		PORT_START(); 	/* analog F */
 	    PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_X | IPF_PLAYER2 | IPF_COCKTAIL | IPF_REVERSE | IPF_CENTER, 25, 32, 0x80, 0x7f );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_sstrike = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* 40 */
+		PORT_START(); 	/* 40 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_SPECIAL );/* input from sound board */
 		PORT_BIT( 0x7e, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_SERVICE_NO_TOGGLE( 0x80, IP_ACTIVE_LOW )
 	
-		PORT_START	/* 60 */
+		PORT_START(); 	/* 60 */
 		PORT_BIT     ( 0x01, IP_ACTIVE_LOW, IPT_COIN4 );
 		PORT_BIT     ( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT     ( 0x04, IP_ACTIVE_HIGH, IPT_SPECIAL );
@@ -950,16 +950,16 @@ public class itech8
 		PORT_BIT     ( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT     ( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START	/* 80 */
+		PORT_START(); 	/* 80 */
 		PORT_BIT_NAME( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON3, "Roll" )
 	
-		PORT_START	/* analog C */
+		PORT_START(); 	/* analog C */
 	    PORT_ANALOG( 0xff, 0x00, IPT_AD_STICK_X | IPF_PLAYER1, 50, 32, 0x80, 0x7f );
 	
-		PORT_START	/* analog D */
+		PORT_START(); 	/* analog D */
 	    PORT_ANALOG( 0xff, 0x00, IPT_AD_STICK_Y | IPF_PLAYER1 | IPF_REVERSE, 50, 32, 0x80, 0x7f );
 	
-		PORT_START	/* analog E */
+		PORT_START(); 	/* analog E */
 		PORT_ANALOG( 0xff, 0x60, IPT_PADDLE | IPF_PLAYER2, 100, 1, 0x28, 0x98 );
 	
 		UNUSED_ANALOG	/* analog F */
@@ -967,7 +967,7 @@ public class itech8
 	
 	
 	static InputPortPtr input_ports_wfortune = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* 40 */
+		PORT_START(); 	/* 40 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_SPECIAL );/* input from sound board */
 		PORT_BIT( 0x06, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Cabinet") );
@@ -976,7 +976,7 @@ public class itech8
 		PORT_BIT( 0x70, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_SERVICE_NO_TOGGLE( 0x80, IP_ACTIVE_LOW )
 	
-		PORT_START	/* 60 */
+		PORT_START(); 	/* 60 */
 		PORT_BIT     ( 0x07, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT_NAME( 0x08, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER3, "Blue Player" )
 		PORT_BIT_NAME( 0x10, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2, "Yellow Player" )
@@ -984,23 +984,23 @@ public class itech8
 		PORT_BIT     ( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT     ( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START	/* 80 */
+		PORT_START(); 	/* 80 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
 		UNUSED_ANALOG	/* analog C */
 	
-		PORT_START		/* analog D */
+		PORT_START(); 		/* analog D */
 		PORT_ANALOG( 0xff, 0x80, IPT_DIAL | IPF_PLAYER1, 75, 10, 0x00, 0xff );
 	
 		UNUSED_ANALOG	/* analog E */
 	
-		PORT_START		/* analog F */
+		PORT_START(); 		/* analog F */
 		PORT_ANALOG( 0xff, 0x80, IPT_DIAL | IPF_PLAYER2 | IPF_COCKTAIL, 75, 10, 0x00, 0xff );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_gtg = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* 40 */
+		PORT_START(); 	/* 40 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_SPECIAL );/* input from sound board */
 		PORT_BIT( 0x06, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Cabinet") );
@@ -1009,7 +1009,7 @@ public class itech8
 		PORT_BIT( 0x70, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_SERVICE_NO_TOGGLE( 0x80, IP_ACTIVE_LOW )
 	
-		PORT_START	/* 60 */
+		PORT_START(); 	/* 60 */
 		/* it is still unknown how the second player inputs are muxed in */
 		/* currently we map both sets of controls to the same inputs */
 		PORT_BIT     ( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER1 );
@@ -1026,7 +1026,7 @@ public class itech8
 		PORT_BIT     ( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT     ( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START	/* 80 */
+		PORT_START(); 	/* 80 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
 		UNUSED_ANALOG	/* analog C */
@@ -1037,7 +1037,7 @@ public class itech8
 	
 	
 	static InputPortPtr input_ports_gtg2 = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* 40 */
+		PORT_START(); 	/* 40 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_SERVICE_NO_TOGGLE( 0x02, IP_ACTIVE_LOW )
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN1 );
@@ -1048,36 +1048,36 @@ public class itech8
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* 60 */
+		PORT_START(); 	/* 60 */
 		PORT_BIT     ( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT_NAME( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1, "P1 Face Right" )
 		PORT_BIT_NAME( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1, "P1 Face Left" )
 		PORT_BIT     ( 0x78, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT     ( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	/* 80 */
+		PORT_START(); 	/* 80 */
 		PORT_BIT     ( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT_NAME( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 | IPF_COCKTAIL, "P2 Face Right" )
 		PORT_BIT_NAME( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 | IPF_COCKTAIL, "P2 Face Left" )
 		PORT_BIT     ( 0x78, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT     ( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START	/* analog C */
+		PORT_START(); 	/* analog C */
 	    PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_X | IPF_PLAYER1 | IPF_CENTER, 25, 32, 0x80, 0x7f );
 	
-		PORT_START	/* analog D */
+		PORT_START(); 	/* analog D */
 	    PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_Y | IPF_PLAYER1 | IPF_REVERSE | IPF_CENTER, 25, 32, 0x80, 0x7f );
 	
-		PORT_START	/* analog E */
+		PORT_START(); 	/* analog E */
 	    PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_X | IPF_PLAYER2 | IPF_COCKTAIL | IPF_CENTER, 25, 32, 0x80, 0x7f );
 	
-		PORT_START	/* analog F */
+		PORT_START(); 	/* analog F */
 	    PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_Y | IPF_PLAYER2 | IPF_COCKTAIL | IPF_REVERSE | IPF_CENTER, 25, 32, 0x80, 0x7f );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_gtg2t = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* 40 */
+		PORT_START(); 	/* 40 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_SPECIAL );/* input from sound board */
 		PORT_BIT( 0x06, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Cabinet") );
@@ -1086,7 +1086,7 @@ public class itech8
 		PORT_BIT( 0x70, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_SERVICE_NO_TOGGLE( 0x80, IP_ACTIVE_LOW )
 	
-		PORT_START	/* 60 */
+		PORT_START(); 	/* 60 */
 		PORT_BIT_NAME( 0x01, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 | IPF_COCKTAIL, "P2 Face Right" )
 		PORT_BIT_NAME( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 | IPF_COCKTAIL, "P2 Face Left" )
 		PORT_BIT_NAME( 0x04, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1, "P1 Face Right" )
@@ -1096,30 +1096,30 @@ public class itech8
 		PORT_BIT     ( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT     ( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START	/* 80 */
+		PORT_START(); 	/* 80 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* analog C */
+		PORT_START(); 	/* analog C */
 	    PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_X | IPF_PLAYER1 | IPF_CENTER, 25, 32, 0x80, 0x7f );
 	
-		PORT_START	/* analog D */
+		PORT_START(); 	/* analog D */
 	    PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_Y | IPF_PLAYER1 | IPF_REVERSE | IPF_CENTER, 25, 32, 0x80, 0x7f );
 	
-		PORT_START	/* analog E */
+		PORT_START(); 	/* analog E */
 	    PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_X | IPF_PLAYER2 | IPF_COCKTAIL | IPF_CENTER, 25, 32, 0x80, 0x7f );
 	
-		PORT_START	/* analog F */
+		PORT_START(); 	/* analog F */
 	    PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_Y | IPF_PLAYER2 | IPF_COCKTAIL | IPF_REVERSE | IPF_CENTER, 25, 32, 0x80, 0x7f );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_slikshot = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* 40 */
+		PORT_START(); 	/* 40 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_SPECIAL );/* input from sound board */
 		PORT_BIT( 0x7e, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_SERVICE_NO_TOGGLE( 0x80, IP_ACTIVE_LOW )
 	
-		PORT_START	/* 60 */
+		PORT_START(); 	/* 60 */
 		PORT_BIT     ( 0x01, IP_ACTIVE_LOW, IPT_COIN4 );
 		PORT_BIT     ( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT     ( 0x04, IP_ACTIVE_HIGH, IPT_SPECIAL );
@@ -1129,16 +1129,16 @@ public class itech8
 		PORT_BIT_NAME( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1, "Green" )
 		PORT_BIT     ( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START	/* 80 */
+		PORT_START(); 	/* 80 */
 		PORT_BIT_NAME( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON4, "Shoot" )
 	
-		PORT_START	/* analog C */
+		PORT_START(); 	/* analog C */
 	    PORT_ANALOG( 0xff, 0x00, IPT_AD_STICK_X | IPF_PLAYER1, 50, 32, 0x80, 0x7f );
 	
-		PORT_START	/* analog D */
+		PORT_START(); 	/* analog D */
 	    PORT_ANALOG( 0xff, 0x00, IPT_AD_STICK_Y | IPF_PLAYER1 | IPF_REVERSE, 50, 32, 0x80, 0x7f );
 	
-		PORT_START	/* analog E */
+		PORT_START(); 	/* analog E */
 		PORT_ANALOG( 0xff, 0x60, IPT_PADDLE | IPF_PLAYER2, 100, 1, 0x28, 0x98 );
 	
 		UNUSED_ANALOG	/* analog F */
@@ -1146,7 +1146,7 @@ public class itech8
 	
 	
 	static InputPortPtr input_ports_arlingtn = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* 40 */
+		PORT_START(); 	/* 40 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_SPECIAL );/* input from sound board */
 		PORT_BIT( 0x06, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Unknown") );	/* see code at e23c */
@@ -1155,7 +1155,7 @@ public class itech8
 		PORT_BIT( 0x70, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_SERVICE_NO_TOGGLE( 0x80, IP_ACTIVE_LOW )
 	
-		PORT_START	/* 60 */
+		PORT_START(); 	/* 60 */
 		PORT_BIT     ( 0x01, IP_ACTIVE_LOW, IPT_COIN3 );
 		PORT_BIT     ( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT_NAME( 0x04, IP_ACTIVE_LOW, IPT_BUTTON2, "Place" )
@@ -1165,7 +1165,7 @@ public class itech8
 		PORT_BIT     ( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT     ( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START	/* 80 */
+		PORT_START(); 	/* 80 */
 		PORT_BIT     ( 0x01, IP_ACTIVE_LOW, IPT_COIN4 );
 		PORT_BIT     ( 0x06, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT_NAME( 0x08, IP_ACTIVE_LOW, IPT_BUTTON3, "Show" )
@@ -1182,7 +1182,7 @@ public class itech8
 	
 	
 	static InputPortPtr input_ports_neckneck = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* 40 */
+		PORT_START(); 	/* 40 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_SPECIAL );/* input from sound board */
 		PORT_BIT( 0x06, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_DIPNAME( 0x08, 0x00, DEF_STR( "Unknown") );	/* see code at e23c */
@@ -1191,7 +1191,7 @@ public class itech8
 		PORT_BIT( 0x70, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_SERVICE_NO_TOGGLE( 0x80, IP_ACTIVE_LOW )
 	
-		PORT_START	/* 60 */
+		PORT_START(); 	/* 60 */
 		PORT_BIT     ( 0x01, IP_ACTIVE_LOW, IPT_COIN3 );
 		PORT_BIT     ( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT_NAME( 0x04, IP_ACTIVE_LOW, IPT_BUTTON3, "Horse 3" )
@@ -1201,7 +1201,7 @@ public class itech8
 		PORT_BIT     ( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT     ( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START	/* 80 */
+		PORT_START(); 	/* 80 */
 		PORT_BIT     ( 0x01, IP_ACTIVE_LOW, IPT_COIN4 );
 		PORT_BIT     ( 0x06, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT_NAME( 0x08, IP_ACTIVE_LOW, IPT_BUTTON4, "Horse 4" )
@@ -1218,12 +1218,12 @@ public class itech8
 	
 	
 	static InputPortPtr input_ports_peggle = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* 40 */
+		PORT_START(); 	/* 40 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_SPECIAL );/* input from sound board */
 		PORT_BIT( 0x7e, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_SERVICE_NO_TOGGLE( 0x80, IP_ACTIVE_LOW )
 	
-		PORT_START	/* 60 */
+		PORT_START(); 	/* 60 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN3 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER1 );
@@ -1232,7 +1232,7 @@ public class itech8
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START	/* 80 */
+		PORT_START(); 	/* 80 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
 		UNUSED_ANALOG	/* analog C */
@@ -1243,23 +1243,23 @@ public class itech8
 	
 	
 	static InputPortPtr input_ports_pegglet = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* 40 */
+		PORT_START(); 	/* 40 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_SPECIAL );/* input from sound board */
 		PORT_BIT( 0x7e, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_SERVICE_NO_TOGGLE( 0x80, IP_ACTIVE_LOW )
 	
-		PORT_START	/* 60 */
+		PORT_START(); 	/* 60 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN3 );
 		PORT_BIT( 0x3e, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START	/* 80 */
+		PORT_START(); 	/* 80 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
 		UNUSED_ANALOG	/* analog C */
 	
-		PORT_START		/* analog D */
+		PORT_START(); 		/* analog D */
 		PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_PLAYER1 | IPF_CENTER, 50, 10, 0x80, 0x7f );
 	
 		UNUSED_ANALOG	/* analog E */
@@ -1268,7 +1268,7 @@ public class itech8
 	
 	
 	static InputPortPtr input_ports_hstennis = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* 40 */
+		PORT_START(); 	/* 40 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_SPECIAL );/* input from sound board */
 		PORT_BIT( 0x06, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Cabinet") );
@@ -1280,7 +1280,7 @@ public class itech8
 		PORT_BIT( 0x60, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_SERVICE_NO_TOGGLE( 0x80, IP_ACTIVE_LOW )
 	
-		PORT_START	/* 60 */
+		PORT_START(); 	/* 60 */
 		PORT_BIT     ( 0x01, IP_ACTIVE_LOW, IPT_COIN3 );
 		PORT_BIT_NAME( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2        | IPF_PLAYER1, "P2 Soft" )
 		PORT_BIT     ( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER1 );
@@ -1290,7 +1290,7 @@ public class itech8
 		PORT_BIT_NAME( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1        | IPF_PLAYER1, "P1 Hard" )
 		PORT_BIT     ( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START	/* 80 */
+		PORT_START(); 	/* 80 */
 		PORT_BIT     ( 0x01, IP_ACTIVE_LOW, IPT_COIN4 );
 		PORT_BIT_NAME( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2        | IPF_PLAYER2, "P2 Soft" )
 		PORT_BIT     ( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER2 );
@@ -1308,11 +1308,11 @@ public class itech8
 	
 	
 	static InputPortPtr input_ports_rimrockn = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* 40 */
+		PORT_START(); 	/* 40 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_SPECIAL );/* input from sound board */
 		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* 60 */
+		PORT_START(); 	/* 60 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_SERVICE_NO_TOGGLE( 0x02, IP_ACTIVE_LOW )
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN1 );
@@ -1322,10 +1322,10 @@ public class itech8
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* 80 */
+		PORT_START(); 	/* 80 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* special 161 */
+		PORT_START(); 	/* special 161 */
 		PORT_BIT     ( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT_NAME( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2        | IPF_PLAYER1, "P1 Pass" )
 		PORT_BIT_NAME( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1        | IPF_PLAYER1, "P1 Shoot" )
@@ -1335,7 +1335,7 @@ public class itech8
 		PORT_BIT     ( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER1 );
 		PORT_BIT     ( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	/* special 162 */
+		PORT_START(); 	/* special 162 */
 		PORT_BIT     ( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT_NAME( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2        | IPF_PLAYER2, "P2 Pass" )
 		PORT_BIT_NAME( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1        | IPF_PLAYER2, "P2 Shoot" )
@@ -1345,7 +1345,7 @@ public class itech8
 		PORT_BIT     ( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER2 );
 		PORT_BIT     ( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START	/* special 163 */
+		PORT_START(); 	/* special 163 */
 		PORT_BIT     ( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT_NAME( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2        | IPF_PLAYER3, "P3 Pass" )
 		PORT_BIT_NAME( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1        | IPF_PLAYER3, "P3 Shoot" )
@@ -1355,7 +1355,7 @@ public class itech8
 		PORT_BIT     ( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER3 );
 		PORT_BIT     ( 0x80, IP_ACTIVE_LOW, IPT_START3 );
 	
-		PORT_START	/* special 164 */
+		PORT_START(); 	/* special 164 */
 		PORT_BIT     ( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT_NAME( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2        | IPF_PLAYER4, "P4 Pass" )
 		PORT_BIT_NAME( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1        | IPF_PLAYER4, "P4 Shoot" )
@@ -1365,13 +1365,13 @@ public class itech8
 		PORT_BIT     ( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER4 );
 		PORT_BIT     ( 0x80, IP_ACTIVE_LOW, IPT_START4 );
 	
-		PORT_START	/* special 165 */
+		PORT_START(); 	/* special 165 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_ninclown = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* 40 */
+		PORT_START(); 	/* 40 */
 		PORT_BIT( 0x0100, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_SERVICE_NO_TOGGLE( 0x0200, IP_ACTIVE_LOW )
 		PORT_BIT( 0x0c00, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -1379,7 +1379,7 @@ public class itech8
 		PORT_BIT( 0x2000, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0xc000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* 60 */
+		PORT_START(); 	/* 60 */
 		PORT_BIT_NAME( 0x0100, IP_ACTIVE_LOW, IPT_BUTTON3        | IPF_PLAYER1, "P1 Throw" )
 		PORT_BIT     ( 0x0200, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT     ( 0x0400, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER1 );
@@ -1389,7 +1389,7 @@ public class itech8
 		PORT_BIT_NAME( 0x4000, IP_ACTIVE_LOW, IPT_BUTTON2        | IPF_PLAYER1, "P1 Kick" )
 		PORT_BIT_NAME( 0x8000, IP_ACTIVE_LOW, IPT_BUTTON1        | IPF_PLAYER1, "P1 Punch" )
 	
-		PORT_START	/* 80 */
+		PORT_START(); 	/* 80 */
 		PORT_BIT_NAME( 0x0100, IP_ACTIVE_LOW, IPT_BUTTON3        | IPF_PLAYER2, "P2 Throw" )
 		PORT_BIT     ( 0x0200, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT     ( 0x0400, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER2 );

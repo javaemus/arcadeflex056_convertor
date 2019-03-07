@@ -1170,7 +1170,7 @@ public class cave
 	
 	/* Most games use this */
 	static InputPortPtr input_ports_cave = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1
+		PORT_START(); 	// IN0 - Player 1
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER1 );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN	 | IPF_PLAYER1 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER1 );
@@ -1189,7 +1189,7 @@ public class cave
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN1 - Player 2
+		PORT_START(); 	// IN1 - Player 2
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER2 );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN	 | IPF_PLAYER2 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER2 );
@@ -1211,7 +1211,7 @@ public class cave
 	
 	/* Different layout */
 	static InputPortPtr input_ports_guwange = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1 & 2
+		PORT_START(); 	// IN0 - Player 1 & 2
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_START1  );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_UP	 | IPF_PLAYER1 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER1 );
@@ -1230,7 +1230,7 @@ public class cave
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_BUTTON2        | IPF_PLAYER2 );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_BUTTON3        | IPF_PLAYER2 );
 	
-		PORT_START	// IN1 - Coins
+		PORT_START(); 	// IN1 - Coins
 		PORT_BIT_IMPULSE(  0x0001, IP_ACTIVE_LOW, IPT_COIN1, 6);
 		PORT_BIT_IMPULSE(  0x0002, IP_ACTIVE_LOW, IPT_COIN2, 6);
 		PORT_BITX( 0x0004, IP_ACTIVE_LOW,  IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
@@ -1252,7 +1252,7 @@ public class cave
 	
 	/* "normal" layout but with 4 buttons */
 	static InputPortPtr input_ports_metmqstr = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1
+		PORT_START(); 	// IN0 - Player 1
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER1 );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN	 | IPF_PLAYER1 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER1 );
@@ -1271,7 +1271,7 @@ public class cave
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN1 - Player 2
+		PORT_START(); 	// IN1 - Player 2
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER2 );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN	 | IPF_PLAYER2 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER2 );

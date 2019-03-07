@@ -135,7 +135,7 @@ public class sprint2
 	};
 	
 	static InputPortPtr input_ports_sprint2 = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* DSW - fake port, gets mapped to Sprint2 ports */
+		PORT_START();       /* DSW - fake port, gets mapped to Sprint2 ports */
 		PORT_DIPNAME( 0x01, 0x00, "Tracks on Demo" );
 		PORT_DIPSETTING(    0x00, "Easy Track Only" );
 		PORT_DIPSETTING(    0x01, "Cycle 12 Tracks" );
@@ -159,7 +159,7 @@ public class sprint2
 		PORT_DIPSETTING(    0x40, "120 seconds" );
 		PORT_DIPSETTING(    0x00, "150 seconds" );
 	
-		PORT_START      /* IN0 - fake port, gets mapped to Sprint2 ports */
+		PORT_START();       /* IN0 - fake port, gets mapped to Sprint2 ports */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN,  "P1 1st gear", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT,  "P1 2nd gear", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT, "P1 3rd gear", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
@@ -169,7 +169,7 @@ public class sprint2
 		PORT_BITX(0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_PLAYER2, "P2 3rd gear", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_PLAYER2, "P2 4th gear", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 	
-		PORT_START      /* IN1 - fake port, gets mapped to Sprint2 ports */
+		PORT_START();       /* IN1 - fake port, gets mapped to Sprint2 ports */
 		PORT_BITX(0x01, IP_ACTIVE_LOW, IPT_BUTTON1, "P1 Gas", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2, "P2 Gas", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x04, IP_ACTIVE_LOW, IPT_SERVICE, "Self Test", KEYCODE_F2, IP_JOY_NONE );
@@ -177,25 +177,25 @@ public class sprint2
 		PORT_BIT (0x10, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BITX(0x20, IP_ACTIVE_LOW, IPT_BUTTON2, "Track Select", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_VBLANK );
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN3 */
+		PORT_START();       /* IN3 */
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START      /* IN4 */
+		PORT_START();       /* IN4 */
 		PORT_ANALOG( 0xff, 0x00, IPT_DIAL, 100, 10, 0, 0 );
 	
 	
-		PORT_START      /* IN5 */
+		PORT_START();       /* IN5 */
 		PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_PLAYER2, 100, 10, 0, 0 );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_sprint1 = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* DSW - fake port, gets mapped to Sprint2 ports */
+		PORT_START();       /* DSW - fake port, gets mapped to Sprint2 ports */
 		PORT_DIPNAME( 0x01, 0x00, "Change Track" );
 		PORT_DIPSETTING(    0x01, "Every Lap" );
 		PORT_DIPSETTING(    0x00, "Every 2 Laps" );
@@ -219,31 +219,31 @@ public class sprint2
 		PORT_DIPSETTING(    0x40, "120 seconds" );
 		PORT_DIPSETTING(    0x00, "150 seconds" );
 	
-		PORT_START      /* IN0 - fake port, gets mapped to Sprint2 ports */
+		PORT_START();       /* IN0 - fake port, gets mapped to Sprint2 ports */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN,  "1st gear", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT,  "2nd gear", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT, "3rd gear", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x08, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP,    "4th gear", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BIT (0xf0, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 - fake port, gets mapped to Sprint2 ports */
+		PORT_START();       /* IN1 - fake port, gets mapped to Sprint2 ports */
 		PORT_BITX(0x01, IP_ACTIVE_LOW, IPT_BUTTON1, "Gas", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x02, IP_ACTIVE_LOW, IPT_SERVICE, "Self Test", KEYCODE_F2, IP_JOY_NONE );
 		PORT_BIT (0x04, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_VBLANK );
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN3 */
+		PORT_START();       /* IN3 */
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START      /* IN4 */
+		PORT_START();       /* IN4 */
 		PORT_ANALOG( 0xff, 0x00, IPT_DIAL, 100, 10, 0, 0 );
 	
 	
-		PORT_START      /* IN5 */
+		PORT_START();       /* IN5 */
 		PORT_BIT ( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	INPUT_PORTS_END(); }}; 
 	

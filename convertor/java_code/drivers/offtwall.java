@@ -317,7 +317,7 @@ public class offtwall
 	 *************************************/
 	
 	static InputPortPtr input_ports_offtwall = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* 260000 */
+		PORT_START(); 	/* 260000 */
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER2 );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
@@ -337,7 +337,7 @@ public class offtwall
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_PLAYER1 );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_PLAYER1 );
 	
-		PORT_START	/* 260002 */
+		PORT_START(); 	/* 260002 */
 		PORT_BIT(  0x00ff, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT(  0x0100, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER3 );
 		PORT_BIT(  0x0200, IP_ACTIVE_LOW, IPT_START3 );
@@ -351,7 +351,7 @@ public class offtwall
 	
 		JSA_III_PORT	/* audio board port */
 	
-		PORT_START	/* 260010 */
+		PORT_START(); 	/* 260010 */
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_DIPNAME( 0x0002, 0x0000, "Controls" );
 		PORT_DIPSETTING(      0x0000, "Whirly-gigs" );/* this is official Atari terminology! */
@@ -364,18 +364,18 @@ public class offtwall
 		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_VBLANK );
 		PORT_BIT(  0xff00, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* 260012 */
+		PORT_START(); 	/* 260012 */
 		PORT_BIT(  0xffff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* 260020 */
+		PORT_START(); 	/* 260020 */
 	    PORT_ANALOG( 0xff, 0, IPT_DIAL_V | IPF_PLAYER1, 50, 10, 0, 0 );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* 260022 */
+		PORT_START(); 	/* 260022 */
 	    PORT_ANALOG( 0xff, 0, IPT_DIAL | IPF_PLAYER2, 50, 10, 0, 0 );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* 260024 */
+		PORT_START(); 	/* 260024 */
 	    PORT_ANALOG( 0xff, 0, IPT_DIAL_V | IPF_PLAYER3 | IPF_REVERSE, 50, 10, 0, 0 );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 

@@ -144,7 +144,7 @@ public class speedbal
 	
 	
 	static InputPortPtr input_ports_speedbal = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* DSW2 */
+		PORT_START();       /* DSW2 */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x06, "70000 200000 1M" );
 		PORT_DIPSETTING(    0x07, "70000 200000" );
@@ -168,7 +168,7 @@ public class speedbal
 		PORT_DIPSETTING(    0x40, "Difficult" );
 		PORT_DIPSETTING(    0x00, "Very Difficult" );
 	
-		PORT_START      /* DSW1 */
+		PORT_START();       /* DSW1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "1C_2C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "1C_3C") );
@@ -191,7 +191,7 @@ public class speedbal
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW , IPT_BUTTON1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW , IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW , IPT_BUTTON4 );
@@ -201,7 +201,7 @@ public class speedbal
 		PORT_BIT( 0x40, IP_ACTIVE_LOW , IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW , IPT_COIN1 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW , IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW , IPT_BUTTON2 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW , IPT_BUTTON4 | IPF_COCKTAIL );

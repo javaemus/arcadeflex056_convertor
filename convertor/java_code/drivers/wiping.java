@@ -148,7 +148,7 @@ public class wiping
 	
 	
 	static InputPortPtr input_ports_wiping = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* 0 */
+		PORT_START(); 	/* 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_4WAY );
@@ -156,7 +156,7 @@ public class wiping
 		PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_BUTTON1 );
 		PORT_BIT( 0xe0, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* 1 */
+		PORT_START(); 	/* 1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL );
@@ -164,15 +164,15 @@ public class wiping
 		PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT( 0xe0, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* 2 */
+		PORT_START(); 	/* 2 */
 	
-		PORT_START	/* 3 */
+		PORT_START(); 	/* 3 */
 	
-		PORT_START	/* 4 */
+		PORT_START(); 	/* 4 */
 	
-		PORT_START	/* 5 */
+		PORT_START(); 	/* 5 */
 	
-		PORT_START	/* 6 */
+		PORT_START(); 	/* 6 */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x05, IP_ACTIVE_LOW, IPT_COIN2 );/* note that this changes two bits */
 		PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_START1 );
@@ -185,7 +185,7 @@ public class wiping
 		PORT_DIPSETTING(    0x00, "30000 70000" );
 		PORT_DIPSETTING(    0x80, "50000 150000" );
 	
-		PORT_START	/* 7 */
+		PORT_START(); 	/* 7 */
 		PORT_DIPNAME( 0x07, 0x01, DEF_STR( "Coin_B") ); )
 		PORT_DIPSETTING(    0x01, DEF_STR( "1C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "1C_2C") );
@@ -213,7 +213,7 @@ public class wiping
 	
 	/* identical apart from bonus life */
 	static InputPortPtr input_ports_rugrats = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* 0 */
+		PORT_START(); 	/* 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_4WAY );
@@ -221,7 +221,7 @@ public class wiping
 		PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_BUTTON1 );
 		PORT_BIT( 0xe0, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* 1 */
+		PORT_START(); 	/* 1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL );
@@ -229,15 +229,15 @@ public class wiping
 		PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT( 0xe0, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* 2 */
+		PORT_START(); 	/* 2 */
 	
-		PORT_START	/* 3 */
+		PORT_START(); 	/* 3 */
 	
-		PORT_START	/* 4 */
+		PORT_START(); 	/* 4 */
 	
-		PORT_START	/* 5 */
+		PORT_START(); 	/* 5 */
 	
-		PORT_START	/* 6 */
+		PORT_START(); 	/* 6 */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x05, IP_ACTIVE_LOW, IPT_COIN2 );/* note that this changes two bits */
 		PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_START1 );
@@ -250,7 +250,7 @@ public class wiping
 		PORT_DIPSETTING(    0x00, "100000 200000" );
 		PORT_DIPSETTING(    0x80, "150000 300000" );
 	
-		PORT_START	/* 7 */
+		PORT_START(); 	/* 7 */
 		PORT_DIPNAME( 0x07, 0x01, DEF_STR( "Coin_B") ); )
 		PORT_DIPSETTING(    0x01, DEF_STR( "1C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "1C_2C") );

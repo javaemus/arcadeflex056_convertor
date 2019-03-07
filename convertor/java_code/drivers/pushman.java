@@ -150,7 +150,7 @@ public class pushman
 	/******************************************************************************/
 	
 	static InputPortPtr input_ports_pushman = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_PLAYER1 );
@@ -168,7 +168,7 @@ public class pushman
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x00ff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x0100, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x0200, IP_ACTIVE_LOW, IPT_START2 );
@@ -179,7 +179,7 @@ public class pushman
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BITX(    0x0001, 0x0001, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Debug Mode", IP_KEY_NONE, IP_JOY_NONE );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );

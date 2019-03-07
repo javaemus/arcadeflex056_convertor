@@ -70,7 +70,7 @@ public class videopin
 	
 	
 	static InputPortPtr input_ports_videopin = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_COIN2 );  /* Right coin 1 */
 		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_COIN1 );  /* Left coin 2 */
 		PORT_BIT ( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 );/* Right flipper */
@@ -79,7 +79,7 @@ public class videopin
 		PORT_BIT ( 0x20, IP_ACTIVE_LOW, IPT_UNKNOWN );/* What the hell is Slam switch ??? */
 		PORT_SERVICE( 0x40, IP_ACTIVE_LOW );
 	
-		PORT_START		/* IN1/DSW */
+		PORT_START(); 		/* IN1/DSW */
 		PORT_DIPNAME( 0xC0, 0x80, "Coin Mode" );
 		PORT_DIPSETTING(	0xC0, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(	0x80, DEF_STR( "1C_1C") );
@@ -103,14 +103,14 @@ public class videopin
 		PORT_DIPSETTING(	0x00, "Extra Ball" );
 		PORT_DIPSETTING(	0x02, "50000 Points" );
 	
-		PORT_START		/* IN2 VBLANK, NUDGE, PLUNGER1, PLUNGER2 */
+		PORT_START(); 		/* IN2 VBLANK, NUDGE, PLUNGER1, PLUNGER2 */
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_SPECIAL );/* PLUNGER1 */
 		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_SPECIAL );/* PLUNGER2 */
 												  /* Ball shooter force = PLUNGER2 - PLUNGER1 */
 		PORT_BIT ( 0x40, IP_ACTIVE_HIGH, IPT_BUTTON3 );/* NUDGE */
 		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_VBLANK );/* VBLANK */
 	
-		PORT_START		/* FAKE to read the plunger button */
+		PORT_START(); 		/* FAKE to read the plunger button */
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON4 );/* PLUNGER1 */
 	INPUT_PORTS_END(); }}; 
 	

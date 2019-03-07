@@ -95,7 +95,7 @@ public class grobda
 	
 	/* The dipswitches and player inputs are not memory mapped, they are handled by an I/O chip. */
 	static InputPortPtr input_ports_grobda = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* DSW0 */
+		PORT_START();   /* DSW0 */
 		PORT_DIPNAME( 0x07, 0x03, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x07, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x06, DEF_STR( "3C_1C") );
@@ -120,7 +120,7 @@ public class grobda
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_3C") );
 		PORT_DIPSETTING(    0x20, DEF_STR( "1C_4C") );
 	
-		PORT_START  /* DSW1 */
+		PORT_START();   /* DSW1 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x01, "1" );
 		PORT_DIPSETTING(    0x02, "2" );
@@ -136,7 +136,7 @@ public class grobda
 		PORT_DIPSETTING(    0x00, "10k" );
 		PORT_DIPSETTING(    0x40, "none" );
 	
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		PORT_BIT_IMPULSE( 0x01, IP_ACTIVE_HIGH, IPT_START1, 1 );
 		PORT_BIT_IMPULSE( 0x02, IP_ACTIVE_HIGH, IPT_START2, 1 );
 		PORT_BIT_IMPULSE( 0x10, IP_ACTIVE_HIGH, IPT_COIN1, 1 );
@@ -148,7 +148,7 @@ public class grobda
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START  /* IN1 */
+		PORT_START();   /* IN1 */
 		PORT_BIT(   0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY  );
 		PORT_BIT(   0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY  );
 		PORT_BIT(   0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY );
@@ -158,7 +158,7 @@ public class grobda
 		PORT_BIT(   0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT(   0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START  /* IN2 */
+		PORT_START();   /* IN2 */
 		PORT_BIT_IMPULSE( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON1, 1 );
 		PORT_BITX(  0x02, IP_ACTIVE_HIGH, IPT_BUTTON1, 0, IP_KEY_PREVIOUS, IP_JOY_PREVIOUS );
 		PORT_BIT_IMPULSE( 0x04, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_COCKTAIL, 1 );

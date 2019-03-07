@@ -135,7 +135,7 @@ public class gaelco
 	};
 	
 	static InputPortPtr input_ports_bigkarnk = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* DSW #1 */
+		PORT_START(); 	/* DSW #1 */
 		PORT_DIPNAME( 0x0f, 0x0f, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x07, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x08, DEF_STR( "3C_1C") );
@@ -161,7 +161,7 @@ public class gaelco
 		PORT_DIPSETTING(    0xa0, DEF_STR( "1C_6C") );
 		PORT_DIPSETTING(    0x00, "Free Play (if Coin A too); )
 	
-		PORT_START	/* DSW #2 */
+		PORT_START(); 	/* DSW #2 */
 		PORT_DIPNAME( 0x07, 0x06, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "0" );
 		PORT_DIPSETTING(    0x06, "1" );
@@ -184,7 +184,7 @@ public class gaelco
 		PORT_DIPSETTING(    0x40, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* 1P INPUTS & COINSW */
+		PORT_START(); 	/* 1P INPUTS & COINSW */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
@@ -194,7 +194,7 @@ public class gaelco
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START	/* 2P INPUTS & STARTSW */
+		PORT_START(); 	/* 2P INPUTS & STARTSW */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER2 );
@@ -204,7 +204,7 @@ public class gaelco
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START	/* Service + Test */
+		PORT_START(); 	/* Service + Test */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_DIPNAME( 0x02, 0x02, "Go to test mode now" );
 		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
@@ -351,7 +351,7 @@ public class gaelco
 	
 	static InputPortPtr input_ports_maniacsq = new InputPortPtr(){ public void handler() { 
 	
-	PORT_START	/* DSW #2 */
+	PORT_START(); 	/* DSW #2 */
 		PORT_SERVICE( 0x01, IP_ACTIVE_LOW );
 		PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
@@ -374,7 +374,7 @@ public class gaelco
 		PORT_DIPSETTING(    0x80, "Hard" );
 		PORT_DIPSETTING(    0x00, "Hardest" );
 	
-	PORT_START	/* DSW #1 */
+	PORT_START(); 	/* DSW #1 */
 		PORT_DIPNAME( 0x0f, 0x0f, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(    0x0e, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "3C_1C") );
@@ -402,7 +402,7 @@ public class gaelco
 		PORT_DIPSETTING(    0x50, DEF_STR( "1C_6C") );
 		PORT_DIPSETTING(    0x00, "1C/1C or Free Play (if Coin B too); )
 	
-	PORT_START	/* 1P INPUTS & COINSW */
+	PORT_START(); 	/* 1P INPUTS & COINSW */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
@@ -412,7 +412,7 @@ public class gaelco
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-	PORT_START	/* 2P INPUTS & STARTSW */
+	PORT_START(); 	/* 2P INPUTS & STARTSW */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER2 );
@@ -425,7 +425,7 @@ public class gaelco
 	
 	
 	static InputPortPtr input_ports_biomtoy = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* DSW #2 */
+		PORT_START(); 	/* DSW #2 */
 		PORT_SERVICE( 0x01, IP_ACTIVE_LOW );
 		PORT_DIPNAME( 0x02, 0x02, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
@@ -447,7 +447,7 @@ public class gaelco
 		PORT_DIPSETTING(    0x80, "Hard" );
 		PORT_DIPSETTING(    0x00, "Hardest" );
 	
-		PORT_START	/* DSW #1 */
+		PORT_START(); 	/* DSW #1 */
 		PORT_DIPNAME( 0x0f, 0x0f, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(    0x0e, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "3C_1C") );
@@ -475,7 +475,7 @@ public class gaelco
 		PORT_DIPSETTING(    0x50, DEF_STR( "1C_6C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Free_Play") );
 	
-		PORT_START	/* 1P INPUTS & COINSW */
+		PORT_START(); 	/* 1P INPUTS & COINSW */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
@@ -485,7 +485,7 @@ public class gaelco
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START	/* 2P INPUTS & STARTSW */
+		PORT_START(); 	/* 2P INPUTS & STARTSW */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER2 );

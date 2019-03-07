@@ -304,7 +304,7 @@ public class asuka
 		PORT_DIPSETTING(    0x00, "Hardest" );
 	
 	#define ASUKA_PLAYERS_INPUT( player ) \
-		PORT_START \
+		PORT_START();  \
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | player );\
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | player );\
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | player );\
@@ -315,7 +315,7 @@ public class asuka
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 	#define ASUKA_SYSTEM_INPUT \
-		PORT_START \
+		PORT_START();  \
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_TILT );\
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_SERVICE1 );\
 		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_COIN1 );\
@@ -327,7 +327,7 @@ public class asuka
 	
 	
 	static InputPortPtr input_ports_bonzeadv = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* DSWA */
+		PORT_START(); 	/* DSWA */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
@@ -349,7 +349,7 @@ public class asuka
 		PORT_DIPSETTING(    0x40, DEF_STR( "1C_4C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_6C") );
 	
-		PORT_START	/* DSWB */
+		PORT_START(); 	/* DSWB */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x08, "40k,100k" );
@@ -368,16 +368,16 @@ public class asuka
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* 800007 */
+		PORT_START(); 	/* 800007 */
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_SERVICE1 );
 	
-		PORT_START /* 800009 */
+		PORT_START();  /* 800009 */
 		PORT_BIT_IMPULSE( 0x01, IP_ACTIVE_HIGH, IPT_COIN1, 1 );
 		PORT_BIT_IMPULSE( 0x02, IP_ACTIVE_HIGH, IPT_COIN2, 1 );
 	
-		PORT_START	/* 80000B */
+		PORT_START(); 	/* 80000B */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_TILT );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY );
@@ -387,7 +387,7 @@ public class asuka
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 );
 	
-		PORT_START	/* 80000d */
+		PORT_START(); 	/* 80000d */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );
@@ -399,7 +399,7 @@ public class asuka
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_jigkmgri = new InputPortPtr(){ public void handler() {  /* coinage DIPs differ from bonzeadv */
-		PORT_START	/* DSWA */
+		PORT_START(); 	/* DSWA */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
@@ -412,7 +412,7 @@ public class asuka
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_8
 	
-		PORT_START	/* DSWB */
+		PORT_START(); 	/* DSWB */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x08, "40k,100k" );
@@ -431,16 +431,16 @@ public class asuka
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* 800007 */
+		PORT_START(); 	/* 800007 */
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_SERVICE1 );
 	
-		PORT_START /* 800009 */
+		PORT_START();  /* 800009 */
 		PORT_BIT_IMPULSE( 0x01, IP_ACTIVE_HIGH, IPT_COIN1, 1 );
 		PORT_BIT_IMPULSE( 0x02, IP_ACTIVE_HIGH, IPT_COIN2, 1 );
 	
-		PORT_START	/* 80000B */
+		PORT_START(); 	/* 80000B */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_TILT );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY );
@@ -450,7 +450,7 @@ public class asuka
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 );
 	
-		PORT_START	/* 80000d */
+		PORT_START(); 	/* 80000d */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );
@@ -462,7 +462,7 @@ public class asuka
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_asuka = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* DSWA */
+		PORT_START(); 	/* DSWA */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -475,7 +475,7 @@ public class asuka
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_8
 	
-		PORT_START	/* DSWB */
+		PORT_START(); 	/* DSWB */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
@@ -511,7 +511,7 @@ public class asuka
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_mofflott = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* DSWA */
+		PORT_START(); 	/* DSWA */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -524,7 +524,7 @@ public class asuka
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_8
 	
-		PORT_START	/* DSWB */
+		PORT_START(); 	/* DSWB */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x0c, "20k and every 50k" );
@@ -554,7 +554,7 @@ public class asuka
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_galmedes = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* DSWA */
+		PORT_START(); 	/* DSWA */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -567,7 +567,7 @@ public class asuka
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_8
 	
-		PORT_START	/* DSWB */
+		PORT_START(); 	/* DSWB */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x08, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x08, "every 100k" );
@@ -597,7 +597,7 @@ public class asuka
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_earthjkr = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* DSWA */
+		PORT_START(); 	/* DSWA */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -610,7 +610,7 @@ public class asuka
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_8
 	
-		PORT_START	/* DSWB */
+		PORT_START(); 	/* DSWB */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
@@ -641,7 +641,7 @@ public class asuka
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_eto = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* DSWA */
+		PORT_START(); 	/* DSWA */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -654,7 +654,7 @@ public class asuka
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_8
 	
-		PORT_START	/* DSWB */
+		PORT_START(); 	/* DSWB */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );

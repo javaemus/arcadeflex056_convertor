@@ -327,7 +327,7 @@ public class lasso
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_chameleo = new InputPortPtr(){ public void handler() { 
-		PORT_START /* 1804 */
+		PORT_START();  /* 1804 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_4WAY );
@@ -337,7 +337,7 @@ public class lasso
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START /* 1805 */
+		PORT_START();  /* 1805 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_COCKTAIL | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_COCKTAIL | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_COCKTAIL | IPF_4WAY );
@@ -347,7 +347,7 @@ public class lasso
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START /* 1806 */
+		PORT_START();  /* 1806 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Cocktail") );
@@ -372,7 +372,7 @@ public class lasso
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START /* 1807 */
+		PORT_START();  /* 1807 */
 		PORT_BIT( 0x07, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "No") );
@@ -388,7 +388,7 @@ public class lasso
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_lasso = new InputPortPtr(){ public void handler() { 
-		PORT_START /* 1804 */
+		PORT_START();  /* 1804 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_4WAY );
@@ -398,7 +398,7 @@ public class lasso
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNUSED  );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNUSED  );
 	
-		PORT_START /* 1805 */
+		PORT_START();  /* 1805 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_COCKTAIL | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_COCKTAIL | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_COCKTAIL | IPF_4WAY );
@@ -408,7 +408,7 @@ public class lasso
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNUSED  );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNUSED  );
 	
-		PORT_START /* 1806 */
+		PORT_START();  /* 1806 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Cocktail") );
@@ -433,7 +433,7 @@ public class lasso
 		PORT_DIPSETTING(	0x00, DEF_STR( "No") );
 		PORT_DIPSETTING(	0x80, DEF_STR( "Yes") );
 	
-		PORT_START /* 1807 */
+		PORT_START();  /* 1807 */
 		PORT_BIT( 0x0f, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_COIN2    );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_COIN1    );
@@ -446,7 +446,7 @@ public class lasso
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_wwjgtin = new InputPortPtr(){ public void handler() { 
-		PORT_START /* 1804 */
+		PORT_START();  /* 1804 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_4WAY );
@@ -456,7 +456,7 @@ public class lasso
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START /* 1805 */
+		PORT_START();  /* 1805 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_COCKTAIL | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_COCKTAIL | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_COCKTAIL | IPF_4WAY );
@@ -466,7 +466,7 @@ public class lasso
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START /* 1806 */
+		PORT_START();  /* 1806 */
 		PORT_DIPNAME( 0x01, 0x01, "Unknown 1-0*" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -492,7 +492,7 @@ public class lasso
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START /* 1807 */
+		PORT_START();  /* 1807 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Bonus_Life"));
 		PORT_DIPSETTING(    0x01, "50k" );
 		PORT_DIPSETTING(    0x00, "20k" );

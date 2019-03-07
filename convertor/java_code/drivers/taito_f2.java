@@ -1781,7 +1781,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x00, "Hardest" );
 	
 	#define TAITO_F2_PLAYERS_INPUT( player ) \
-		PORT_START \
+		PORT_START();  \
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | player );\
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | player );\
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | player );\
@@ -1791,7 +1791,7 @@ public class taito_f2
 	/* 0x40 and 0x80 are not always the same in all games, so they are not included here */
 	
 	#define TAITO_F2_SYSTEM_INPUT \
-		PORT_START \
+		PORT_START();  \
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_TILT );\
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE1 );\
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN1 );\
@@ -1800,7 +1800,7 @@ public class taito_f2
 	
 	
 	static InputPortPtr input_ports_finalb = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		/* Not sure how to handle alternate controls */
 		PORT_DIPNAME( 0x01, 0x01, "Alternate Controls" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
@@ -1814,7 +1814,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_WORLD_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
@@ -1854,7 +1854,7 @@ public class taito_f2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_finalbj = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		/* Not sure how to handle alternate controls */
 		PORT_DIPNAME( 0x01, 0x01, "Alternate Controls" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
@@ -1868,7 +1868,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
@@ -1908,7 +1908,7 @@ public class taito_f2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_dondokod = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1921,7 +1921,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_WORLD_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x0c, "10k and 100k" );
@@ -1959,7 +1959,7 @@ public class taito_f2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_dondokdu = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1972,7 +1972,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_US_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x0c, "10k and 100k" );
@@ -2010,7 +2010,7 @@ public class taito_f2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_dondokdj = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -2023,7 +2023,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x0c, "10k and 100k" );
@@ -2061,7 +2061,7 @@ public class taito_f2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_megab = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
@@ -2074,7 +2074,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_WORLD_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x0c, "100k only" );
@@ -2112,7 +2112,7 @@ public class taito_f2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_megabj = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
@@ -2125,7 +2125,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x0c, "100k only" );
@@ -2163,7 +2163,7 @@ public class taito_f2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_thundfox = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unused") );  // all 2 in manual
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -2176,7 +2176,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_WORLD_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x04, 0x04, "Timer" );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
@@ -2215,7 +2215,7 @@ public class taito_f2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_thndfoxu = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unused") );  // all 2 in manual
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -2228,7 +2228,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_US_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x04, 0x04, "Timer" );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
@@ -2267,7 +2267,7 @@ public class taito_f2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_thndfoxj = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unused") );  // all 2 in manual
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -2280,7 +2280,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_NEW_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x04, 0x04, "Timer" );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
@@ -2319,7 +2319,7 @@ public class taito_f2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_cameltry = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
@@ -2332,7 +2332,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_US_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, "Start remain time" );
 		PORT_DIPSETTING(    0x00, "35" );
@@ -2351,7 +2351,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x80, "Single" );
 		PORT_DIPSETTING(    0x00, "Dual" );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -2361,7 +2361,7 @@ public class taito_f2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -2378,15 +2378,15 @@ public class taito_f2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START  /* Paddle A */
+		PORT_START();   /* Paddle A */
 		PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_PLAYER1, 100, 20, 0, 0 );
 	
-		PORT_START  /* Paddle B */
+		PORT_START();   /* Paddle B */
 		PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_PLAYER2, 100, 20, 0, 0 );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_cameltrj = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
@@ -2399,7 +2399,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, "Start remain time" );
 		PORT_DIPSETTING(    0x00, "35" );
@@ -2418,7 +2418,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x80, "Single" );
 		PORT_DIPSETTING(    0x00, "Dual" );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -2428,7 +2428,7 @@ public class taito_f2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -2445,15 +2445,15 @@ public class taito_f2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START  /* Paddle A */
+		PORT_START();   /* Paddle A */
 		PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_PLAYER1, 100, 20, 0, 0 );
 	
-		PORT_START  /* Paddle B */
+		PORT_START();   /* Paddle B */
 		PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_PLAYER2, 100, 20, 0, 0 );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_qtorimon = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unused") ); // all 5 in manual
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -2466,7 +2466,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unused") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
@@ -2486,7 +2486,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER1 );
@@ -2496,7 +2496,7 @@ public class taito_f2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER2 );
@@ -2515,7 +2515,7 @@ public class taito_f2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_liquidk = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
@@ -2528,7 +2528,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_WORLD_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x0c, "30k and 100k" );
@@ -2566,7 +2566,7 @@ public class taito_f2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_liquidku = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
@@ -2579,7 +2579,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_US_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x0c, "30k and 100k" );
@@ -2617,7 +2617,7 @@ public class taito_f2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_mizubaku = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
@@ -2630,7 +2630,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_NEW_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x0c, "30k and 100k" );
@@ -2668,7 +2668,7 @@ public class taito_f2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_ssi = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
@@ -2681,7 +2681,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_WORLD_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, "Shields" );
 		PORT_DIPSETTING(    0x00, "None");
@@ -2719,7 +2719,7 @@ public class taito_f2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_majest12 = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
@@ -2732,7 +2732,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_NEW_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, "Shields" );
 		PORT_DIPSETTING(    0x00, "None");
@@ -2787,7 +2787,7 @@ public class taito_f2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unused") );  //are "unused" verified from manual?
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -2800,7 +2800,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_WORLD_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unused") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
@@ -2820,7 +2820,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* IN3 */
+		PORT_START();       /* IN3 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER3 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER3 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER3 );
@@ -2838,7 +2838,7 @@ public class taito_f2
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER4 );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_START4 );
 	
-		PORT_START      /* IN4 */
+		PORT_START();       /* IN4 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN3 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN4 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE2 );
@@ -2867,7 +2867,7 @@ public class taito_f2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unused") );  //are "unused" verified from manual?
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -2880,7 +2880,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_US_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unused") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
@@ -2900,7 +2900,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* IN3 */
+		PORT_START();       /* IN3 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER3 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER3 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER3 );
@@ -2918,7 +2918,7 @@ public class taito_f2
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER4 );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_START4 );
 	
-		PORT_START      /* IN4 */
+		PORT_START();       /* IN4 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN3 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN4 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE2 );
@@ -2947,7 +2947,7 @@ public class taito_f2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unused") );  //are "unused" verified from manual?
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -2960,7 +2960,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_NEW_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unused") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
@@ -2980,7 +2980,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* IN3 */
+		PORT_START();       /* IN3 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER3 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER3 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER3 );
@@ -2998,7 +2998,7 @@ public class taito_f2
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER4 );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_START4 );
 	
-		PORT_START      /* IN4 */
+		PORT_START();       /* IN4 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN3 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN4 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE2 );
@@ -3010,7 +3010,7 @@ public class taito_f2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_pulirula = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -3023,7 +3023,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_WORLD_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, "Magic" );
 		PORT_DIPSETTING(    0x0c, "3" );
@@ -3061,7 +3061,7 @@ public class taito_f2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_pulirulj = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -3074,7 +3074,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_NEW_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, "Magic" );
 		PORT_DIPSETTING(    0x0c, "3" );
@@ -3112,7 +3112,7 @@ public class taito_f2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_qzquest = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
@@ -3125,7 +3125,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_NEW_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8  //??
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
@@ -3146,7 +3146,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER1 );
@@ -3156,7 +3156,7 @@ public class taito_f2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER2 );
@@ -3175,7 +3175,7 @@ public class taito_f2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_qzchikyu = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
@@ -3188,7 +3188,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_NEW_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8  //??
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
@@ -3209,7 +3209,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER1 );
@@ -3219,7 +3219,7 @@ public class taito_f2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER2 );
@@ -3248,7 +3248,7 @@ public class taito_f2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN3 );
@@ -3258,7 +3258,7 @@ public class taito_f2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_SERVICE3 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_TILT );
 	
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x00, "Game Over Type" );// 2p simultaneous play
 		PORT_DIPSETTING(    0x01, "Both Teams' Games Over" );
 		PORT_DIPSETTING(    0x00, "Losing Team's Game is Over" );
@@ -3271,7 +3271,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_WORLD_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, "Game Time" );
 		PORT_DIPSETTING(    0x00, "1.5 Minutes" );
@@ -3312,7 +3312,7 @@ public class taito_f2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN3 );
@@ -3322,7 +3322,7 @@ public class taito_f2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_SERVICE3 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_TILT );
 	
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x80, 0x00, "Game Over Type" );// 2p simultaneous play
 		PORT_DIPSETTING(    0x80, "Both Teams' Games Over" );
 		PORT_DIPSETTING(    0x00, "Losing Team's Game is Over" );
@@ -3344,7 +3344,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x03, DEF_STR( "1C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "1C_2C") );
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		PORT_DIPNAME( 0xc0, 0xc0, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x40, "Easy" );
 		PORT_DIPSETTING(    0xc0, "Medium" );
@@ -3389,7 +3389,7 @@ public class taito_f2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_TILT );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE2 );
@@ -3399,7 +3399,7 @@ public class taito_f2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN3 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN4 );
 	
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unused") );  //is this verified from manual?
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -3412,7 +3412,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_WORLD_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, "Cabinet Type" );
 		PORT_DIPSETTING(    0x0c, "2 players" );
@@ -3453,7 +3453,7 @@ public class taito_f2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_TILT );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE2 );
@@ -3463,7 +3463,7 @@ public class taito_f2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN3 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN4 );
 	
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unused") );  //is this verified from manual?
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -3476,7 +3476,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_NEW_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, "Cabinet Type" );
 		PORT_DIPSETTING(    0x0c, "2 players" );
@@ -3507,7 +3507,7 @@ public class taito_f2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_driftout = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unused") );  // all 5 in Service Mode
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -3520,7 +3520,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, "Control" );  /* correct acc. to service mode */
 		PORT_DIPSETTING(    0x0c, "Joystick" );
@@ -3545,7 +3545,7 @@ public class taito_f2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );/* 2P not used? */
 	
 		/* IN2 */
@@ -3555,15 +3555,15 @@ public class taito_f2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START  /* Paddle A */
+		PORT_START();   /* Paddle A */
 		PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_PLAYER1, 50, 10, 0, 0 );
 	
-		PORT_START  /* Paddle B */
+		PORT_START();   /* Paddle B */
 		PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_PLAYER2, 50, 10, 0, 0 );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_gunfront = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -3576,7 +3576,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_WORLD_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x08, "10k and every 80k" );
@@ -3614,7 +3614,7 @@ public class taito_f2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_gunfronj = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -3627,7 +3627,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_NEW_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x08, "10k and every 80k" );
@@ -3665,7 +3665,7 @@ public class taito_f2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_metalb = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -3678,7 +3678,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_WORLD_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x04, "70k and every 150k" );
@@ -3716,7 +3716,7 @@ public class taito_f2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_metalbj = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -3729,7 +3729,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_NEW_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x04, "70k and every 150k" );
@@ -3777,7 +3777,7 @@ public class taito_f2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN3 );
@@ -3787,7 +3787,7 @@ public class taito_f2
 		PORT_BITX(0x40, IP_ACTIVE_LOW, IPT_SERVICE, "Service C", KEYCODE_MINUS, IP_JOY_NONE );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_TILT );
 	
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
@@ -3800,7 +3800,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_WORLD_8
 	
-		PORT_START /* DSW B, missing a timer speed maybe? */
+		PORT_START();  /* DSW B, missing a timer speed maybe? */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
@@ -3842,7 +3842,7 @@ public class taito_f2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN3 );
@@ -3853,7 +3853,7 @@ public class taito_f2
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_TILT );
 	
 		/* hthero and deadconj have the dips in inverted order */
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x80, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
@@ -3875,7 +3875,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x03, DEF_STR( "1C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "1C_2C") );
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		PORT_DIPNAME( 0xc0, 0xc0, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x40, "Easy" );
 		PORT_DIPSETTING(    0xc0, "Medium" );
@@ -3911,7 +3911,7 @@ public class taito_f2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_dinorex = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unused") );  //are "unused" verified from manual?
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -3924,7 +3924,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_WORLD_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, "Damage" );
 		PORT_DIPSETTING(    0x08, "Small" );
@@ -3963,7 +3963,7 @@ public class taito_f2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_dinorexj = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unused") );  //are "unused" verified from manual?
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -3976,7 +3976,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_NEW_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, "Damage" );
 		PORT_DIPSETTING(    0x08, "Small" );
@@ -4032,7 +4032,7 @@ public class taito_f2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -4045,7 +4045,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_WORLD_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
@@ -4068,7 +4068,7 @@ public class taito_f2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_koshien = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A, one lets you control fielders ? */
+		PORT_START();  /* DSW A, one lets you control fielders ? */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -4081,7 +4081,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_NEW_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x04, 0x04, "Timer" );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
@@ -4101,7 +4101,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x00, "Single" );
 		PORT_DIPSETTING(    0x80, "Dual" );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER1 );
@@ -4118,7 +4118,7 @@ public class taito_f2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
@@ -4130,7 +4130,7 @@ public class taito_f2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_quizhq = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER1 );
@@ -4140,7 +4140,7 @@ public class taito_f2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER2 );
@@ -4157,7 +4157,7 @@ public class taito_f2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unused") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -4170,7 +4170,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_NEW_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, "Time" );
 		PORT_DIPSETTING(    0x0c, "5 seconds" );
@@ -4191,7 +4191,7 @@ public class taito_f2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_qjinsei = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -4204,7 +4204,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_NEW_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
@@ -4225,7 +4225,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER1 );
@@ -4235,7 +4235,7 @@ public class taito_f2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER2 );
@@ -4254,7 +4254,7 @@ public class taito_f2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_qcrayon = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -4267,7 +4267,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_NEW_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, "Time" );
 		PORT_DIPSETTING(    0x00, "6 seconds" );
@@ -4287,7 +4287,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER1 );
@@ -4297,7 +4297,7 @@ public class taito_f2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER2 );
@@ -4316,7 +4316,7 @@ public class taito_f2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_qcrayon2 = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -4329,7 +4329,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_NEW_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
@@ -4350,7 +4350,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x80, "Joystick" );
 		PORT_DIPSETTING(    0x00, "4 Buttons" );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
@@ -4360,7 +4360,7 @@ public class taito_f2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
@@ -4379,7 +4379,7 @@ public class taito_f2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_yuyugogo = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -4392,7 +4392,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_NEW_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
@@ -4413,7 +4413,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER1 );
@@ -4423,7 +4423,7 @@ public class taito_f2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER2 );
@@ -4442,7 +4442,7 @@ public class taito_f2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_mjnquest = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BITX(0x01, IP_ACTIVE_LOW, 0, "P1 A", KEYCODE_A, IP_JOY_NONE );
 		PORT_BITX(0x02, IP_ACTIVE_LOW, 0, "P1 E", KEYCODE_E, IP_JOY_NONE );
 		PORT_BITX(0x04, IP_ACTIVE_LOW, 0, "P1 I", KEYCODE_I, IP_JOY_NONE );
@@ -4451,7 +4451,7 @@ public class taito_f2
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BITX(0x01, IP_ACTIVE_LOW, 0, "P1 B", KEYCODE_B, IP_JOY_NONE );
 		PORT_BITX(0x02, IP_ACTIVE_LOW, 0, "P1 F", KEYCODE_F, IP_JOY_NONE );
 		PORT_BITX(0x04, IP_ACTIVE_LOW, 0, "P1 J", KEYCODE_J, IP_JOY_NONE );
@@ -4459,7 +4459,7 @@ public class taito_f2
 		PORT_BITX(0x10, IP_ACTIVE_LOW, 0, "P1 Reach", KEYCODE_LSHIFT, IP_JOY_NONE );
 		PORT_BIT( 0xe0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BITX(0x01, IP_ACTIVE_LOW, 0, "P1 C", KEYCODE_C, IP_JOY_NONE );
 		PORT_BITX(0x02, IP_ACTIVE_LOW, 0, "P1 G", KEYCODE_G, IP_JOY_NONE );
 		PORT_BITX(0x04, IP_ACTIVE_LOW, 0, "P1 K", KEYCODE_K, IP_JOY_NONE );
@@ -4467,27 +4467,27 @@ public class taito_f2
 		PORT_BITX(0x10, IP_ACTIVE_LOW, 0, "P1 Ron", KEYCODE_Z, IP_JOY_NONE );
 		PORT_BIT( 0xe0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* IN3 */
+		PORT_START();       /* IN3 */
 		PORT_BITX(0x01, IP_ACTIVE_LOW, 0, "P1 D", KEYCODE_D, IP_JOY_NONE );
 		PORT_BITX(0x02, IP_ACTIVE_LOW, 0, "P1 H", KEYCODE_H, IP_JOY_NONE );
 		PORT_BITX(0x04, IP_ACTIVE_LOW, 0, "P1 L", KEYCODE_L, IP_JOY_NONE );
 		PORT_BITX(0x08, IP_ACTIVE_LOW, 0, "P1 Pon", KEYCODE_LALT, IP_JOY_NONE );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* IN4 */
+		PORT_START();       /* IN4 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* IN5 */
+		PORT_START();       /* IN5 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_TILT );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );	// ?
 		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* IN6 */
+		PORT_START();       /* IN6 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* IN7:DSW A */
+		PORT_START();       /* IN7:DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -4500,7 +4500,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_NEW_8
 	
-		PORT_START      /* IN8:DSW B */
+		PORT_START();       /* IN8:DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
@@ -4523,7 +4523,7 @@ public class taito_f2
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_yesnoj = new InputPortPtr(){ public void handler() {    // apparently no test mode, though text in rom suggests printer test
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
@@ -4534,7 +4534,7 @@ public class taito_f2
 		TAITO_F2_SYSTEM_INPUT
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START /* DSW A ??? */
+		PORT_START();  /* DSW A ??? */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -4560,7 +4560,7 @@ public class taito_f2
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START /* DSW B ? */
+		PORT_START();  /* DSW B ? */
 		PORT_DIPNAME( 0x01, 0x00, "Results Printer" );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );

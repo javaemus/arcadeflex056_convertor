@@ -125,7 +125,7 @@ public class redclash
 	
 	
 	static InputPortPtr input_ports_redclash = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
@@ -135,7 +135,7 @@ public class redclash
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
@@ -147,7 +147,7 @@ public class redclash
 		/* them this way is enough to get the game running. */
 		PORT_BIT( 0xc0, 0x40, IPT_VBLANK );
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x03, 0x03, "Difficulty?" );
 		PORT_DIPSETTING(    0x03, "Easy?" );
 		PORT_DIPSETTING(    0x02, "Medium?" );
@@ -171,7 +171,7 @@ public class redclash
 		PORT_DIPSETTING(    0x80, "5" );
 		PORT_DIPSETTING(    0x40, "7" );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x0f, 0x0f, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "6C_1C") );
 		PORT_DIPSETTING(    0x05, DEF_STR( "5C_1C") );
@@ -207,7 +207,7 @@ public class redclash
 		PORT_DIPSETTING(    0x10, DEF_STR( "1C_8C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_9C") );
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		/* The coin slots are not memory mapped. Coin Left causes a NMI, */
 		/* Coin Right an IRQ. This fake input port is used by the interrupt */
 		/* handler to be notified of coin insertions. We use IMPULSE to */

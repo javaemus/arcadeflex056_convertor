@@ -201,7 +201,7 @@ public class turbo
 	 *********************************************************************/
 	
 	static InputPortPtr input_ports_turbo = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON2 );			/* ACCEL B */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );			/* ACCEL A */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_TOGGLE );/* SHIFT */
@@ -211,7 +211,7 @@ public class turbo
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START	/* DSW 1 */
+		PORT_START(); 	/* DSW 1 */
 		PORT_DIPNAME( 0x03, 0x03, "Car On Extended Play" );
 		PORT_DIPSETTING( 0x03, "1" );
 		PORT_DIPSETTING( 0x02, "2" );
@@ -231,7 +231,7 @@ public class turbo
 		PORT_DIPSETTING( 0x00, DEF_STR( "On") );
 		PORT_BIT( 0xc0, 0xc0, IPT_UNUSED );
 	
-		PORT_START	/* DSW 2 */
+		PORT_START(); 	/* DSW 2 */
 		PORT_DIPNAME( 0x03, 0x03, "Game Time" );
 		PORT_DIPSETTING( 0x00, "60 seconds" );
 		PORT_DIPSETTING( 0x01, "70 seconds" );
@@ -256,7 +256,7 @@ public class turbo
 		PORT_DIPSETTING(	0x40, DEF_STR( "1C_3C") );
 		PORT_DIPSETTING(	0x60, DEF_STR( "1C_6C") );
 	
-		PORT_START	/* DSW 3 */
+		PORT_START(); 	/* DSW 3 */
 		PORT_BIT( 0x0f, 0x00, IPT_UNUSED );	/* Merged with collision bits */
 		PORT_BIT( 0x30, 0x00, IPT_UNUSED );
 		PORT_DIPNAME( 0x40, 0x40, "Tachometer" );
@@ -266,7 +266,7 @@ public class turbo
 		PORT_DIPSETTING(	0x80, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x00, "Cockpit");
 	
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_ANALOG( 0xff, 0, IPT_DIAL | IPF_CENTER, 10, 30, 0, 0 );
 	INPUT_PORTS_END(); }}; 
 	

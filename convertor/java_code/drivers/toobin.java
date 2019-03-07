@@ -172,7 +172,7 @@ public class toobin
 	 *************************************/
 	
 	static InputPortPtr input_ports_toobin = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* ff8800 */
+		PORT_START(); 	/* ff8800 */
 		PORT_BITX(0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_PLAYER2, "P2 R Paddle Forward", KEYCODE_L, IP_JOY_DEFAULT );
 		PORT_BITX(0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_PLAYER2, "P2 L Paddle Forward", KEYCODE_J, IP_JOY_DEFAULT );
 		PORT_BITX(0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_PLAYER2, "P2 L Paddle Backward", KEYCODE_U, IP_JOY_DEFAULT );
@@ -187,7 +187,7 @@ public class toobin
 		PORT_BITX(0x0200, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2, "P2 Throw", KEYCODE_RCONTROL, IP_JOY_DEFAULT );
 		PORT_BIT( 0xfc00, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* ff9000 */
+		PORT_START(); 	/* ff9000 */
 		PORT_BIT( 0x03ff, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x0400, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x0800, IP_ACTIVE_LOW, IPT_UNUSED );

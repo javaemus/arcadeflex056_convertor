@@ -888,7 +888,7 @@ public class bjtwin
 	
 	
 	static InputPortPtr input_ports_vandyke = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -898,7 +898,7 @@ public class bjtwin
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );/* Maybe unused */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );/* Maybe unused */
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -916,7 +916,7 @@ public class bjtwin
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_START2 );//guess
 	
-		PORT_START	/* DSW 1 */
+		PORT_START(); 	/* DSW 1 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(      0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x00, DEF_STR( "On") );
@@ -942,7 +942,7 @@ public class bjtwin
 		PORT_DIPSETTING(      0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x00, DEF_STR( "On") );
 	
-		PORT_START	/* DSW 2 */
+		PORT_START(); 	/* DSW 2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(      0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x00, DEF_STR( "On") );
@@ -970,7 +970,7 @@ public class bjtwin
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_tharrier = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -988,7 +988,7 @@ public class bjtwin
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x8000, IP_ACTIVE_HIGH, IPT_SPECIAL );/* Mcu status? */
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -1006,7 +1006,7 @@ public class bjtwin
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );
 	
-		PORT_START	/* DSW */
+		PORT_START(); 	/* DSW */
 		PORT_DIPNAME( 0x0001, 0x0001, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
@@ -1058,7 +1058,7 @@ public class bjtwin
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_mustang = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -1068,7 +1068,7 @@ public class bjtwin
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -1086,7 +1086,7 @@ public class bjtwin
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* DSW */
+		PORT_START(); 	/* DSW */
 		PORT_DIPNAME( 0x0001, 0x0001, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
@@ -1138,7 +1138,7 @@ public class bjtwin
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_hachamf = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -1148,7 +1148,7 @@ public class bjtwin
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );//bryan:  test mode in some games?
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -1166,7 +1166,7 @@ public class bjtwin
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START  /* DSW A */
+		PORT_START();   /* DSW A */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "3C_1C") );
@@ -1192,7 +1192,7 @@ public class bjtwin
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START  /* DSW B */
+		PORT_START();   /* DSW B */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "1" );
 		PORT_DIPSETTING(    0x02, "2" );
@@ -1218,7 +1218,7 @@ public class bjtwin
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_strahl = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -1228,7 +1228,7 @@ public class bjtwin
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );//bryan:  test mode in some games?
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -1246,7 +1246,7 @@ public class bjtwin
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START  /* DSW A */
+		PORT_START();   /* DSW A */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "5C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "4C_1C") );
@@ -1272,7 +1272,7 @@ public class bjtwin
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START  /* DSW B */
+		PORT_START();   /* DSW B */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x02, "2" );
 		PORT_DIPSETTING(    0x03, "3" );
@@ -1295,7 +1295,7 @@ public class bjtwin
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_bioship = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -1305,7 +1305,7 @@ public class bjtwin
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );//bryan:  test mode in some games?
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -1323,7 +1323,7 @@ public class bjtwin
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x0001, 0x0001, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
@@ -1345,7 +1345,7 @@ public class bjtwin
 		PORT_DIPSETTING(      0x0080, "4" );
 		PORT_DIPSETTING(      0x0040, "5" );
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		PORT_DIPNAME( 0x0001, 0x0001, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
@@ -1373,7 +1373,7 @@ public class bjtwin
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_tdragon = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -1383,7 +1383,7 @@ public class bjtwin
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -1401,7 +1401,7 @@ public class bjtwin
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* DSW 1 */
+		PORT_START(); 	/* DSW 1 */
 		PORT_DIPNAME( 0x0003, 0x0003, DEF_STR( "Lives") );
 		PORT_DIPSETTING(      0x0000, "1" );
 		PORT_DIPSETTING(      0x0002, "2" );
@@ -1450,7 +1450,7 @@ public class bjtwin
 		PORT_DIPSETTING(      0x8000, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
 	
-		PORT_START	/* DSW 2 */
+		PORT_START(); 	/* DSW 2 */
 		PORT_DIPNAME( 0x0007, 0x0007, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(      0x0004, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(      0x0005, DEF_STR( "3C_1C") );
@@ -1502,7 +1502,7 @@ public class bjtwin
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_macross = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -1512,7 +1512,7 @@ public class bjtwin
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );/* Maybe unused */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );/* Maybe unused */
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -1530,7 +1530,7 @@ public class bjtwin
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* DSW A */
+		PORT_START(); 	/* DSW A */
 		PORT_SERVICE( 0x01, IP_ACTIVE_LOW );
 		PORT_DIPNAME( 0x02, 0x02, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
@@ -1554,7 +1554,7 @@ public class bjtwin
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* DSW B */
+		PORT_START(); 	/* DSW B */
 		PORT_DIPNAME( 0x0f, 0x0f, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x0a, DEF_STR( "3C_1C") );
@@ -1592,7 +1592,7 @@ public class bjtwin
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_macross2 = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -1602,7 +1602,7 @@ public class bjtwin
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );/* Maybe unused */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );/* Maybe unused */
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -1620,7 +1620,7 @@ public class bjtwin
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* DSW A */
+		PORT_START(); 	/* DSW A */
 		PORT_SERVICE( 0x01, IP_ACTIVE_LOW );
 		PORT_DIPNAME( 0x02, 0x02, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
@@ -1644,7 +1644,7 @@ public class bjtwin
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* DSW B */
+		PORT_START(); 	/* DSW B */
 		PORT_DIPNAME( 0x0f, 0x0f, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x0a, DEF_STR( "3C_1C") );
@@ -1683,7 +1683,7 @@ public class bjtwin
 	
 	
 	static InputPortPtr input_ports_tdragon2 = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -1693,7 +1693,7 @@ public class bjtwin
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );/* Maybe unused */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );/* Maybe unused */
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -1711,7 +1711,7 @@ public class bjtwin
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* DSW A */
+		PORT_START(); 	/* DSW A */
 		PORT_SERVICE( 0x01, IP_ACTIVE_LOW );
 		PORT_DIPNAME( 0x02, 0x02, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
@@ -1734,7 +1734,7 @@ public class bjtwin
 		PORT_DIPSETTING(    0xc0, "3" );
 		PORT_DIPSETTING(    0x80, "4" );
 	
-		PORT_START	/* DSW B */
+		PORT_START(); 	/* DSW B */
 		PORT_DIPNAME( 0x0f, 0x0f, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x0a, DEF_STR( "3C_1C") );
@@ -1772,7 +1772,7 @@ public class bjtwin
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_gunnail = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -1782,7 +1782,7 @@ public class bjtwin
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );/* Maybe unused */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );/* Maybe unused */
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -1800,7 +1800,7 @@ public class bjtwin
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* DSW A */
+		PORT_START(); 	/* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1826,7 +1826,7 @@ public class bjtwin
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1854,7 +1854,7 @@ public class bjtwin
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_sabotenb = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -1864,7 +1864,7 @@ public class bjtwin
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );/* Maybe unused */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );/* Maybe unused */
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -1882,7 +1882,7 @@ public class bjtwin
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* DSW A */
+		PORT_START(); 	/* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1900,7 +1900,7 @@ public class bjtwin
 		PORT_DIPSETTING(    0xc0, "3" );
 		PORT_DIPSETTING(    0x80, "4" );
 	
-		PORT_START	/* DSW B */
+		PORT_START(); 	/* DSW B */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1928,7 +1928,7 @@ public class bjtwin
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_bjtwin = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -1938,7 +1938,7 @@ public class bjtwin
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );/* Maybe unused */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );/* Maybe unused */
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -1956,7 +1956,7 @@ public class bjtwin
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* DSW A */
+		PORT_START(); 	/* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1980,7 +1980,7 @@ public class bjtwin
 		PORT_DIPSETTING(    0xc0, "3" );
 		PORT_DIPSETTING(    0x80, "4" );
 	
-		PORT_START	/* DSW B */
+		PORT_START(); 	/* DSW B */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -2008,7 +2008,7 @@ public class bjtwin
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_nouryoku = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -2018,7 +2018,7 @@ public class bjtwin
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -2036,7 +2036,7 @@ public class bjtwin
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* DSW A */
+		PORT_START(); 	/* DSW A */
 		PORT_DIPNAME( 0x03, 0x03, "Life Decrease Speed" );
 		PORT_DIPSETTING(    0x02, "Slow" );
 		PORT_DIPSETTING(    0x03, "Normal" );
@@ -2060,7 +2060,7 @@ public class bjtwin
 		PORT_DIPSETTING(    0x40, DEF_STR( "1C_3C") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_4C") );
 	
-		PORT_START	/* DSW B */
+		PORT_START(); 	/* DSW B */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );

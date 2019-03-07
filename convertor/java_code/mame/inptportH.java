@@ -196,7 +196,7 @@ public class inptportH
 		{ 0, 0, IPT_END, 0  } \
 		};
 	/* start of a new input port */
-	#define PORT_START \
+	#define PORT_START();  \
 		{ 0, 0, IPT_PORT, 0 },
 	
 	/* input bit definition */

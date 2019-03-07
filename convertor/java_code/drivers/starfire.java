@@ -220,7 +220,7 @@ public class starfire
 	 *************************************/
 	
 	static InputPortPtr input_ports_starfire = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x03, 0x00, "Time" );
 		PORT_DIPSETTING(    0x00, "90 Sec" );
 		PORT_DIPSETTING(    0x01, "80 Sec" );
@@ -242,7 +242,7 @@ public class starfire
 		PORT_DIPSETTING(    0x40, "fixed length+fire" );
 		PORT_SERVICE( 0x80, IP_ACTIVE_HIGH );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_BUTTON1 );
@@ -252,19 +252,19 @@ public class starfire
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START  /* IN2 */
+		PORT_START();   /* IN2 */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 100, 10, 0, 255 );
 	
-		PORT_START  /* IN3 */
+		PORT_START();   /* IN3 */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y | IPF_REVERSE, 100, 10, 0, 255 );
 	
-		PORT_START /* Throttle (IN4) [not really player 2, but we need to separate it out] */
+		PORT_START();  /* Throttle (IN4) [not really player 2, but we need to separate it out] */
 		PORT_ANALOG( 0xff, 0x80, IPT_PADDLE_V | IPF_REVERSE | IPF_PLAYER2, 100, 10, 0, 255 );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_fireone = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x03, "2 Coins/1 Player" );
 		PORT_DIPSETTING(    0x02, "2 Coins/1 or 2 Players" );
@@ -285,7 +285,7 @@ public class starfire
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_HIGH );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT_IMPULSE( 0x04, IP_ACTIVE_HIGH, IPT_COIN1, 1 );
@@ -295,12 +295,12 @@ public class starfire
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START  /* IN2 */
+		PORT_START();   /* IN2 */
 		PORT_ANALOG( 0x3f, 0x20, IPT_PADDLE | IPF_PLAYER1, 50, 1, 0, 63 );
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER1 );
 	
-		PORT_START  /* IN3 */
+		PORT_START();   /* IN3 */
 		PORT_ANALOG( 0x3f, 0x20, IPT_PADDLE | IPF_PLAYER2, 50, 1, 0, 63 );
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER2 );

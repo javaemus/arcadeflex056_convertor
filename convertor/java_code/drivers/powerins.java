@@ -113,7 +113,7 @@ public class powerins
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_powerins = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - $100000 - Coins
+		PORT_START(); 	// IN0 - $100000 - Coins
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_COIN1    );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_COIN2    );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -123,7 +123,7 @@ public class powerins
 		PORT_BIT( 0x0040, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT( 0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 	
-		PORT_START	// IN1 - $100002 - Player 1 & 2
+		PORT_START(); 	// IN1 - $100002 - Player 1 & 2
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT	 | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER1 );
@@ -142,7 +142,7 @@ public class powerins
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_BUTTON3        | IPF_PLAYER2 );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_BUTTON4        | IPF_PLAYER2 );
 	
-		PORT_START	// IN2 - $100008 - DSW 1
+		PORT_START(); 	// IN2 - $100008 - DSW 1
 		PORT_DIPNAME( 0x0001, 0x0001, DEF_STR( "Free_Play") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
@@ -168,7 +168,7 @@ public class powerins
 		PORT_DIPSETTING(      0x0080, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") ); )
 	
-		PORT_START	// IN3 - $10000a - DSW 2
+		PORT_START(); 	// IN3 - $10000a - DSW 2
 		PORT_DIPNAME( 0x0001, 0x0001, "Coin Slots" );
 		PORT_DIPSETTING(      0x0001, "1" );
 		PORT_DIPSETTING(      0x0000, "2" );

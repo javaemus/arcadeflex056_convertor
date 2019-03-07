@@ -184,7 +184,7 @@ public class lkage
 	/***************************************************************************/
 	
 	static InputPortPtr input_ports_lkage = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* DSW1 */
+		PORT_START();       /* DSW1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x03, "10000" );/* unconfirmed */
 		PORT_DIPSETTING(    0x02, "15000" );/* unconfirmed */
@@ -208,7 +208,7 @@ public class lkage
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START      /* DSW2 */
+		PORT_START();       /* DSW2 */
 		PORT_DIPNAME( 0x0f, 0x00, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x0f, DEF_STR( "9C_1C") );
 		PORT_DIPSETTING(    0x0e, DEF_STR( "8C_1C") );
@@ -244,7 +244,7 @@ public class lkage
 		PORT_DIPSETTING(    0x60, DEF_STR( "1C_7C") );
 		PORT_DIPSETTING(    0x70, DEF_STR( "1C_8C") );
 	
-		PORT_START      /* DSW3 */
+		PORT_START();       /* DSW3 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x03, "Easiest" );/* unconfirmed */
 		PORT_DIPSETTING(    0x02, "Easy" );   /* unconfirmed */
@@ -269,7 +269,7 @@ public class lkage
 		PORT_DIPSETTING(    0x80, "A and B" );
 		PORT_DIPSETTING(    0x00, "A only" );
 	
-		PORT_START      /* Service */
+		PORT_START();       /* Service */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN3 );
@@ -279,7 +279,7 @@ public class lkage
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
@@ -289,7 +289,7 @@ public class lkage
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );

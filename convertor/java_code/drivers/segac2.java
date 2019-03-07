@@ -859,30 +859,30 @@ public class segac2
 	
 	
 	static InputPortPtr input_ports_columns = new InputPortPtr(){ public void handler() {  /* Columns Input Ports */
-	    PORT_START
+	    PORT_START(); 
 	    COINS
 	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START		/* Player 1 Controls */
+		PORT_START(); 		/* Player 1 Controls */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );    // Button 'Rotate'
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED  );    // Button 2 Unused
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED  );    // Button 3 Unused
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_1
 	
-		PORT_START		/* Player 2 Controls */
+		PORT_START(); 		/* Player 2 Controls */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );   // Button 'Rotate'
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED                );   // Button 2 Unused
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED                );   // Button 3 Unused
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_2
 	
-		PORT_START		/* Coinage */
+		PORT_START(); 		/* Coinage */
 	    COIN_A
 	    COIN_B
 	
-		PORT_START		 /* Game Options */
+		PORT_START(); 		 /* Game Options */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );							// Game Options..
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -912,30 +912,30 @@ public class segac2
 	
 	
 	static InputPortPtr input_ports_columns2 = new InputPortPtr(){ public void handler() {  /* Columns 2 Input Ports */
-	    PORT_START
+	    PORT_START(); 
 	    COINS
 	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START		/* Player 1 Controls */
+		PORT_START(); 		/* Player 1 Controls */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );    // Button 'Rotate'
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED  );    // Button 2 Unused == Button 1
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED  );    // Button 3 Unused == Button 1
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_1
 	
-		PORT_START		/* Player 2 Controls */
+		PORT_START(); 		/* Player 2 Controls */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );    // Button 'Rotate'
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED                );    // Button 2 Unused == Button 1
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED                );    // Button 3 Unused == Button 1
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_2
 	
-		PORT_START		/* Coinage */
+		PORT_START(); 		/* Coinage */
 	    COIN_A
 	    COIN_B
 	
-		PORT_START		 /* Game Options */
+		PORT_START(); 		 /* Game Options */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
@@ -962,30 +962,30 @@ public class segac2
 	
 	
 	static InputPortPtr input_ports_borench = new InputPortPtr(){ public void handler() {  /* Borench Input Ports */
-		PORT_START		/* Coins, Start, Service etc, Same for All */
+		PORT_START(); 		/* Coins, Start, Service etc, Same for All */
 	    COINS
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START		/* Player 1 Controls */
+		PORT_START(); 		/* Player 1 Controls */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );     // Button 'Set'
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );     // Button 'Turbo'
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED  );     // Button 3 Unused
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_1
 	
-		PORT_START		/* Player 2 Controls */
+		PORT_START(); 		/* Player 2 Controls */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );      // Button 'Set'
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );      // Button 'Turbo'
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED                );      // Button 3 Unused
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_2
 	
-		PORT_START		/* Coinage */
+		PORT_START(); 		/* Coinage */
 	    COIN_A
 	    COIN_B
 	
-		PORT_START		 /* Game Options */
+		PORT_START(); 		 /* Game Options */
 		PORT_DIPNAME( 0x01, 0x01, "Credits to Start" );
 		PORT_DIPSETTING(    0x01, "1" );
 		PORT_DIPSETTING(    0x00, "2" );
@@ -1011,30 +1011,30 @@ public class segac2
 	
 	
 	static InputPortPtr input_ports_tfrceac = new InputPortPtr(){ public void handler() {  /* ThunderForce AC Input Ports */
-		PORT_START		/* Coins, Start, Service etc, Same for All */
+		PORT_START(); 		/* Coins, Start, Service etc, Same for All */
 	    COINS
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START		/* Player 1 Controls */
+		PORT_START(); 		/* Player 1 Controls */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON2 );     // Button Speed Change
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );     // Button Shot
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON3 );     // Button Weapon Select
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_1
 	
-		PORT_START		/* Player 2 Controls */
+		PORT_START(); 		/* Player 2 Controls */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );     // Button Speed Change
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );     // Button Shot
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );     // Button Weapon Select
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_2
 	
-		PORT_START		/* Coinage */
+		PORT_START(); 		/* Coinage */
 	    COIN_A
 	    COIN_B
 	
-		PORT_START		 /* Game Options */
+		PORT_START(); 		 /* Game Options */
 		PORT_DIPNAME( 0x01, 0x01, "Credits to Start" );
 		PORT_DIPSETTING(    0x01, "1" );
 		PORT_DIPSETTING(    0x00, "2" );
@@ -1060,30 +1060,30 @@ public class segac2
 	
 	
 	static InputPortPtr input_ports_puyopuyo = new InputPortPtr(){ public void handler() {  /* PuyoPuyo Input Ports */
-		PORT_START		/* Coins, Start, Service etc, Same for All */
+		PORT_START(); 		/* Coins, Start, Service etc, Same for All */
 	    COINS
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START		/* Player 1 Controls */
+		PORT_START(); 		/* Player 1 Controls */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );       // Button 'Rotate'
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED  );       // Button 2 Unused == Button 1
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED  );
 	    PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_1
 	
-		PORT_START		/* Player 2 Controls */
+		PORT_START(); 		/* Player 2 Controls */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );     // Button 'Rotate'
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED                );     // Button 2 Unused == Button 1
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED                );     // Button 3 Unused == Button 1
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_2
 	
-		PORT_START		/* Coinage */
+		PORT_START(); 		/* Coinage */
 	    COIN_A
 	    COIN_B
 	
-		PORT_START		 /* Game Options */
+		PORT_START(); 		 /* Game Options */
 	    PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unused") );
 	    PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 	    PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1111,30 +1111,30 @@ public class segac2
 	
 	
 	static InputPortPtr input_ports_stkclmns = new InputPortPtr(){ public void handler() {  /* Stack Columns Input Ports */
-		PORT_START		/* Coins, Start, Service etc, Same for All */
+		PORT_START(); 		/* Coins, Start, Service etc, Same for All */
 	    COINS
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START		/* Player 1 Controls */
+		PORT_START(); 		/* Player 1 Controls */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );     // Button 'Rotate'
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );     // Button 'Attack'
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED  );     // Button 3 Unused
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_1
 	
-		PORT_START		/* Player 2 Controls */
+		PORT_START(); 		/* Player 2 Controls */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );     // Button 'Rotate'
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );     // Button 'Attack'
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED                );     // Button 3 Unused
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_2
 	
-		PORT_START		/* Coinage */
+		PORT_START(); 		/* Coinage */
 	    COIN_A
 	    COIN_B
 	
-		PORT_START		 /* Game Options */
+		PORT_START(); 		 /* Game Options */
 	    PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unused") );
 	    PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 	    PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1165,30 +1165,30 @@ public class segac2
 	
 	
 	static InputPortPtr input_ports_potopoto = new InputPortPtr(){ public void handler() {  /* PotoPoto Input Ports */
-		PORT_START		/* Coins, Start, Service etc, Same for All */
+		PORT_START(); 		/* Coins, Start, Service etc, Same for All */
 	    COINS
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START		/* Player 1 Controls */
+		PORT_START(); 		/* Player 1 Controls */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );    // Button 'Bomb'
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED  );    // Button 2 Unused == Button 1
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED  );    // Button 3 Unused == Button 1
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_1
 	
-		PORT_START		/* Player 2 Controls */
+		PORT_START(); 		/* Player 2 Controls */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );   // Button 'Bomb'
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED                );   // Button 2 Unused == Button 1
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED                );   // Button 3 Unused == Button 1
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_2
 	
-		PORT_START		/* Coinage */
+		PORT_START(); 		/* Coinage */
 	    COIN_A
 	    COIN_B
 	
-		PORT_START		 /* Game Options */
+		PORT_START(); 		 /* Game Options */
 		PORT_DIPNAME( 0x01, 0x01, "Credits to Start" );
 		PORT_DIPSETTING(    0x01, "1" );
 		PORT_DIPSETTING(    0x00, "2" );
@@ -1216,30 +1216,30 @@ public class segac2
 	
 	
 	static InputPortPtr input_ports_zunkyou = new InputPortPtr(){ public void handler() {  /* ZunkYou Input Ports */
-		PORT_START		/* Coins, Start, Service etc, Same for All */
+		PORT_START(); 		/* Coins, Start, Service etc, Same for All */
 	    COINS
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START		/* Player 1 Controls */
+		PORT_START(); 		/* Player 1 Controls */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );      // Button 'Shot'
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );      // Button 'Bomb'
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED  );      // Button 3 Unused
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_1
 	
-		PORT_START		/* Player 2 Controls */
+		PORT_START(); 		/* Player 2 Controls */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );     // Button 'Shot'
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );     // Button 'Bomb'
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED                );     // Button 3 Unused
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_2
 	
-		PORT_START		/* Coinage */
+		PORT_START(); 		/* Coinage */
 	    COIN_A
 	    COIN_B
 	
-		PORT_START		 /* Game Options */
+		PORT_START(); 		 /* Game Options */
 		PORT_DIPNAME( 0x01, 0x01, "Game Difficulty 1" );
 	    PORT_DIPSETTING(    0x01, "Medium" );
 		PORT_DIPSETTING(    0x00, "Hard" );
@@ -1267,30 +1267,30 @@ public class segac2
 	
 	
 	static InputPortPtr input_ports_ichidant = new InputPortPtr(){ public void handler() {  /*  Ichidant-R and Tant-R Input Ports */
-		PORT_START		/* Coins, Start, Service etc, Same for All */
+		PORT_START(); 		/* Coins, Start, Service etc, Same for All */
 	    COINS
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START		/* Player 1 Controls */
+		PORT_START(); 		/* Player 1 Controls */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );     // Button 'Rotate'
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED  );     // Button 2 Unused == Button 1
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED  );     // Button 3 Unused == Button 1
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_1
 	
-		PORT_START		/* Player 2 Controls */
+		PORT_START(); 		/* Player 2 Controls */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );   // Button 'Rotate'
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED                );   // Button 2 Unused == Button 1
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED                );   // Button 3 Unused == Button 1
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_2
 	
-		PORT_START		/* Coinage */
+		PORT_START(); 		/* Coinage */
 	    COIN_A
 	    COIN_B
 	
-		PORT_START		 /* Game Options */
+		PORT_START(); 		 /* Game Options */
 	    PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Demo_Sounds") );
 	    PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1318,30 +1318,30 @@ public class segac2
 	
 	
 	static InputPortPtr input_ports_bloxeedc = new InputPortPtr(){ public void handler() {  /*  Bloxeed Input Ports */
-		PORT_START		/* Coins, Start, Service etc, Same for All */
+		PORT_START(); 		/* Coins, Start, Service etc, Same for All */
 	    COINS
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START		/* Player 1 Controls */
+		PORT_START(); 		/* Player 1 Controls */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );     // Button 'Rotate'
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED  );     // Button 2 Unused == Button 1
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED  );     // Button 3 Unused == Button 1
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_1
 	
-		PORT_START		/* Player 2 Controls */
+		PORT_START(); 		/* Player 2 Controls */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );    // Button 'Rotate'
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED                );    // Button 2 Unused == Button 1
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED                );    // Button 3 Unused == Button 1
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_2
 	
-		PORT_START		/* Coinage */
+		PORT_START(); 		/* Coinage */
 	    COIN_A
 	    COIN_B
 	
-		PORT_START		 /* Game Options */
+		PORT_START(); 		 /* Game Options */
 	    PORT_DIPNAME( 0x01, 0x01, "VS Mode Price" );
 	    PORT_DIPSETTING(    0x00, "Same as Ordinary" );
 	    PORT_DIPSETTING(    0x01, "Double as Ordinary" );
@@ -1370,30 +1370,30 @@ public class segac2
 	
 	
 	static InputPortPtr input_ports_puyopuy2 = new InputPortPtr(){ public void handler() {  /*  Puyo Puyo 2 Input Ports */
-		PORT_START		/* Coins, Start, Service etc, Same for All */
+		PORT_START(); 		/* Coins, Start, Service etc, Same for All */
 	    COINS
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START		/* Player 1 Controls */
+		PORT_START(); 		/* Player 1 Controls */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );  // Rotate clockwise
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );  // Rotate anti-clockwise. Can be inverted using the dips
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED  );  // Button 3 Unused  _NOT_ Rannyu which is Start 1
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_1
 	
-		PORT_START		/* Player 2 Controls */
+		PORT_START(); 		/* Player 2 Controls */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED  );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_2
 	
-		PORT_START		/* Coinage */
+		PORT_START(); 		/* Coinage */
 	    COIN_A
 	    COIN_B
 	
-		PORT_START		 /* Game Options */
+		PORT_START(); 		 /* Game Options */
 	    PORT_DIPNAME( 0x01, 0x01, "Rannyu Off Button" );
 	    PORT_DIPSETTING(    0x01, "Use" );
 	    PORT_DIPSETTING(    0x00, "No Use" );

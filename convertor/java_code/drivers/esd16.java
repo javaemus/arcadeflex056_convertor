@@ -182,7 +182,7 @@ public class esd16
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_multchmp = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - $600002.w
+		PORT_START(); 	// IN0 - $600002.w
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER1 );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER1 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER1 );
@@ -201,7 +201,7 @@ public class esd16
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );// Resets the test mode
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN1 - $600005.b
+		PORT_START(); 	// IN1 - $600005.b
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_COIN1   );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_COIN2   );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_START1  );
@@ -212,7 +212,7 @@ public class esd16
 		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN2 - $600006.w
+		PORT_START(); 	// IN2 - $600006.w
 		PORT_SERVICE( 0x0001, IP_ACTIVE_LOW );
 		PORT_DIPNAME( 0x0002, 0x0002, "Coinage Type" );// Not Supported
 		PORT_DIPSETTING(      0x0002, "1" );

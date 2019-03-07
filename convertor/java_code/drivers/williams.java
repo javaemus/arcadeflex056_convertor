@@ -834,7 +834,7 @@ public class williams
 	 *************************************/
 	
 	static InputPortPtr input_ports_defender = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, IPT_BUTTON1, "Fire", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x02, IP_ACTIVE_HIGH, IPT_BUTTON2, "Thrust", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x04, IP_ACTIVE_HIGH, IPT_BUTTON3, "Smart Bomb", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
@@ -844,11 +844,11 @@ public class williams
 		PORT_BITX(0x40, IP_ACTIVE_HIGH, IPT_BUTTON6, "Reverse", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_8WAY );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP | IPF_8WAY );
 		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, 0, "Auto Up", KEYCODE_F1, IP_JOY_NONE );
 		PORT_BITX(0x02, IP_ACTIVE_HIGH, 0, "Advance", KEYCODE_F2, IP_JOY_NONE );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN3 );
@@ -857,14 +857,14 @@ public class williams
 		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_TILT );
 	
-		PORT_START      /* IN3 - fake port for better joystick control */
+		PORT_START();       /* IN3 - fake port for better joystick control */
 		/* This fake port is handled via defender_input_port_1 */
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_CHEAT );
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_CHEAT );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_colony7 = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT );
@@ -874,11 +874,11 @@ public class williams
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_BUTTON1 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_BUTTON2 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON3 );
 		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );
@@ -891,7 +891,7 @@ public class williams
 	
 	
 	static InputPortPtr input_ports_stargate = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, IPT_BUTTON1, "Fire", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x02, IP_ACTIVE_HIGH, IPT_BUTTON2, "Thrust", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x04, IP_ACTIVE_HIGH, IPT_BUTTON3, "Smart Bomb", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
@@ -901,12 +901,12 @@ public class williams
 		PORT_BITX(0x40, IP_ACTIVE_HIGH, IPT_BUTTON4, "Reverse", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_8WAY );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP | IPF_8WAY );
 		PORT_BITX(0x02, IP_ACTIVE_HIGH, IPT_BUTTON5, "Inviso", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BIT( 0xfc, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, 0, "Auto Up", KEYCODE_F1, IP_JOY_NONE );
 		PORT_BITX(0x02, IP_ACTIVE_HIGH, 0, "Advance", KEYCODE_F2, IP_JOY_NONE );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN3 );
@@ -915,7 +915,7 @@ public class williams
 		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_TILT );
 	
-		PORT_START      /* IN3 - fake port for better joystick control */
+		PORT_START();       /* IN3 - fake port for better joystick control */
 		/* This fake port is handled via stargate_input_port_0 */
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_CHEAT );
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_CHEAT );
@@ -923,7 +923,7 @@ public class williams
 	
 	
 	static InputPortPtr input_ports_joust = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_2WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER2 );
@@ -932,10 +932,10 @@ public class williams
 		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0xc0, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, 0, "Auto Up", KEYCODE_F1, IP_JOY_NONE );
 		PORT_BITX(0x02, IP_ACTIVE_HIGH, 0, "Advance", KEYCODE_F2, IP_JOY_NONE );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN3 );
@@ -944,7 +944,7 @@ public class williams
 		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_TILT );
 	
-		PORT_START      /* IN3 (muxed with IN0) */
+		PORT_START();       /* IN3 (muxed with IN0) */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_2WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER1 );
@@ -956,7 +956,7 @@ public class williams
 	
 	
 	static InputPortPtr input_ports_robotron = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICKLEFT_UP );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICKLEFT_DOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICKLEFT_LEFT );
@@ -966,12 +966,12 @@ public class williams
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICKRIGHT_UP );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICKRIGHT_DOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICKRIGHT_LEFT );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICKRIGHT_RIGHT );
 		PORT_BIT( 0xfc, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, 0, "Auto Up", KEYCODE_F1, IP_JOY_NONE );
 		PORT_BITX(0x02, IP_ACTIVE_HIGH, 0, "Advance", KEYCODE_F2, IP_JOY_NONE );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN3 );
@@ -983,7 +983,7 @@ public class williams
 	
 	
 	static InputPortPtr input_ports_bubbles = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT );
@@ -991,10 +991,10 @@ public class williams
 		PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_START1 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, 0, "Auto Up", KEYCODE_F1, IP_JOY_NONE );
 		PORT_BITX(0x02, IP_ACTIVE_HIGH, 0, "Advance", KEYCODE_F2, IP_JOY_NONE );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN3 );
@@ -1006,7 +1006,7 @@ public class williams
 	
 	
 	static InputPortPtr input_ports_splat = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICKLEFT_UP | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICKLEFT_DOWN | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICKLEFT_LEFT | IPF_8WAY | IPF_PLAYER2 );
@@ -1016,12 +1016,12 @@ public class williams
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICKRIGHT_UP | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICKRIGHT_DOWN | IPF_8WAY | IPF_PLAYER2 );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICKRIGHT_LEFT | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICKRIGHT_RIGHT | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0xfc, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START      /* IN4 */
+		PORT_START();       /* IN4 */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, 0, "Auto Up", KEYCODE_F1, IP_JOY_NONE );
 		PORT_BITX(0x02, IP_ACTIVE_HIGH, 0, "Advance", KEYCODE_F2, IP_JOY_NONE );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN3 );
@@ -1030,7 +1030,7 @@ public class williams
 		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_TILT );
 	
-		PORT_START      /* IN3 */
+		PORT_START();       /* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICKLEFT_UP | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICKLEFT_DOWN | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICKLEFT_LEFT | IPF_8WAY | IPF_PLAYER1 );
@@ -1040,7 +1040,7 @@ public class williams
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICKRIGHT_UP | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICKRIGHT_DOWN | IPF_8WAY | IPF_PLAYER1 );
 	
-		PORT_START      /* IN4 */
+		PORT_START();       /* IN4 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICKRIGHT_LEFT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICKRIGHT_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0xfc, IP_ACTIVE_HIGH, IPT_UNKNOWN );
@@ -1048,16 +1048,16 @@ public class williams
 	
 	
 	static InputPortPtr input_ports_sinistar = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		/* pseudo analog joystick, see below */
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON2 );
 		PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_START2 );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, 0, "Auto Up", KEYCODE_F1, IP_JOY_NONE );
 		PORT_BITX(0x02, IP_ACTIVE_HIGH, 0, "Advance", KEYCODE_F2, IP_JOY_NONE );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN3 );
@@ -1066,16 +1066,16 @@ public class williams
 		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_TILT );
 	
-		PORT_START	/* fake, converted by sinistar_input_port_0() */
+		PORT_START(); 	/* fake, converted by sinistar_input_port_0() */
 		PORT_ANALOG( 0xff, 0x38, IPT_AD_STICK_X, 100, 10, 0x00, 0x6f );
 	
-		PORT_START	/* fake, converted by sinistar_input_port_0() */
+		PORT_START(); 	/* fake, converted by sinistar_input_port_0() */
 		PORT_ANALOG( 0xff, 0x38, IPT_AD_STICK_Y | IPF_REVERSE, 100, 10, 0x00, 0x6f );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_lottofun = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT );
@@ -1083,10 +1083,10 @@ public class williams
 		PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* Used by ticket dispenser */
 	
-		PORT_START		/* IN1 */
+		PORT_START(); 		/* IN1 */
 		PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START		/* IN2 */
+		PORT_START(); 		/* IN2 */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, IPF_TOGGLE, "Memory Protect", KEYCODE_F1, IP_JOY_NONE );
 		PORT_BITX(0x02, IP_ACTIVE_HIGH, 0, "Advance", KEYCODE_F2, IP_JOY_NONE );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN2 );
@@ -1099,10 +1099,10 @@ public class williams
 	
 	
 	static InputPortPtr input_ports_blaster = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		/* pseudo analog joystick, see below */
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON2 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON1 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_BUTTON3 );
@@ -1111,7 +1111,7 @@ public class williams
 		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0xc0, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, 0, "Auto Up", KEYCODE_F1, IP_JOY_NONE );
 		PORT_BITX(0x02, IP_ACTIVE_HIGH, 0, "Advance", KEYCODE_F2, IP_JOY_NONE );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN3 );
@@ -1120,16 +1120,16 @@ public class williams
 		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_TILT );
 	
-		PORT_START	/* fake, converted by sinistar_input_port_0() */
+		PORT_START(); 	/* fake, converted by sinistar_input_port_0() */
 		PORT_ANALOG( 0xff, 0x38, IPT_AD_STICK_X, 100, 10, 0x00, 0x6f );
 	
-		PORT_START	/* fake, converted by sinistar_input_port_0() */
+		PORT_START(); 	/* fake, converted by sinistar_input_port_0() */
 		PORT_ANALOG( 0xff, 0x38, IPT_AD_STICK_Y | IPF_REVERSE, 100, 10, 0x00, 0x6f );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_mysticm = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN );
@@ -1139,10 +1139,10 @@ public class williams
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNUSED );/* Key */
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_BUTTON1 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, 0, "Auto Up", KEYCODE_F1, IP_JOY_NONE );
 		PORT_BITX(0x02, IP_ACTIVE_HIGH, 0, "Advance", KEYCODE_F2, IP_JOY_NONE );
 		PORT_BITX(0x04, IP_ACTIVE_HIGH, 0, "High Score Reset", KEYCODE_7, IP_JOY_NONE );
@@ -1155,19 +1155,19 @@ public class williams
 	
 	
 	static InputPortPtr input_ports_tshoot = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 (muxed with IN3)*/
+		PORT_START(); 	/* IN0 (muxed with IN3)*/
 		PORT_ANALOG(0x3F, 0x20, IPT_AD_STICK_Y, 25, 10, 0, 0x3F);
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_BUTTON1 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON2 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON3 );
 		PORT_BIT( 0x3C, IP_ACTIVE_HIGH, IPT_UNUSED );/* 0011-1100 output */
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_START2 );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, 0, "Auto Up", KEYCODE_F1, IP_JOY_NONE );
 		PORT_BITX(0x02, IP_ACTIVE_HIGH, 0, "Advance", KEYCODE_F2, IP_JOY_NONE );
 		PORT_BITX(0x04, IP_ACTIVE_HIGH, 0, "High Score Reset", KEYCODE_7, IP_JOY_NONE );
@@ -1177,7 +1177,7 @@ public class williams
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_TILT );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* IN3 (muxed with IN0) */
+		PORT_START(); 	/* IN3 (muxed with IN0) */
 	   	PORT_ANALOG(0x3F, 0x20, IPT_AD_STICK_X, 25, 10, 0, 0x3F);
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 );
@@ -1185,7 +1185,7 @@ public class williams
 	
 	
 	static InputPortPtr input_ports_inferno = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 (muxed with IN3) */
+		PORT_START(); 	/* IN0 (muxed with IN3) */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPF_PLAYER1 | IPT_JOYSTICKLEFT_UP );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPF_PLAYER1 | IPT_JOYSTICKLEFT_LEFT );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPF_PLAYER1 | IPT_JOYSTICKLEFT_RIGHT );
@@ -1195,14 +1195,14 @@ public class williams
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPF_PLAYER1 | IPT_JOYSTICKRIGHT_RIGHT );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPF_PLAYER1 | IPT_JOYSTICKRIGHT_DOWN );
 	
-		PORT_START /* IN1 */
+		PORT_START();  /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPF_PLAYER1 | IPT_BUTTON1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPF_PLAYER2 | IPT_BUTTON1 );
 		PORT_BIT( 0x3C, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_START2 );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, 0, "Auto Up", KEYCODE_F1, IP_JOY_NONE );
 		PORT_BITX(0x02, IP_ACTIVE_HIGH, 0, "Advance", KEYCODE_F2, IP_JOY_NONE );
 		PORT_BITX(0x04, IP_ACTIVE_HIGH, 0, "High Score Reset", KEYCODE_7, IP_JOY_NONE );
@@ -1212,7 +1212,7 @@ public class williams
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_TILT );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* IN3 (muxed with IN0) */
+		PORT_START(); 	/* IN3 (muxed with IN0) */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPF_PLAYER2 | IPT_JOYSTICKLEFT_UP );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPF_PLAYER2 | IPT_JOYSTICKLEFT_LEFT );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPF_PLAYER2 | IPT_JOYSTICKLEFT_RIGHT );
@@ -1225,7 +1225,7 @@ public class williams
 	
 	
 	static InputPortPtr input_ports_joust2 = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
@@ -1234,10 +1234,10 @@ public class williams
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0xFF, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, 0, "Auto Up", KEYCODE_F1, IP_JOY_NONE );
 		PORT_BITX(0x02, IP_ACTIVE_HIGH, 0, "Advance", KEYCODE_F2, IP_JOY_NONE );
 		PORT_BITX(0x04, IP_ACTIVE_HIGH, 0, "High Score Reset", KEYCODE_7, IP_JOY_NONE );
@@ -1247,7 +1247,7 @@ public class williams
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_TILT );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START /* IN3 (muxed with IN0) */
+		PORT_START();  /* IN3 (muxed with IN0) */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );

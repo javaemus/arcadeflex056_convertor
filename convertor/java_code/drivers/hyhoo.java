@@ -152,7 +152,7 @@ public class hyhoo
 	
 	
 	static InputPortPtr input_ports_hyhoo = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x00, "4 (Easy); )
 		PORT_DIPSETTING(    0x01, "3" );
@@ -173,7 +173,7 @@ public class hyhoo
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x01, "Bonus Game" );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -196,7 +196,7 @@ public class hyhoo
 		PORT_DIPSETTING(    0x40, "90%" );
 		PORT_DIPSETTING(    0x00, "95%" );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );	// SERVICE
@@ -206,7 +206,7 @@ public class hyhoo
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START3 );	// NOT USED
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );	// COIN2
 	
-		PORT_START	/* (3) PORT 1-0 */
+		PORT_START(); 	/* (3) PORT 1-0 */
 		PORT_BITX(0x01, IP_ACTIVE_LOW, 0, "P1-A", KEYCODE_Z, IP_JOY_NONE );
 		PORT_BITX(0x02, IP_ACTIVE_LOW, 0, "P1-B", KEYCODE_X, IP_JOY_NONE );
 		PORT_BITX(0x04, IP_ACTIVE_LOW, 0, "P1-C", KEYCODE_C, IP_JOY_NONE );
@@ -216,7 +216,7 @@ public class hyhoo
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (4) PORT 1-1 */
+		PORT_START(); 	/* (4) PORT 1-1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START3 );
@@ -226,7 +226,7 @@ public class hyhoo
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (5) PORT 2-0 */
+		PORT_START(); 	/* (5) PORT 2-0 */
 		PORT_BITX(0x01, IP_ACTIVE_LOW, 0, "P3-A", KEYCODE_A, IP_JOY_NONE );
 		PORT_BITX(0x02, IP_ACTIVE_LOW, 0, "P3-B", KEYCODE_S, IP_JOY_NONE );
 		PORT_BITX(0x04, IP_ACTIVE_LOW, 0, "P3-C", KEYCODE_D, IP_JOY_NONE );
@@ -238,7 +238,7 @@ public class hyhoo
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_hyhoo2 = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x00, "4 (Easy); )
 		PORT_DIPSETTING(    0x01, "3" );
@@ -261,7 +261,7 @@ public class hyhoo
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -271,7 +271,7 @@ public class hyhoo
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );	// SERVICE
@@ -281,7 +281,7 @@ public class hyhoo
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START3 );	// NOT USED
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );	// COIN2
 	
-		PORT_START	/* (3) PORT 1-0 */
+		PORT_START(); 	/* (3) PORT 1-0 */
 		PORT_BITX(0x01, IP_ACTIVE_LOW, 0, "P1-A", KEYCODE_Z, IP_JOY_NONE );
 		PORT_BITX(0x02, IP_ACTIVE_LOW, 0, "P1-B", KEYCODE_X, IP_JOY_NONE );
 		PORT_BITX(0x04, IP_ACTIVE_LOW, 0, "P1-C", KEYCODE_C, IP_JOY_NONE );
@@ -291,7 +291,7 @@ public class hyhoo
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (4) PORT 1-1 */
+		PORT_START(); 	/* (4) PORT 1-1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START3 );
@@ -301,7 +301,7 @@ public class hyhoo
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (5) PORT 2-0 */
+		PORT_START(); 	/* (5) PORT 2-0 */
 		PORT_BITX(0x01, IP_ACTIVE_LOW, 0, "P3-A", KEYCODE_A, IP_JOY_NONE );
 		PORT_BITX(0x02, IP_ACTIVE_LOW, 0, "P3-B", KEYCODE_S, IP_JOY_NONE );
 		PORT_BITX(0x04, IP_ACTIVE_LOW, 0, "P3-C", KEYCODE_D, IP_JOY_NONE );

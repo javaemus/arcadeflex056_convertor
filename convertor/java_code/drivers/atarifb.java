@@ -309,14 +309,14 @@ public class atarifb
 	
 	
 	static InputPortPtr input_ports_atarifb = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT ( 0x0F, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT ( 0x10, IP_ACTIVE_LOW,  IPT_BUTTON1 );
 		PORT_BIT ( 0x20, IP_ACTIVE_LOW,  IPT_TILT );
 		PORT_BIT ( 0x40, IP_ACTIVE_HIGH, IPT_VBLANK );
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW,  IPT_COIN1 );
 	
-		PORT_START		/* IN1 */
+		PORT_START(); 		/* IN1 */
 		PORT_DIPNAME( 0x03, 0x00, "Time per coin" );
 		PORT_DIPSETTING(	0x00, "1:30" );
 		PORT_DIPSETTING(	0x01, "2:00" );
@@ -333,28 +333,28 @@ public class atarifb
 		PORT_SERVICE( 0x40, IP_ACTIVE_LOW );
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START	/* IN2 - Player 1 trackball, y */
+		PORT_START(); 	/* IN2 - Player 1 trackball, y */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_Y | IPF_REVERSE, 100, 10, 0, 0 );
 		/* The lower 4 bits are the input */
 	
-		PORT_START	/* IN3 - Player 1 trackball, x */
+		PORT_START(); 	/* IN3 - Player 1 trackball, x */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_X, 100, 10, 0, 0 );
 		/* The lower 4 bits are the input */
 	
-		PORT_START	/* IN4 - Player 2 trackball, y */
+		PORT_START(); 	/* IN4 - Player 2 trackball, y */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_Y | IPF_REVERSE | IPF_PLAYER2, 100, 10, 0, 0 );
 		/* The lower 4 bits are the input */
 	
-		PORT_START	/* IN5 - Player 2 trackball, x */
+		PORT_START(); 	/* IN5 - Player 2 trackball, x */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_X | IPF_PLAYER2, 100, 10, 0, 0 );
 		/* The lower 4 bits are the input */
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_atarifb4 = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT ( 0xff, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
-		PORT_START		/* IN1 */
+		PORT_START(); 		/* IN1 */
 		PORT_BIT ( 0x01, IP_ACTIVE_LOW,  IPT_COIN1 );
 		PORT_BIT ( 0x02, IP_ACTIVE_LOW,  IPT_COIN2 );
 		PORT_BIT ( 0x04, IP_ACTIVE_LOW,  IPT_COIN3 );
@@ -362,7 +362,7 @@ public class atarifb
 		PORT_SERVICE( 0x40, IP_ACTIVE_LOW );
 		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_VBLANK );
 	
-		PORT_START		/* IN2 */
+		PORT_START(); 		/* IN2 */
 		PORT_DIPNAME( 0x03, 0x00, "Time per coin" );
 		PORT_DIPSETTING(	0x00, "1:30" );
 		PORT_DIPSETTING(	0x01, "2:00" );
@@ -379,48 +379,48 @@ public class atarifb
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 );
 	
-		PORT_START	/* IN3 - Player 1 trackball, y */
+		PORT_START(); 	/* IN3 - Player 1 trackball, y */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_Y | IPF_REVERSE, 100, 10, 0, 0 );
 		/* The lower 4 bits are the input */
 	
-		PORT_START	/* IN4 - Player 1 trackball, x */
+		PORT_START(); 	/* IN4 - Player 1 trackball, x */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_X, 100, 10, 0, 0 );
 		/* The lower 4 bits are the input */
 	
-		PORT_START	/* IN5 - Player 2 trackball, y */
+		PORT_START(); 	/* IN5 - Player 2 trackball, y */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_Y | IPF_REVERSE | IPF_PLAYER2, 100, 10, 0, 0 );
 		/* The lower 4 bits are the input */
 	
-		PORT_START	/* IN6 - Player 2 trackball, x */
+		PORT_START(); 	/* IN6 - Player 2 trackball, x */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_X | IPF_PLAYER2, 100, 10, 0, 0 );
 		/* The lower 4 bits are the input */
 	
-		PORT_START	/* IN7 - Player 3 trackball, y */
+		PORT_START(); 	/* IN7 - Player 3 trackball, y */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_Y | IPF_REVERSE | IPF_PLAYER3, 100, 10, 0, 0 );
 		/* The lower 4 bits are the input */
 	
-		PORT_START	/* IN8 - Player 3 trackball, x */
+		PORT_START(); 	/* IN8 - Player 3 trackball, x */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_X | IPF_PLAYER3, 100, 10, 0, 0 );
 		/* The lower 4 bits are the input */
 	
-		PORT_START	/* IN9 - Player 4 trackball, y */
+		PORT_START(); 	/* IN9 - Player 4 trackball, y */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_Y | IPF_REVERSE | IPF_PLAYER4, 100, 10, 0, 0 );
 		/* The lower 4 bits are the input */
 	
-		PORT_START	/* IN10 - Player 4 trackball, x */
+		PORT_START(); 	/* IN10 - Player 4 trackball, x */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_X | IPF_PLAYER4, 100, 10, 0, 0 );
 		/* The lower 4 bits are the input */
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_abaseb = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT ( 0x0F, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT ( 0x10, IP_ACTIVE_LOW,  IPT_BUTTON1 );
 		PORT_BIT ( 0x20, IP_ACTIVE_LOW,  IPT_TILT );
 		PORT_BIT ( 0x40, IP_ACTIVE_HIGH, IPT_VBLANK );
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW,  IPT_COIN1 );
 	
-		PORT_START		/* IN1 */
+		PORT_START(); 		/* IN1 */
 		PORT_DIPNAME( 0x03, 0x02, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(	0x00, "Hardest" );
 		PORT_DIPSETTING(	0x01, "Hard" );
@@ -437,28 +437,28 @@ public class atarifb
 		PORT_SERVICE( 0x40, IP_ACTIVE_LOW );
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START	/* IN2 - Player 1 trackball, y */
+		PORT_START(); 	/* IN2 - Player 1 trackball, y */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_Y | IPF_REVERSE, 100, 10, 0, 0 );
 		/* The lower 4 bits are the input */
 	
-		PORT_START	/* IN3 - Player 1 trackball, x */
+		PORT_START(); 	/* IN3 - Player 1 trackball, x */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_X, 100, 10, 0, 0 );
 		/* The lower 4 bits are the input */
 	
-		PORT_START	/* IN4 - Player 2 trackball, y */
+		PORT_START(); 	/* IN4 - Player 2 trackball, y */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_Y | IPF_REVERSE | IPF_PLAYER2, 100, 10, 0, 0 );
 		/* The lower 4 bits are the input */
 	
-		PORT_START	/* IN5 - Player 2 trackball, x */
+		PORT_START(); 	/* IN5 - Player 2 trackball, x */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_X | IPF_PLAYER2, 100, 10, 0, 0 );
 		/* The lower 4 bits are the input */
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_soccer = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT ( 0xff, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
-		PORT_START		/* IN1 */
+		PORT_START(); 		/* IN1 */
 		PORT_BIT ( 0x01, IP_ACTIVE_LOW,  IPT_UNKNOWN );/* unused on schematics */
 		PORT_BIT ( 0x02, IP_ACTIVE_LOW,  IPT_COIN1 );
 		PORT_BIT ( 0x04, IP_ACTIVE_LOW,  IPT_COIN2 );
@@ -468,7 +468,7 @@ public class atarifb
 		PORT_SERVICE( 0x40, IP_ACTIVE_LOW );
 		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_VBLANK );
 	
-		PORT_START		/* IN2 */
+		PORT_START(); 		/* IN2 */
 		PORT_DIPNAME( 0x01, 0x00, "2/4 Players" );
 		PORT_DIPSETTING(	0x00, "2" );
 		PORT_DIPSETTING(	0x01, "4" );
@@ -485,39 +485,39 @@ public class atarifb
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER4 );
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 	
-		PORT_START	/* IN3 - Player 1 trackball, y */
+		PORT_START(); 	/* IN3 - Player 1 trackball, y */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_Y | IPF_REVERSE, 100, 10, 0, 0 );
 		/* The lower 4 bits are the input */
 	
-		PORT_START	/* IN4 - Player 1 trackball, x */
+		PORT_START(); 	/* IN4 - Player 1 trackball, x */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_X, 100, 10, 0, 0 );
 		/* The lower 4 bits are the input */
 	
-		PORT_START	/* IN5 - Player 2 trackball, y */
+		PORT_START(); 	/* IN5 - Player 2 trackball, y */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_Y | IPF_REVERSE | IPF_PLAYER2, 100, 10, 0, 0 );
 		/* The lower 4 bits are the input */
 	
-		PORT_START	/* IN6 - Player 2 trackball, x */
+		PORT_START(); 	/* IN6 - Player 2 trackball, x */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_X | IPF_PLAYER2, 100, 10, 0, 0 );
 		/* The lower 4 bits are the input */
 	
-		PORT_START	/* IN7 - Player 3 trackball, y */
+		PORT_START(); 	/* IN7 - Player 3 trackball, y */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_Y | IPF_REVERSE | IPF_PLAYER3, 100, 10, 0, 0 );
 		/* The lower 4 bits are the input */
 	
-		PORT_START	/* IN8 - Player 3 trackball, x */
+		PORT_START(); 	/* IN8 - Player 3 trackball, x */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_X | IPF_PLAYER3, 100, 10, 0, 0 );
 		/* The lower 4 bits are the input */
 	
-		PORT_START	/* IN9 - Player 4 trackball, y */
+		PORT_START(); 	/* IN9 - Player 4 trackball, y */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_Y | IPF_REVERSE | IPF_PLAYER4, 100, 10, 0, 0 );
 		/* The lower 4 bits are the input */
 	
-		PORT_START	/* IN10 - Player 4 trackball, x */
+		PORT_START(); 	/* IN10 - Player 4 trackball, x */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_X | IPF_PLAYER4, 100, 10, 0, 0 );
 		/* The lower 4 bits are the input */
 	
-		PORT_START		/* IN11 */
+		PORT_START(); 		/* IN11 */
 		PORT_DIPNAME( 0x07, 0x00, "Time per coin" );
 		PORT_DIPSETTING(	0x00, "1:00" );
 		PORT_DIPSETTING(	0x01, "1:20" );

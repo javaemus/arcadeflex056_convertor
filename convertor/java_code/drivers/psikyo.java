@@ -344,7 +344,7 @@ public class psikyo
 	
 	static InputPortPtr input_ports_btlkrodj = new InputPortPtr(){ public void handler() { 
 	
-		PORT_START	// IN0 - c00000&1
+		PORT_START(); 	// IN0 - c00000&1
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_START2                       );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_BUTTON3        | IPF_PLAYER2 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_BUTTON2        | IPF_PLAYER2 );
@@ -363,7 +363,7 @@ public class psikyo
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER1 );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER1 );
 	
-		PORT_START	// IN1 - c00002&3
+		PORT_START(); 	// IN1 - c00002&3
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW,  IPT_COIN1    );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW,  IPT_COIN2    );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW,  IPT_UNKNOWN  );
@@ -382,7 +382,7 @@ public class psikyo
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_BUTTON5 | IPF_PLAYER1 );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER1 );
 	
-		PORT_START	// IN2 - c00004&5
+		PORT_START(); 	// IN2 - c00004&5
 		PORT_DIPNAME( 0x0001, 0x0001, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
@@ -430,7 +430,7 @@ public class psikyo
 		PORT_DIPSETTING(      0x8000, DEF_STR( "No") );
 		PORT_DIPSETTING(      0x0000, "Yes   [Free Play]" );
 	
-		PORT_START	// IN3 - c00006&7
+		PORT_START(); 	// IN3 - c00006&7
 		PORT_DIPNAME( 0x000f, 0x000f, "Copyright (Country); )
 		PORT_DIPSETTING(      0x000f, "Psikyo (Japan); )
 		PORT_DIPSETTING(      0x000a, "Psikyo (Honk Kong); )
@@ -489,7 +489,7 @@ public class psikyo
 	
 	static InputPortPtr input_ports_gunbird = new InputPortPtr(){ public void handler() { 
 	
-		PORT_START	// IN0 - c00000&1
+		PORT_START(); 	// IN0 - c00000&1
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_START2                       );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_BUTTON3        | IPF_PLAYER2 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_BUTTON2        | IPF_PLAYER2 );
@@ -508,7 +508,7 @@ public class psikyo
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER1 );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER1 );
 	
-		PORT_START	// IN1 - c00002&3
+		PORT_START(); 	// IN1 - c00002&3
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW,  IPT_COIN1    );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW,  IPT_COIN2    );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW,  IPT_UNKNOWN  );
@@ -527,7 +527,7 @@ public class psikyo
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN2 - c00004&5
+		PORT_START(); 	// IN2 - c00004&5
 		PORT_DIPNAME( 0x0001, 0x0001, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
@@ -574,7 +574,7 @@ public class psikyo
 		PORT_DIPSETTING(      0x8000, DEF_STR( "No") );
 		PORT_DIPSETTING(      0x0000, "Yes   [Free Play]" );
 	
-		PORT_START	// IN3 - c00006&7
+		PORT_START(); 	// IN3 - c00006&7
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_UNKNOWN );// bits 3-0 -> !fffe0256, but unused?
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -603,7 +603,7 @@ public class psikyo
 	
 	static InputPortPtr input_ports_sngkace = new InputPortPtr(){ public void handler() { 
 	
-		PORT_START	// IN0 - c00000&1
+		PORT_START(); 	// IN0 - c00000&1
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_START2                       );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_BUTTON3        | IPF_PLAYER2 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_BUTTON2        | IPF_PLAYER2 );
@@ -622,7 +622,7 @@ public class psikyo
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER1 );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER1 );
 	
-		PORT_START	// IN1 - c00008&9
+		PORT_START(); 	// IN1 - c00008&9
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW,  IPT_COIN1    );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW,  IPT_COIN2    );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW,  IPT_UNKNOWN  );
@@ -641,7 +641,7 @@ public class psikyo
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN2 - c00004&5
+		PORT_START(); 	// IN2 - c00004&5
 		PORT_DIPNAME( 0x0001, 0x0001, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
@@ -688,7 +688,7 @@ public class psikyo
 		PORT_DIPSETTING(      0x8000, DEF_STR( "No") );
 		PORT_DIPSETTING(      0x0000, "Yes   [Free Play]" );
 	
-		PORT_START	// IN3 - c00002&3
+		PORT_START(); 	// IN3 - c00002&3
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_VBLANK  );// vblank
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_UNKNOWN );// unused?
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_UNKNOWN );

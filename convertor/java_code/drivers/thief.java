@@ -216,13 +216,13 @@ public class thief
 	/**********************************************************/
 	
 	static InputPortPtr input_ports_sharkatt = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_DIPNAME( 0x7f, 0x7f, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x7f, DEF_STR( "1C_1C") ); // if any are set
 		PORT_SERVICE( 0x80, IP_ACTIVE_HIGH );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(	0x00, "3" );
 		PORT_DIPSETTING(	0x01, "4" );
@@ -247,7 +247,7 @@ public class thief
 		PORT_DIPSETTING(	0x00, DEF_STR( "No") );
 		PORT_DIPSETTING(	0x80, DEF_STR( "Yes") );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
@@ -257,7 +257,7 @@ public class thief
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 );
 	
-		PORT_START      /* IN3 */
+		PORT_START();       /* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
@@ -269,7 +269,7 @@ public class thief
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_thief = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_1C") );
@@ -293,7 +293,7 @@ public class thief
 		PORT_DIPSETTING(    0x00, DEF_STR( "No") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Yes") );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x0f, 0x00, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x00|0x0c, "10K" );
 		PORT_DIPSETTING(    0x01|0x0c, "20K" );
@@ -316,7 +316,7 @@ public class thief
 		PORT_DIPSETTING(    0x80|0x60, "I/O Board Test" );
 		PORT_DIPSETTING(    0x80|0x70, "Reserved" );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY );
@@ -326,7 +326,7 @@ public class thief
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL );
@@ -338,7 +338,7 @@ public class thief
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_natodef = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_1C") );
@@ -361,7 +361,7 @@ public class thief
 		PORT_DIPSETTING(    0x00, DEF_STR( "No") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Yes") );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x04, 0x00, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -383,7 +383,7 @@ public class thief
 		PORT_DIPSETTING(    0x80|0x60, "I/O Board Test" );
 		PORT_DIPSETTING(    0x80|0x70, "Reserved" );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY );
@@ -393,7 +393,7 @@ public class thief
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL );

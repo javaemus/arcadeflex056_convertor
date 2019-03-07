@@ -118,7 +118,7 @@ public class splash
 	
 	
 	static InputPortPtr input_ports_splash = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* DSW #1 */
+		PORT_START(); 	/* DSW #1 */
 		PORT_DIPNAME( 0x0f, 0x0f, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x06, DEF_STR( "5C_1C") );
 		PORT_DIPSETTING(    0x07, DEF_STR( "4C_1C") );
@@ -146,7 +146,7 @@ public class splash
 		PORT_DIPSETTING(    0xa0, DEF_STR( "1C_6C") );
 		PORT_DIPSETTING(    0x00, "1C/1C or Free Play (if Coin A too); )
 	
-		PORT_START	/* DSW #2 */
+		PORT_START(); 	/* DSW #2 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x02, "Easy" );
 		PORT_DIPSETTING(    0x03, "Normal" );
@@ -168,7 +168,7 @@ public class splash
 		PORT_DIPSETTING(    0x40, "Normal" );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* 1P INPUTS & COINSW */
+		PORT_START(); 	/* 1P INPUTS & COINSW */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
@@ -178,7 +178,7 @@ public class splash
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START	/* 2P INPUTS & STARTSW */
+		PORT_START(); 	/* 2P INPUTS & STARTSW */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER2 );

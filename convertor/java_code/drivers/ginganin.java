@@ -204,7 +204,7 @@ public class ginganin
 	
 	static InputPortPtr input_ports_ginganin = new InputPortPtr(){ public void handler() { 
 	
-		PORT_START	/* IN0 - Controls - Read from 70000.w */
+		PORT_START(); 	/* IN0 - Controls - Read from 70000.w */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY );
@@ -222,7 +222,7 @@ public class ginganin
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START	/* IN1 - DSWs - Read from 70002.w */
+		PORT_START(); 	/* IN1 - DSWs - Read from 70002.w */
 		PORT_DIPNAME( 0x0007, 0x0007, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(	  0x0000, DEF_STR( "5C_1C") );
 		PORT_DIPSETTING(	  0x0004, DEF_STR( "4C_1C") );

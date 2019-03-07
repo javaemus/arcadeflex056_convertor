@@ -311,7 +311,7 @@ public class superchs
 	/***********************************************************/
 	
 	static InputPortPtr input_ports_superchs = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW,  IPT_UNKNOWN );
@@ -329,7 +329,7 @@ public class superchs
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW,  IPT_UNKNOWN );
@@ -347,19 +347,19 @@ public class superchs
 		PORT_BITX(0x4000, IP_ACTIVE_LOW,  IPT_BUTTON2, "Brake", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW,  IPT_START1 );
 	
-		PORT_START	/* IN 2, steering wheel */
+		PORT_START(); 	/* IN 2, steering wheel */
 		PORT_ANALOG( 0xff, 0x7f, IPT_AD_STICK_X | IPF_REVERSE | IPF_PLAYER1, 25, 15, 0, 0xff );
 	
-		PORT_START	/* IN 3, accel [effectively also brake for the upright] */
+		PORT_START(); 	/* IN 3, accel [effectively also brake for the upright] */
 		PORT_ANALOG( 0xff, 0x00, IPT_AD_STICK_Y | IPF_PLAYER1, 20, 10, 0, 0xff);
 	
-		PORT_START	/* IN 4, sound volume */
+		PORT_START(); 	/* IN 4, sound volume */
 		PORT_ANALOG( 0xff, 0x00, IPT_AD_STICK_X | IPF_REVERSE | IPF_PLAYER2, 20, 10, 0, 0xff);
 	
-		PORT_START	/* IN 5, unknown */
+		PORT_START(); 	/* IN 5, unknown */
 		PORT_ANALOG( 0xff, 0x00, IPT_AD_STICK_Y | IPF_PLAYER2, 20, 10, 0, 0xff);
 	
-		PORT_START	/* IN 6, inputs and DSW all fake */
+		PORT_START(); 	/* IN 6, inputs and DSW all fake */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_PLAYER1 );

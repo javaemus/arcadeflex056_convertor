@@ -160,7 +160,7 @@ public class warpwarp
 	
 	
 	static InputPortPtr input_ports_bombbee = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1 );
@@ -172,7 +172,7 @@ public class warpwarp
 		PORT_DIPSETTING(	0x00, DEF_STR( "Cocktail") );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START		/* DSW1 */
+		PORT_START(); 		/* DSW1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(	0x02, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(	0x03, DEF_STR( "1C_1C") );
@@ -196,12 +196,12 @@ public class warpwarp
 		PORT_DIPSETTING(	0xc0, "150000" );
 		PORT_DIPSETTING(	0xe0, "None" );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOG( 0xff, 0x80, IPT_PADDLE | IPF_REVERSE, 30, 10, 0x14, 0xac );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_cutieq = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1 );
@@ -213,7 +213,7 @@ public class warpwarp
 		PORT_DIPSETTING(	0x00, DEF_STR( "Cocktail") );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START		/* DSW1 */
+		PORT_START(); 		/* DSW1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(	0x02, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(	0x03, DEF_STR( "1C_1C") );
@@ -237,12 +237,12 @@ public class warpwarp
 		PORT_DIPSETTING(	0xc0, "200000" );
 		PORT_DIPSETTING(	0xe0, "None" );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOG( 0xff, 0x80, IPT_PADDLE | IPF_REVERSE, 30, 10, 0x14, 0xac );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_warpwarp = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1 );
@@ -254,7 +254,7 @@ public class warpwarp
 		PORT_DIPSETTING(	0x00, DEF_STR( "Cocktail") );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START		/* DSW1 */
+		PORT_START(); 		/* DSW1 */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(	0x03, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "1C_1C") );
@@ -279,7 +279,7 @@ public class warpwarp
 		PORT_DIPSETTING(	0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "On") );
 	
-		PORT_START		/* FAKE - used by input_controller_r to simulate an analog stick */
+		PORT_START(); 		/* FAKE - used by input_controller_r to simulate an analog stick */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_4WAY );
@@ -288,7 +288,7 @@ public class warpwarp
 	
 	/* has High Score Initials dip switch instead of rack test */
 	static InputPortPtr input_ports_warpwarr = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1 );
@@ -300,7 +300,7 @@ public class warpwarp
 		PORT_DIPSETTING(	0x00, DEF_STR( "Cocktail") );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START		/* DSW1 */
+		PORT_START(); 		/* DSW1 */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(	0x03, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "1C_1C") );
@@ -324,7 +324,7 @@ public class warpwarp
 		PORT_DIPSETTING(	0x80, DEF_STR( "No") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Yes") );
 	
-		PORT_START		/* FAKE - used by input_controller_r to simulate an analog stick */
+		PORT_START(); 		/* FAKE - used by input_controller_r to simulate an analog stick */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_4WAY );

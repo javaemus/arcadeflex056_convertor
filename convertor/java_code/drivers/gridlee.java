@@ -378,24 +378,24 @@ public class gridlee
 	 *************************************/
 	
 	static InputPortPtr input_ports_gridlee = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* 9500 (fake) */
+		PORT_START(); 	/* 9500 (fake) */
 	    PORT_ANALOG( 0xff, 0, IPT_TRACKBALL_Y, 20, 8, 0x00, 0xff );
 	
-		PORT_START	/* 9501 (fake) */
+		PORT_START(); 	/* 9501 (fake) */
 	    PORT_ANALOG( 0xff, 0, IPT_TRACKBALL_X | IPF_REVERSE, 20, 8, 0x00, 0xff );
 	
-		PORT_START	/* 9500 (fake) */
+		PORT_START(); 	/* 9500 (fake) */
 	    PORT_ANALOG( 0xff, 0, IPT_TRACKBALL_Y | IPF_COCKTAIL, 20, 8, 0x00, 0xff );
 	
-		PORT_START	/* 9501 (fake) */
+		PORT_START(); 	/* 9501 (fake) */
 	    PORT_ANALOG( 0xff, 0, IPT_TRACKBALL_X | IPF_REVERSE | IPF_COCKTAIL, 20, 8, 0x00, 0xff );
 	
-		PORT_START	/* 9502 */
+		PORT_START(); 	/* 9502 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* 9503 */
+		PORT_START(); 	/* 9503 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1 );
@@ -406,7 +406,7 @@ public class gridlee
 		PORT_DIPSETTING(    0x10, DEF_STR( "1C_2C") );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* 9600 */
+		PORT_START(); 	/* 9600 */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x00, "8000 points" );
 		PORT_DIPSETTING(    0x01, "10000 points" );
@@ -430,7 +430,7 @@ public class gridlee
 		PORT_DIPSETTING(    0x00, DEF_STR( "No") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Yes") );
 	
-		PORT_START	/* 9700 */
+		PORT_START(); 	/* 9700 */
 		PORT_BIT( 0x1f, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_SERVICE( 0x20, IP_ACTIVE_LOW );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_SERVICE1 );

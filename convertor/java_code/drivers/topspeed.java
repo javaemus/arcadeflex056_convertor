@@ -498,7 +498,7 @@ public class topspeed
 		PORT_DIPSETTING(    0x00, "Hardest" );
 	
 	static InputPortPtr input_ports_topspeed = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x03, "Deluxe Motorized Cockpit" );
 		PORT_DIPSETTING(    0x02, "Upright (?); )
@@ -510,7 +510,7 @@ public class topspeed
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_WORLD_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, "Initial Time" );
 		PORT_DIPSETTING(    0x00, "40 seconds" );
@@ -529,7 +529,7 @@ public class topspeed
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN2 );
@@ -540,7 +540,7 @@ public class topspeed
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_BUTTON8 | IPF_PLAYER1 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_BUTTON2 | IPF_PLAYER1 );/* main brake key */
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_BUTTON3 | IPF_PLAYER1 );/* nitro */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_TILT );
@@ -551,16 +551,16 @@ public class topspeed
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_BUTTON7 | IPF_PLAYER1 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER1 );/* main accel key */
 	
-		PORT_START      /* IN2, unused */
+		PORT_START();       /* IN2, unused */
 	
 		/* Note that sensitivity is chosen to suit keyboard control (for
 		   sound selection in test mode and hi score name entry). With
 		   an analogue wheel, the user will need to adjust this. */
 	
-		PORT_START	/* continuous steer */
+		PORT_START(); 	/* continuous steer */
 		PORT_ANALOG( 0xffff, 0x00, IPT_AD_STICK_X | IPF_PLAYER1, 10, 2, 0xff7f, 0x80);
 	
-		PORT_START      /* fake, allowing digital steer */
+		PORT_START();       /* fake, allowing digital steer */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
@@ -571,7 +571,7 @@ public class topspeed
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_topspedu = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x03, "Deluxe Motorized Cockpit" );
 		PORT_DIPSETTING(    0x02, "Upright (?); )
@@ -583,7 +583,7 @@ public class topspeed
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_WORLD_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, "Initial Time" );
 		PORT_DIPSETTING(    0x00, "40 seconds" );
@@ -602,7 +602,7 @@ public class topspeed
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN2 );
@@ -613,7 +613,7 @@ public class topspeed
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_BUTTON8 | IPF_PLAYER1 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_BUTTON2 | IPF_PLAYER1 );/* main brake key */
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_BUTTON3 | IPF_PLAYER1 );/* nitro */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_TILT );
@@ -624,16 +624,16 @@ public class topspeed
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_BUTTON7 | IPF_PLAYER1 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER1 );/* main accel key */
 	
-		PORT_START      /* IN2, unused */
+		PORT_START();       /* IN2, unused */
 	
 		/* Note that sensitivity is chosen to suit keyboard control (for
 		   sound selection in test mode and hi score name entry). With
 		   an analogue wheel, the user will need to adjust this. */
 	
-		PORT_START	/* continuous steer */
+		PORT_START(); 	/* continuous steer */
 		PORT_ANALOG( 0xffff, 0x00, IPT_AD_STICK_X | IPF_PLAYER1, 10, 2, 0xff7f, 0x80);
 	
-		PORT_START      /* fake, allowing digital steer */
+		PORT_START();       /* fake, allowing digital steer */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
@@ -644,7 +644,7 @@ public class topspeed
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_fullthrl = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x03, "Deluxe Motorized Cockpit" );
 		PORT_DIPSETTING(    0x02, "Upright (?); )
@@ -656,7 +656,7 @@ public class topspeed
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_WORLD_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, "Initial Time" );
 		PORT_DIPSETTING(    0x00, "40 seconds" );
@@ -675,7 +675,7 @@ public class topspeed
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN2 );
@@ -686,7 +686,7 @@ public class topspeed
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_BUTTON8 | IPF_PLAYER1 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_BUTTON2 | IPF_PLAYER1 );/* main brake key */
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_BUTTON3 | IPF_PLAYER1 );/* nitro */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_TILT );
@@ -697,16 +697,16 @@ public class topspeed
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_BUTTON7 | IPF_PLAYER1 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER1 );/* main accel key */
 	
-		PORT_START      /* IN2, unused */
+		PORT_START();       /* IN2, unused */
 	
 		/* Note that sensitivity is chosen to suit keyboard control (for
 		   sound selection in test mode and hi score name entry). With
 		   an analogue wheel, the user will need to adjust this. */
 	
-		PORT_START	/* continuous steer */
+		PORT_START(); 	/* continuous steer */
 		PORT_ANALOG( 0xffff, 0x00, IPT_AD_STICK_X | IPF_PLAYER1, 10, 2, 0xff7f, 0x80);
 	
-		PORT_START      /* fake, allowing digital steer */
+		PORT_START();       /* fake, allowing digital steer */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );

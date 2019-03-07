@@ -140,7 +140,7 @@ public class berzerk
 	
 	
 	static InputPortPtr input_ports_berzerk = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY );
@@ -148,7 +148,7 @@ public class berzerk
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0xe0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x1c, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -156,7 +156,7 @@ public class berzerk
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_COCKTAIL );
@@ -167,7 +167,7 @@ public class berzerk
 		PORT_DIPSETTING(    0x80, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
 	
-		PORT_START      /* IN3 */
+		PORT_START();       /* IN3 */
 		PORT_BITX(    0x01, 0x00, IPT_DIPSWITCH_NAME | IPF_TOGGLE, "Input Test Mode", KEYCODE_F2, IP_JOY_NONE );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -181,7 +181,7 @@ public class berzerk
 		PORT_DIPSETTING(    0x80, "French" );
 		PORT_DIPSETTING(    0xc0, "Spanish" );
 	
-		PORT_START      /* IN4 */
+		PORT_START();       /* IN4 */
 		PORT_BITX(    0x03, 0x00, IPT_DIPSWITCH_NAME | IPF_TOGGLE, "Color Test", KEYCODE_F5, IP_JOY_NONE );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "On") );
@@ -192,16 +192,16 @@ public class berzerk
 		PORT_DIPSETTING(    0x80, "10000" );
 		PORT_DIPSETTING(    0x00, "None" );
 	
-		PORT_START      /* IN5 */
+		PORT_START();       /* IN5 */
 		COINAGE(3)
 	
-		PORT_START      /* IN6 */
+		PORT_START();       /* IN6 */
 		COINAGE(2)
 	
-		PORT_START      /* IN7 */
+		PORT_START();       /* IN7 */
 		COINAGE(1)
 	
-		PORT_START      /* IN8 */
+		PORT_START();       /* IN8 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Free_Play") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -210,7 +210,7 @@ public class berzerk
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_frenzy = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY );
@@ -218,14 +218,14 @@ public class berzerk
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0xe0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x3c, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_COCKTAIL );
@@ -236,7 +236,7 @@ public class berzerk
 		PORT_DIPSETTING(    0x80, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
 	
-		PORT_START      /* IN3 */
+		PORT_START();       /* IN3 */
 		PORT_DIPNAME( 0x0f, 0x03, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x01, "1000" );
 		PORT_DIPSETTING(    0x02, "2000" );
@@ -261,7 +261,7 @@ public class berzerk
 		PORT_DIPSETTING(    0x80, "French" );
 		PORT_DIPSETTING(    0xc0, "Spanish" );
 	
-		PORT_START      /* IN4 */
+		PORT_START();       /* IN4 */
 		PORT_BIT( 0x03, IP_ACTIVE_HIGH, IPT_UNUSED ); /* Bit 0 does some more hardware tests */
 		PORT_BITX(    0x04, 0x00, IPT_DIPSWITCH_NAME | IPF_TOGGLE, "Input Test Mode", KEYCODE_F2, IP_JOY_NONE );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
@@ -272,7 +272,7 @@ public class berzerk
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
 		/* The following 3 ports use all 8 bits, but I didn't feel like adding all 256 values :-) */
-		PORT_START      /* IN5 */
+		PORT_START();       /* IN5 */
 		PORT_DIPNAME( 0x0f, 0x01, "Coins/Credit B" );
 		/*PORT_DIPSETTING(    0x00, "0" );   Can't insert coins  */
 		PORT_DIPSETTING(    0x01, "1" );
@@ -292,7 +292,7 @@ public class berzerk
 		PORT_DIPSETTING(    0x0f, "15" );
 		PORT_BIT( 0xf0, IP_ACTIVE_HIGH,  IPT_UNUSED );
 	
-		PORT_START      /* IN6 */
+		PORT_START();       /* IN6 */
 		PORT_DIPNAME( 0x0f, 0x01, "Coins/Credit A" );
 		/*PORT_DIPSETTING(    0x00, "0" );   Can't insert coins  */
 		PORT_DIPSETTING(    0x01, "1" );
@@ -312,7 +312,7 @@ public class berzerk
 		PORT_DIPSETTING(    0x0f, "15" );
 		PORT_BIT( 0xf0, IP_ACTIVE_HIGH,  IPT_UNUSED );
 	
-		PORT_START      /* IN7 */
+		PORT_START();       /* IN7 */
 		PORT_DIPNAME( 0x0f, 0x01, "Coin Multiplier" );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Free_Play") );
 		PORT_DIPSETTING(    0x01, "1" );
@@ -332,7 +332,7 @@ public class berzerk
 		PORT_DIPSETTING(    0x0f, "15" );
 		PORT_BIT( 0xf0, IP_ACTIVE_HIGH,  IPT_UNUSED );
 	
-		PORT_START      /* IN8 */
+		PORT_START();       /* IN8 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN3 );
 		PORT_BIT( 0x7e, IP_ACTIVE_LOW,  IPT_UNUSED );
 		PORT_BITX(0x80, IP_ACTIVE_HIGH, 0, "Stats", KEYCODE_F1, IP_JOY_NONE );

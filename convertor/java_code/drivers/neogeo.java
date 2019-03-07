@@ -842,7 +842,7 @@ public class neogeo
 	/******************************************************************************/
 	
 	static InputPortPtr input_ports_neogeo = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT );
@@ -852,7 +852,7 @@ public class neogeo
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON3 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON4 );
 	
-		PORT_START		/* IN1 */
+		PORT_START(); 		/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_PLAYER2 );
@@ -862,7 +862,7 @@ public class neogeo
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER2 );
 	
-		PORT_START		/* IN2 */
+		PORT_START(); 		/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );  /* Player 1 Start */
 		PORT_BITX( 0x02, IP_ACTIVE_LOW, 0, "SELECT 1",KEYCODE_6, IP_JOY_NONE );/* Player 1 Select */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START2 );  /* Player 2 Start */
@@ -871,7 +871,7 @@ public class neogeo
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );/* memory card write protection */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START		/* IN3 */
+		PORT_START(); 		/* IN3 */
 		PORT_DIPNAME( 0x01, 0x01, "Test Switch" );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "On") );
@@ -894,14 +894,14 @@ public class neogeo
 		PORT_DIPSETTING(	0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "On") );
 	
-		PORT_START		/* IN4 */
+		PORT_START(); 		/* IN4 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_UNKNOWN ); /* used, affects the values stored at location 0x47 of nvram */
 	
 		/* Fake  IN 5 */
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x03, 0x02,"Territory" );
 		PORT_DIPSETTING(	0x00,"Japan" );
 		PORT_DIPSETTING(	0x01,"USA" );
@@ -910,7 +910,7 @@ public class neogeo
 	//	PORT_DIPSETTING(	0x00,"Home" );
 	//	PORT_DIPSETTING(	0x04,"Arcade" );
 	
-		PORT_START		/* Test switch */
+		PORT_START(); 		/* Test switch */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );
@@ -922,10 +922,10 @@ public class neogeo
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_irrmaze = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 multiplexed */
+		PORT_START(); 		/* IN0 multiplexed */
 		PORT_ANALOG( 0xff, 0x7f, IPT_TRACKBALL_X | IPF_REVERSE, 10, 20, 0, 0 );
 	
-		PORT_START		/* IN1 */
+		PORT_START(); 		/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -935,7 +935,7 @@ public class neogeo
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 	
-		PORT_START		/* IN2 */
+		PORT_START(); 		/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );  /* Player 1 Start */
 		PORT_BITX( 0x02, IP_ACTIVE_LOW, 0, "SELECT 1",KEYCODE_6, IP_JOY_NONE );/* Player 1 Select */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START2 );  /* Player 2 Start */
@@ -944,7 +944,7 @@ public class neogeo
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );/* memory card write protection */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START		/* IN3 */
+		PORT_START(); 		/* IN3 */
 		PORT_DIPNAME( 0x01, 0x01, "Test Switch" );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "On") );
@@ -967,13 +967,13 @@ public class neogeo
 		PORT_DIPSETTING(	0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "On") );
 	
-		PORT_START		/* IN4 */
+		PORT_START(); 		/* IN4 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
 	
 		/* Fake  IN 5 */
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x03, 0x02,"Territory" );
 		PORT_DIPSETTING(	0x00,"Japan" );
 		PORT_DIPSETTING(	0x01,"USA" );
@@ -982,7 +982,7 @@ public class neogeo
 	//	PORT_DIPSETTING(	0x00,"Home" );
 	//	PORT_DIPSETTING(	0x04,"Arcade" );
 	
-		PORT_START		/* Test switch */
+		PORT_START(); 		/* Test switch */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );
@@ -992,7 +992,7 @@ public class neogeo
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN ); /* This bit is used.. */
 		PORT_BITX( 0x80, IP_ACTIVE_LOW, 0, "Test Switch", KEYCODE_F2, IP_JOY_NONE );
 	
-		PORT_START		/* IN0 multiplexed */
+		PORT_START(); 		/* IN0 multiplexed */
 		PORT_ANALOG( 0xff, 0x7f, IPT_TRACKBALL_Y | IPF_REVERSE, 10, 20, 0, 0 );
 	INPUT_PORTS_END(); }}; 
 	

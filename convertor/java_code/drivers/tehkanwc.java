@@ -286,7 +286,7 @@ public class tehkanwc
 	
 	
 	static InputPortPtr input_ports_tehkanwc = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW1 - Active LOW */
+		PORT_START();  /* DSW1 - Active LOW */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING (   0x01, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING (   0x07, DEF_STR( "1C_1C") );
@@ -312,7 +312,7 @@ public class tehkanwc
 		PORT_DIPSETTING (   0x00, "2 Credits" );
 		PORT_DIPSETTING (   0x80, "1 Credit" );
 	
-		PORT_START /* DSW2 - Active LOW */
+		PORT_START();  /* DSW2 - Active LOW */
 		PORT_DIPNAME( 0x03, 0x03, "1P Game Time" );
 		PORT_DIPSETTING (   0x00, "2:30" );
 		PORT_DIPSETTING (   0x01, "2:00" );
@@ -355,7 +355,7 @@ public class tehkanwc
 		PORT_DIPSETTING (   0x80, "Timer In" );
 		PORT_DIPSETTING (   0x00, "Credit In" );
 	
-		PORT_START /* DSW3 - Active LOW */
+		PORT_START();  /* DSW3 - Active LOW */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING (   0x02, "Easy" );
 		PORT_DIPSETTING (   0x03, "Normal" );
@@ -368,31 +368,31 @@ public class tehkanwc
 		PORT_DIPSETTING (   0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING (   0x08, DEF_STR( "On") );
 	
-		PORT_START /* IN0 - X AXIS */
+		PORT_START();  /* IN0 - X AXIS */
 		PORT_ANALOGX( 0xff, 0x80, IPT_TRACKBALL_X | IPF_PLAYER1, 100, 0, 0, 0, IP_KEY_NONE, IP_KEY_NONE, IP_JOY_NONE, IP_JOY_NONE );
 	
-		PORT_START /* IN0 - Y AXIS */
+		PORT_START();  /* IN0 - Y AXIS */
 		PORT_ANALOGX( 0xff, 0x80, IPT_TRACKBALL_Y | IPF_PLAYER1, 100, 0, 0, 0, IP_KEY_NONE, IP_KEY_NONE, IP_JOY_NONE, IP_JOY_NONE );
 	
-		PORT_START /* IN0 - BUTTON */
+		PORT_START();  /* IN0 - BUTTON */
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 	
-		PORT_START /* IN1 - X AXIS */
+		PORT_START();  /* IN1 - X AXIS */
 		PORT_ANALOGX( 0xff, 0x80, IPT_TRACKBALL_X | IPF_PLAYER2, 100, 0, 0, 0, IP_KEY_NONE, IP_KEY_NONE, IP_JOY_NONE, IP_JOY_NONE );
 	
-		PORT_START /* IN1 - Y AXIS */
+		PORT_START();  /* IN1 - Y AXIS */
 		PORT_ANALOGX( 0xff, 0x80, IPT_TRACKBALL_Y | IPF_PLAYER2, 100, 0, 0, 0, IP_KEY_NONE, IP_KEY_NONE, IP_JOY_NONE, IP_JOY_NONE );
 	
-		PORT_START /* IN1 - BUTTON */
+		PORT_START();  /* IN1 - BUTTON */
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 	
-		PORT_START /* IN2 - Active LOW */
+		PORT_START();  /* IN2 - Active LOW */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START	/* fake port to emulate trackballs with keyboard */
+		PORT_START(); 	/* fake port to emulate trackballs with keyboard */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -405,7 +405,7 @@ public class tehkanwc
 	
 	
 	static InputPortPtr input_ports_gridiron = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW1 - Active LOW */
+		PORT_START();  /* DSW1 - Active LOW */
 		PORT_DIPNAME( 0x01, 0x01, "1 Player Start" );
 		PORT_DIPSETTING (   0x00, "2 Credits" );
 		PORT_DIPSETTING (   0x01, "1 Credit" );
@@ -431,7 +431,7 @@ public class tehkanwc
 		PORT_DIPSETTING (   0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING (   0x80, DEF_STR( "On") );
 	
-		PORT_START /* DSW2 - Active LOW */
+		PORT_START();  /* DSW2 - Active LOW */
 		PORT_DIPNAME( 0x03, 0x03, "1P Game Time" );
 		PORT_DIPSETTING (   0x00, "2:30" );
 		PORT_DIPSETTING (   0x01, "2:00" );
@@ -474,7 +474,7 @@ public class tehkanwc
 		PORT_DIPSETTING (   0x80, "Timer In" );
 		PORT_DIPSETTING (   0x00, "Credit In" );
 	
-		PORT_START /* DSW3 - Active LOW */
+		PORT_START();  /* DSW3 - Active LOW */
 		PORT_DIPNAME( 0x03, 0x03, "Difficulty?" );
 		PORT_DIPSETTING (   0x02, "Easy" );
 		PORT_DIPSETTING (   0x03, "Normal" );
@@ -487,37 +487,37 @@ public class tehkanwc
 		PORT_DIPSETTING (   0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING (   0x08, DEF_STR( "On") );
 	
-		PORT_START /* IN0 - X AXIS */
+		PORT_START();  /* IN0 - X AXIS */
 		PORT_ANALOG( 0xff, 0x80, IPT_TRACKBALL_X | IPF_PLAYER1, 100, 63, 0, 0 );
 	
-		PORT_START /* IN0 - Y AXIS */
+		PORT_START();  /* IN0 - Y AXIS */
 		PORT_ANALOG( 0xff, 0x80, IPT_TRACKBALL_Y | IPF_PLAYER1, 100, 63, 0, 0 );
 	
-		PORT_START /* IN0 - BUTTON */
+		PORT_START();  /* IN0 - BUTTON */
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 	
-		PORT_START /* IN1 - X AXIS */
+		PORT_START();  /* IN1 - X AXIS */
 		PORT_ANALOG( 0xff, 0x80, IPT_TRACKBALL_X | IPF_PLAYER2, 100, 63, 0, 0 );
 	
-		PORT_START /* IN1 - Y AXIS */
+		PORT_START();  /* IN1 - Y AXIS */
 		PORT_ANALOG( 0xff, 0x80, IPT_TRACKBALL_Y | IPF_PLAYER2, 100, 63, 0, 0 );
 	
-		PORT_START /* IN1 - BUTTON */
+		PORT_START();  /* IN1 - BUTTON */
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 	
-		PORT_START /* IN2 - Active LOW */
+		PORT_START();  /* IN2 - Active LOW */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START	/* no fake port here */
+		PORT_START(); 	/* no fake port here */
 		PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_teedoff = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW1 - Active LOW */
+		PORT_START();  /* DSW1 - Active LOW */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING (   0x02, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING (   0x03, DEF_STR( "1C_1C") );
@@ -541,41 +541,41 @@ public class tehkanwc
 		PORT_DIPSETTING (   0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING (   0x80, DEF_STR( "On") );
 	
-		PORT_START /* DSW2 - Active LOW */
+		PORT_START();  /* DSW2 - Active LOW */
 		PORT_DIPNAME( 0xff, 0xff, DEF_STR( "Unknown") );
 		PORT_DIPSETTING (   0xff, DEF_STR( "Off") );
 		PORT_DIPSETTING (   0x00, DEF_STR( "On") );
 	
-		PORT_START /* DSW3 - Active LOW */
+		PORT_START();  /* DSW3 - Active LOW */
 		PORT_DIPNAME( 0x0f, 0x0f, DEF_STR( "Unknown") );
 		PORT_DIPSETTING (   0x0f, DEF_STR( "Off") );
 		PORT_DIPSETTING (   0x00, DEF_STR( "On") );
 	
-		PORT_START /* IN0 - X AXIS */
+		PORT_START();  /* IN0 - X AXIS */
 		PORT_ANALOG( 0xff, 0x80, IPT_TRACKBALL_X | IPF_PLAYER1, 100, 63, 0, 0 );
 	
-		PORT_START /* IN0 - Y AXIS */
+		PORT_START();  /* IN0 - Y AXIS */
 		PORT_ANALOG( 0xff, 0x80, IPT_TRACKBALL_Y | IPF_PLAYER1, 100, 63, 0, 0 );
 	
-		PORT_START /* IN0 - BUTTON */
+		PORT_START();  /* IN0 - BUTTON */
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 	
-		PORT_START /* IN1 - X AXIS */
+		PORT_START();  /* IN1 - X AXIS */
 		PORT_ANALOG( 0xff, 0x80, IPT_TRACKBALL_X | IPF_PLAYER2, 100, 63, 0, 0 );
 	
-		PORT_START /* IN1 - Y AXIS */
+		PORT_START();  /* IN1 - Y AXIS */
 		PORT_ANALOG( 0xff, 0x80, IPT_TRACKBALL_Y | IPF_PLAYER2, 100, 63, 0, 0 );
 	
-		PORT_START /* IN1 - BUTTON */
+		PORT_START();  /* IN1 - BUTTON */
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 	
-		PORT_START /* IN2 - Active LOW */
+		PORT_START();  /* IN2 - Active LOW */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START	/* no fake port here */
+		PORT_START(); 	/* no fake port here */
 		PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 
 	

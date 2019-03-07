@@ -280,7 +280,7 @@ public class rockola
 	
 	/* Derived from Zarzon. Might not reflect the actual hardware. */
 	static InputPortPtr input_ports_sasuke = new InputPortPtr(){ public void handler() { 
-	    PORT_START  /* IN0 */
+	    PORT_START();   /* IN0 */
 	    PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY );
 	    PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 	    PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_BUTTON1 );
@@ -290,13 +290,13 @@ public class rockola
 	    PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_START1 );
 	    PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_START2 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 	    PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	    PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	    PORT_BIT( 0x7C, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	    PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
-	    PORT_START  /* DSW */
+	    PORT_START();   /* DSW */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
@@ -321,14 +321,14 @@ public class rockola
 		PORT_DIPSETTING (   0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING (   0x80, DEF_STR( "On") );
 	
-		PORT_START  /* IN2 */
+		PORT_START();   /* IN2 */
 		PORT_BIT_IMPULSE( 0x01, IP_ACTIVE_HIGH, IPT_COIN1, 1 );
 		PORT_BIT( 0x0e, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNKNOWN );/* connected to a counter - random number generator? */
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_satansat = new InputPortPtr(){ public void handler() { 
-	    PORT_START  /* IN0 */
+	    PORT_START();   /* IN0 */
 	    PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY );
 	    PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 	    PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_BUTTON1 );
@@ -338,13 +338,13 @@ public class rockola
 	    PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_BUTTON2 );
 	    PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_BUTTON2 | IPF_COCKTAIL );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 	    PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 	    PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 	    PORT_BIT( 0x7C, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	    PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
-	    PORT_START  /* DSW */
+	    PORT_START();   /* DSW */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
@@ -368,14 +368,14 @@ public class rockola
 		PORT_DIPSETTING (   0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING (   0x80, DEF_STR( "On") );
 	
-		PORT_START  /* IN2 */
+		PORT_START();   /* IN2 */
 		PORT_BIT_IMPULSE( 0x01, IP_ACTIVE_HIGH, IPT_COIN1, 1 );
 		PORT_BIT( 0x0e, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNKNOWN );/* connected to a counter - random number generator? */
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_vanguard = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON3 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON4 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_BUTTON2 );
@@ -385,7 +385,7 @@ public class rockola
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON3 | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON4 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_BUTTON2 | IPF_COCKTAIL );
@@ -395,7 +395,7 @@ public class rockola
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
@@ -427,7 +427,7 @@ public class rockola
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT_IMPULSE( 0x01, IP_ACTIVE_HIGH, IPT_COIN2, 1 );
 		PORT_BIT_IMPULSE( 0x02, IP_ACTIVE_HIGH, IPT_COIN1, 1 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );
@@ -439,7 +439,7 @@ public class rockola
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_fantasy = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );
@@ -449,7 +449,7 @@ public class rockola
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );
@@ -459,7 +459,7 @@ public class rockola
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
@@ -491,7 +491,7 @@ public class rockola
 		PORT_DIPSETTING(    0x80, DEF_STR( "No") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT_IMPULSE( 0x01, IP_ACTIVE_HIGH, IPT_COIN2, 1 );
 		PORT_BIT_IMPULSE( 0x02, IP_ACTIVE_HIGH, IPT_COIN1, 1 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );
@@ -503,7 +503,7 @@ public class rockola
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_pballoon = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );
@@ -513,7 +513,7 @@ public class rockola
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );
@@ -523,7 +523,7 @@ public class rockola
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
@@ -555,7 +555,7 @@ public class rockola
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT_IMPULSE( 0x01, IP_ACTIVE_HIGH, IPT_COIN2, 1 );
 		PORT_BIT_IMPULSE( 0x02, IP_ACTIVE_HIGH, IPT_COIN1, 1 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );
@@ -567,7 +567,7 @@ public class rockola
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_nibbler = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* Slow down */
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* debug command? */
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* debug command */
@@ -577,7 +577,7 @@ public class rockola
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* Pause */
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* Unpause */
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* End game */
@@ -587,7 +587,7 @@ public class rockola
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "3" );
 		PORT_DIPSETTING(    0x01, "4" );
@@ -612,7 +612,7 @@ public class rockola
 		PORT_DIPSETTING(    0x00, DEF_STR( "No") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Yes") );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT_IMPULSE( 0x01, IP_ACTIVE_HIGH, IPT_COIN2, 1 );
 		PORT_BIT_IMPULSE( 0x02, IP_ACTIVE_HIGH, IPT_COIN1, 1 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );

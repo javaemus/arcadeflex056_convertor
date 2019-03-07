@@ -196,7 +196,7 @@ public class bosco
 	
 	
 	static InputPortPtr input_ports_bosco = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "3C_1C") );
@@ -222,7 +222,7 @@ public class bosco
 		PORT_DIPSETTING(    0x80, "3" );
 		PORT_DIPSETTING(    0xc0, "5" );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x01, "Easy" );
 		PORT_DIPSETTING(    0x03, "Medium" );
@@ -247,7 +247,7 @@ public class bosco
 		PORT_DIPSETTING(    0x80, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		/* The player inputs are not memory mapped, they are handled by an I/O chip. */
 		/* These fake input ports are read by galaga_customio_data_r() */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY );
@@ -258,7 +258,7 @@ public class bosco
 		PORT_BITX(0x20, IP_ACTIVE_LOW, IPT_BUTTON1, 0, IP_KEY_PREVIOUS, IP_JOY_PREVIOUS );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY | IPF_COCKTAIL);
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL);
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_COCKTAIL);
@@ -267,7 +267,7 @@ public class bosco
 		PORT_BITX(0x20, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL, 0, IP_KEY_PREVIOUS, IP_JOY_PREVIOUS );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		/* the button here is used to trigger the sound in the test screen */
 		PORT_BITX(0x03, IP_ACTIVE_LOW, IPT_BUTTON1,	0, IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BIT_IMPULSE( 0x04, IP_ACTIVE_LOW, IPT_START1, 1 );
@@ -279,7 +279,7 @@ public class bosco
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_boscomd = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "3C_1C") );
@@ -305,7 +305,7 @@ public class bosco
 		PORT_DIPSETTING(    0x80, "3" );
 		PORT_DIPSETTING(    0xc0, "5" );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x01, 0x01, "2 Credits Game" );
 		PORT_DIPSETTING(    0x00, "1 Player" );
 		PORT_DIPSETTING(    0x01, "2 Players" );
@@ -330,7 +330,7 @@ public class bosco
 		PORT_DIPSETTING(    0x80, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		/* The player inputs are not memory mapped, they are handled by an I/O chip. */
 		/* These fake input ports are read by galaga_customio_data_r() */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY );
@@ -341,7 +341,7 @@ public class bosco
 		PORT_BITX(0x20, IP_ACTIVE_LOW, IPT_BUTTON1, 0, IP_KEY_PREVIOUS, IP_JOY_PREVIOUS );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY | IPF_COCKTAIL);
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL);
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_COCKTAIL);
@@ -350,7 +350,7 @@ public class bosco
 		PORT_BITX(0x20, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL, 0, IP_KEY_PREVIOUS, IP_JOY_PREVIOUS );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		/* the button here is used to trigger the sound in the test screen */
 		PORT_BITX(0x03, IP_ACTIVE_LOW, IPT_BUTTON1,	0, IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BIT_IMPULSE( 0x04, IP_ACTIVE_LOW, IPT_START1, 1 );

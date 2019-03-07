@@ -55,7 +55,7 @@ public class subs
 	};
 	
 	static InputPortPtr input_ports_subs = new InputPortPtr(){ public void handler() { 
-		PORT_START /* OPTIONS */
+		PORT_START();  /* OPTIONS */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -80,14 +80,14 @@ public class subs
 		PORT_DIPSETTING(    0xc0, "3:30 Minutes" );
 		PORT_DIPSETTING(    0xe0, "4:00 Minutes" );
 	
-	PORT_START /* IN1 */
+	PORT_START();  /* IN1 */
 		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* Diag Step */
 		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* Diag Hold */
 		PORT_BIT ( 0x04, IP_ACTIVE_LOW, IPT_TILT );   /* Slam */
 		PORT_BIT ( 0x08, IP_ACTIVE_LOW, IPT_UNUSED ); /* Spare */
 		PORT_BIT ( 0xf0, IP_ACTIVE_HIGH, IPT_UNUSED );/* Filled in with steering information */
 	
-		PORT_START /* IN2 */
+		PORT_START();  /* IN2 */
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT ( 0x04, IP_ACTIVE_HIGH, IPT_COIN2 );
@@ -97,10 +97,10 @@ public class subs
 		PORT_BITX( 0x40, IP_ACTIVE_LOW, IPT_SERVICE | IPF_TOGGLE, "Self Test", KEYCODE_F2, IP_JOY_NONE );
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 );
 	
-	PORT_START      /* IN3 */
+	PORT_START();       /* IN3 */
 		PORT_ANALOG( 0xff, 0x00, IPT_DIAL, 100, 10, 0, 0 );
 	
-	PORT_START      /* IN4 */
+	PORT_START();       /* IN4 */
 		PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_PLAYER2, 100, 10, 0, 0 );
 	
 	INPUT_PORTS_END(); }}; 

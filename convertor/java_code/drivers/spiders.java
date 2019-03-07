@@ -231,7 +231,7 @@ public class spiders
 	
 	
 	static InputPortPtr input_ports_spiders = new InputPortPtr(){ public void handler() { 
-	    PORT_START      /* IN0 */
+	    PORT_START();       /* IN0 */
 	    PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_SERVICE1 );/* PIA0 PA1 */
 		PORT_BITX(0x04, IP_ACTIVE_HIGH, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )	/* PIA0 PA2 */
@@ -240,12 +240,12 @@ public class spiders
 	    PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_START2 );
 	    PORT_BIT( 0x90, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-	    PORT_START      /* IN1 */
+	    PORT_START();       /* IN1 */
 	    PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_2WAY );
 	    PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 	    PORT_BIT( 0xF3, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-	    PORT_START  /* DSW1 */
+	    PORT_START();   /* DSW1 */
 	    PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coinage") );
 	    PORT_DIPSETTING(    0x01, DEF_STR( "2C_1C") );
 	    PORT_DIPSETTING(    0x07, DEF_STR( "1C_1C") );
@@ -255,7 +255,7 @@ public class spiders
 	    PORT_DIPSETTING(    0x00, DEF_STR( "Free_Play") );
 	    PORT_BIT(0xf8, IP_ACTIVE_LOW,IPT_UNUSED);
 	
-	    PORT_START  /* DSW2 */
+	    PORT_START();   /* DSW2 */
 	    PORT_DIPNAME( 0x03, 0x03, "Play mode" );
 	    PORT_DIPSETTING(    0x00, "A A'" );
 	    PORT_DIPSETTING(    0x01, "A B'" );
@@ -278,7 +278,7 @@ public class spiders
 	    PORT_DIPSETTING(    0x00, "First screen" );
 	    PORT_DIPSETTING(    0x80, "Every screen" );
 	
-	    PORT_START  /* DSW3 */
+	    PORT_START();   /* DSW3 */
 	    PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Flip_Screen") );
 	    PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 	    PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -304,10 +304,10 @@ public class spiders
 	    PORT_DIPSETTING(    0xc0, "6" );
 	    PORT_DIPSETTING(    0xe0, "7" );
 	
-	    PORT_START      /* Connected to PIA1 CA1 input */
+	    PORT_START();       /* Connected to PIA1 CA1 input */
 	    PORT_BIT( 0xFF, IP_ACTIVE_HIGH, IPT_VBLANK );
 	
-	    PORT_START      /* Connected to PIA0 CB1 input */
+	    PORT_START();       /* Connected to PIA0 CB1 input */
 	    PORT_BITX(0xff, 0xff, IP_ACTIVE_LOW, "PS1 (Crosshatch);, KEYCODE_F2, IP_JOY_NONE )
 	
 	INPUT_PORTS_END(); }}; 

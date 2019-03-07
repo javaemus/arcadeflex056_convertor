@@ -373,7 +373,7 @@ public class wardner
 	*****************************************************************************/
 	
 	#define  WARDNER_PLAYER_INPUT( player )										 \
-		PORT_START 				/* Player 1 button 3 skips video RAM tests */	 \
+		PORT_START();  				/* Player 1 button 3 skips video RAM tests */	 \
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY | player );\
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY | player );\
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | player );\
@@ -384,7 +384,7 @@ public class wardner
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_BUTTON4 | player);/* Shot D */
 	
 	#define  WARDNER_SYSTEM_INPUTS												\
-		PORT_START				/* test button doesnt seem to do anything ? */	\
+		PORT_START(); 				/* test button doesnt seem to do anything ? */	\
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN3 );	/* Service button */	\
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_TILT );							\
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNUSED );/* Test button */		\
@@ -395,7 +395,7 @@ public class wardner
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_VBLANK );/* V-Blank */
 	
 	#define  PYROS_DSW_A									\
-		PORT_START		/* DSW A */							\
+		PORT_START(); 		/* DSW A */							\
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Cabinet") );		\
 		PORT_DIPSETTING(	0x01, DEF_STR( "Upright") );		\
 		PORT_DIPSETTING(	0x00, DEF_STR( "Cocktail") );		\
@@ -420,7 +420,7 @@ public class wardner
 		PORT_DIPSETTING(	0x40, DEF_STR( "1C_2C") );
 	
 	#define  WARDNER_DSW_B									\
-		PORT_START		/* DSW B */							\
+		PORT_START(); 		/* DSW B */							\
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Difficulty") );	\
 		PORT_DIPSETTING(	0x01, "Easy" );				\
 		PORT_DIPSETTING(	0x00, "Normal" );			\
@@ -450,7 +450,7 @@ public class wardner
 		WARDNER_PLAYER_INPUT( IPF_PLAYER1 )
 		WARDNER_PLAYER_INPUT( IPF_PLAYER2 )
 	
-		PORT_START		/* DSW A */
+		PORT_START(); 		/* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Cocktail") );
@@ -483,7 +483,7 @@ public class wardner
 		WARDNER_PLAYER_INPUT( IPF_PLAYER2 )
 		PYROS_DSW_A
 	
-		PORT_START		/* DSW B */
+		PORT_START(); 		/* DSW B */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(	0x01, "Easy" );
 		PORT_DIPSETTING(	0x00, "Normal" );

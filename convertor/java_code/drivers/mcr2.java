@@ -284,7 +284,7 @@ public class mcr2
 	 *************************************/
 	
 	static InputPortPtr input_ports_shollow = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1 );
@@ -294,7 +294,7 @@ public class mcr2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON2 );
@@ -304,26 +304,26 @@ public class mcr2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 	
-		PORT_START	/* IN2 unused */
+		PORT_START(); 	/* IN2 unused */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN3 -- dipswitches */
+		PORT_START(); 	/* IN3 -- dipswitches */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "Cocktail") );
 		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* IN4 unused */
+		PORT_START(); 	/* IN4 unused */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* AIN0 */
+		PORT_START(); 	/* AIN0 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_tron = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1 );
@@ -333,10 +333,10 @@ public class mcr2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN3 );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* IN1 -- controls spinner */
+		PORT_START(); 	/* IN1 -- controls spinner */
 		PORT_ANALOGX( 0xff, 0x00, IPT_DIAL | IPF_REVERSE, 50, 10, 0, 0, KEYCODE_Z, KEYCODE_X, 0, 0 );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY );
@@ -346,7 +346,7 @@ public class mcr2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START	/* IN3 -- dipswitches */
+		PORT_START(); 	/* IN3 -- dipswitches */
 		PORT_DIPNAME( 0x01, 0x00, "Coin Meters" );
 		PORT_DIPSETTING(    0x01, "1" );
 		PORT_DIPSETTING(    0x00, "2" );
@@ -358,10 +358,10 @@ public class mcr2
 		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
 		PORT_BIT( 0xf8, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN4 */
+		PORT_START(); 	/* IN4 */
 		PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_REVERSE | IPF_COCKTAIL, 50, 10, 0, 0 );
 	
-		PORT_START	/* AIN0 */
+		PORT_START(); 	/* AIN0 */
 		PORT_BIT( 0x0f, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT( 0xe0, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -369,7 +369,7 @@ public class mcr2
 	
 	
 	static InputPortPtr input_ports_kroozr = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1 );
@@ -379,7 +379,7 @@ public class mcr2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* IN1 -- controls firing spinner */
+		PORT_START(); 	/* IN1 -- controls firing spinner */
 		PORT_BIT( 0x07, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_UNKNOWN );
@@ -387,36 +387,36 @@ public class mcr2
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 );
 	
-		PORT_START	/* IN2 -- controls joystick x-axis */
+		PORT_START(); 	/* IN2 -- controls joystick x-axis */
 		PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* IN3 -- dipswitches */
+		PORT_START(); 	/* IN3 -- dipswitches */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "Cocktail") );
 		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* IN4 -- controls joystick y-axis */
+		PORT_START(); 	/* IN4 -- controls joystick y-axis */
 		PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* AIN0 */
+		PORT_START(); 	/* AIN0 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* dummy extra port for keyboard movement */
+		PORT_START(); 	/* dummy extra port for keyboard movement */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_8WAY );
 		PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP | IPF_8WAY );
 		PORT_BIT( 0xf0, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* dummy extra port for dial control */
+		PORT_START(); 	/* dummy extra port for dial control */
 		PORT_ANALOGX( 0xff, 0x00, IPT_DIAL | IPF_REVERSE, 40, 10, 0, 0, KEYCODE_Z, KEYCODE_X, 0, 0 );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_domino = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1 );
@@ -426,20 +426,20 @@ public class mcr2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN3 );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY );
 	
-		PORT_START	/* IN2 unused */
+		PORT_START(); 	/* IN2 unused */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 	
-		PORT_START	/* IN3 -- dipswitches */
+		PORT_START(); 	/* IN3 -- dipswitches */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_DIPNAME( 0x02, 0x02, "Skin Color" );
 		PORT_DIPSETTING(    0x02, "Light" );
@@ -452,16 +452,16 @@ public class mcr2
 		PORT_DIPSETTING(    0x80, "1" );
 		PORT_DIPSETTING(    0x00, "2" );
 	
-		PORT_START	/* IN4 unused */
+		PORT_START(); 	/* IN4 unused */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* AIN0 */
+		PORT_START(); 	/* AIN0 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_wacko = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1 );
@@ -471,13 +471,13 @@ public class mcr2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN3 );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* IN1 -- controls joystick x-axis */
+		PORT_START(); 	/* IN1 -- controls joystick x-axis */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_X, 50, 10, 0, 0 );
 	
-		PORT_START	/* IN2 -- controls joystick y-axis */
+		PORT_START(); 	/* IN2 -- controls joystick y-axis */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_Y | IPF_REVERSE, 50, 10, 0, 0 );
 	
-		PORT_START	/* IN3 -- dipswitches */
+		PORT_START(); 	/* IN3 -- dipswitches */
 		PORT_BIT( 0x3f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_DIPNAME( 0x40, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
@@ -486,7 +486,7 @@ public class mcr2
 		PORT_DIPSETTING(    0x80, "1" );
 		PORT_DIPSETTING(    0x00, "2" );
 	
-		PORT_START	/* IN4 -- 4-way firing joystick */
+		PORT_START(); 	/* IN4 -- 4-way firing joystick */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_RIGHT | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_LEFT | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_DOWN | IPF_4WAY );
@@ -496,19 +496,19 @@ public class mcr2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_DOWN | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_UP | IPF_4WAY | IPF_COCKTAIL );
 	
-		PORT_START	/* AIN0 */
+		PORT_START(); 	/* AIN0 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* IN1 -- controls joystick x-axis */
+		PORT_START(); 	/* IN1 -- controls joystick x-axis */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_X | IPF_COCKTAIL, 50, 10, 0, 0 );
 	
-		PORT_START	/* IN2 -- controls joystick y-axis */
+		PORT_START(); 	/* IN2 -- controls joystick y-axis */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_Y | IPF_REVERSE | IPF_COCKTAIL, 50, 10, 0, 0 );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_twotiger = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1 );
@@ -518,28 +518,28 @@ public class mcr2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN3 );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* IN1 -- player 1 spinner */
+		PORT_START(); 	/* IN1 -- player 1 spinner */
 		PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_REVERSE, 10, 10, 0, 0 );
 	
-		PORT_START	/* IN2 -- buttons for player 1 & player 2 */
+		PORT_START(); 	/* IN2 -- buttons for player 1 & player 2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN3 -- dipswitches */
+		PORT_START(); 	/* IN3 -- dipswitches */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN4 -- player 2 spinner */
+		PORT_START(); 	/* IN4 -- player 2 spinner */
 		PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_REVERSE | IPF_PLAYER2, 10, 10, 0, 0 );
 	
-		PORT_START	/* AIN0 */
+		PORT_START(); 	/* AIN0 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_twotigra = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START2 );
@@ -549,15 +549,15 @@ public class mcr2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN3 );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* IN1 -- player 2 yoke */
+		PORT_START(); 	/* IN1 -- player 2 yoke */
 		//PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_REVERSE | IPF_PLAYER2, 10, 10, 0, 0 );
 		PORT_ANALOG( 0xff, 0x7f, IPT_AD_STICK_X | IPF_PLAYER2, 100, 10, 0, 255 );
 	
-		PORT_START	/* IN2 -- player 1 yoke */
+		PORT_START(); 	/* IN2 -- player 1 yoke */
 		//PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_REVERSE, 10, 10, 0, 0 );
 		PORT_ANALOG( 0xff, 0x7f, IPT_AD_STICK_X | IPF_PLAYER1, 100, 10, 0, 255 );
 	
-		PORT_START	/* IN3 -- dipswitches */
+		PORT_START(); 	/* IN3 -- dipswitches */
 		PORT_DIPNAME( 0x01, 0x00, "Shot Speed" );
 		PORT_DIPSETTING(    0x01, "Fast" );
 		PORT_DIPSETTING(    0x00, "Slow" );
@@ -567,7 +567,7 @@ public class mcr2
 		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNUSED );
 	
 	
-		PORT_START	/* IN4 -- buttons for player 1 & player 2 */
+		PORT_START(); 	/* IN4 -- buttons for player 1 & player 2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON3 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 );
@@ -576,10 +576,10 @@ public class mcr2
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* AIN0 */
+		PORT_START(); 	/* AIN0 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* IN6 fake for yoke */
+		PORT_START(); 	/* IN6 fake for yoke */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY | IPF_PLAYER2 );

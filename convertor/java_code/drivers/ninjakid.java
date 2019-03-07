@@ -265,7 +265,7 @@ public class ninjakid
 	*******************************************************************************/
 	
 	static InputPortPtr input_ports_ninjakid = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* 0xa000 */
+		PORT_START(); 	/* 0xa000 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,	IPT_JOYSTICK_LEFT | IPF_2WAY );/* "XPOS1" */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,	IPT_JOYSTICK_RIGHT| IPF_2WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW,	IPT_BUTTON2 );
@@ -275,7 +275,7 @@ public class ninjakid
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START	/* 0xa001 */
+		PORT_START(); 	/* 0xa001 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,	IPT_JOYSTICK_LEFT | IPF_2WAY | IPF_COCKTAIL);/* "YPOS1" */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,	IPT_JOYSTICK_RIGHT| IPF_2WAY | IPF_COCKTAIL);
 		PORT_BIT( 0x04, IP_ACTIVE_LOW,	IPT_BUTTON2 | IPF_COCKTAIL );
@@ -285,10 +285,10 @@ public class ninjakid
 		PORT_SERVICE( 0x40, IP_ACTIVE_HIGH );\
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_COIN1 );
 	
-		PORT_START	/* 0xa002 */
+		PORT_START(); 	/* 0xa002 */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_VBLANK );
 	
-		PORT_START /* DSW1 */
+		PORT_START();  /* DSW1 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
@@ -312,7 +312,7 @@ public class ninjakid
 		PORT_DIPSETTING(    0x80, "Normal" );
 		PORT_DIPSETTING(    0x00, "Hard"   );
 	
-		PORT_START /* DSW2 */
+		PORT_START();  /* DSW2 */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x05, DEF_STR( "3C_1C") );

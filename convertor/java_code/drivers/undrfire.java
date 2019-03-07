@@ -463,7 +463,7 @@ public class undrfire
 	***********************************************************/
 	
 	static InputPortPtr input_ports_undrfire = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW,  IPT_UNKNOWN );
@@ -481,7 +481,7 @@ public class undrfire
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW,  IPT_UNKNOWN );/* ?!  Needs to toggle in end sequence */
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW,  IPT_UNKNOWN );
@@ -499,7 +499,7 @@ public class undrfire
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BITX(0x01, IP_ACTIVE_LOW,  IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_SERVICE1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_COIN1 );
@@ -511,19 +511,19 @@ public class undrfire
 	
 		/* Gun inputs (real range is 0-0xffff: we use standard 0-255 and shift later) */
 	
-		PORT_START	/* IN 3, P1X */
+		PORT_START(); 	/* IN 3, P1X */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_REVERSE | IPF_PLAYER1, 20, 25, 0, 0xff);
 	
-		PORT_START	/* IN 4, P1Y */
+		PORT_START(); 	/* IN 4, P1Y */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y | IPF_PLAYER1, 20, 25, 0, 0xff);
 	
-		PORT_START	/* IN 5, P2X */
+		PORT_START(); 	/* IN 5, P2X */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_REVERSE | IPF_PLAYER2, 20, 25, 0, 0xff);
 	
-		PORT_START	/* IN 6, P2Y */
+		PORT_START(); 	/* IN 6, P2Y */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y | IPF_PLAYER2, 20, 25, 0, 0xff);
 	
-		PORT_START	/* Fake DSW */
+		PORT_START(); 	/* Fake DSW */
 		PORT_BITX(    0x01, 0x00, IPT_DIPSWITCH_NAME | IPF_TOGGLE, "Show gun target", KEYCODE_F1, IP_JOY_NONE );
 		PORT_DIPSETTING(    0x00, DEF_STR( "No") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Yes") );

@@ -1347,7 +1347,7 @@ public class kaneko16
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_bakubrkr = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1 + DSW - e00000.w
+		PORT_START(); 	// IN0 - Player 1 + DSW - e00000.w
 		PORT_DIPNAME( 0x0001, 0x0001, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") ); )
@@ -1380,7 +1380,7 @@ public class kaneko16
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN1 - Player 2 - e00002.b
+		PORT_START(); 	// IN1 - Player 2 - e00002.b
 		PORT_BIT(  0x0100, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT(  0x0200, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT(  0x0400, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
@@ -1390,7 +1390,7 @@ public class kaneko16
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN2 - Coins - e00004.b
+		PORT_START(); 	// IN2 - Coins - e00004.b
 		PORT_BIT(  0x0100, IP_ACTIVE_LOW, IPT_START1	);
 		PORT_BIT(  0x0200, IP_ACTIVE_LOW, IPT_START2	);
 		PORT_BIT_IMPULSE( 0x0400, IP_ACTIVE_LOW, IPT_COIN1, 2 );
@@ -1400,7 +1400,7 @@ public class kaneko16
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_SERVICE1	);
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN	);
 	
-		PORT_START	// IN3 - Seems unused ! - e00006.b
+		PORT_START(); 	// IN3 - Seems unused ! - e00006.b
 		PORT_BIT(  0x0100, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x0200, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x0400, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -1417,7 +1417,7 @@ public class kaneko16
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_berlwall = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1 - 680000.w
+		PORT_START(); 	// IN0 - Player 1 - 680000.w
 		PORT_BIT(  0x0100, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT(  0x0200, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT(  0x0400, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
@@ -1427,7 +1427,7 @@ public class kaneko16
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER1 );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN1 - Player 2 - 680002.w
+		PORT_START(); 	// IN1 - Player 2 - 680002.w
 		PORT_BIT(  0x0100, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT(  0x0200, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT(  0x0400, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
@@ -1437,7 +1437,7 @@ public class kaneko16
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN2 - Coins - 680004.w
+		PORT_START(); 	// IN2 - Coins - 680004.w
 		PORT_BIT(  0x0100, IP_ACTIVE_LOW, IPT_START1	);
 		PORT_BIT(  0x0200, IP_ACTIVE_LOW, IPT_START2	);
 		PORT_BIT_IMPULSE( 0x0400, IP_ACTIVE_LOW, IPT_COIN1, 2 );
@@ -1447,7 +1447,7 @@ public class kaneko16
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_SERVICE1	);
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN	);
 	
-		PORT_START	// IN3 - ? - 680006.w
+		PORT_START(); 	// IN3 - ? - 680006.w
 		PORT_BIT(  0x0100, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x0200, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x0400, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -1457,7 +1457,7 @@ public class kaneko16
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN4 - DSW 1 - $200018.b <- ! $80001d.b
+		PORT_START(); 	// IN4 - DSW 1 - $200018.b <- ! $80001d.b
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1483,7 +1483,7 @@ public class kaneko16
 		PORT_DIPSETTING(    0x20, DEF_STR( "1C_5C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_6C") );
 	
-		PORT_START	// IN5 - DSW 2 - $200019.b <- $80001f.b
+		PORT_START(); 	// IN5 - DSW 2 - $200019.b <- $80001f.b
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x02, "Easy"    );
 		PORT_DIPSETTING(    0x03, "Normal"  );
@@ -1513,7 +1513,7 @@ public class kaneko16
 	//	Same as berlwall, but for a different lives setting
 	
 	static InputPortPtr input_ports_berlwalt = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1 - 680000.w
+		PORT_START(); 	// IN0 - Player 1 - 680000.w
 		PORT_BIT(  0x0100, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT(  0x0200, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT(  0x0400, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
@@ -1523,7 +1523,7 @@ public class kaneko16
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER1 );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN1 - Player 2 - 680002.w
+		PORT_START(); 	// IN1 - Player 2 - 680002.w
 		PORT_BIT(  0x0100, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT(  0x0200, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT(  0x0400, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
@@ -1533,7 +1533,7 @@ public class kaneko16
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN2 - Coins - 680004.w
+		PORT_START(); 	// IN2 - Coins - 680004.w
 		PORT_BIT(  0x0100, IP_ACTIVE_LOW, IPT_START1	);
 		PORT_BIT(  0x0200, IP_ACTIVE_LOW, IPT_START2	);
 		PORT_BIT_IMPULSE( 0x0400, IP_ACTIVE_LOW, IPT_COIN1, 2 );
@@ -1543,7 +1543,7 @@ public class kaneko16
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_SERVICE1	);
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN	);
 	
-		PORT_START	// IN3 - ? - 680006.w
+		PORT_START(); 	// IN3 - ? - 680006.w
 		PORT_BIT(  0x0100, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x0200, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x0400, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -1553,7 +1553,7 @@ public class kaneko16
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN4 - DSW 1 - $80001d.b
+		PORT_START(); 	// IN4 - DSW 1 - $80001d.b
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1579,7 +1579,7 @@ public class kaneko16
 		PORT_DIPSETTING(    0x20, DEF_STR( "1C_5C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_6C") );
 	
-		PORT_START	// IN5 - DSW 2 - $80001f.b
+		PORT_START(); 	// IN5 - DSW 2 - $80001f.b
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x02, "Easy"    );
 		PORT_DIPSETTING(    0x03, "Normal"  );
@@ -1607,7 +1607,7 @@ public class kaneko16
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_blazeon = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1 + DSW - c00000.w
+		PORT_START(); 	// IN0 - Player 1 + DSW - c00000.w
 		PORT_DIPNAME( 0x0003, 0x0003, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(      0x0002, "Easy"    );
 		PORT_DIPSETTING(      0x0003, "Normal"  );
@@ -1638,7 +1638,7 @@ public class kaneko16
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_START1                       );
 		PORT_BIT_IMPULSE( 0x8000, IP_ACTIVE_LOW, IPT_COIN1, 2 );
 	
-		PORT_START	// IN1 - Player 2 - c00002.w
+		PORT_START(); 	// IN1 - Player 2 - c00002.w
 		PORT_DIPNAME( 0x000f, 0x000f, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(      0x0007, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(      0x0008, DEF_STR( "3C_1C") );
@@ -1684,10 +1684,10 @@ public class kaneko16
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_START2                       );
 		PORT_BIT_IMPULSE( 0x8000, IP_ACTIVE_LOW, IPT_COIN2, 2 );
 	
-		PORT_START	// IN2 - ? - c00004.w
+		PORT_START(); 	// IN2 - ? - c00004.w
 		PORT_BIT(  0xffff, IP_ACTIVE_LOW, IPT_UNKNOWN );// unused?
 	
-		PORT_START	// IN3 - Other Buttons - c00006.w
+		PORT_START(); 	// IN3 - Other Buttons - c00006.w
 		PORT_BIT(  0x0100, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x0200, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x0400, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -1704,7 +1704,7 @@ public class kaneko16
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_gtmr = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1 - b00000.w
+		PORT_START(); 	// IN0 - Player 1 - b00000.w
 		PORT_BIT(  0x0100, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT(  0x0200, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT(  0x0400, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
@@ -1714,7 +1714,7 @@ public class kaneko16
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN1 - Player 2 - b00002.w
+		PORT_START(); 	// IN1 - Player 2 - b00002.w
 		PORT_BIT(  0x0100, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT(  0x0200, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT(  0x0400, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
@@ -1724,7 +1724,7 @@ public class kaneko16
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN2 - Coins - b00004.w
+		PORT_START(); 	// IN2 - Coins - b00004.w
 		PORT_BIT(  0x0100, IP_ACTIVE_LOW, IPT_START1	);
 		PORT_BIT(  0x0200, IP_ACTIVE_LOW, IPT_START2	);
 		PORT_BIT_IMPULSE( 0x0400, IP_ACTIVE_LOW, IPT_COIN1, 2 );
@@ -1734,7 +1734,7 @@ public class kaneko16
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_SERVICE1	);
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN	);
 	
-		PORT_START	// IN3 - Seems unused ! - b00006.w
+		PORT_START(); 	// IN3 - Seems unused ! - b00006.w
 		PORT_BIT(  0x0100, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x0200, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x0400, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -1744,7 +1744,7 @@ public class kaneko16
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN4 - DSW from the MCU - 101265.b <- 206000.b
+		PORT_START(); 	// IN4 - DSW from the MCU - 101265.b <- 206000.b
 		PORT_SERVICE( 0x0100, IP_ACTIVE_LOW );
 		PORT_DIPNAME( 0x0200, 0x0200, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(      0x0200, DEF_STR( "Off") );
@@ -1766,7 +1766,7 @@ public class kaneko16
 		PORT_DIPSETTING(      0x4000, "Flag Only"   );
 		PORT_DIPSETTING(      0x0000, "None"        );
 	
-		PORT_START	// IN5 - Wheel - 100015.b <- ffffe.b
+		PORT_START(); 	// IN5 - Wheel - 100015.b <- ffffe.b
 		PORT_ANALOG ( 0x00ff, 0x0080, IPT_AD_STICK_X | IPF_CENTER, 30, 1, 0x00, 0xff );
 	INPUT_PORTS_END(); }}; 
 	
@@ -1776,7 +1776,7 @@ public class kaneko16
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_mgcrystl = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1 + DSW - c00000.w
+		PORT_START(); 	// IN0 - Player 1 + DSW - c00000.w
 		PORT_DIPNAME( 0x0001, 0x0001, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
@@ -1809,7 +1809,7 @@ public class kaneko16
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN1 - Player 2 - c00002.b
+		PORT_START(); 	// IN1 - Player 2 - c00002.b
 		PORT_DIPNAME( 0x0001, 0x0001, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
@@ -1844,7 +1844,7 @@ public class kaneko16
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN2 - Other Buttons - c00004.b
+		PORT_START(); 	// IN2 - Other Buttons - c00004.b
 		PORT_BIT ( 0x00ff, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT ( 0x0100, IP_ACTIVE_LOW, IPT_START1   );
 		PORT_BIT ( 0x0200, IP_ACTIVE_LOW, IPT_START2   );
@@ -1862,7 +1862,7 @@ public class kaneko16
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_sandscrp = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - $b00000.w
+		PORT_START(); 	// IN0 - $b00000.w
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN	| IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER1 );
@@ -1874,7 +1874,7 @@ public class kaneko16
 	
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN1 - $b00002.w
+		PORT_START(); 	// IN1 - $b00002.w
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER2 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN	| IPF_PLAYER2 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER2 );
@@ -1886,7 +1886,7 @@ public class kaneko16
 	
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN2 - $b00004.w
+		PORT_START(); 	// IN2 - $b00004.w
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_START1   );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_START2   );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_COIN1    );
@@ -1898,10 +1898,10 @@ public class kaneko16
 	
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN3 - $b00006.w
+		PORT_START(); 	// IN3 - $b00006.w
 		PORT_BIT( 0xffff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN4 - DSW 1 read by the Z80 through the sound chip
+		PORT_START(); 	// IN4 - DSW 1 read by the Z80 through the sound chip
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x02, "1" );
 		PORT_DIPSETTING(    0x01, "2" );
@@ -1923,7 +1923,7 @@ public class kaneko16
 		PORT_DIPSETTING(    0x40, "500K, 1000K" );
 		PORT_DIPSETTING(    0x00, "1000K, 3000K" );
 	
-		PORT_START	// IN5 - DSW 2 read by the Z80 through the sound chip
+		PORT_START(); 	// IN5 - DSW 2 read by the Z80 through the sound chip
 		PORT_DIPNAME( 0x0f, 0x0f, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x0a, DEF_STR( "6C_1C") );
 		PORT_DIPSETTING(    0x0b, DEF_STR( "5C_1C") );
@@ -1959,7 +1959,7 @@ public class kaneko16
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_shogwarr = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - - b80000.w
+		PORT_START(); 	// IN0 - - b80000.w
 		PORT_BIT(  0x0100, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT(  0x0200, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT(  0x0400, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
@@ -1969,7 +1969,7 @@ public class kaneko16
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER1 );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );// ? tested
 	
-		PORT_START	// IN1 - - b80002.w
+		PORT_START(); 	// IN1 - - b80002.w
 		PORT_BIT(  0x0100, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT(  0x0200, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT(  0x0400, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
@@ -1979,7 +1979,7 @@ public class kaneko16
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );// ? tested
 	
-		PORT_START	// IN2 - Coins - b80004.w
+		PORT_START(); 	// IN2 - Coins - b80004.w
 		PORT_BIT(  0x0100, IP_ACTIVE_LOW, IPT_START1	);
 		PORT_BIT(  0x0200, IP_ACTIVE_LOW, IPT_START2	);
 		PORT_BIT_IMPULSE( 0x0400, IP_ACTIVE_LOW, IPT_COIN1, 2 );
@@ -1989,7 +1989,7 @@ public class kaneko16
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_SERVICE1	);
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN	);// ? tested
 	
-		PORT_START	// IN3 - ? - b80006.w
+		PORT_START(); 	// IN3 - ? - b80006.w
 		PORT_BIT(  0x0100, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x0200, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x0400, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -1999,7 +1999,7 @@ public class kaneko16
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN4 - DSW from the MCU - 102e15.b <- 200059.b
+		PORT_START(); 	// IN4 - DSW from the MCU - 102e15.b <- 200059.b
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );

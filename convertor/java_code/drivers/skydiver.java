@@ -196,7 +196,7 @@ public class skydiver
 	};
 	
 	static InputPortPtr input_ports_skydiver = new InputPortPtr(){ public void handler() { 
-		PORT_START /* fake port, gets mapped to Sky Diver ports */
+		PORT_START();  /* fake port, gets mapped to Sky Diver ports */
 		PORT_BIT (0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT );
 		PORT_BIT (0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT );
 		PORT_BIT (0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER2 );
@@ -206,7 +206,7 @@ public class skydiver
 		PORT_BIT (0x40, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );/* Jump 2 */
 		PORT_BIT (0x80, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );/* Chute 2 */
 	
-		PORT_START		/* fake port, gets mapped to Sky Diver ports */
+		PORT_START(); 		/* fake port, gets mapped to Sky Diver ports */
 		PORT_BITX(0x01, IP_ACTIVE_LOW, IPT_UNKNOWN, "(D);OPT SW NEXT TEST", KEYCODE_D, IP_JOY_NONE )
 		PORT_BITX(0x02, IP_ACTIVE_LOW, IPT_UNKNOWN, "(F);OPT SW", KEYCODE_F, IP_JOY_NONE )
 		PORT_BITX(0x04, IP_ACTIVE_LOW, IPT_UNKNOWN, "(E);OPT SW", KEYCODE_E, IP_JOY_NONE )
@@ -216,7 +216,7 @@ public class skydiver
 		PORT_BIT (0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN2, 1 );
 	
-		PORT_START		/* fake port, gets mapped to Sky Diver ports */
+		PORT_START(); 		/* fake port, gets mapped to Sky Diver ports */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "3" );
 		PORT_DIPSETTING(    0x01, "4" );
@@ -239,7 +239,7 @@ public class skydiver
 		PORT_DIPSETTING(    0x80, "Spanish" );
 		PORT_DIPSETTING(    0xc0, "German" );
 	
-		PORT_START		/* fake port, gets mapped to Sky Diver ports */
+		PORT_START(); 		/* fake port, gets mapped to Sky Diver ports */
 		PORT_BITX(0x01, IP_ACTIVE_LOW, IPT_SERVICE | IPF_TOGGLE, "Self Test", KEYCODE_F2, IP_JOY_NONE );
 		PORT_BIT (0x02, IP_ACTIVE_LOW, IPT_VBLANK );
 		PORT_BIT (0x04, IP_ACTIVE_LOW, IPT_TILT );

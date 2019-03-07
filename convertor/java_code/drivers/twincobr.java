@@ -342,7 +342,7 @@ public class twincobr
 	*****************************************************************************/
 	
 	#define  TOAPLAN_PLAYER_INPUT( player )										 \
-		PORT_START 																 \
+		PORT_START();  																 \
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY | player );\
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY | player );\
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | player );\
@@ -353,7 +353,7 @@ public class twincobr
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
 	#define  TOAPLAN_JAPAN_DSW_A							\
-		PORT_START		/* DSW A */							\
+		PORT_START(); 		/* DSW A */							\
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Cabinet") );		\
 		PORT_DIPSETTING(	0x01, DEF_STR( "Upright") );		\
 		PORT_DIPSETTING(	0x00, DEF_STR( "Cocktail") );		\
@@ -378,12 +378,12 @@ public class twincobr
 		PORT_DIPSETTING(	0x40, DEF_STR( "1C_2C") );
 	
 	#define  TWINCOBR_VBLANK_INPUT						\
-		PORT_START										\
+		PORT_START(); 										\
 		PORT_BIT( 0x7f, IP_ACTIVE_HIGH, IPT_UNKNOWN );\
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_VBLANK );
 	
 	#define  TWINCOBR_SYSTEM_INPUTS							\
-		PORT_START											\
+		PORT_START(); 											\
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN3 );		\
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_TILT );		\
 		PORT_DIPNAME( 0x04, 0x00, "Cross Hatch Pattern" );\
@@ -396,7 +396,7 @@ public class twincobr
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
 	#define TWINCOBR_DSW_B		/* not KTIGER */			\
-		PORT_START		/* DSW B */							\
+		PORT_START(); 		/* DSW B */							\
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Difficulty") );	\
 		PORT_DIPSETTING(	0x01, "Easy" );				\
 		PORT_DIPSETTING(	0x00, "Normal" );			\
@@ -420,7 +420,7 @@ public class twincobr
 		PORT_DIPSETTING(	0x80, DEF_STR( "On") );
 	
 	#define  FSHARK_SYSTEM_INPUTS		/* V-Blank is also here */				 \
-		PORT_START																 \
+		PORT_START(); 																 \
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN3 );							 \
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_TILT );	/* tilt causes freeze */ \
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNUSED );/* reset button */		 \
@@ -431,7 +431,7 @@ public class twincobr
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_VBLANK );
 	
 	#define FSHARK_DSW_B									\
-		PORT_START		/* DSW B */							\
+		PORT_START(); 		/* DSW B */							\
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Difficulty") );	\
 		PORT_DIPSETTING(	0x01, "Easy" );				\
 		PORT_DIPSETTING(	0x00, "Normal" );			\
@@ -462,7 +462,7 @@ public class twincobr
 		TOAPLAN_PLAYER_INPUT( IPF_PLAYER1 )
 		TOAPLAN_PLAYER_INPUT( IPF_PLAYER2 )
 	
-		PORT_START		/* DSW A */
+		PORT_START(); 		/* DSW A */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "On") );
@@ -495,7 +495,7 @@ public class twincobr
 		TOAPLAN_PLAYER_INPUT( IPF_PLAYER1 )
 		TOAPLAN_PLAYER_INPUT( IPF_PLAYER2 )
 	
-		PORT_START		/* DSW A */
+		PORT_START(); 		/* DSW A */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "On") );
@@ -529,7 +529,7 @@ public class twincobr
 		TOAPLAN_PLAYER_INPUT( IPF_PLAYER2 )
 		TOAPLAN_JAPAN_DSW_A
 	
-		PORT_START		/* DSW B */
+		PORT_START(); 		/* DSW B */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(	0x01, "Easy" );
 		PORT_DIPSETTING(	0x00, "Normal" );
@@ -560,7 +560,7 @@ public class twincobr
 		TOAPLAN_PLAYER_INPUT( IPF_PLAYER1 )
 		TOAPLAN_PLAYER_INPUT( IPF_PLAYER2 )
 	
-		PORT_START		/* DSW A */
+		PORT_START(); 		/* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Cocktail") );
@@ -592,7 +592,7 @@ public class twincobr
 		TOAPLAN_PLAYER_INPUT( IPF_PLAYER1 )
 		TOAPLAN_PLAYER_INPUT( IPF_PLAYER2 )
 	
-		PORT_START		/* DSW A */
+		PORT_START(); 		/* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Cocktail") );

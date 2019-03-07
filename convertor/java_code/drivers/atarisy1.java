@@ -599,19 +599,19 @@ public class atarisy1
 	 *************************************/
 	
 	static InputPortPtr input_ports_marble = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* F20000 */
+		PORT_START();   /* F20000 */
 	    PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_X | IPF_REVERSE | IPF_PLAYER1, 30, 30, 0, 0 );
 	
-		PORT_START  /* F20002 */
+		PORT_START();   /* F20002 */
 	    PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_Y | IPF_PLAYER1, 30, 30, 0, 0 );
 	
-		PORT_START  /* F20004 */
+		PORT_START();   /* F20004 */
 	    PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_X | IPF_REVERSE | IPF_PLAYER2, 30, 30, 0, 0 );
 	
-		PORT_START  /* F20006 */
+		PORT_START();   /* F20006 */
 	    PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_Y | IPF_PLAYER2, 30, 30, 0, 0 );
 	
-		PORT_START	/* F60000 */
+		PORT_START(); 	/* F60000 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -622,7 +622,7 @@ public class atarisy1
 		PORT_BIT( 0x0080, IP_ACTIVE_HIGH, IPT_SPECIAL );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* 1820 (sound) */
+		PORT_START(); 	/* 1820 (sound) */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN3 );
@@ -634,23 +634,23 @@ public class atarisy1
 	
 	
 	static InputPortPtr input_ports_peterpak = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* F40000 */
+		PORT_START(); 	/* F40000 */
 		PORT_BIT( 0x0f, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP );
 		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN );
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT );
 	
-		PORT_START	/* n/a */
+		PORT_START(); 	/* n/a */
 		PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* n/a */
+		PORT_START(); 	/* n/a */
 		PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* n/a */
+		PORT_START(); 	/* n/a */
 		PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* F60000 */
+		PORT_START(); 	/* F60000 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_START2 );
@@ -662,7 +662,7 @@ public class atarisy1
 		PORT_BIT( 0x0080, IP_ACTIVE_HIGH, IPT_SPECIAL );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* 1820 (sound) */
+		PORT_START(); 	/* 1820 (sound) */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN3 );
@@ -674,23 +674,23 @@ public class atarisy1
 	
 	
 	static InputPortPtr input_ports_indytemp = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* F40000 */
+		PORT_START(); 	/* F40000 */
 		PORT_BIT( 0x0f, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP );
 		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN );
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT );
 	
-		PORT_START	/* n/a */
+		PORT_START(); 	/* n/a */
 		PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* n/a */
+		PORT_START(); 	/* n/a */
 		PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* n/a */
+		PORT_START(); 	/* n/a */
 		PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* F60000 */
+		PORT_START(); 	/* F60000 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_START2 );
@@ -702,7 +702,7 @@ public class atarisy1
 		PORT_BIT( 0x0080, IP_ACTIVE_HIGH, IPT_SPECIAL );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* 1820 (sound) */
+		PORT_START(); 	/* 1820 (sound) */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN3 );
@@ -714,19 +714,19 @@ public class atarisy1
 	
 	
 	static InputPortPtr input_ports_roadrunn = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* F40000 */
+		PORT_START(); 	/* F40000 */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y | IPF_PLAYER1, 100, 10, 0x10, 0xf0 );
 	
-		PORT_START	/* F40002 */
+		PORT_START(); 	/* F40002 */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_REVERSE | IPF_PLAYER1, 100, 10, 0x10, 0xf0 );
 	
-		PORT_START	/* n/a */
+		PORT_START(); 	/* n/a */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* n/a */
+		PORT_START(); 	/* n/a */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* F60000 */
+		PORT_START(); 	/* F60000 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_START2 );
@@ -738,7 +738,7 @@ public class atarisy1
 		PORT_BIT( 0x0080, IP_ACTIVE_HIGH, IPT_SPECIAL );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* 1820 (sound) */
+		PORT_START(); 	/* 1820 (sound) */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN3 );
@@ -750,19 +750,19 @@ public class atarisy1
 	
 	
 	static InputPortPtr input_ports_roadblst = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* F20000 */
+		PORT_START(); 	/* F20000 */
 		PORT_ANALOG( 0xff, 0x40, IPT_DIAL | IPF_REVERSE, 25, 10, 0x00, 0x7f );
 	
-		PORT_START	/* F40000 */
+		PORT_START(); 	/* F40000 */
 		PORT_ANALOG( 0xff, 0x00, IPT_PEDAL, 100, 64, 0x00, 0xff );
 	
-		PORT_START	/* n/a */
+		PORT_START(); 	/* n/a */
 		PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* n/a */
+		PORT_START(); 	/* n/a */
 		PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* F60000 */
+		PORT_START(); 	/* F60000 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_BUTTON3 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -773,7 +773,7 @@ public class atarisy1
 		PORT_BIT( 0x0080, IP_ACTIVE_HIGH, IPT_SPECIAL );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* 1820 (sound) */
+		PORT_START(); 	/* 1820 (sound) */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN3 );

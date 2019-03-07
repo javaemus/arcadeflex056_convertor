@@ -391,7 +391,7 @@ public class cyberbal
 	 *************************************/
 	
 	static InputPortPtr input_ports_cyberbal = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* fe0000 */
+		PORT_START();       /* fe0000 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_PLAYER4 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_PLAYER4 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER4 );
@@ -408,7 +408,7 @@ public class cyberbal
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_SERVICE( 0x8000, IP_ACTIVE_LOW );
 	
-		PORT_START      /* fe1000 */
+		PORT_START();       /* fe1000 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_PLAYER2 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_PLAYER2 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER2 );
@@ -425,12 +425,12 @@ public class cyberbal
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_VBLANK );
 	
-		PORT_START		/* fake port for screen switching */
+		PORT_START(); 		/* fake port for screen switching */
 		PORT_BITX(  0x0001, IP_ACTIVE_HIGH, IPT_BUTTON2, "Select Left Screen", KEYCODE_9, IP_JOY_NONE );
 		PORT_BITX(  0x0002, IP_ACTIVE_HIGH, IPT_BUTTON2, "Select Right Screen", KEYCODE_0, IP_JOY_NONE );
 		PORT_BIT( 0xfffc, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* audio board port */
+		PORT_START(); 		/* audio board port */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN3 );
@@ -443,7 +443,7 @@ public class cyberbal
 	
 	
 	static InputPortPtr input_ports_cyberb2p = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* fc0000 */
+		PORT_START();       /* fc0000 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER1 );
@@ -452,7 +452,7 @@ public class cyberbal
 		PORT_BIT( 0x0020, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0xffc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* fc2000 */
+		PORT_START();       /* fc2000 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_PLAYER2 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_PLAYER2 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER2 );
@@ -461,7 +461,7 @@ public class cyberbal
 		PORT_BIT( 0x0020, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0xffc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* fc4000 */
+		PORT_START(); 		/* fc4000 */
 		PORT_BIT( 0x1fff, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x2000, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x4000, IP_ACTIVE_HIGH, IPT_VBLANK );

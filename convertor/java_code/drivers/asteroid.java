@@ -286,7 +286,7 @@ public class asteroid
 	};
 	
 	static InputPortPtr input_ports_asteroid = new InputPortPtr(){ public void handler() { 
-		PORT_START /* IN0 */
+		PORT_START();  /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		/* Bit 2 and 3 are handled in the machine dependent part. */
 			/* Bit 2 is the 3 KHz source and Bit 3 the VG_HALT bit	  */
@@ -298,7 +298,7 @@ public class asteroid
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_TILT );
 		PORT_SERVICE( 0x80, IP_ACTIVE_HIGH );
 	
-		PORT_START /* IN1 */
+		PORT_START();  /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN3 );
@@ -308,7 +308,7 @@ public class asteroid
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY );
 	
-		PORT_START /* DSW1 */
+		PORT_START();  /* DSW1 */
 		PORT_DIPNAME( 0x03, 0x00, "Language" );
 		PORT_DIPSETTING (	0x00, "English" );
 		PORT_DIPSETTING (	0x01, "German" );
@@ -334,7 +334,7 @@ public class asteroid
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_asteroib = new InputPortPtr(){ public void handler() { 
-		PORT_START /* IN0 */
+		PORT_START();  /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* resets */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* resets */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_TILT );
@@ -345,7 +345,7 @@ public class asteroid
 		/* Bit 7 is VG_HALT, handled in the machine dependant part */
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START /* IN1 */
+		PORT_START();  /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_BUTTON2 );
@@ -355,7 +355,7 @@ public class asteroid
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY );
 	
-		PORT_START /* DSW1 */
+		PORT_START();  /* DSW1 */
 		PORT_DIPNAME( 0x03, 0x00, "Language" );
 		PORT_DIPSETTING (	0x00, "English" );
 		PORT_DIPSETTING (	0x01, "German" );
@@ -379,13 +379,13 @@ public class asteroid
 		PORT_DIPSETTING (	0x40, DEF_STR( "1C_2C") );
 		PORT_DIPSETTING (	0x00, DEF_STR( "Free_Play") );
 	
-		PORT_START /* hyperspace */
+		PORT_START();  /* hyperspace */
 		PORT_BIT( 0x7f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON3 );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_astdelux = new InputPortPtr(){ public void handler() { 
-		PORT_START /* IN0 */
+		PORT_START();  /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		/* Bit 2 and 3 are handled in the machine dependent part. */
 		/* Bit 2 is the 3 KHz source and Bit 3 the VG_HALT bit	  */
@@ -397,7 +397,7 @@ public class asteroid
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_TILT );
 		PORT_SERVICE( 0x80, IP_ACTIVE_HIGH );
 	
-		PORT_START /* IN1 */
+		PORT_START();  /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN3 );
@@ -407,7 +407,7 @@ public class asteroid
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY );
 	
-		PORT_START /* DSW 1 */
+		PORT_START();  /* DSW 1 */
 		PORT_DIPNAME( 0x03, 0x00, "Language" );
 		PORT_DIPSETTING (	0x00, "English" );
 		PORT_DIPSETTING (	0x01, "German" );
@@ -430,7 +430,7 @@ public class asteroid
 		PORT_DIPSETTING (	0x80, "15000" );
 		PORT_DIPSETTING (	0xc0, "None" );
 	
-		PORT_START /* DSW 2 */
+		PORT_START();  /* DSW 2 */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Coinage") );
 		PORT_DIPSETTING (	0x00, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING (	0x01, DEF_STR( "1C_1C") );
@@ -453,7 +453,7 @@ public class asteroid
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_llander = new InputPortPtr(){ public void handler() { 
-		PORT_START /* IN0 */
+		PORT_START();  /* IN0 */
 		/* Bit 0 is VG_HALT, handled in the machine dependant part */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_SERVICE( 0x02, IP_ACTIVE_LOW );
@@ -462,7 +462,7 @@ public class asteroid
 		PORT_BIT( 0x78, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BITX(0x80, IP_ACTIVE_LOW, IPT_SERVICE, "Diagnostic Step", KEYCODE_F1, IP_JOY_NONE );
 	
-		PORT_START /* IN1 */
+		PORT_START();  /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN2 );
@@ -472,7 +472,7 @@ public class asteroid
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY );
 	
-		PORT_START /* DSW1 */
+		PORT_START();  /* DSW1 */
 		PORT_DIPNAME( 0x03, 0x01, "Right Coin" );
 		PORT_DIPSETTING (	0x00, "*1" );
 		PORT_DIPSETTING (	0x01, "*4" );
@@ -497,12 +497,12 @@ public class asteroid
 		PORT_DIPSETTING (	0xd0, "1800" );
 	
 		/* The next one is a potentiometer */
-		PORT_START /* IN3 */
+		PORT_START();  /* IN3 */
 		PORT_ANALOGX( 0xff, 0x00, IPT_PADDLE|IPF_REVERSE, 100, 10, 0, 255, KEYCODE_UP, KEYCODE_DOWN, JOYCODE_1_UP, JOYCODE_1_DOWN );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_llander1 = new InputPortPtr(){ public void handler() { 
-		PORT_START /* IN0 */
+		PORT_START();  /* IN0 */
 		/* Bit 0 is VG_HALT, handled in the machine dependant part */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_SERVICE( 0x02, IP_ACTIVE_LOW );
@@ -511,7 +511,7 @@ public class asteroid
 		PORT_BIT( 0x78, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BITX(0x80, IP_ACTIVE_LOW, IPT_SERVICE, "Diagnostic Step", KEYCODE_F1, IP_JOY_NONE );
 	
-		PORT_START /* IN1 */
+		PORT_START();  /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN2 );
@@ -521,7 +521,7 @@ public class asteroid
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY );
 	
-		PORT_START /* DSW1 */
+		PORT_START();  /* DSW1 */
 		PORT_DIPNAME( 0x03, 0x01, "Right Coin" );
 		PORT_DIPSETTING (	0x00, "*1" );
 		PORT_DIPSETTING (	0x01, "*4" );
@@ -542,7 +542,7 @@ public class asteroid
 		PORT_DIPSETTING (	0xc0, "900" );
 	
 		/* The next one is a potentiometer */
-		PORT_START /* IN3 */
+		PORT_START();  /* IN3 */
 		PORT_ANALOGX( 0xff, 0x00, IPT_PADDLE|IPF_REVERSE, 100, 10, 0, 255, KEYCODE_UP, KEYCODE_DOWN, JOYCODE_1_UP, JOYCODE_1_DOWN );
 	INPUT_PORTS_END(); }}; 
 	

@@ -457,7 +457,7 @@ public class pacman
 	
 	
 	static InputPortPtr input_ports_pacman = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
@@ -469,7 +469,7 @@ public class pacman
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_SERVICE1 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL );
@@ -481,7 +481,7 @@ public class pacman
 		PORT_DIPSETTING(   0x80, DEF_STR( "Upright") );
 		PORT_DIPSETTING(   0x00, DEF_STR( "Cocktail") );
 	
-		PORT_START	/* DSW 1 */
+		PORT_START(); 	/* DSW 1 */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "1C_1C") );
@@ -504,10 +504,10 @@ public class pacman
 		PORT_DIPSETTING(    0x80, "Normal" );
 		PORT_DIPSETTING(    0x00, "Alternate" );
 	
-		PORT_START	/* DSW 2 */
+		PORT_START(); 	/* DSW 2 */
 		PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		/* This fake input port is used to get the status of the fire button */
 		/* and activate the speedup cheat if it is. */
 		PORT_BITX(    0x01, 0x00, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Speedup Cheat", KEYCODE_LCONTROL, JOYCODE_1_BUTTON1 );
@@ -518,7 +518,7 @@ public class pacman
 	/* Ms. Pac-Man input ports are identical to Pac-Man, the only difference is */
 	/* the missing Ghost Names dip switch. */
 	static InputPortPtr input_ports_mspacman = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
@@ -530,7 +530,7 @@ public class pacman
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_SERVICE1 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL );
@@ -542,7 +542,7 @@ public class pacman
 		PORT_DIPSETTING(    0x80, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
 	
-		PORT_START	/* DSW 1 */
+		PORT_START(); 	/* DSW 1 */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "1C_1C") );
@@ -563,10 +563,10 @@ public class pacman
 		PORT_DIPSETTING(    0x00, "Hard" );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* DSW 2 */
+		PORT_START(); 	/* DSW 2 */
 		PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		/* This fake input port is used to get the status of the fire button */
 		/* and activate the speedup cheat if it is. */
 		PORT_BITX(    0x01, 0x00, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Speedup Cheat", KEYCODE_LCONTROL, JOYCODE_1_BUTTON1 );
@@ -575,7 +575,7 @@ public class pacman
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_mschamp = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
@@ -587,7 +587,7 @@ public class pacman
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN3 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL );
@@ -599,7 +599,7 @@ public class pacman
 		PORT_DIPSETTING(    0x80, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
 	
-		PORT_START	/* DSW 1 */
+		PORT_START(); 	/* DSW 1 */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "1C_1C") );
@@ -620,7 +620,7 @@ public class pacman
 		PORT_DIPSETTING(    0x00, "Hard" );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* DSW 2 */
+		PORT_START(); 	/* DSW 2 */
 		PORT_DIPNAME( 0x01, 0x01, "Game" );
 		PORT_DIPSETTING(    0x01, "Champion Edition" );
 		PORT_DIPSETTING(    0x00, "Super Zola Pac Gal" );
@@ -636,7 +636,7 @@ public class pacman
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_maketrax = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
@@ -648,7 +648,7 @@ public class pacman
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_SERVICE1 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL );
@@ -658,7 +658,7 @@ public class pacman
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNUSED ); /* Protection */
 	
-		PORT_START	/* DSW 1 */
+		PORT_START(); 	/* DSW 1 */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "1C_1C") );
@@ -677,12 +677,12 @@ public class pacman
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	 	PORT_BIT( 0xc0, IP_ACTIVE_HIGH, IPT_UNUSED ); /* Protection */
 	
-		PORT_START	/* DSW 2 */
+		PORT_START(); 	/* DSW 2 */
 		PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_mbrush = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
@@ -694,7 +694,7 @@ public class pacman
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_SERVICE1 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL );
@@ -704,7 +704,7 @@ public class pacman
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNUSED ); /* Protection in Make Trax */
 	
-		PORT_START	/* DSW 1 */
+		PORT_START(); 	/* DSW 1 */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "1C_1C") );
@@ -723,12 +723,12 @@ public class pacman
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_BIT( 0xc0, IP_ACTIVE_HIGH, IPT_UNUSED ); /* Protection in Make Trax */
 	
-		PORT_START	/* DSW 2 */
+		PORT_START(); 	/* DSW 2 */
 		PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_paintrlr = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
@@ -740,7 +740,7 @@ public class pacman
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_SERVICE1 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL );
@@ -750,7 +750,7 @@ public class pacman
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNUSED ); /* Protection in Make Trax */
 	
-		PORT_START	/* DSW 1 */
+		PORT_START(); 	/* DSW 1 */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "1C_1C") );
@@ -769,12 +769,12 @@ public class pacman
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_BIT( 0xc0, IP_ACTIVE_HIGH, IPT_UNUSED ); /* Protection in Make Trax */
 	
-		PORT_START	/* DSW 2 */
+		PORT_START(); 	/* DSW 2 */
 		PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_ponpoko = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY );
@@ -785,7 +785,7 @@ public class pacman
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_SERVICE1 );
 	
 		/* The 2nd player controls are used even in upright mode */
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER2 );
@@ -795,7 +795,7 @@ public class pacman
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* DSW 1 */
+		PORT_START(); 	/* DSW 1 */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x01, "10000" );
 		PORT_DIPSETTING(    0x02, "30000" );
@@ -818,7 +818,7 @@ public class pacman
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* DSW 2 */
+		PORT_START(); 	/* DSW 2 */
 		PORT_DIPNAME( 0x0f, 0x01, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x04, "A 3/1 B 3/1" );
 		PORT_DIPSETTING(    0x0e, "A 3/1 B 1/2" );
@@ -851,7 +851,7 @@ public class pacman
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_eyes = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
@@ -861,7 +861,7 @@ public class pacman
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_TILT );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL );
@@ -871,7 +871,7 @@ public class pacman
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 	
-		PORT_START	/* DSW 1 */
+		PORT_START(); 	/* DSW 1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "1C_1C") );
@@ -894,12 +894,12 @@ public class pacman
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* DSW 2 */
+		PORT_START(); 	/* DSW 2 */
 		PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_mrtnt = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
@@ -909,7 +909,7 @@ public class pacman
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_TILT );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL );
@@ -919,7 +919,7 @@ public class pacman
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 	
-		PORT_START	/* DSW 1 */
+		PORT_START(); 	/* DSW 1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "1C_1C") );
@@ -942,12 +942,12 @@ public class pacman
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* DSW 2 */
+		PORT_START(); 	/* DSW 2 */
 		PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_lizwiz = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
@@ -957,7 +957,7 @@ public class pacman
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_TILT );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER2 );
@@ -967,7 +967,7 @@ public class pacman
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 	
-		PORT_START	/* DSW 1 */
+		PORT_START(); 	/* DSW 1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "1C_1C") );
@@ -990,12 +990,12 @@ public class pacman
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* DSW 2 */
+		PORT_START(); 	/* DSW 2 */
 		PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_theglobp = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
@@ -1005,7 +1005,7 @@ public class pacman
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL );
@@ -1019,7 +1019,7 @@ public class pacman
 		PORT_DIPSETTING(    0x80, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
 	
-		PORT_START	/* DSW 1 */
+		PORT_START(); 	/* DSW 1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x03, "3" );
 		PORT_DIPSETTING(    0x02, "4" );
@@ -1044,12 +1044,12 @@ public class pacman
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* DSW 2 */
+		PORT_START(); 	/* DSW 2 */
 		PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_vanvan = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
@@ -1060,7 +1060,7 @@ public class pacman
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
 		/* The 2nd player controls are used even in upright mode */
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL );
@@ -1070,7 +1070,7 @@ public class pacman
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* DSW 1 */
+		PORT_START(); 	/* DSW 1 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
@@ -1095,7 +1095,7 @@ public class pacman
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_2C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_3C") );
 	
-		PORT_START	/* DSW 2 */
+		PORT_START(); 	/* DSW 2 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -1123,7 +1123,7 @@ public class pacman
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_vanvans = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
@@ -1134,7 +1134,7 @@ public class pacman
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
 		/* The 2nd player controls are used even in upright mode */
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL );
@@ -1144,7 +1144,7 @@ public class pacman
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* DSW 1 */
+		PORT_START(); 	/* DSW 1 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
@@ -1168,7 +1168,7 @@ public class pacman
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_2C") );
 		PORT_DIPSETTING(    0x40, DEF_STR( "1C_3C") );
 	
-		PORT_START	/* DSW 2 */
+		PORT_START(); 	/* DSW 2 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -1196,7 +1196,7 @@ public class pacman
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_dremshpr = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
@@ -1206,7 +1206,7 @@ public class pacman
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL );
@@ -1216,7 +1216,7 @@ public class pacman
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* DSW 1 */
+		PORT_START(); 	/* DSW 1 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
@@ -1239,7 +1239,7 @@ public class pacman
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_2C") );
 		PORT_DIPSETTING(    0x40, DEF_STR( "1C_3C") );
 	
-		PORT_START	/* DSW 2 */
+		PORT_START(); 	/* DSW 2 */
 	  //PORT_BITX(    0x01, 0x00, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE );
 	  //PORT_DIPSETTING(    0x00, DEF_STR( "Off") );		/* turning this on crashes puts the */
 	  //PORT_DIPSETTING(    0x01, DEF_STR( "On") );       /* emulated machine in an infinite loop once in a while */
@@ -1248,7 +1248,7 @@ public class pacman
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_alibaba = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
@@ -1260,7 +1260,7 @@ public class pacman
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL );
@@ -1272,7 +1272,7 @@ public class pacman
 		PORT_DIPSETTING(    0x80, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
 	
-		PORT_START	/* DSW 1 */
+		PORT_START(); 	/* DSW 1 */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "1C_1C") );
@@ -1297,7 +1297,7 @@ public class pacman
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_jumpshot = new InputPortPtr(){ public void handler() { 
-		PORT_START /* IN0 */
+		PORT_START();  /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
@@ -1309,7 +1309,7 @@ public class pacman
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_SERVICE1 );
 	
-		PORT_START /* IN1 */
+		PORT_START();  /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER2 );
@@ -1321,7 +1321,7 @@ public class pacman
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START /* DSW 1 */
+		PORT_START();  /* DSW 1 */
 		PORT_DIPNAME( 0x03, 0x01, "Time"  );
 	//	PORT_DIPSETTING(    0x00,  "2 Minutes"  );
 		PORT_DIPSETTING(    0x02,  "2 Minutes" );
@@ -1346,18 +1346,18 @@ public class pacman
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off"));
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START /* DSW 2 */
+		PORT_START();  /* DSW 2 */
 		PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_shootbul = new InputPortPtr(){ public void handler() { 
-		PORT_START /* IN0 */
+		PORT_START();  /* IN0 */
 		PORT_ANALOG( 0x0f, 0x0f, IPT_TRACKBALL_X , 50, 25, 0, 0);
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN3 );
 	
-		PORT_START /* IN1 */
+		PORT_START();  /* IN1 */
 		PORT_ANALOG( 0x0f, 0x0f, IPT_TRACKBALL_Y | IPF_REVERSE, 50, 25, 0, 0);
 		PORT_SERVICE( 0x10, IP_ACTIVE_LOW );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON1 );
@@ -1366,7 +1366,7 @@ public class pacman
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START /* DSW 1 */
+		PORT_START();  /* DSW 1 */
 		PORT_DIPNAME( 0x07, 0x07, "Time"  );
 		PORT_DIPSETTING(    0x01, "Short");
 		PORT_DIPSETTING(    0x07, "Average" );
@@ -1387,7 +1387,7 @@ public class pacman
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START /* DSW 2 */
+		PORT_START();  /* DSW 2 */
 		PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 
 	

@@ -161,7 +161,7 @@ public class milliped
 	
 	
 	static InputPortPtr input_ports_milliped = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 $2000 */ /* see port 6 for x trackball */
+		PORT_START(); 	/* IN0 $2000 */ /* see port 6 for x trackball */
 		PORT_DIPNAME(0x03, 0x00, "Language" );
 		PORT_DIPSETTING(   0x00, "English" );
 		PORT_DIPSETTING(   0x01, "German" );
@@ -177,7 +177,7 @@ public class milliped
 		PORT_BIT ( 0x40, IP_ACTIVE_HIGH, IPT_VBLANK );
 		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* trackball sign bit */
 	
-		PORT_START	/* IN1 $2001 */ /* see port 7 for y trackball */
+		PORT_START(); 	/* IN1 $2001 */ /* see port 7 for y trackball */
 		PORT_DIPNAME(0x01, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(   0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(   0x01, DEF_STR( "On") );
@@ -195,7 +195,7 @@ public class milliped
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* trackball sign bit */
 	
-		PORT_START	/* IN2 $2010 */
+		PORT_START(); 	/* IN2 $2010 */
 		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY );
 		PORT_BIT ( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY );
@@ -205,7 +205,7 @@ public class milliped
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_COIN3 );
 	
-		PORT_START	/* IN3 $2011 */
+		PORT_START(); 	/* IN3 $2011 */
 		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT ( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_COCKTAIL );
@@ -215,7 +215,7 @@ public class milliped
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* 4 */ /* DSW1 $0408 */
+		PORT_START(); 	/* 4 */ /* DSW1 $0408 */
 		PORT_DIPNAME(0x01, 0x00, "Millipede Head" );
 		PORT_DIPSETTING(   0x00, "Easy" );
 		PORT_DIPSETTING(   0x01, "Hard" );
@@ -239,7 +239,7 @@ public class milliped
 		PORT_DIPSETTING(   0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(   0x00, DEF_STR( "On") );
 	
-		PORT_START	/* 5 */ /* DSW2 $0808 */
+		PORT_START(); 	/* 5 */ /* DSW2 $0808 */
 		PORT_DIPNAME(0x03, 0x02, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(   0x03, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(   0x02, DEF_STR( "1C_1C") );
@@ -262,10 +262,10 @@ public class milliped
 		PORT_DIPSETTING(   0xa0, "4 credits/3 coins" );
 		PORT_DIPSETTING(   0xc0, "Demo mode" );
 	
-		PORT_START	/* IN6: FAKE - used for trackball-x at $2000 */
+		PORT_START(); 	/* IN6: FAKE - used for trackball-x at $2000 */
 		PORT_ANALOGX( 0xff, 0x00, IPT_TRACKBALL_X | IPF_REVERSE, 50, 10, 0, 0, IP_KEY_NONE, IP_KEY_NONE, IP_JOY_NONE, IP_JOY_NONE );
 	
-		PORT_START	/* IN7: FAKE - used for trackball-y at $2001 */
+		PORT_START(); 	/* IN7: FAKE - used for trackball-y at $2001 */
 		PORT_ANALOGX( 0xff, 0x00, IPT_TRACKBALL_Y, 50, 10, 0, 0, IP_KEY_NONE, IP_KEY_NONE, IP_JOY_NONE, IP_JOY_NONE );
 	INPUT_PORTS_END(); }}; 
 	

@@ -120,7 +120,7 @@ public class momoko
 	/****************************************************************************/
 	
 	static InputPortPtr input_ports_momoko = new InputPortPtr(){ public void handler() { 
-	    PORT_START
+	    PORT_START(); 
 	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 	    PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON2 );
@@ -130,7 +130,7 @@ public class momoko
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY );
 	
-	    PORT_START
+	    PORT_START(); 
 	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
@@ -140,7 +140,7 @@ public class momoko
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_COCKTAIL );
 	
-	    PORT_START  /* dsw0 */
+	    PORT_START();   /* dsw0 */
 	    PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 	    PORT_DIPSETTING(    0x03, "3" );
 	    PORT_DIPSETTING(    0x02, "4" );
@@ -162,7 +162,7 @@ public class momoko
 	    PORT_DIPSETTING(    0x00, "Very difficult" );
 	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-	    PORT_START  /* dsw1 */
+	    PORT_START();   /* dsw1 */
 	    PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Bonus_Life"));
 	    PORT_DIPSETTING(    0x01, "20000" );
 	    PORT_DIPSETTING(    0x03, "30000" );
@@ -187,7 +187,7 @@ public class momoko
 	    PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 	    PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-	    PORT_START	/* fake */
+	    PORT_START(); 	/* fake */
 	    PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Flip_Screen") );
 	    PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 	    PORT_DIPSETTING(	0x01, DEF_STR( "On") );

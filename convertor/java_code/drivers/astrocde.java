@@ -234,19 +234,19 @@ public class astrocde
 	
 	
 	static InputPortPtr input_ports_seawolf2 = new InputPortPtr(){ public void handler() { 
-		PORT_START /* IN0 */
+		PORT_START();  /* IN0 */
 		PORT_ANALOG( 0x3f, 0x20, IPT_PADDLE | IPF_REVERSE | IPF_PLAYER1, 20, 5, 0, 0x3f);
 		PORT_DIPNAME( 0x40, 0x00, "Language 1" );
 		PORT_DIPSETTING(    0x00, "Language 2" );
 		PORT_DIPSETTING(    0x40, "French" );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER1 );
 	
-		PORT_START /* IN1 */
+		PORT_START();  /* IN1 */
 		PORT_ANALOG( 0x3f, 0x20, IPT_PADDLE | IPF_REVERSE | IPF_PLAYER2, 20, 5, 0, 0x3f);
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER2 );
 	
-		PORT_START /* IN2 */
+		PORT_START();  /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_START2 );
@@ -258,7 +258,7 @@ public class astrocde
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START /* Dip Switch */
+		PORT_START();  /* Dip Switch */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "1C_1C") );
@@ -282,7 +282,7 @@ public class astrocde
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_spacezap = new InputPortPtr(){ public void handler() { 
-		PORT_START /* IN0 */
+		PORT_START();  /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_TILT );
@@ -292,9 +292,9 @@ public class astrocde
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START /* IN1 */
+		PORT_START();  /* IN1 */
 	
-		PORT_START /* IN2 */
+		PORT_START();  /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_4WAY );
@@ -304,7 +304,7 @@ public class astrocde
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START /* Dip Switch */
+		PORT_START();  /* Dip Switch */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "1C_1C") );
@@ -331,7 +331,7 @@ public class astrocde
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_ebases = new InputPortPtr(){ public void handler() { 
-		PORT_START /* IN0 */
+		PORT_START();  /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x0c, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -339,7 +339,7 @@ public class astrocde
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_TILT );
@@ -359,7 +359,7 @@ public class astrocde
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START /* Dip Switch */
+		PORT_START();  /* Dip Switch */
 		PORT_DIPNAME( 0x01, 0x00, "2 Players Game" );
 		PORT_DIPSETTING(    0x00, "1 Credit" );
 		PORT_DIPSETTING(    0x01, "2 Credits" );
@@ -385,21 +385,21 @@ public class astrocde
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOGX( 0xff, 0x00, IPT_TRACKBALL_X | IPF_PLAYER2 | IPF_CENTER, 50, 10, 0, 0, IP_KEY_NONE, IP_KEY_NONE, IP_JOY_NONE, IP_JOY_NONE );\
 	
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOGX( 0xff, 0x00, IPT_TRACKBALL_Y | IPF_PLAYER2 | IPF_CENTER, 50, 10, 0, 0, IP_KEY_NONE, IP_KEY_NONE, IP_JOY_NONE, IP_JOY_NONE );\
 	
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOGX( 0xff, 0x00, IPT_TRACKBALL_X | IPF_CENTER, 50, 10, 0, 0, IP_KEY_NONE, IP_KEY_NONE, IP_JOY_NONE, IP_JOY_NONE );\
 	
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOGX( 0xff, 0x00, IPT_TRACKBALL_Y | IPF_CENTER, 50, 10, 0, 0, IP_KEY_NONE, IP_KEY_NONE, IP_JOY_NONE, IP_JOY_NONE );\
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_wow = new InputPortPtr(){ public void handler() { 
-		PORT_START /* IN0 */
+		PORT_START();  /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN3 );
@@ -411,7 +411,7 @@ public class astrocde
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START /* IN1 */
+		PORT_START();  /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_PLAYER2 );
@@ -421,7 +421,7 @@ public class astrocde
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START /* IN2 */
+		PORT_START();  /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY );
@@ -431,7 +431,7 @@ public class astrocde
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* speech status */
 	
-		PORT_START /* Dip Switch */
+		PORT_START();  /* Dip Switch */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "1C_1C") );
@@ -458,7 +458,7 @@ public class astrocde
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_gorf = new InputPortPtr(){ public void handler() { 
-		PORT_START /* IN0 */
+		PORT_START();  /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_SERVICE( 0x04, IP_ACTIVE_LOW );
@@ -470,7 +470,7 @@ public class astrocde
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START /* IN1 */
+		PORT_START();  /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_COCKTAIL );
@@ -480,7 +480,7 @@ public class astrocde
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START /* IN2 */
+		PORT_START();  /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY );
@@ -490,7 +490,7 @@ public class astrocde
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* speech status */
 	
-		PORT_START /* Dip Switch */
+		PORT_START();  /* Dip Switch */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "1C_1C") );
@@ -517,7 +517,7 @@ public class astrocde
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_robby = new InputPortPtr(){ public void handler() { 
-		PORT_START /* IN0 */
+		PORT_START();  /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -527,7 +527,7 @@ public class astrocde
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START /* IN1 */
+		PORT_START();  /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_4WAY | IPF_COCKTAIL );
@@ -536,7 +536,7 @@ public class astrocde
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START /* IN2 */
+		PORT_START();  /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_4WAY );
@@ -545,7 +545,7 @@ public class astrocde
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START /* Dip Switch */
+		PORT_START();  /* Dip Switch */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );

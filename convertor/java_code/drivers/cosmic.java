@@ -544,7 +544,7 @@ public class cosmic
 	
 	
 	static InputPortPtr input_ports_panic = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY );
@@ -554,7 +554,7 @@ public class cosmic
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL );
@@ -564,7 +564,7 @@ public class cosmic
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
 	
-		PORT_START      /* DSW */
+		PORT_START();       /* DSW */
 		PORT_DIPNAME( 0x07, 0x00, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_1C") );
 		PORT_DIPSETTING(    0x05, DEF_STR( "2C_3C") );
@@ -588,7 +588,7 @@ public class cosmic
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_2C") );
 		PORT_DIPSETTING(    0xc0, DEF_STR( "1C_3C") );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -601,7 +601,7 @@ public class cosmic
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_cosmica = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY );
@@ -611,7 +611,7 @@ public class cosmic
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_COCKTAIL );
@@ -621,7 +621,7 @@ public class cosmic
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
@@ -647,7 +647,7 @@ public class cosmic
 		/* trigger exactly one interrupt, without having to check when the */
 		/* user releases the key. */
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		PORT_BIT_IMPULSE( 0x01, IP_ACTIVE_HIGH, IPT_COIN1, 1 );
 	
 	INPUT_PORTS_END(); }}; 
@@ -658,13 +658,13 @@ public class cosmic
 	/* Offsets are in BYTES, so bits 0-7 are at offset 0 etc.   */
 	
 	static InputPortPtr input_ports_cosmicg = new InputPortPtr(){ public void handler() { 
-		PORT_START /* 4-7 */
+		PORT_START();  /* 4-7 */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 	
-		PORT_START /* 8-15 */
+		PORT_START();  /* 8-15 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_COCKTAIL);
@@ -681,7 +681,7 @@ public class cosmic
 		PORT_DIPSETTING(    0x00, "3" );
 		PORT_DIPSETTING(    0x80, "5" );
 	
-		PORT_START      /* Hard wired settings */
+		PORT_START();       /* Hard wired settings */
 	
 		/* The coin slots are not memory mapped. Coin causes INT 4  */
 		/* This fake input port is used by the interrupt handler 	*/
@@ -707,7 +707,7 @@ public class cosmic
 	
 	
 	static InputPortPtr input_ports_magspot2 = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY );
 		PORT_BIT( 0x1c, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -718,14 +718,14 @@ public class cosmic
 		PORT_DIPSETTING(    0xc0, "15000" );
 		PORT_DIPSETTING(    0x00, "None" );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x1c, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_COCKTAIL );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x01, "2000" );
 		PORT_DIPSETTING(    0x02, "3000" );
@@ -745,19 +745,19 @@ public class cosmic
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_VBLANK );
 		PORT_BIT( 0x3e, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 );
 	
 		/* Fake port to handle coins */
-		PORT_START	/* IN4 */
+		PORT_START(); 	/* IN4 */
 		PORT_BIT_IMPULSE( 0x01, IP_ACTIVE_HIGH, IPT_COIN1, 1 );
 		PORT_BIT_IMPULSE( 0x02, IP_ACTIVE_HIGH, IPT_COIN2, 1 );
 	
 		/* Fake port to handle coinage dip switches. Each bit goes to 3800-3807 */
-		PORT_START	/* IN5 */
+		PORT_START(); 	/* IN5 */
 		PORT_DIPNAME( 0x0f, 0x00, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x0c, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x08, DEF_STR( "3C_1C") );
@@ -795,21 +795,21 @@ public class cosmic
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_devzone = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY );
 		PORT_BIT( 0x1c, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x1c, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_COCKTAIL );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x01, "4000" );
 		PORT_DIPSETTING(    0x02, "6000" );
@@ -829,18 +829,18 @@ public class cosmic
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_VBLANK );
 		PORT_BIT( 0x3e, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 );
 	
 		/* Fake port to handle coins */
-		PORT_START	/* IN4 */
+		PORT_START(); 	/* IN4 */
 		PORT_BIT_IMPULSE( 0x01, IP_ACTIVE_HIGH, IPT_COIN1, 1 );
 		PORT_BIT_IMPULSE( 0x02, IP_ACTIVE_HIGH, IPT_COIN2, 1 );
 	
-		PORT_START	/* IN5 */
+		PORT_START(); 	/* IN5 */
 		PORT_DIPNAME( 0x0f, 0x00, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x0c, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x08, DEF_STR( "3C_1C") );
@@ -879,21 +879,21 @@ public class cosmic
 	
 	
 	static InputPortPtr input_ports_nomnlnd = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* Controls - Remapped for game */
+		PORT_START(); 	/* Controls - Remapped for game */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT( 0x55, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x55, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_DIPNAME( 0x03, 0x02, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x01, "2000" );
 		PORT_DIPSETTING(    0x02, "3000" );
@@ -913,18 +913,18 @@ public class cosmic
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_VBLANK );
 		PORT_BIT( 0x3e, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 );
 	
 		/* Fake port to handle coin */
-		PORT_START	/* IN4 */
+		PORT_START(); 	/* IN4 */
 		PORT_BIT_IMPULSE( 0x02, IP_ACTIVE_HIGH, IPT_COIN1, 1 );
 	
 	/* Why is this here for this game? */
-	//	PORT_START	/* IN5 */
+	//	PORT_START(); 	/* IN5 */
 	/* 	PORT_DIPNAME( 0xf0, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0xc0, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "3C_1C") );
@@ -947,21 +947,21 @@ public class cosmic
 	
 	
 	static InputPortPtr input_ports_nomnlndg = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* Controls - Remapped for game */
+		PORT_START(); 	/* Controls - Remapped for game */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT( 0x55, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x55, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_DIPNAME( 0x03, 0x02, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x01, "3000" );
 		PORT_DIPSETTING(    0x02, "5000" );
@@ -981,18 +981,18 @@ public class cosmic
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_VBLANK );
 		PORT_BIT( 0x3e, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 );
 	
 		/* Fake port to handle coin */
-		PORT_START	/* IN4 */
+		PORT_START(); 	/* IN4 */
 		PORT_BIT_IMPULSE( 0x02, IP_ACTIVE_HIGH, IPT_COIN1, 1 );
 	
 	/* Why is this here for this gane? */
-	// 	PORT_START	/* IN5 */
+	// 	PORT_START(); 	/* IN5 */
 	/* 	PORT_DIPNAME( 0xf0, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0xc0, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "3C_1C") );

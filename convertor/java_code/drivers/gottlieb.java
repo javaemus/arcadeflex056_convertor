@@ -640,7 +640,7 @@ public class gottlieb
 	
 	
 	static InputPortPtr input_ports_reactor = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* DSW */
+		PORT_START(); 	/* DSW */
 		PORT_DIPNAME( 0x01, 0x01, "Sound with Logos" );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -665,18 +665,18 @@ public class gottlieb
 		PORT_DIPSETTING(    0xc0, "15000" );
 		PORT_DIPSETTING(    0x80, "20000" );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, IPT_SERVICE, "Select in Service Mode", KEYCODE_F1, IP_JOY_NONE );
 		PORT_SERVICE( 0x02, IP_ACTIVE_LOW );
 		PORT_BIT ( 0xfc, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START	/* trackball H */
+		PORT_START(); 	/* trackball H */
 		PORT_ANALOG( 0xff, 0, IPT_TRACKBALL_X, 15, 20, 0, 0 );
 	
-		PORT_START	/* trackball V */
+		PORT_START(); 	/* trackball V */
 		PORT_ANALOG( 0xff, 0, IPT_TRACKBALL_Y, 15, 20, 0, 0 );
 	
-		PORT_START	/* IN4 */
+		PORT_START(); 	/* IN4 */
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT ( 0x04, IP_ACTIVE_HIGH, IPT_BUTTON2 );
@@ -687,7 +687,7 @@ public class gottlieb
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_mplanets = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* DSW */
+		PORT_START(); 	/* DSW */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -711,20 +711,20 @@ public class gottlieb
 		PORT_DIPSETTING(    0x80, "Hard" );
 		PORT_DIPSETTING(    0xc0, "Hardest" );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x3c, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BITX(0x40, IP_ACTIVE_HIGH, IPT_SERVICE, "Select in Service Mode", KEYCODE_F1, IP_JOY_NONE );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* trackball H not used */
+		PORT_START(); 	/* trackball H not used */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* trackball V (dial) */
+		PORT_START(); 	/* trackball V (dial) */
 		PORT_ANALOGX( 0xff, 0x00, IPT_DIAL, 5, 10, 0, 0, KEYCODE_Z, KEYCODE_X, 0, 0 );
 	
-		PORT_START	/* IN3 */
+		PORT_START(); 	/* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY );
@@ -736,7 +736,7 @@ public class gottlieb
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_qbert = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* DSW */
+		PORT_START();       /* DSW */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -764,7 +764,7 @@ public class gottlieb
 		PORT_BIT( 0xe0, IP_ACTIVE_LOW, IPT_UNUSED );
 	/* 0x40 must be connected to the IP16 line */
 	
-		PORT_START      /* buttons */
+		PORT_START();       /* buttons */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN1 );
@@ -774,13 +774,13 @@ public class gottlieb
 		PORT_SERVICE( 0x40, IP_ACTIVE_LOW );
 		PORT_BITX(0x80, IP_ACTIVE_HIGH, IPT_SERVICE, "Select in Service Mode", KEYCODE_F1, IP_JOY_NONE );
 	
-		PORT_START	/* trackball H not used */
+		PORT_START(); 	/* trackball H not used */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* trackball V not used */
+		PORT_START(); 	/* trackball V not used */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* joystick */
+		PORT_START();       /* joystick */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_4WAY );
@@ -792,7 +792,7 @@ public class gottlieb
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_qbertqub = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* DSW */
+		PORT_START();       /* DSW */
 		PORT_DIPNAME( 0x08, 0x00, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -823,7 +823,7 @@ public class gottlieb
 		PORT_DIPSETTING(    0x00, "Normal" );
 		PORT_DIPSETTING(    0x80, "Hard" );
 	
-		PORT_START      /* buttons */
+		PORT_START();       /* buttons */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN2 );
@@ -833,13 +833,13 @@ public class gottlieb
 		PORT_SERVICE( 0x40, IP_ACTIVE_LOW );
 		PORT_BITX(0x80, IP_ACTIVE_HIGH, IPT_SERVICE, "Select in Service Mode", KEYCODE_F1, IP_JOY_NONE );
 	
-		PORT_START	/* trackball H not used */
+		PORT_START(); 	/* trackball H not used */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* trackball V not used */
+		PORT_START(); 	/* trackball V not used */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* joystick */
+		PORT_START();       /* joystick */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_4WAY );
@@ -851,7 +851,7 @@ public class gottlieb
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_krull = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -875,7 +875,7 @@ public class gottlieb
 		PORT_DIPSETTING(    0x80, "40000 50000" );
 		PORT_DIPSETTING(    0xc0, "50000 75000" );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_SERVICE( 0x01, IP_ACTIVE_LOW );
 		PORT_BITX(0x02, IP_ACTIVE_HIGH, IPT_SERVICE, "Select in Service Mode", KEYCODE_F1, IP_JOY_NONE );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN1 );
@@ -885,13 +885,13 @@ public class gottlieb
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_START2 );
 	
-		PORT_START	/* trackball H not used */
+		PORT_START(); 	/* trackball H not used */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* trackball V not used */
+		PORT_START(); 	/* trackball V not used */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* IN3 */
+		PORT_START();       /* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICKRIGHT_UP    | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICKRIGHT_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICKRIGHT_DOWN  | IPF_8WAY );
@@ -903,7 +903,7 @@ public class gottlieb
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_mach3 = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		/* TODO: values are different for 5 lives */
 		PORT_DIPNAME( 0x09, 0x08, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x09, DEF_STR( "4C_1C") );
@@ -928,7 +928,7 @@ public class gottlieb
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_SERVICE( 0x01, IP_ACTIVE_LOW );
 		PORT_BITX(0x02, IP_ACTIVE_HIGH, IPT_SERVICE, "Select in Service Mode", KEYCODE_F1, IP_JOY_NONE );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN1 );
@@ -938,13 +938,13 @@ public class gottlieb
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_START2 );
 	
-		PORT_START	/* trackball H not used */
+		PORT_START(); 	/* trackball H not used */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* trackball V not used */
+		PORT_START(); 	/* trackball V not used */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* IN3 */
+		PORT_START();       /* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY );
@@ -956,7 +956,7 @@ public class gottlieb
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_usvsthem = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		/* TODO: values are different for 5 lives */
 		PORT_DIPNAME( 0x09, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x08, DEF_STR( "2C_1C") );
@@ -982,7 +982,7 @@ public class gottlieb
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_SERVICE( 0x01, IP_ACTIVE_LOW );
 		PORT_BITX(0x02, IP_ACTIVE_HIGH, IPT_SERVICE, "Select in Service Mode", KEYCODE_F1, IP_JOY_NONE );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN1 );
@@ -992,13 +992,13 @@ public class gottlieb
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_START2 );
 	
-		PORT_START	/* trackball H not used */
+		PORT_START(); 	/* trackball H not used */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* trackball V not used */
+		PORT_START(); 	/* trackball V not used */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* IN3 */
+		PORT_START();       /* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY );
@@ -1010,7 +1010,7 @@ public class gottlieb
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_3stooges = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* DSW */
+		PORT_START(); 	/* DSW */
 		PORT_DIPNAME (0x01, 0x00, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING (   0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING (   0x00, DEF_STR( "On") );
@@ -1035,7 +1035,7 @@ public class gottlieb
 		PORT_DIPSETTING (   0x80, "10000" );
 		PORT_DIPSETTING (   0x00, "20000" );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_SERVICE( 0x01, IP_ACTIVE_LOW );
 		PORT_BITX(0x02, IP_ACTIVE_HIGH, IPT_SERVICE, "Select in Service Mode", KEYCODE_F1, IP_JOY_NONE );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN2 );
@@ -1045,13 +1045,13 @@ public class gottlieb
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START	/* trackball H not used */
+		PORT_START(); 	/* trackball H not used */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* trackball V not used */
+		PORT_START(); 	/* trackball V not used */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* joystick 2 (Moe) */
+		PORT_START(); 	/* joystick 2 (Moe) */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_PLAYER2 | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_PLAYER2 | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_PLAYER2 | IPF_8WAY );
@@ -1063,7 +1063,7 @@ public class gottlieb
 	
 		/* the bottom four bits of the previous port are multiplexed among */
 		/* three joysticks - the following port contains settings for the other two */
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_PLAYER3 | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_PLAYER3 | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_PLAYER3 | IPF_8WAY );
@@ -1075,7 +1075,7 @@ public class gottlieb
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_curvebal = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x08, 0x00, "2 Players Game" );
 		PORT_DIPSETTING(    0x08, "1 Credit" );
 		PORT_DIPSETTING(    0x00, "2 Credits" );
@@ -1110,7 +1110,7 @@ public class gottlieb
 		PORT_DIPSETTING(    0x00, "A 1/1 B 1/1" );
 		PORT_DIPSETTING(    0xc2, DEF_STR( "Free_Play") );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_SERVICE( 0x01, IP_ACTIVE_LOW );
 		PORT_BITX(0x02, IP_ACTIVE_HIGH, IPT_SERVICE, "Select in Service Mode", KEYCODE_F1, IP_JOY_NONE );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN1 );
@@ -1120,13 +1120,13 @@ public class gottlieb
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START	/* trackball H not used */
+		PORT_START(); 	/* trackball H not used */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* trackball V not used */
+		PORT_START(); 	/* trackball V not used */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* IN3 */
+		PORT_START();       /* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BITX(0x02, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER1, "Swing", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x04, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER2, "Pitch Left", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
@@ -1138,7 +1138,7 @@ public class gottlieb
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_screwloo = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1163,7 +1163,7 @@ public class gottlieb
 		PORT_DIPSETTING(    0x00, "3" );
 		PORT_DIPSETTING(    0x80, "5" );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_SERVICE( 0x01, IP_ACTIVE_LOW );
 		PORT_BITX(0x02, IP_ACTIVE_HIGH, IPT_SERVICE, "Select in Service Mode", KEYCODE_F1, IP_JOY_NONE );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN1 );
@@ -1173,13 +1173,13 @@ public class gottlieb
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICKLEFT_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICKLEFT_UP    | IPF_8WAY );
 	
-		PORT_START	/* trackball H not used */
+		PORT_START(); 	/* trackball H not used */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* trackball V not used */
+		PORT_START(); 	/* trackball V not used */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* IN3 */
+		PORT_START();       /* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICKRIGHT_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICKRIGHT_LEFT  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICKRIGHT_DOWN  | IPF_8WAY );
@@ -1191,7 +1191,7 @@ public class gottlieb
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_insector = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x00, "25000" );
 		PORT_DIPSETTING(    0x01, "30000" );
@@ -1216,7 +1216,7 @@ public class gottlieb
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN1 );
@@ -1226,13 +1226,13 @@ public class gottlieb
 		PORT_SERVICE( 0x40, IP_ACTIVE_LOW );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START	/* trackball H not used */
+		PORT_START(); 	/* trackball H not used */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* trackball V not used */
+		PORT_START(); 	/* trackball V not used */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* IN3 */
+		PORT_START();       /* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY );

@@ -165,7 +165,7 @@ public class congo
 	
 	/* almost the same as Zaxxon; UP and DOWN are inverted, and the joystick is 4 way. */
 	static InputPortPtr input_ports_congo = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_4WAY );
@@ -175,7 +175,7 @@ public class congo
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused (the self test doesn't mention it) */
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused (the self test doesn't mention it) */
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_COCKTAIL );
@@ -185,7 +185,7 @@ public class congo
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused (the self test doesn't mention it) */
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused (the self test doesn't mention it) */
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused (the self test doesn't mention it) */
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused (the self test doesn't mention it) */
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_START1 );
@@ -199,7 +199,7 @@ public class congo
 		/* to avoid the freeze. */
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_HIGH, IPT_SERVICE1, 1 );
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(	0x03, "10000" );
 		PORT_DIPSETTING(	0x01, "20000" );
@@ -222,7 +222,7 @@ public class congo
 		PORT_DIPSETTING(	0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x0f, 0x03, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(	0x0f, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(	0x07, DEF_STR( "3C_1C") );
@@ -258,7 +258,7 @@ public class congo
 		PORT_DIPSETTING(	0x10, DEF_STR( "1C_5C") );
 		PORT_DIPSETTING(	0xe0, DEF_STR( "1C_6C") );
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		/* This fake input port is used to get the status of the F2 key, */
 		/* and activate the test mode, which is triggered by a NMI */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
@@ -267,7 +267,7 @@ public class congo
 	/* Same as Congo Bongo, except the Demo Sounds dip, that here turns the
 	   sound off in the whole game. */
 	static InputPortPtr input_ports_tiptop = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_4WAY );
@@ -277,7 +277,7 @@ public class congo
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused (the self test doesn't mention it) */
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused (the self test doesn't mention it) */
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_COCKTAIL );
@@ -287,7 +287,7 @@ public class congo
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused (the self test doesn't mention it) */
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused (the self test doesn't mention it) */
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused (the self test doesn't mention it) */
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* probably unused (the self test doesn't mention it) */
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_START1 );
@@ -301,7 +301,7 @@ public class congo
 		/* to avoid the freeze. */
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_HIGH, IPT_SERVICE1, 1 );
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(	0x03, "10000" );
 		PORT_DIPSETTING(	0x01, "20000" );
@@ -324,7 +324,7 @@ public class congo
 		PORT_DIPSETTING(	0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(	0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x0f, 0x03, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(	0x0f, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(	0x07, DEF_STR( "3C_1C") );
@@ -360,7 +360,7 @@ public class congo
 		PORT_DIPSETTING(	0x10, DEF_STR( "1C_5C") );
 		PORT_DIPSETTING(	0xe0, DEF_STR( "1C_6C") );
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		/* This fake input port is used to get the status of the F2 key, */
 		/* and activate the test mode, which is triggered by a NMI */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )

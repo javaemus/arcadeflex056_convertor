@@ -440,7 +440,7 @@ public class grchamp
 	};
 	
 	static InputPortPtr input_ports_grchamp = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x0f, 0x00, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x0f, DEF_STR( "9C_1C") );
 		PORT_DIPSETTING(    0x0e, DEF_STR( "8C_1C") );
@@ -476,7 +476,7 @@ public class grchamp
 		PORT_DIPSETTING(    0x60, DEF_STR( "1C_7C") );
 		PORT_DIPSETTING(    0x70, DEF_STR( "1C_8C") );
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		PORT_DIPNAME( 0x03, 0x02, "Extra Race" );
 		PORT_DIPSETTING(    0x00, "4th" );
 		PORT_DIPSETTING(    0x02, "5th" );
@@ -499,7 +499,7 @@ public class grchamp
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE3 );/* High Score reset switch */
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP | IPF_TOGGLE );/* High Gear */
@@ -509,11 +509,11 @@ public class grchamp
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );	/* Coin A */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );	/* Coin B */
 	
-		PORT_START /* Accel */
+		PORT_START();  /* Accel */
 		PORT_ANALOGX( 0xff, 0x00, IPT_PEDAL, 100, 16, 0x00, 0xff, KEYCODE_LCONTROL, IP_JOY_DEFAULT, IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		//mask,default,type,sensitivity,delta,min,max
 	
-		PORT_START /* Wheel */
+		PORT_START();  /* Wheel */
 		PORT_ANALOG( 0xff, 0x40, IPT_DIAL | IPF_REVERSE, 25, 5, 0x00, 0x7f );
 		//mask,default,type,sensitivity,delta,min,max
 	INPUT_PORTS_END(); }}; 

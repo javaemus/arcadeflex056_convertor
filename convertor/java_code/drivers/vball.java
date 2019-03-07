@@ -219,7 +219,7 @@ public class vball
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	#define COMMON_PORTS_BEFORE  PORT_START \
+	#define COMMON_PORTS_BEFORE  PORT_START();  \
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );\
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );\
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );\
@@ -228,7 +228,7 @@ public class vball
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );\
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );\
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );\
-		PORT_START \
+		PORT_START();  \
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER2 );\
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );\
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER2 );\
@@ -237,7 +237,7 @@ public class vball
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );\
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );\
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );\
-		PORT_START \
+		PORT_START();  \
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );\
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );\
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );\
@@ -247,7 +247,7 @@ public class vball
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );\
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );\
 	
-	#define COMMON_PORTS_COINS  PORT_START \
+	#define COMMON_PORTS_COINS  PORT_START();  \
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coin_A") ); \
 		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") ); \
 		PORT_DIPSETTING(    0x01, DEF_STR( "3C_1C") ); \
@@ -278,7 +278,7 @@ public class vball
 		/* The dipswitch instructions in naz's dump (vball) don't quite sync here) */
 		/* Looks like the pins from the dips to the board were mixed up a little. */
 	
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Difficulty") );
 	// This ordering is assumed. Someone has to play it a lot and find out.
 		PORT_DIPSETTING(    0x01, "Easy");
@@ -304,7 +304,7 @@ public class vball
 	
 		COMMON_PORTS_COINS
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER3 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER3 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER3 );
@@ -313,7 +313,7 @@ public class vball
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER3 );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START3 );
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER4 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER4 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER4 );
@@ -330,7 +330,7 @@ public class vball
 	/* The 2-player roms have the game-time in the difficulty spot, and
 	   I've assumed vice-versa. (VS the instructions scanned in Naz's dump)
 	*/
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x03, 0x00, "Single Player Game Time");
 		PORT_DIPSETTING(    0x00, "1:30");
 		PORT_DIPSETTING(    0x01, "1:45");

@@ -58,7 +58,7 @@ public class zac2650
 	
 	static InputPortPtr input_ports_tinvader = new InputPortPtr(){ public void handler() { 
 	
-		PORT_START /* 1E80 */
+		PORT_START();  /* 1E80 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN1 );
@@ -68,7 +68,7 @@ public class zac2650
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED  );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );/* Missile-Background Collision */
 	
-	    PORT_START /* 1E81 */
+	    PORT_START();  /* 1E81 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "3" );
 		PORT_DIPSETTING(    0x01, "4" );
@@ -91,7 +91,7 @@ public class zac2650
 		PORT_DIPSETTING(    0x00, DEF_STR( "No") );
 		PORT_DIPSETTING(    0x40, DEF_STR( "Yes") );
 	
-		PORT_START /* 1E82 */
+		PORT_START();  /* 1E82 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -101,7 +101,7 @@ public class zac2650
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* SENSE */
+		PORT_START(); 	/* SENSE */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_VBLANK );
 	
 	INPUT_PORTS_END(); }}; 
@@ -110,7 +110,7 @@ public class zac2650
 	
 	static InputPortPtr input_ports_sinvader = new InputPortPtr(){ public void handler() { 
 	
-		PORT_START /* 1E80 */
+		PORT_START();  /* 1E80 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN1 );
@@ -120,7 +120,7 @@ public class zac2650
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED  );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );/* Missile-Background Collision */
 	
-	    PORT_START /* 1E81 */
+	    PORT_START();  /* 1E81 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED  );
 	    PORT_DIPNAME( 0x02, 0x00, "Lightning Speed" );/* Velocita Laser Inv */
 		PORT_DIPSETTING(    0x00, "Slow" );
@@ -141,7 +141,7 @@ public class zac2650
 		PORT_DIPSETTING(    0x00, DEF_STR( "No") );
 		PORT_DIPSETTING(    0x40, DEF_STR( "Yes") );
 	
-		PORT_START /* 1E82 */
+		PORT_START();  /* 1E82 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -151,7 +151,7 @@ public class zac2650
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* SENSE */
+		PORT_START(); 	/* SENSE */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_VBLANK );
 	
 	INPUT_PORTS_END(); }}; 

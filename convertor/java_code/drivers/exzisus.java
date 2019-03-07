@@ -261,7 +261,7 @@ public class exzisus
 	***************************************************************************/
 	
 	#define EXZISUS_PLAYERS_INPUT( player ) \
-		PORT_START \
+		PORT_START();  \
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | player );\
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | player );\
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | player );\
@@ -298,7 +298,7 @@ public class exzisus
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		/* IN2 */
-		PORT_START      /* System control (2) */
+		PORT_START();       /* System control (2) */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_SERVICE1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_TILT );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_START1 );
@@ -307,7 +307,7 @@ public class exzisus
 		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
-		PORT_START  /* DSW 1 (3) */
+		PORT_START();   /* DSW 1 (3) */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
@@ -320,7 +320,7 @@ public class exzisus
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_8
 	
-		PORT_START  /* DSW 2 (4) */
+		PORT_START();   /* DSW 2 (4) */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x08, "100k and every 150k" );

@@ -129,7 +129,7 @@ public class jack
 	
 	
 	static InputPortPtr input_ports_jack = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* DSW1 */
+		PORT_START();       /* DSW1 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "4C_3C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_1C") );
@@ -153,7 +153,7 @@ public class jack
 		PORT_DIPSETTING(    0x00, "1" );
 		PORT_DIPSETTING(    0x80, "2" );
 	
-		PORT_START      /* DSW2 */
+		PORT_START();       /* DSW2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
@@ -177,7 +177,7 @@ public class jack
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x1c, IP_ACTIVE_HIGH, IPT_UNKNOWN ); // Most likely unused
@@ -185,7 +185,7 @@ public class jack
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN ); // Most likely unused
 	
-		PORT_START      /* IN3 */
+		PORT_START();       /* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY );
@@ -195,19 +195,19 @@ public class jack
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_COCKTAIL );
 	
-		PORT_START      /* IN4 */
+		PORT_START();       /* IN4 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON2 );
 		PORT_BIT( 0xfc, IP_ACTIVE_HIGH, IPT_UNKNOWN );// Most likely unused
 	
-		PORT_START      /* IN5 */
+		PORT_START();       /* IN5 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON2 | IPF_COCKTAIL );
 		PORT_BIT( 0xfc, IP_ACTIVE_HIGH, IPT_UNKNOWN );// Most likely unused
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_zzyzzyxx = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* DSW1 */
+		PORT_START();       /* DSW1 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "4C_3C") );
@@ -230,7 +230,7 @@ public class jack
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START      /* DSW2 */
+		PORT_START();       /* DSW2 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x02, "Never" );
 		PORT_DIPSETTING(    0x00, "10k/50k" );
@@ -254,14 +254,14 @@ public class jack
 		PORT_DIPSETTING(    0x80, "4 under 4000 pts" );
 		PORT_DIPSETTING(    0xc0, "6 under 4000 pts" );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x1c, IP_ACTIVE_HIGH, IPT_UNKNOWN ); // Most likely unused
 		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0xc0, IP_ACTIVE_HIGH, IPT_UNKNOWN ); // Most likely unused
 	
-		PORT_START      /* IN3 */
+		PORT_START();       /* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP | IPF_2WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_2WAY );
 		PORT_BIT( 0x0c, IP_ACTIVE_HIGH, IPT_UNUSED );
@@ -269,17 +269,17 @@ public class jack
 		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_2WAY | IPF_COCKTAIL );
 		PORT_BIT( 0xc0, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START      /* IN4 */
+		PORT_START();       /* IN4 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON1 );
 		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNKNOWN );// Most likely unused
 	
-		PORT_START      /* IN5 */
+		PORT_START();       /* IN5 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNKNOWN );// Most likely unused
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_freeze = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* DSW1 */
+		PORT_START();       /* DSW1 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -301,11 +301,11 @@ public class jack
 		PORT_DIPSETTING(    0x40, DEF_STR( "1C_2C") );
 		PORT_DIPSETTING(    0xc0, DEF_STR( "Free_Play") );
 	
-		PORT_START      /* DSW2 */
+		PORT_START();       /* DSW2 */
 		/* probably unused */
 		PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );
@@ -315,7 +315,7 @@ public class jack
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START      /* IN3 */
+		PORT_START();       /* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_2WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_2WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );
@@ -325,7 +325,7 @@ public class jack
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START      /* IN4 */
+		PORT_START();       /* IN4 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON2 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON1 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );
@@ -335,7 +335,7 @@ public class jack
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START      /* IN5 */
+		PORT_START();       /* IN5 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );

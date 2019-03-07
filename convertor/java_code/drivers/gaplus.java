@@ -146,7 +146,7 @@ public class gaplus
 	
 	/* The dipswitches and player inputs are not memory mapped, they are handled by an I/O chip. */
 	static InputPortPtr input_ports_gaplus = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* DSW0 */
+		PORT_START();   /* DSW0 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );
@@ -169,7 +169,7 @@ public class gaplus
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_1C") );
 		PORT_DIPSETTING(    0x40, DEF_STR( "1C_2C") );
 	
-		PORT_START  /* DSW1 */
+		PORT_START();   /* DSW1 */
 		PORT_DIPNAME( 0x07, 0x00, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x00, "0" );
 		PORT_DIPSETTING(    0x01, "1" );
@@ -193,14 +193,14 @@ public class gaplus
 		PORT_DIPSETTING(    0x40, "50k 150k and every 300k" );
 		PORT_DIPSETTING(    0x20, "50k 150k" );
 	
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		PORT_BIT_IMPULSE( 0x01, IP_ACTIVE_HIGH, IPT_START1, 1 );
 		PORT_BIT_IMPULSE( 0x02, IP_ACTIVE_HIGH, IPT_START2, 1 );
 		/* 0x08 service switch (not implemented yet) */
 		PORT_BIT_IMPULSE( 0x10, IP_ACTIVE_HIGH, IPT_COIN1, 1 );
 		PORT_BIT_IMPULSE( 0x20, IP_ACTIVE_HIGH, IPT_COIN2, 1 );
 	
-		PORT_START  /* IN1 */
+		PORT_START();   /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY  );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY  );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY );
@@ -210,7 +210,7 @@ public class gaplus
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
 	
-		PORT_START  /* IN2 */
+		PORT_START();   /* IN2 */
 		PORT_BIT_IMPULSE( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON1, 1 );
 		PORT_BITX( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON1, 0, IP_KEY_PREVIOUS, IP_JOY_PREVIOUS );
 		PORT_BIT_IMPULSE( 0x04, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER2, 1 );
@@ -218,7 +218,7 @@ public class gaplus
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_galaga3 = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* DSW0 */
+		PORT_START();   /* DSW0 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );
@@ -241,7 +241,7 @@ public class gaplus
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_1C") );
 		PORT_DIPSETTING(    0x40, DEF_STR( "1C_2C") );
 	
-		PORT_START  /* DSW1 */
+		PORT_START();   /* DSW1 */
 		PORT_DIPNAME( 0x07, 0x00, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x00, "0" );
 		PORT_DIPSETTING(    0x01, "1" );
@@ -265,7 +265,7 @@ public class gaplus
 		PORT_DIPSETTING(    0xc0, "50k 150k and every 200k" );
 		PORT_DIPSETTING(    0x20, "30k 150k" );
 	
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER2);
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_START1 );
@@ -274,7 +274,7 @@ public class gaplus
 		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_COIN2 );
 			/* 0x40 service switch (not implemented yet) */
 	
-		PORT_START  /* IN1 */
+		PORT_START();   /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY  );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY  );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY );
@@ -287,7 +287,7 @@ public class gaplus
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_galaga3a = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* DSW0 */
+		PORT_START();   /* DSW0 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );
@@ -310,7 +310,7 @@ public class gaplus
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_1C") );
 		PORT_DIPSETTING(    0x40, DEF_STR( "1C_2C") );
 	
-		PORT_START  /* DSW1 */
+		PORT_START();   /* DSW1 */
 		PORT_DIPNAME( 0x07, 0x00, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x00, "0" );
 		PORT_DIPSETTING(    0x01, "1" );
@@ -334,7 +334,7 @@ public class gaplus
 		PORT_DIPSETTING(    0x40, "150k 400k and every 900k" );
 		PORT_DIPSETTING(    0x20, "150k 400k" );
 	
-		PORT_START  /* IN0 */
+		PORT_START();   /* IN0 */
 		PORT_BIT(  0x01, IP_ACTIVE_HIGH, IPT_BUTTON1 );
 		PORT_BIT(  0x02, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER2);
 		PORT_BIT(  0x04, IP_ACTIVE_HIGH, IPT_START1 );
@@ -343,7 +343,7 @@ public class gaplus
 		PORT_BIT(  0x20, IP_ACTIVE_HIGH, IPT_COIN2 );
 			/* 0x40 service switch (not implemented yet) */
 	
-		PORT_START  /* IN1 */
+		PORT_START();   /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY  );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY  );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY );

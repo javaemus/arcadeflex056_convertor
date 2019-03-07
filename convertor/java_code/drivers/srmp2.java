@@ -675,7 +675,7 @@ public class srmp2
 	***************************************************************************/
 	
 	#define SETAMJCTRL_PORT3 \
-		PORT_START	/* KEY MATRIX INPUT (3) */ \
+		PORT_START(); 	/* KEY MATRIX INPUT (3) */ \
 		PORT_BIT ( 0x0001, IP_ACTIVE_LOW, IPT_UNKNOWN );\
 		PORT_BITX( 0x0002, IP_ACTIVE_LOW, 0, "P1 Small",       KEYCODE_BACKSPACE, IP_JOY_NONE );\
 		PORT_BITX( 0x0004, IP_ACTIVE_LOW, 0, "P1 Double Up",   KEYCODE_RSHIFT,    IP_JOY_NONE );\
@@ -687,7 +687,7 @@ public class srmp2
 		PORT_BIT ( 0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 	#define SETAMJCTRL_PORT4 \
-		PORT_START	/* KEY MATRIX INPUT (4) */ \
+		PORT_START(); 	/* KEY MATRIX INPUT (4) */ \
 		PORT_BITX( 0x0001, IP_ACTIVE_LOW, 0, "P1 K",   KEYCODE_K,     IP_JOY_NONE );\
 		PORT_BITX( 0x0002, IP_ACTIVE_LOW, 0, "P1 Ron", KEYCODE_Z,     IP_JOY_NONE );\
 		PORT_BITX( 0x0004, IP_ACTIVE_LOW, 0, "P1 G",   KEYCODE_G,     IP_JOY_NONE );\
@@ -699,7 +699,7 @@ public class srmp2
 		PORT_BIT ( 0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 	#define SETAMJCTRL_PORT5 \
-		PORT_START	/* KEY MATRIX INPUT (5) */ \
+		PORT_START(); 	/* KEY MATRIX INPUT (5) */ \
 		PORT_BITX( 0x0001, IP_ACTIVE_LOW, 0, "P1 H",     KEYCODE_H,        IP_JOY_NONE );\
 		PORT_BITX( 0x0002, IP_ACTIVE_LOW, 0, "P1 Pon",   KEYCODE_LALT,     IP_JOY_NONE );\
 		PORT_BITX( 0x0004, IP_ACTIVE_LOW, 0, "P1 D",     KEYCODE_D,        IP_JOY_NONE );\
@@ -711,7 +711,7 @@ public class srmp2
 		PORT_BIT ( 0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 	#define SETAMJCTRL_PORT6 \
-		PORT_START	/* KEY MATRIX INPUT (6) */ \
+		PORT_START(); 	/* KEY MATRIX INPUT (6) */ \
 		PORT_BITX( 0x0001, IP_ACTIVE_LOW, 0, "P1 A",     KEYCODE_A,      IP_JOY_NONE );\
 		PORT_BITX( 0x0002, IP_ACTIVE_LOW, 0, "P1 Bet",   KEYCODE_2,      IP_JOY_NONE );\
 		PORT_BITX( 0x0004, IP_ACTIVE_LOW, 0, "P1 J",     KEYCODE_J,      IP_JOY_NONE );\
@@ -723,7 +723,7 @@ public class srmp2
 		PORT_BIT ( 0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 	static InputPortPtr input_ports_srmp2 = new InputPortPtr(){ public void handler() { 
-		PORT_START			/* Coinnage (0) */
+		PORT_START(); 			/* Coinnage (0) */
 		PORT_BIT ( 0x0001, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT ( 0x0002, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT ( 0x0004, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -734,7 +734,7 @@ public class srmp2
 		PORT_BIT ( 0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT ( 0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START			/* DSW (1) */
+		PORT_START(); 			/* DSW (1) */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -760,7 +760,7 @@ public class srmp2
 		PORT_DIPSETTING(    0x20, "7" );
 		PORT_DIPSETTING(    0x00, "8 (Hard); )
 	
-		PORT_START			/* DSW (2) */
+		PORT_START(); 			/* DSW (2) */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Free_Play") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -788,7 +788,7 @@ public class srmp2
 		SETAMJCTRL_PORT5	/* INPUT1 (5) */
 		SETAMJCTRL_PORT6	/* INPUT1 (6) */
 	
-		PORT_START			/* INPUT1 (7) */
+		PORT_START(); 			/* INPUT1 (7) */
 		PORT_BIT ( 0x0001, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT ( 0x0002, IP_ACTIVE_LOW, IPT_SERVICE3 );
 		PORT_BIT ( 0x0004, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -802,7 +802,7 @@ public class srmp2
 	
 	
 	static InputPortPtr input_ports_srmp3 = new InputPortPtr(){ public void handler() { 
-		PORT_START			/* Coinnage (0) */
+		PORT_START(); 			/* Coinnage (0) */
 		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT ( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -812,7 +812,7 @@ public class srmp2
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START			/* DSW (1) */
+		PORT_START(); 			/* DSW (1) */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -838,7 +838,7 @@ public class srmp2
 		PORT_DIPSETTING(    0x20, "7" );
 		PORT_DIPSETTING(    0x00, "8 (Hard); )
 	
-		PORT_START			/* DSW (2) */
+		PORT_START(); 			/* DSW (2) */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Free_Play") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -866,7 +866,7 @@ public class srmp2
 		SETAMJCTRL_PORT5	/* INPUT1 (5) */
 		SETAMJCTRL_PORT6	/* INPUT1 (6) */
 	
-		PORT_START			/* INPUT1 (7) */
+		PORT_START(); 			/* INPUT1 (7) */
 		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_SERVICE3 );
 		PORT_BIT ( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -879,7 +879,7 @@ public class srmp2
 	
 	
 	static InputPortPtr input_ports_mjyuugi = new InputPortPtr(){ public void handler() { 
-		PORT_START			/* Coinnage (0) */
+		PORT_START(); 			/* Coinnage (0) */
 		PORT_BIT ( 0x0001, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT ( 0x0002, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT ( 0x0004, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -890,7 +890,7 @@ public class srmp2
 		PORT_BIT ( 0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT ( 0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START			/* DSW (1) */
+		PORT_START(); 			/* DSW (1) */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "1 (Easy); )
 		PORT_DIPSETTING(    0x06, "2" );
@@ -916,7 +916,7 @@ public class srmp2
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START			/* DSW (2) */
+		PORT_START(); 			/* DSW (2) */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -944,7 +944,7 @@ public class srmp2
 		SETAMJCTRL_PORT5	/* INPUT1 (5) */
 		SETAMJCTRL_PORT6	/* INPUT1 (6) */
 	
-		PORT_START			/* INPUT1 (7) */
+		PORT_START(); 			/* INPUT1 (7) */
 		PORT_BIT ( 0x0001, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT ( 0x0002, IP_ACTIVE_LOW, IPT_SERVICE3 );
 		PORT_BITX( 0x0004, 0x0004, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Debug Mode", IP_KEY_NONE, IP_JOY_NONE );
@@ -957,7 +957,7 @@ public class srmp2
 		PORT_BIT ( 0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT ( 0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START			/* DSW (3-1) [Debug switch] */
+		PORT_START(); 			/* DSW (3-1) [Debug switch] */
 		PORT_BITX( 0x0001, 0x0001, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Debug  0", IP_KEY_NONE, IP_JOY_NONE );
 		PORT_DIPSETTING(   0x0001, DEF_STR( "Off") );
 		PORT_DIPSETTING(   0x0000, DEF_STR( "On") );
@@ -984,7 +984,7 @@ public class srmp2
 		PORT_DIPSETTING(   0x0000, DEF_STR( "On") );
 		PORT_BIT ( 0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START			/* DSW (3-2) [Debug switch] */
+		PORT_START(); 			/* DSW (3-2) [Debug switch] */
 		PORT_BITX( 0x0001, 0x0001, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Debug  8", IP_KEY_NONE, IP_JOY_NONE );
 		PORT_DIPSETTING(   0x0001, DEF_STR( "Off") );
 		PORT_DIPSETTING(   0x0000, DEF_STR( "On") );

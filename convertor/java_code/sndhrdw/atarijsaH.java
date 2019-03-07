@@ -182,7 +182,7 @@ public class atarijsaH
 	
 	/* Board-specific port definitions */
 	#define JSA_I_PORT											\
-		PORT_START												\
+		PORT_START(); 												\
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );			\
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );			\
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN3 );			\
@@ -194,7 +194,7 @@ public class atarijsaH
 	
 	/* used by Xybots */
 	#define JSA_I_PORT_SWAPPED									\
-		PORT_START												\
+		PORT_START(); 												\
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN2 );			\
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN1 );			\
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN3 );			\
@@ -205,7 +205,7 @@ public class atarijsaH
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNUSED );/* self test */
 	
 	#define JSA_II_PORT											\
-		PORT_START												\
+		PORT_START(); 												\
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );			\
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );			\
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN3 );			\
@@ -216,7 +216,7 @@ public class atarijsaH
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNUSED );/* self test */
 	
 	#define JSA_III_PORT										\
-		PORT_START												\
+		PORT_START(); 												\
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN2 );			\
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN1 );			\
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_TILT );			\

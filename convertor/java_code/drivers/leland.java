@@ -1182,43 +1182,43 @@ public class leland
 	 *************************************/
 	
 	static InputPortPtr input_ports_cerberus = new InputPortPtr(){ public void handler() { 		/* complete, verified from code */
-		PORT_START      /* 0x80 */
+		PORT_START();       /* 0x80 */
 	    PORT_BIT( 0x3f, IP_ACTIVE_LOW, IPT_SPECIAL | IPF_PLAYER1 );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 	
-		PORT_START      /* 0x81 */
+		PORT_START();       /* 0x81 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SLAVEHALT );
 		PORT_SERVICE_NO_TOGGLE( 0x02, IP_ACTIVE_LOW )
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* 0x90 */
+		PORT_START();       /* 0x90 */
 	    PORT_BIT( 0x3f, IP_ACTIVE_LOW, IPT_SPECIAL | IPF_PLAYER2 );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 	
-		PORT_START      /* 0x91 */
+		PORT_START();       /* 0x91 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_EEPROM_DATA );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_VBLANK );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START2 | IPF_PLAYER1 );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_START1 | IPF_PLAYER1 );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* Analog joystick 1 */
+		PORT_START();       /* Analog joystick 1 */
 	    PORT_ANALOG( 0xff, 0, IPT_DIAL | IPF_PLAYER1, 50, 10, 0, 0 );
-		PORT_START
+		PORT_START(); 
 	    PORT_ANALOG( 0xff, 0, IPT_DIAL | IPF_PLAYER2, 50, 10, 0, 0 );
-		PORT_START      /* Analog joystick 2 */
-		PORT_START
-		PORT_START      /* Analog joystick 3 */
-		PORT_START
+		PORT_START();       /* Analog joystick 2 */
+		PORT_START(); 
+		PORT_START();       /* Analog joystick 3 */
+		PORT_START(); 
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_mayhem = new InputPortPtr(){ public void handler() { 		/* complete, verified from code */
-		PORT_START      /* 0xC0 */
+		PORT_START();       /* 0xC0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );
@@ -1228,14 +1228,14 @@ public class leland
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 	
-		PORT_START      /* 0xC1 */
+		PORT_START();       /* 0xC1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SLAVEHALT );
 		PORT_SERVICE_NO_TOGGLE( 0x02, IP_ACTIVE_LOW )
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* 0xD0 */
+		PORT_START();       /* 0xD0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );
@@ -1245,173 +1245,173 @@ public class leland
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
 	
-		PORT_START      /* 0xD1 */
+		PORT_START();       /* 0xD1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_EEPROM_DATA );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_VBLANK );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* Analog joystick 1 */
-		PORT_START
-		PORT_START      /* Analog joystick 2 */
-		PORT_START
-		PORT_START      /* Analog joystick 3 */
-		PORT_START
+		PORT_START();       /* Analog joystick 1 */
+		PORT_START(); 
+		PORT_START();       /* Analog joystick 2 */
+		PORT_START(); 
+		PORT_START();       /* Analog joystick 3 */
+		PORT_START(); 
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_wseries = new InputPortPtr(){ public void handler() { 		/* complete, verified from code */
-		PORT_START      /* 0x80 */
+		PORT_START();       /* 0x80 */
 		PORT_BIT( 0x3f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BITX(0x40, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1, "Extra Base", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x80, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1, "Go Back", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 	
-		PORT_START      /* 0x81 */
+		PORT_START();       /* 0x81 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SLAVEHALT );
 		PORT_SERVICE_NO_TOGGLE( 0x02, IP_ACTIVE_LOW )
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* 0x90 */
+		PORT_START();       /* 0x90 */
 		PORT_BIT( 0x7f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BITX(0x80, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER1, "Aim", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 	
-		PORT_START      /* 0x91 */
+		PORT_START();       /* 0x91 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_EEPROM_DATA );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_VBLANK );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START2 | IPF_PLAYER1 );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_START1 | IPF_PLAYER1 );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* Analog joystick 1 */
+		PORT_START();       /* Analog joystick 1 */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y | IPF_PLAYER1, 100, 10, 0, 255 );
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_PLAYER1, 100, 10, 0, 255 );
-		PORT_START      /* Analog joystick 2 */
-		PORT_START
-		PORT_START      /* Analog joystick 3 */
+		PORT_START();       /* Analog joystick 2 */
+		PORT_START(); 
+		PORT_START();       /* Analog joystick 3 */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_PLAYER2, 100, 10, 0, 255 );
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y | IPF_PLAYER2, 100, 10, 0, 255 );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_alleymas = new InputPortPtr(){ public void handler() { 		/* complete, verified from code */
-		PORT_START      /* 0xC0 */
+		PORT_START();       /* 0xC0 */
 		PORT_BIT( 0x3f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 );
 	
-		PORT_START      /* 0xC1 */
+		PORT_START();       /* 0xC1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SLAVEHALT );
 		PORT_SERVICE_NO_TOGGLE( 0x02, IP_ACTIVE_LOW )
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* 0xD0 */
+		PORT_START();       /* 0xD0 */
 		PORT_BIT( 0x3f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 );	/* redundant inputs */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 );	/* redundant inputs */
 	
-		PORT_START      /* 0xD1 */
+		PORT_START();       /* 0xD1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_EEPROM_DATA );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_VBLANK );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START2 | IPF_PLAYER1 );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_START1 | IPF_PLAYER1 );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* Analog joystick 1 */
+		PORT_START();       /* Analog joystick 1 */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y | IPF_PLAYER1, 100, 10, 0, 255 );
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_PLAYER1, 100, 10, 0, 224 );
-		PORT_START      /* Analog joystick 2 */
-		PORT_START
-		PORT_START      /* Analog joystick 3 */
-		PORT_START
+		PORT_START();       /* Analog joystick 2 */
+		PORT_START(); 
+		PORT_START();       /* Analog joystick 3 */
+		PORT_START(); 
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_dangerz = new InputPortPtr(){ public void handler() { 		/* complete, verified from code */
-		PORT_START      /* 0x80 */
+		PORT_START();       /* 0x80 */
 		PORT_BIT( 0x1f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* 0x81 */
+		PORT_START();       /* 0x81 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SLAVEHALT );
 		PORT_SERVICE_NO_TOGGLE( 0x02, IP_ACTIVE_LOW )
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* 0x90 */
+		PORT_START();       /* 0x90 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* 0x91 */
+		PORT_START();       /* 0x91 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_EEPROM_DATA );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_VBLANK );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* Analog 1 */
+		PORT_START();       /* Analog 1 */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_Y | IPF_PLAYER1, 100, 10, 0, 255 );
-		PORT_START      /* Analog 2 */
+		PORT_START();       /* Analog 2 */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_X | IPF_PLAYER1, 100, 10, 0, 255 );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_basebal2 = new InputPortPtr(){ public void handler() { 		/* complete, verified from code */
-		PORT_START      /* 0x40/C0 */
+		PORT_START();       /* 0x40/C0 */
 		PORT_BIT( 0x0f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x30, IP_ACTIVE_LOW, IPT_UNKNOWN );/* read by strkzone, but never referenced */
 		PORT_BITX(0x40, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1, "Extra Base", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x80, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1, "Go Back", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 	
-		PORT_START      /* 0x41/C1 */
+		PORT_START();       /* 0x41/C1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SLAVEHALT );
 		PORT_SERVICE_NO_TOGGLE( 0x02, IP_ACTIVE_LOW )
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* 0x50/D0 */
+		PORT_START();       /* 0x50/D0 */
 		PORT_BIT( 0x0f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BITX(0x10, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER1, "R Run/Steal", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x20, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER1, "L Run/Steal", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x40, IP_ACTIVE_LOW, IPT_BUTTON6 | IPF_PLAYER1, "Run/Aim", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x80, IP_ACTIVE_LOW, IPT_BUTTON5 | IPF_PLAYER1, "Run/Cutoff", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 	
-		PORT_START      /* 0x51/D1 */
+		PORT_START();       /* 0x51/D1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_EEPROM_DATA );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_VBLANK );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START2 | IPF_PLAYER1 );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_START1 | IPF_PLAYER1 );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* Analog joystick 1 */
+		PORT_START();       /* Analog joystick 1 */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y | IPF_PLAYER1, 100, 10, 0, 255 );
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_PLAYER1, 100, 10, 0, 255 );
-		PORT_START      /* Analog joystick 2 */
-		PORT_START
-		PORT_START      /* Analog joystick 3 */
+		PORT_START();       /* Analog joystick 2 */
+		PORT_START(); 
+		PORT_START();       /* Analog joystick 3 */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_PLAYER2, 100, 10, 0, 255 );
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y | IPF_PLAYER2, 100, 10, 0, 255 );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_redline = new InputPortPtr(){ public void handler() { 		/* complete, verified in code */
-		PORT_START      /* 0xC0 */
+		PORT_START();       /* 0xC0 */
 		PORT_BIT( 0x1f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_ANALOG( 0xe0, 0xe0, IPT_PEDAL | IPF_PLAYER1, 100, 64, 0x00, 0xff );
 	
-		PORT_START      /* 0xC1 */
+		PORT_START();       /* 0xC1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SLAVEHALT );
 		PORT_SERVICE_NO_TOGGLE( 0x02, IP_ACTIVE_LOW )
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN2 );
@@ -1419,39 +1419,39 @@ public class leland
 		PORT_BIT( 0x70, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );/* used, but for what purpose? */
 	
-		PORT_START      /* 0xD0 */
+		PORT_START();       /* 0xD0 */
 		PORT_BIT( 0x1f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_ANALOG( 0xe0, 0xe0, IPT_PEDAL | IPF_PLAYER2, 100, 64, 0x00, 0xff );
 	
-		PORT_START      /* 0xD1 */
+		PORT_START();       /* 0xD1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_EEPROM_DATA );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_VBLANK );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* Analog wheel 1 */
+		PORT_START();       /* Analog wheel 1 */
 		PORT_ANALOG( 0xff, 0x80, IPT_DIAL | IPF_PLAYER1, 100, 10, 0, 255 );
-		PORT_START      /* Analog wheel 2 */
+		PORT_START();       /* Analog wheel 2 */
 		PORT_ANALOG( 0xff, 0x80, IPT_DIAL | IPF_PLAYER2, 100, 10, 0, 255 );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_quarterb = new InputPortPtr(){ public void handler() { 		/* complete, verified in code */
-		PORT_START      /* 0x80 */
+		PORT_START();       /* 0x80 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x0e, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0xe0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* 0x81 */
+		PORT_START();       /* 0x81 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SLAVEHALT );
 		PORT_SERVICE_NO_TOGGLE( 0x02, IP_ACTIVE_LOW )
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* 0x90 */
+		PORT_START();       /* 0x90 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER2 );
@@ -1461,39 +1461,39 @@ public class leland
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER1 );
 	
-		PORT_START      /* 0x91 */
+		PORT_START();       /* 0x91 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_EEPROM_DATA );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_VBLANK );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* Analog spring stick 1 */
+		PORT_START();       /* Analog spring stick 1 */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_PLAYER1, 100, 10, 0, 255 );
-		PORT_START      /* Analog spring stick 2 */
+		PORT_START();       /* Analog spring stick 2 */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y | IPF_PLAYER1, 100, 10, 0, 255 );
-		PORT_START      /* Analog spring stick 3 */
-		PORT_START      /* Analog spring stick 4 */
-		PORT_START      /* Analog spring stick 5 */
-		PORT_START      /* Analog spring stick 6 */
+		PORT_START();       /* Analog spring stick 3 */
+		PORT_START();       /* Analog spring stick 4 */
+		PORT_START();       /* Analog spring stick 5 */
+		PORT_START();       /* Analog spring stick 6 */
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_teamqb = new InputPortPtr(){ public void handler() { 		/* complete, verified in code */
-		PORT_START      /* 0x80 */
+		PORT_START();       /* 0x80 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x0e, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0xe0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* 0x81 */
+		PORT_START();       /* 0x81 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SLAVEHALT );
 		PORT_SERVICE_NO_TOGGLE( 0x02, IP_ACTIVE_LOW )
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* 0x90 */
+		PORT_START();       /* 0x90 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER2 );
@@ -1503,25 +1503,25 @@ public class leland
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER1 );
 	
-		PORT_START      /* 0x91 */
+		PORT_START();       /* 0x91 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_EEPROM_DATA );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_VBLANK );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* Analog spring stick 1 */
+		PORT_START();       /* Analog spring stick 1 */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_PLAYER1, 100, 10, 0, 255 );
-		PORT_START      /* Analog spring stick 2 */
+		PORT_START();       /* Analog spring stick 2 */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y | IPF_PLAYER1, 100, 10, 0, 255 );
-		PORT_START      /* Analog spring stick 3 */
-		PORT_START      /* Analog spring stick 4 */
-		PORT_START      /* Analog spring stick 5 */
+		PORT_START();       /* Analog spring stick 3 */
+		PORT_START();       /* Analog spring stick 4 */
+		PORT_START();       /* Analog spring stick 5 */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y | IPF_PLAYER3, 100, 10, 0, 255 );
-		PORT_START      /* Analog spring stick 6 */
+		PORT_START();       /* Analog spring stick 6 */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_PLAYER3, 100, 10, 0, 255 );
 	
-		PORT_START      /* 0x7C */
+		PORT_START();       /* 0x7C */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER4 );
 		PORT_BIT( 0x0e, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER3 );
@@ -1529,7 +1529,7 @@ public class leland
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START3 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START4 );
 	
-		PORT_START      /* 0x7F */
+		PORT_START();       /* 0x7F */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER4 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER4 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER4 );
@@ -1542,51 +1542,51 @@ public class leland
 	
 	
 	static InputPortPtr input_ports_aafb2p = new InputPortPtr(){ public void handler() { 		/* complete, verified in code */
-		PORT_START      /* 0x80 */
+		PORT_START();       /* 0x80 */
 		PORT_BIT( 0x0f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0xe0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* 0x81 */
+		PORT_START();       /* 0x81 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SLAVEHALT );
 		PORT_SERVICE_NO_TOGGLE( 0x02, IP_ACTIVE_LOW )
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* 0x90 */
+		PORT_START();       /* 0x90 */
 		PORT_BIT( 0x0f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER1 );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER1 );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER1 );
 	
-		PORT_START      /* 0x91 */
+		PORT_START();       /* 0x91 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_EEPROM_DATA );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_VBLANK );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* Analog spring stick 1 */
+		PORT_START();       /* Analog spring stick 1 */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_PLAYER1, 100, 10, 0, 255 );
-		PORT_START      /* Analog spring stick 2 */
+		PORT_START();       /* Analog spring stick 2 */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y | IPF_PLAYER1, 100, 10, 0, 255 );
-		PORT_START      /* Analog spring stick 3 */
-		PORT_START      /* Analog spring stick 4 */
-		PORT_START      /* Analog spring stick 5 */
+		PORT_START();       /* Analog spring stick 3 */
+		PORT_START();       /* Analog spring stick 4 */
+		PORT_START();       /* Analog spring stick 5 */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y | IPF_PLAYER2, 100, 10, 0, 255 );
-		PORT_START      /* Analog spring stick 6 */
+		PORT_START();       /* Analog spring stick 6 */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_PLAYER2, 100, 10, 0, 255 );
 	
-		PORT_START      /* 0x7C */
+		PORT_START();       /* 0x7C */
 		PORT_BIT( 0x0f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* 0x7F */
+		PORT_START();       /* 0x7F */
 		PORT_BIT( 0x0f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER2 );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER2 );
@@ -1596,7 +1596,7 @@ public class leland
 	
 	
 	static InputPortPtr input_ports_offroad = new InputPortPtr(){ public void handler() { 		/* complete, verified from code */
-		PORT_START      /* 0xC0 */
+		PORT_START();       /* 0xC0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* read */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* read */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );/* read */
@@ -1606,40 +1606,40 @@ public class leland
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER3 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* 0xC1 */
+		PORT_START();       /* 0xC1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SLAVEHALT );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN3 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* 0xD0 */
+		PORT_START();       /* 0xD0 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* 0xD1 */
+		PORT_START();       /* 0xD1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_EEPROM_DATA );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_VBLANK );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_SERVICE_NO_TOGGLE( 0x08, IP_ACTIVE_LOW )
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* Analog pedal 1 */
+		PORT_START();       /* Analog pedal 1 */
 		PORT_ANALOG( 0xff, 0x00, IPT_PEDAL | IPF_PLAYER1, 100, 10, 0, 255 );
-		PORT_START      /* Analog pedal 2 */
+		PORT_START();       /* Analog pedal 2 */
 		PORT_ANALOG( 0xff, 0x00, IPT_PEDAL | IPF_PLAYER2, 100, 10, 0, 255 );
-		PORT_START      /* Analog pedal 3 */
+		PORT_START();       /* Analog pedal 3 */
 		PORT_ANALOG( 0xff, 0x00, IPT_PEDAL | IPF_PLAYER3, 100, 10, 0, 255 );
-		PORT_START      /* Analog wheel 1 */
+		PORT_START();       /* Analog wheel 1 */
 		PORT_ANALOG( 0xff, 0x80, IPT_DIAL | IPF_PLAYER1, 100, 10, 0, 255 );
-		PORT_START      /* Analog wheel 2 */
+		PORT_START();       /* Analog wheel 2 */
 		PORT_ANALOG( 0xff, 0x80, IPT_DIAL | IPF_PLAYER2, 100, 10, 0, 255 );
-		PORT_START      /* Analog wheel 3 */
+		PORT_START();       /* Analog wheel 3 */
 		PORT_ANALOG( 0xff, 0x80, IPT_DIAL | IPF_PLAYER3, 100, 10, 0, 255 );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_pigout = new InputPortPtr(){ public void handler() { 		/* complete, verified from code */
-		PORT_START      /* 0x40 */
+		PORT_START();       /* 0x40 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER3 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER3 );
@@ -1649,14 +1649,14 @@ public class leland
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_UP   | IPF_8WAY | IPF_PLAYER2 );
 	
-		PORT_START      /* 0x41 */
+		PORT_START();       /* 0x41 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SLAVEHALT );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );/* read, but never referenced */
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* 0x50 */
+		PORT_START();       /* 0x50 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START3 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER3 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_PLAYER3 );
@@ -1666,13 +1666,13 @@ public class leland
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );
 	
-		PORT_START      /* 0x51 */
+		PORT_START();       /* 0x51 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_EEPROM_DATA );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_VBLANK );
 		PORT_SERVICE_NO_TOGGLE( 0x04, IP_ACTIVE_LOW )
 		PORT_BIT( 0xf8, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* 0x7F */
+		PORT_START();       /* 0x7F */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );

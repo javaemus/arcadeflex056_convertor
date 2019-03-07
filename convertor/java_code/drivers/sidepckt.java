@@ -188,7 +188,7 @@ public class sidepckt
 	/******************************************************************************/
 	
 	static InputPortPtr input_ports_sidepckt = new InputPortPtr(){ public void handler() { 
-	    PORT_START /* 0x3000 */
+	    PORT_START();  /* 0x3000 */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY );
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY );
@@ -198,7 +198,7 @@ public class sidepckt
 	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-	    PORT_START /* 0x3001 */
+	    PORT_START();  /* 0x3001 */
 		/* I haven't found a way to make the game use the 2p controls */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_COCKTAIL );
@@ -209,7 +209,7 @@ public class sidepckt
 	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-	    PORT_START /* 0x3002 */
+	    PORT_START();  /* 0x3002 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "1C_2C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "1C_3C") );
@@ -233,7 +233,7 @@ public class sidepckt
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-	    PORT_START /* 0x3003 */
+	    PORT_START();  /* 0x3003 */
 		PORT_DIPNAME( 0x03, 0x03, "Timer Speed" );
 		PORT_BITX( 0,       0x00, IPT_DIPSWITCH_SETTING | IPF_CHEAT, "Stopped", IP_KEY_NONE, IP_JOY_NONE );
 		PORT_DIPSETTING(    0x03, "Slow" );

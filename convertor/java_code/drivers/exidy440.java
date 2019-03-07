@@ -675,7 +675,7 @@ public class exidy440
 	
 	
 	static InputPortPtr input_ports_crossbow = new InputPortPtr(){ public void handler() { 
-		PORT_START				/* player inputs and logic board dips */
+		PORT_START(); 				/* player inputs and logic board dips */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Lives") );
@@ -690,32 +690,32 @@ public class exidy440
 		PORT_DIPSETTING(    0x10, "Hardest" );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START 				/* audio board dips */
+		PORT_START();  				/* audio board dips */
 		COINAGE
 		PORT_BIT( 0x70, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Free_Play") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START				/* start button */
+		PORT_START(); 				/* start button */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START				/* coin counters */
+		PORT_START(); 				/* coin counters */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START				/* fake analog X */
+		PORT_START(); 				/* fake analog X */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 50, 10, 0, 255 );
 	
-		PORT_START				/* fake analog Y */
+		PORT_START(); 				/* fake analog Y */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 70, 10, 0, 255 );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_cheyenne = new InputPortPtr(){ public void handler() { 
-		PORT_START				/* player inputs and logic board dips */
+		PORT_START(); 				/* player inputs and logic board dips */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Lives") );
@@ -730,32 +730,32 @@ public class exidy440
 		PORT_DIPSETTING(    0x10, "Hardest" );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START 				/* audio board dips */
+		PORT_START();  				/* audio board dips */
 		COINAGE
 		PORT_BIT( 0x70, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Free_Play") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START				/* start button */
+		PORT_START(); 				/* start button */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START				/* coin counters */
+		PORT_START(); 				/* coin counters */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START				/* fake analog X */
+		PORT_START(); 				/* fake analog X */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 50, 10, 0, 255 );
 	
-		PORT_START				/* fake analog Y */
+		PORT_START(); 				/* fake analog Y */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 70, 10, 0, 255 );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_combat = new InputPortPtr(){ public void handler() { 
-		PORT_START				/* player inputs and logic board dips */
+		PORT_START(); 				/* player inputs and logic board dips */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Lives") );
@@ -770,32 +770,32 @@ public class exidy440
 		PORT_DIPSETTING(    0x10, "Hardest" );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START 				/* audio board dips */
+		PORT_START();  				/* audio board dips */
 		COINAGE
 		PORT_BIT( 0x70, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Free_Play") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START				/* start button */
+		PORT_START(); 				/* start button */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START				/* coin counters */
+		PORT_START(); 				/* coin counters */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START				/* fake analog X */
+		PORT_START(); 				/* fake analog X */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 50, 10, 0, 255 );
 	
-		PORT_START				/* fake analog Y */
+		PORT_START(); 				/* fake analog Y */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 70, 10, 0, 255 );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_cracksht = new InputPortPtr(){ public void handler() { 
-		PORT_START				/* player inputs and logic board dips */
+		PORT_START(); 				/* player inputs and logic board dips */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_DIPNAME( 0x0c, 0x0c, "Seconds" );
@@ -810,32 +810,32 @@ public class exidy440
 		PORT_DIPSETTING(    0x10, "Hardest" );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START 				/* audio board dips */
+		PORT_START();  				/* audio board dips */
 		COINAGE
 		PORT_BIT( 0x70, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START				/* start button */
+		PORT_START(); 				/* start button */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START				/* coin counters */
+		PORT_START(); 				/* coin counters */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START				/* fake analog X */
+		PORT_START(); 				/* fake analog X */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 50, 10, 0, 255 );
 	
-		PORT_START				/* fake analog Y */
+		PORT_START(); 				/* fake analog Y */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 70, 10, 0, 255 );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_claypign = new InputPortPtr(){ public void handler() { 
-		PORT_START				/* player inputs and logic board dips */
+		PORT_START(); 				/* player inputs and logic board dips */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x0c, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -846,32 +846,32 @@ public class exidy440
 		PORT_DIPSETTING(    0x10, "Hardest" );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START 				/* audio board dips */
+		PORT_START();  				/* audio board dips */
 		COINAGE
 		PORT_BIT( 0x70, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START				/* start button */
+		PORT_START(); 				/* start button */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START				/* coin counters */
+		PORT_START(); 				/* coin counters */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START				/* fake analog X */
+		PORT_START(); 				/* fake analog X */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 50, 10, 0, 255 );
 	
-		PORT_START				/* fake analog Y */
+		PORT_START(); 				/* fake analog Y */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 70, 10, 0, 255 );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_chiller = new InputPortPtr(){ public void handler() { 
-		PORT_START				/* player inputs and logic board dips */
+		PORT_START(); 				/* player inputs and logic board dips */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_DIPNAME( 0x0c, 0x0c, "Seconds" );
@@ -886,29 +886,29 @@ public class exidy440
 		PORT_DIPSETTING(    0x10, "Hardest" );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START 				/* audio board dips */
+		PORT_START();  				/* audio board dips */
 		COINAGE
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START				/* start button */
+		PORT_START(); 				/* start button */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START				/* coin counters */
+		PORT_START(); 				/* coin counters */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START				/* fake analog X */
+		PORT_START(); 				/* fake analog X */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 50, 10, 0, 255 );
 	
-		PORT_START				/* fake analog Y */
+		PORT_START(); 				/* fake analog Y */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 70, 10, 0, 255 );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_topsecex = new InputPortPtr(){ public void handler() { 
-		PORT_START				/* player inputs and logic board dips */
+		PORT_START(); 				/* player inputs and logic board dips */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Lives") );
@@ -923,26 +923,26 @@ public class exidy440
 		PORT_DIPSETTING(    0x10, "Hardest" );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START 				/* audio board dips */
+		PORT_START();  				/* audio board dips */
 		COINAGE
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START				/* start button */
+		PORT_START(); 				/* start button */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START				/* coin counters */
+		PORT_START(); 				/* coin counters */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START				/* fake analog X */
+		PORT_START(); 				/* fake analog X */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_X | IPF_REVERSE, 50, 10, -127, 127 );
 	
-		PORT_START				/* fake analog Y */
+		PORT_START(); 				/* fake analog Y */
 		PORT_BIT(  0xff, IP_ACTIVE_LOW, IPT_BUTTON1 );
 	
-		PORT_START				/* start button */
+		PORT_START(); 				/* start button */
 		PORT_BITX( 0x01, IP_ACTIVE_LOW, IPT_BUTTON3, "Fireball", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX( 0x02, IP_ACTIVE_LOW, IPT_BUTTON4, "Laser", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX( 0x04, IP_ACTIVE_LOW, IPT_BUTTON5, "Missile", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
@@ -955,7 +955,7 @@ public class exidy440
 	
 	
 	static InputPortPtr input_ports_hitnmiss = new InputPortPtr(){ public void handler() { 
-		PORT_START				/* player inputs and logic board dips */
+		PORT_START(); 				/* player inputs and logic board dips */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_DIPNAME( 0x0c, 0x0c, "Seconds" );
@@ -970,32 +970,32 @@ public class exidy440
 		PORT_DIPSETTING(    0x10, "Hardest" );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START 				/* audio board dips */
+		PORT_START();  				/* audio board dips */
 		COINAGE
 		PORT_BIT( 0x70, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Free_Play") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START				/* start button */
+		PORT_START(); 				/* start button */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START				/* coin counters */
+		PORT_START(); 				/* coin counters */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START				/* fake analog X */
+		PORT_START(); 				/* fake analog X */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 50, 10, 0, 255 );
 	
-		PORT_START				/* fake analog Y */
+		PORT_START(); 				/* fake analog Y */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 70, 10, 0, 255 );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_whodunit = new InputPortPtr(){ public void handler() { 
-		PORT_START				/* player inputs and logic board dips */
+		PORT_START(); 				/* player inputs and logic board dips */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Lives") );
@@ -1010,29 +1010,29 @@ public class exidy440
 		PORT_DIPSETTING(    0x10, "Hardest" );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START 				/* audio board dips */
+		PORT_START();  				/* audio board dips */
 		COINAGE
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START				/* start button */
+		PORT_START(); 				/* start button */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START				/* coin counters */
+		PORT_START(); 				/* coin counters */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START				/* fake analog X */
+		PORT_START(); 				/* fake analog X */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 50, 10, 0, 255 );
 	
-		PORT_START				/* fake analog Y */
+		PORT_START(); 				/* fake analog Y */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 70, 10, 0, 255 );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_showdown = new InputPortPtr(){ public void handler() { 
-		PORT_START				/* player inputs and logic board dips */
+		PORT_START(); 				/* player inputs and logic board dips */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_DIPNAME( 0x0c, 0x0c, "Hands" );
@@ -1047,23 +1047,23 @@ public class exidy440
 		PORT_DIPSETTING(    0x10, "Hardest" );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START 				/* audio board dips */
+		PORT_START();  				/* audio board dips */
 		COINAGE
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START				/* start button */
+		PORT_START(); 				/* start button */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START				/* coin counters */
+		PORT_START(); 				/* coin counters */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START				/* fake analog X */
+		PORT_START(); 				/* fake analog X */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 50, 10, 0, 255 );
 	
-		PORT_START				/* fake analog Y */
+		PORT_START(); 				/* fake analog Y */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 70, 10, 0, 255 );
 	INPUT_PORTS_END(); }}; 
 	

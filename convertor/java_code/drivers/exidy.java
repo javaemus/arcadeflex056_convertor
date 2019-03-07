@@ -335,7 +335,7 @@ public class exidy
 	 *************************************/
 	
 	static InputPortPtr input_ports_sidetrac = new InputPortPtr(){ public void handler() { 
-		PORT_START              /* DSW0 */
+		PORT_START();               /* DSW0 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "2");
 		PORT_DIPSETTING(    0x01, "3");
@@ -353,7 +353,7 @@ public class exidy
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
@@ -363,7 +363,7 @@ public class exidy
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -373,10 +373,10 @@ public class exidy
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0xFF, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN3 */
+		PORT_START();       /* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -389,7 +389,7 @@ public class exidy
 	
 	
 	static InputPortPtr input_ports_targ = new InputPortPtr(){ public void handler() { 
-		PORT_START              /* DSW0 */
+		PORT_START();               /* DSW0 */
 		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_COIN2 );/* upright/cocktail switch? */
 		PORT_DIPNAME( 0x02, 0x00, "P Coinage" );
 		PORT_DIPSETTING(    0x00, "10P/1 C 50P Coin/6 Cs" );
@@ -411,20 +411,20 @@ public class exidy
 		PORT_DIPSETTING(    0x80, "Quarters" );
 		PORT_DIPSETTING(    0x00, "Pence" );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x7F, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x1f, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0xFF, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN3 */
+		PORT_START();       /* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
@@ -438,7 +438,7 @@ public class exidy
 	
 	/* identical to Targ, the only difference is the additional Language dip switch */
 	static InputPortPtr input_ports_spectar = new InputPortPtr(){ public void handler() { 
-		PORT_START              /* DSW0 */
+		PORT_START();               /* DSW0 */
 		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_COIN2 );/* upright/cocktail switch? */
 		PORT_DIPNAME( 0x02, 0x00, "P Coinage" );
 		PORT_DIPSETTING(    0x00, "10P/1 C 50P Coin/6 Cs" );
@@ -460,11 +460,11 @@ public class exidy
 		PORT_DIPSETTING(    0x80, "Quarters" );
 		PORT_DIPSETTING(    0x00, "Pence" );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x7f, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_DIPNAME( 0x03, 0x00, "Language" );
 		PORT_DIPSETTING(    0x00, "English" );
 		PORT_DIPSETTING(    0x01, "French" );
@@ -475,10 +475,10 @@ public class exidy
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN3 */
+		PORT_START();       /* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
@@ -491,7 +491,7 @@ public class exidy
 	
 	
 	static InputPortPtr input_ports_mtrap = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_DIPNAME( 0x06, 0x06, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x06, "30000" );
@@ -513,7 +513,7 @@ public class exidy
 		PORT_DIPSETTING(    0x20, "4" );
 		PORT_DIPSETTING(    0x00, "5" );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
@@ -523,7 +523,7 @@ public class exidy
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 	/*
 		The schematics claim these exist, but there's nothing in
 		the ROMs to support that claim (as far as I can see):
@@ -543,7 +543,7 @@ public class exidy
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_VBLANK );
 	
-		PORT_START              /* IN2 */
+		PORT_START();               /* IN2 */
 		PORT_BITX(0x01, IP_ACTIVE_LOW, IPT_BUTTON2, "Yellow Button", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x02, IP_ACTIVE_LOW, IPT_BUTTON3, "Red Button", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x04, 0x04, IPT_DIPSWITCH_NAME, DEF_STR( "Free_Play") ); IP_KEY_NONE, IP_JOY_NONE )
@@ -558,7 +558,7 @@ public class exidy
 	
 	
 	static InputPortPtr input_ports_venture = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_DIPNAME( 0x06, 0x06, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x06, "20000" );
@@ -579,7 +579,7 @@ public class exidy
 		PORT_DIPSETTING(    0x40, "4" );
 		PORT_DIPSETTING(    0x60, "5" );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
@@ -589,7 +589,7 @@ public class exidy
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 	/*
 		The schematics claim these exist, but there's nothing in
 		the ROMs to support that claim (as far as I can see):
@@ -612,7 +612,7 @@ public class exidy
 	
 	
 	static InputPortPtr input_ports_pepper2 = new InputPortPtr(){ public void handler() { 
-		PORT_START              /* DSW */
+		PORT_START();               /* DSW */
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_DIPNAME( 0x06, 0x06, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x06, "40000" );
@@ -634,7 +634,7 @@ public class exidy
 		PORT_DIPSETTING(    0x08, "1 Coin/3 Credits 2C/7C" );
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_4C") );
 	
-		PORT_START              /* IN0 */
+		PORT_START();               /* IN0 */
 		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT ( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
@@ -644,7 +644,7 @@ public class exidy
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY );
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 	/*
 		The schematics claim these exist, but there's nothing in
 		the ROMs to support that claim (as far as I can see):
@@ -667,7 +667,7 @@ public class exidy
 	
 	
 	static InputPortPtr input_ports_fax = new InputPortPtr(){ public void handler() { 
-		PORT_START              /* DSW */
+		PORT_START();               /* DSW */
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_DIPNAME( 0x06, 0x06, "Bonus Time" );
 		PORT_DIPSETTING(    0x06, "8000" );
@@ -689,11 +689,11 @@ public class exidy
 		PORT_DIPSETTING(    0x08, "1 Coin/3 Credits 2C/7C" );
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_4C") );
 	
-		PORT_START              /* IN0 */
+		PORT_START();               /* IN0 */
 		PORT_BIT ( 0x7f, IP_ACTIVE_HIGH, IPT_UNUSED );
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 	/*
 		The schematics claim these exist, but there's nothing in
 		the ROMs to support that claim (as far as I can see):
@@ -714,7 +714,7 @@ public class exidy
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_VBLANK );  /* VBlank */
 	
-		PORT_START /* IN2 */
+		PORT_START();  /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -724,7 +724,7 @@ public class exidy
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 );
 	
-		PORT_START /* IN3 */
+		PORT_START();  /* IN3 */
 		PORT_BIT( 0x0f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER2 );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );

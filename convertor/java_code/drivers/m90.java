@@ -194,7 +194,7 @@ public class m90
 		IREM_JOYSTICK_1_2(2)
 		IREM_COINS
 	
-		PORT_START	/* Dip switch bank 1 */
+		PORT_START(); 	/* Dip switch bank 1 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -218,7 +218,7 @@ public class m90
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* Dip switch bank 2 */
+		PORT_START(); 	/* Dip switch bank 2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -242,7 +242,7 @@ public class m90
 		IREM_JOYSTICK_1_2(2)
 		IREM_COINS
 	
-		PORT_START	/* Dip switch bank 1 */
+		PORT_START(); 	/* Dip switch bank 1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x02, "2" );
 		PORT_DIPSETTING(    0x03, "3" );
@@ -265,7 +265,7 @@ public class m90
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* Dip switch bank 2 */
+		PORT_START(); 	/* Dip switch bank 2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -289,7 +289,7 @@ public class m90
 		IREM_JOYSTICK_1_2(2)
 		IREM_COINS
 	
-		PORT_START	/* Dip switch bank 1 */
+		PORT_START(); 	/* Dip switch bank 1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x02, "2" );
 		PORT_DIPSETTING(    0x03, "3" );
@@ -312,7 +312,7 @@ public class m90
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* Dip switch bank 2 */
+		PORT_START(); 	/* Dip switch bank 2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -339,7 +339,7 @@ public class m90
 		IREM_JOYSTICK_1_2(2)
 		IREM_COINS
 	
-		PORT_START	/* Dip switch bank 1 */
+		PORT_START(); 	/* Dip switch bank 1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x02, "2" );
 		PORT_DIPSETTING(    0x03, "3" );
@@ -362,7 +362,7 @@ public class m90
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* Dip switch bank 2 */
+		PORT_START(); 	/* Dip switch bank 2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -386,7 +386,7 @@ public class m90
 		IREM_JOYSTICK_1_2(2)
 		IREM_COINS
 	
-		PORT_START	/* Dip switch bank 1 */
+		PORT_START(); 	/* Dip switch bank 1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x02, "2" );
 		PORT_DIPSETTING(    0x03, "3" );
@@ -409,7 +409,7 @@ public class m90
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* Dip switch bank 2 */
+		PORT_START(); 	/* Dip switch bank 2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );

@@ -358,7 +358,7 @@ public class taitoair
 		PORT_DIPSETTING(    0x00, "Hardest" );
 	
 	static InputPortPtr input_ports_topland = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* DSWA */
+		PORT_START();   /* DSWA */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, "Mechanized (alt);" )
 		PORT_DIPSETTING(    0x01, "Standard (alt);?" )
@@ -370,7 +370,7 @@ public class taitoair
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_8
 	
-		PORT_START  /* DSWB, all bogus !!! */
+		PORT_START();   /* DSWB, all bogus !!! */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x08, "1000k only" );
@@ -389,7 +389,7 @@ public class taitoair
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN1 );
@@ -399,7 +399,7 @@ public class taitoair
 		PORT_BIT( 0x40, IP_ACTIVE_LOW,  IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_BUTTON3 | IPF_PLAYER1 );/* "door" (!) */
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_BUTTON1 | IPF_PLAYER1 );/* slot down */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_BUTTON2 | IPF_PLAYER1 );/* slot up */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );/* handle */
@@ -414,18 +414,18 @@ public class taitoair
 		   in the stick_r routines.  And fake DSW with self-centering option
 		   to make keyboard control feasible! */
 	
-		PORT_START  /* Stick 1 (4) */
+		PORT_START();   /* Stick 1 (4) */
 		PORT_ANALOG( 0xffff, 0x0000, IPT_AD_STICK_X | IPF_PLAYER1, 30, 40, 0xf800, 0x7ff );
 	
-		PORT_START  /* Stick 2 (5) */
+		PORT_START();   /* Stick 2 (5) */
 		PORT_ANALOG( 0xffff, 0x0000, IPT_AD_STICK_Y | IPF_PLAYER1, 30, 40, 0xf800, 0x7ff );
 	
-		PORT_START  /* Stick 3 (6) */
+		PORT_START();   /* Stick 3 (6) */
 		PORT_ANALOG( 0xffff, 0x0000, IPT_AD_STICK_Y | IPF_PLAYER2, 30, 40, 0xf800, 0x7ff );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_ainferno = new InputPortPtr(){ public void handler() { 
-		PORT_START  /* DSWA */
+		PORT_START();   /* DSWA */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, "Mechanized (alt);" )
 		PORT_DIPSETTING(    0x01, "Special Sensors" );// on its test mode screen
@@ -437,7 +437,7 @@ public class taitoair
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_US_8
 	
-		PORT_START  /* DSWB, all bogus !!! */
+		PORT_START();   /* DSWB, all bogus !!! */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x08, "1000k only" );
@@ -456,7 +456,7 @@ public class taitoair
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN1 );
@@ -466,7 +466,7 @@ public class taitoair
 		PORT_BIT( 0x40, IP_ACTIVE_LOW,  IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_START2 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_BUTTON1 | IPF_PLAYER1 );/* lever */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_BUTTON2 | IPF_PLAYER1 );/* handle x */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_BUTTON3 | IPF_PLAYER1 );/* handle y */
@@ -481,13 +481,13 @@ public class taitoair
 		   in the stick_r routines. And fake DSW with self-centering option
 		   to make keyboard control feasible! */
 	
-		PORT_START  /* Stick 1 (4) */
+		PORT_START();   /* Stick 1 (4) */
 		PORT_ANALOG( 0xffff, 0x0000, IPT_AD_STICK_X | IPF_PLAYER1, 30, 40, 0xf800, 0x7ff );
 	
-		PORT_START  /* Stick 2 (5) */
+		PORT_START();   /* Stick 2 (5) */
 		PORT_ANALOG( 0xffff, 0x0000, IPT_AD_STICK_Y | IPF_PLAYER1, 30, 40, 0xf800, 0x7ff );
 	
-		PORT_START  /* Stick 3 (6) */
+		PORT_START();   /* Stick 3 (6) */
 		PORT_ANALOG( 0xffff, 0x0000, IPT_AD_STICK_Y | IPF_PLAYER2, 30, 40, 0xf800, 0x7ff );
 	INPUT_PORTS_END(); }}; 
 	

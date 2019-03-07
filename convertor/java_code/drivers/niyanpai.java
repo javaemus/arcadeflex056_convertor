@@ -447,7 +447,7 @@ public class niyanpai
 	
 	
 	static InputPortPtr input_ports_niyanpai = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x03, "1" );
 		PORT_DIPSETTING(    0x02, "2" );
@@ -471,7 +471,7 @@ public class niyanpai
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x00, "Nudity" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -480,7 +480,7 @@ public class niyanpai
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );	// COIN1
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );	// COIN2
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START3 );	// CREDIT CLEAR
@@ -491,7 +491,7 @@ public class niyanpai
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );	// ?
 	 	PORT_SERVICE( 0x80, IP_ACTIVE_LOW );		// TEST
 	
-		PORT_START	/* (3) PLAYER-1 */
+		PORT_START(); 	/* (3) PLAYER-1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
@@ -501,7 +501,7 @@ public class niyanpai
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* (4) PLAYER-2 */
+		PORT_START(); 	/* (4) PLAYER-2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER2 );

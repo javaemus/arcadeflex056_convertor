@@ -290,7 +290,7 @@ public class cabal
 	/***************************************************************************/
 	
 	static InputPortPtr input_ports_cabal = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 	/* Coin Mode 1, todo Mode 2 */
 		PORT_DIPNAME( 0x000f, 0x000f, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(      0x000a, DEF_STR( "6C_1C") );
@@ -355,7 +355,7 @@ public class cabal
 		PORT_DIPSETTING(      0x0000, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x8000, DEF_STR( "On") );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
@@ -366,25 +366,25 @@ public class cabal
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT_IMPULSE( 0x01, IP_ACTIVE_HIGH, IPT_COIN1, 4 );/* read through sound cpu */
 		PORT_BIT_IMPULSE( 0x02, IP_ACTIVE_HIGH, IPT_COIN2, 4 );/* read through sound cpu */
 	
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOG( 0x0fff, 0x0000, IPT_TRACKBALL_X | IPF_PLAYER1, 100, 30, 0, 0 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOG( 0x0fff, 0x0000, IPT_TRACKBALL_Y | IPF_REVERSE | IPF_PLAYER1, 100, 30, 0, 0 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOG( 0x0fff, 0x0000, IPT_TRACKBALL_X | IPF_PLAYER2, 100, 30, 0, 0 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOG( 0x0fff, 0x0000, IPT_TRACKBALL_Y | IPF_PLAYER2, 100, 30, 0, 0 );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_cabalbl = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 	/* Coin Mode 1, todo Mode 2 */
 		PORT_DIPNAME( 0x000f, 0x000f, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(      0x000a, DEF_STR( "6C_1C") );
@@ -449,7 +449,7 @@ public class cabal
 		PORT_DIPSETTING(      0x0000, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x8000, DEF_STR( "On") );
 	
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x00ff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x0100, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0200, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -460,7 +460,7 @@ public class cabal
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER2 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
@@ -472,7 +472,7 @@ public class cabal
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT_IMPULSE( 0x01, IP_ACTIVE_HIGH, IPT_COIN1, 4 );/* read through sound cpu */
 		PORT_BIT_IMPULSE( 0x02, IP_ACTIVE_HIGH, IPT_COIN2, 4 );/* read through sound cpu */
 	INPUT_PORTS_END(); }}; 

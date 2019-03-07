@@ -597,7 +597,7 @@ public class atarisy2
 	 *************************************/
 	
 	static InputPortPtr input_ports_paperboy = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* 1840 (sound) */
+		PORT_START(); 	/* 1840 (sound) */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_SPECIAL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_SPECIAL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SPECIAL );
@@ -607,7 +607,7 @@ public class atarisy2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START	/* 1800 */
+		PORT_START(); 	/* 1800 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -619,35 +619,35 @@ public class atarisy2
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	/* 1801 */
+		PORT_START(); 	/* 1801 */
 		PORT_BIT( 0x7f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* ADC0 */
+		PORT_START(); 	/* ADC0 */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_PLAYER1, 100, 10, 0x10, 0xf0 );
 	
-		PORT_START	/* ADC1 */
+		PORT_START(); 	/* ADC1 */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y | IPF_PLAYER1, 100, 10, 0x10, 0xf0 );
 	
-		PORT_START	/* ADC2 */
+		PORT_START(); 	/* ADC2 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* ADC3 */
+		PORT_START(); 	/* ADC3 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* LETA0 */
+		PORT_START(); 	/* LETA0 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* LETA1 */
+		PORT_START(); 	/* LETA1 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* LETA2 */
+		PORT_START(); 	/* LETA2 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* LETA3 */
+		PORT_START(); 	/* LETA3 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "3C_1C") );
@@ -671,7 +671,7 @@ public class atarisy2
 		PORT_DIPSETTING(    0xc0, "1 each ?" );
 		PORT_DIPSETTING(    0xe0, DEF_STR( "Free_Play") );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x01, "Easy" );
 		PORT_DIPSETTING(    0x02, "Medium" );
@@ -697,7 +697,7 @@ public class atarisy2
 	
 	
 	static InputPortPtr input_ports_720 = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* 1840 (sound) */
+		PORT_START(); 	/* 1840 (sound) */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_SPECIAL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_SPECIAL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SPECIAL );
@@ -707,7 +707,7 @@ public class atarisy2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START	/* 1800 */
+		PORT_START(); 	/* 1800 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -719,35 +719,35 @@ public class atarisy2
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	/* 1801 */
+		PORT_START(); 	/* 1801 */
 		PORT_BIT( 0x7f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* ADC0 */
+		PORT_START(); 	/* ADC0 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* ADC1 */
+		PORT_START(); 	/* ADC1 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* ADC2 */
+		PORT_START(); 	/* ADC2 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* ADC3 */
+		PORT_START(); 	/* ADC3 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* LETA0/1 */
+		PORT_START(); 	/* LETA0/1 */
 		PORT_ANALOG( 0xffff, 0x0000, IPT_DIAL | IPF_PLAYER1, 30, 10, 0, 0 );
 	
-		PORT_START	/* filler */
+		PORT_START(); 	/* filler */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* LETA2 */
+		PORT_START(); 	/* LETA2 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* LETA3 */
+		PORT_START(); 	/* LETA3 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "3C_1C") );
@@ -771,7 +771,7 @@ public class atarisy2
 		PORT_DIPSETTING(    0x20, "1 each 2" );
 		PORT_DIPSETTING(    0xe0, DEF_STR( "Free_Play") );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x01, "3000" );
 		PORT_DIPSETTING(    0x00, "5000" );
@@ -796,7 +796,7 @@ public class atarisy2
 	
 	
 	static InputPortPtr input_ports_ssprint = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* 1840 (sound) */
+		PORT_START(); 	/* 1840 (sound) */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_SPECIAL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_SPECIAL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SPECIAL );
@@ -806,7 +806,7 @@ public class atarisy2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN3 );
 	
-		PORT_START	/* 1800 */
+		PORT_START(); 	/* 1800 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -816,35 +816,35 @@ public class atarisy2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	/* 1801 */
+		PORT_START(); 	/* 1801 */
 		PORT_BIT( 0x7f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* ADC0 */
+		PORT_START(); 	/* ADC0 */
 		PORT_ANALOG( 0xff, 0x00, IPT_PEDAL | IPF_PLAYER1, 100, 4, 0x00, 0x3f );
 	
-		PORT_START	/* ADC1 */
+		PORT_START(); 	/* ADC1 */
 		PORT_ANALOG( 0xff, 0x00, IPT_PEDAL | IPF_PLAYER2, 100, 4, 0x00, 0x3f );
 	
-		PORT_START	/* ADC2 */
+		PORT_START(); 	/* ADC2 */
 		PORT_ANALOG( 0xff, 0x00, IPT_PEDAL | IPF_PLAYER3, 100, 4, 0x00, 0x3f );
 	
-		PORT_START	/* ADC3 */
+		PORT_START(); 	/* ADC3 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* LETA0 */
+		PORT_START(); 	/* LETA0 */
 		PORT_ANALOG( 0xff, 0x40, IPT_DIAL | IPF_PLAYER1, 25, 10, 0x00, 0x7f );
 	
-		PORT_START	/* LETA1 */
+		PORT_START(); 	/* LETA1 */
 		PORT_ANALOG( 0xff, 0x40, IPT_DIAL | IPF_PLAYER2, 25, 10, 0x00, 0x7f );
 	
-		PORT_START	/* LETA2 */
+		PORT_START(); 	/* LETA2 */
 		PORT_ANALOG( 0xff, 0x40, IPT_DIAL | IPF_PLAYER3, 25, 10, 0x00, 0x7f );
 	
-		PORT_START	/* LETA3 */
+		PORT_START(); 	/* LETA3 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "3C_1C") );
@@ -869,7 +869,7 @@ public class atarisy2
 		PORT_DIPSETTING(    0xc0, "1 each ?" );
 		PORT_DIPSETTING(    0xe0, DEF_STR( "Free_Play") );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x01, "Easy" );
 		PORT_DIPSETTING(    0x00, "Medium" );
@@ -895,7 +895,7 @@ public class atarisy2
 	
 	
 	static InputPortPtr input_ports_csprint = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* 1840 (sound) */
+		PORT_START(); 	/* 1840 (sound) */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_SPECIAL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_SPECIAL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SPECIAL );
@@ -905,7 +905,7 @@ public class atarisy2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START	/* 1800 */
+		PORT_START(); 	/* 1800 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -915,35 +915,35 @@ public class atarisy2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	/* 1801 */
+		PORT_START(); 	/* 1801 */
 		PORT_BIT( 0x7f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* ADC0 */
+		PORT_START(); 	/* ADC0 */
 		PORT_ANALOG( 0xff, 0x00, IPT_PEDAL | IPF_PLAYER1, 100, 4, 0x00, 0x3f );
 	
-		PORT_START	/* ADC1 */
+		PORT_START(); 	/* ADC1 */
 		PORT_ANALOG( 0xff, 0x00, IPT_PEDAL | IPF_PLAYER2, 100, 4, 0x00, 0x3f );
 	
-		PORT_START	/* ADC2 */
+		PORT_START(); 	/* ADC2 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* ADC3 */
+		PORT_START(); 	/* ADC3 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* LETA0 */
+		PORT_START(); 	/* LETA0 */
 		PORT_ANALOG( 0xff, 0x40, IPT_DIAL | IPF_PLAYER1, 25, 10, 0x00, 0x7f );
 	
-		PORT_START	/* LETA1 */
+		PORT_START(); 	/* LETA1 */
 		PORT_ANALOG( 0xff, 0x40, IPT_DIAL | IPF_PLAYER2, 25, 10, 0x00, 0x7f );
 	
-		PORT_START	/* LETA2 */
+		PORT_START(); 	/* LETA2 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* LETA3 */
+		PORT_START(); 	/* LETA3 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "3C_1C") );
@@ -968,7 +968,7 @@ public class atarisy2
 		PORT_DIPSETTING(    0xc0, "1 each ?" );
 		PORT_DIPSETTING(    0xe0, DEF_STR( "Free_Play") );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x01, "Easy" );
 		PORT_DIPSETTING(    0x00, "Medium" );
@@ -994,7 +994,7 @@ public class atarisy2
 	
 	
 	static InputPortPtr input_ports_apb = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* 1840 (sound) */
+		PORT_START(); 	/* 1840 (sound) */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_SPECIAL );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_SPECIAL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_SPECIAL );
@@ -1004,7 +1004,7 @@ public class atarisy2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW,  IPT_COIN2  );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_COIN1  );
 	
-		PORT_START	/* 1800 */
+		PORT_START(); 	/* 1800 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_UNUSED );
@@ -1014,35 +1014,35 @@ public class atarisy2
 		PORT_BIT( 0x40, IP_ACTIVE_LOW,  IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_UNUSED );
 	
-		PORT_START	/* 1801 */
+		PORT_START(); 	/* 1801 */
 		PORT_BIT( 0x7f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* ADC0 */
+		PORT_START(); 	/* ADC0 */
 		PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* ADC1 */
+		PORT_START(); 	/* ADC1 */
 		PORT_ANALOG( 0xff, 0x00, IPT_PEDAL | IPF_PLAYER1, 100, 4, 0x00, 0x3f );
 	
-		PORT_START	/* ADC2 */
+		PORT_START(); 	/* ADC2 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* ADC3 */
+		PORT_START(); 	/* ADC3 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* LETA0 */
+		PORT_START(); 	/* LETA0 */
 		PORT_ANALOG( 0xff, 0x40, IPT_DIAL | IPF_PLAYER1, 25, 10, 0x00, 0x7f );
 	
-		PORT_START	/* LETA1 */
+		PORT_START(); 	/* LETA1 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* LETA2 */
+		PORT_START(); 	/* LETA2 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* LETA3 */
+		PORT_START(); 	/* LETA3 */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "3C_1C") );
@@ -1066,7 +1066,7 @@ public class atarisy2
 		PORT_DIPSETTING(    0x20, "1 each 1" );
 		PORT_DIPSETTING(    0xe0, DEF_STR( "Free_Play") );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x01, 0x01, "Attract Lights" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );

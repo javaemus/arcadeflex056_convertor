@@ -395,7 +395,7 @@ public class badlands
 	 *************************************/
 	
 	static InputPortPtr input_ports_badlands = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* fe4000 */
+		PORT_START(); 		/* fe4000 */
 		PORT_BIT( 0x000f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x0010, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT( 0x0010, IP_ACTIVE_LOW, IPT_START1 );
@@ -405,15 +405,15 @@ public class badlands
 		PORT_SERVICE( 0x0080, IP_ACTIVE_LOW );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* fe6000 */
+		PORT_START();       /* fe6000 */
 		PORT_ANALOG( 0x00ff, 0, IPT_DIAL | IPF_PLAYER1, 50, 10, 0, 0 );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* fe6002 */
+		PORT_START();       /* fe6002 */
 		PORT_ANALOG( 0x00ff, 0, IPT_DIAL | IPF_PLAYER2, 50, 10, 0, 0 );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* audio port */
+		PORT_START(); 		/* audio port */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN3 );
@@ -423,7 +423,7 @@ public class badlands
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_SPECIAL );/* command buffer full */
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_SPECIAL );/* self test */
 	
-		PORT_START      /* fake for pedals */
+		PORT_START();       /* fake for pedals */
 		PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0xfffe, IP_ACTIVE_HIGH, IPT_UNUSED );

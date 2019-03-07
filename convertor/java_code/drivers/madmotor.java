@@ -140,7 +140,7 @@ public class madmotor
 	/******************************************************************************/
 	
 	static InputPortPtr input_ports_madmotor = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
@@ -158,7 +158,7 @@ public class madmotor
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNUSED );/* button 3 - unused */
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x0007, 0x0007, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "2C_1C") );
@@ -206,7 +206,7 @@ public class madmotor
 		PORT_DIPSETTING(      0x8000, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
 	
-		PORT_START	/* Credits */
+		PORT_START(); 	/* Credits */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN3 );

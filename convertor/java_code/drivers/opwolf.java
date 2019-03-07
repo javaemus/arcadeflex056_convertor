@@ -326,7 +326,7 @@ public class opwolf
 		PORT_DIPSETTING(    0x00, "Hardest" );
 	
 	static InputPortPtr input_ports_opwolf = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_UNKNOWN );
@@ -336,7 +336,7 @@ public class opwolf
 		PORT_BIT( 0x40, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_BUTTON1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_BUTTON2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_SERVICE1 );
@@ -346,7 +346,7 @@ public class opwolf
 		PORT_BIT( 0x40, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, "NY Conversion of Upright" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -359,7 +359,7 @@ public class opwolf
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_WORLD_8
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, "Ammo Magazines at Start" );
 		PORT_DIPSETTING(    0x00, "4" );
@@ -379,15 +379,15 @@ public class opwolf
 		PORT_DIPSETTING(    0x80, "Japanese" );
 		PORT_DIPSETTING(    0x00, "English" );
 	
-		PORT_START	/* Fake DSW */
+		PORT_START(); 	/* Fake DSW */
 		PORT_BITX(    0x01, 0x01, IPT_DIPSWITCH_NAME | IPF_TOGGLE, "Show gun target", KEYCODE_F1, IP_JOY_NONE );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
 	
-		PORT_START	/* P1X (span allows you to shoot enemies behind status bar) */
+		PORT_START(); 	/* P1X (span allows you to shoot enemies behind status bar) */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_PLAYER1, 25, 15, 0x00, 0xff);
 	
-		PORT_START	/* P1Y (span allows you to be slightly offscreen) */
+		PORT_START(); 	/* P1Y (span allows you to be slightly offscreen) */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y | IPF_PLAYER1, 25, 15, 0x00, 0xff);
 	INPUT_PORTS_END(); }}; 
 	

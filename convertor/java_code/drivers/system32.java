@@ -146,7 +146,7 @@ public class system32
 	}
 	
 	static InputPortPtr input_ports_ga2 = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_BITX(0x01, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x7c, IP_ACTIVE_LOW, IPT_UNKNOWN );

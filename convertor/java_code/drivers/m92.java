@@ -361,7 +361,7 @@ public class m92
 		IREM_COINS
 		IREM_SYSTEM_DIPSWITCH
 	
-		PORT_START	/* Dip switch bank 1 */
+		PORT_START(); 	/* Dip switch bank 1 */
 		PORT_DIPNAME( 0x03, 0x02, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "1" );
 		PORT_DIPSETTING(    0x03, "2" );
@@ -383,7 +383,7 @@ public class m92
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* Dip switch bank 2 */
+		PORT_START(); 	/* Dip switch bank 2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -418,7 +418,7 @@ public class m92
 		IREM_COINS
 		IREM_SYSTEM_DIPSWITCH
 	
-		PORT_START	/* Dip switch bank 1 */
+		PORT_START(); 	/* Dip switch bank 1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x02, "2" );
 		PORT_DIPSETTING(    0x03, "3" );
@@ -451,7 +451,7 @@ public class m92
 		IREM_COINS
 		IREM_SYSTEM_DIPSWITCH
 	
-		PORT_START	/* Dip switch bank 1 */
+		PORT_START(); 	/* Dip switch bank 1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x02, "2" );
 		PORT_DIPSETTING(    0x03, "3" );
@@ -473,7 +473,7 @@ public class m92
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* Dip switch bank 2 */
+		PORT_START(); 	/* Dip switch bank 2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -508,7 +508,7 @@ public class m92
 		IREM_COINS
 		IREM_SYSTEM_DIPSWITCH_4PLAYERS
 	
-		PORT_START	/* Dip switch bank 1 */
+		PORT_START(); 	/* Dip switch bank 1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "1" );
 		PORT_DIPSETTING(    0x03, "2" );
@@ -530,7 +530,7 @@ public class m92
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* Dip switch bank 2 */
+		PORT_START(); 	/* Dip switch bank 2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -565,7 +565,7 @@ public class m92
 		IREM_COINS
 		IREM_SYSTEM_DIPSWITCH_4PLAYERS
 	
-		PORT_START	/* Dip switch bank 1 */
+		PORT_START(); 	/* Dip switch bank 1 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -589,7 +589,7 @@ public class m92
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* Dip switch bank 2 */
+		PORT_START(); 	/* Dip switch bank 2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -624,7 +624,7 @@ public class m92
 		IREM_COINS
 		IREM_SYSTEM_DIPSWITCH
 	
-		PORT_START	/* Dip switch bank 1 */
+		PORT_START(); 	/* Dip switch bank 1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x02, "2" );
 		PORT_DIPSETTING(    0x03, "3" );
@@ -647,7 +647,7 @@ public class m92
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* Dip switch bank 2 */
+		PORT_START(); 	/* Dip switch bank 2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -682,7 +682,7 @@ public class m92
 		IREM_COINS
 		IREM_SYSTEM_DIPSWITCH_3PLAYERS
 	
-		PORT_START	/* Dip switch bank 1 */
+		PORT_START(); 	/* Dip switch bank 1 */
 		PORT_DIPNAME( 0x03, 0x02, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "1" );
 		PORT_DIPSETTING(    0x03, "2" );
@@ -706,7 +706,7 @@ public class m92
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* Dip switch bank 2 */
+		PORT_START(); 	/* Dip switch bank 2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -741,7 +741,7 @@ public class m92
 		IREM_COINS
 		IREM_SYSTEM_DIPSWITCH
 	
-		PORT_START	/* Dip switch bank 1 */
+		PORT_START(); 	/* Dip switch bank 1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x02, "2" );
 		PORT_DIPSETTING(    0x03, "3" );
@@ -774,7 +774,7 @@ public class m92
 		IREM_COINS
 		IREM_SYSTEM_DIPSWITCH
 	
-		PORT_START	/* Dip switch bank 1 */
+		PORT_START(); 	/* Dip switch bank 1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x02, "2" );
 		PORT_DIPSETTING(    0x03, "3" );
@@ -796,7 +796,7 @@ public class m92
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* Dip switch bank 2 */
+		PORT_START(); 	/* Dip switch bank 2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -831,7 +831,7 @@ public class m92
 		IREM_COINS
 		IREM_SYSTEM_DIPSWITCH_4PLAYERS
 	
-		PORT_START	/* Dip switch bank 1 */
+		PORT_START(); 	/* Dip switch bank 1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "1" );
 		PORT_DIPSETTING(    0x03, "2" );
@@ -854,7 +854,7 @@ public class m92
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* Dip switch bank 2 */
+		PORT_START(); 	/* Dip switch bank 2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -882,7 +882,7 @@ public class m92
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_psoldier = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
@@ -892,7 +892,7 @@ public class m92
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
@@ -904,7 +904,7 @@ public class m92
 	
 		PORT_UNUSED
 	
-		PORT_START /* Extra connector for kick buttons */
+		PORT_START();  /* Extra connector for kick buttons */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON5 | IPF_PLAYER1 );
@@ -917,7 +917,7 @@ public class m92
 		IREM_COINS
 		IREM_SYSTEM_DIPSWITCH
 	
-		PORT_START	/* Dip switch bank 1 */
+		PORT_START(); 	/* Dip switch bank 1 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -941,7 +941,7 @@ public class m92
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* Dip switch bank 2 */
+		PORT_START(); 	/* Dip switch bank 2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -976,7 +976,7 @@ public class m92
 		IREM_COINS
 		IREM_SYSTEM_DIPSWITCH_4PLAYERS
 	
-		PORT_START	/* Dip switch bank 1 */
+		PORT_START(); 	/* Dip switch bank 1 */
 		PORT_DIPNAME( 0x03, 0x03, "Time" );
 		PORT_DIPSETTING(    0x00, "1:30" );
 		PORT_DIPSETTING(    0x03, "2:00" );
@@ -999,7 +999,7 @@ public class m92
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START	/* Dip switch bank 2 */
+		PORT_START(); 	/* Dip switch bank 2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );

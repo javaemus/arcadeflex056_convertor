@@ -157,10 +157,10 @@ public class exprraid
 	};
 	
 	static InputPortPtr input_ports_exprraid = new InputPortPtr(){ public void handler() { 
-		PORT_START /* IN 0 - 0x3800 */
+		PORT_START();  /* IN 0 - 0x3800 */
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_VBLANK );
 	
-		PORT_START /* DSW 0 - 0x1800 */
+		PORT_START();  /* DSW 0 - 0x1800 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "1C_1C") );
@@ -184,7 +184,7 @@ public class exprraid
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START /* IN 1 - 0x1801 */
+		PORT_START();  /* IN 1 - 0x1801 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY );
@@ -194,11 +194,11 @@ public class exprraid
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START /* IN 2 - 0x1802 */
+		PORT_START();  /* IN 2 - 0x1802 */
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START /* IN 3 - 0x1803 */
+		PORT_START();  /* IN 3 - 0x1803 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x01, "1" );
 		PORT_DIPSETTING(    0x03, "3" );

@@ -128,12 +128,12 @@ public class bking2
 	};
 	
 	static InputPortPtr input_ports_bking2 = new InputPortPtr(){ public void handler() { 
-	    PORT_START  /* IN0 */
+	    PORT_START();   /* IN0 */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 	    PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-	    PORT_START  /* IN1 */
+	    PORT_START();   /* IN1 */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1 );/* Continue 1 */
@@ -142,7 +142,7 @@ public class bking2
 	    PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_TILT );
 	    PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );/* Not Connected */
 	
-	    PORT_START  /* IN2 - DIP Switch A */
+	    PORT_START();   /* IN2 - DIP Switch A */
 	    PORT_DIPNAME( 0x01, 0x00, "Bonus Holes Awarded" );
 	    PORT_DIPSETTING(    0x00, "Fewer" );
 	    PORT_DIPSETTING(    0x01, "More" );
@@ -168,7 +168,7 @@ public class bking2
 	    PORT_DIPSETTING(    0x80, DEF_STR(Cocktail);
 	
 	
-	    PORT_START  /* IN3 - DIP Switch B */
+	    PORT_START();   /* IN3 - DIP Switch B */
 	    PORT_DIPNAME( 0x0f, 0x00, DEF_STR( "Coin_A") );
 	    PORT_DIPSETTING(    0x0f, DEF_STR( "9C_1C") );
 	    PORT_DIPSETTING(    0x0e, DEF_STR( "8C_1C") );
@@ -204,7 +204,7 @@ public class bking2
 	    PORT_DIPSETTING(    0x60, DEF_STR( "1C_7C") );
 	    PORT_DIPSETTING(    0x70, DEF_STR( "1C_8C") );
 	
-	    PORT_START  /* IN4 - DIP Switch C */
+	    PORT_START();   /* IN4 - DIP Switch C */
 	    PORT_DIPNAME( 0x01, 0x01, "Crow" );
 	    PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 	    PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -229,16 +229,16 @@ public class bking2
 	    PORT_DIPSETTING(    0x00, "1" );
 	    PORT_DIPSETTING(    0x80, "2" );
 	
-	    PORT_START  /* IN5 */
+	    PORT_START();   /* IN5 */
 	    PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_X, 25, 10, 0, 0 );/* Sensitivity, clip, min, max */
 	
-	    PORT_START  /* IN6 */
+	    PORT_START();   /* IN6 */
 	    PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_Y | IPF_REVERSE, 25, 10, 0, 0 );/* Sensitivity, clip, min, max */
 	
-	    PORT_START  /* IN7 */
+	    PORT_START();   /* IN7 */
 	    PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_X | IPF_COCKTAIL, 25, 10, 0, 0 );/* Sensitivity, clip, min, max */
 	
-	    PORT_START  /* IN8 */
+	    PORT_START();   /* IN8 */
 	    PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_Y | IPF_REVERSE | IPF_COCKTAIL, 25, 10, 0, 0 );/* Sensitivity, clip, min, max */
 	INPUT_PORTS_END(); }}; 
 	

@@ -260,7 +260,7 @@ public class sega
 	
 	/* This fake input port is used for DIP Switch 2
 	   for all games except Eliminato 4 players */
-	#define COINAGE PORT_START \
+	#define COINAGE PORT_START();  \
 			PORT_DIPNAME( 0x0f, 0x0c, DEF_STR ( Coin_B ); \
 			PORT_DIPSETTING(	0x00, DEF_STR ( 4C_1C ); \
 			PORT_DIPSETTING(	0x08, DEF_STR ( 3C_1C ); \
@@ -298,36 +298,36 @@ public class sega
 	
 	
 	static InputPortPtr input_ports_spacfury = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 - port 0xf8 */
+		PORT_START(); 	/* IN0 - port 0xf8 */
 		/* The next bit is referred to as the Service switch in the self test - it just adds a credit */
 		PORT_BIT_IMPULSE( 0x20, IP_ACTIVE_LOW, IPT_COIN3, 3 );
 		PORT_BIT_IMPULSE( 0x40, IP_ACTIVE_LOW, IPT_COIN2, 3 );
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN1, 3 );
 	
-		PORT_START	/* IN1 - port 0xf9 */
+		PORT_START(); 	/* IN1 - port 0xf9 */
 		PORT_BIT ( 0x10, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT ( 0x20, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT ( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN2 - port 0xfa */
+		PORT_START(); 	/* IN2 - port 0xfa */
 		PORT_BIT ( 0x10, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT );
 		PORT_BIT ( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT );
 		PORT_BIT ( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN3 - port 0xfb */
+		PORT_START(); 	/* IN3 - port 0xfb */
 		PORT_BIT ( 0x10, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT ( 0x20, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT ( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN4 - FAKE - lazy way to move the self-test fake input port to 5 */
+		PORT_START(); 	/* IN4 - FAKE - lazy way to move the self-test fake input port to 5 */
 		PORT_BIT ( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN5 - FAKE */
+		PORT_START(); 	/* IN5 - FAKE */
 		/* This fake input port is used to get the status of the F2 key, */
 		/* and activate the test mode, which is triggered by a NMI */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 			/* This fake input port is used for DIP Switch 1 */
 			PORT_DIPNAME( 0x03, 0x01, DEF_STR ( Bonus_Life );
 			PORT_DIPSETTING(	0x00, "10000" );
@@ -353,7 +353,7 @@ public class sega
 	
 			COINAGE
 	
-		PORT_START	/* IN8 - port 0xfc */
+		PORT_START(); 	/* IN8 - port 0xfc */
 		PORT_BIT ( 0x10, IP_ACTIVE_HIGH, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT ( 0x20, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_PLAYER2 );
@@ -362,34 +362,34 @@ public class sega
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_zektor = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 - port 0xf8 */
+		PORT_START(); 	/* IN0 - port 0xf8 */
 		/* The next bit is referred to as the Service switch in the self test - it just adds a credit */
 		PORT_BIT_IMPULSE( 0x20, IP_ACTIVE_LOW, IPT_COIN3, 3 );
 		PORT_BIT_IMPULSE( 0x40, IP_ACTIVE_LOW, IPT_COIN2, 3 );
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN1, 3 );
 	
-		PORT_START	/* IN1 - port 0xf9 */
+		PORT_START(); 	/* IN1 - port 0xf9 */
 		PORT_BIT ( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN2 - port 0xfa */
+		PORT_START(); 	/* IN2 - port 0xfa */
 		PORT_BIT ( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN3 - port 0xfb */
+		PORT_START(); 	/* IN3 - port 0xfb */
 		PORT_BIT ( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN4 - port 0xfc - read in machine/sega.c */
+		PORT_START(); 	/* IN4 - port 0xfc - read in machine/sega.c */
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT ( 0x04, IP_ACTIVE_HIGH, IPT_BUTTON1 );
 		PORT_BIT ( 0x08, IP_ACTIVE_HIGH, IPT_BUTTON2 );
 		PORT_BIT ( 0xf0, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* IN5 - FAKE */
+		PORT_START(); 	/* IN5 - FAKE */
 		/* This fake input port is used to get the status of the F2 key, */
 		/* and activate the test mode, which is triggered by a NMI */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		/* This fake input port is used for DIP Switch 1 */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR ( Bonus_Life );
 		PORT_DIPSETTING(	0x03, "10000" );
@@ -415,28 +415,28 @@ public class sega
 	
 		COINAGE
 	
-		PORT_START		/* IN8 - FAKE port for the dial */
+		PORT_START(); 		/* IN8 - FAKE port for the dial */
 		PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_CENTER, 100, 10, 0, 0 );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_startrek = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 - port 0xf8 */
+		PORT_START(); 	/* IN0 - port 0xf8 */
 		/* The next bit is referred to as the Service switch in the self test - it just adds a credit */
 		PORT_BIT_IMPULSE( 0x20, IP_ACTIVE_LOW, IPT_COIN3, 3 );
 		PORT_BIT_IMPULSE( 0x40, IP_ACTIVE_LOW, IPT_COIN2, 3 );
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN1, 3 );
 	
-		PORT_START	/* IN1 - port 0xf9 */
+		PORT_START(); 	/* IN1 - port 0xf9 */
 		PORT_BIT ( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN2 - port 0xfa */
+		PORT_START(); 	/* IN2 - port 0xfa */
 		PORT_BIT ( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN3 - port 0xfb */
+		PORT_START(); 	/* IN3 - port 0xfb */
 		PORT_BIT ( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN4 - port 0xfc - read in machine/sega.c */
+		PORT_START(); 	/* IN4 - port 0xfc - read in machine/sega.c */
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT ( 0x04, IP_ACTIVE_HIGH, IPT_BUTTON2 );
@@ -445,12 +445,12 @@ public class sega
 		PORT_BIT ( 0x20, IP_ACTIVE_HIGH, IPT_BUTTON4 );
 		PORT_BIT ( 0xc0, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* IN5 - FAKE */
+		PORT_START(); 	/* IN5 - FAKE */
 		/* This fake input port is used to get the status of the F2 key, */
 		/* and activate the test mode, which is triggered by a NMI */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		/* This fake input port is used for DIP Switch 1 */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR ( Bonus_Life );
 		PORT_DIPSETTING(	0x00, "10000" );
@@ -476,40 +476,40 @@ public class sega
 	
 		COINAGE
 	
-		PORT_START		/* IN8 - dummy port for the dial */
+		PORT_START(); 		/* IN8 - dummy port for the dial */
 		PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_CENTER, 100, 10, 0, 0 );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_tacscan = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 - port 0xf8 */
+		PORT_START(); 	/* IN0 - port 0xf8 */
 		/* The next bit is referred to as the Service switch in the self test - it just adds a credit */
 		PORT_BIT_IMPULSE( 0x20, IP_ACTIVE_LOW, IPT_COIN3, 3 );
 		PORT_BIT_IMPULSE( 0x40, IP_ACTIVE_LOW, IPT_COIN2, 3 );
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN1, 3 );
 	
-		PORT_START	/* IN1 - port 0xf9 */
+		PORT_START(); 	/* IN1 - port 0xf9 */
 		PORT_BIT ( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN2 - port 0xfa */
+		PORT_START(); 	/* IN2 - port 0xfa */
 		PORT_BIT ( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN3 - port 0xfb */
+		PORT_START(); 	/* IN3 - port 0xfb */
 		PORT_BIT ( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN4 - port 0xfc - read in machine/sega.c */
+		PORT_START(); 	/* IN4 - port 0xfc - read in machine/sega.c */
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT ( 0x04, IP_ACTIVE_HIGH, IPT_BUTTON1 );
 		PORT_BIT ( 0x08, IP_ACTIVE_HIGH, IPT_BUTTON2 );
 		PORT_BIT ( 0xf0, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* IN5 - FAKE */
+		PORT_START(); 	/* IN5 - FAKE */
 		/* This fake input port is used to get the status of the F2 key, */
 		/* and activate the test mode, which is triggered by a NMI */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		/* This fake input port is used for DIP Switch 1 */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR ( Bonus_Life );
 		PORT_DIPSETTING(	0x03, "10000" );
@@ -535,46 +535,46 @@ public class sega
 	
 		COINAGE
 	
-		PORT_START		/* IN8 - FAKE port for the dial */
+		PORT_START(); 		/* IN8 - FAKE port for the dial */
 		PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_CENTER, 100, 10, 0, 0 );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_elim2 = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 - port 0xf8 */
+		PORT_START(); 	/* IN0 - port 0xf8 */
 		/* The next bit is referred to as the Service switch in the self test - it just adds a credit */
 		PORT_BIT_IMPULSE( 0x20, IP_ACTIVE_LOW, IPT_COIN3, 3 );
 		PORT_BIT_IMPULSE( 0x40, IP_ACTIVE_LOW, IPT_COIN2, 3 );
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN1, 3 );
 	
-		PORT_START	/* IN1 - port 0xf9 */
+		PORT_START(); 	/* IN1 - port 0xf9 */
 		PORT_BIT ( 0x10, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT ( 0x20, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT ( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN2 - port 0xfa */
+		PORT_START(); 	/* IN2 - port 0xfa */
 		PORT_BIT ( 0x10, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT ( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT );
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT );
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN3 - port 0xfb */
+		PORT_START(); 	/* IN3 - port 0xfb */
 		PORT_BIT ( 0x10, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT	| IPF_PLAYER2 );
 		PORT_BIT ( 0x20, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT ( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN4 - port 0xfc - read in machine/sega.c */
+		PORT_START(); 	/* IN4 - port 0xfc - read in machine/sega.c */
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON1		| IPF_PLAYER2 );
 		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON2		| IPF_PLAYER2 );
 		PORT_BIT ( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_PLAYER2 );
 		PORT_BIT ( 0xf8, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START	/* IN5 - FAKE */
+		PORT_START(); 	/* IN5 - FAKE */
 		/* This fake input port is used to get the status of the F2 key, */
 		/* and activate the test mode, which is triggered by a NMI */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 			/* This fake input port is used for DIP Switch 1 */
 			PORT_DIPNAME( 0x03, 0x02, DEF_STR ( Bonus_Life );
 			PORT_DIPSETTING(	0x01, "10000" );
@@ -601,30 +601,30 @@ public class sega
 	
 	
 	static InputPortPtr input_ports_elim4 = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 - port 0xf8 */
+		PORT_START(); 	/* IN0 - port 0xf8 */
 		PORT_BIT ( 0x10, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		/* The next bit is referred to as the Service switch in the self test - it just adds a credit */
 		PORT_BIT_IMPULSE( 0x20, IP_ACTIVE_LOW, IPT_COIN1, 3 );
 		PORT_BIT_IMPULSE( 0x40, IP_ACTIVE_LOW, IPT_COIN2, 3 );
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN3, 3 );
 	
-		PORT_START	/* IN1 - port 0xf9 */
+		PORT_START(); 	/* IN1 - port 0xf9 */
 		PORT_BIT ( 0x10, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT ( 0x20, IP_ACTIVE_LOW, IPT_BUTTON2 		| IPF_PLAYER2 );
 		PORT_BIT ( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN2 - port 0xfa */
+		PORT_START(); 	/* IN2 - port 0xfa */
 		PORT_BIT ( 0x10, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT );
 		PORT_BIT ( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT	| IPF_PLAYER2 );
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 		| IPF_PLAYER2 );
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN3 - port 0xfb */
+		PORT_START(); 	/* IN3 - port 0xfb */
 		PORT_BIT ( 0x10, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT );
 		PORT_BIT ( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT	| IPF_PLAYER2 );
 		PORT_BIT ( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* IN4 - port 0xfc - read in machine/sega.c */
+		PORT_START(); 	/* IN4 - port 0xfc - read in machine/sega.c */
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON1		| IPF_PLAYER3 );
 		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON2		| IPF_PLAYER3 );
 		PORT_BIT ( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT	| IPF_PLAYER3 );
@@ -634,12 +634,12 @@ public class sega
 		PORT_BIT ( 0x40, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT	| IPF_PLAYER4 );
 		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_PLAYER4 );
 	
-		PORT_START	/* IN5 - FAKE */
+		PORT_START(); 	/* IN5 - FAKE */
 		/* This fake input port is used to get the status of the F2 key, */
 		/* and activate the test mode, which is triggered by a NMI */
 		PORT_BITX(0x01, IP_ACTIVE_HIGH, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 			/* This fake input port is used for DIP Switch 1 */
 			PORT_DIPNAME( 0x03, 0x02, DEF_STR ( Bonus_Life );
 			PORT_DIPSETTING(	0x01, "10000" );
@@ -660,10 +660,10 @@ public class sega
 			PORT_DIPSETTING(	0x80, DEF_STR ( Upright );
 			PORT_DIPSETTING(	0x00, DEF_STR ( Cocktail );
 	
-			PORT_START /* That is the coinage port in all the other games */
+			PORT_START();  /* That is the coinage port in all the other games */
 			PORT_BIT ( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-			PORT_START		/* IN8 - FAKE - port 0xfc - read in machine/sega.c */
+			PORT_START(); 		/* IN8 - FAKE - port 0xfc - read in machine/sega.c */
 		PORT_BIT_IMPULSE( 0x01, IP_ACTIVE_HIGH, IPT_COIN1, 3 );
 		PORT_BIT_IMPULSE( 0x02, IP_ACTIVE_HIGH, IPT_COIN2, 3 );
 		PORT_BIT_IMPULSE( 0x04, IP_ACTIVE_HIGH, IPT_COIN3, 3 );

@@ -55,7 +55,7 @@ public class avalnche
 	
 	
 	static InputPortPtr input_ports_avalnche = new InputPortPtr(){ public void handler() { 
-		PORT_START /* IN0 */
+		PORT_START();  /* IN0 */
 		PORT_BIT (0x03, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* Spare */
 		PORT_DIPNAME( 0x0c, 0x04, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x08, DEF_STR( "2C_1C") );
@@ -70,7 +70,7 @@ public class avalnche
 		PORT_BIT (0x40, IP_ACTIVE_HIGH, IPT_START2 );
 		PORT_BIT (0x80, IP_ACTIVE_HIGH, IPT_START1 );
 	
-		PORT_START /* IN1 */
+		PORT_START();  /* IN1 */
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_DIPNAME( 0x04, 0x04, "Allow Extended Play" );
@@ -84,7 +84,7 @@ public class avalnche
 		PORT_BIT ( 0x40, IP_ACTIVE_HIGH, IPT_BUTTON1 );/* Serve */
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_VBLANK );/* VBLANK */
 	
-		PORT_START /* IN2 */
+		PORT_START();  /* IN2 */
 		PORT_ANALOG( 0xff, 0x80, IPT_PADDLE, 50, 10, 0x40, 0xb7 );
 	INPUT_PORTS_END(); }}; 
 	

@@ -125,7 +125,7 @@ public class skyfox
 	
 	static InputPortPtr input_ports_skyfox = new InputPortPtr(){ public void handler() { 
 	
-		PORT_START	// IN0 - Player 1
+		PORT_START(); 	// IN0 - Player 1
 		PORT_BIT(  0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    );
 		PORT_BIT(  0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  );
 		PORT_BIT(  0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT );
@@ -136,7 +136,7 @@ public class skyfox
 		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_START2         );
 	
 	
-		PORT_START	// IN1 - DSW
+		PORT_START(); 	// IN1 - DSW
 		PORT_DIPNAME( 0x01, 0x01, "Unknown 1-0" );	// rest unused?
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -162,7 +162,7 @@ public class skyfox
 		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
 	
 	
-		PORT_START	// IN2 - Coins + DSW + Vblank
+		PORT_START(); 	// IN2 - Coins + DSW + Vblank
 		PORT_BIT(  0x01, IP_ACTIVE_LOW, IPT_VBLANK  );
 		PORT_BIT(  0x02, IP_ACTIVE_LOW, IPT_COIN1   );
 		PORT_DIPNAME( 0x0c, 0x00, DEF_STR( "Coinage") );
@@ -176,7 +176,7 @@ public class skyfox
 		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 	
-		PORT_START	// IN3 - DSW
+		PORT_START(); 	// IN3 - DSW
 		PORT_DIPNAME( 0x07, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "1" );
 		PORT_DIPSETTING(    0x01, "2" );
@@ -193,7 +193,7 @@ public class skyfox
 		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 	
-		PORT_START	// IN4 - Fake input port, polled every VBLANK to generate an NMI upon coin insertion
+		PORT_START(); 	// IN4 - Fake input port, polled every VBLANK to generate an NMI upon coin insertion
 		PORT_BIT_IMPULSE(  0x01, IP_ACTIVE_LOW, IPT_COIN1, 1 );
 		PORT_BIT_IMPULSE(  0x02, IP_ACTIVE_LOW, IPT_COIN2, 1 );
 	

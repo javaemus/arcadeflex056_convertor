@@ -1871,14 +1871,14 @@ public class metro
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_balcube = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - $500000
+		PORT_START(); 	// IN0 - $500000
 		COINS
 	
-		PORT_START	// IN1 - $500002
+		PORT_START(); 	// IN1 - $500002
 		JOY_LSB(1, BUTTON1, UNKNOWN, UNKNOWN, UNKNOWN)
 		JOY_MSB(2, BUTTON1, UNKNOWN, UNKNOWN, UNKNOWN)
 	
-		PORT_START	// IN2 - Strangely mapped in the 0x400000-0x41ffff range
+		PORT_START(); 	// IN2 - Strangely mapped in the 0x400000-0x41ffff range
 		COINAGE_DSW
 	
 		PORT_DIPNAME( 0x0300, 0x0300, "Difficulty?" );
@@ -1905,7 +1905,7 @@ public class metro
 		PORT_DIPSETTING(      0x0000, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x8000, DEF_STR( "On") );
 	
-		PORT_START	// IN3 - Strangely mapped in the 0x400000-0x41ffff range
+		PORT_START(); 	// IN3 - Strangely mapped in the 0x400000-0x41ffff range
 		PORT_BIT(  0x00ff, IP_ACTIVE_LOW, IPT_UNKNOWN );// unused
 	INPUT_PORTS_END(); }}; 
 	
@@ -1915,14 +1915,14 @@ public class metro
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_bangball = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - $d00000
+		PORT_START(); 	// IN0 - $d00000
 		COINS
 	
-		PORT_START	// IN1 - $d00002
+		PORT_START(); 	// IN1 - $d00002
 		JOY_LSB(1, BUTTON1, UNKNOWN, UNKNOWN, UNKNOWN)
 		JOY_MSB(2, BUTTON1, UNKNOWN, UNKNOWN, UNKNOWN)
 	
-		PORT_START	// IN2 - Strangely mapped in the 0xc00000-0xc1ffff range
+		PORT_START(); 	// IN2 - Strangely mapped in the 0xc00000-0xc1ffff range
 		COINAGE_DSW
 	
 		PORT_DIPNAME( 0x0300, 0x0300, DEF_STR( "Difficulty") );
@@ -1948,7 +1948,7 @@ public class metro
 		PORT_DIPSETTING(      0x8000, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
 	
-		PORT_START	// IN3 - Strangely mapped in the 0xc00000-0xc1ffff range
+		PORT_START(); 	// IN3 - Strangely mapped in the 0xc00000-0xc1ffff range
 		PORT_BIT(  0x00ff, IP_ACTIVE_LOW, IPT_UNKNOWN );// used for debug
 	INPUT_PORTS_END(); }}; 
 	
@@ -1958,7 +1958,7 @@ public class metro
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_blzntrnd = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x0007, 0x0004, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(      0x0007, "Beginner" );
 		PORT_DIPSETTING(      0x0006, "Easiest" );
@@ -2006,7 +2006,7 @@ public class metro
 		PORT_DIPSETTING(      0x8000, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x0007, 0x0007, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(      0x0004, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(      0x0005, DEF_STR( "3C_1C") );
@@ -2050,15 +2050,15 @@ public class metro
 		PORT_DIPSETTING(      0x4000, "4:00" );
 		PORT_DIPSETTING(      0x0000, "5:00" );
 	
-		PORT_START
+		PORT_START(); 
 		JOY_LSB(1, BUTTON1, BUTTON2, BUTTON3, BUTTON4)
 		JOY_MSB(2, BUTTON1, BUTTON3, BUTTON3, BUTTON4)
 	
-		PORT_START
+		PORT_START(); 
 		JOY_LSB(3, BUTTON1, BUTTON2, BUTTON3, BUTTON4)
 		JOY_MSB(4, BUTTON1, BUTTON3, BUTTON3, BUTTON4)
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BITX(0x0002, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 		PORT_BIT_IMPULSE(  0x0004, IP_ACTIVE_LOW, IPT_COIN1, 2    );
@@ -2075,14 +2075,14 @@ public class metro
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_daitorid = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - $c00000
+		PORT_START(); 	// IN0 - $c00000
 		COINS
 	
-		PORT_START	// IN1 - $c00002
+		PORT_START(); 	// IN1 - $c00002
 		JOY_LSB(1, BUTTON1, UNKNOWN, UNKNOWN, UNKNOWN)
 		JOY_MSB(2, BUTTON1, UNKNOWN, UNKNOWN, UNKNOWN)
 	
-		PORT_START	// IN2 - $c00004
+		PORT_START(); 	// IN2 - $c00004
 		COINAGE_DSW
 	
 		PORT_DIPNAME( 0x0300, 0x0300, DEF_STR( "Unknown") );
@@ -2109,7 +2109,7 @@ public class metro
 		PORT_DIPSETTING(      0x8000, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
 	
-		PORT_START	// IN3 - $c00006
+		PORT_START(); 	// IN3 - $c00006
 		PORT_BIT(  0xffff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	INPUT_PORTS_END(); }}; 
 	
@@ -2119,14 +2119,14 @@ public class metro
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_dharma = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - $c00000
+		PORT_START(); 	// IN0 - $c00000
 		COINS
 	
-		PORT_START	// IN1 - $c00002
+		PORT_START(); 	// IN1 - $c00002
 		JOY_LSB(1, BUTTON1, UNKNOWN, UNKNOWN, UNKNOWN)
 		JOY_MSB(2, BUTTON1, UNKNOWN, UNKNOWN, UNKNOWN)
 	
-		PORT_START	// IN2 - $c00004
+		PORT_START(); 	// IN2 - $c00004
 		COINAGE_DSW
 	
 		PORT_DIPNAME( 0x0300, 0x0300, DEF_STR( "Unknown") );
@@ -2152,7 +2152,7 @@ public class metro
 		PORT_DIPSETTING(      0x8000, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
 	
-		PORT_START	// IN3 - $c00006
+		PORT_START(); 	// IN3 - $c00006
 		PORT_BIT(  0xffff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	INPUT_PORTS_END(); }}; 
 	
@@ -2162,13 +2162,13 @@ public class metro
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_karatour = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - $400002
+		PORT_START(); 	// IN0 - $400002
 		JOY_LSB(2, BUTTON1, BUTTON2, UNKNOWN, UNKNOWN)
 	
-		PORT_START	// IN1 - $400004
+		PORT_START(); 	// IN1 - $400004
 		COINS
 	
-		PORT_START	// IN2 - $400006
+		PORT_START(); 	// IN2 - $400006
 		PORT_DIPNAME( 0x0003, 0x0003, DEF_STR( "Lives") );
 		PORT_DIPSETTING(      0x0001, "1" );
 		PORT_DIPSETTING(      0x0000, "2" );
@@ -2192,7 +2192,7 @@ public class metro
 		PORT_DIPSETTING(      0x0080, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
 	
-		PORT_START	// IN3 - $40000a
+		PORT_START(); 	// IN3 - $40000a
 		PORT_DIPNAME( 0x0007, 0x0007, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "2C_1C") );
@@ -2216,7 +2216,7 @@ public class metro
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
 		PORT_SERVICE( 0x0080, IP_ACTIVE_LOW );
 	
-		PORT_START	// IN4 - $40000c
+		PORT_START(); 	// IN4 - $40000c
 		JOY_LSB(1, BUTTON1, BUTTON2, UNKNOWN, UNKNOWN)
 	INPUT_PORTS_END(); }}; 
 	
@@ -2226,13 +2226,13 @@ public class metro
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_ladykill = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - $400002
+		PORT_START(); 	// IN0 - $400002
 		JOY_LSB(2, BUTTON1, BUTTON2, UNKNOWN, UNKNOWN)
 	
-		PORT_START	// IN1 - $400004
+		PORT_START(); 	// IN1 - $400004
 		COINS
 	
-		PORT_START	// IN2 - $400006
+		PORT_START(); 	// IN2 - $400006
 		PORT_DIPNAME( 0x0003, 0x0003, DEF_STR( "Lives") );
 		PORT_DIPSETTING(      0x0001, "1" );
 		PORT_DIPSETTING(      0x0000, "2" );
@@ -2254,7 +2254,7 @@ public class metro
 		PORT_DIPSETTING(      0x0080, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
 	
-		PORT_START	// IN3 - $40000a
+		PORT_START(); 	// IN3 - $40000a
 		PORT_DIPNAME( 0x0007, 0x0007, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "2C_1C") );
@@ -2280,7 +2280,7 @@ public class metro
 		PORT_DIPSETTING(      0x0080, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
 	
-		PORT_START	// IN4 - $40000c
+		PORT_START(); 	// IN4 - $40000c
 		JOY_LSB(1, BUTTON1, BUTTON2, UNKNOWN, UNKNOWN)
 	INPUT_PORTS_END(); }}; 
 	
@@ -2290,19 +2290,19 @@ public class metro
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_lastfort = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - $c00004
+		PORT_START(); 	// IN0 - $c00004
 		COINS
 	
-		PORT_START	// IN1 - $c00006
+		PORT_START(); 	// IN1 - $c00006
 		JOY_LSB(1, BUTTON1, UNKNOWN, UNKNOWN, UNKNOWN)
 	
-		PORT_START	// IN2 - $c00008
+		PORT_START(); 	// IN2 - $c00008
 		JOY_LSB(2, BUTTON1, UNKNOWN, UNKNOWN, UNKNOWN)
 	
-		PORT_START	// IN3 - $c0000a
+		PORT_START(); 	// IN3 - $c0000a
 		COINAGE_DSW
 	
-		PORT_START	// IN4 - $c0000c
+		PORT_START(); 	// IN4 - $c0000c
 		PORT_DIPNAME( 0x0003, 0x0003, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(      0x0000, "Easiest" );
 		PORT_DIPSETTING(      0x0001, "Easy" );
@@ -2327,7 +2327,7 @@ public class metro
 		PORT_DIPSETTING(      0x0080, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
 	
-		PORT_START	// IN5 - $c0000e
+		PORT_START(); 	// IN5 - $c0000e
 		PORT_BIT(  0xffff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	INPUT_PORTS_END(); }}; 
 	
@@ -2337,19 +2337,19 @@ public class metro
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_lastfero = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - $c00004
+		PORT_START(); 	// IN0 - $c00004
 		COINS
 	
-		PORT_START	// IN1 - $c00006
+		PORT_START(); 	// IN1 - $c00006
 		JOY_LSB(1, BUTTON1, UNKNOWN, UNKNOWN, UNKNOWN)
 	
-		PORT_START	// IN2 - $c00008
+		PORT_START(); 	// IN2 - $c00008
 		JOY_LSB(2, BUTTON1, UNKNOWN, UNKNOWN, UNKNOWN)
 	
-		PORT_START	// IN3 - $c0000a
+		PORT_START(); 	// IN3 - $c0000a
 		COINAGE_DSW
 	
-		PORT_START	// IN4 - $c0000c
+		PORT_START(); 	// IN4 - $c0000c
 		PORT_DIPNAME( 0x0003, 0x0003, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(      0x0000, "Easiest" );
 		PORT_DIPSETTING(      0x0001, "Easy" );
@@ -2374,7 +2374,7 @@ public class metro
 		PORT_DIPSETTING(      0x0080, "Mahjong" );
 		PORT_DIPSETTING(      0x0000, "Cards" );
 	
-		PORT_START	// IN5 - $c0000e
+		PORT_START(); 	// IN5 - $c0000e
 		PORT_BIT(  0xffff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	INPUT_PORTS_END(); }}; 
 	
@@ -2384,7 +2384,7 @@ public class metro
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_dokyusei = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - $478880.w
+		PORT_START(); 	// IN0 - $478880.w
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BITX(0x0002, IP_ACTIVE_LOW, 0, "A",   KEYCODE_A,        IP_JOY_NONE );
 		PORT_BITX(0x0004, IP_ACTIVE_LOW, 0, "E",   KEYCODE_E,        IP_JOY_NONE );
@@ -2395,7 +2395,7 @@ public class metro
 		PORT_BIT( 0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN1 - $478880.w
+		PORT_START(); 	// IN1 - $478880.w
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BITX(0x0002, IP_ACTIVE_LOW, 0, "B",     KEYCODE_B, IP_JOY_NONE );
 		PORT_BITX(0x0004, IP_ACTIVE_LOW, 0, "F",     KEYCODE_F, IP_JOY_NONE );
@@ -2406,7 +2406,7 @@ public class metro
 		PORT_BIT( 0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN2 - $478880.w
+		PORT_START(); 	// IN2 - $478880.w
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BITX(0x0002, IP_ACTIVE_LOW, 0, "C",   KEYCODE_C,      IP_JOY_NONE );
 		PORT_BITX(0x0004, IP_ACTIVE_LOW, 0, "G",   KEYCODE_G,      IP_JOY_NONE );
@@ -2417,7 +2417,7 @@ public class metro
 		PORT_BIT( 0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN3 - $478880.w
+		PORT_START(); 	// IN3 - $478880.w
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BITX(0x0002, IP_ACTIVE_LOW, 0, "D",   KEYCODE_D,     IP_JOY_NONE );
 		PORT_BITX(0x0004, IP_ACTIVE_LOW, 0, "H",   KEYCODE_H,     IP_JOY_NONE );
@@ -2428,10 +2428,10 @@ public class metro
 		PORT_BIT( 0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN4 - $478880.w
+		PORT_START(); 	// IN4 - $478880.w
 		PORT_BIT( 0xffff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN5 - $478882.w
+		PORT_START(); 	// IN5 - $478882.w
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT_IMPULSE(  0x0002, IP_ACTIVE_LOW, IPT_COIN1, 2 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -2442,7 +2442,7 @@ public class metro
 		PORT_BIT( 0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START // IN6 - $478884.w
+		PORT_START();  // IN6 - $478884.w
 		PORT_DIPNAME( 0x0300, 0x0300, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(      0x0300, "Easy" );
 		PORT_DIPSETTING(      0x0200, "Normal" );
@@ -2467,7 +2467,7 @@ public class metro
 		PORT_DIPSETTING(      0x8000, DEF_STR( "No") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "Yes") );
 	
-		PORT_START // IN7 - $478886.w
+		PORT_START();  // IN7 - $478886.w
 		PORT_DIPNAME( 0x0100, 0x0100, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(      0x0100, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
@@ -2500,7 +2500,7 @@ public class metro
 	/* Same as dokyusei, without the DSWs (these games have an eeprom) */
 	
 	static InputPortPtr input_ports_gakusai = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - $278880.w
+		PORT_START(); 	// IN0 - $278880.w
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BITX(0x0002, IP_ACTIVE_LOW, 0, "A",   KEYCODE_A,        IP_JOY_NONE );
 		PORT_BITX(0x0004, IP_ACTIVE_LOW, 0, "E",   KEYCODE_E,        IP_JOY_NONE );
@@ -2511,7 +2511,7 @@ public class metro
 		PORT_BIT( 0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN1 - $278880.w
+		PORT_START(); 	// IN1 - $278880.w
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BITX(0x0002, IP_ACTIVE_LOW, 0, "B",   KEYCODE_B, IP_JOY_NONE );
 		PORT_BITX(0x0004, IP_ACTIVE_LOW, 0, "F",   KEYCODE_F, IP_JOY_NONE );
@@ -2522,7 +2522,7 @@ public class metro
 		PORT_BIT( 0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN2 - $278880.w
+		PORT_START(); 	// IN2 - $278880.w
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BITX(0x0002, IP_ACTIVE_LOW, 0, "C",     KEYCODE_C,      IP_JOY_NONE );
 		PORT_BITX(0x0004, IP_ACTIVE_LOW, 0, "G",     KEYCODE_G,      IP_JOY_NONE );
@@ -2533,7 +2533,7 @@ public class metro
 		PORT_BIT( 0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN3 - $278880.w
+		PORT_START(); 	// IN3 - $278880.w
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BITX(0x0002, IP_ACTIVE_LOW, 0, "D",   KEYCODE_D,     IP_JOY_NONE );
 		PORT_BITX(0x0004, IP_ACTIVE_LOW, 0, "H",   KEYCODE_H,     IP_JOY_NONE );
@@ -2544,10 +2544,10 @@ public class metro
 		PORT_BIT( 0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN4 - $278880.w
+		PORT_START(); 	// IN4 - $278880.w
 		PORT_BIT( 0xffff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN5 - $278882.w
+		PORT_START(); 	// IN5 - $278882.w
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT_IMPULSE(  0x0002, IP_ACTIVE_LOW, IPT_COIN1, 2 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -2565,7 +2565,7 @@ public class metro
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_mouja = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER1 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER1 );
@@ -2583,7 +2583,7 @@ public class metro
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_START1 );
@@ -2593,7 +2593,7 @@ public class metro
 		PORT_BIT( 0x0040, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BITX(0x0080, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x0001, 0x0001, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
@@ -2648,19 +2648,19 @@ public class metro
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_pangpoms = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - $800004
+		PORT_START(); 	// IN0 - $800004
 		COINS
 	
-		PORT_START	// IN1 - $800006
+		PORT_START(); 	// IN1 - $800006
 		JOY_LSB(1, BUTTON1, BUTTON2, UNKNOWN, UNKNOWN)
 	
-		PORT_START	// IN2 - $800008
+		PORT_START(); 	// IN2 - $800008
 		JOY_LSB(2, BUTTON1, BUTTON2, UNKNOWN, UNKNOWN)
 	
-		PORT_START	// IN3 - $80000a
+		PORT_START(); 	// IN3 - $80000a
 		COINAGE_DSW
 	
-		PORT_START	// IN4 - $80000c
+		PORT_START(); 	// IN4 - $80000c
 		PORT_DIPNAME( 0x0003, 0x0003, "Time Speed" );
 		PORT_DIPSETTING(      0x0000, "Slowest" );// 60 (1 game sec. lasts x/60 real sec.)
 		PORT_DIPSETTING(      0x0001, "Slow"    );// 90
@@ -2683,7 +2683,7 @@ public class metro
 		PORT_DIPSETTING(      0x0000, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0080, DEF_STR( "On") );
 	
-		PORT_START	// IN5 - $80000e
+		PORT_START(); 	// IN5 - $80000e
 		PORT_BIT(  0xffff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	INPUT_PORTS_END(); }}; 
 	
@@ -2693,14 +2693,14 @@ public class metro
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_poitto = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - $800000
+		PORT_START(); 	// IN0 - $800000
 		COINS
 	
-		PORT_START	// IN1 - $800002
+		PORT_START(); 	// IN1 - $800002
 		JOY_LSB(1, BUTTON1, UNKNOWN, UNKNOWN, UNKNOWN)
 		JOY_MSB(2, BUTTON1, UNKNOWN, UNKNOWN, UNKNOWN)
 	
-		PORT_START	// IN2 - $800004
+		PORT_START(); 	// IN2 - $800004
 		COINAGE_DSW
 	
 		PORT_DIPNAME( 0x0300, 0x0300, DEF_STR( "Difficulty") );
@@ -2727,7 +2727,7 @@ public class metro
 		PORT_DIPSETTING(      0x8000, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
 	
-		PORT_START	// IN3 - $800006
+		PORT_START(); 	// IN3 - $800006
 		PORT_BIT(  0xffff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	INPUT_PORTS_END(); }}; 
 	
@@ -2737,14 +2737,14 @@ public class metro
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_puzzli = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - $c00000
+		PORT_START(); 	// IN0 - $c00000
 		COINS
 	
-		PORT_START	// IN1 - $c00002
+		PORT_START(); 	// IN1 - $c00002
 		JOY_LSB(1, BUTTON1, BUTTON2, BUTTON3, UNKNOWN)
 		JOY_MSB(2, BUTTON1, BUTTON3, BUTTON3, UNKNOWN)
 	
-		PORT_START	// IN2 - $c00004
+		PORT_START(); 	// IN2 - $c00004
 		COINAGE_DSW
 	
 		PORT_DIPNAME( 0x0100, 0x0100, DEF_STR( "Unknown") );
@@ -2772,7 +2772,7 @@ public class metro
 		PORT_DIPSETTING(      0x8000, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
 	
-		PORT_START	// IN3 - $c00006
+		PORT_START(); 	// IN3 - $c00006
 		PORT_BIT(  0xffff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	INPUT_PORTS_END(); }}; 
 	
@@ -2782,14 +2782,14 @@ public class metro
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_pururun = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - $400000
+		PORT_START(); 	// IN0 - $400000
 		COINS
 	
-		PORT_START	// IN1 - $400002
+		PORT_START(); 	// IN1 - $400002
 		JOY_LSB(1, BUTTON1, BUTTON2, UNKNOWN, UNKNOWN)
 		JOY_MSB(2, BUTTON1, BUTTON2, UNKNOWN, UNKNOWN)
 	
-		PORT_START	// IN2 - $400004
+		PORT_START(); 	// IN2 - $400004
 		COINAGE_DSW
 	
 		PORT_DIPNAME( 0x0300, 0x0300, DEF_STR( "Difficulty") );	// distance to goal
@@ -2816,7 +2816,7 @@ public class metro
 		PORT_DIPSETTING(      0x8000, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
 	
-		PORT_START	// IN3 - $400006
+		PORT_START(); 	// IN3 - $400006
 		PORT_BIT(  0xffff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	INPUT_PORTS_END(); }}; 
 	
@@ -2826,19 +2826,19 @@ public class metro
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_skyalert = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - $400004
+		PORT_START(); 	// IN0 - $400004
 		COINS
 	
-		PORT_START	// IN1 - $400006
+		PORT_START(); 	// IN1 - $400006
 		JOY_LSB(1, BUTTON1, BUTTON2, UNKNOWN, UNKNOWN)
 	
-		PORT_START	// IN2 - $400008
+		PORT_START(); 	// IN2 - $400008
 		JOY_LSB(2, BUTTON1, BUTTON2, UNKNOWN, UNKNOWN)
 	
-		PORT_START	// IN3 - $40000a
+		PORT_START(); 	// IN3 - $40000a
 		COINAGE_DSW
 	
-		PORT_START	// IN4 - $40000c
+		PORT_START(); 	// IN4 - $40000c
 		PORT_DIPNAME( 0x0003, 0x0003, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(      0x0002, "006" );
 		PORT_DIPSETTING(      0x0003, "106" );
@@ -2861,7 +2861,7 @@ public class metro
 		PORT_DIPSETTING(      0x0000, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0080, DEF_STR( "On") );
 	
-		PORT_START	// IN5 - $40000e
+		PORT_START(); 	// IN5 - $40000e
 		PORT_BIT(  0xffff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	INPUT_PORTS_END(); }}; 
 	
@@ -2871,14 +2871,14 @@ public class metro
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_toride2g = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - $800000
+		PORT_START(); 	// IN0 - $800000
 		COINS
 	
-		PORT_START	// IN1 - $800002
+		PORT_START(); 	// IN1 - $800002
 		JOY_LSB(1, BUTTON1, UNKNOWN, UNKNOWN, UNKNOWN)
 		JOY_MSB(2, BUTTON1, UNKNOWN, UNKNOWN, UNKNOWN)
 	
-		PORT_START	// IN2 - $800004
+		PORT_START(); 	// IN2 - $800004
 		COINAGE_DSW
 	
 		PORT_DIPNAME( 0x0300, 0x0300, DEF_STR( "Difficulty") );
@@ -2905,7 +2905,7 @@ public class metro
 		PORT_DIPSETTING(      0x8000, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
 	
-		PORT_START	// IN3 - $800006
+		PORT_START(); 	// IN3 - $800006
 		PORT_BIT(  0xffff, IP_ACTIVE_LOW, IPT_UNKNOWN );// BIT 6 !?
 	INPUT_PORTS_END(); }}; 
 	

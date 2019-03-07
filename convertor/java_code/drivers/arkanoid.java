@@ -140,7 +140,7 @@ public class arkanoid
 	
 	
 	static InputPortPtr input_ports_arkanoid = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -150,19 +150,19 @@ public class arkanoid
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_SPECIAL );/* input from the 68705, some bootlegs need it to be 1 */
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_SPECIAL );/* input from the 68705 */
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT( 0xf8, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 - spinner Player 1 */
+		PORT_START();       /* IN2 - spinner Player 1 */
 		PORT_ANALOG( 0xff, 0x00, IPT_DIAL, 30, 15, 0, 0);
 	
-		PORT_START      /* IN3 - spinner Player 2  */
+		PORT_START();       /* IN3 - spinner Player 2  */
 		PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_COCKTAIL, 30, 15, 0, 0);
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x01, 0x00, "Allow Continue" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "No") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
@@ -191,7 +191,7 @@ public class arkanoid
 	/*  in coinage and # of lives.                    								 */
 	
 	static InputPortPtr input_ports_arknoidj = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -201,19 +201,19 @@ public class arkanoid
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_SPECIAL );/* input from the 68705, some bootlegs need it to be 1 */
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_SPECIAL );/* input from the 68705 */
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT( 0xf8, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 - spinner (multiplexed for player 1 and 2) */
+		PORT_START();       /* IN2 - spinner (multiplexed for player 1 and 2) */
 		PORT_ANALOG( 0xff, 0x00, IPT_DIAL, 30, 15, 0, 0);
 	
-		PORT_START      /* IN3 - spinner Player 2  */
+		PORT_START();       /* IN3 - spinner Player 2  */
 		PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_COCKTAIL, 30, 15, 0, 0);
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x01, 0x00, "Allow Continue" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "No") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
@@ -241,7 +241,7 @@ public class arkanoid
 	/* Is the same as arkanoij, but the Coinage,
 	  Lives and Bonus_Life dips are different */
 	static InputPortPtr input_ports_arkatayt = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -251,19 +251,19 @@ public class arkanoid
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_SPECIAL );/* input from the 68705, some bootlegs need it to be 1 */
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_SPECIAL );/* input from the 68705 */
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT( 0xf8, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2 - spinner (multiplexed for player 1 and 2) */
+		PORT_START();       /* IN2 - spinner (multiplexed for player 1 and 2) */
 		PORT_ANALOG( 0xff, 0x00, IPT_DIAL, 30, 15, 0, 0);
 	
-		PORT_START      /* IN3 - spinner Player 2  */
+		PORT_START();       /* IN3 - spinner Player 2  */
 		PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_COCKTAIL, 30, 15, 0, 0);
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x01, 0x00, "Allow Continue" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "No") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );

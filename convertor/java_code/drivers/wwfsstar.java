@@ -172,7 +172,7 @@ public class wwfsstar
 	*******************************************************************************/
 	
 	static InputPortPtr input_ports_wwfsstar = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_UP );
@@ -182,7 +182,7 @@ public class wwfsstar
 		PORT_BIT( 0x0040, IP_ACTIVE_LOW, IPT_BUTTON3 );
 		PORT_BIT( 0x0080, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER2 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_PLAYER2 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_PLAYER2 );
@@ -192,7 +192,7 @@ public class wwfsstar
 		PORT_BIT( 0x0040, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );
 		PORT_BIT( 0x0080, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_VBLANK ); /* IPT_VBLANK is ignored for custom indicator */
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_COIN1 );
@@ -202,7 +202,7 @@ public class wwfsstar
 		PORT_BIT( 0x0040, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		/* Note: This is what Raine says but it doesn't appear to be correct? */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(	0x00,  DEF_STR( "4C_1C") ); )
@@ -230,7 +230,7 @@ public class wwfsstar
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(	0x02, "Easy" );
 		PORT_DIPSETTING(	0x03, "Normal" );

@@ -88,7 +88,7 @@ public class mermaid
 	
 	
 	static InputPortPtr input_ports_mermaid = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* DSW */
+		PORT_START();       /* DSW */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
@@ -98,7 +98,7 @@ public class mermaid
 		PORT_DIPSETTING(    0x20, "5" );
 		PORT_DIPSETTING(    0x30, "6" );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_8WAY );
@@ -107,7 +107,7 @@ public class mermaid
 		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_START1 );
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_START2 );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_COIN2 );
 	

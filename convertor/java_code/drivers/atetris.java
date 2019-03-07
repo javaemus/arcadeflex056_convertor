@@ -242,7 +242,7 @@ public class atetris
 	
 	static InputPortPtr input_ports_atetris = new InputPortPtr(){ public void handler() { 
 		// These ports are read via the Pokeys
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_DIPNAME( 0x04, 0x00, "Freeze" );
@@ -253,7 +253,7 @@ public class atetris
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_VBLANK );
 		PORT_SERVICE( 0x80, IP_ACTIVE_HIGH );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER1);
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_PLAYER1 | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_PLAYER1 | IPF_8WAY );
@@ -268,7 +268,7 @@ public class atetris
 	// Same as the regular one except they added a Flip Controls switch
 	static InputPortPtr input_ports_atetcktl = new InputPortPtr(){ public void handler() { 
 		// These ports are read via the Pokeys
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_DIPNAME( 0x04, 0x00, "Freeze" );
@@ -282,7 +282,7 @@ public class atetris
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_VBLANK );
 		PORT_SERVICE( 0x80, IP_ACTIVE_HIGH );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER1);
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_PLAYER1 | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_PLAYER1 | IPF_8WAY );

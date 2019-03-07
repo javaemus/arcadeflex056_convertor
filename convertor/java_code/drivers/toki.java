@@ -178,7 +178,7 @@ public class toki
 	static InputPortPtr input_ports_toki = new InputPortPtr(){ public void handler() { 
 		SEIBU_COIN_INPUTS	/* Must be port 0: coin inputs read through sound cpu */
 	
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x001f, 0x001f, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(      0x0015, DEF_STR( "6C_1C") );
 		PORT_DIPSETTING(      0x0017, DEF_STR( "5C_1C") );
@@ -231,7 +231,7 @@ public class toki
 		PORT_DIPSETTING(      0x0000, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x8000, DEF_STR( "On") );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW,  IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW,  IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW,  IPT_JOYSTICK_LEFT  | IPF_8WAY );
@@ -249,7 +249,7 @@ public class toki
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -261,7 +261,7 @@ public class toki
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_tokib = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x001f, 0x001f, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(      0x0015, DEF_STR( "6C_1C") );
 		PORT_DIPSETTING(      0x0017, DEF_STR( "5C_1C") );
@@ -314,7 +314,7 @@ public class toki
 		PORT_DIPSETTING(      0x0000, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x8000, DEF_STR( "On") );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW,  IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW,  IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW,  IPT_JOYSTICK_LEFT  | IPF_8WAY );
@@ -332,7 +332,7 @@ public class toki
 		PORT_BIT( 0x4000, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x8000, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_SERVICE1 );

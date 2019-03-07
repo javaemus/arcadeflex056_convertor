@@ -310,7 +310,7 @@ public class ddragon
 	
 	
 	
-	#define COMMON_PORT4	PORT_START \
+	#define COMMON_PORT4	PORT_START();  \
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SERVICE1 );\
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON3 );\
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );\
@@ -320,7 +320,7 @@ public class ddragon
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );\
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-	#define COMMON_INPUT_PORTS PORT_START \
+	#define COMMON_INPUT_PORTS PORT_START();  \
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );\
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );\
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY );\
@@ -329,7 +329,7 @@ public class ddragon
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON2 );\
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );\
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );\
-		PORT_START \
+		PORT_START();  \
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER2 );\
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );\
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER2 );\
@@ -338,7 +338,7 @@ public class ddragon
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );\
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );\
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );\
-		PORT_START \
+		PORT_START();  \
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coin_A") ); \
 		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") ); \
 		PORT_DIPSETTING(    0x01, DEF_STR( "3C_1C") ); \
@@ -368,7 +368,7 @@ public class ddragon
 	static InputPortPtr input_ports_ddragon = new InputPortPtr(){ public void handler() { 
 		COMMON_INPUT_PORTS
 	
-		PORT_START      /* DSW1 */
+		PORT_START();       /* DSW1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x01, "Easy" );
 		PORT_DIPSETTING(    0x03, "Normal" );
@@ -397,7 +397,7 @@ public class ddragon
 	static InputPortPtr input_ports_ddragon2 = new InputPortPtr(){ public void handler() { 
 		COMMON_INPUT_PORTS
 	
-		PORT_START      /* DSW1 */
+		PORT_START();       /* DSW1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x01, "Easy" );
 		PORT_DIPSETTING(    0x03, "Normal" );

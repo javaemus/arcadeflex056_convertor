@@ -98,7 +98,7 @@ public class ladybug
 	}
 	
 	static InputPortPtr input_ports_ladybug = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_4WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_4WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
@@ -108,7 +108,7 @@ public class ladybug
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_TILT );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL );
@@ -121,13 +121,13 @@ public class ladybug
 		/* them this way is enough to get the game running. */
 		PORT_BIT( 0xc0, 0x40, IPT_VBLANK );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_UNUSED );
 		PORT_BIT( 0x0e, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
 		PORT_BIT( 0xe0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x03, "Easy" );
 		PORT_DIPSETTING(    0x02, "Medium" );
@@ -152,7 +152,7 @@ public class ladybug
 		PORT_DIPSETTING(    0x80, "3" );
 		PORT_DIPSETTING(    0x00, "5" );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x0f, 0x0f, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(    0x06, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x08, DEF_STR( "3C_1C") );
@@ -178,7 +178,7 @@ public class ladybug
 		PORT_DIPSETTING(    0xb0, DEF_STR( "1C_5C") );
 		/* settings 0x00 thru 0x50 all give 1 Coin/1 Credit */
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		/* The coin slots are not memory mapped. Coin Left causes a NMI, */
 		/* Coin Right an IRQ. This fake input port is used by the interrupt */
 		/* handler to be notified of coin insertions. We use IMPULSE to */
@@ -189,7 +189,7 @@ public class ladybug
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_snapjack = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
@@ -199,7 +199,7 @@ public class ladybug
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_TILT );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
@@ -212,13 +212,13 @@ public class ladybug
 		/* them this way is enough to get the game running. */
 		PORT_BIT( 0xc0, 0x40, IPT_VBLANK );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_UNUSED  );
 		PORT_BIT( 0x0e, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
 		PORT_BIT( 0xe0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x03, "Easy" );
 		PORT_DIPSETTING(    0x02, "Medium" );
@@ -242,7 +242,7 @@ public class ladybug
 		PORT_DIPSETTING(    0x80, "4" );
 		PORT_DIPSETTING(    0x40, "5" );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		/* coinage is slightly different from Lady Bug and Cosmic Avenger */
 		PORT_DIPNAME( 0x0f, 0x0f, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(    0x05, DEF_STR( "4C_1C") );
@@ -271,7 +271,7 @@ public class ladybug
 		PORT_DIPSETTING(    0xb0, DEF_STR( "1C_5C") );
 		/* settings 0x00 thru 0x04 all give 1 Coin/1 Credit */
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		/* The coin slots are not memory mapped. Coin Left causes a NMI, */
 		/* Coin Right an IRQ. This fake input port is used by the interrupt */
 		/* handler to be notified of coin insertions. We use IMPULSE to */
@@ -282,7 +282,7 @@ public class ladybug
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_cavenger = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
@@ -292,7 +292,7 @@ public class ladybug
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_TILT );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
@@ -305,13 +305,13 @@ public class ladybug
 		/* them this way is enough to get the game running. */
 		PORT_BIT( 0xc0, 0x40, IPT_VBLANK );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x0e, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
 		PORT_BIT( 0xe0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x03, "Easy" );
 		PORT_DIPSETTING(    0x02, "Medium" );
@@ -334,7 +334,7 @@ public class ladybug
 		PORT_DIPSETTING(    0x80, "4" );
 		PORT_DIPSETTING(    0x40, "5" );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x0f, 0x0f, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(    0x06, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x08, DEF_STR( "3C_1C") );
@@ -360,7 +360,7 @@ public class ladybug
 		PORT_DIPSETTING(    0xb0, DEF_STR( "1C_5C") );
 		/* settings 0x00 thru 0x50 all give 1 Coin/1 Credit */
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		/* The coin slots are not memory mapped. Coin Left causes a NMI, */
 		/* Coin Right an IRQ. This fake input port is used by the interrupt */
 		/* handler to be notified of coin insertions. We use IMPULSE to */

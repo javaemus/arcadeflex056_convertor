@@ -947,10 +947,10 @@ public class wecleman
 	
 	static InputPortPtr input_ports_wecleman = new InputPortPtr(){ public void handler() { 
 	
-		PORT_START      /* IN0 - Controls and Coins - $140011.b */
+		PORT_START();       /* IN0 - Controls and Coins - $140011.b */
 		CONTROLS_AND_COINS(IP_ACTIVE_HIGH)
 	
-		PORT_START      /* IN1 - Motor? - $140013.b */
+		PORT_START();       /* IN1 - Motor? - $140013.b */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_UNKNOWN );// ? right sw
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_UNKNOWN );// ? left  sw
 		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_UNKNOWN );// ? thermo
@@ -960,7 +960,7 @@ public class wecleman
 		PORT_BIT( 0x40, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
-		PORT_START	/* IN2 - DSW A (Coinage) - $140015.b */
+		PORT_START(); 	/* IN2 - DSW A (Coinage) - $140015.b */
 		PORT_DIPNAME( 0x0f, 0x0f, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x05, DEF_STR( "3C_1C") );
@@ -996,7 +996,7 @@ public class wecleman
 		PORT_DIPSETTING(    0x90, DEF_STR( "1C_7C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Unknown") );
 	
-		PORT_START	/* IN3 - DSW B (options) - $140017.b */
+		PORT_START(); 	/* IN3 - DSW B (options) - $140017.b */
 		PORT_DIPNAME( 0x01, 0x01, "Speed Unit" );
 		PORT_DIPSETTING(    0x01, "Km/h" );
 		PORT_DIPSETTING(    0x00, "mph" );
@@ -1020,10 +1020,10 @@ public class wecleman
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN4 - Fake input port - Buttons status */
+		PORT_START(); 	/* IN4 - Fake input port - Buttons status */
 		BUTTONS_STATUS
 	
-		PORT_START	/* IN5 - Driving Wheel - $140021.b (2) */
+		PORT_START(); 	/* IN5 - Driving Wheel - $140021.b (2) */
 		DRIVING_WHEEL
 	
 	INPUT_PORTS_END(); }}; 
@@ -1046,10 +1046,10 @@ public class wecleman
 	
 	static InputPortPtr input_ports_hotchase = new InputPortPtr(){ public void handler() { 
 	
-		PORT_START      /* IN0 - Controls and Coins - $140011.b */
+		PORT_START();       /* IN0 - Controls and Coins - $140011.b */
 		CONTROLS_AND_COINS(IP_ACTIVE_LOW)
 	
-		PORT_START      /* IN1 - Motor? - $140013.b */
+		PORT_START();       /* IN1 - Motor? - $140013.b */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );// ? right sw
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );// ? left  sw
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );// ? thermo
@@ -1059,7 +1059,7 @@ public class wecleman
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* IN2 - DSW 2 (options) - $140015.b */
+		PORT_START(); 	/* IN2 - DSW 2 (options) - $140015.b */
 		PORT_DIPNAME( 0x01, 0x01, "Unknown 2-0" );// single
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1085,7 +1085,7 @@ public class wecleman
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN3 - DSW 1 (Coinage) - $140017.b */
+		PORT_START(); 	/* IN3 - DSW 1 (Coinage) - $140017.b */
 		PORT_DIPNAME( 0x0f, 0x0f, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "5C_1C") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "4C_1C") );
@@ -1121,10 +1121,10 @@ public class wecleman
 		PORT_DIPSETTING(    0x00, "1 Coin/99 Credits" );
 	//	PORT_DIPSETTING(    0x40, "0C_0C" );// Coin B insertion freezes the game!
 	
-		PORT_START	/* IN4 - Fake input port - Buttons status */
+		PORT_START(); 	/* IN4 - Fake input port - Buttons status */
 		BUTTONS_STATUS
 	
-		PORT_START	/* IN5 - Driving Wheel - $140021.b (2) */
+		PORT_START(); 	/* IN5 - Driving Wheel - $140021.b (2) */
 		DRIVING_WHEEL
 	
 	INPUT_PORTS_END(); }}; 

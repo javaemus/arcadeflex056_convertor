@@ -156,19 +156,19 @@ public class bsktball
 	};
 	
 	static InputPortPtr input_ports_bsktball = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_ANALOG( 0xFF, 0x00, IPT_TRACKBALL_X, 100, 10, 0, 0 );/* Sensitivity, clip, min, max */
 	
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_ANALOG( 0xFF, 0x00, IPT_TRACKBALL_Y, 100, 10, 0, 0 );
 	
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_ANALOG( 0xFF, 0x00, IPT_TRACKBALL_X | IPF_PLAYER2, 100, 10, 0, 0 );/* Sensitivity, clip, min, max */
 	
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_ANALOG( 0xFF, 0x00, IPT_TRACKBALL_Y | IPF_PLAYER2, 100, 10, 0, 0 );
 	
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT ( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 );/* SPARE */
@@ -178,7 +178,7 @@ public class bsktball
 		/* 0x40 - DR2 = PL1 H DIR */
 		/* 0x80 - DR3 = PL1 V DIR */
 	
-		PORT_START		/* IN2 */
+		PORT_START(); 		/* IN2 */
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_VBLANK );
 		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_TILT );
 		PORT_BIT ( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );/* SPARE */
@@ -188,7 +188,7 @@ public class bsktball
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );/* COIN 1 */
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );/* COIN 2 */
 	
-		PORT_START		/* DSW */
+		PORT_START(); 		/* DSW */
 		PORT_DIPNAME( 0x07, 0x00, "Play Time per Credit" );
 		PORT_DIPSETTING(	0x07, DEF_STR( "Free_Play") );
 		PORT_DIPSETTING(	0x06, "2:30" );

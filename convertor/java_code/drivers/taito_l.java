@@ -1088,7 +1088,7 @@ public class taito_l
 		PORT_DIPSETTING(    0x00, "Hardest" );
 	
 	#define TAITO_L_PLAYERS_INPUT( player ) \
-		PORT_START \
+		PORT_START();  \
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | player );\
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | player );\
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | player );\
@@ -1099,7 +1099,7 @@ public class taito_l
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 	#define TAITO_L_SYSTEM_INPUT( type, impulse ) \
-		PORT_START \
+		PORT_START();  \
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_TILT );\
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE1 );\
 		PORT_BIT_IMPULSE( 0x04, type, IPT_COIN1, impulse );\
@@ -1119,14 +1119,14 @@ public class taito_l
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 	
 	static InputPortPtr input_ports_fhawk = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
 		TAITO_L_DSWA_2_4
 		TAITO_COINAGE_JAPAN_8
 	
-		PORT_START
+		PORT_START(); 
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unused") );  // all in manual
 		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
@@ -1154,14 +1154,14 @@ public class taito_l
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_raimais = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
 		TAITO_L_DSWA_2_4
 		TAITO_COINAGE_JAPAN_8
 	
-		PORT_START
+		PORT_START(); 
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(    0x08, "80k and 160k" );
@@ -1188,7 +1188,7 @@ public class taito_l
 	INPUT_PORTS_END(); }}; 
 	
 	#define CHAMPWR_DSWB \
-		PORT_START \
+		PORT_START();  \
 		TAITO_DIFFICULTY_8 \
 		PORT_DIPNAME( 0x0c, 0x0c, "Time" );\
 		PORT_DIPSETTING(    0x08, "2 minutes" );\
@@ -1208,7 +1208,7 @@ public class taito_l
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
 	#define CHAMPWR_INPUTS \
-	 	PORT_START \
+	 	PORT_START();  \
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );\
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );\
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1 );\
@@ -1218,7 +1218,7 @@ public class taito_l
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_TILT );\
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_SERVICE1 );\
 	 \
-		PORT_START \
+		PORT_START();  \
 		PORT_BIT_IMPULSE( 0x01, IP_ACTIVE_LOW, IPT_COIN2, 1 );\
 		PORT_BIT_IMPULSE( 0x02, IP_ACTIVE_LOW, IPT_COIN1, 1 );\
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );\
@@ -1228,7 +1228,7 @@ public class taito_l
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );\
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );\
 	 \
-		PORT_START \
+		PORT_START();  \
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER2 );\
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );\
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );\
@@ -1239,7 +1239,7 @@ public class taito_l
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
 	
 	static InputPortPtr input_ports_champwr = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unused") );  // all 2 in manual
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1252,7 +1252,7 @@ public class taito_l
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_champwrj = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unused") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1265,7 +1265,7 @@ public class taito_l
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_champwru = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unused") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1278,14 +1278,14 @@ public class taito_l
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_kurikint = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
 		TAITO_L_DSWA_2_4
 		TAITO_COINAGE_WORLD_8
 	
-		PORT_START
+		PORT_START(); 
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
@@ -1314,7 +1314,7 @@ public class taito_l
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_kurikina = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
@@ -1329,7 +1329,7 @@ public class taito_l
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		TAITO_COINAGE_WORLD_8
 	
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1363,7 +1363,7 @@ public class taito_l
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_puzznic = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
@@ -1381,7 +1381,7 @@ public class taito_l
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START
+		PORT_START(); 
 		/* Difficulty controls the Timer Speed (how many seconds are there in a minute) */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, "Retries" );
@@ -1401,7 +1401,7 @@ public class taito_l
 		PORT_DIPSETTING(    0x80, "Stage reset to start/Timer reset to start" );
 	//	PORT_DIPSETTING(    0x00, "No Use" );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1 );
@@ -1411,7 +1411,7 @@ public class taito_l
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START2 );
@@ -1421,7 +1421,7 @@ public class taito_l
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 	
-		PORT_START /* Not read yet. There is no Coin_B in manual */
+		PORT_START();  /* Not read yet. There is no Coin_B in manual */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -1433,14 +1433,14 @@ public class taito_l
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_plotting = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x01, 0x01, "Max Players" );
 		PORT_DIPSETTING(    0x00, "1" );
 		PORT_DIPSETTING(    0x01, "2" );
 		TAITO_L_DSWA_2_4
 		TAITO_COINAGE_WORLD_8
 	
-		PORT_START
+		PORT_START(); 
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
@@ -1460,7 +1460,7 @@ public class taito_l
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1 );
@@ -1470,7 +1470,7 @@ public class taito_l
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_TILT );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START2 );
@@ -1482,14 +1482,14 @@ public class taito_l
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_palamed = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		TAITO_L_DSWA_2_4
 		TAITO_COINAGE_JAPAN_NEW_8
 	
-		PORT_START
+		PORT_START(); 
 		/* Difficulty controls how faster falls the dice lines */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
@@ -1511,7 +1511,7 @@ public class taito_l
 		PORT_DIPSETTING(    0x00, DEF_STR( "No") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Yes") );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_TILT );
 		PORT_BIT_IMPULSE( 0x04, IP_ACTIVE_LOW, IPT_COIN1, 1 );
@@ -1521,7 +1521,7 @@ public class taito_l
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
@@ -1531,7 +1531,7 @@ public class taito_l
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER2 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -1543,7 +1543,7 @@ public class taito_l
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_cachat = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1556,7 +1556,7 @@ public class taito_l
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_NEW_8
 	
-		PORT_START
+		PORT_START(); 
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
@@ -1577,7 +1577,7 @@ public class taito_l
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_TILT );
 		PORT_BIT_IMPULSE( 0x04, IP_ACTIVE_LOW, IPT_COIN1, 1 );
@@ -1587,7 +1587,7 @@ public class taito_l
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
@@ -1597,7 +1597,7 @@ public class taito_l
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER2 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -1609,7 +1609,7 @@ public class taito_l
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_tubeit = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1622,7 +1622,7 @@ public class taito_l
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_WORLD_8
 	
-		PORT_START
+		PORT_START(); 
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
@@ -1643,7 +1643,7 @@ public class taito_l
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_TILT );
 		PORT_BIT_IMPULSE( 0x04, IP_ACTIVE_LOW, IPT_COIN1, 1 );
@@ -1653,7 +1653,7 @@ public class taito_l
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
@@ -1663,7 +1663,7 @@ public class taito_l
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER2 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -1675,7 +1675,7 @@ public class taito_l
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_horshoes = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1693,7 +1693,7 @@ public class taito_l
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START
+		PORT_START(); 
 		/* Not for sure, the CPU seems to play better when set to Hardest */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x04, 0x04, "Time" );
@@ -1715,7 +1715,7 @@ public class taito_l
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -1725,7 +1725,7 @@ public class taito_l
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_TILT );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -1735,15 +1735,15 @@ public class taito_l
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOG( 0xffff, 0x0000, IPT_TRACKBALL_Y | IPF_REVERSE, 50, 30, 0, 0 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOG( 0xffff, 0x0000, IPT_TRACKBALL_X, 50, 30, 0, 0 );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_plgirls = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -1767,7 +1767,7 @@ public class taito_l
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START
+		PORT_START(); 
 		/* Difficulty controls the Ball Speed */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
@@ -1789,7 +1789,7 @@ public class taito_l
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_TILT );
 		PORT_BIT_IMPULSE( 0x04, IP_ACTIVE_LOW, IPT_COIN1, 1 );
@@ -1799,7 +1799,7 @@ public class taito_l
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
@@ -1809,7 +1809,7 @@ public class taito_l
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER2 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -1821,7 +1821,7 @@ public class taito_l
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_plgirls2 = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1834,7 +1834,7 @@ public class taito_l
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_8
 	
-		PORT_START
+		PORT_START(); 
 		/* Difficulty controls the number of hits requiered to destroy enemies */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
@@ -1855,7 +1855,7 @@ public class taito_l
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_TILT );
 		PORT_BIT_IMPULSE( 0x04, IP_ACTIVE_LOW, IPT_COIN1, 1 );
@@ -1865,7 +1865,7 @@ public class taito_l
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
@@ -1875,7 +1875,7 @@ public class taito_l
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER2 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -1887,7 +1887,7 @@ public class taito_l
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_cubybop = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1900,7 +1900,7 @@ public class taito_l
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_NEW_8
 	
-		PORT_START
+		PORT_START(); 
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
@@ -1921,7 +1921,7 @@ public class taito_l
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_TILT );
 		PORT_BIT_IMPULSE( 0x04, IP_ACTIVE_LOW, IPT_COIN1, 1 );
@@ -1931,7 +1931,7 @@ public class taito_l
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
@@ -1941,7 +1941,7 @@ public class taito_l
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER2 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );

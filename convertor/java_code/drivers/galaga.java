@@ -163,7 +163,7 @@ public class galaga
 	
 	
 	static InputPortPtr input_ports_galaga = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "3C_1C") );
@@ -189,7 +189,7 @@ public class galaga
 		PORT_DIPSETTING(    0x40, "4" );
 		PORT_DIPSETTING(    0xc0, "5" );
 	
-		PORT_START      /* DSW1 */
+		PORT_START();       /* DSW1 */
 		PORT_DIPNAME( 0x01, 0x01, "2 Credits Game" );
 		PORT_DIPSETTING(    0x00, "1 Player" );
 		PORT_DIPSETTING(    0x01, "2 Players" );
@@ -214,7 +214,7 @@ public class galaga
 		PORT_DIPSETTING(    0x80, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		/* The player inputs are not memory mapped, they are handled by an I/O chip. */
 		/* These fake input ports are read by galaga_customio_data_r() */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -225,7 +225,7 @@ public class galaga
 		PORT_BITX(0x20, IP_ACTIVE_LOW, IPT_BUTTON1, 0, IP_KEY_PREVIOUS, IP_JOY_PREVIOUS );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -234,7 +234,7 @@ public class galaga
 		PORT_BITX(0x20, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL, 0, IP_KEY_PREVIOUS, IP_JOY_PREVIOUS );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		/* the button here is used to trigger the sound in the test screen */
 		PORT_BITX(0x03, IP_ACTIVE_LOW, IPT_BUTTON1,     0, IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BIT_IMPULSE( 0x04, IP_ACTIVE_LOW, IPT_START1, 1 );
@@ -247,7 +247,7 @@ public class galaga
 	
 	/* same as galaga, dip switches are slightly different */
 	static InputPortPtr input_ports_galaganm = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* DSW0 */
+		PORT_START();       /* DSW0 */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "3C_1C") );
@@ -273,7 +273,7 @@ public class galaga
 		PORT_DIPSETTING(    0x40, "4" );
 		PORT_DIPSETTING(    0xc0, "5" );
 	
-		PORT_START      /* DSW1 */
+		PORT_START();       /* DSW1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x03, "Easy" );
 		PORT_DIPSETTING(    0x00, "Medium" );
@@ -298,7 +298,7 @@ public class galaga
 		PORT_DIPSETTING(    0x80, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		/* The player inputs are not memory mapped, they are handled by an I/O chip. */
 		/* These fake input ports are read by galaga_customio_data_r() */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -309,7 +309,7 @@ public class galaga
 		PORT_BITX(0x20, IP_ACTIVE_LOW, IPT_BUTTON1, 0, IP_KEY_PREVIOUS, IP_JOY_PREVIOUS );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -318,7 +318,7 @@ public class galaga
 		PORT_BITX(0x20, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL, 0, IP_KEY_PREVIOUS, IP_JOY_PREVIOUS );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* FAKE */
+		PORT_START();       /* FAKE */
 		/* the button here is used to trigger the sound in the test screen */
 		PORT_BITX(0x03, IP_ACTIVE_LOW, IPT_BUTTON1,     0, IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BIT_IMPULSE( 0x04, IP_ACTIVE_LOW, IPT_START1, 1 );

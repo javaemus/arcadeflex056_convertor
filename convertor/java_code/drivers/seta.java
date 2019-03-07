@@ -1353,13 +1353,13 @@ public class seta
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_arbalest = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1
+		PORT_START(); 	// IN0 - Player 1
 		JOY_TYPE2_2BUTTONS(1)
 	
-		PORT_START	// IN1 - Player 2
+		PORT_START(); 	// IN1 - Player 2
 		JOY_TYPE2_2BUTTONS(2)
 	
-		PORT_START	// IN2 - Coins
+		PORT_START(); 	// IN2 - Coins
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_UNKNOWN  );
@@ -1369,7 +1369,7 @@ public class seta
 		PORT_BIT_IMPULSE( 0x0040, IP_ACTIVE_LOW, IPT_COIN2, 5 );
 		PORT_BIT_IMPULSE( 0x0080, IP_ACTIVE_LOW, IPT_COIN1, 5 );
 	
-		PORT_START	// IN3 - 2 DSWs - $600001 & 3.b
+		PORT_START(); 	// IN3 - 2 DSWs - $600001 & 3.b
 		PORT_DIPNAME( 0x4001, 0x4001, "Licensed To" );
 		PORT_DIPSETTING(      0x0001, "Jordan" );
 		PORT_DIPSETTING(      0x4000, "Romstar" );
@@ -1420,7 +1420,7 @@ public class seta
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_atehate = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1
+		PORT_START(); 	// IN0 - Player 1
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_BUTTON3  |  IPF_PLAYER1 );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_BUTTON4  |  IPF_PLAYER1 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_BUTTON1  |  IPF_PLAYER1 );
@@ -1430,7 +1430,7 @@ public class seta
 		PORT_BIT(  0x0040, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_START1  );
 	
-		PORT_START	// IN1 - Player 2
+		PORT_START(); 	// IN1 - Player 2
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_BUTTON3  |  IPF_PLAYER2 );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_BUTTON4  |  IPF_PLAYER2 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_BUTTON1  |  IPF_PLAYER2 );
@@ -1440,7 +1440,7 @@ public class seta
 		PORT_BIT(  0x0040, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_START2  );
 	
-		PORT_START	// IN2 - Coins
+		PORT_START(); 	// IN2 - Coins
 		PORT_BIT_IMPULSE( 0x0001, IP_ACTIVE_LOW, IPT_COIN1, 5 );
 		PORT_BIT_IMPULSE( 0x0002, IP_ACTIVE_LOW, IPT_COIN2, 5 );
 		PORT_BIT_IMPULSE( 0x0004, IP_ACTIVE_LOW, IPT_SERVICE1, 5 );
@@ -1450,7 +1450,7 @@ public class seta
 		PORT_BIT(  0x0040, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT(  0x0080, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
-		PORT_START	// IN3 - 2 DSWs - $e00001 & 3.b
+		PORT_START(); 	// IN3 - 2 DSWs - $e00001 & 3.b
 		PORT_DIPNAME( 0x0007, 0x0007, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(      0x0002, DEF_STR( "3C_1C") );
@@ -1503,13 +1503,13 @@ public class seta
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_blandia = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1 - $400000.w
+		PORT_START(); 	// IN0 - Player 1 - $400000.w
 		JOY_TYPE1_3BUTTONS(1)
 	
-		PORT_START	// IN1 - Player 2 - $400002.w
+		PORT_START(); 	// IN1 - Player 2 - $400002.w
 		JOY_TYPE1_3BUTTONS(2)
 	
-		PORT_START	// IN2 - Coins - $400004.w
+		PORT_START(); 	// IN2 - Coins - $400004.w
 		PORT_BIT_IMPULSE( 0x0001, IP_ACTIVE_LOW, IPT_COIN1, 5 );
 		PORT_BIT_IMPULSE( 0x0002, IP_ACTIVE_LOW, IPT_COIN2, 5 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -1519,7 +1519,7 @@ public class seta
 		PORT_BIT(  0x0040, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 	
-		PORT_START	// IN3 - 2 DSWs - $600001 & 3.b
+		PORT_START(); 	// IN3 - 2 DSWs - $600001 & 3.b
 		PORT_DIPNAME( 0x0001, 0x0001, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "On") );
@@ -1574,13 +1574,13 @@ public class seta
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_blockcar = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1 - $500001.b
+		PORT_START(); 	// IN0 - Player 1 - $500001.b
 		JOY_TYPE1_2BUTTONS(1)	// button2 = speed up
 	
-		PORT_START	// IN1 - Player 2 - $500003.b
+		PORT_START(); 	// IN1 - Player 2 - $500003.b
 		JOY_TYPE1_2BUTTONS(2)
 	
-		PORT_START	// IN2 - Coins + DSW - $500005.b
+		PORT_START(); 	// IN2 - Coins + DSW - $500005.b
 		PORT_BIT_IMPULSE( 0x0001, IP_ACTIVE_LOW, IPT_COIN1, 5 );
 		PORT_BIT_IMPULSE( 0x0002, IP_ACTIVE_LOW, IPT_COIN2, 5 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -1589,7 +1589,7 @@ public class seta
 		PORT_DIPSETTING(      0x0010, "Thunder & Lightning 2" );
 		PORT_DIPSETTING(      0x0000, "Block Carnival" );
 	
-		PORT_START	// IN3 - 2 DSWs - $300003 & 1.b
+		PORT_START(); 	// IN3 - 2 DSWs - $300003 & 1.b
 		PORT_DIPNAME( 0x0003, 0x0003, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(      0x0002, "Easy"    );
 		PORT_DIPSETTING(      0x0003, "Normal"  );
@@ -1643,13 +1643,13 @@ public class seta
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_calibr50 = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1
+		PORT_START(); 	// IN0 - Player 1
 		JOY_TYPE2_2BUTTONS(1)
 	
-		PORT_START	// IN1 - Player 2
+		PORT_START(); 	// IN1 - Player 2
 		JOY_TYPE2_2BUTTONS(2)
 	
-		PORT_START	// IN2 - Coins
+		PORT_START(); 	// IN2 - Coins
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_UNKNOWN  );
@@ -1659,7 +1659,7 @@ public class seta
 		PORT_BIT_IMPULSE( 0x0040, IP_ACTIVE_LOW, IPT_COIN2, 5 );
 		PORT_BIT_IMPULSE( 0x0080, IP_ACTIVE_LOW, IPT_COIN1, 5 );
 	
-		PORT_START	// IN3 - 2 DSWs - $600001 & 3.b
+		PORT_START(); 	// IN3 - 2 DSWs - $600001 & 3.b
 		PORT_DIPNAME( 0x4001, 0x4000, "Licensed To" );
 		PORT_DIPSETTING(      0x0001, "Romstar"       );
 		PORT_DIPSETTING(      0x4001, "Taito America" );
@@ -1705,10 +1705,10 @@ public class seta
 		PORT_DIPSETTING(      0x8000, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
 	
-		PORT_START	// IN4 - Rotation Player 1
+		PORT_START(); 	// IN4 - Rotation Player 1
 		JOY_ROTATION(1, Z, X)
 	
-		PORT_START	// IN5 - Rotation Player 2
+		PORT_START(); 	// IN5 - Rotation Player 2
 		JOY_ROTATION(2, N, M)
 	INPUT_PORTS_END(); }}; 
 	
@@ -1719,13 +1719,13 @@ public class seta
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_drgnunit = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1
+		PORT_START(); 	// IN0 - Player 1
 		JOY_TYPE1_3BUTTONS(1)
 	
-		PORT_START	// IN1 - Player 2
+		PORT_START(); 	// IN1 - Player 2
 		JOY_TYPE1_3BUTTONS(2)
 	
-		PORT_START	// IN2 - Coins
+		PORT_START(); 	// IN2 - Coins
 		PORT_BIT_IMPULSE( 0x0001, IP_ACTIVE_LOW, IPT_COIN1, 5 );
 		PORT_BIT_IMPULSE( 0x0002, IP_ACTIVE_LOW, IPT_COIN2, 5 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -1742,7 +1742,7 @@ public class seta
 		PORT_DIPSETTING(      0x0040, "Seta USA / Taito America" );
 		PORT_DIPSETTING(      0x0000, "Seta USA / Romstar" );
 	
-		PORT_START	// IN3 - 2 DSWs - $600001 & 3.b
+		PORT_START(); 	// IN3 - 2 DSWs - $600001 & 3.b
 		PORT_DIPNAME( 0x0003, 0x0003, "Unknown 1-0&1" );
 		PORT_DIPSETTING(      0x0002, "00" );
 		PORT_DIPSETTING(      0x0003, "08" );
@@ -1794,13 +1794,13 @@ public class seta
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_downtown = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1
+		PORT_START(); 	// IN0 - Player 1
 		JOY_TYPE2_2BUTTONS(1)
 	
-		PORT_START	// IN1 - Player 2
+		PORT_START(); 	// IN1 - Player 2
 		JOY_TYPE2_2BUTTONS(2)
 	
-		PORT_START	// IN2 - Coins
+		PORT_START(); 	// IN2 - Coins
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_UNKNOWN  );
@@ -1810,7 +1810,7 @@ public class seta
 		PORT_BIT_IMPULSE( 0x0040, IP_ACTIVE_LOW, IPT_COIN2, 5 );
 		PORT_BIT_IMPULSE( 0x0080, IP_ACTIVE_LOW, IPT_COIN1, 5 );
 	
-		PORT_START	// IN3 - 2 DSWs - $600001 & 3.b
+		PORT_START(); 	// IN3 - 2 DSWs - $600001 & 3.b
 		PORT_DIPNAME( 0x0001, 0x0000, "Sales" );
 		PORT_DIPSETTING(      0x0001, "Japan Only" );
 		PORT_DIPSETTING(      0x0000, "World" );
@@ -1867,10 +1867,10 @@ public class seta
 		PORT_DIPSETTING(      0x8000, "1" );
 		PORT_DIPSETTING(      0x0000, "2" );
 	
-		PORT_START	// IN4 - Rotation Player 1
+		PORT_START(); 	// IN4 - Rotation Player 1
 		JOY_ROTATION(1, Z, X)
 	
-		PORT_START	// IN5 - Rotation Player 2
+		PORT_START(); 	// IN5 - Rotation Player 2
 		JOY_ROTATION(1, N, M)
 	INPUT_PORTS_END(); }}; 
 	
@@ -1881,13 +1881,13 @@ public class seta
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_eightfrc = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1
+		PORT_START(); 	// IN0 - Player 1
 		JOY_TYPE1_2BUTTONS(1)
 	
-		PORT_START	// IN1 - Player 2
+		PORT_START(); 	// IN1 - Player 2
 		JOY_TYPE1_2BUTTONS(2)
 	
-		PORT_START	// IN2 - Coins
+		PORT_START(); 	// IN2 - Coins
 		PORT_BIT_IMPULSE( 0x0001, IP_ACTIVE_LOW, IPT_COIN1, 5 );
 		PORT_BIT_IMPULSE( 0x0002, IP_ACTIVE_LOW, IPT_COIN2, 5 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -1897,7 +1897,7 @@ public class seta
 		PORT_BIT(  0x0040, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN3 - 2 DSWs - $600001 & 3.b
+		PORT_START(); 	// IN3 - 2 DSWs - $600001 & 3.b
 		PORT_DIPNAME( 0x0007, 0x0007, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(      0x0004, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(      0x0005, DEF_STR( "3C_1C") );
@@ -1952,7 +1952,7 @@ public class seta
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_extdwnhl = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1
+		PORT_START(); 	// IN0 - Player 1
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER1 | IPF_2WAY );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER1 | IPF_2WAY );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -1962,7 +1962,7 @@ public class seta
 		PORT_BIT(  0x0040, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_START1  );
 	
-		PORT_START	// IN1 - Player 2
+		PORT_START(); 	// IN1 - Player 2
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER2 | IPF_2WAY );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER2 | IPF_2WAY );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -1972,7 +1972,7 @@ public class seta
 		PORT_BIT(  0x0040, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_START2  );
 	
-		PORT_START	// IN2 - Coins
+		PORT_START(); 	// IN2 - Coins
 		PORT_BIT_IMPULSE( 0x0001, IP_ACTIVE_LOW, IPT_COIN1, 5 );
 		PORT_BIT_IMPULSE( 0x0002, IP_ACTIVE_LOW, IPT_COIN2, 5 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -1982,7 +1982,7 @@ public class seta
 		PORT_BIT(  0x0040, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN3 - 2 DSWs - $400009 & b.b
+		PORT_START(); 	// IN3 - 2 DSWs - $400009 & b.b
 		PORT_DIPNAME( 0x0001, 0x0001, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
@@ -2038,13 +2038,13 @@ public class seta
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_gundhara = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1
+		PORT_START(); 	// IN0 - Player 1
 		JOY_TYPE1_3BUTTONS(1)
 	
-		PORT_START	// IN1 - Player 2
+		PORT_START(); 	// IN1 - Player 2
 		JOY_TYPE1_3BUTTONS(2)
 	
-		PORT_START	// IN2 - Coins
+		PORT_START(); 	// IN2 - Coins
 		PORT_BIT_IMPULSE( 0x0001, IP_ACTIVE_LOW, IPT_COIN1, 5 );
 		PORT_BIT_IMPULSE( 0x0002, IP_ACTIVE_LOW, IPT_COIN2, 5 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -2054,7 +2054,7 @@ public class seta
 		PORT_BIT(  0x0040, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 	
-		PORT_START	// IN3 - 2 DSWs - $600001 & 3.b
+		PORT_START(); 	// IN3 - 2 DSWs - $600001 & 3.b
 		PORT_DIPNAME( 0x000f, 0x000f, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(      0x0002, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(      0x0005, DEF_STR( "3C_1C") );
@@ -2109,13 +2109,13 @@ public class seta
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_jjsquawk = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1 - $400000.w
+		PORT_START(); 	// IN0 - Player 1 - $400000.w
 		JOY_TYPE1_2BUTTONS(1)
 	
-		PORT_START	// IN1 - Player 2 - $400002.w
+		PORT_START(); 	// IN1 - Player 2 - $400002.w
 		JOY_TYPE1_2BUTTONS(2)
 	
-		PORT_START	// IN2 - Coins - $400004.w
+		PORT_START(); 	// IN2 - Coins - $400004.w
 		PORT_BIT_IMPULSE( 0x0001, IP_ACTIVE_LOW, IPT_COIN1, 5 );
 		PORT_BIT_IMPULSE( 0x0002, IP_ACTIVE_LOW, IPT_COIN2, 5 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -2125,7 +2125,7 @@ public class seta
 		PORT_BIT(  0x0040, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 	
-		PORT_START	// IN3 - 2 DSWs - $600001 & 3.b
+		PORT_START(); 	// IN3 - 2 DSWs - $600001 & 3.b
 		PORT_DIPNAME( 0x0007, 0x0007, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(      0x0002, DEF_STR( "3C_1C") );
@@ -2182,13 +2182,13 @@ public class seta
 		PORT_ANALOG( 0x0fff, 0x0000, IPT_TRACKBALL_##_dir_ | IPF_PLAYER##_n_ | IPF_REVERSE, 70, 30, 0, 0 );
 	
 	static InputPortPtr input_ports_krzybowl = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1
+		PORT_START(); 	// IN0 - Player 1
 		JOY_TYPE1_3BUTTONS(1)
 	
-		PORT_START	// IN1 - Player 2
+		PORT_START(); 	// IN1 - Player 2
 		JOY_TYPE1_3BUTTONS(2)
 	
-		PORT_START	// IN2 - Coins
+		PORT_START(); 	// IN2 - Coins
 		PORT_BIT_IMPULSE( 0x0001, IP_ACTIVE_LOW, IPT_COIN1, 5 );
 		PORT_BIT_IMPULSE( 0x0002, IP_ACTIVE_LOW, IPT_COIN2, 5 );
 		PORT_BIT_IMPULSE( 0x0004, IP_ACTIVE_LOW, IPT_SERVICE1, 5 );
@@ -2198,7 +2198,7 @@ public class seta
 		PORT_BIT(  0x0040, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT(  0x0080, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
-		PORT_START	// IN3 - 2 DSWs - $600001 & 3.b
+		PORT_START(); 	// IN3 - 2 DSWs - $600001 & 3.b
 		PORT_DIPNAME( 0x0001, 0x0001, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
@@ -2246,16 +2246,16 @@ public class seta
 		PORT_DIPSETTING(      0x8000, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
 	
-		PORT_START	// IN4 - Rotation X Player 1
+		PORT_START(); 	// IN4 - Rotation X Player 1
 		KRZYBOWL_TRACKBALL(X,1)
 	
-		PORT_START	// IN5 - Rotation Y Player 1
+		PORT_START(); 	// IN5 - Rotation Y Player 1
 		KRZYBOWL_TRACKBALL(Y,1)
 	
-		PORT_START	// IN6 - Rotation X Player 2
+		PORT_START(); 	// IN6 - Rotation X Player 2
 		KRZYBOWL_TRACKBALL(X|IPF_REVERSE,2)
 	
-		PORT_START	// IN7 - Rotation Y Player 2
+		PORT_START(); 	// IN7 - Rotation Y Player 2
 		KRZYBOWL_TRACKBALL(Y,2)
 	INPUT_PORTS_END(); }}; 
 	
@@ -2266,13 +2266,13 @@ public class seta
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_metafox = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0
+		PORT_START(); 	// IN0
 		JOY_TYPE2_2BUTTONS(1)
 	
-		PORT_START	// IN1
+		PORT_START(); 	// IN1
 		JOY_TYPE2_2BUTTONS(2)
 	
-		PORT_START	// IN2
+		PORT_START(); 	// IN2
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_UNKNOWN  );
@@ -2282,7 +2282,7 @@ public class seta
 		PORT_BIT_IMPULSE( 0x0040, IP_ACTIVE_LOW, IPT_COIN2, 5 );
 		PORT_BIT_IMPULSE( 0x0080, IP_ACTIVE_LOW, IPT_COIN1, 5 );
 	
-		PORT_START	// IN3 - 2 DSWs - $600001 & 3.b
+		PORT_START(); 	// IN3 - 2 DSWs - $600001 & 3.b
 		PORT_DIPNAME( 0x4001, 0x4001, "Licensed To"    );
 		PORT_DIPSETTING(      0x0001, "Jordan"        );
 		PORT_DIPSETTING(      0x4001, "Romstar"       );
@@ -2336,13 +2336,13 @@ public class seta
 	
 	
 	static InputPortPtr input_ports_msgundam = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1 - $400000.w
+		PORT_START(); 	// IN0 - Player 1 - $400000.w
 		JOY_TYPE1_2BUTTONS(1)
 	
-		PORT_START	// IN1 - Player 2 - $400002.w
+		PORT_START(); 	// IN1 - Player 2 - $400002.w
 		JOY_TYPE1_2BUTTONS(2)
 	
-		PORT_START	// IN2 - Coins - $400004.w
+		PORT_START(); 	// IN2 - Coins - $400004.w
 		PORT_BIT_IMPULSE( 0x0001, IP_ACTIVE_LOW, IPT_COIN1, 5 );
 		PORT_BIT_IMPULSE( 0x0002, IP_ACTIVE_LOW, IPT_COIN2, 5 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -2352,7 +2352,7 @@ public class seta
 		PORT_BIT(  0x0040, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 	
-		PORT_START	// IN3 - 2 DSWs - $600001 & 3.b
+		PORT_START(); 	// IN3 - 2 DSWs - $600001 & 3.b
 		PORT_DIPNAME( 0x0007, 0x0007, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "3C_1C") );
@@ -2408,13 +2408,13 @@ public class seta
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_oisipuzl = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1
+		PORT_START(); 	// IN0 - Player 1
 		JOY_TYPE1_2BUTTONS(1)
 	
-		PORT_START	// IN1 - Player 2
+		PORT_START(); 	// IN1 - Player 2
 		JOY_TYPE1_2BUTTONS(2)
 	
-		PORT_START	// IN2 - Coins
+		PORT_START(); 	// IN2 - Coins
 		PORT_BIT_IMPULSE( 0x0001, IP_ACTIVE_LOW, IPT_COIN1, 5 );
 		PORT_BIT_IMPULSE( 0x0002, IP_ACTIVE_LOW, IPT_COIN2, 5 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -2424,7 +2424,7 @@ public class seta
 		PORT_BIT(  0x0040, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN3 - 2 DSWs - $600001 & 3.b
+		PORT_START(); 	// IN3 - 2 DSWs - $600001 & 3.b
 		PORT_DIPNAME( 0x0003, 0x0003, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(      0x0002, "Easy" );
 		PORT_DIPSETTING(      0x0003, "Normal" );
@@ -2477,15 +2477,15 @@ public class seta
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_kiwame = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Unused
-		PORT_START	// IN1 - Unused
+		PORT_START(); 	// IN0 - Unused
+		PORT_START(); 	// IN1 - Unused
 	
-		PORT_START	// IN2 - Coins
+		PORT_START(); 	// IN2 - Coins
 		PORT_BIT_IMPULSE( 0x0001, IP_ACTIVE_LOW, IPT_COIN1, 5 );
 		PORT_BIT_IMPULSE( 0x0002, IP_ACTIVE_LOW, IPT_COIN2, 5 );
 		PORT_BIT_IMPULSE( 0x0004, IP_ACTIVE_LOW, IPT_SERVICE1, 5 );
 	
-		PORT_START	// IN3 - 2 DSWs - $e00001 & 3.b
+		PORT_START(); 	// IN3 - 2 DSWs - $e00001 & 3.b
 		PORT_DIPNAME( 0x0007, 0x0007, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(      0x0002, DEF_STR( "3C_1C") );
@@ -2544,14 +2544,14 @@ public class seta
 		5		st	bt
 	*/
 	
-		PORT_START	// IN4
+		PORT_START(); 	// IN4
 		PORT_BITX(0x0001, IP_ACTIVE_LOW, 0, "P1 LC",  KEYCODE_RCONTROL, IP_JOY_NONE );
 		PORT_BIT (0x0002, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT (0x0004, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BITX(0x0008, IP_ACTIVE_LOW, 0, "P1 FF",  KEYCODE_RALT,     IP_JOY_NONE );
 		PORT_BIT (0xfff0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN5
+		PORT_START(); 	// IN5
 		PORT_BITX(0x0001, IP_ACTIVE_LOW, 0, "P1 B",     KEYCODE_B,      IP_JOY_NONE );
 		PORT_BITX(0x0002, IP_ACTIVE_LOW, 0, "P1 F",     KEYCODE_F,      IP_JOY_NONE );
 		PORT_BITX(0x0004, IP_ACTIVE_LOW, 0, "P1 J",     KEYCODE_J,      IP_JOY_NONE );
@@ -2560,7 +2560,7 @@ public class seta
 		PORT_BITX(0x0020, IP_ACTIVE_LOW, 0, "P1 BT",    KEYCODE_X,      IP_JOY_NONE );
 		PORT_BIT (0xffc0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN6
+		PORT_START(); 	// IN6
 		PORT_BITX(0x0001, IP_ACTIVE_LOW, 0, "P1 A",   KEYCODE_A,        IP_JOY_NONE );
 		PORT_BITX(0x0002, IP_ACTIVE_LOW, 0, "P1 E",   KEYCODE_E,        IP_JOY_NONE );
 		PORT_BITX(0x0004, IP_ACTIVE_LOW, 0, "P1 I",   KEYCODE_I,        IP_JOY_NONE );
@@ -2569,7 +2569,7 @@ public class seta
 		PORT_BIT( 0x0020, IP_ACTIVE_LOW, IPT_START1  );
 		PORT_BIT (0xffc0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN7
+		PORT_START(); 	// IN7
 		PORT_BITX(0x0001, IP_ACTIVE_LOW, 0, "P1 C",   KEYCODE_C,     IP_JOY_NONE );
 		PORT_BITX(0x0002, IP_ACTIVE_LOW, 0, "P1 G",   KEYCODE_G,     IP_JOY_NONE );
 		PORT_BITX(0x0004, IP_ACTIVE_LOW, 0, "P1 K",   KEYCODE_K,     IP_JOY_NONE );
@@ -2577,7 +2577,7 @@ public class seta
 		PORT_BITX(0x0010, IP_ACTIVE_LOW, 0, "P1 Ron", KEYCODE_Z,     IP_JOY_NONE );
 		PORT_BIT (0xffe0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN8
+		PORT_START(); 	// IN8
 		PORT_BITX(0x0001, IP_ACTIVE_LOW, 0, "P1 D",   KEYCODE_D,    IP_JOY_NONE );
 		PORT_BITX(0x0002, IP_ACTIVE_LOW, 0, "P1 H",   KEYCODE_H,    IP_JOY_NONE );
 		PORT_BITX(0x0004, IP_ACTIVE_LOW, 0, "P1 L",   KEYCODE_L,    IP_JOY_NONE );
@@ -2592,7 +2592,7 @@ public class seta
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_qzkklogy = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1 - $b00001.b
+		PORT_START(); 	// IN0 - Player 1 - $b00001.b
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER1 );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER1 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
@@ -2602,7 +2602,7 @@ public class seta
 		PORT_BIT(  0x0040, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_START1  );
 	
-		PORT_START	// IN1 - Player 2 - $b00003.b
+		PORT_START(); 	// IN1 - Player 2 - $b00003.b
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER2 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
@@ -2612,13 +2612,13 @@ public class seta
 		PORT_BIT(  0x0040, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_START2  );
 	
-		PORT_START	// IN2 - Coins - $b00005.b
+		PORT_START(); 	// IN2 - Coins - $b00005.b
 		PORT_BIT_IMPULSE( 0x0001, IP_ACTIVE_LOW, IPT_COIN1, 5 );
 		PORT_BIT_IMPULSE( 0x0002, IP_ACTIVE_LOW, IPT_COIN2, 5 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT(  0x0008, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 	
-		PORT_START	// IN3 - 2 DSWs - $600001 & 3.b
+		PORT_START(); 	// IN3 - 2 DSWs - $600001 & 3.b
 		PORT_DIPNAME( 0x0003, 0x0003, "Unknown 1-0&1*" );
 		PORT_DIPSETTING(      0x0000, "0" );
 		PORT_DIPSETTING(      0x0001, "1" );
@@ -2672,13 +2672,13 @@ public class seta
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_rezon = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1
+		PORT_START(); 	// IN0 - Player 1
 		JOY_TYPE1_3BUTTONS(1)	// 1 used??
 	
-		PORT_START	// IN1 - Player 2
+		PORT_START(); 	// IN1 - Player 2
 		JOY_TYPE1_3BUTTONS(2)	// 1 used ??
 	
-		PORT_START	// IN2 - Coins
+		PORT_START(); 	// IN2 - Coins
 		PORT_BIT_IMPULSE( 0x0001, IP_ACTIVE_LOW, IPT_COIN1, 5 );
 		PORT_BIT_IMPULSE( 0x0002, IP_ACTIVE_LOW, IPT_COIN2, 5 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -2688,7 +2688,7 @@ public class seta
 		PORT_BIT(  0x0040, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN3 - 2 DSWs - $600001 & 3.b
+		PORT_START(); 	// IN3 - 2 DSWs - $600001 & 3.b
 		PORT_DIPNAME( 0x0001, 0x0001, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
@@ -2747,13 +2747,13 @@ public class seta
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_sokonuke = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1
+		PORT_START(); 	// IN0 - Player 1
 		JOY_TYPE1_1BUTTON(1)
 	
-		PORT_START	// IN1 - Player 2
+		PORT_START(); 	// IN1 - Player 2
 		JOY_TYPE1_1BUTTON(2)
 	
-		PORT_START	// IN2 - Coins
+		PORT_START(); 	// IN2 - Coins
 		PORT_BIT_IMPULSE( 0x0001, IP_ACTIVE_LOW, IPT_COIN1, 5 );
 		PORT_BIT_IMPULSE( 0x0002, IP_ACTIVE_LOW, IPT_COIN2, 5 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -2763,7 +2763,7 @@ public class seta
 		PORT_BIT(  0x0040, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN3 - 2 DSWs - $400009 & b.b
+		PORT_START(); 	// IN3 - 2 DSWs - $400009 & b.b
 		PORT_DIPNAME( 0x0001, 0x0001, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
@@ -2819,13 +2819,13 @@ public class seta
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_stg = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1 - $b00001.b
+		PORT_START(); 	// IN0 - Player 1 - $b00001.b
 		JOY_TYPE1_2BUTTONS(1)
 	
-		PORT_START	// IN1 - Player 2 - $b00003.b
+		PORT_START(); 	// IN1 - Player 2 - $b00003.b
 		JOY_TYPE1_2BUTTONS(2)
 	
-		PORT_START	// IN2 - Coins - $b00005.b
+		PORT_START(); 	// IN2 - Coins - $b00005.b
 		PORT_BIT_IMPULSE( 0x0001, IP_ACTIVE_LOW, IPT_COIN1, 5 );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -2834,7 +2834,7 @@ public class seta
 		/* This is the index in a table with pointers to the
 		   title logo, but the table is filled with just 1 value */
 	
-		PORT_START	// IN3 - 2 DSWs - $600001 & 3.b
+		PORT_START(); 	// IN3 - 2 DSWs - $600001 & 3.b
 		PORT_DIPNAME( 0x0003, 0x0003, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(      0x0002, "Easy"    );// 0
 		PORT_DIPSETTING(      0x0003, "Normal"  );// 4
@@ -2888,13 +2888,13 @@ public class seta
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_thunderl = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1
+		PORT_START(); 	// IN0 - Player 1
 		JOY_TYPE1_2BUTTONS(1)	// button2 = speed up
 	
-		PORT_START	// IN1 - Player 2
+		PORT_START(); 	// IN1 - Player 2
 		JOY_TYPE1_2BUTTONS(2)
 	
-		PORT_START	// IN2 - Coins + DSW
+		PORT_START(); 	// IN2 - Coins + DSW
 		PORT_BIT_IMPULSE( 0x0001, IP_ACTIVE_LOW, IPT_COIN1, 5 );
 		PORT_BIT_IMPULSE( 0x0002, IP_ACTIVE_LOW, IPT_COIN2, 5 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -2912,7 +2912,7 @@ public class seta
 	//	PORT_DIPSETTING(      0x0020, "None" );
 	//	PORT_DIPSETTING(      0x0000, "None" );
 	
-		PORT_START	// IN3 - 2 DSWs - $600003 & 1.b
+		PORT_START(); 	// IN3 - 2 DSWs - $600003 & 1.b
 		PORT_DIPNAME( 0x000f, 0x000f, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(      0x000c, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(      0x000d, DEF_STR( "3C_1C") );
@@ -2978,13 +2978,13 @@ public class seta
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_tndrcade = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1
+		PORT_START(); 	// IN0 - Player 1
 		JOY_TYPE1_2BUTTONS(1)
 	
-		PORT_START	// IN1 - Player 2
+		PORT_START(); 	// IN1 - Player 2
 		JOY_TYPE1_2BUTTONS(2)
 	
-		PORT_START	// IN2 - Coins
+		PORT_START(); 	// IN2 - Coins
 		PORT_BIT_IMPULSE( 0x0001, IP_ACTIVE_LOW, IPT_COIN1, 5 );
 		PORT_BIT_IMPULSE( 0x0002, IP_ACTIVE_LOW, IPT_COIN2, 5 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_START1   );
@@ -2994,7 +2994,7 @@ public class seta
 		PORT_BIT(  0x0040, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 	
-		PORT_START	// IN3 - 2 DSWs - $600001 & 3.b
+		PORT_START(); 	// IN3 - 2 DSWs - $600001 & 3.b
 		PORT_DIPNAME( 0x0003, 0x0003, "Difficulty?" );
 		PORT_DIPSETTING(      0x0002, "0" );
 		PORT_DIPSETTING(      0x0003, "1" );
@@ -3045,13 +3045,13 @@ public class seta
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_tndrcadj = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1
+		PORT_START(); 	// IN0 - Player 1
 		JOY_TYPE1_2BUTTONS(1)
 	
-		PORT_START	// IN1 - Player 2
+		PORT_START(); 	// IN1 - Player 2
 		JOY_TYPE1_2BUTTONS(2)
 	
-		PORT_START	// IN2 - Coins
+		PORT_START(); 	// IN2 - Coins
 		PORT_BIT_IMPULSE( 0x0001, IP_ACTIVE_LOW, IPT_COIN1, 5 );
 		PORT_BIT_IMPULSE( 0x0002, IP_ACTIVE_LOW, IPT_COIN2, 5 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_START1   );
@@ -3061,7 +3061,7 @@ public class seta
 		PORT_BIT(  0x0040, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 	
-		PORT_START	// IN3 - 2 DSWs - $600001 & 3.b
+		PORT_START(); 	// IN3 - 2 DSWs - $600001 & 3.b
 		PORT_DIPNAME( 0x0003, 0x0003, "Difficulty?" );
 		PORT_DIPSETTING(      0x0002, "0" );
 		PORT_DIPSETTING(      0x0003, "1" );
@@ -3113,13 +3113,13 @@ public class seta
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_twineagl = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1
+		PORT_START(); 	// IN0 - Player 1
 		JOY_TYPE1_2BUTTONS(1)
 	
-		PORT_START	// IN1 - Player 2
+		PORT_START(); 	// IN1 - Player 2
 		JOY_TYPE1_2BUTTONS(2)
 	
-		PORT_START	// IN2 - Coins
+		PORT_START(); 	// IN2 - Coins
 		PORT_BIT_IMPULSE( 0x0001, IP_ACTIVE_LOW, IPT_COIN1, 5 );
 		PORT_BIT_IMPULSE( 0x0002, IP_ACTIVE_LOW, IPT_COIN2, 5 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_START1   );
@@ -3129,7 +3129,7 @@ public class seta
 		PORT_BIT(  0x0040, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 	
-		PORT_START	// IN3 - 2 DSWs - $600001 & 3.b
+		PORT_START(); 	// IN3 - 2 DSWs - $600001 & 3.b
 		PORT_DIPNAME( 0x0001, 0x0001, "Unknown 1-0*" );// this is merged with 2-6!
 		PORT_DIPSETTING(      0x0001, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
@@ -3181,13 +3181,13 @@ public class seta
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_umanclub = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1
+		PORT_START(); 	// IN0 - Player 1
 		JOY_TYPE1_2BUTTONS(1)
 	
-		PORT_START	// IN1 - Player 2
+		PORT_START(); 	// IN1 - Player 2
 		JOY_TYPE1_2BUTTONS(2)
 	
-		PORT_START	// IN2 - Coins
+		PORT_START(); 	// IN2 - Coins
 		PORT_BIT_IMPULSE( 0x0001, IP_ACTIVE_LOW, IPT_COIN1, 5 );
 		PORT_BIT_IMPULSE( 0x0002, IP_ACTIVE_LOW, IPT_COIN2, 5 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -3197,7 +3197,7 @@ public class seta
 		PORT_BIT(  0x0040, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 	
-		PORT_START	// IN3 - 2 DSWs
+		PORT_START(); 	// IN3 - 2 DSWs
 		PORT_DIPNAME( 0x0001, 0x0001, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
@@ -3260,21 +3260,21 @@ public class seta
 		PORT_ANALOG( 0x0fff, 0x0000, IPT_TRACKBALL_##_dir_ | IPF_CENTER, 70, 30, 0, 0 );
 	
 	static InputPortPtr input_ports_usclssic = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0
+		PORT_START(); 	// IN0
 		TRACKBALL(X)
 		PORT_BIT   ( 0x1000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT   ( 0x2000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT   ( 0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT   ( 0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN1
+		PORT_START(); 	// IN1
 		TRACKBALL(Y)
 		PORT_BIT   ( 0x1000, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT   ( 0x2000, IP_ACTIVE_HIGH, IPT_BUTTON1 );
 		PORT_BIT   ( 0x4000, IP_ACTIVE_HIGH, IPT_START1  );
 		PORT_BIT   ( 0x8000, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
-		PORT_START	// IN2
+		PORT_START(); 	// IN2
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW,  IPT_UNKNOWN  );// tested (sound related?)
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW,  IPT_UNKNOWN  );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW,  IPT_UNKNOWN  );
@@ -3284,7 +3284,7 @@ public class seta
 		PORT_BIT(  0x0040, IP_ACTIVE_HIGH, IPT_SERVICE1 );
 		PORT_BIT(  0x0080, IP_ACTIVE_HIGH, IPT_TILT     );
 	
-		PORT_START	// IN3 - 2 DSWs - $600001 & 3.b
+		PORT_START(); 	// IN3 - 2 DSWs - $600001 & 3.b
 		PORT_DIPNAME( 0x0001, 0x0001, "Credits For 9-Hole" );
 		PORT_DIPSETTING(      0x0001, "2" );
 		PORT_DIPSETTING(      0x0000, "3" );
@@ -3337,13 +3337,13 @@ public class seta
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_zingzip = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1 - $400000.w
+		PORT_START(); 	// IN0 - Player 1 - $400000.w
 		JOY_TYPE1_2BUTTONS(1)
 	
-		PORT_START	// IN1 - Player 2 - $400002.w
+		PORT_START(); 	// IN1 - Player 2 - $400002.w
 		JOY_TYPE1_2BUTTONS(2)
 	
-		PORT_START	// IN2 - Coins - $400004.w
+		PORT_START(); 	// IN2 - Coins - $400004.w
 		PORT_BIT_IMPULSE( 0x0001, IP_ACTIVE_LOW, IPT_COIN1, 5 );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_UNKNOWN  );// no coin 2
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -3353,7 +3353,7 @@ public class seta
 		PORT_BIT(  0x0040, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 	
-		PORT_START	// IN3 - 2 DSWs - $600001 & 3.b
+		PORT_START(); 	// IN3 - 2 DSWs - $600001 & 3.b
 		PORT_DIPNAME( 0x0001, 0x0001, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
@@ -3413,14 +3413,14 @@ public class seta
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_wrofaero = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Player 1 - $400000.w
+		PORT_START(); 	// IN0 - Player 1 - $400000.w
 		JOY_TYPE1_3BUTTONS(1)	// 3rd button selects the weapon
 								// when the dsw for cheating is on
 	
-		PORT_START	// IN1 - Player 2 - $400002.w
+		PORT_START(); 	// IN1 - Player 2 - $400002.w
 		JOY_TYPE1_3BUTTONS(2)
 	
-		PORT_START	// IN2 - Coins - $400004.w
+		PORT_START(); 	// IN2 - Coins - $400004.w
 		PORT_BIT_IMPULSE( 0x0001, IP_ACTIVE_LOW, IPT_COIN1, 5 );
 		PORT_BIT_IMPULSE( 0x0002, IP_ACTIVE_LOW, IPT_COIN2, 5 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -3430,7 +3430,7 @@ public class seta
 		PORT_BIT(  0x0040, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 	
-		PORT_START	// IN3 - 2 DSWs - $600001 & 3.b
+		PORT_START(); 	// IN3 - 2 DSWs - $600001 & 3.b
 		PORT_DIPNAME( 0x0001, 0x0001, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );

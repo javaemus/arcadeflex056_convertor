@@ -634,7 +634,7 @@ public class namconb1
 	/***************************************************************/
 	
 	static InputPortPtr input_ports_gunbulet = new InputPortPtr(){ public void handler() { 
-		PORT_START /* inp0 */
+		PORT_START();  /* inp0 */
 		PORT_DIPNAME( 0x01, 0x00, "DSW2 (Unused); )
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -644,33 +644,33 @@ public class namconb1
 		PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_SERVICE1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );/* C75 status */
 	
-		PORT_START /* inp1 */
+		PORT_START();  /* inp1 */
 		PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_BUTTON1 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_START1 );
 	
-		PORT_START /* inp2 */
+		PORT_START();  /* inp2 */
 		PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_START2 );
 	
-		PORT_START /* inp3: fake: coin input */
+		PORT_START();  /* inp3: fake: coin input */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 	
-		PORT_START /* inp4: fake analog X (p1 gun) */
+		PORT_START();  /* inp4: fake analog X (p1 gun) */
 		PORT_ANALOG( 0xff, 30, IPT_AD_STICK_X, 50, 4, 0, 230 );
 	
-		PORT_START /* inp5: fake analog Y (p1 gun) */
+		PORT_START();  /* inp5: fake analog Y (p1 gun) */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 50, 4, 0, 255 );
 	
-		PORT_START /* inp6: fake analog X (p2 gun) */
+		PORT_START();  /* inp6: fake analog X (p2 gun) */
 		PORT_ANALOG( 0xff, 200, IPT_AD_STICK_X | IPF_PLAYER2, 50, 4, 0, 230 );
 	
-		PORT_START /* inp7: fake analog Y (p2 gun) */
+		PORT_START();  /* inp7: fake analog Y (p2 gun) */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y | IPF_PLAYER2, 50, 4, 0, 255 );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_namconb1 = new InputPortPtr(){ public void handler() { 
-		PORT_START /* inp0 */
+		PORT_START();  /* inp0 */
 		PORT_DIPNAME( 0x01, 0x00, "DSW2 (Unused); )
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -692,7 +692,7 @@ public class namconb1
 		PORT_DIPSETTING(    0x40, DEF_STR( "On") );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );/* C75 status */
 	
-		PORT_START /* inp1 */
+		PORT_START();  /* inp1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_8WAY );
@@ -702,7 +702,7 @@ public class namconb1
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_BUTTON3 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_START1 );
 	
-		PORT_START /* inp2 */
+		PORT_START();  /* inp2 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_PLAYER2 );
@@ -712,7 +712,7 @@ public class namconb1
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_BUTTON3 | IPF_PLAYER2 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_START2 );
 	
-		PORT_START /* inp3: fake: coin input */
+		PORT_START();  /* inp3: fake: coin input */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 	INPUT_PORTS_END(); }}; 

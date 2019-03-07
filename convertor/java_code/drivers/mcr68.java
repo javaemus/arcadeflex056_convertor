@@ -467,7 +467,7 @@ public class mcr68
 	 *************************************/
 	
 	static InputPortPtr input_ports_zwackery = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN1 );
@@ -477,23 +477,23 @@ public class mcr68
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_TILT );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 );/* sword */
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY );
 		PORT_BIT( 0xf0, IP_ACTIVE_HIGH, IPT_UNUSED );/* sound communications */
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON3 );/* spell up */
 		PORT_BIT( 0x3e, IP_ACTIVE_HIGH, IPT_UNUSED );/* encoder wheel */
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON2 );/* shield */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON4 );/* spell down */
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x07, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x05, DEF_STR( "6C_1C") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "5C_1C") );
@@ -518,13 +518,13 @@ public class mcr68
 		PORT_DIPSETTING(    0x40, "Harder" );
 		PORT_DIPSETTING(    0x80, "Hardest" );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOGX( 0xff, 0x00, IPT_DIAL | IPF_REVERSE, 50, 10, 0, 0, KEYCODE_Z, KEYCODE_X, 0, 0 );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_xenophob = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_COIN3 );
@@ -541,7 +541,7 @@ public class mcr68
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY | IPF_PLAYER3 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_PLAYER3 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_PLAYER3 );
@@ -559,7 +559,7 @@ public class mcr68
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0003, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_DIPNAME( 0x0004, 0x0004, DEF_STR( "Free_Play") );
 		PORT_DIPSETTING(      0x0004, DEF_STR( "Off") );
@@ -583,7 +583,7 @@ public class mcr68
 	
 	
 	static InputPortPtr input_ports_spyhunt2 = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_START1 );
@@ -594,7 +594,7 @@ public class mcr68
 		PORT_SERVICE( 0x0080, IP_ACTIVE_LOW );
 		PORT_BIT( 0xff00, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_BUTTON5 | IPF_PLAYER2 );/* 1st gear */
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_BUTTON6 | IPF_PLAYER2 );/* 2nd gear */
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_BUTTON7 | IPF_PLAYER2 );/* 3rd gear */
@@ -612,7 +612,7 @@ public class mcr68
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );/* Right Trigger */
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER1 );/* Right Button */
 	
-		PORT_START	/* IN3 -- dipswitches */
+		PORT_START(); 	/* IN3 -- dipswitches */
 		PORT_DIPNAME( 0x0003, 0x0003, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(      0x0002, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(      0x0003, DEF_STR( "1C_1C") );
@@ -636,22 +636,22 @@ public class mcr68
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* analog ports for steering and pedals */
+		PORT_START(); 	/* analog ports for steering and pedals */
 		PORT_ANALOG( 0xff, 0x30, IPT_PEDAL | IPF_PLAYER2 | IPF_REVERSE, 100, 10, 0x30, 0xff );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOG( 0xff, 0x30, IPT_PEDAL | IPF_PLAYER1 | IPF_REVERSE, 100, 10, 0x30, 0xff );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOG( 0xff, 0x80, IPT_PADDLE | IPF_PLAYER2 | IPF_REVERSE, 80, 10, 0x10, 0xf0 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOG( 0xff, 0x80, IPT_PADDLE | IPF_PLAYER1 | IPF_REVERSE, 80, 10, 0x10, 0xf0 );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_blasted = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_UNUSED/* credit w/bill */ );
@@ -668,7 +668,7 @@ public class mcr68
 		PORT_BIT( 0x0800, IP_ACTIVE_LOW, IPT_UNUSED/* credit 2 w/bill */ );
 		PORT_BIT( 0xf000, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_PLAYER1 );
@@ -679,7 +679,7 @@ public class mcr68
 		PORT_BIT( 0x0080, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x0003, 0x0003, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(      0x0002, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(      0x0003, DEF_STR( "1C_1C") );
@@ -704,7 +704,7 @@ public class mcr68
 	
 	
 	static InputPortPtr input_ports_archrivl = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x000c, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -720,10 +720,10 @@ public class mcr68
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0xffff, IP_ACTIVE_HIGH, IPT_UNUSED );/* player 1/2 joysticks go here */
 	
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x0003, 0x0003, "Game Time" );
 		PORT_DIPSETTING(      0x0003, "Preset Time" );
 		PORT_DIPSETTING(      0x0002, "Preset + 10sec" );
@@ -749,7 +749,7 @@ public class mcr68
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* 49-way joystick simulator */
+		PORT_START(); 	/* 49-way joystick simulator */
 		PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_PLAYER1 );
@@ -761,7 +761,7 @@ public class mcr68
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_pigskin = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_START1 );
@@ -779,7 +779,7 @@ public class mcr68
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER1 );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x000f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x0010, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x0020, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
@@ -787,7 +787,7 @@ public class mcr68
 		PORT_BIT( 0x0080, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0xff00, IP_ACTIVE_HIGH, IPT_UNUSED );/* player 1 joystick goes here */
 	
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x0003, 0x0003, "Game Time" );
 		PORT_DIPSETTING(      0x0000, "Shortest" );
 		PORT_DIPSETTING(      0x0002, "Short" );
@@ -812,7 +812,7 @@ public class mcr68
 		PORT_DIPSETTING(      0x0000, "Rotated" );
 		PORT_BIT( 0xff00, IP_ACTIVE_HIGH, IPT_UNUSED );/* player 2 joystick goes here */
 	
-		PORT_START	/* 49-way joystick simulator */
+		PORT_START(); 	/* 49-way joystick simulator */
 		PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP | IPF_8WAY | IPF_PLAYER1 );
@@ -825,7 +825,7 @@ public class mcr68
 	
 	
 	static InputPortPtr input_ports_trisport = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x000c, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -839,11 +839,11 @@ public class mcr68
 		PORT_BIT( 0x2000, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT( 0xc000, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x00ff, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0xff00, IP_ACTIVE_HIGH, IPT_UNUSED );/* analog controls go here */
 	
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x0007, 0x0007, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(      0x0002, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(      0x0003, DEF_STR( "3C_1C") );
@@ -869,10 +869,10 @@ public class mcr68
 		PORT_DIPSETTING(      0x0000, "4" );
 		PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START
+		PORT_START(); 
 	    PORT_ANALOG( 0xff, 0, IPT_TRACKBALL_X | IPF_PLAYER1, 100, 20, 0, 0 );
 	
-		PORT_START
+		PORT_START(); 
 	    PORT_ANALOG( 0xff, 0, IPT_TRACKBALL_Y | IPF_REVERSE | IPF_PLAYER1, 100, 20, 0, 0 );
 	INPUT_PORTS_END(); }}; 
 	

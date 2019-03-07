@@ -136,7 +136,7 @@ public class raiders5
 	/****************************************************************************/
 	
 	static InputPortPtr input_ports_raiders5 = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_VBLANK );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_START1 );
@@ -146,7 +146,7 @@ public class raiders5
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT_IMPULSE( 0x80, IP_ACTIVE_LOW, IPT_COIN1, 5 );
 		PORT_SERVICE( 0x40, IP_ACTIVE_LOW );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_START2 );
@@ -156,7 +156,7 @@ public class raiders5
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL );
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
@@ -180,7 +180,7 @@ public class raiders5
 		PORT_DIPSETTING(    0x80, "Normal" );
 		PORT_DIPSETTING(    0x00, "Hard" );
 	
-		PORT_START	/* DSW2*/
+		PORT_START(); 	/* DSW2*/
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(    0x05, DEF_STR( "3C_1C") );

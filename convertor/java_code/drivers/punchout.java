@@ -505,7 +505,7 @@ public class punchout
 	
 	
 	static InputPortPtr input_ports_punchout = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_BUTTON2 );
@@ -515,7 +515,7 @@ public class punchout
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY );
@@ -525,7 +525,7 @@ public class punchout
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_COIN1 );
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x00, "Easy" );
 		PORT_DIPSETTING(    0x01, "Medium" );
@@ -547,7 +547,7 @@ public class punchout
 		PORT_DIPSETTING(    0x40, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_HIGH );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x0f, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x0e, DEF_STR( "5C_1C") );
 		PORT_DIPSETTING(    0x0b, DEF_STR( "4C_1C") );
@@ -571,12 +571,12 @@ public class punchout
 		PORT_DIPNAME( 0x80, 0x00, "Copyright" );
 		PORT_DIPSETTING(    0x00, "Nintendo" );
 		PORT_DIPSETTING(    0x80, "Nintendo of America" );
-		PORT_START
+		PORT_START(); 
 	INPUT_PORTS_END(); }}; 
 	
 	/* same as punchout with additional duck button */
 	static InputPortPtr input_ports_spnchout = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON1 );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_BUTTON2 );
@@ -586,7 +586,7 @@ public class punchout
 		PORT_BIT( 0x40, IP_ACTIVE_LOW,  IPT_BUTTON4 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY );
@@ -596,7 +596,7 @@ public class punchout
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_COIN2 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_COIN1 );
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x00, "Easy" );
 		PORT_DIPSETTING(    0x01, "Medium" );
@@ -618,7 +618,7 @@ public class punchout
 		PORT_DIPSETTING(    0x40, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_HIGH );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x0f, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x08, DEF_STR( "6C_1C") );
 		PORT_DIPSETTING(    0x04, DEF_STR( "5C_1C") );
@@ -642,11 +642,11 @@ public class punchout
 		PORT_DIPNAME( 0x80, 0x00, "Copyright" );
 		PORT_DIPSETTING(    0x00, "Nintendo" );
 		PORT_DIPSETTING(    0x80, "Nintendo of America" );
-		PORT_START
+		PORT_START(); 
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_armwrest = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );
@@ -656,7 +656,7 @@ public class punchout
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );
@@ -666,7 +666,7 @@ public class punchout
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_SERVICE1 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_COIN1 );
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x00, "Easy" );
 		PORT_DIPSETTING(    0x01, "Medium" );
@@ -689,7 +689,7 @@ public class punchout
 		PORT_DIPSETTING(    0x00, "7" );
 		PORT_SERVICE( 0x80, IP_ACTIVE_HIGH );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );

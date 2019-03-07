@@ -529,7 +529,7 @@ public class toaplan1
 	
 	
 	#define  TOAPLAN1_PLAYER_INPUT( player, button3 )										\
-		PORT_START																	\
+		PORT_START(); 																	\
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY | player );\
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY | player );\
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | player );\
@@ -540,7 +540,7 @@ public class toaplan1
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
 	#define  TOAPLAN1_SYSTEM_INPUTS						\
-		PORT_START										\
+		PORT_START(); 										\
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN3 );	\
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_TILT );	\
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );\
@@ -553,7 +553,7 @@ public class toaplan1
 	
 	
 	static InputPortPtr input_ports_rallybik = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* VBlank */
+		PORT_START(); 		/* VBlank */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_VBLANK );
 		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
@@ -561,7 +561,7 @@ public class toaplan1
 	
 		TOAPLAN1_PLAYER_INPUT( IPF_COCKTAIL, IPT_UNKNOWN )
 	
-		PORT_START		/* DSW A */
+		PORT_START(); 		/* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
@@ -583,7 +583,7 @@ public class toaplan1
 		PORT_DIPSETTING(    0xc0, DEF_STR( "2C_3C") );
 		PORT_DIPSETTING(    0x40, DEF_STR( "1C_2C") );
 	
-		PORT_START		/* DSW B */
+		PORT_START(); 		/* DSW B */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x01, "Easy" );
 		PORT_DIPSETTING(    0x00, "Medium" );
@@ -612,7 +612,7 @@ public class toaplan1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_truxton = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* VBlank */
+		PORT_START(); 		/* VBlank */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_VBLANK );
 		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
@@ -620,7 +620,7 @@ public class toaplan1
 	
 		TOAPLAN1_PLAYER_INPUT( IPF_COCKTAIL, IPT_UNKNOWN )
 	
-		PORT_START		/* DSW A */
+		PORT_START(); 		/* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
@@ -655,7 +655,7 @@ public class toaplan1
 		PORT_DIPSETTING(    0xc0, DEF_STR( "1C_6C") );
 	*/
 	
-		PORT_START		/* DSW B */
+		PORT_START(); 		/* DSW B */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x01, "Easy" );
 		PORT_DIPSETTING(    0x00, "Medium" );
@@ -680,7 +680,7 @@ public class toaplan1
 	
 		TOAPLAN1_SYSTEM_INPUTS
 	
-		PORT_START		/* Territory Jumper Block */
+		PORT_START(); 		/* Territory Jumper Block */
 		PORT_DIPNAME( 0x07, 0x02, "Territory/Copyright" );
 		PORT_DIPSETTING(    0x02, "World/Taito Corp" );
 		PORT_DIPSETTING(    0x06, "World/Taito America" );
@@ -697,7 +697,7 @@ public class toaplan1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_hellfire = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* VBlank */
+		PORT_START(); 		/* VBlank */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_VBLANK );
 		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
@@ -705,7 +705,7 @@ public class toaplan1
 	
 		TOAPLAN1_PLAYER_INPUT( IPF_PLAYER2, IPT_UNKNOWN )
 	
-		PORT_START		/* DSW A */
+		PORT_START(); 		/* DSW A */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unused") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -727,7 +727,7 @@ public class toaplan1
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_4C") );
 		PORT_DIPSETTING(    0xc0, DEF_STR( "1C_6C") );
 	
-		PORT_START		/* DSWB */
+		PORT_START(); 		/* DSWB */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x01, "Easy" );
 		PORT_DIPSETTING(    0x00, "Medium" );
@@ -752,7 +752,7 @@ public class toaplan1
 	
 		TOAPLAN1_SYSTEM_INPUTS
 	
-		PORT_START		/* Territory Jumper block */
+		PORT_START(); 		/* Territory Jumper block */
 		PORT_DIPNAME( 0x03, 0x02, "Territory" );
 		PORT_DIPSETTING(    0x02, "Europe" );
 	//	PORT_DIPSETTING(    0x03, "Europe" );
@@ -768,7 +768,7 @@ public class toaplan1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_zerowing = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* VBlank */
+		PORT_START(); 		/* VBlank */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_VBLANK );
 		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
@@ -776,7 +776,7 @@ public class toaplan1
 	
 		TOAPLAN1_PLAYER_INPUT( IPF_COCKTAIL, IPT_UNKNOWN )
 	
-		PORT_START		/* DSW A */
+		PORT_START(); 		/* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
@@ -798,7 +798,7 @@ public class toaplan1
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_4C") );
 		PORT_DIPSETTING(    0xc0, DEF_STR( "1C_6C") );
 	
-		PORT_START		/* DSW B */
+		PORT_START(); 		/* DSW B */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x01, "Easy" );
 		PORT_DIPSETTING(    0x00, "Medium" );
@@ -823,7 +823,7 @@ public class toaplan1
 	
 		TOAPLAN1_SYSTEM_INPUTS
 	
-		PORT_START		/* Territory Jumper block */
+		PORT_START(); 		/* Territory Jumper block */
 		PORT_DIPNAME( 0x03, 0x02, "Territory" );
 		PORT_DIPSETTING(    0x02, "Europe" );
 	//	PORT_DIPSETTING(    0x03, "Europe" );
@@ -839,7 +839,7 @@ public class toaplan1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_demonwld = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* VBlank */
+		PORT_START(); 		/* VBlank */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_VBLANK );
 		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
@@ -847,7 +847,7 @@ public class toaplan1
 	
 		TOAPLAN1_PLAYER_INPUT( IPF_PLAYER2, IPT_BUTTON3 )
 	
-		PORT_START		/* DSW A */
+		PORT_START(); 		/* DSW A */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unused") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -869,7 +869,7 @@ public class toaplan1
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_4C") );
 		PORT_DIPSETTING(    0xc0, DEF_STR( "1C_6C") );
 	
-		PORT_START		/* DSW B */
+		PORT_START(); 		/* DSW B */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x01, "Easy" );
 		PORT_DIPSETTING(    0x00, "Medium" );
@@ -894,7 +894,7 @@ public class toaplan1
 	
 		TOAPLAN1_SYSTEM_INPUTS
 	
-		PORT_START		/* Territory Jumper Block */
+		PORT_START(); 		/* Territory Jumper Block */
 		PORT_DIPNAME( 0x03, 0x02, "Territory/Copyright" );
 		PORT_DIPSETTING(    0x02, "World/Taito Japan" );
 		PORT_DIPSETTING(    0x03, "US/Toaplan" );
@@ -910,7 +910,7 @@ public class toaplan1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_samesame = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* VBlank */
+		PORT_START(); 		/* VBlank */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_VBLANK );
 		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
@@ -918,7 +918,7 @@ public class toaplan1
 	
 		TOAPLAN1_PLAYER_INPUT( IPF_COCKTAIL, IPT_UNKNOWN )
 	
-		PORT_START		/* DSW A */
+		PORT_START(); 		/* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
@@ -954,7 +954,7 @@ public class toaplan1
 		PORT_DIPSETTING(    0x40, DEF_STR( "1C_2C") );
 	*/
 	
-		PORT_START		/* DSW B */
+		PORT_START(); 		/* DSW B */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x01, "Easy" );
 		PORT_DIPSETTING(    0x00, "Medium" );
@@ -979,7 +979,7 @@ public class toaplan1
 	
 		TOAPLAN1_SYSTEM_INPUTS
 	
-		PORT_START		/* Territory Jumper Block */
+		PORT_START(); 		/* Territory Jumper Block */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -996,7 +996,7 @@ public class toaplan1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_fireshrk = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* VBlank */
+		PORT_START(); 		/* VBlank */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_VBLANK );
 		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
@@ -1004,7 +1004,7 @@ public class toaplan1
 	
 		TOAPLAN1_PLAYER_INPUT( IPF_PLAYER2, IPT_UNKNOWN )
 	
-		PORT_START		/* DSW A */
+		PORT_START(); 		/* DSW A */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unused") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -1026,7 +1026,7 @@ public class toaplan1
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_4C") );
 		PORT_DIPSETTING(    0xc0, DEF_STR( "1C_6C") );
 	
-		PORT_START		/* DSW B */
+		PORT_START(); 		/* DSW B */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x01, "Easy" );
 		PORT_DIPSETTING(    0x00, "Medium" );
@@ -1051,7 +1051,7 @@ public class toaplan1
 	
 		TOAPLAN1_SYSTEM_INPUTS
 	
-		PORT_START		/* Territory Jumper Block */
+		PORT_START(); 		/* Territory Jumper Block */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -1066,7 +1066,7 @@ public class toaplan1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_outzone = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* VBlank */
+		PORT_START(); 		/* VBlank */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_VBLANK );
 		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
@@ -1074,7 +1074,7 @@ public class toaplan1
 	
 		TOAPLAN1_PLAYER_INPUT( IPF_PLAYER2, IPT_BUTTON3 )
 	
-		PORT_START		/* DSW A */
+		PORT_START(); 		/* DSW A */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unused") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -1096,7 +1096,7 @@ public class toaplan1
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_4C") );
 		PORT_DIPSETTING(    0xc0, DEF_STR( "1C_6C") );
 	
-		PORT_START		/* DSW B */
+		PORT_START(); 		/* DSW B */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x01, "Easy" );
 		PORT_DIPSETTING(    0x00, "Medium" );
@@ -1121,7 +1121,7 @@ public class toaplan1
 	
 		TOAPLAN1_SYSTEM_INPUTS
 	
-		PORT_START		/* Territory Jumper Block */
+		PORT_START(); 		/* Territory Jumper Block */
 		PORT_DIPNAME( 0x07, 0x02, "Territory" );
 		PORT_DIPSETTING(    0x02, "Europe" );
 		PORT_DIPSETTING(    0x01, "US" );
@@ -1136,7 +1136,7 @@ public class toaplan1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_vimana = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* VBlank */
+		PORT_START(); 		/* VBlank */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_VBLANK );
 		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
@@ -1144,7 +1144,7 @@ public class toaplan1
 	
 		TOAPLAN1_PLAYER_INPUT( IPF_PLAYER2, IPT_BUTTON3 )
 	
-		PORT_START		/* DSW A */
+		PORT_START(); 		/* DSW A */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unused") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -1166,7 +1166,7 @@ public class toaplan1
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_4C") );
 		PORT_DIPSETTING(    0xc0, DEF_STR( "1C_6C") );
 	
-		PORT_START		/* DSW B */
+		PORT_START(); 		/* DSW B */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x01, "Easy" );
 		PORT_DIPSETTING(    0x00, "Medium" );
@@ -1191,7 +1191,7 @@ public class toaplan1
 	
 		TOAPLAN1_SYSTEM_INPUTS
 	
-		PORT_START		/* Territory Jumper Block */
+		PORT_START(); 		/* Territory Jumper Block */
 		PORT_DIPNAME( 0x0f, 0x02, "Territory" );
 		PORT_DIPSETTING(    0x02, "Europe" );
 		PORT_DIPSETTING(    0x01, "US" );
@@ -1213,7 +1213,7 @@ public class toaplan1
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_vimanan = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* VBlank */
+		PORT_START(); 		/* VBlank */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_VBLANK );
 		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
@@ -1221,7 +1221,7 @@ public class toaplan1
 	
 		TOAPLAN1_PLAYER_INPUT( IPF_PLAYER2, IPT_BUTTON3 )
 	
-		PORT_START		/* DSW A */
+		PORT_START(); 		/* DSW A */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unused") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -1257,7 +1257,7 @@ public class toaplan1
 		PORT_DIPSETTING(    0xc0, DEF_STR( "1C_6C") );
 	*/
 	
-		PORT_START		/* DSW B */
+		PORT_START(); 		/* DSW B */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x01, "Easy" );
 		PORT_DIPSETTING(    0x00, "Medium" );
@@ -1282,7 +1282,7 @@ public class toaplan1
 	
 		TOAPLAN1_SYSTEM_INPUTS
 	
-		PORT_START		/* Territory Jumper Block */
+		PORT_START(); 		/* Territory Jumper Block */
 		PORT_DIPNAME( 0x0f, 0x02, "Territory" );
 		PORT_DIPSETTING(    0x02, "Europe" );
 		PORT_DIPSETTING(    0x01, "US" );

@@ -582,7 +582,7 @@ public class airbustr
 	
 	static InputPortPtr input_ports_airbustr = new InputPortPtr(){ public void handler() { 
 	
-		PORT_START	// IN0 - Player 1
+		PORT_START(); 	// IN0 - Player 1
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY );
@@ -592,7 +592,7 @@ public class airbustr
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN1 - Player 2
+		PORT_START(); 	// IN1 - Player 2
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY | IPF_PLAYER2 );
@@ -602,7 +602,7 @@ public class airbustr
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN2 - Service
+		PORT_START(); 	// IN2 - Service
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN1 );
@@ -612,7 +612,7 @@ public class airbustr
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN3 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );// used
 	
-		PORT_START	// IN3 - DSW-1
+		PORT_START(); 	// IN3 - DSW-1
 		PORT_DIPNAME( 0x01, 0x01, "Unknown 1-0" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -634,7 +634,7 @@ public class airbustr
 		PORT_DIPSETTING(    0x00, DEF_STR( "2C_3C") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_2C") );
 	
-		PORT_START	// IN4 - DSW-2
+		PORT_START(); 	// IN4 - DSW-2
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x02, "Easy" );
 		PORT_DIPSETTING(    0x03, "Normal" );

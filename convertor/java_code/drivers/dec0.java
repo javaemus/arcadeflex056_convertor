@@ -384,7 +384,7 @@ public class dec0
 	/******************************************************************************/
 	
 	#define DEC0_PLAYER1_CONTROL \
-		PORT_START /* Player 1 controls */ \
+		PORT_START();  /* Player 1 controls */ \
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY );\
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );\
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );\
@@ -395,7 +395,7 @@ public class dec0
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );/* Button 4 - unused */
 	
 	#define DEC0_PLAYER2_CONTROL \
-		PORT_START /* Player 2 controls */ \
+		PORT_START();  /* Player 2 controls */ \
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_COCKTAIL );\
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );\
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );\
@@ -406,7 +406,7 @@ public class dec0
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );/* Button 4 - unused */
 	
 	#define DEC0_MACHINE_CONTROL \
-		PORT_START /* Credits, start buttons */ \
+		PORT_START();  /* Credits, start buttons */ \
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );/* PL1 Button 5 - unused */ \
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );/* PL2 Button 5 - unused */ \
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1 );\
@@ -433,7 +433,7 @@ public class dec0
 		DEC0_PLAYER2_CONTROL
 		DEC0_MACHINE_CONTROL
 	
-		PORT_START	/* Dip switch bank 1 */
+		PORT_START(); 	/* Dip switch bank 1 */
 		DEC0_COIN_SETTING
 		PORT_SERVICE( 0x10, IP_ACTIVE_LOW );
 		PORT_DIPNAME( 0x20, 0x20, DEF_STR( "Demo_Sounds") );
@@ -446,7 +446,7 @@ public class dec0
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* Dip switch bank 2 */
+		PORT_START(); 	/* Dip switch bank 2 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x01, "1" );
 		PORT_DIPSETTING(    0x03, "3" );
@@ -469,10 +469,10 @@ public class dec0
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* player 1 12-way rotary control - converted in controls_r() */
+		PORT_START(); 	/* player 1 12-way rotary control - converted in controls_r() */
 		PORT_ANALOGX( 0xff, 0x00, IPT_DIAL | IPF_REVERSE, 25, 10, 0, 0, KEYCODE_Z, KEYCODE_X, 0, 0 );
 	
-		PORT_START	/* player 2 12-way rotary control - converted in controls_r() */
+		PORT_START(); 	/* player 2 12-way rotary control - converted in controls_r() */
 		PORT_ANALOGX( 0xff, 0x00, IPT_DIAL | IPF_REVERSE | IPF_PLAYER2, 25, 10, 0, 0, KEYCODE_N, KEYCODE_M, 0, 0 );
 	INPUT_PORTS_END(); }}; 
 	
@@ -481,7 +481,7 @@ public class dec0
 		DEC0_PLAYER2_CONTROL
 		DEC0_MACHINE_CONTROL
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		DEC0_COIN_SETTING
 		PORT_SERVICE( 0x10, IP_ACTIVE_LOW );
 		PORT_DIPNAME( 0x20, 0x20, DEF_STR( "Demo_Sounds") );
@@ -494,7 +494,7 @@ public class dec0
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* Dip switch bank 2 */
+		PORT_START(); 	/* Dip switch bank 2 */
 		PORT_DIPNAME( 0x03, 0x02, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x01, "1" );
 		PORT_DIPSETTING(    0x03, "2" );
@@ -518,10 +518,10 @@ public class dec0
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* player 1 12-way rotary control - converted in controls_r() */
+		PORT_START(); 	/* player 1 12-way rotary control - converted in controls_r() */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );/* unused */
 	
-		PORT_START	/* player 2 12-way rotary control - converted in controls_r() */
+		PORT_START(); 	/* player 2 12-way rotary control - converted in controls_r() */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNKNOWN );/* unused */
 	INPUT_PORTS_END(); }}; 
 	
@@ -530,7 +530,7 @@ public class dec0
 		DEC0_PLAYER2_CONTROL
 		DEC0_MACHINE_CONTROL
 	
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		DEC0_COIN_SETTING
 		PORT_DIPNAME( 0x10, 0x10, DEF_STR( "Unused") );
 		PORT_DIPSETTING(    0x10, DEF_STR( "Off") );
@@ -545,7 +545,7 @@ public class dec0
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START	/* Dip switch bank 2 */
+		PORT_START(); 	/* Dip switch bank 2 */
 		PORT_DIPNAME( 0x03, 0x03, "Player Energy" );
 		PORT_DIPSETTING(    0x01, "Low" );
 		PORT_DIPSETTING(    0x03, "Medium" );
@@ -575,7 +575,7 @@ public class dec0
 		DEC0_PLAYER2_CONTROL
 		DEC0_MACHINE_CONTROL
 	
-		PORT_START	/* Dip switch bank 1 */
+		PORT_START(); 	/* Dip switch bank 1 */
 		DEC0_COIN_SETTING
 		PORT_DIPNAME( 0x10, 0x10, DEF_STR( "Unused") );
 		PORT_DIPSETTING(    0x10, DEF_STR( "Off") );
@@ -590,7 +590,7 @@ public class dec0
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* Dip switch bank 2 */
+		PORT_START(); 	/* Dip switch bank 2 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x01, "1" );
 		PORT_DIPSETTING(    0x03, "2" );
@@ -613,12 +613,12 @@ public class dec0
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_VBLANK );
 	INPUT_PORTS_END(); }}; 
 	
 	#define DEC1_PLAYER1_CONTROL \
-		PORT_START /* Player 1 controls */ \
+		PORT_START();  /* Player 1 controls */ \
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY );\
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );\
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );\
@@ -629,7 +629,7 @@ public class dec0
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
 	#define DEC1_PLAYER2_CONTROL \
-		PORT_START /* Player 2 controls */ \
+		PORT_START();  /* Player 2 controls */ \
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_COCKTAIL );\
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );\
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );\
@@ -644,7 +644,7 @@ public class dec0
 		DEC1_PLAYER1_CONTROL
 		DEC1_PLAYER2_CONTROL
 	
-		PORT_START	/* Credits, start buttons */
+		PORT_START(); 	/* Credits, start buttons */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -654,7 +654,7 @@ public class dec0
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* Dip switch bank 1 */
+		PORT_START(); 	/* Dip switch bank 1 */
 		DEC0_COIN_SETTING
 		PORT_SERVICE( 0x10, IP_ACTIVE_LOW );
 		PORT_DIPNAME( 0x20, 0x20, DEF_STR( "Demo_Sounds") );
@@ -667,7 +667,7 @@ public class dec0
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START	/* Dip switch bank 2 */
+		PORT_START(); 	/* Dip switch bank 2 */
 		PORT_DIPNAME( 0x03, 0x03, "Energy" );
 		PORT_DIPSETTING(    0x01, "Low" );
 		PORT_DIPSETTING(    0x03, "Medium" );
@@ -696,7 +696,7 @@ public class dec0
 		DEC1_PLAYER1_CONTROL
 		DEC1_PLAYER2_CONTROL
 	
-		PORT_START	/* Credits */
+		PORT_START(); 	/* Credits */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -706,7 +706,7 @@ public class dec0
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* Dip switch bank 1 */
+		PORT_START(); 	/* Dip switch bank 1 */
 		DEC0_COIN_SETTING
 		PORT_DIPNAME( 0x10, 0x10, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x10, DEF_STR( "Off") );
@@ -721,7 +721,7 @@ public class dec0
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* Dip switch bank 2 */
+		PORT_START(); 	/* Dip switch bank 2 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x01, "1" );
 		PORT_DIPSETTING(    0x03, "3" );
@@ -745,10 +745,10 @@ public class dec0
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* player 1 12-way rotary control - converted in controls_r() */
+		PORT_START(); 	/* player 1 12-way rotary control - converted in controls_r() */
 		PORT_ANALOGX( 0xff, 0x00, IPT_DIAL | IPF_REVERSE, 25, 10, 0, 0, KEYCODE_Z, KEYCODE_X, 0, 0 );
 	
-		PORT_START	/* player 2 12-way rotary control - converted in controls_r() */
+		PORT_START(); 	/* player 2 12-way rotary control - converted in controls_r() */
 		PORT_ANALOGX( 0xff, 0x00, IPT_DIAL | IPF_REVERSE | IPF_PLAYER2, 25, 10, 0, 0, KEYCODE_N, KEYCODE_M, 0, 0 );
 	INPUT_PORTS_END(); }}; 
 	
@@ -756,7 +756,7 @@ public class dec0
 		DEC1_PLAYER1_CONTROL
 		DEC1_PLAYER2_CONTROL
 	
-		PORT_START	/* Credits, start buttons */
+		PORT_START(); 	/* Credits, start buttons */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -766,7 +766,7 @@ public class dec0
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* Dip switch bank 1 */
+		PORT_START(); 	/* Dip switch bank 1 */
 		DEC0_COIN_SETTING
 		PORT_DIPNAME( 0x10, 0x10, DEF_STR( "Unused") );
 		PORT_DIPSETTING(    0x10, DEF_STR( "Off") );
@@ -781,7 +781,7 @@ public class dec0
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
 	
-		PORT_START	/* Dip switch bank 2 */
+		PORT_START(); 	/* Dip switch bank 2 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "2" );
 		PORT_DIPSETTING(    0x03, "3" );

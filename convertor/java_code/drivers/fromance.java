@@ -342,7 +342,7 @@ public class fromance
 	 *************************************/
 	
 	#define FROMANCE_KEYMATRIX1 \
-		PORT_START \
+		PORT_START();  \
 		PORT_BITX(0x01, IP_ACTIVE_LOW, 0, "P1 A", KEYCODE_A, IP_JOY_NONE );\
 		PORT_BITX(0x02, IP_ACTIVE_LOW, 0, "P1 E", KEYCODE_E, IP_JOY_NONE );\
 		PORT_BITX(0x04, IP_ACTIVE_LOW, 0, "P1 I", KEYCODE_I, IP_JOY_NONE );\
@@ -353,7 +353,7 @@ public class fromance
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );\
 	
 	#define FROMANCE_KEYMATRIX2 \
-		PORT_START \
+		PORT_START();  \
 		PORT_BITX(0x01, IP_ACTIVE_LOW, 0, "P1 B", KEYCODE_B, IP_JOY_NONE );\
 		PORT_BITX(0x02, IP_ACTIVE_LOW, 0, "P1 F", KEYCODE_F, IP_JOY_NONE );\
 		PORT_BITX(0x04, IP_ACTIVE_LOW, 0, "P1 J", KEYCODE_J, IP_JOY_NONE );\
@@ -364,7 +364,7 @@ public class fromance
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );\
 	
 	#define FROMANCE_KEYMATRIX3 \
-		PORT_START \
+		PORT_START();  \
 		PORT_BITX(0x01, IP_ACTIVE_LOW, 0, "P1 C", KEYCODE_C, IP_JOY_NONE );\
 		PORT_BITX(0x02, IP_ACTIVE_LOW, 0, "P1 G", KEYCODE_G, IP_JOY_NONE );\
 		PORT_BITX(0x04, IP_ACTIVE_LOW, 0, "P1 K", KEYCODE_K, IP_JOY_NONE );\
@@ -375,7 +375,7 @@ public class fromance
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );\
 	
 	#define FROMANCE_KEYMATRIX4 \
-		PORT_START \
+		PORT_START();  \
 		PORT_BITX(0x01, IP_ACTIVE_LOW, 0, "P1 D", KEYCODE_D, IP_JOY_NONE );\
 		PORT_BITX(0x02, IP_ACTIVE_LOW, 0, "P1 H", KEYCODE_H, IP_JOY_NONE );\
 		PORT_BITX(0x04, IP_ACTIVE_LOW, 0, "P1 L", KEYCODE_L, IP_JOY_NONE );\
@@ -386,7 +386,7 @@ public class fromance
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 	#define FROMANCE_KEYMATRIX5 \
-		PORT_START \
+		PORT_START();  \
 		PORT_BITX(0x01, IP_ACTIVE_LOW, 0, "P1 Last Chance", KEYCODE_RALT, IP_JOY_NONE );\
 		PORT_BITX(0x02, IP_ACTIVE_LOW, 0, "P1 Take Score", KEYCODE_RCONTROL, IP_JOY_NONE );\
 		PORT_BITX(0x04, IP_ACTIVE_LOW, 0, "P1 Double Up", KEYCODE_RSHIFT, IP_JOY_NONE );\
@@ -398,7 +398,7 @@ public class fromance
 	
 	
 	static InputPortPtr input_ports_idolmj = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) TEST SW */
+		PORT_START(); 	/* (0) TEST SW */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -408,7 +408,7 @@ public class fromance
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (1) COIN SW */
+		PORT_START(); 	/* (1) COIN SW */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -418,7 +418,7 @@ public class fromance
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );	// COIN1
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) DIPSW-1 */
+		PORT_START(); 	/* (2) DIPSW-1 */
 		PORT_DIPNAME( 0x01, 0x00, "DIPSW 1-1" );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -444,7 +444,7 @@ public class fromance
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START	/* (3) DIPSW-2 */
+		PORT_START(); 	/* (3) DIPSW-2 */
 		PORT_DIPNAME( 0x01, 0x00, "DIPSW 2-1" );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -479,7 +479,7 @@ public class fromance
 	
 	
 	static InputPortPtr input_ports_fromance = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) TEST SW */
+		PORT_START(); 	/* (0) TEST SW */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -489,7 +489,7 @@ public class fromance
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (1) COIN SW */
+		PORT_START(); 	/* (1) COIN SW */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -499,7 +499,7 @@ public class fromance
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );	// COIN1
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) DIPSW-1 */
+		PORT_START(); 	/* (2) DIPSW-1 */
 		PORT_DIPNAME( 0x01, 0x00, "DIPSW 1-1" );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -523,7 +523,7 @@ public class fromance
 		PORT_DIPSETTING(    0x40, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_HIGH );
 	
-		PORT_START	/* (3) DIPSW-2 */
+		PORT_START(); 	/* (3) DIPSW-2 */
 		PORT_DIPNAME( 0x01, 0x00, "DIPSW 2-1" );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -558,7 +558,7 @@ public class fromance
 	
 	
 	static InputPortPtr input_ports_nmsengen = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) TEST SW */
+		PORT_START(); 	/* (0) TEST SW */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -568,7 +568,7 @@ public class fromance
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (1) COIN SW */
+		PORT_START(); 	/* (1) COIN SW */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -578,7 +578,7 @@ public class fromance
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );	// COIN1
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) DIPSW-1 */
+		PORT_START(); 	/* (2) DIPSW-1 */
 		PORT_DIPNAME( 0x01, 0x00, "DIPSW 1-1" );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -602,7 +602,7 @@ public class fromance
 		PORT_DIPSETTING(    0x40, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_HIGH );
 	
-		PORT_START	/* (3) DIPSW-2 */
+		PORT_START(); 	/* (3) DIPSW-2 */
 		PORT_DIPNAME( 0x01, 0x00, "DIPSW 2-1" );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -637,7 +637,7 @@ public class fromance
 	
 	
 	static InputPortPtr input_ports_daiyogen = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) TEST SW */
+		PORT_START(); 	/* (0) TEST SW */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -647,7 +647,7 @@ public class fromance
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (1) COIN SW */
+		PORT_START(); 	/* (1) COIN SW */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -657,7 +657,7 @@ public class fromance
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );	// COIN1
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) DIPSW-1 */
+		PORT_START(); 	/* (2) DIPSW-1 */
 		PORT_DIPNAME( 0x01, 0x00, "DIPSW 1-1" );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -683,7 +683,7 @@ public class fromance
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START	/* (3) DIPSW-2 */
+		PORT_START(); 	/* (3) DIPSW-2 */
 		PORT_DIPNAME( 0x01, 0x00, "DIPSW 2-1" );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -718,7 +718,7 @@ public class fromance
 	
 	
 	static InputPortPtr input_ports_mfunclub = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) TEST SW */
+		PORT_START(); 	/* (0) TEST SW */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -728,7 +728,7 @@ public class fromance
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (1) COIN SW */
+		PORT_START(); 	/* (1) COIN SW */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -738,7 +738,7 @@ public class fromance
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );	// COIN1
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) DIPSW-1 */
+		PORT_START(); 	/* (2) DIPSW-1 */
 		PORT_DIPNAME( 0x01, 0x00, "DIPSW 1-1" );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -764,7 +764,7 @@ public class fromance
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START	/* (3) DIPSW-2 */
+		PORT_START(); 	/* (3) DIPSW-2 */
 		PORT_DIPNAME( 0x01, 0x00, "DIPSW 2-1" );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -799,7 +799,7 @@ public class fromance
 	
 	
 	static InputPortPtr input_ports_mjnatsu = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) TEST SW */
+		PORT_START(); 	/* (0) TEST SW */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -809,7 +809,7 @@ public class fromance
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (1) COIN SW */
+		PORT_START(); 	/* (1) COIN SW */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -819,7 +819,7 @@ public class fromance
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );	// COIN1
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) DIPSW-1 */
+		PORT_START(); 	/* (2) DIPSW-1 */
 		PORT_DIPNAME( 0x01, 0x00, "DIPSW 1-1" );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -845,7 +845,7 @@ public class fromance
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START	/* (3) DIPSW-2 */
+		PORT_START(); 	/* (3) DIPSW-2 */
 		PORT_DIPNAME( 0x01, 0x00, "DIPSW 2-1" );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );

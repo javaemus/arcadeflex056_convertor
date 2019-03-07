@@ -105,7 +105,7 @@ public class volfied
 	***********************************************************/
 	
 	static InputPortPtr input_ports_volfied = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* DSW A */
+		PORT_START(); 	/* DSW A */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Cocktail") );
@@ -127,7 +127,7 @@ public class volfied
 		PORT_DIPSETTING(    0x00, DEF_STR( "2C_3C") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_2C") );
 	
-		PORT_START	/* DSW B */
+		PORT_START(); 	/* DSW B */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x02, "Easy" );
 		PORT_DIPSETTING(    0x03, "Medium" );
@@ -150,16 +150,16 @@ public class volfied
 		PORT_DIPSETTING(    0x80, "Japanese" );
 		PORT_DIPSETTING(    0x00, "English" );
 	
-		PORT_START	/* f00007 */
+		PORT_START(); 	/* f00007 */
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_SERVICE1 );
 	
-		PORT_START  /* f00009 */
+		PORT_START();   /* f00009 */
 		PORT_BIT_IMPULSE( 0x01, IP_ACTIVE_HIGH, IPT_COIN1, 1 );
 		PORT_BIT_IMPULSE( 0x02, IP_ACTIVE_HIGH, IPT_COIN2, 1 );
 	
-		PORT_START	/* f0000b */
+		PORT_START(); 	/* f0000b */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_TILT );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY );
@@ -167,7 +167,7 @@ public class volfied
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 );
 	
-		PORT_START	/* f0000d */
+		PORT_START(); 	/* f0000d */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_PLAYER2 );

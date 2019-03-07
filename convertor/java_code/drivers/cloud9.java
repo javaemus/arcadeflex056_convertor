@@ -140,7 +140,7 @@ public class cloud9
 	
 	
 	static InputPortPtr input_ports_cloud9 = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT ( 0x07, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_SERVICE( 0x08, IP_ACTIVE_LOW );
 		PORT_BIT ( 0x10, IP_ACTIVE_LOW, IPT_COIN3 );
@@ -148,23 +148,23 @@ public class cloud9
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_VBLANK );
 	
-		PORT_START		/* IN1 */
+		PORT_START(); 		/* IN1 */
 		PORT_BIT ( 0x0F, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT ( 0x10, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT ( 0x20, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START		/* IN2 */
+		PORT_START(); 		/* IN2 */
 		PORT_ANALOG( 0xff, 0x7f, IPT_TRACKBALL_Y | IPF_REVERSE, 30, 30, 0, 0 );
 	
-		PORT_START		/* IN3 */
+		PORT_START(); 		/* IN3 */
 		PORT_ANALOG( 0xff, 0x7f, IPT_TRACKBALL_X, 30, 30, 0, 0 );
 	
-		PORT_START	/* IN4 */ /* DSW1 */
+		PORT_START(); 	/* IN4 */ /* DSW1 */
 		PORT_BIT ( 0xFF, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START	/* IN5 */ /* DSW2 */
+		PORT_START(); 	/* IN5 */ /* DSW2 */
 		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_DIPNAME( 0x06, 0x04, DEF_STR( "Coinage") );
 		PORT_DIPSETTING (	0x06, DEF_STR( "2C_1C") );

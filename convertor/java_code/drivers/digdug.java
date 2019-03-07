@@ -203,7 +203,7 @@ public class digdug
 	
 	/* input from the outside world */
 	static InputPortPtr input_ports_digdug = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* DSW0 */
+		PORT_START(); 	/* DSW0 */
 		PORT_DIPNAME( 0x07, 0x01, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(    0x07, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "2C_1C") );
@@ -229,7 +229,7 @@ public class digdug
 		PORT_DIPSETTING(    0x80, "3" );
 		PORT_DIPSETTING(    0xc0, "5" );
 	
-		PORT_START	/* DSW1 */
+		PORT_START(); 	/* DSW1 */
 		PORT_DIPNAME( 0xc0, 0x00, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x40, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_1C") );
@@ -253,7 +253,7 @@ public class digdug
 		PORT_DIPSETTING(    0x01, "Hard" );
 		PORT_DIPSETTING(    0x03, "Hardest" );
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		/* The player inputs are not memory mapped, they are handled by an I/O chip. */
 		/* These fake input ports are read by digdug_customio_data_r() */
 	        PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_4WAY );
@@ -264,7 +264,7 @@ public class digdug
 	        PORT_BITX(0x20, IP_ACTIVE_LOW, IPT_BUTTON1, 0, IP_KEY_PREVIOUS, IP_JOY_PREVIOUS );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 	        PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_4WAY | IPF_COCKTAIL );
 	        PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL );
 	        PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_4WAY | IPF_COCKTAIL );
@@ -273,7 +273,7 @@ public class digdug
 	        PORT_BITX(0x20, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL, 0, IP_KEY_PREVIOUS, IP_JOY_PREVIOUS );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		PORT_BIT_IMPULSE( 0x01, IP_ACTIVE_LOW, IPT_COIN1, 1 );
 		PORT_BIT_IMPULSE( 0x02, IP_ACTIVE_LOW, IPT_COIN2, 1 );
 		PORT_BIT( 0x0c, IP_ACTIVE_LOW, IPT_UNUSED );

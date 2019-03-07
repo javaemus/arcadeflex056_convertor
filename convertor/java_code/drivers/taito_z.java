@@ -1531,7 +1531,7 @@ public class taito_z
 	***********************************************************/
 	
 	static InputPortPtr input_ports_contcirc = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -1553,7 +1553,7 @@ public class taito_z
 		PORT_DIPSETTING(    0x40, DEF_STR( "1C_4C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_6C") );
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x03, "Normal" );
 		PORT_DIPSETTING(    0x02, "Easy" );
@@ -1578,7 +1578,7 @@ public class taito_z
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN2 );
@@ -1588,7 +1588,7 @@ public class taito_z
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_BUTTON5 | IPF_PLAYER1 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER1 );/* main accel key */
 	
-		PORT_START      /* IN1: b3 not mapped: standardized on holding b4=lo gear */
+		PORT_START();       /* IN1: b3 not mapped: standardized on holding b4=lo gear */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_TILT );
@@ -1598,13 +1598,13 @@ public class taito_z
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_BUTTON7 | IPF_PLAYER1 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_BUTTON2 | IPF_PLAYER1 );/* main brake key */
 	
-		PORT_START      /* IN2, unused */
+		PORT_START();       /* IN2, unused */
 	
-		PORT_START      /* IN3, "handle" i.e. steering */
+		PORT_START();       /* IN3, "handle" i.e. steering */
 	//	PORT_ANALOG( 0xffff, 0x8000, IPT_AD_STICK_X | IPF_REVERSE | IPF_PLAYER1, 50, 15, 0xff9f, 0x60);
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_REVERSE | IPF_PLAYER1, 50, 15, 0x00, 0xff);
 	
-		PORT_START      /* IN4, fake allowing digital steer */
+		PORT_START();       /* IN4, fake allowing digital steer */
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_PLAYER1 );
 		PORT_DIPNAME( 0x10, 0x00, "Steering type" );
@@ -1613,7 +1613,7 @@ public class taito_z
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_chasehq = new InputPortPtr(){ public void handler() { 	// IN3-6 perhaps used with cockpit setup? //
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x03, "Upright / Steering Lock" );
 		PORT_DIPSETTING(    0x02, "Upright / No Steering Lock" );
@@ -1634,7 +1634,7 @@ public class taito_z
 		PORT_DIPSETTING(    0x40, DEF_STR( "1C_4C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_6C") );
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x03, "Normal" );
 		PORT_DIPSETTING(    0x02, "Easy" );
@@ -1658,7 +1658,7 @@ public class taito_z
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN1 );
@@ -1668,7 +1668,7 @@ public class taito_z
 		PORT_BIT( 0x40, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_BUTTON3 | IPF_PLAYER1 );/* turbo */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_TILT );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_UNKNOWN );
@@ -1678,9 +1678,9 @@ public class taito_z
 		PORT_BIT( 0x40, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
-		PORT_START      /* IN2, unused */
+		PORT_START();       /* IN2, unused */
 	
-		PORT_START      /* IN3, ??? */
+		PORT_START();       /* IN3, ??? */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -1690,7 +1690,7 @@ public class taito_z
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN4, ??? */
+		PORT_START();       /* IN4, ??? */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -1700,7 +1700,7 @@ public class taito_z
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN5, ??? */
+		PORT_START();       /* IN5, ??? */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -1710,7 +1710,7 @@ public class taito_z
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN6, ??? */
+		PORT_START();       /* IN6, ??? */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -1720,11 +1720,11 @@ public class taito_z
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN7, steering */
+		PORT_START();       /* IN7, steering */
 	//	PORT_ANALOG( 0xffff, 0x8000, IPT_AD_STICK_X | IPF_PLAYER1, 50, 25, 0xff80, 0x7f );
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_PLAYER1, 50, 25, 0x00, 0xff );
 	
-		PORT_START      /* IN8, fake allowing digital steer */
+		PORT_START();       /* IN8, fake allowing digital steer */
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_PLAYER1 );
 		PORT_DIPNAME( 0x10, 0x00, "Steering type" );
@@ -1733,7 +1733,7 @@ public class taito_z
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_bshark = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, "Mirror screen" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1755,7 +1755,7 @@ public class taito_z
 		PORT_DIPSETTING(    0x40, DEF_STR( "1C_4C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_6C") );
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x03, "Normal" );
 		PORT_DIPSETTING(    0x02, "Easy" );
@@ -1780,7 +1780,7 @@ public class taito_z
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -1790,9 +1790,9 @@ public class taito_z
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN1, unused */
+		PORT_START();       /* IN1, unused */
 	
-		PORT_START      /* IN2, b2-5 affect sound num in service mode but otherwise useless (?) */
+		PORT_START();       /* IN2, b2-5 affect sound num in service mode but otherwise useless (?) */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
@@ -1802,21 +1802,21 @@ public class taito_z
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );/* "Fire" */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON6 | IPF_PLAYER1 );/* same as "Fire" */
 	
-		PORT_START	/* values chosen to match allowed crosshair area */
+		PORT_START(); 	/* values chosen to match allowed crosshair area */
 		PORT_ANALOG( 0xff, 0x00, IPT_AD_STICK_X | IPF_REVERSE | IPF_PLAYER1, 20, 4, 0xcc, 0x35);
 	
-		PORT_START	/* "X adjust" */
+		PORT_START(); 	/* "X adjust" */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* values chosen to match allowed crosshair area */
+		PORT_START(); 	/* values chosen to match allowed crosshair area */
 		PORT_ANALOG( 0xff, 0x00, IPT_AD_STICK_Y | IPF_PLAYER1, 20, 4, 0xd5, 0x32);
 	
-		PORT_START	/* "Y adjust" */
+		PORT_START(); 	/* "Y adjust" */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_sci = new InputPortPtr(){ public void handler() { 	// dsws may be slightly wrong
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x01, "Cockpit" );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
@@ -1838,7 +1838,7 @@ public class taito_z
 		PORT_DIPSETTING(    0x40, DEF_STR( "1C_4C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_6C") );
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x03, "Normal" );
 		PORT_DIPSETTING(    0x02, "Easy" );
@@ -1862,7 +1862,7 @@ public class taito_z
 		PORT_DIPSETTING(    0x80, "Normal" );
 		PORT_DIPSETTING(    0x00, "Low" );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER1 );/* fire */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN1 );
@@ -1872,7 +1872,7 @@ public class taito_z
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_BUTTON5 | IPF_PLAYER1 );/* turbo */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_TILT );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_BUTTON6 | IPF_PLAYER1 );/* "center" */
@@ -1882,12 +1882,12 @@ public class taito_z
 		PORT_BIT( 0x40, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
-		PORT_START      /* IN2, unused */
+		PORT_START();       /* IN2, unused */
 	
-		PORT_START      /* IN3, steering */
+		PORT_START();       /* IN3, steering */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_PLAYER1, 50, 15, 0x00, 0xff );
 	
-		PORT_START      /* IN4, fake allowing digital steer */
+		PORT_START();       /* IN4, fake allowing digital steer */
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_PLAYER1 );
 		PORT_DIPNAME( 0x10, 0x00, "Steering type" );
@@ -1896,7 +1896,7 @@ public class taito_z
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_nightstr = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1918,7 +1918,7 @@ public class taito_z
 		PORT_DIPSETTING(    0x40, DEF_STR( "1C_4C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_6C") );
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x03, "Normal" );
 		PORT_DIPSETTING(    0x02, "Easy" );
@@ -1943,7 +1943,7 @@ public class taito_z
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -1953,9 +1953,9 @@ public class taito_z
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_TILT );
 	
-		PORT_START      /* IN1, unused */
+		PORT_START();       /* IN1, unused */
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
@@ -1965,23 +1965,23 @@ public class taito_z
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 	
-		PORT_START
+		PORT_START(); 
 	//	PORT_ANALOG( 0xff, 0x00, IPT_AD_STICK_X | IPF_PLAYER1, 20, 10, 0xb8, 0x49);
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_PLAYER1, 40, 10, 0x00, 0xff);
 	
-		PORT_START
+		PORT_START(); 
 	//	PORT_ANALOG( 0xff, 0x00, IPT_AD_STICK_Y | IPF_REVERSE | IPF_PLAYER1, 20, 10, 0xb8, 0x49);
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y | IPF_REVERSE | IPF_PLAYER1, 40, 10, 0x00, 0xff);
 	
-		PORT_START	/* X offset */
+		PORT_START(); 	/* X offset */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* Y offset */
+		PORT_START(); 	/* Y offset */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_aquajack = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Cabinet") );
 		PORT_DIPSETTING(    0x80, "Cockpit" );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
@@ -2003,7 +2003,7 @@ public class taito_z
 		PORT_DIPSETTING(    0x01, DEF_STR( "1C_4C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_6C") );
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		PORT_DIPNAME( 0xc0, 0xc0, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0xc0, "Normal" );
 		PORT_DIPSETTING(    0x40, "Easy" );
@@ -2026,7 +2026,7 @@ public class taito_z
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN1 );
@@ -2036,7 +2036,7 @@ public class taito_z
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
@@ -2046,12 +2046,12 @@ public class taito_z
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2, what is it ??? */
+		PORT_START();       /* IN2, what is it ??? */
 		PORT_ANALOG( 0xff, 0x80, IPT_DIAL | IPF_PLAYER1, 50, 10, 0, 0 );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_spacegun = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -2073,7 +2073,7 @@ public class taito_z
 		PORT_DIPSETTING(    0x40, DEF_STR( "1C_4C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_6C") );
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x03, "Normal" );
 		PORT_DIPSETTING(    0x02, "Easy" );
@@ -2098,7 +2098,7 @@ public class taito_z
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN2 );
@@ -2108,9 +2108,9 @@ public class taito_z
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1);
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2);
 	
-		PORT_START      /* IN1, unused */
+		PORT_START();       /* IN1, unused */
 	
-		PORT_START      /* IN2 */
+		PORT_START();       /* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
@@ -2120,26 +2120,26 @@ public class taito_z
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_REVERSE | IPF_PLAYER1, 20, 22, 0, 0xff);
 	
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y | IPF_PLAYER1, 20, 22, 0, 0xff);
 	
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_REVERSE | IPF_PLAYER2, 20, 22, 0, 0xff);
 	
-		PORT_START
+		PORT_START(); 
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y | IPF_PLAYER2, 20, 22, 0, 0xff);
 	
-		PORT_START	/* Fake DSW */
+		PORT_START(); 	/* Fake DSW */
 		PORT_BITX(    0x01, 0x00, IPT_DIPSWITCH_NAME | IPF_TOGGLE, "Show gun target", KEYCODE_F1, IP_JOY_NONE );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_dblaxle = new InputPortPtr(){ public void handler() { 
-		PORT_START /* DSW A */
+		PORT_START();  /* DSW A */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -2161,7 +2161,7 @@ public class taito_z
 		PORT_DIPSETTING(    0x40, DEF_STR( "1C_4C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_6C") );
 	
-		PORT_START /* DSW B */
+		PORT_START();  /* DSW B */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x03, "Normal" );
 		PORT_DIPSETTING(    0x02, "Easy" );
@@ -2186,7 +2186,7 @@ public class taito_z
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START      /* IN0 */
+		PORT_START();       /* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON4 | IPF_PLAYER1 );/* shift */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN1 );
@@ -2196,7 +2196,7 @@ public class taito_z
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON5 | IPF_PLAYER1 );/* "back" */
 	
-		PORT_START      /* IN1 */
+		PORT_START();       /* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER1 );/* nitro */
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_TILT );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON6 | IPF_PLAYER1 );/* "center" */
@@ -2206,13 +2206,13 @@ public class taito_z
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START      /* IN2, unused */
+		PORT_START();       /* IN2, unused */
 	
-		PORT_START      /* IN3, steering */
+		PORT_START();       /* IN3, steering */
 	//	PORT_ANALOG( 0xffff, 0x8000, IPT_AD_STICK_X | IPF_PLAYER1, 20, 10, 0xffc0, 0x3f );
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_PLAYER1, 40, 10, 0x00, 0xff );
 	
-		PORT_START      /* IN4, fake allowing digital steer */
+		PORT_START();       /* IN4, fake allowing digital steer */
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_2WAY | IPF_PLAYER1 );
 		PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_PLAYER1 );
 		PORT_DIPNAME( 0x10, 0x00, "Steering type" );

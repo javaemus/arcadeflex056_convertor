@@ -157,7 +157,7 @@ public class irobot
 	
 	
 	static InputPortPtr input_ports_irobot = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -167,7 +167,7 @@ public class irobot
 	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START	/* IN1 */
+		PORT_START(); 	/* IN1 */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -177,7 +177,7 @@ public class irobot
 	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -187,7 +187,7 @@ public class irobot
 	    PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* EXT DONE */
 	    PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_VBLANK );
 	
-		PORT_START /* DSW1 */
+		PORT_START();  /* DSW1 */
 		PORT_DIPNAME(    0x03, 0x00, "Coins Per Credit" );
 		PORT_DIPSETTING( 0x00, "1 Coin 1 Credit" );
 		PORT_DIPSETTING( 0x01, "2 Coins 1 Credit" );
@@ -210,7 +210,7 @@ public class irobot
 		PORT_DIPSETTING( 0x60, "2 Credits for 4 Coin Units" );
 		PORT_DIPSETTING( 0xe0, DEF_STR( "Free_Play") );
 	
-		PORT_START /* DSW2 */
+		PORT_START();  /* DSW2 */
 		PORT_DIPNAME(    0x01, 0x01, "Language" );
 		PORT_DIPSETTING( 0x01, "English" );
 		PORT_DIPSETTING( 0x00, "German" );
@@ -234,10 +234,10 @@ public class irobot
 		PORT_DIPSETTING( 0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING( 0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN4 */
+		PORT_START(); 	/* IN4 */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y | IPF_CENTER, 70, 50, 95, 159 );
 	
-		PORT_START	/* IN5 */
+		PORT_START(); 	/* IN5 */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_REVERSE | IPF_CENTER, 50, 50, 95, 159 );
 	
 	INPUT_PORTS_END(); }}; 

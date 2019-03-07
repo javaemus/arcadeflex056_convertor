@@ -336,7 +336,7 @@ public class meadows
 	};
 	
 	static InputPortPtr input_ports_meadows = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 buttons */
+		PORT_START(); 		/* IN0 buttons */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START1  );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -346,10 +346,10 @@ public class meadows
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START		/* IN1 control 1 */
+		PORT_START(); 		/* IN1 control 1 */
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 100, 10, 0x10, 0xf0 );
 	
-		PORT_START		/* IN2 dip switch */
+		PORT_START(); 		/* IN2 dip switch */
 		PORT_DIPNAME( 0x07, 0x01, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "2" );
 		PORT_DIPSETTING(    0x01, "3" );
@@ -373,7 +373,7 @@ public class meadows
 		PORT_DIPSETTING(    0xc0, "35000");
 		PORT_DIPSETTING(    0x00, "None");
 	
-		PORT_START		/* FAKE coinage */
+		PORT_START(); 		/* FAKE coinage */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 		PORT_BIT( 0x8e, IP_ACTIVE_LOW, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 

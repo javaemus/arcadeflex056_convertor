@@ -178,7 +178,7 @@ public class fuuki16
 	
 	static InputPortPtr input_ports_gogomile = new InputPortPtr(){ public void handler() { 
 	
-		PORT_START	// IN0 - $800000.w
+		PORT_START(); 	// IN0 - $800000.w
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_COIN1    );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_UNKNOWN  );
@@ -190,7 +190,7 @@ public class fuuki16
 		PORT_BIT(  0x0100, IP_ACTIVE_LOW, IPT_COIN2    );
 		PORT_BIT(  0xfe00, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 	
-		PORT_START	// IN1 - $810000.w
+		PORT_START(); 	// IN1 - $810000.w
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER1 );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER1 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER1 );
@@ -209,7 +209,7 @@ public class fuuki16
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN                      );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN                      );
 	
-		PORT_START	// IN2 - $880000.w
+		PORT_START(); 	// IN2 - $880000.w
 		PORT_SERVICE( 0x0001, IP_ACTIVE_LOW );
 		PORT_DIPNAME( 0x0002, 0x0002, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "Off") );
@@ -262,7 +262,7 @@ public class fuuki16
 	   the coinage settings too. */
 	static InputPortPtr input_ports_gogomilj = new InputPortPtr(){ public void handler() { 
 	
-		PORT_START	// IN0 - $800000.w
+		PORT_START(); 	// IN0 - $800000.w
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_COIN1    );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_UNKNOWN  );
@@ -274,7 +274,7 @@ public class fuuki16
 		PORT_BIT(  0x0100, IP_ACTIVE_LOW, IPT_COIN2    );
 		PORT_BIT(  0xfe00, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 	
-		PORT_START	// IN1 - $810000.w
+		PORT_START(); 	// IN1 - $810000.w
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER1 );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER1 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER1 );
@@ -293,7 +293,7 @@ public class fuuki16
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN                      );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN                      );
 	
-		PORT_START	// IN2 - $880000.w
+		PORT_START(); 	// IN2 - $880000.w
 		PORT_SERVICE( 0x0001, IP_ACTIVE_LOW );
 		PORT_DIPNAME( 0x0002, 0x0002, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "Off") );
@@ -345,7 +345,7 @@ public class fuuki16
 	
 	static InputPortPtr input_ports_pbancho = new InputPortPtr(){ public void handler() { 
 	
-		PORT_START	// IN0 - $800000.w
+		PORT_START(); 	// IN0 - $800000.w
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_COIN1    );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_COIN2    );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_UNKNOWN  );
@@ -357,7 +357,7 @@ public class fuuki16
 		PORT_BIT(  0x0100, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT(  0xfe00, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 	
-		PORT_START	// IN1 - $810000.w
+		PORT_START(); 	// IN1 - $810000.w
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER1 );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER1 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER1 );
@@ -376,7 +376,7 @@ public class fuuki16
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN                      );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN                      );
 	
-		PORT_START	// IN2 - $880000.w
+		PORT_START(); 	// IN2 - $880000.w
 		PORT_SERVICE( 0x0001, IP_ACTIVE_LOW );
 		PORT_DIPNAME( 0x0002, 0x0002, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "Off") );

@@ -245,7 +245,7 @@ public class tempest
 	};
 	
 	static InputPortPtr input_ports_tempest = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN3 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN1 );
@@ -260,7 +260,7 @@ public class tempest
 	 	/* handled by tempest_IN0_r() */
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START	/* IN1/DSW0 */
+		PORT_START(); 	/* IN1/DSW0 */
 		/* This is the Tempest spinner input. It only uses 4 bits. */
 		PORT_ANALOG( 0x0f, 0x00, IPT_DIAL, 25, 20, 0, 0);
 		/* The next one is reponsible for cocktail mode.
@@ -274,7 +274,7 @@ public class tempest
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* IN2 */
+		PORT_START(); 	/* IN2 */
 		PORT_DIPNAME(  0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(     0x02, "Easy" );
 		PORT_DIPSETTING(     0x03, "Medium1" );
@@ -289,7 +289,7 @@ public class tempest
 		PORT_BIT(0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT(0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* DSW1 - (N13 on analog vector generator PCB */
+		PORT_START(); 	/* DSW1 - (N13 on analog vector generator PCB */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "1C_1C") );
@@ -313,7 +313,7 @@ public class tempest
 		PORT_DIPSETTING(    0xc0, "Freeze Mode" );
 		PORT_DIPSETTING(    0xe0, "Freeze Mode" );
 	
-		PORT_START	/* DSW2 - (L12 on analog vector generator PCB */
+		PORT_START(); 	/* DSW2 - (L12 on analog vector generator PCB */
 		PORT_DIPNAME( 0x01, 0x00, "Minimum" );
 		PORT_DIPSETTING(    0x00, "1 Credit" );
 		PORT_DIPSETTING(    0x01, "2 Credit" );

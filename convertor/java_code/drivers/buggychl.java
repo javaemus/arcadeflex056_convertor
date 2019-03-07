@@ -250,7 +250,7 @@ public class buggychl
 	/******************************************************************************/
 	
 	static InputPortPtr input_ports_buggychl = new InputPortPtr(){ public void handler() { 
-	    PORT_START	/* IN0 */
+	    PORT_START(); 	/* IN0 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -274,7 +274,7 @@ public class buggychl
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START /* IN1 */
+		PORT_START();  /* IN1 */
 		PORT_DIPNAME( 0x0f, 0x00, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(    0x0f, DEF_STR( "9C_1C") );
 		PORT_DIPSETTING(    0x0e, DEF_STR( "8C_1C") );
@@ -310,7 +310,7 @@ public class buggychl
 		PORT_DIPSETTING(    0x60, DEF_STR( "1C_7C") );
 		PORT_DIPSETTING(    0x70, DEF_STR( "1C_8C") );
 	
-		PORT_START /* IN2 */
+		PORT_START();  /* IN2 */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -336,7 +336,7 @@ public class buggychl
 		PORT_DIPSETTING(    0x80, "A and B" );
 		PORT_DIPSETTING(    0x00, "A only" );
 	
-		PORT_START /* IN3 */
+		PORT_START();  /* IN3 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 );
 	    PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	    PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );
@@ -346,10 +346,10 @@ public class buggychl
 	    PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	    PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
-		PORT_START /* IN4 - wheel */
+		PORT_START();  /* IN4 - wheel */
 		PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_REVERSE, 30, 15, 0, 0);
 	
-		PORT_START /* IN5 */
+		PORT_START();  /* IN5 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
 	    PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
 	    PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_SERVICE1 );

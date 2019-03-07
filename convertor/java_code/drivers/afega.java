@@ -144,7 +144,7 @@ public class afega
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_grdnstrm = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - $800000.w
+		PORT_START(); 	// IN0 - $800000.w
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_COIN1    );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_COIN2    );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -155,7 +155,7 @@ public class afega
 		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 	
-		PORT_START	// IN1 - $800002.w
+		PORT_START(); 	// IN1 - $800002.w
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER1 );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER1 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER1 );
@@ -174,7 +174,7 @@ public class afega
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN2 - $800004.w
+		PORT_START(); 	// IN2 - $800004.w
 		PORT_SERVICE( 0x0001, IP_ACTIVE_LOW );
 		PORT_DIPNAME( 0x0002, 0x0002, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "No") );
@@ -227,7 +227,7 @@ public class afega
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_stagger1 = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - $800000.w
+		PORT_START(); 	// IN0 - $800000.w
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_COIN1    );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_COIN2    );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -238,7 +238,7 @@ public class afega
 		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 	
-		PORT_START	// IN1 - $800002.w
+		PORT_START(); 	// IN1 - $800002.w
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER1 );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER1 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER1 );
@@ -257,7 +257,7 @@ public class afega
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN2 - $800004.w
+		PORT_START(); 	// IN2 - $800004.w
 		PORT_SERVICE( 0x0001, IP_ACTIVE_LOW );
 		PORT_DIPNAME( 0x0002, 0x0002, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "No") );

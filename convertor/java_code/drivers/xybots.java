@@ -132,7 +132,7 @@ public class xybots
 	 *************************************/
 	
 	static InputPortPtr input_ports_xybots = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* ffe100 */
+		PORT_START(); 	/* ffe100 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BITX(0x0004, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2, "P2 Twist Right", KEYCODE_W, IP_JOY_DEFAULT );
@@ -150,7 +150,7 @@ public class xybots
 		PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER1 | IPF_8WAY );
 		PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER1 | IPF_8WAY );
 	
-		PORT_START	/* ffe200 */
+		PORT_START(); 	/* ffe200 */
 		PORT_BIT( 0x00ff, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_SERVICE( 0x0100, IP_ACTIVE_LOW );
 		PORT_BIT( 0x0200, IP_ACTIVE_LOW, IPT_UNUSED );	/* /AUDBUSY */

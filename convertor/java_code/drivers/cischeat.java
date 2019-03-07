@@ -801,10 +801,10 @@ public class cischeat
 	//					[4]	DSW 1 & 2	[5] DSW 3		[6] Driving Wheel
 	
 	static InputPortPtr input_ports_bigrun = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Fake input port - Buttons status
+		PORT_START(); 	// IN0 - Fake input port - Buttons status
 		BUTTONS_STATUS
 	
-		PORT_START	// IN1 - Coins - $80000.w
+		PORT_START(); 	// IN1 - Coins - $80000.w
 		PORT_BIT(  0x01, IP_ACTIVE_LOW, IPT_COIN1    );
 		PORT_BIT(  0x02, IP_ACTIVE_LOW, IPT_COIN2    );
 		PORT_BIT(  0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -814,7 +814,7 @@ public class cischeat
 		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 	
-		PORT_START	// IN2 - Controls - $80002.w
+		PORT_START(); 	// IN2 - Controls - $80002.w
 		PORT_BIT(  0x01, IP_ACTIVE_LOW, IPT_BUTTON2 );// Brake
 	//	PORT_BIT(  0x02, IP_ACTIVE_LOW, IPT_BUTTON4 );// Shift - We handle it using buttons 3&4
 		PORT_BIT(  0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -824,7 +824,7 @@ public class cischeat
 		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_BUTTON5 );// Horn
 	
-		PORT_START	// IN3 - Motor Control? - $80004.w
+		PORT_START(); 	// IN3 - Motor Control? - $80004.w
 		PORT_DIPNAME( 0x01, 0x01, "Up Limit SW"  	);// Limit the Cockpit movements?
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") ); )
@@ -844,7 +844,7 @@ public class cischeat
 		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN4 - DSW 2 & 3 - $80006.w
+		PORT_START(); 	// IN4 - DSW 2 & 3 - $80006.w
 		// DSW 3
 		PORT_DIPNAME( 0x0003, 0x0003, "Unknown 3-0&1*" );
 		PORT_DIPSETTING(      0x0003, "3" );
@@ -895,7 +895,7 @@ public class cischeat
 		PORT_DIPSETTING(      0x2000, DEF_STR( "1C_4C") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "Free_Play") );
 	
-		PORT_START	// IN5 - DSW 3 (4 bits, Cabinet Linking) - $82200.w
+		PORT_START(); 	// IN5 - DSW 3 (4 bits, Cabinet Linking) - $82200.w
 		PORT_BIT(  0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_DIPNAME( 0x06, 0x00, "Unit ID"             );
 		PORT_DIPSETTING(    0x00, "1 (Blue-White Car);  )
@@ -908,7 +908,7 @@ public class cischeat
 		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN6 - Driving Wheel - $80010.w(0)
+		PORT_START(); 	// IN6 - Driving Wheel - $80010.w(0)
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_CENTER, 30, 30, 0, 0xff);
 	INPUT_PORTS_END(); }}; 
 	
@@ -922,10 +922,10 @@ public class cischeat
 	//					[4]	DSW 1 & 2	[5] DSW 3		[6] Driving Wheel
 	
 	static InputPortPtr input_ports_cischeat = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Fake input port - Buttons status
+		PORT_START(); 	// IN0 - Fake input port - Buttons status
 		BUTTONS_STATUS
 	
-		PORT_START	// IN1 - Coins - $80000.w
+		PORT_START(); 	// IN1 - Coins - $80000.w
 		PORT_BIT(  0x01, IP_ACTIVE_LOW, IPT_COIN1    );
 		PORT_BIT(  0x02, IP_ACTIVE_LOW, IPT_COIN2    );
 		PORT_BIT(  0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -935,7 +935,7 @@ public class cischeat
 		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 	
-		PORT_START	// IN2 - Controls - $80002.w
+		PORT_START(); 	// IN2 - Controls - $80002.w
 		PORT_BIT(  0x01, IP_ACTIVE_LOW, IPT_BUTTON2 );// Brake
 	//	PORT_BIT(  0x02, IP_ACTIVE_LOW, IPT_BUTTON4 );// Shift - We handle it using buttons 3&4
 		PORT_BIT(  0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -945,7 +945,7 @@ public class cischeat
 		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_BUTTON5 );// Horn
 	
-		PORT_START	// IN3 - Motor Control? - $80004.w
+		PORT_START(); 	// IN3 - Motor Control? - $80004.w
 		PORT_DIPNAME( 0x01, 0x01, "Up Limit SW"  	);// Limit the Cockpit movements?
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") ); )
@@ -963,7 +963,7 @@ public class cischeat
 		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN4 - DSW 1 & 2 - $80006.w -> !f000a.w(hi byte) !f0008.w(low byte)
+		PORT_START(); 	// IN4 - DSW 1 & 2 - $80006.w -> !f000a.w(hi byte) !f0008.w(low byte)
 		COINAGE_6BITS_2
 		PORT_DIPNAME( 0x0040, 0x0040, DEF_STR( "Unknown") );	// unused?
 		PORT_DIPSETTING(      0x0040, DEF_STR( "Off") );
@@ -995,7 +995,7 @@ public class cischeat
 		PORT_DIPSETTING(      0x8000, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") ); )
 	
-		PORT_START	// IN5 - DSW 3 (4 bits, Cabinet Linking) - $82200.w
+		PORT_START(); 	// IN5 - DSW 3 (4 bits, Cabinet Linking) - $82200.w
 		PORT_BIT(  0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_DIPNAME( 0x06, 0x06, "Unit ID (2); )	// -> f0020 (like DSW2 !!)
 		PORT_DIPSETTING(    0x06, "Use other"      );
@@ -1008,7 +1008,7 @@ public class cischeat
 		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN6 - Driving Wheel - $80010.w(0)
+		PORT_START(); 	// IN6 - Driving Wheel - $80010.w(0)
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_CENTER, 30, 30, 0, 0xff);
 	INPUT_PORTS_END(); }}; 
 	
@@ -1023,7 +1023,7 @@ public class cischeat
 	//					[6]	Coinage JP&USA	[7] Coinage UK&FR
 	
 	static InputPortPtr input_ports_f1gpstar = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Fake input port - Buttons status
+		PORT_START(); 	// IN0 - Fake input port - Buttons status
 		BUTTONS_STATUS
 	
 	/*	[Country]
@@ -1033,7 +1033,7 @@ public class cischeat
 		England		English,  Mph , "steering shock", "(c)1992"
 		France		French,   Km/h, "steering shock", "(c)1992"	*/
 	
-		PORT_START	// IN1 - DSW 1 & 2 - $80000.w	-> !f9012
+		PORT_START(); 	// IN1 - DSW 1 & 2 - $80000.w	-> !f9012
 		// DSW 1 ( Coinage - it changes with Country: we use IN6 & IN7 )
 		PORT_DIPNAME( 0x0040, 0x0040, "Free Play (UK FR); )
 		PORT_DIPSETTING(      0x0040, DEF_STR( "Off") );
@@ -1065,7 +1065,7 @@ public class cischeat
 		PORT_DIPSETTING(      0x8000, "High?" );
 		PORT_DIPSETTING(      0x0000, "Low?"  );
 	
-		PORT_START	// IN2 - Controls - $80004.w -> !f9016
+		PORT_START(); 	// IN2 - Controls - $80004.w -> !f9016
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_COIN1    );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_COIN2    );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -1075,7 +1075,7 @@ public class cischeat
 		PORT_BIT(  0x0040, IP_ACTIVE_LOW, IPT_BUTTON2  );// Brake -> !f9010
 		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_START2   );// "Race Together"
 	
-		PORT_START	// IN3 - ? Read at boot only - $80006.w
+		PORT_START(); 	// IN3 - ? Read at boot only - $80006.w
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -1099,7 +1099,7 @@ public class cischeat
 		ON-OFF					Blue-White Car
 		ON- ON					Blue Car, "equipped with communication link"	*/
 	
-		PORT_START	// IN4 - DSW 3 (4 bits, Cabinet Linking) - $8000c.w -> !f9014
+		PORT_START(); 	// IN4 - DSW 3 (4 bits, Cabinet Linking) - $8000c.w -> !f9014
 		PORT_DIPNAME( 0x01, 0x01, "This Unit Is" );
 		PORT_DIPSETTING(    0x01, "Slave" );
 		PORT_DIPSETTING(    0x00, "Master" );
@@ -1115,10 +1115,10 @@ public class cischeat
 		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 					// 		 Accelerator   - $80010.b ->  !f9004.w
-		PORT_START	// IN5 - Driving Wheel - $80011.b ->  !f9008.w
+		PORT_START(); 	// IN5 - Driving Wheel - $80011.b ->  !f9008.w
 		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_CENTER, 30, 30, 0, 0xff);
 	
-		PORT_START	// IN6 - Coinage Japan & USA (it changes with Country)
+		PORT_START(); 	// IN6 - Coinage Japan & USA (it changes with Country)
 		PORT_DIPNAME( 0x0007, 0x0007, "Coin A (JP US); )
 		PORT_DIPSETTING(      0x0001, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(      0x0002, DEF_STR( "3C_1C") );
@@ -1137,7 +1137,7 @@ public class cischeat
 		PORT_DIPSETTING(      0x0028, DEF_STR( "1C_3C") );
 		PORT_DIPSETTING(      0x0020, DEF_STR( "1C_4C") );
 	
-		PORT_START	// IN7 - Coinage UK & France (it changes with Country)
+		PORT_START(); 	// IN7 - Coinage UK & France (it changes with Country)
 		PORT_DIPNAME( 0x0007, 0x0007, "Coin A (UK FR); )
 		PORT_DIPSETTING(      0x0007, DEF_STR( "1C_1C") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "2C_3C") );
@@ -1164,7 +1164,7 @@ public class cischeat
 	**************************************************************************/
 	
 	static InputPortPtr input_ports_scudhamm = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - Buttons
+		PORT_START(); 	// IN0 - Buttons
 		PORT_BIT_IMPULSE( 0x0001, IP_ACTIVE_LOW, IPT_COIN1, 1 );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_UNKNOWN  );// GAME OVER if pressed on the selection screen
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -1183,10 +1183,10 @@ public class cischeat
 		PORT_BIT(  0x4000, IP_ACTIVE_HIGH, IPT_TILT    );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
-		PORT_START	// IN1 - A/D
+		PORT_START(); 	// IN1 - A/D
 		PORT_ANALOG( 0x00ff, 0x0000, IPT_PADDLE | IPF_CENTER, 1, 0, 0x0000, 0x00ff );
 	
-		PORT_START	// IN2 - DSW
+		PORT_START(); 	// IN2 - DSW
 		PORT_DIPNAME( 0x0003, 0x0003, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(      0x0000, "Easy" );
 		PORT_DIPSETTING(      0x0003, "Normal" );

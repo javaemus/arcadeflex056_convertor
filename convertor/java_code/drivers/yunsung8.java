@@ -210,7 +210,7 @@ public class yunsung8
 	
 	static InputPortPtr input_ports_magix = new InputPortPtr(){ public void handler() { 
 	
-		PORT_START	// IN0 - Coins
+		PORT_START(); 	// IN0 - Coins
 		PORT_BIT(  0x01, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x02, IP_ACTIVE_LOW, IPT_START2   );
 		PORT_BIT(  0x01, IP_ACTIVE_LOW, IPT_UNKNOWN  );
@@ -220,7 +220,7 @@ public class yunsung8
 		PORT_BIT(  0x01, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_COIN1    );
 	
-		PORT_START	// IN1 - Player 1
+		PORT_START(); 	// IN1 - Player 1
 		PORT_BIT(  0x01, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x02, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x04, IP_ACTIVE_LOW, IPT_BUTTON2        | IPF_PLAYER1 );// same as button1 !?
@@ -230,7 +230,7 @@ public class yunsung8
 		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER1 );
 		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER1 );
 	
-		PORT_START	// IN2 - Player 2
+		PORT_START(); 	// IN2 - Player 2
 		PORT_BIT(  0x01, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x02, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x04, IP_ACTIVE_LOW, IPT_BUTTON2        | IPF_PLAYER2 );// same as button1 !?
@@ -240,7 +240,7 @@ public class yunsung8
 		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER2 );
 		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER2 );
 	
-		PORT_START	// IN3 - DSW 1
+		PORT_START(); 	// IN3 - DSW 1
 		PORT_SERVICE( 0x01, IP_ACTIVE_LOW );
 		PORT_DIPNAME( 0x06, 0x06, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x00, "Easy" );
@@ -263,7 +263,7 @@ public class yunsung8
 		PORT_DIPSETTING(    0xa0, DEF_STR( "1C_3C") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_4C") );
 	
-		PORT_START	// IN4 - DSW 2
+		PORT_START(); 	// IN4 - DSW 2
 		PORT_DIPNAME( 0x01, 0x01, "Title" );
 		PORT_DIPSETTING(    0x01, "Magix" );
 		PORT_DIPSETTING(    0x00, "Rock" );
@@ -298,7 +298,7 @@ public class yunsung8
 	
 	static InputPortPtr input_ports_cannball = new InputPortPtr(){ public void handler() { 
 	
-		PORT_START	// IN0 - Coins
+		PORT_START(); 	// IN0 - Coins
 		PORT_BIT(  0x01, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x02, IP_ACTIVE_LOW, IPT_START2   );
 		PORT_BIT(  0x01, IP_ACTIVE_LOW, IPT_UNKNOWN  );
@@ -308,7 +308,7 @@ public class yunsung8
 		PORT_BIT(  0x01, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_COIN1    );
 	
-		PORT_START	// IN1 - Player 1
+		PORT_START(); 	// IN1 - Player 1
 		PORT_BIT(  0x01, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x02, IP_ACTIVE_LOW, IPT_BUTTON3        | IPF_PLAYER1 );
 		PORT_BIT(  0x04, IP_ACTIVE_LOW, IPT_BUTTON2        | IPF_PLAYER1 );
@@ -318,7 +318,7 @@ public class yunsung8
 		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER1 );
 		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER1 );
 	
-		PORT_START	// IN2 - Player 2
+		PORT_START(); 	// IN2 - Player 2
 		PORT_BIT(  0x01, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x02, IP_ACTIVE_LOW, IPT_BUTTON3        | IPF_PLAYER2 );
 		PORT_BIT(  0x04, IP_ACTIVE_LOW, IPT_BUTTON2        | IPF_PLAYER2 );
@@ -328,7 +328,7 @@ public class yunsung8
 		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER2 );
 		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER2 );
 	
-		PORT_START	// IN3 - DSW 1
+		PORT_START(); 	// IN3 - DSW 1
 		PORT_SERVICE( 0x01, IP_ACTIVE_LOW );
 		PORT_DIPNAME( 0x06, 0x06, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x00, "Easy" );
@@ -351,7 +351,7 @@ public class yunsung8
 		PORT_DIPSETTING(    0xa0, DEF_STR( "1C_3C") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_4C") );
 	
-		PORT_START	// IN4 - DSW 2
+		PORT_START(); 	// IN4 - DSW 2
 		PORT_DIPNAME( 0x01, 0x01, "Unknown 2-0" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );

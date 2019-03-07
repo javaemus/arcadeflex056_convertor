@@ -2014,7 +2014,7 @@ public class sailorws
 	
 	
 	#define MJCTRL_SAILORWS_PORT1 \
-		PORT_START	/* (3) PORT 1-0 */ \
+		PORT_START(); 	/* (3) PORT 1-0 */ \
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );\
 		PORT_BITX(0x02, IP_ACTIVE_LOW, 0, "P1 Kan", KEYCODE_LCONTROL, IP_JOY_NONE );\
 		PORT_BITX(0x04, IP_ACTIVE_LOW, 0, "P1 M", KEYCODE_M, IP_JOY_NONE );\
@@ -2025,7 +2025,7 @@ public class sailorws
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 	#define MJCTRL_SAILORWS_PORT2 \
-		PORT_START	/* (4) PORT 1-1 */ \
+		PORT_START(); 	/* (4) PORT 1-1 */ \
 		PORT_BITX(0x01, IP_ACTIVE_LOW, 0, "P1 Bet", KEYCODE_2, IP_JOY_NONE );\
 		PORT_BITX(0x02, IP_ACTIVE_LOW, 0, "P1 Reach", KEYCODE_LSHIFT, IP_JOY_NONE );\
 		PORT_BITX(0x04, IP_ACTIVE_LOW, 0, "P1 N", KEYCODE_N, IP_JOY_NONE );\
@@ -2036,7 +2036,7 @@ public class sailorws
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 	#define MJCTRL_SAILORWS_PORT3 \
-		PORT_START	/* (5) PORT 1-2 */ \
+		PORT_START(); 	/* (5) PORT 1-2 */ \
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );\
 		PORT_BITX(0x02, IP_ACTIVE_LOW, 0, "P1 Ron", KEYCODE_Z, IP_JOY_NONE );\
 		PORT_BITX(0x04, IP_ACTIVE_LOW, 0, "P1 Chi", KEYCODE_SPACE, IP_JOY_NONE );\
@@ -2047,7 +2047,7 @@ public class sailorws
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 	#define MJCTRL_SAILORWS_PORT4 \
-		PORT_START	/* (6) PORT 1-3 */ \
+		PORT_START(); 	/* (6) PORT 1-3 */ \
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );\
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );\
 		PORT_BITX(0x04, IP_ACTIVE_LOW, 0, "P1 Pon", KEYCODE_LALT, IP_JOY_NONE );\
@@ -2058,7 +2058,7 @@ public class sailorws
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 	#define MJCTRL_SAILORWS_PORT5 \
-		PORT_START	/* (7) PORT 1-4 */ \
+		PORT_START(); 	/* (7) PORT 1-4 */ \
 		PORT_BITX(0x01, IP_ACTIVE_LOW, 0, "P1 Small", KEYCODE_BACKSPACE, IP_JOY_NONE );\
 		PORT_BITX(0x02, IP_ACTIVE_LOW, 0, "P1 Big", KEYCODE_ENTER, IP_JOY_NONE );\
 		PORT_BITX(0x04, IP_ACTIVE_LOW, 0, "P1 Flip", KEYCODE_X, IP_JOY_NONE );\
@@ -2069,7 +2069,7 @@ public class sailorws
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 	#define MJCTRL_MSCOUTM_PORT1 \
-		PORT_START	/* (3) PORT 1-0 */ \
+		PORT_START(); 	/* (3) PORT 1-0 */ \
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );\
 		PORT_BITX(0x02, IP_ACTIVE_LOW, 0, "P1 Kan", KEYCODE_LCONTROL, IP_JOY_NONE );\
 		PORT_BITX(0x04, IP_ACTIVE_LOW, 0, "P1 M", KEYCODE_M, IP_JOY_NONE );\
@@ -2080,7 +2080,7 @@ public class sailorws
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 	#define MJCTRL_MSCOUTM_PORT2 \
-		PORT_START	/* (4) PORT 1-1 */ \
+		PORT_START(); 	/* (4) PORT 1-1 */ \
 		PORT_BITX(0x01, IP_ACTIVE_LOW, 0, "P1 Bet", KEYCODE_2, IP_JOY_NONE );\
 		PORT_BITX(0x02, IP_ACTIVE_LOW, 0, "P1 Reach", KEYCODE_LSHIFT, IP_JOY_NONE );\
 		PORT_BITX(0x04, IP_ACTIVE_LOW, 0, "P1 N", KEYCODE_N, IP_JOY_NONE );\
@@ -2091,7 +2091,7 @@ public class sailorws
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 	#define MJCTRL_MSCOUTM_PORT3 \
-		PORT_START	/* (5) PORT 1-2 */ \
+		PORT_START(); 	/* (5) PORT 1-2 */ \
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );\
 		PORT_BITX(0x02, IP_ACTIVE_LOW, 0, "P1 Ron", KEYCODE_Z, IP_JOY_NONE );\
 		PORT_BITX(0x04, IP_ACTIVE_LOW, 0, "P1 Chi", KEYCODE_SPACE, IP_JOY_NONE );\
@@ -2102,7 +2102,7 @@ public class sailorws
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 	#define MJCTRL_MSCOUTM_PORT4 \
-		PORT_START	/* (6) PORT 1-3 */ \
+		PORT_START(); 	/* (6) PORT 1-3 */ \
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );\
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );\
 		PORT_BITX(0x04, IP_ACTIVE_LOW, 0, "P1 Pon", KEYCODE_LALT, IP_JOY_NONE );\
@@ -2113,7 +2113,7 @@ public class sailorws
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 	#define MJCTRL_MSCOUTM_PORT5 \
-		PORT_START	/* (7) PORT 1-4 */ \
+		PORT_START(); 	/* (7) PORT 1-4 */ \
 		PORT_BITX(0x01, IP_ACTIVE_LOW, 0, "P1 Small", KEYCODE_BACKSPACE, IP_JOY_NONE );\
 		PORT_BITX(0x02, IP_ACTIVE_LOW, 0, "P1 Big", KEYCODE_ENTER, IP_JOY_NONE );\
 		PORT_BITX(0x04, IP_ACTIVE_LOW, 0, "P1 Flip", KEYCODE_X, IP_JOY_NONE );\
@@ -2128,7 +2128,7 @@ public class sailorws
 	
 		// I don't have manual for this game.
 	
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 1-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -2154,7 +2154,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 2-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -2180,7 +2180,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// COIN OUT
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE2 );	// ANALYZER
@@ -2201,7 +2201,7 @@ public class sailorws
 	
 		// I don't have manual for this game.
 	
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 1-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -2227,7 +2227,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 2-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -2253,7 +2253,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// COIN OUT
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE2 );	// ANALYZER
@@ -2274,7 +2274,7 @@ public class sailorws
 	
 		// I don't have manual for this game.
 	
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 1-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -2300,7 +2300,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 2-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -2326,7 +2326,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// COIN OUT
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE2 );	// ANALYZER
@@ -2347,7 +2347,7 @@ public class sailorws
 	
 		// I don't have manual for this game.
 	
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 1-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -2373,7 +2373,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -2399,7 +2399,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// COIN OUT
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE2 );	// ANALYZER
@@ -2420,7 +2420,7 @@ public class sailorws
 	
 		// I don't have manual for this game.
 	
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 1-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -2446,7 +2446,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -2472,7 +2472,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// COIN OUT
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE2 );	// ANALYZER
@@ -2493,7 +2493,7 @@ public class sailorws
 	
 		// I don't have manual for this game.
 	
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 1-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -2519,7 +2519,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 2-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -2545,7 +2545,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// COIN OUT
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE2 );	// ANALYZER
@@ -2563,7 +2563,7 @@ public class sailorws
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_mjlaman = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "1C_1C") );
@@ -2588,7 +2588,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x20, "7" );
 		PORT_DIPSETTING(    0x00, "8 (Hard); )
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 2-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -2614,7 +2614,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// COIN OUT
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE2 );	// ANALYZER
@@ -2632,7 +2632,7 @@ public class sailorws
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_mkeibaou = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x03, "1" );
 		PORT_DIPSETTING(    0x02, "2" );
@@ -2657,7 +2657,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 2-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -2683,7 +2683,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// COIN OUT
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE2 );	// ANALYZER
@@ -2701,7 +2701,7 @@ public class sailorws
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_pachiten = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x07, 0x07, "Game Out" );
 		PORT_DIPSETTING(    0x07, "90% (Easy); )
 		PORT_DIPSETTING(    0x06, "85%" );
@@ -2727,7 +2727,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -2751,7 +2751,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// COIN OUT
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE2 );	// ANALYZER
@@ -2769,7 +2769,7 @@ public class sailorws
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_sailorws = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x03, "1" );
 		PORT_DIPSETTING(    0x02, "2" );
@@ -2794,7 +2794,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 2-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -2820,7 +2820,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// COIN OUT
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE2 );	// ANALYZER
@@ -2838,7 +2838,7 @@ public class sailorws
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_sailorwr = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x07, 0x07, "Game Out" );
 		PORT_DIPSETTING(    0x07, "90% (Easy); )
 		PORT_DIPSETTING(    0x06, "85%" );
@@ -2864,7 +2864,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Flip_Screen") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -2888,7 +2888,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// COIN OUT
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE2 );	// ANALYZER
@@ -2906,7 +2906,7 @@ public class sailorws
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_psailor1 = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "1C_1C") );
@@ -2931,7 +2931,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x20, "7" );
 		PORT_DIPSETTING(    0x00, "8 (Hard); )
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x03, 0x03, "Start Score" );
 		PORT_DIPSETTING(    0x00, "5000" );
 		PORT_DIPSETTING(    0x01, "3000" );
@@ -2956,7 +2956,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// COIN OUT
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE2 );	// ANALYZER
@@ -2974,7 +2974,7 @@ public class sailorws
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_psailor2 = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "1C_1C") );
@@ -2999,7 +2999,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x20, "7" );
 		PORT_DIPSETTING(    0x00, "8 (Hard); )
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x03, 0x03, "Start Score" );
 		PORT_DIPSETTING(    0x00, "5000" );
 		PORT_DIPSETTING(    0x01, "3000" );
@@ -3024,7 +3024,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// COIN OUT
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE2 );	// ANALYZER
@@ -3045,7 +3045,7 @@ public class sailorws
 	
 		// I don't have manual for this game.
 	
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "1 (Easy); )
 		PORT_DIPSETTING(    0x06, "2" );
@@ -3070,7 +3070,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_2C") );
 		PORT_DIPSETTING(    0x40, DEF_STR( "1C_3C") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x03, 0x03, "Start Score" );
 		PORT_DIPSETTING(    0x00, "5000" );
 		PORT_DIPSETTING(    0x01, "3000" );
@@ -3095,7 +3095,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// COIN OUT
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE2 );	// ANALYZER
@@ -3113,7 +3113,7 @@ public class sailorws
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_ngpgal = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "1 (Easy); )
 		PORT_DIPSETTING(    0x06, "2" );
@@ -3139,7 +3139,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 2-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -3165,7 +3165,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// COIN OUT
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE2 );	// ANALYZER
@@ -3183,7 +3183,7 @@ public class sailorws
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_mjgottsu = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x03, "1" );
 		PORT_DIPSETTING(    0x02, "2" );
@@ -3208,7 +3208,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 2-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -3234,7 +3234,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// COIN OUT
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE2 );	// ANALYZER
@@ -3255,7 +3255,7 @@ public class sailorws
 	
 		// I don't have manual for this game.
 	
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x03, "1" );
 		PORT_DIPSETTING(    0x02, "2" );
@@ -3280,7 +3280,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 2-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -3306,7 +3306,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// COIN OUT
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE2 );	// ANALYZER
@@ -3324,7 +3324,7 @@ public class sailorws
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_cmehyou = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "1 (Easy); )
 		PORT_DIPSETTING(    0x06, "2" );
@@ -3350,7 +3350,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 2-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -3376,7 +3376,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// COIN OUT
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE2 );	// ANALYZER
@@ -3394,7 +3394,7 @@ public class sailorws
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_mjkoiura = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "1 (Easy); )
 		PORT_DIPSETTING(    0x06, "2" );
@@ -3420,7 +3420,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 2-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -3446,7 +3446,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// COIN OUT
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE2 );	// ANALYZER
@@ -3464,7 +3464,7 @@ public class sailorws
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_mscoutm = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "1 (Easy); )
 		PORT_DIPSETTING(    0x06, "2" );
@@ -3489,7 +3489,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 2-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -3515,7 +3515,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -3536,7 +3536,7 @@ public class sailorws
 	
 		// I don't have manual for this game.
 	
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 1-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -3562,7 +3562,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 2-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -3588,7 +3588,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -3606,7 +3606,7 @@ public class sailorws
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_mjegolf = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "1 (Easy); )
 		PORT_DIPSETTING(    0x06, "2" );
@@ -3631,7 +3631,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_2C") );
 		PORT_DIPSETTING(    0x40, DEF_STR( "1C_3C") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 2-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -3657,7 +3657,7 @@ public class sailorws
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );

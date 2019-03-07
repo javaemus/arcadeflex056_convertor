@@ -249,7 +249,7 @@ public class ultratnk
 	
 	
 	static InputPortPtr input_ports_ultratnk = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_DIPNAME( 0x03, 0x01, "Extended Play" );
 		PORT_DIPSETTING(	0x01, "25 Points" );
 		PORT_DIPSETTING(	0x02, "50 Points" );
@@ -271,11 +271,11 @@ public class ultratnk
 		PORT_DIPSETTING(	0x80, "C" );
 		PORT_DIPSETTING(	0xc0, "D" );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_SERVICE( 0x40, IP_ACTIVE_LOW );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_VBLANK );
 	
-		PORT_START /* input#2 (arbitrarily arranged) */
+		PORT_START();  /* input#2 (arbitrarily arranged) */
 		PORT_BITX(0x80, IP_ACTIVE_HIGH, IPT_SERVICE1 | IPF_TOGGLE, "Option 1", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x40, IP_ACTIVE_HIGH, IPT_SERVICE2 | IPF_TOGGLE, "Option 2", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
 		PORT_BITX(0x20, IP_ACTIVE_HIGH, IPT_SERVICE3 | IPF_TOGGLE, "Option 3", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
@@ -283,7 +283,7 @@ public class ultratnk
 		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_TILT );
 	
-		PORT_START /* input#3 */
+		PORT_START();  /* input#3 */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_SPECIAL );/* joystick (taken from below) */
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_START2 );
@@ -293,7 +293,7 @@ public class ultratnk
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SPECIAL );/* joystick (taken from below) */
 	
-		PORT_START /* input#4 - fake */
+		PORT_START();  /* input#4 - fake */
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICKLEFT_DOWN  | IPF_PLAYER1 );
 		PORT_BIT( 0x0a, IP_ACTIVE_HIGH, IPT_JOYSTICKLEFT_UP    | IPF_PLAYER1 );/* note that this sets 2 bits */
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICKRIGHT_DOWN | IPF_PLAYER1 );

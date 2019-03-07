@@ -37,7 +37,7 @@ void seibu_sound_decrypt(int cpu_region,int length);
 /**************************************************************************/
 
 #define SEIBU_COIN_INPUTS											\
-	PORT_START														\
+	PORT_START(); 														\
 	PORT_BIT_IMPULSE( 0x01, IP_ACTIVE_HIGH, IPT_COIN1, 4 );		\
 	PORT_BIT_IMPULSE( 0x02, IP_ACTIVE_HIGH, IPT_COIN2, 4 );
 

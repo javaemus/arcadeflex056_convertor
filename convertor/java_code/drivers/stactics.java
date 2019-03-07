@@ -144,7 +144,7 @@ public class stactics
 	
 	static InputPortPtr input_ports_stactics = new InputPortPtr(){ public void handler() { 
 	
-	    PORT_START  /* 	IN0 */
+	    PORT_START();   /* 	IN0 */
 	    /*PORT_BIT (0x80, IP_ACTIVE_HIGH, IPT_UNUSED );Motor status. see stactics_port_0_r */
 	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON2 );
 	    PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_START1 );
@@ -154,7 +154,7 @@ public class stactics
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON6 );
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON7 );
 	
-	    PORT_START  /* IN1 */
+	    PORT_START();   /* IN1 */
 	    PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coin_B") );
 	    PORT_DIPSETTING(    0x01, DEF_STR( "4C_1C") );
 	    PORT_DIPSETTING(    0x05, DEF_STR( "2C_1C") );
@@ -180,7 +180,7 @@ public class stactics
 	    PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 	    PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-	    PORT_START  /* IN2 */
+	    PORT_START();   /* IN2 */
 	    /* This is accessed by stactics_port_2_r() */
 	    /*PORT_BIT (0x0f, IP_ACTIVE_HIGH, IPT_UNUSED );Random number generator */
 	    PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_COIN1 );
@@ -190,7 +190,7 @@ public class stactics
 	    PORT_DIPSETTING( 0x00, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-	    PORT_START  /* IN3 */
+	    PORT_START();   /* IN3 */
 	    /* This is accessed by stactics_port_3_r() */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );
 	    /* PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNUSED );*/
@@ -207,7 +207,7 @@ public class stactics
 	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 	    /* PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );*/
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY );
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY );
 	INPUT_PORTS_END(); }}; 

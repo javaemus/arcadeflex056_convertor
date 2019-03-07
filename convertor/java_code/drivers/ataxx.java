@@ -720,7 +720,7 @@ public class ataxx
 	 *************************************/
 	
 	static InputPortPtr input_ports_ataxx = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* 0xF6 */
+		PORT_START(); 		/* 0xF6 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );/* huh? affects trackball movement */
@@ -730,28 +730,28 @@ public class ataxx
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 	
-		PORT_START		/* 0xF7 */
+		PORT_START(); 		/* 0xF7 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_SLAVEHALT );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_VBLANK );
 		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* 0x20 */
+		PORT_START(); 		/* 0x20 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_EEPROM_DATA );
 		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* 0x00 - analog X */
+		PORT_START(); 		/* 0x00 - analog X */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_X | IPF_PLAYER1, 100, 10, 0, 255 );
-		PORT_START		/* 0x01 - analog Y */
+		PORT_START(); 		/* 0x01 - analog Y */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_Y | IPF_PLAYER1, 100, 10, 0, 255 );
-		PORT_START		/* 0x02 - analog X */
+		PORT_START(); 		/* 0x02 - analog X */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_X | IPF_PLAYER2, 100, 10, 0, 255 );
-		PORT_START		/* 0x03 - analog Y */
+		PORT_START(); 		/* 0x03 - analog Y */
 		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_Y | IPF_PLAYER2, 100, 10, 0, 255 );
 	INPUT_PORTS_END(); }}; 
 	
 	
 	static InputPortPtr input_ports_wsf = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* 0xF6 */
+		PORT_START(); 		/* 0xF6 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN3 );
@@ -761,18 +761,18 @@ public class ataxx
 	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER3 );
 	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER4 );
 	
-		PORT_START		/* 0xF7 */
+		PORT_START(); 		/* 0xF7 */
 	    PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_SLAVEHALT );
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_VBLANK );
 	    PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* 0x20 */
+		PORT_START(); 		/* 0x20 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_EEPROM_DATA );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );
 	    PORT_SERVICE_NO_TOGGLE( 0x04, IP_ACTIVE_LOW )
 		PORT_BIT( 0xf8, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-	    PORT_START		/* 0x0D */
+	    PORT_START(); 		/* 0x0D */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER2 );
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );
@@ -782,7 +782,7 @@ public class ataxx
 	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
 	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
 	
-	    PORT_START		/* 0x0E */
+	    PORT_START(); 		/* 0x0E */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER4 );
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER4 );
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER4 );
@@ -792,7 +792,7 @@ public class ataxx
 	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER3 );
 	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER3 );
 	
-	    PORT_START		/* 0x0F */
+	    PORT_START(); 		/* 0x0F */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
@@ -805,7 +805,7 @@ public class ataxx
 	
 	
 	static InputPortPtr input_ports_indyheat = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* 0xF6 */
+		PORT_START(); 		/* 0xF6 */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT_IMPULSE( 0x02, IP_ACTIVE_HIGH, IPT_COIN1, 1 );
 	    PORT_BIT_IMPULSE( 0x04, IP_ACTIVE_HIGH, IPT_COIN2, 1 );
@@ -813,37 +813,37 @@ public class ataxx
 		PORT_BIT( 0x70, IP_ACTIVE_LOW, IPT_UNUSED );
 	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 	
-		PORT_START		/* 0xF7 */
+		PORT_START(); 		/* 0xF7 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_SLAVEHALT );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_VBLANK );
 	    PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* 0x20 */
+		PORT_START(); 		/* 0x20 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_EEPROM_DATA );
 		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START      /* Analog wheel 1 */
+		PORT_START();       /* Analog wheel 1 */
 		PORT_ANALOG( 0xff, 0x80, IPT_DIAL | IPF_PLAYER1, 100, 10, 0, 255 );
-		PORT_START      /* Analog wheel 2 */
+		PORT_START();       /* Analog wheel 2 */
 		PORT_ANALOG( 0xff, 0x80, IPT_DIAL | IPF_PLAYER2, 100, 10, 0, 255 );
-		PORT_START      /* Analog wheel 3 */
+		PORT_START();       /* Analog wheel 3 */
 		PORT_ANALOG( 0xff, 0x80, IPT_DIAL | IPF_PLAYER3, 100, 10, 0, 255 );
-		PORT_START      /* Analog pedal 1 */
+		PORT_START();       /* Analog pedal 1 */
 		PORT_ANALOG( 0xff, 0x00, IPT_PEDAL | IPF_PLAYER1, 100, 10, 0, 255 );
-		PORT_START      /* Analog pedal 2 */
+		PORT_START();       /* Analog pedal 2 */
 		PORT_ANALOG( 0xff, 0x00, IPT_PEDAL | IPF_PLAYER2, 100, 10, 0, 255 );
-		PORT_START      /* Analog pedal 3 */
+		PORT_START();       /* Analog pedal 3 */
 		PORT_ANALOG( 0xff, 0x00, IPT_PEDAL | IPF_PLAYER3, 100, 10, 0, 255 );
 	
-	    PORT_START		/* 0x0D */
+	    PORT_START(); 		/* 0x0D */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-	    PORT_START		/* 0x0E */
+	    PORT_START(); 		/* 0x0E */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-	    PORT_START		/* 0x0F */
+	    PORT_START(); 		/* 0x0F */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER3 );
 		PORT_BIT( 0x7e, IP_ACTIVE_LOW, IPT_UNUSED );
 	    PORT_SERVICE_NO_TOGGLE( 0x80, IP_ACTIVE_LOW )
@@ -851,7 +851,7 @@ public class ataxx
 	
 	
 	static InputPortPtr input_ports_brutforc = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* 0xF6 */
+		PORT_START(); 		/* 0xF6 */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT_IMPULSE( 0x02, IP_ACTIVE_HIGH, IPT_COIN2, 1 );
 	    PORT_BIT_IMPULSE( 0x04, IP_ACTIVE_HIGH, IPT_COIN1, 1 );
@@ -859,16 +859,16 @@ public class ataxx
 	    PORT_BIT( 0x70, IP_ACTIVE_LOW, IPT_UNUSED );
 	    PORT_SERVICE_NO_TOGGLE( 0x80, IP_ACTIVE_LOW )
 	
-		PORT_START		/* 0xF7 */
+		PORT_START(); 		/* 0xF7 */
 	    PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_SLAVEHALT );
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_VBLANK );
 	    PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* 0x20 */
+		PORT_START(); 		/* 0x20 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_EEPROM_DATA );
 		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-	    PORT_START		/* 0x0D */
+	    PORT_START(); 		/* 0x0D */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER2 );
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );
@@ -878,7 +878,7 @@ public class ataxx
 	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
 	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-	    PORT_START		/* 0x0E */
+	    PORT_START(); 		/* 0x0E */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
@@ -888,7 +888,7 @@ public class ataxx
 	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
 	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-	    PORT_START		/* 0x0F */
+	    PORT_START(); 		/* 0x0F */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER3 );
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER3 );
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER3 );

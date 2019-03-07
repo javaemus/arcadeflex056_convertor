@@ -217,7 +217,7 @@ public class snk68
 	/******************************************************************************/
 	
 	static InputPortPtr input_ports_pow = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* Player 1 controls */
+		PORT_START(); 	/* Player 1 controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP	  | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
@@ -227,7 +227,7 @@ public class snk68
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON3 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	/* Player 2 controls */
+		PORT_START(); 	/* Player 2 controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP	  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
@@ -237,7 +237,7 @@ public class snk68
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2  );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE );/* same as the service mode dsw */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -247,7 +247,7 @@ public class snk68
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* Dip switch bank 1, all active high */
+		PORT_START(); 	/* Dip switch bank 1, all active high */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "1C_1C") );
 		PORT_DIPSETTING(	0x02, DEF_STR( "1C_2C") );
@@ -271,7 +271,7 @@ public class snk68
 		PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x80, DEF_STR( "On") );
 	
-		PORT_START	/* Dip switch bank 2, all active high */
+		PORT_START(); 	/* Dip switch bank 2, all active high */
 		PORT_SERVICE( 0x01, IP_ACTIVE_HIGH );
 		PORT_DIPNAME( 0x02, 0x00, "Allow Continue" );
 		PORT_DIPSETTING(	0x02, DEF_STR( "No") );
@@ -295,7 +295,7 @@ public class snk68
 	
 	/* Identical to pow, but the Language dip switch has no effect */
 	static InputPortPtr input_ports_powj = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* Player 1 controls */
+		PORT_START(); 	/* Player 1 controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP	  | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
@@ -305,7 +305,7 @@ public class snk68
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON3 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	/* Player 2 controls */
+		PORT_START(); 	/* Player 2 controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP	  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
@@ -315,7 +315,7 @@ public class snk68
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2  );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE );/* same as the service mode dsw */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -325,7 +325,7 @@ public class snk68
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* Dip switch bank 1, all active high */
+		PORT_START(); 	/* Dip switch bank 1, all active high */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coin_B") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "1C_1C") );
 		PORT_DIPSETTING(	0x02, DEF_STR( "1C_2C") );
@@ -349,7 +349,7 @@ public class snk68
 		PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x80, DEF_STR( "On") );
 	
-		PORT_START	/* Dip switch bank 2, all active high */
+		PORT_START(); 	/* Dip switch bank 2, all active high */
 		PORT_SERVICE( 0x01, IP_ACTIVE_HIGH );
 		PORT_DIPNAME( 0x02, 0x00, "Allow Continue" );
 		PORT_DIPSETTING(	0x02, DEF_STR( "No") );
@@ -372,7 +372,7 @@ public class snk68
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_searchar = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* Player 1 controls */
+		PORT_START(); 	/* Player 1 controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP	  | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
@@ -382,7 +382,7 @@ public class snk68
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	/* Player 2 controls */
+		PORT_START(); 	/* Player 2 controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP	  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
@@ -392,7 +392,7 @@ public class snk68
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2  );
 	
-		PORT_START	/* coin */
+		PORT_START(); 	/* coin */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE );/* same as the service mode dsw */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -402,7 +402,7 @@ public class snk68
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* Dip switches (Active high) */
+		PORT_START(); 	/* Dip switches (Active high) */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x01, DEF_STR( "On") );
@@ -426,7 +426,7 @@ public class snk68
 		PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x80, DEF_STR( "On") );
 	
-		PORT_START /* Dip switches (Active high) */
+		PORT_START();  /* Dip switches (Active high) */
 		PORT_SERVICE( 0x01, IP_ACTIVE_HIGH );
 		PORT_DIPNAME( 0x02, 0x00, "Allow Continue" );
 		PORT_DIPSETTING(	0x02, DEF_STR( "No") );
@@ -447,15 +447,15 @@ public class snk68
 		PORT_DIPSETTING(	0x40, "Hard" );
 		PORT_DIPSETTING(	0xc0, "Hardest" );
 	
-		PORT_START	/* player 1 12-way rotary control - converted in controls_r() */
+		PORT_START(); 	/* player 1 12-way rotary control - converted in controls_r() */
 		PORT_ANALOGX( 0xff, 0x00, IPT_DIAL | IPF_REVERSE, 25, 10, 0, 0, KEYCODE_Z, KEYCODE_X, 0, 0 );
 	
-		PORT_START	/* player 2 12-way rotary control - converted in controls_r() */
+		PORT_START(); 	/* player 2 12-way rotary control - converted in controls_r() */
 		PORT_ANALOGX( 0xff, 0x00, IPT_DIAL | IPF_REVERSE | IPF_PLAYER2, 25, 10, 0, 0, KEYCODE_N, KEYCODE_M, 0, 0 );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_streetsm = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* Player 1 controls */
+		PORT_START(); 	/* Player 1 controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP	  | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
@@ -465,7 +465,7 @@ public class snk68
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	/* Player 2 controls */
+		PORT_START(); 	/* Player 2 controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP	  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
@@ -475,7 +475,7 @@ public class snk68
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2  );
 	
-		PORT_START	/* coin */
+		PORT_START(); 	/* coin */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE );/* same as the service mode dsw */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -485,7 +485,7 @@ public class snk68
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* Dip switches (Active high) */
+		PORT_START(); 	/* Dip switches (Active high) */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(	0x02, "1" );
 		PORT_DIPSETTING(	0x00, "2" );
@@ -509,7 +509,7 @@ public class snk68
 		PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x80, DEF_STR( "On") );
 	
-		PORT_START /* Dip switches (Active high) */
+		PORT_START();  /* Dip switches (Active high) */
 		PORT_SERVICE( 0x01, IP_ACTIVE_HIGH );
 		PORT_DIPNAME( 0x02, 0x00, "Allow Continue" );
 		PORT_DIPSETTING(	0x02, DEF_STR( "No") );
@@ -530,16 +530,16 @@ public class snk68
 		PORT_DIPSETTING(	0x40, "Hard" );
 		PORT_DIPSETTING(	0xc0, "Hardest" );
 	
-		PORT_START	/* player 1 12-way rotary control - not used in this game */
+		PORT_START(); 	/* player 1 12-way rotary control - not used in this game */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* player 2 12-way rotary control - not used in this game */
+		PORT_START(); 	/* player 2 12-way rotary control - not used in this game */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 
 	
 	/* Same as streetsm, but Coinage is different */
 	static InputPortPtr input_ports_streetsj = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* Player 1 controls */
+		PORT_START(); 	/* Player 1 controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP	  | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
@@ -549,7 +549,7 @@ public class snk68
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	/* Player 2 controls */
+		PORT_START(); 	/* Player 2 controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP	  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
@@ -559,7 +559,7 @@ public class snk68
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2  );
 	
-		PORT_START	/* coin */
+		PORT_START(); 	/* coin */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE );/* same as the service mode dsw */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -569,7 +569,7 @@ public class snk68
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* Dip switches (Active high) */
+		PORT_START(); 	/* Dip switches (Active high) */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(	0x02, "1" );
 		PORT_DIPSETTING(	0x00, "2" );
@@ -593,7 +593,7 @@ public class snk68
 		PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x80, DEF_STR( "On") );
 	
-		PORT_START /* Dip switches (Active high) */
+		PORT_START();  /* Dip switches (Active high) */
 		PORT_SERVICE( 0x01, IP_ACTIVE_HIGH );
 		PORT_DIPNAME( 0x02, 0x00, "Allow Continue" );
 		PORT_DIPSETTING(	0x02, DEF_STR( "No") );
@@ -614,15 +614,15 @@ public class snk68
 		PORT_DIPSETTING(	0x40, "Hard" );
 		PORT_DIPSETTING(	0xc0, "Hardest" );
 	
-		PORT_START	/* player 1 12-way rotary control - not used in this game */
+		PORT_START(); 	/* player 1 12-way rotary control - not used in this game */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* player 2 12-way rotary control - not used in this game */
+		PORT_START(); 	/* player 2 12-way rotary control - not used in this game */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_ikari3 = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* Player 1 controls, maybe all are active_high? */
+		PORT_START(); 	/* Player 1 controls, maybe all are active_high? */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP	  | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
@@ -632,7 +632,7 @@ public class snk68
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	/* Player 2 controls */
+		PORT_START(); 	/* Player 2 controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP	  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
@@ -642,7 +642,7 @@ public class snk68
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2  );
 	
-		PORT_START	/* coin */
+		PORT_START(); 	/* coin */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE );/* same as the service mode dsw */
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -652,7 +652,7 @@ public class snk68
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* Dip switches (Active high) */
+		PORT_START(); 	/* Dip switches (Active high) */
 		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Lives") );
 		PORT_DIPSETTING(	0x02, "2" );
 		PORT_DIPSETTING(	0x00, "3" );
@@ -676,7 +676,7 @@ public class snk68
 		PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(	0x80, DEF_STR( "On") );
 	
-		PORT_START /* Dip switches (Active high) */
+		PORT_START();  /* Dip switches (Active high) */
 		PORT_SERVICE( 0x01, IP_ACTIVE_HIGH );
 		PORT_DIPNAME( 0x02, 0x00, "Allow Continue" );
 		PORT_DIPSETTING(	0x02, DEF_STR( "No") );
@@ -697,10 +697,10 @@ public class snk68
 		PORT_DIPSETTING(	0x40, "Hard" );
 		PORT_DIPSETTING(	0xc0, "Hardest" );
 	
-		PORT_START	/* player 1 12-way rotary control - converted in controls_r() */
+		PORT_START(); 	/* player 1 12-way rotary control - converted in controls_r() */
 		PORT_ANALOGX( 0xff, 0x00, IPT_DIAL | IPF_REVERSE, 25, 10, 0, 0, KEYCODE_Z, KEYCODE_X, 0, 0 );
 	
-		PORT_START	/* player 2 12-way rotary control - converted in controls_r() */
+		PORT_START(); 	/* player 2 12-way rotary control - converted in controls_r() */
 		PORT_ANALOGX( 0xff, 0x00, IPT_DIAL | IPF_REVERSE | IPF_PLAYER2, 25, 10, 0, 0, KEYCODE_N, KEYCODE_M, 0, 0 );
 	INPUT_PORTS_END(); }}; 
 	

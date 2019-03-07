@@ -384,7 +384,7 @@ public class seta2
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_myangel = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - $700300.w
+		PORT_START(); 	// IN0 - $700300.w
 		PORT_DIPNAME( 0x0001, 0x0001, "Service Mode?" );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
@@ -411,7 +411,7 @@ public class seta2
 	
 		PORT_BIT(     0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN1 - $700302.w
+		PORT_START(); 	// IN1 - $700302.w
 		PORT_DIPNAME( 0x000f, 0x000f, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(      0x0002, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(      0x0005, DEF_STR( "3C_1C") );
@@ -444,7 +444,7 @@ public class seta2
 	
 		PORT_BIT(     0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN2 - $700000.w
+		PORT_START(); 	// IN2 - $700000.w
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -456,7 +456,7 @@ public class seta2
 	
 		PORT_BIT(  0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 	
-		PORT_START	// IN3 - $700002.w
+		PORT_START(); 	// IN3 - $700002.w
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -468,7 +468,7 @@ public class seta2
 	
 		PORT_BIT(  0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 	
-		PORT_START	// IN4 - $700004.w
+		PORT_START(); 	// IN4 - $700004.w
 		PORT_BIT_IMPULSE( 0x0001, IP_ACTIVE_LOW, IPT_COIN1, 5 );
 		PORT_BIT_IMPULSE( 0x0002, IP_ACTIVE_LOW, IPT_COIN2, 5 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW,  IPT_SERVICE1 );
@@ -487,7 +487,7 @@ public class seta2
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_myangel2 = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - $600300.w
+		PORT_START(); 	// IN0 - $600300.w
 		PORT_DIPNAME( 0x0001, 0x0001, "Service Mode?" );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
@@ -514,7 +514,7 @@ public class seta2
 	
 		PORT_BIT(     0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN1 - $600302.w
+		PORT_START(); 	// IN1 - $600302.w
 		PORT_DIPNAME( 0x000f, 0x000f, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(      0x0002, DEF_STR( "4C_1C") );
 		PORT_DIPSETTING(      0x0005, DEF_STR( "3C_1C") );
@@ -547,7 +547,7 @@ public class seta2
 	
 		PORT_BIT(     0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN2 - $600000.w
+		PORT_START(); 	// IN2 - $600000.w
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -559,7 +559,7 @@ public class seta2
 	
 		PORT_BIT(  0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 	
-		PORT_START	// IN3 - $600002.w
+		PORT_START(); 	// IN3 - $600002.w
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -571,7 +571,7 @@ public class seta2
 	
 		PORT_BIT(  0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 	
-		PORT_START	// IN4 - $600004.w
+		PORT_START(); 	// IN4 - $600004.w
 		PORT_BIT_IMPULSE( 0x0001, IP_ACTIVE_LOW, IPT_COIN1, 5 );
 		PORT_BIT_IMPULSE( 0x0002, IP_ACTIVE_LOW, IPT_COIN2, 5 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW,  IPT_SERVICE1 );
@@ -590,7 +590,7 @@ public class seta2
 	***************************************************************************/
 	
 	static InputPortPtr input_ports_pzlbowl = new InputPortPtr(){ public void handler() { 
-		PORT_START	// IN0 - $400300.w
+		PORT_START(); 	// IN0 - $400300.w
 		PORT_DIPNAME( 0x0001, 0x0001, "Service Mode?" );
 		PORT_DIPSETTING(      0x0001, DEF_STR( "Off") );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
@@ -617,7 +617,7 @@ public class seta2
 	
 		PORT_BIT(     0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN1 - $400302.w
+		PORT_START(); 	// IN1 - $400302.w
 		PORT_DIPNAME( 0x000f, 0x000f, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(      0x0005, DEF_STR( "3C_1C") );
 		PORT_DIPSETTING(      0x0008, DEF_STR( "2C_1C") );
@@ -650,7 +650,7 @@ public class seta2
 	
 		PORT_BIT(     0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN2 - $500000.w
+		PORT_START(); 	// IN2 - $500000.w
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER1 );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER1 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER1 );
@@ -662,7 +662,7 @@ public class seta2
 	
 		PORT_BIT(  0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 	
-		PORT_START	// IN3 - $500002.w
+		PORT_START(); 	// IN3 - $500002.w
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER2 );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER2 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_PLAYER2 );
@@ -674,7 +674,7 @@ public class seta2
 	
 		PORT_BIT(  0xff00, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 	
-		PORT_START	// IN4 - $500004.w
+		PORT_START(); 	// IN4 - $500004.w
 		PORT_BIT_IMPULSE( 0x0001, IP_ACTIVE_LOW, IPT_COIN1, 5 );
 		PORT_BIT_IMPULSE( 0x0002, IP_ACTIVE_LOW, IPT_COIN2, 5 );// unused, test mode shows it
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW,  IPT_SERVICE1 );

@@ -211,7 +211,7 @@ public class unico16
 	
 	static InputPortPtr input_ports_burglarx = new InputPortPtr(){ public void handler() { 
 	
-		PORT_START	// IN0 - $800000.w
+		PORT_START(); 	// IN0 - $800000.w
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER1 );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER1 );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER1 );
@@ -230,7 +230,7 @@ public class unico16
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_BUTTON3        | IPF_PLAYER2 );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	// IN1 - $800019.b
+		PORT_START(); 	// IN1 - $800019.b
 		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_COIN1    );
 		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_COIN2    );
 		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 );
@@ -241,7 +241,7 @@ public class unico16
 		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x00ff, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 	
-		PORT_START	// IN2 - $80001a.b
+		PORT_START(); 	// IN2 - $80001a.b
 		PORT_BIT(     0x00ff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_SERVICE( 0x0100, IP_ACTIVE_LOW );
 		PORT_DIPNAME( 0x0200, 0x0200, DEF_STR( "Free_Play") );
@@ -266,7 +266,7 @@ public class unico16
 		PORT_DIPSETTING(      0xa000, DEF_STR( "1C_3C") );
 		PORT_DIPSETTING(      0x8000, DEF_STR( "1C_4C") );
 	
-		PORT_START	// IN3 - $80001c.b
+		PORT_START(); 	// IN3 - $80001c.b
 		PORT_BIT(     0x00ff, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_DIPNAME( 0x0300, 0x0300, DEF_STR( "Bonus_Life") );
 		PORT_DIPSETTING(      0x0200, "None" );
@@ -300,7 +300,7 @@ public class unico16
 	
 	static InputPortPtr input_ports_zeropnt = new InputPortPtr(){ public void handler() { 
 	
-		PORT_START	// IN0 - $800018.w
+		PORT_START(); 	// IN0 - $800018.w
 		PORT_BIT(  0x0001, IP_ACTIVE_HIGH, IPT_COIN1    );
 		PORT_BIT(  0x0002, IP_ACTIVE_HIGH, IPT_COIN2    );
 		PORT_BITX( 0x0004, IP_ACTIVE_HIGH, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
@@ -319,7 +319,7 @@ public class unico16
 		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 	
-		PORT_START	// IN1 - $80001a.b
+		PORT_START(); 	// IN1 - $80001a.b
 		PORT_BIT(     0x00ff, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_DIPNAME( 0x0100, 0x0000, "Unknown 1-0" );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "Off") );
@@ -346,7 +346,7 @@ public class unico16
 		PORT_DIPSETTING(      0x4000, DEF_STR( "1C_3C") );
 		PORT_DIPSETTING(      0x6000, DEF_STR( "1C_4C") );
 	
-		PORT_START	// IN2 - $80001c.b
+		PORT_START(); 	// IN2 - $80001c.b
 		PORT_BIT(     0x00ff, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_DIPNAME( 0x0100, 0x0000, "Unknown 2-0" );
 		PORT_DIPSETTING(      0x0000, DEF_STR( "Off") );
@@ -371,16 +371,16 @@ public class unico16
 		PORT_DIPSETTING(      0x8000, "4" );
 		PORT_DIPSETTING(      0xc000, "5" );
 	
-		PORT_START	// IN3 - $800170.b
+		PORT_START(); 	// IN3 - $800170.b
 		PORT_ANALOG( 0xff, 0x88, IPT_AD_STICK_Y | IPF_PLAYER2, 35, 15, 0x18, 0xf8 );
 	
-		PORT_START	// IN4 - $800174.b
+		PORT_START(); 	// IN4 - $800174.b
 		PORT_ANALOG( 0x1ff, 0xa4, IPT_AD_STICK_X | IPF_PLAYER2, 35, 15, 0x30, 0x118 );
 	
-		PORT_START	// IN5 - $800178.b
+		PORT_START(); 	// IN5 - $800178.b
 		PORT_ANALOG( 0xff, 0x88, IPT_AD_STICK_Y | IPF_PLAYER1, 35, 15, 0x18, 0xf8 );
 	
-		PORT_START	// IN6 - $80017c.b
+		PORT_START(); 	// IN6 - $80017c.b
 		PORT_ANALOG( 0x1ff, 0xa4, IPT_AD_STICK_X | IPF_PLAYER1, 35, 15, 0x30, 0x118 );
 	
 	INPUT_PORTS_END(); }}; 

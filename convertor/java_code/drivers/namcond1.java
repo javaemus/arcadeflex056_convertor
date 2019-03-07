@@ -51,7 +51,7 @@ public class namcond1
 	/*************************************************************/
 	
 	static InputPortPtr input_ports_namcond1 = new InputPortPtr(){ public void handler() { 
-		PORT_START      /* player 1 */
+		PORT_START();       /* player 1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN );
@@ -61,7 +61,7 @@ public class namcond1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START      /* player 2 */
+		PORT_START();       /* player 2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_PLAYER2 );
@@ -71,7 +71,7 @@ public class namcond1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START  	/* dipswitches */
+		PORT_START();   	/* dipswitches */
 		PORT_DIPNAME( 0x01, 0x00, "Freeze" );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -82,7 +82,7 @@ public class namcond1
 		PORT_BIT_IMPULSE( 0x10, IP_ACTIVE_HIGH, IPT_SERVICE1, 1 );
 		PORT_BIT( 0xE8, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
-		PORT_START    /* coin mech inputs - a hack */
+		PORT_START();     /* coin mech inputs - a hack */
 		PORT_BIT( 0xf0, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_COIN4 );
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN2 );

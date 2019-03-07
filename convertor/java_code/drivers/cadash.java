@@ -211,7 +211,7 @@ public class cadash
 		PORT_DIPSETTING(    0x00, "Hardest" );
 	
 	#define ASUKA_PLAYERS_INPUT( player ) \
-		PORT_START \
+		PORT_START();  \
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );\
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );\
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON2 | player );\
@@ -222,7 +222,7 @@ public class cadash
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | player );
 	
 	#define ASUKA_SYSTEM_INPUT \
-		PORT_START \
+		PORT_START();  \
 		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_COIN1 );\
 		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_COIN2 );\
 		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_START2 );\
@@ -234,7 +234,7 @@ public class cadash
 	
 	
 	static InputPortPtr input_ports_cadash = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* DSWA */
+		PORT_START(); 	/* DSWA */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unused") );	// Manual says leave it off
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -247,7 +247,7 @@ public class cadash
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_WORLD_8
 	
-		PORT_START	/* DSWB */
+		PORT_START(); 	/* DSWB */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, "Starting Time" );
 		PORT_DIPSETTING(    0x00, "5:00" );
@@ -282,7 +282,7 @@ public class cadash
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_cadashj = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* DSWA */
+		PORT_START(); 	/* DSWA */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unused") );	// Manual says leave it off
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -295,7 +295,7 @@ public class cadash
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_8
 	
-		PORT_START	/* DSWB */
+		PORT_START(); 	/* DSWB */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, "Starting Time" );
 		PORT_DIPSETTING(    0x00, "5:00" );
@@ -324,7 +324,7 @@ public class cadash
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_cadashu = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* DSWA */
+		PORT_START(); 	/* DSWA */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unused") );	// Manual says leave it off
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -337,7 +337,7 @@ public class cadash
 		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_US_8
 	
-		PORT_START	/* DSWB */
+		PORT_START(); 	/* DSWB */
 		TAITO_DIFFICULTY_8
 		PORT_DIPNAME( 0x0c, 0x0c, "Starting Time" );
 		PORT_DIPSETTING(    0x00, "5:00" );

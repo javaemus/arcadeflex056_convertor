@@ -459,7 +459,7 @@ public class namcos1
 	
 	/* Standard Namco System 1 input port definition */
 	static InputPortPtr input_ports_ns1 = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN );
@@ -469,7 +469,7 @@ public class namcos1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON3 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START		/* IN1 */
+		PORT_START(); 		/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER2 );
@@ -479,7 +479,7 @@ public class namcos1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START		/* DSW1 */
+		PORT_START(); 		/* DSW1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -493,7 +493,7 @@ public class namcos1
 		PORT_DIPSETTING(	0x00, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START		/* IN2 : mcu PORT2 */
+		PORT_START(); 		/* IN2 : mcu PORT2 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_SPECIAL );/* OUT:coin lockout */
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_SPECIAL );/* OUT:coin counter 1 */
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_SPECIAL );/* OUT:coin counter 2 */
@@ -506,7 +506,7 @@ public class namcos1
 	
 	/* Dragon Spirit input port definition - dip switches are different */
 	static InputPortPtr input_ports_dspirit = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN );
@@ -516,7 +516,7 @@ public class namcos1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON3 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START		/* IN1 */
+		PORT_START(); 		/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER2 );
@@ -526,13 +526,13 @@ public class namcos1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START		/* DSW1 */
+		PORT_START(); 		/* DSW1 */
 		PORT_DIPNAME( 0x7f, 0x7f, "Life" );
 		PORT_DIPSETTING(	0x7f, "2" );
 		PORT_DIPSETTING(	0x16, "3" );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START		/* IN2 */
+		PORT_START(); 		/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_SPECIAL );/* OUT:coin lockout */
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_SPECIAL );/* OUT:coin counter 1 */
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_SPECIAL );/* OUT:coin counter 2 */
@@ -545,21 +545,21 @@ public class namcos1
 	
 	/* Quester input port definition - paddle controls */
 	static InputPortPtr input_ports_quester = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT( 0x0f, IP_ACTIVE_LOW, IPT_UNUSED );	/* paddle */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START		/* IN1 */
+		PORT_START(); 		/* IN1 */
 		PORT_BIT( 0x0f, IP_ACTIVE_LOW, IPT_UNUSED );	/* paddle */
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START		/* DSW1 */
+		PORT_START(); 		/* DSW1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -573,7 +573,7 @@ public class namcos1
 		PORT_DIPSETTING(	0x00, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START		/* IN2 */
+		PORT_START(); 		/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_SPECIAL );/* OUT:coin lockout */
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_SPECIAL );/* OUT:coin counter 1 */
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_SPECIAL );/* OUT:coin counter 2 */
@@ -583,24 +583,24 @@ public class namcos1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* IN4 - fake input port for player 1 paddle */
+		PORT_START(); 		/* IN4 - fake input port for player 1 paddle */
 		PORT_ANALOG( 0xff, 0x00, IPT_DIAL, 30, 15, 0, 0 );
 	
-		PORT_START		/* IN5 - fake input port for player 2 paddle */
+		PORT_START(); 		/* IN5 - fake input port for player 2 paddle */
 		PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_PLAYER2, 30, 15, 0, 0 );
 	INPUT_PORTS_END(); }}; 
 	
 	/* Face Off input port definition - 4 player controls */
 	static InputPortPtr input_ports_faceoff = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT( 0x7f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START		/* IN1 */
+		PORT_START(); 		/* IN1 */
 		PORT_BIT( 0x7f, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START		/* DSW1 */
+		PORT_START(); 		/* DSW1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -614,7 +614,7 @@ public class namcos1
 		PORT_DIPSETTING(	0x00, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START		/* IN2 */
+		PORT_START(); 		/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_SPECIAL );/* OUT:coin lockout */
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_SPECIAL );/* OUT:coin counter 1 */
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_SPECIAL );/* OUT:coin counter 2 */
@@ -624,7 +624,7 @@ public class namcos1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* IN4 - fake input port for player 1 */
+		PORT_START(); 		/* IN4 - fake input port for player 1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN );
@@ -632,7 +632,7 @@ public class namcos1
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0xe0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* IN5 - fake input port for player 2 */
+		PORT_START(); 		/* IN5 - fake input port for player 2 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER2 );
@@ -640,7 +640,7 @@ public class namcos1
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON1		  | IPF_PLAYER2 );
 		PORT_BIT( 0xe0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* IN6 - fake input port for player 3 */
+		PORT_START(); 		/* IN6 - fake input port for player 3 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER3 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER3 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER3 );
@@ -648,7 +648,7 @@ public class namcos1
 		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON1		  | IPF_PLAYER3 );
 		PORT_BIT( 0xe0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START		/* IN7 - fake input port for player 4 */
+		PORT_START(); 		/* IN7 - fake input port for player 4 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER4 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_PLAYER4 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_PLAYER4 );
@@ -659,7 +659,7 @@ public class namcos1
 	
 	/* Beraboh Man input port definition - controls are different */
 	static InputPortPtr input_ports_berabohm = new InputPortPtr(){ public void handler() { 
-		PORT_START		/* IN0 */
+		PORT_START(); 		/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN );
@@ -669,7 +669,7 @@ public class namcos1
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START		/* IN1 */
+		PORT_START(); 		/* IN1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_COCKTAIL );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_COCKTAIL );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_COCKTAIL );
@@ -677,7 +677,7 @@ public class namcos1
 		PORT_BIT( 0x70, IP_ACTIVE_LOW, IPT_SPECIAL );/* timing from the buttons interface */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START		/* DSW1 */
+		PORT_START(); 		/* DSW1 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -691,7 +691,7 @@ public class namcos1
 		PORT_DIPSETTING(	0x00, DEF_STR( "On") );
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-		PORT_START		/* IN2 */
+		PORT_START(); 		/* IN2 */
 		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_SPECIAL );/* OUT:coin lockout */
 		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_SPECIAL );/* OUT:coin counter 1 */
 		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_SPECIAL );/* OUT:coin counter 2 */
@@ -711,22 +711,22 @@ public class namcos1
 		bit 7 is not actually read by the game but I use it to simulate the second
 		      switch
 		*/
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x3f, 0x00, IPT_SPECIAL );
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_BUTTON3 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_BUTTON4 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x3f, 0x00, IPT_SPECIAL );
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_BUTTON1 );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_BUTTON2 );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x3f, 0x00, IPT_SPECIAL );
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_BUTTON3 | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_BUTTON4 | IPF_COCKTAIL );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x3f, 0x00, IPT_SPECIAL );
 		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_COCKTAIL );
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_BUTTON2 | IPF_COCKTAIL );

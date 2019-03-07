@@ -180,7 +180,7 @@ public class naughtyb
 	}
 	
 	static InputPortPtr input_ports_naughtyb = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* IN0 */
+		PORT_START(); 	/* IN0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -190,7 +190,7 @@ public class naughtyb
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_4WAY );
 	
-		PORT_START	/* DSW0 & VBLANK */
+		PORT_START(); 	/* DSW0 & VBLANK */
 		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Lives") );
 		PORT_DIPSETTING(	0x00, "2" );
 		PORT_DIPSETTING(	0x01, "3" );
@@ -213,7 +213,7 @@ public class naughtyb
 		   it apparently also controls cocktail/table mode. */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_VBLANK );
 	
-		PORT_START	/* FAKE */
+		PORT_START(); 	/* FAKE */
 		/* The coin slots are not memory mapped. */
 		/* This fake input port is used by the interrupt */
 		/* handler to be notified of coin insertions. We use IMPULSE to */

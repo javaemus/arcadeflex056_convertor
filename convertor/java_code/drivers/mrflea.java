@@ -375,7 +375,7 @@ public class mrflea
 	ROM_END(); }}; 
 	
 	static InputPortPtr input_ports_mrflea = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_4WAY );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_4WAY );
 		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_4WAY );
@@ -385,12 +385,12 @@ public class mrflea
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x03, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0xf8, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START /* DSW1 */
+		PORT_START();  /* DSW1 */
 	/*
 		------xx
 		-----x--
@@ -420,7 +420,7 @@ public class mrflea
 		PORT_DIPSETTING( 0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING( 0x00, DEF_STR( "On") );
 	
-		PORT_START /* DSW2 */
+		PORT_START();  /* DSW2 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coinage") );
 		PORT_DIPSETTING( 0x02, DEF_STR( "2C_1C") );
 		PORT_DIPSETTING( 0x03, DEF_STR( "1C_1C") );

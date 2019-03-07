@@ -208,7 +208,7 @@ public class galivan
 	 ***************/
 	
 	#define NIHON_JOYSTICK(_n_) \
-		PORT_START \
+		PORT_START();  \
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER##_n_);\
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER##_n_);\
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER##_n_);\
@@ -219,7 +219,7 @@ public class galivan
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER##_n_);
 	
 	#define NIHON_SYSTEM \
-		PORT_START  /* IN2 - TEST, COIN, START */ \
+		PORT_START();   /* IN2 - TEST, COIN, START */ \
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );\
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );\
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN1 );\
@@ -278,7 +278,7 @@ public class galivan
 		NIHON_JOYSTICK(2)
 		NIHON_SYSTEM
 	
-		PORT_START	/* IN3 - DSW1 */
+		PORT_START(); 	/* IN3 - DSW1 */
 		NIHON_LIVES
 		NIHON_BONUS_LIFE
 		PORT_DIPNAME( 0x10, 0x10, DEF_STR( "Demo_Sounds") );
@@ -294,7 +294,7 @@ public class galivan
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN4 - DSW2 */
+		PORT_START(); 	/* IN4 - DSW2 */
 		NIHON_COINAGE_A
 		NIHON_COINAGE_B_ALT
 		PORT_DIPNAME( 0x10, 0x10, DEF_STR( "Difficulty") );
@@ -317,7 +317,7 @@ public class galivan
 		NIHON_SYSTEM
 	
 	
-		PORT_START	/* IN3 - DSW1 */
+		PORT_START(); 	/* IN3 - DSW1 */
 		NIHON_LIVES
 		NIHON_BONUS_LIFE
 		PORT_DIPNAME( 0x10, 0x10, DEF_STR( "Demo_Sounds") );
@@ -333,7 +333,7 @@ public class galivan
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN4 - DSW2 */
+		PORT_START(); 	/* IN4 - DSW2 */
 		NIHON_COINAGE_A
 		NIHON_COINAGE_B
 		PORT_DIPNAME( 0x10, 0x10, DEF_STR( "Difficulty") );
@@ -357,7 +357,7 @@ public class galivan
 		NIHON_SYSTEM
 	
 	
-		PORT_START	/* IN3 - DSW1 */
+		PORT_START(); 	/* IN3 - DSW1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
 		PORT_DIPSETTING(    0x00, "2" );
 		PORT_DIPSETTING(    0x03, "3" );
@@ -377,7 +377,7 @@ public class galivan
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN4 - DSW2 */
+		PORT_START(); 	/* IN4 - DSW2 */
 		NIHON_COINAGE_A
 		NIHON_COINAGE_B
 		PORT_DIPNAME( 0x10, 0x10, DEF_STR( "Difficulty") );
@@ -401,7 +401,7 @@ public class galivan
 		NIHON_SYSTEM
 	
 	
-		PORT_START	/* IN3 - DSW1 */
+		PORT_START(); 	/* IN3 - DSW1 */
 		NIHON_LIVES
 		NIHON_BONUS_LIFE
 		PORT_DIPNAME( 0x10, 0x10, DEF_STR( "Demo_Sounds") );
@@ -417,7 +417,7 @@ public class galivan
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN4 - DSW2 */
+		PORT_START(); 	/* IN4 - DSW2 */
 		NIHON_COINAGE_A
 		NIHON_COINAGE_B
 		PORT_DIPNAME( 0x10, 0x10, DEF_STR( "Difficulty") );
@@ -440,7 +440,7 @@ public class galivan
 		NIHON_SYSTEM
 	
 	
-		PORT_START	/* IN3 - TEST */
+		PORT_START(); 	/* IN3 - TEST */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -464,7 +464,7 @@ public class galivan
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* IN4 - TEST */
+		PORT_START(); 	/* IN4 - TEST */
 		NIHON_LIVES
 		NIHON_BONUS_LIFE
 		PORT_DIPNAME( 0x30, 0x30, DEF_STR( "Coin_A") );
@@ -478,7 +478,7 @@ public class galivan
 		PORT_DIPSETTING(    0x00, DEF_STR( "2C_3C") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "1C_2C") );
 	
-		PORT_START	/* IN5 - TEST */
+		PORT_START(); 	/* IN5 - TEST */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Demo_Sounds") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );

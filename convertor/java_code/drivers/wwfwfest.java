@@ -214,7 +214,7 @@ public class wwfwfest
 	*******************************************************************************/
 	
 	static InputPortPtr input_ports_wwfwfest = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* Player 1 */
+		PORT_START(); 	/* Player 1 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_UP );
@@ -224,7 +224,7 @@ public class wwfwfest
 		PORT_BIT( 0x0040, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x0080, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START /* Player 2 */
+		PORT_START();  /* Player 2 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER2 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_PLAYER2 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_PLAYER2 );
@@ -234,7 +234,7 @@ public class wwfwfest
 		PORT_BIT( 0x0040, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x0080, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START /* Player 3 */
+		PORT_START();  /* Player 3 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER3 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_PLAYER3 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_PLAYER3 );
@@ -244,7 +244,7 @@ public class wwfwfest
 		PORT_BIT( 0x0040, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x0080, IP_ACTIVE_LOW, IPT_START3 );
 	
-		PORT_START /* Player 4 */
+		PORT_START();  /* Player 4 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER4 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_PLAYER4 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_PLAYER4 );
@@ -254,7 +254,7 @@ public class wwfwfest
 		PORT_BIT( 0x0040, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x0080, IP_ACTIVE_LOW, IPT_START4 );
 	
-		PORT_START /* Misc 1 */
+		PORT_START();  /* Misc 1 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -264,7 +264,7 @@ public class wwfwfest
 		PORT_BIT( 0x0040, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START /* Misc 2 */
+		PORT_START();  /* Misc 2 */
 		PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_VBLANK );
@@ -276,7 +276,7 @@ public class wwfwfest
 	
 		/* Nb:  There are actually 3 dips on the board, 2 * 8, and 1 *4 */
 	
-		PORT_START /* Dips 1 */
+		PORT_START();  /* Dips 1 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coin_A") );
 		PORT_DIPSETTING(	0x00, DEF_STR( "3C_1C") ); )
 		PORT_DIPSETTING(	0x01, DEF_STR( "2C_1C") ); )
@@ -301,7 +301,7 @@ public class wwfwfest
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START /* Dips 2 */
+		PORT_START();  /* Dips 2 */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x02, "Easy" );
 		PORT_DIPSETTING(    0x03, "Normal" );

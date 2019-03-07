@@ -515,7 +515,7 @@ public class alpha68k
 	/******************************************************************************/
 	
 	#define ALPHA68K_PLAYER1_INPUT \
-		PORT_START	/* Player 1 controls */ \
+		PORT_START(); 	/* Player 1 controls */ \
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY );\
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );\
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );\
@@ -526,7 +526,7 @@ public class alpha68k
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );\
 	
 	#define ALPHA68K_PLAYER2_INPUT \
-		PORT_START	/* Player 2 controls */ \
+		PORT_START(); 	/* Player 2 controls */ \
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER2 );\
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );\
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );\
@@ -537,7 +537,7 @@ public class alpha68k
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
 	static InputPortPtr input_ports_kyros = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT( 0x0002, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x0004, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY );
@@ -555,7 +555,7 @@ public class alpha68k
 		PORT_BIT( 0x4000, IP_ACTIVE_HIGH, IPT_BUTTON3 | IPF_COCKTAIL );
 		PORT_BIT( 0x8000, IP_ACTIVE_HIGH, IPT_START2 );
 	
-		PORT_START	/* dipswitches */
+		PORT_START(); 	/* dipswitches */
 		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
@@ -580,13 +580,13 @@ public class alpha68k
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START /* Coin input to microcontroller */
+		PORT_START();  /* Coin input to microcontroller */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_sstingry = new InputPortPtr(){ public void handler() { 
-		PORT_START
+		PORT_START(); 
 		PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT( 0x0002, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x0004, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY );
@@ -604,7 +604,7 @@ public class alpha68k
 		PORT_BIT( 0x4000, IP_ACTIVE_HIGH, IPT_BUTTON3 | IPF_COCKTAIL );
 		PORT_BIT( 0x8000, IP_ACTIVE_HIGH, IPT_START2 );
 	
-		PORT_START	/* Player 1 controls */
+		PORT_START(); 	/* Player 1 controls */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -630,7 +630,7 @@ public class alpha68k
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* Coin input to microcontroller */
+		PORT_START(); 	/* Coin input to microcontroller */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 	INPUT_PORTS_END(); }}; 
@@ -639,11 +639,11 @@ public class alpha68k
 		ALPHA68K_PLAYER1_INPUT
 		ALPHA68K_PLAYER2_INPUT
 	
-		PORT_START	/* Coin input to microcontroller */
+		PORT_START(); 	/* Coin input to microcontroller */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START	/* Service + dip */
+		PORT_START(); 	/* Service + dip */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BITX(0x02, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	
@@ -665,7 +665,7 @@ public class alpha68k
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START /* A 6 way dip switch */
+		PORT_START();  /* A 6 way dip switch */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x00, "A 3C/2C B 8C/1C" );
 		PORT_DIPSETTING(    0x01, "A 2C/3C B 7C/1C" );
@@ -686,10 +686,10 @@ public class alpha68k
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* player 1 12-way rotary control - converted in controls_r() */
+		PORT_START(); 	/* player 1 12-way rotary control - converted in controls_r() */
 		PORT_ANALOGX( 0xff, 0x00, IPT_DIAL | IPF_REVERSE, 25, 8, 0, 0, KEYCODE_Z, KEYCODE_X, 0, 0 );
 	
-		PORT_START	/* player 2 12-way rotary control - converted in controls_r() */
+		PORT_START(); 	/* player 2 12-way rotary control - converted in controls_r() */
 		PORT_ANALOGX( 0xff, 0x00, IPT_DIAL | IPF_REVERSE | IPF_PLAYER2, 25, 8, 0, 0, KEYCODE_N, KEYCODE_M, 0, 0 );
 	INPUT_PORTS_END(); }}; 
 	
@@ -697,11 +697,11 @@ public class alpha68k
 		ALPHA68K_PLAYER1_INPUT
 		ALPHA68K_PLAYER2_INPUT
 	
-		PORT_START	/* Coin input to microcontroller */
+		PORT_START(); 	/* Coin input to microcontroller */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START	/* Service + dip */
+		PORT_START(); 	/* Service + dip */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BITX(0x02, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	
@@ -723,7 +723,7 @@ public class alpha68k
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START /* A 6 way dip switch */
+		PORT_START();  /* A 6 way dip switch */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x00, "A 3C/2C B 8C/1C" );
 		PORT_DIPSETTING(    0x01, "A 2C/3C B 7C/1C" );
@@ -744,10 +744,10 @@ public class alpha68k
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* player 1 12-way rotary control - converted in controls_r() */
+		PORT_START(); 	/* player 1 12-way rotary control - converted in controls_r() */
 		PORT_ANALOGX( 0xff, 0x00, IPT_DIAL | IPF_REVERSE, 25, 8, 0, 0, KEYCODE_Z, KEYCODE_X, 0, 0 );
 	
-		PORT_START	/* player 2 12-way rotary control - converted in controls_r() */
+		PORT_START(); 	/* player 2 12-way rotary control - converted in controls_r() */
 		PORT_ANALOGX( 0xff, 0x00, IPT_DIAL | IPF_REVERSE | IPF_PLAYER2, 25, 8, 0, 0, KEYCODE_N, KEYCODE_M, 0, 0 );
 	INPUT_PORTS_END(); }}; 
 	
@@ -755,11 +755,11 @@ public class alpha68k
 		ALPHA68K_PLAYER1_INPUT
 		ALPHA68K_PLAYER2_INPUT
 	
-		PORT_START	/* Coin input to microcontroller */
+		PORT_START(); 	/* Coin input to microcontroller */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START	/* Service + dip */
+		PORT_START(); 	/* Service + dip */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BITX(0x02, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	
@@ -781,7 +781,7 @@ public class alpha68k
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START /* A 6 way dip switch */
+		PORT_START();  /* A 6 way dip switch */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x00, "A 3C/2C B 8C/1C" );
 		PORT_DIPSETTING(    0x01, "A 2C/3C B 7C/1C" );
@@ -802,15 +802,15 @@ public class alpha68k
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* player 1 12-way rotary control */
+		PORT_START(); 	/* player 1 12-way rotary control */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* player 2 12-way rotary control */
+		PORT_START(); 	/* player 2 12-way rotary control */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_goldmedl = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* 3 buttons per player, no joystick */
+		PORT_START(); 	/* 3 buttons per player, no joystick */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER1 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
@@ -820,7 +820,7 @@ public class alpha68k
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START3 );/* Doesn't work? */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	/* 3 buttons per player, no joystick */
+		PORT_START(); 	/* 3 buttons per player, no joystick */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER3 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER3 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER4 );
@@ -830,11 +830,11 @@ public class alpha68k
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START4 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START	/* Coin input to microcontroller */
+		PORT_START(); 	/* Coin input to microcontroller */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START	/* Service + dip */
+		PORT_START(); 	/* Service + dip */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BITX(0x02, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	
@@ -856,7 +856,7 @@ public class alpha68k
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START /* A 6 way dip switch */
+		PORT_START();  /* A 6 way dip switch */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x00, "A 3C/2C B 8C/1C" );
 		PORT_DIPSETTING(    0x01, "A 2C/3C B 7C/1C" );
@@ -877,10 +877,10 @@ public class alpha68k
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-		PORT_START	/* player 1 12-way rotary control */
+		PORT_START(); 	/* player 1 12-way rotary control */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* player 2 12-way rotary control */
+		PORT_START(); 	/* player 2 12-way rotary control */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 
 	
@@ -889,11 +889,11 @@ public class alpha68k
 		ALPHA68K_PLAYER1_INPUT
 		ALPHA68K_PLAYER2_INPUT
 	
-		PORT_START	/* Coin input to microcontroller */
+		PORT_START(); 	/* Coin input to microcontroller */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START	/* Service + dip */
+		PORT_START(); 	/* Service + dip */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BITX(0x02, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	
@@ -915,7 +915,7 @@ public class alpha68k
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START /* A 6 way dip switch */
+		PORT_START();  /* A 6 way dip switch */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -939,7 +939,7 @@ public class alpha68k
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_gangwars = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* Player 1 controls */
+		PORT_START(); 	/* Player 1 controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
@@ -949,7 +949,7 @@ public class alpha68k
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON3 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	/* Player 2 controls */
+		PORT_START(); 	/* Player 2 controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
@@ -959,11 +959,11 @@ public class alpha68k
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START	/* Coin input to microcontroller */
+		PORT_START(); 	/* Coin input to microcontroller */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START	/* Service + dip */
+		PORT_START(); 	/* Service + dip */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BITX(0x02, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	
@@ -985,7 +985,7 @@ public class alpha68k
 		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
-		PORT_START /* A 6 way dip switch */
+		PORT_START();  /* A 6 way dip switch */
 		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1009,7 +1009,7 @@ public class alpha68k
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_sbasebal = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* Player 1 controls */
+		PORT_START(); 	/* Player 1 controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
@@ -1019,7 +1019,7 @@ public class alpha68k
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON3 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
-		PORT_START	/* Player 2 controls */
+		PORT_START(); 	/* Player 2 controls */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER2 );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 );
@@ -1029,11 +1029,11 @@ public class alpha68k
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 );
 	
-		PORT_START	/* Coin input to microcontroller */
+		PORT_START(); 	/* Coin input to microcontroller */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-		PORT_START	/* Service + dip */
+		PORT_START(); 	/* Service + dip */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_SERVICE1 );
 		PORT_BITX(0x02, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
 	
@@ -1071,7 +1071,7 @@ public class alpha68k
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	*/
 	
-		PORT_START /* A 6 way dip switch */
+		PORT_START();  /* A 6 way dip switch */
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		PORT_DIPNAME( 0x20, 0x20, "Freeze" );

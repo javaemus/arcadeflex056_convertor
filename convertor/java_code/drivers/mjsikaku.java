@@ -721,7 +721,7 @@ public class mjsikaku
 	
 	
 	static InputPortPtr input_ports_mjsikaku = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "1 (Easy); )
 		PORT_DIPSETTING(    0x06, "2" );
@@ -745,10 +745,10 @@ public class mjsikaku
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -766,7 +766,7 @@ public class mjsikaku
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_otonano = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "1 (Easy); )
 		PORT_DIPSETTING(    0x06, "2" );
@@ -792,13 +792,13 @@ public class mjsikaku
 		PORT_DIPSETTING(    0x80, "100 Yen" );
 		PORT_DIPSETTING(    0x00, "50 Yen" );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x01, "Character Display Test" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -816,7 +816,7 @@ public class mjsikaku
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_mjcamera = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "1 (Easy); )
 		PORT_DIPSETTING(    0x06, "2" );
@@ -838,10 +838,10 @@ public class mjsikaku
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -859,7 +859,7 @@ public class mjsikaku
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_kaguya = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coinage") );
 		PORT_DIPSETTING(    0x03, DEF_STR( "1C_1C") );
 		PORT_DIPSETTING(    0x02, DEF_STR( "1C_2C") );
@@ -884,7 +884,7 @@ public class mjsikaku
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x00, "Nudity graphic on bet" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -903,7 +903,7 @@ public class mjsikaku
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 	//	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_SERVICE1 );	//
@@ -922,7 +922,7 @@ public class mjsikaku
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_secolove = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "1 (Easy); )
 		PORT_DIPSETTING(    0x06, "2" );
@@ -942,7 +942,7 @@ public class mjsikaku
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x03, 0x00, "Number of last chance" );
 		PORT_DIPSETTING(    0x03, "0" );
 		PORT_DIPSETTING(    0x02, "3" );
@@ -962,7 +962,7 @@ public class mjsikaku
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -983,7 +983,7 @@ public class mjsikaku
 	
 		// I don't have manual for this game.
 	
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x0f, 0x0f, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x0f, "1 (Easy); )
 		PORT_DIPSETTING(    0x0e, "2" );
@@ -1011,7 +1011,7 @@ public class mjsikaku
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x03, 0x00, "Number of last chance" );
 		PORT_DIPSETTING(    0x03, "0" );
 		PORT_DIPSETTING(    0x02, "3" );
@@ -1035,7 +1035,7 @@ public class mjsikaku
 		PORT_DIPSETTING(    0x40, "TSUMO 7" );
 		PORT_DIPSETTING(    0x00, "HAIPAI" );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -1053,7 +1053,7 @@ public class mjsikaku
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_seiha = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x07, 0x00, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "1 (Hard); )
 		PORT_DIPSETTING(    0x06, "2" );
@@ -1075,7 +1075,7 @@ public class mjsikaku
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED );
@@ -1085,7 +1085,7 @@ public class mjsikaku
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -1103,7 +1103,7 @@ public class mjsikaku
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_seiham = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x07, 0x00, "Game Out" );
 		PORT_DIPSETTING(    0x07, "60% (Hard); )
 		PORT_DIPSETTING(    0x06, "65%" );
@@ -1127,7 +1127,7 @@ public class mjsikaku
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x00, "Rate Up" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1139,7 +1139,7 @@ public class mjsikaku
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_BIT( 0xf8, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -1157,7 +1157,7 @@ public class mjsikaku
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_iemoto = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x07, 0x00, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "1 (Hard); )
 		PORT_DIPSETTING(    0x06, "2" );
@@ -1175,10 +1175,10 @@ public class mjsikaku
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_BIT( 0xe0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -1196,7 +1196,7 @@ public class mjsikaku
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_bijokkoy = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "1 (Easy); )
 		PORT_DIPSETTING(    0x06, "2" );
@@ -1222,7 +1222,7 @@ public class mjsikaku
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x03, 0x00, "Number of last chance" );
 		PORT_DIPSETTING(    0x03, "0" );
 		PORT_DIPSETTING(    0x02, "2" );
@@ -1236,7 +1236,7 @@ public class mjsikaku
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -1254,7 +1254,7 @@ public class mjsikaku
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_bijokkog = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "1 (Easy); )
 		PORT_DIPSETTING(    0x06, "2" );
@@ -1280,7 +1280,7 @@ public class mjsikaku
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x03, 0x00, "Number of last chance" );
 		PORT_DIPSETTING(    0x03, "0" );
 		PORT_DIPSETTING(    0x02, "2" );
@@ -1304,7 +1304,7 @@ public class mjsikaku
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -1325,7 +1325,7 @@ public class mjsikaku
 	
 		// I don't have manual for this game.
 	
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "1 (Easy); )
 		PORT_DIPSETTING(    0x06, "2" );
@@ -1351,7 +1351,7 @@ public class mjsikaku
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x03, 0x03, "Time" );
 		PORT_DIPSETTING(    0x03, "120" );
 		PORT_DIPSETTING(    0x02, "100" );
@@ -1370,7 +1370,7 @@ public class mjsikaku
 		PORT_DIPSETTING(    0x00, "separate" );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -1388,7 +1388,7 @@ public class mjsikaku
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_housemn2 = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "1 (Easy); )
 		PORT_DIPSETTING(    0x06, "2" );
@@ -1414,7 +1414,7 @@ public class mjsikaku
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x03, 0x03, "Time" );
 		PORT_DIPSETTING(    0x03, "120" );
 		PORT_DIPSETTING(    0x02, "100" );
@@ -1433,7 +1433,7 @@ public class mjsikaku
 		PORT_DIPSETTING(    0x00, "separate" );
 		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -1451,7 +1451,7 @@ public class mjsikaku
 	INPUT_PORTS_END(); }}; 
 	
 	static InputPortPtr input_ports_ojousan = new InputPortPtr(){ public void handler() { 
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x07, "1 (Easy); )
 		PORT_DIPSETTING(    0x06, "2" );
@@ -1469,10 +1469,10 @@ public class mjsikaku
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		PORT_BIT( 0xe0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_BIT( 0xff, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -1493,7 +1493,7 @@ public class mjsikaku
 	
 		// I don't have manual for this game.
 	
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x0f, 0x0d, DEF_STR( "Difficulty") );
 		PORT_DIPSETTING(    0x0d, "1 (Easy); )
 		PORT_DIPSETTING(    0x0a, "2" );
@@ -1509,7 +1509,7 @@ public class mjsikaku
 		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED );
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x03, 0x00, "Number of last chance" );
 		PORT_DIPSETTING(    0x03, "0" );
 		PORT_DIPSETTING(    0x02, "1" );
@@ -1525,7 +1525,7 @@ public class mjsikaku
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET
@@ -1546,7 +1546,7 @@ public class mjsikaku
 	
 		// I don't have manual for this game.
 	
-		PORT_START	/* (0) DIPSW-A */
+		PORT_START(); 	/* (0) DIPSW-A */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 1-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1572,7 +1572,7 @@ public class mjsikaku
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (1) DIPSW-B */
+		PORT_START(); 	/* (1) DIPSW-B */
 		PORT_DIPNAME( 0x01, 0x01, "DIPSW 2-1" );
 		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -1598,7 +1598,7 @@ public class mjsikaku
 		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
 		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-		PORT_START	/* (2) PORT 0 */
+		PORT_START(); 	/* (2) PORT 0 */
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED );	// DRAW BUSY
 		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED );	//
 		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE3 );	// MEMORY RESET

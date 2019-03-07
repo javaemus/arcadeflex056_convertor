@@ -415,7 +415,7 @@ public class psychic5
 	};
 	
 	static InputPortPtr input_ports_psychic5 = new InputPortPtr(){ public void handler() { 
-	    PORT_START
+	    PORT_START(); 
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
@@ -425,7 +425,7 @@ public class psychic5
 	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
 	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
-	    PORT_START		/* player 1 controls */
+	    PORT_START(); 		/* player 1 controls */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
@@ -435,7 +435,7 @@ public class psychic5
 	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-	    PORT_START		/* player 2 controls */
+	    PORT_START(); 		/* player 2 controls */
 	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
 	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
 	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );
@@ -445,7 +445,7 @@ public class psychic5
 	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
-	    PORT_START  /* dsw0 */
+	    PORT_START();   /* dsw0 */
 	    PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
 	    PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 	    PORT_DIPSETTING(    0x00, DEF_STR( "On") );
@@ -470,7 +470,7 @@ public class psychic5
 	    PORT_DIPSETTING(    0x40, "4" );
 	    PORT_DIPSETTING(    0x00, "5" );
 	
-	    PORT_START  /* dsw1 */
+	    PORT_START();   /* dsw1 */
 	    PORT_BITX(    0x01, 0x01, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE );
 	    PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
 	    PORT_DIPSETTING(    0x00, DEF_STR( "On") );

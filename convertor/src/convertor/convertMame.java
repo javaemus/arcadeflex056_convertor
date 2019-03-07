@@ -42,8 +42,8 @@ public class convertMame {
     static final int GAMEDRIVER = 14;
     static final int NEWINPUT = 15;
     static final int MACHINEDRIVER = 16;
-    static final int SN76496=17;
-    static final int AY8910=18;
+    static final int SN76496 = 17;
+    static final int AY8910 = 18;
 
     public static void Convert() {
         Convertor.inpos = 0;//position of pointer inside the buffers
@@ -411,8 +411,7 @@ public class convertMame {
                                 i3 = -1;
                                 continue;
                             }
-                        }
-                        else if (sUtil.getToken("AY8910interface")) {
+                        } else if (sUtil.getToken("AY8910interface")) {
                             sUtil.skipSpace();
                             Convertor.token[0] = sUtil.parseToken();
                             sUtil.skipSpace();
@@ -774,10 +773,10 @@ public class convertMame {
                             Convertor.inpos += 1;
                             continue;
                         }
-                        if (sUtil.getToken("PORT_START")) {
-                            sUtil.putString((new StringBuilder()).append("PORT_START(); ").toString());
-                            continue;
-                        }
+                    }
+                    if (sUtil.getToken("PORT_START")) {
+                        sUtil.putString((new StringBuilder()).append("PORT_START(); ").toString());
+                        continue;
                     }
                     if (sUtil.getToken("PORT_DIPNAME") || sUtil.getToken("PORT_BIT") || sUtil.getToken("PORT_DIPSETTING") || sUtil.getToken("PORT_BITX") || sUtil.getToken("PORT_SERVICE") || sUtil.getToken("PORT_BIT_IMPULSE") || sUtil.getToken("PORT_ANALOG") || sUtil.getToken("PORT_ANALOGX")) {
                         i8++;
