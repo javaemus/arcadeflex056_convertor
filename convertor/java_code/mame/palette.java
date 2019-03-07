@@ -33,10 +33,7 @@ public class palette
 	UINT16 *palette_shadow_table;
 	
 	
-	static void palette_reset_32_direct(void);
-	static void palette_reset_15_direct(void);
-	static void palette_reset_16_palettized(void);
-	
+	static static static 
 	
 	
 	int palette_start(void)

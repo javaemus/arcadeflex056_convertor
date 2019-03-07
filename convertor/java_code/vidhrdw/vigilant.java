@@ -58,11 +58,11 @@ public class vigilant
 		return 0;
 	} };
 	
-	void vigilant_vh_stop(void)
+	public static VhStopPtr vigilant_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free(bg_bitmap);
 		generic_vh_stop();
-	}
+	} };
 	
 	
 	

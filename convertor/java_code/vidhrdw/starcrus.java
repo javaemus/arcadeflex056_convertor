@@ -90,13 +90,13 @@ public class starcrus
 		return 0;
 	} };
 	
-	void starcrus_vh_stop(void)
+	public static VhStopPtr starcrus_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free(ship1_vid);
 		bitmap_free(ship2_vid);
 		bitmap_free(proj1_vid);
 		bitmap_free(proj2_vid);
-	}
+	} };
 	
 	public static WriteHandlerPtr starcrus_ship_parm_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

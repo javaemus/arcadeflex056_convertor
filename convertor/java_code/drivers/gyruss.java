@@ -65,9 +65,7 @@ public class gyruss
 {
 	
 	
-	void konami1_decode_cpu2(void);
 	
-	void gyruss_vh_stop(void);
 	void gyruss_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void gyruss_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

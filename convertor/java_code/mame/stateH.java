@@ -11,7 +11,6 @@ public class stateH
 {
 	
 	/* Initializes the save state registrations */
-	void state_save_reset(void);
 	
 	/* Registering functions */
 	void state_save_register_UINT8 (const char *module, int instance,
@@ -41,14 +40,9 @@ public class stateH
 	int  state_save_load_begin(void *file);
 	
 	void state_save_set_current_tag(int tag);
-	void state_save_save_continue(void);
-	void state_save_load_continue(void);
 	
-	void state_save_save_finish(void);
-	void state_save_load_finish(void);
 	
 	/* Display function */
-	void state_save_dump_registry(void);
 	
 	#endif
 }

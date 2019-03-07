@@ -140,12 +140,12 @@ public class bankp
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void bankp_vh_stop(void)
+	public static VhStopPtr bankp_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(dirtybuffer2);
 		bitmap_free(tmpbitmap2);
 		generic_vh_stop();
-	}
+	} };
 	
 	
 	

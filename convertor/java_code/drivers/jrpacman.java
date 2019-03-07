@@ -103,7 +103,6 @@ public class jrpacman
 	extern unsigned char *jrpacman_charbank,*jrpacman_spritebank;
 	extern unsigned char *jrpacman_palettebank,*jrpacman_colortablebank;
 	void jrpacman_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void jrpacman_vh_stop(void);
 	void jrpacman_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	extern unsigned char *pengo_soundregs;

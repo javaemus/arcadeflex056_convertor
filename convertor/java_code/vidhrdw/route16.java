@@ -113,11 +113,11 @@ public class route16
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void route16_vh_stop(void)
+	public static VhStopPtr route16_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free(tmpbitmap1);
 		bitmap_free(tmpbitmap2);
-	}
+	} };
 	
 	
 	/***************************************************************************

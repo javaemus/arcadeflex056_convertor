@@ -13,7 +13,6 @@ public class taito_f2
 	#define TC0430GRW_GFX_NUM 2
 	
 	extern UINT8 TC0360PRI_regs[16];
-	void taitof2_vh_stop (void);
 	
 	struct tempsprite
 	{
@@ -461,7 +460,7 @@ public class taito_f2
 		return (taitof2_core_vh_start(0,3,3,0,0,0,0,0,0));
 	} };
 	
-	void taitof2_vh_stop (void)
+	public static VhStopPtr taitof2_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(spriteram_delayed);
 		spriteram_delayed = 0;
@@ -488,7 +487,7 @@ public class taito_f2
 		if (has_TC0430GRW())
 			TC0430GRW_vh_stop();
 	
-	}
+	} };
 	
 	
 	/********************************************************

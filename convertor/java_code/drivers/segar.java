@@ -51,7 +51,6 @@ public class segar
 	   
 	/* temporary speech handling through samples */
 	int astrob_speech_sh_start(const struct MachineSound *msound);
-	void astrob_speech_sh_update(void);
 	
 	/* sample names */
 	extern const char *astrob_sample_names[];
@@ -77,7 +76,6 @@ public class segar
 	
 	void monsterb_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	void spaceod_vh_stop(void);
 	void spaceod_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

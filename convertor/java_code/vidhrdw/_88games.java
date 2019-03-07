@@ -86,12 +86,12 @@ public class _88games
 		return 0;
 	} };
 	
-	void k88games_vh_stop(void)
+	public static VhStopPtr k88games_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		K052109_vh_stop();
 		K051960_vh_stop();
 		K051316_vh_stop_0();
-	}
+	} };
 	
 	
 	

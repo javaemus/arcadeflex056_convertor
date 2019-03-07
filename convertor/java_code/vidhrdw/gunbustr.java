@@ -22,13 +22,13 @@ public class gunbustr
 	
 	/************************************************************/
 	
-	void gunbustr_vh_stop (void)
+	public static VhStopPtr gunbustr_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(spritelist);
 		spritelist = 0;
 	
 		TC0480SCP_vh_stop();
-	}
+	} };
 	
 	public static VhStartPtr gunbustr_vh_start = new VhStartPtr() { public int handler() 
 	{

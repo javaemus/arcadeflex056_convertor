@@ -157,14 +157,12 @@ public class balsente
 	
 	
 	/* video driver data & functions */
-	void balsente_vh_stop(void);
 	void balsente_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	
 	
 	/* local prototypes */
-	static void poly17_init(void);
-	static void counter_set_out(int which, int gate);
+	static static void counter_set_out(int which, int gate);
 	static void counter_callback(int param);
 	
 	

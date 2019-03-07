@@ -143,7 +143,6 @@ public class atarisy1
 	
 	void atarisys1_scanline_update(int scanline);
 	
-	void atarisys1_vh_stop(void);
 	void atarisys1_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

@@ -166,12 +166,12 @@ public class zac2650
 		return 0;
 	} };
 	
-	void tinvader_vh_stop(void)
+	public static VhStopPtr tinvader_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		generic_vh_stop();
 		bitmap_free(spritebitmap);
 	    spritebitmap = 0;
-	}
+	} };
 	
 	void tinvader_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
 	{

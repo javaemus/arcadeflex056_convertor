@@ -26,7 +26,6 @@ struct DisplayText
 #define SEL_MASK2 ((1<<SEL_BITS2)-1)
 
 struct GfxElement *builduifont(void);
-void pick_uifont_colors(void);
 void displaytext(struct mame_bitmap *bitmap,const struct DisplayText *dt);
 void ui_text(struct mame_bitmap *bitmap,const char *buf,int x,int y);
 void ui_drawbox(struct mame_bitmap *bitmap,int leftx,int topy,int width,int height);
@@ -36,7 +35,6 @@ int showcopyright(struct mame_bitmap *bitmap);
 int showgamewarnings(struct mame_bitmap *bitmap);
 void set_ui_visarea (int xmin, int ymin, int xmax, int ymax);
 
-void init_user_interface(void);
 int handle_user_interface(struct mame_bitmap *bitmap);
 
 

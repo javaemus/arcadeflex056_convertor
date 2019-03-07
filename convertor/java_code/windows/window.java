@@ -165,8 +165,7 @@ public class window
 	//	PROTOTYPES
 	//============================================================
 	
-	static void update_system_menu(void);
-	static LRESULT CALLBACK video_window_proc(HWND wnd, UINT message, WPARAM wparam, LPARAM lparam);
+	static static LRESULT CALLBACK video_window_proc(HWND wnd, UINT message, WPARAM wparam, LPARAM lparam);
 	static void draw_video_contents(HDC dc, struct mame_bitmap *bitmap, int update);
 	
 	static void dib_draw_window(HDC dc, struct mame_bitmap *bitmap, int update);

@@ -128,11 +128,11 @@ public class tunhunt
 		return -1;
 	} };
 	
-	void tunhunt_vh_stop( void )
+	public static VhStopPtr tunhunt_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free( dirtybuffer );
 		bitmap_free(tmpbitmap);
-	}
+	} };
 	
 	void tunhunt_vh_convert_color_prom(
 			unsigned char *palette, unsigned short *colortable, const unsigned char *color_prom )

@@ -57,7 +57,6 @@ public class toaplan1
 	WRITE16_HANDLER( demonwld_dsp_w );
 	WRITE16_HANDLER( demonwld_dsp_ctrl_w );
 	
-	void toaplan1_init_machine(void);
 	
 	WRITE16_HANDLER( samesame_coin_w );
 	
@@ -89,11 +88,6 @@ public class toaplan1
 	WRITE16_HANDLER( toaplan1_tile_offsets_w );
 	WRITE16_HANDLER( toaplan1_layers_offset_w );
 	
-	void toaplan1_eof_callback(void);
-	void rallybik_eof_callback(void);
-	void samesame_eof_callback(void);
-	void toaplan1_vh_stop(void);
-	void rallybik_vh_stop(void);
 	void toaplan1_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void zerowing_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void demonwld_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

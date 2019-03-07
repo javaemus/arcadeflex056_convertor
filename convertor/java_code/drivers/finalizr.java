@@ -16,14 +16,12 @@ public class finalizr
 {
 	
 	
-	void konami1_decode(void);
 	
 	extern unsigned char *finalizr_scroll;
 	extern unsigned char *finalizr_videoram2,*finalizr_colorram2;
 	static unsigned char *finalizr_interrupt_enable;
 	
 	void finalizr_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void finalizr_vh_stop(void);
 	void finalizr_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

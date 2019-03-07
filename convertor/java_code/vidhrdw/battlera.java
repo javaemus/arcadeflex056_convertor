@@ -28,7 +28,7 @@ public class battlera
 	
 	/******************************************************************************/
 	
-	void battlera_vh_stop (void)
+	public static VhStopPtr battlera_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(tile_dirty);
 		free(HuC6270_vram);
@@ -37,7 +37,7 @@ public class battlera
 	
 		bitmap_free (tile_bitmap);
 		bitmap_free (front_bitmap);
-	}
+	} };
 	
 	public static VhStartPtr battlera_vh_start = new VhStartPtr() { public int handler() 
 	{

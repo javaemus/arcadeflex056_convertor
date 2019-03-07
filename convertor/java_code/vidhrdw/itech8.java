@@ -150,10 +150,10 @@ public class itech8
 	 *
 	 *************************************/
 	
-	void itech8_vh_stop(void)
+	public static VhStopPtr itech8_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		tms34061_stop();
-	}
+	} };
 	
 	
 	

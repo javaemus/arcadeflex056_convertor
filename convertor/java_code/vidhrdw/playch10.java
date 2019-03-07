@@ -75,11 +75,11 @@ public class playch10
 		return generic_vh_start();
 	} };
 	
-	void playch10_vh_stop( void )
+	public static VhStopPtr playch10_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		ppu2c03b_dispose();
 		generic_vh_stop();
-	}
+	} };
 	
 	
 	/***************************************************************************

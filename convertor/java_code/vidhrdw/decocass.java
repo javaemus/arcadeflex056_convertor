@@ -644,7 +644,7 @@ public class decocass
 		return 0;
 	} };
 	
-	void decocass_vh_stop (void)
+	public static VhStopPtr decocass_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		if (tile_dirty)
 			free(tile_dirty);
@@ -655,7 +655,7 @@ public class decocass
 		if (sprite_dirty)
 			free(sprite_dirty);
 		sprite_dirty = NULL;
-	}
+	} };
 	
 	void decocass_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
 	{

@@ -391,18 +391,18 @@ public class argus
 		return 0;
 	} };
 	
-	void argus_vh_stop(void)
+	public static VhStopPtr argus_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(argus_dummy_bg0ram);
-	}
+	} };
 	
-	void butasan_vh_stop(void)
+	public static VhStopPtr butasan_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(butasan_txram);
 		free(butasan_bg0ram);
 		free(butasan_txbackram);
 		free(butasan_bg0backram);
-	}
+	} };
 	
 	
 	/***************************************************************************

@@ -195,7 +195,6 @@ public class twincobr
 	
 	
 	/**************** Machine stuff ******************/
-	void fsharkbt_reset_8741_mcu(void);
 	READ16_HANDLER ( fsharkbt_dsp_r );
 	READ16_HANDLER ( twincobr_dsp_r );
 	WRITE16_HANDLER( twincobr_dsp_w );
@@ -230,9 +229,7 @@ public class twincobr
 	WRITE16_HANDLER( twincobr_crtc_reg_sel_w );
 	WRITE16_HANDLER( twincobr_crtc_data_w );
 	
-	void toaplan0_vh_stop(void);
 	void toaplan0_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void toaplan0_eof_callback(void);
 	
 	
 	

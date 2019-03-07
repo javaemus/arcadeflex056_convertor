@@ -60,12 +60,12 @@ public class solomon
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void solomon_vh_stop(void)
+	public static VhStopPtr solomon_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free(tmpbitmap2);
 		free(dirtybuffer2);
 		generic_vh_stop();
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr solomon_bgvideoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)

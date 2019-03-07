@@ -64,14 +64,14 @@ public class othldrby
 	
 	***************************************************************************/
 	
-	void othldrby_vh_stop(void)
+	public static VhStopPtr othldrby_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(vram);
 		vram = NULL;
 		free(buf_spriteram);
 		buf_spriteram = NULL;
 		buf_spriteram2 = NULL;
-	}
+	} };
 	
 	public static VhStartPtr othldrby_vh_start = new VhStartPtr() { public int handler() 
 	{

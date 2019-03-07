@@ -46,9 +46,7 @@ public class taito_f3
 	
 	#define TRY_ALPHA 0
 	
-	void f3_vh_stop(void);
 	void f3_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void f3_eof_callback(void);
 	
 	extern data32_t *f3_vram,*f3_line_ram;
 	extern data32_t *f3_pf_data,*f3_pivot_ram;
@@ -73,7 +71,6 @@ public class taito_f3
 	WRITE16_HANDLER(es5510_dsp_w);
 	WRITE16_HANDLER(f3_volume_w);
 	WRITE16_HANDLER(f3_es5505_bank_w);
-	void f3_68681_reset(void);
 	
 	/******************************************************************************/
 	

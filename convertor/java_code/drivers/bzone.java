@@ -199,11 +199,7 @@ public class bzone
 	#define IN0_VG_HALT (1<<6)
 	
 	int bzone_sh_start(const struct MachineSound *msound);
-	void bzone_sh_stop(void);
-	void bzone_sh_update(void);
 	int redbaron_sh_start(const struct MachineSound *msound);
-	void redbaron_sh_stop(void);
-	void redbaron_sh_update(void);
 	
 	public static ReadHandlerPtr bzone_IN0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

@@ -33,10 +33,8 @@ public class m65ce02H
 	
 	#ifdef RUNTIME_LOADER
 	# ifdef __cplusplus
-		extern "C" void m65ce02_runtime_loader_init(void);
-	# else
-		extern void m65ce02_runtime_loader_init(void);
-	# endif
+		extern "C" # else
+		extern # endif
 	#endif
 	
 	enum {
@@ -50,8 +48,7 @@ public class m65ce02H
 	extern int m65ce02_ICount;				/* cycle count */
 	
 	extern void m65ce02_reset(void *param);
-	extern void m65ce02_exit(void);
-	extern int	m65ce02_execute(int cycles);
+	extern extern int	m65ce02_execute(int cycles);
 	extern unsigned m65ce02_get_context (void *dst);
 	extern void m65ce02_set_context (void *src);
 	extern unsigned m65ce02_get_reg (int regnum);

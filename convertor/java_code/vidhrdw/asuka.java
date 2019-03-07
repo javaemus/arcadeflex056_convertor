@@ -9,7 +9,6 @@ public class asuka
 	
 	#define TC0100SCN_GFX_NUM 1
 	
-	void asuka_vh_stop(void);
 	
 	static UINT16 sprite_ctrl = 0;
 	static UINT16 sprites_flipscreen = 0;
@@ -46,12 +45,12 @@ public class asuka
 		return (asuka_core_vh_start(1));
 	} };
 	
-	void asuka_vh_stop (void)
+	public static VhStopPtr asuka_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		TC0100SCN_vh_stop();
 	
 		TC0110PCR_vh_stop();
-	}
+	} };
 	
 	
 	/********************************************************

@@ -39,7 +39,6 @@ public class zodiack
 	void zodiack_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void zodiack_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	void espial_init_machine(void);
 	
 	
 	static void zodiack_init_machine(void)

@@ -123,8 +123,6 @@ public class victory
 	/* video driver data & functions */
 	extern UINT8 *victory_charram;
 	
-	void victory_vh_stop(void);
-	void victory_vh_eof(void);
 	void victory_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	

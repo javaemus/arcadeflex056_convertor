@@ -238,9 +238,6 @@ public class stfight
 {
 	
 	// machine
-	void init_empcity(void);
-	void init_stfight(void);
-	void stfight_init_machine(void);
 	void stfight_adpcm_int( int data );
 	
 	// vidhrdw

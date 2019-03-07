@@ -21,7 +21,6 @@ public class srumbler
 	
 	
 	void srumbler_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void srumbler_eof_callback(void);
 	
 	
 	

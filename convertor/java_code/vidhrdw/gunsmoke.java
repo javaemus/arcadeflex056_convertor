@@ -115,10 +115,10 @@ public class gunsmoke
 	} };
 	
 	
-	void gunsmoke_vh_stop(void)
+	public static VhStopPtr gunsmoke_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free(bgbitmap);
-	}
+	} };
 	
 	
 	

@@ -32,8 +32,6 @@ struct Y8950interface
 /* YM3812 */
 
 int YM3812_sh_start(const struct MachineSound *msound);
-void YM3812_sh_stop(void);
-void YM3812_sh_reset(void);
 
 /* YM3526 */
 #define YM3526_status_port_0_r YM3812_status_port_0_r

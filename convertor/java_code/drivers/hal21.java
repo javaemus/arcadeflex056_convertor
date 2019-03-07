@@ -48,10 +48,10 @@ public class hal21
 		return common_vh_start();
 	} };
 	
-	void aso_vh_stop( void ){
+	public static VhStopPtr aso_vh_stop = new VhStopPtr() { public void handler() {
 		bitmap_free( tmpbitmap );
 		free( dirtybuffer );
-	}
+	} };
 	
 	
 	void aso_vh_convert_color_prom(unsigned char *obsolete,unsigned short *colortable,const unsigned char *color_prom)

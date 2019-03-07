@@ -147,9 +147,7 @@ public class missile
 	
 	extern unsigned char *missile_video2ram;
 	
-	void missile_init_machine(void);
 	
-	void missile_vh_stop(void);
 	void missile_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

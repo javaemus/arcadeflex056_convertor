@@ -14,7 +14,6 @@ public class gijoe
 {
 	
 	
-	void gijoe_vh_stop(void);
 	void gijoe_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	static data16_t cur_control2;

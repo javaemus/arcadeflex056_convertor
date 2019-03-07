@@ -8,7 +8,6 @@ struct k051649_interface
 };
 
 int K051649_sh_start(const struct MachineSound *msound);
-void K051649_sh_stop(void);
 
 
 #endif

@@ -61,7 +61,6 @@ extern "C" {
 #endif
 void via_set_clock(int which,int clck);
 void via_config(int which, const struct via6522_interface *intf);
-void via_reset(void);
 int via_read(int which, int offset);
 void via_write(int which, int offset, int data);
 void via_set_input_a(int which, int data);

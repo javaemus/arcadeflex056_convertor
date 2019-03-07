@@ -146,11 +146,11 @@ public class irobot
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void irobot_vh_stop(void)
+	public static VhStopPtr irobot_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(polybitmap1);
 		free(polybitmap2);
-	}
+	} };
 	
 	/***************************************************************************
 	

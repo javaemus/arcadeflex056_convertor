@@ -53,7 +53,6 @@ package drivers;
 public class gunbustr
 {
 	
-	void gunbustr_vh_stop (void);
 	void gunbustr_vh_screenrefresh (struct mame_bitmap *bitmap,int full_refresh);
 	
 	static UINT16 coin_word;
@@ -69,7 +68,6 @@ public class gunbustr
 	WRITE16_HANDLER(es5510_dsp_w);
 	WRITE16_HANDLER(f3_volume_w);
 	WRITE16_HANDLER(f3_es5505_bank_w);
-	void f3_68681_reset(void);
 	extern data32_t *f3_shared_ram;
 	
 	/*********************************************************************/

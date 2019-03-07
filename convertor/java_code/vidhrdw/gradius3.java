@@ -112,13 +112,13 @@ public class gradius3
 		return 0;
 	}
 	
-	void gradius3_vh_stop(void)
+	public static VhStopPtr gradius3_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		K052109_vh_stop();
 		K051960_vh_stop();
 		free(dirtychar);
 		dirtychar = 0;
-	}
+	} };
 	
 	
 	

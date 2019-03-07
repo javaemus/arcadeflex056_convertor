@@ -69,41 +69,13 @@ public class vsnes
 	#define N2A03_DEFAULTCLOCK ( 21477272.724 / 12 )
 	
 	/* from vidhrdw */
-	extern extern void vsnes_vh_stop( void );
-	extern void vsnes_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
+	extern extern extern void vsnes_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	extern void vsnes_vh_screenrefresh( struct mame_bitmap *bitmap, int full_refresh );
 	extern extern void vsdual_vh_screenrefresh( struct mame_bitmap *bitmap, int full_refresh );
 	extern void vsdual_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	/* from machine */
-	extern void vsnes_init_machine( void );
-	extern void vsdual_init_machine( void );
-	extern void init_vsnes( void );
-	extern void init_suprmrio( void );
-	extern void init_excitebk( void );
-	extern void init_excitbkj( void );
-	extern void init_vsnormal( void );
-	extern void init_duckhunt( void );
-	extern void init_hogalley( void );
-	extern void init_goonies( void );
-	extern void init_machridr( void );
-	extern void init_vsslalom( void );
-	extern void init_cstlevna( void );
-	extern void init_drmario( void);
-	extern void init_rbibb( void );
-	extern void init_tkoboxng( void );
-	extern void init_vstopgun( void );
-	extern void init_vsgradus( void );
-	extern void init_vspinbal( void );
-	extern void init_vsskykid( void );
-	extern void init_platoon(void);
-	extern void init_vstennis( void );
-	extern void init_wrecking(void);
-	extern void init_balonfgt(void);
-	extern void init_vsbball(void);
-	extern void init_iceclmrj(void);
-	extern void init_xevious(void);
-	
+	extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern 
 	
 	extern extern extern extern extern extern 
 	/******************************************************************************/

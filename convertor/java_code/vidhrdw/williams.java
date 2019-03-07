@@ -62,7 +62,6 @@ public class williams
 	UINT8 *williams2_xscroll_high;
 	
 	/* control routines */
-	void williams2_vh_stop(void);
 	
 	/* pixel copiers */
 	static UINT8 *scanline_dirty;
@@ -224,7 +223,7 @@ public class williams
 	} };
 	
 	
-	void williams_vh_stop(void)
+	public static VhStopPtr williams_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		/* free any remap lookup tables */
 		if (blaster_remap_lookup)
@@ -236,7 +235,7 @@ public class williams
 			free(williams_videoram);
 		williams_videoram = williams_videoram_copy = NULL;
 		scanline_dirty = NULL;
-	}
+	} };
 	
 	
 	
@@ -353,7 +352,7 @@ public class williams
 	} };
 	
 	
-	void williams2_vh_stop(void)
+	public static VhStopPtr williams2_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		/* free palette RAM */
 		if (williams2_paletteram)
@@ -362,7 +361,7 @@ public class williams
 	
 		/* clean up other stuff */
 		williams_vh_stop();
-	}
+	} };
 	
 	
 	

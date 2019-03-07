@@ -23,10 +23,10 @@ public class topspeed
 		return 0;
 	} };
 	
-	void topspeed_vh_stop(void)
+	public static VhStopPtr topspeed_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		PC080SN_vh_stop();
-	}
+	} };
 	
 	
 	/********************************************************************************

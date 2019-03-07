@@ -60,13 +60,10 @@ public class gen15khzH
 	/* our 'generic' SVGA 15.75KHz functions */
 	int widthgeneric15KHz(int width);
 	int setgeneric15KHz(int vdouble, int width, int height);
-	void resetgeneric15KHz(void);
 	
 	/* functions for allowing interlaced display to update both odd/even fields */
 	/* before app continues */
 	void setinterlaceflag(int interlaced);
-	void interlace_sync(void);
 	int sup_15Khz_res(int width,int height);
 	
-	void vsync(void);
-}
+	}

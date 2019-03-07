@@ -310,12 +310,12 @@ public class mcr3
 	 *
 	 *************************************/
 	
-	void spyhunt_vh_stop(void)
+	public static VhStopPtr spyhunt_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		/* free the buffers */
 		bitmap_free(spyhunt_backbitmap);
 		free(dirtybuffer);
-	}
+	} };
 	
 	
 	/*************************************
@@ -502,7 +502,7 @@ public class mcr3
 	 *
 	 *************************************/
 	
-	void dotron_vh_stop(void)
+	public static VhStopPtr dotron_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		if (artwork_backdrop != NULL)
 		{
@@ -510,5 +510,5 @@ public class mcr3
 			artwork_backdrop = backdrop[0];
 			artwork_free(&backdrop[1]);
 		}
-	}
+	} };
 }

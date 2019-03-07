@@ -88,12 +88,12 @@ public class gyruss
 	
 	
 	
-	void gyruss_vh_stop(void)
+	public static VhStopPtr gyruss_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(sprite_mux_buffer);
 		sprite_mux_buffer = 0;
 		generic_vh_stop();
-	}
+	} };
 	
 	public static VhStartPtr gyruss_vh_start = new VhStartPtr() { public int handler() 
 	{

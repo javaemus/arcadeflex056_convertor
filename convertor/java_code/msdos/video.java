@@ -51,7 +51,6 @@ public class video
 	/* in msdos/sound.c */
 	
 	/* in msdos/input.c */
-	void poll_joysticks(void);
 	
 	
 	/* specialized update_screen functions defined in blit.c */

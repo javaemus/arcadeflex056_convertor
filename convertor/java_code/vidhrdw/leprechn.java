@@ -156,10 +156,10 @@ public class leprechn
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void leprechn_vh_stop(void)
+	public static VhStopPtr leprechn_vh_stop = new VhStopPtr() { public void handler() 
 	{
 	    free(videoram);
-	}
+	} };
 	
 	
 	/***************************************************************************

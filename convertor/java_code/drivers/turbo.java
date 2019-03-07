@@ -145,14 +145,11 @@ public class turbo
 {
 	
 	/* from machine */
-	void turbo_init_machine(void);
 	
 	/* from vidhrdw */
 	extern UINT8 *turbo_sprite_position;
 	
-	void turbo_vh_stop(void);
 	void turbo_vh_convert_color_prom(UINT8 *palette, UINT16 *colortable, const UINT8 *color_prom);
-	void turbo_vh_eof(void);
 	void turbo_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	

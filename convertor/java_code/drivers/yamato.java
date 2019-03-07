@@ -25,7 +25,6 @@ public class yamato
 	extern unsigned char *cclimber_bigspriteram;
 	extern unsigned char *cclimber_column_scroll;
 	void cclimber_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void cclimber_vh_stop(void);
 	void cclimber_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

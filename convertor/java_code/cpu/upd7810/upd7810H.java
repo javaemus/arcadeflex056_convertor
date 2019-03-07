@@ -32,10 +32,8 @@ typedef int (*upd7810_io_callback)(int ioline, int state);
 
 extern int upd7810_icount;						/* cycle count */
 
-extern void upd7810_init (void);				/* Initialize save states */
-extern void upd7810_reset (void *param);		/* Reset registers to the initial values */
-extern void upd7810_exit  (void);				/* Shut down CPU core */
-extern int	upd7810_execute(int cycles);		/* Execute cycles - returns number of cycles actually run */
+extern extern void upd7810_reset (void *param);		/* Reset registers to the initial values */
+extern extern int	upd7810_execute(int cycles);		/* Execute cycles - returns number of cycles actually run */
 extern unsigned upd7810_get_context (void *dst);/* Get registers, return context size */
 extern void upd7810_set_context (void *src);	/* Set registers */
 extern unsigned upd7810_get_reg (int regnum);

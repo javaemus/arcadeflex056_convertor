@@ -34,7 +34,6 @@ public class blstroid
 	 *
 	 *************************************/
 	
-	void blstroid_vh_stop(void);
 	void blstroid_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	void blstroid_scanline_update(int scanline);

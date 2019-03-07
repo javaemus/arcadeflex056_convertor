@@ -162,10 +162,10 @@ public class prehisle
 		return 0;
 	} };
 	
-	void prehisle_vh_stop (void)
+	public static VhStopPtr prehisle_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free(pf1_bitmap);
-	}
+	} };
 	
 	WRITE16_HANDLER( prehisle_video16_w )
 	{

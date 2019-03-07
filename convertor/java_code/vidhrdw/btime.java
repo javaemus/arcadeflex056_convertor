@@ -179,12 +179,12 @@ public class btime
 	Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void bnj_vh_stop (void)
+	public static VhStopPtr bnj_vh_stop = new VhStopPtr() { public void handler() 
 	{
 	    bitmap_free(background_bitmap);
 	    free(dirtybuffer2);
 	    generic_vh_stop();
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr btime_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)

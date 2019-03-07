@@ -269,10 +269,10 @@ public class gaplus
 		return generic_vh_start();
 	} };
 	
-	void gaplus_vh_stop( void ) {
+	public static VhStopPtr gaplus_vh_stop = new VhStopPtr() { public void handler()  {
 	
 		generic_vh_stop();
-	}
+	} };
 	
 	/***************************************************************************
 	

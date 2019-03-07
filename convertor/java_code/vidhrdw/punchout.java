@@ -366,7 +366,7 @@ public class punchout
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void punchout_vh_stop(void)
+	public static VhStopPtr punchout_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(dirtybuffer);
 		free(dirtybuffer2);
@@ -375,7 +375,7 @@ public class punchout
 		bitmap_free(tmpbitmap);
 		bitmap_free(bs1tmpbitmap);
 		bitmap_free(bs2tmpbitmap);
-	}
+	} };
 	
 	
 	

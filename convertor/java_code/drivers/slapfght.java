@@ -206,7 +206,6 @@ public class slapfght
 	
 	/* MACHINE */
 	
-	void slapfight_init_machine(void);
 	
 	extern unsigned char *slapfight_dpram;
 	extern size_t slapfight_dpram_size;

@@ -187,14 +187,6 @@ public class tnzs
 	/* prototypes for functions in ../machine/tnzs.c */
 	unsigned char *tnzs_objram, *tnzs_workram;
 	unsigned char *tnzs_vdcram, *tnzs_scrollram;
-	void init_extrmatn(void);
-	void init_arknoid2(void);
-	void init_drtoppel(void);
-	void init_chukatai(void);
-	void init_tnzs(void);
-	void init_insectx(void);
-	void init_kageki(void);
-	void tnzs_init_machine(void);
 	
 	
 	/* prototypes for functions in ../vidhrdw/tnzs.c */

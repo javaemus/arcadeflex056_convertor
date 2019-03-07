@@ -313,7 +313,6 @@ enum
 
 ***************************************************************************/
 
-void showdisclaimer(void);
 
 const struct RomModule *rom_first_region(const struct GameDriver *drv);
 const struct RomModule *rom_next_region(const struct RomModule *romp);

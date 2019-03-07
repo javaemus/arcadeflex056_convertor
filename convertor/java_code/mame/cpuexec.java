@@ -168,13 +168,10 @@ public class cpuexec
 	 *
 	 *************************************/
 	
-	static void cpu_inittimers(void);
-	static void cpu_vblankreset(void);
-	static void cpu_vblankcallback(int param);
+	static static static void cpu_vblankcallback(int param);
 	static void cpu_updatecallback(int param);
 	
-	static void handle_loadsave(void);
-	
+	static 
 	
 	
 	/*************************************

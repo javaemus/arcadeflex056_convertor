@@ -78,7 +78,7 @@ public class qix
 	 *
 	 *************************************/
 	
-	void qix_vh_stop(void)
+	public static VhStopPtr qix_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		/* free memory */
 		free(palette_cache);
@@ -88,7 +88,7 @@ public class qix
 		/* reset the pointers */
 		videoram = videoram_cache = NULL;
 		palette_cache = NULL;
-	}
+	} };
 	
 	
 	

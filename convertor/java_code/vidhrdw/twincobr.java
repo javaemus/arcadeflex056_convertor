@@ -102,14 +102,14 @@ public class twincobr
 		return 0;
 	} };
 	
-	void toaplan0_vh_stop(void)
+	public static VhStopPtr toaplan0_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free(tmpbitmap);
 		free(dirtybuffer);
 		free(twincobr_bgvideoram16);
 		free(twincobr_fgvideoram16);
 		free(videoram16);
-	}
+	} };
 	
 	
 	

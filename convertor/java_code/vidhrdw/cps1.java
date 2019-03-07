@@ -1139,7 +1139,7 @@ public class cps1
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void cps1_vh_stop(void)
+	public static VhStopPtr cps1_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		if (cps1_old_palette)
 			free(cps1_old_palette);
@@ -1149,7 +1149,7 @@ public class cps1
 	//    if (cps2_buffered_obj)
 	//        free(cps2_buffered_obj);
 	//ks e
-	}
+	} };
 	
 	/***************************************************************************
 	

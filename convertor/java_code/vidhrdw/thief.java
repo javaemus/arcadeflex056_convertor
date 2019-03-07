@@ -119,14 +119,14 @@ public class thief
 	
 	/***************************************************************************/
 	
-	void thief_vh_stop( void ){
+	public static VhStopPtr thief_vh_stop = new VhStopPtr() { public void handler() {
 		free( videoram );
 		free( dirtybuffer );
 		bitmap_free( thief_page1 );
 		bitmap_free( thief_page0 );
 		free( thief_coprocessor.context_ram );
 		free( thief_coprocessor.image_ram );
-	}
+	} };
 	
 	public static VhStartPtr thief_vh_start = new VhStartPtr() { public int handler() {
 		memset( &thief_coprocessor, 0x00, sizeof(thief_coprocessor) );

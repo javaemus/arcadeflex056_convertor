@@ -127,7 +127,6 @@ public class exidy
 	extern UINT8 targ_spec_flag;
 	
 	int targ_sh_start(const struct MachineSound *msound);
-	void targ_sh_stop(void);
 	
 	
 	
@@ -155,8 +154,6 @@ public class exidy
 	extern UINT8 exidy_collision_mask;
 	extern UINT8 exidy_collision_invert;
 	
-	void exidy_vh_stop(void);
-	void exidy_vh_eof(void);
 	void exidy_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void exidy_vh_init_palette(UINT8 *game_palette, UINT16 *game_colortable,const UINT8 *color_prom);
 	

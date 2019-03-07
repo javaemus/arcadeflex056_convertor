@@ -355,10 +355,10 @@ public class firetrk
 		return -1;
 	}
 	
-	void firetruck_vh_stop( void )
+	public static VhStopPtr firetruck_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free( buf );
-	}
+	} };
 	
 	static void draw_sprites( struct mame_bitmap *bitmap )
 	{

@@ -329,7 +329,7 @@ public class vector
 	/*
 	 * Stop the vector video hardware emulation. Free memory.
 	 */
-	void vector_vh_stop (void)
+	public static VhStopPtr vector_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		if (pTcosin)
 			free (pTcosin);
@@ -343,7 +343,7 @@ public class vector
 		if (new_list)
 			free (new_list);
 		new_list = NULL;
-	}
+	} };
 	
 	/*
 	 * draws an anti-aliased pixel (blends pixel with background)

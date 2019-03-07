@@ -33,14 +33,14 @@ public class exctsccr
 		return generic_vh_start();
 	} };
 	
-	void exctsccr_vh_stop( void ) {
+	public static VhStopPtr exctsccr_vh_stop = new VhStopPtr() { public void handler()  {
 		if ( exctsccr_fm_timer ) {
 			timer_remove( exctsccr_fm_timer );
 			exctsccr_fm_timer = 0;
 		}
 	
 		generic_vh_stop();
-	}
+	} };
 	
 	/***************************************************************************
 	

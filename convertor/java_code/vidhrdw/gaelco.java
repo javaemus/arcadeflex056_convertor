@@ -90,7 +90,7 @@ public class gaelco
 	
 	***************************************************************************/
 	
-	void gaelco_vh_stop(void)
+	public static VhStopPtr gaelco_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		int i;
 	
@@ -99,7 +99,7 @@ public class gaelco
 				free(sprite_table[i]);
 			sprite_table[i] = NULL;
 		}
-	}
+	} };
 	
 	public static VhStartPtr bigkarnk_vh_start = new VhStartPtr() { public int handler() 
 	{

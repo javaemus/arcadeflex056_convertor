@@ -187,14 +187,14 @@ public class tp84
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void tp84_vh_stop(void)
+	public static VhStopPtr tp84_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(sprite_mux_buffer);
 		sprite_mux_buffer = NULL;
 		free(dirtybuffer2);
 		bitmap_free(tmpbitmap2);
 		generic_vh_stop();
-	}
+	} };
 	
 	
 	

@@ -34,7 +34,6 @@ public class offtwall
 	 *
 	 *************************************/
 	
-	void offtwall_vh_stop(void);
 	void offtwall_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	

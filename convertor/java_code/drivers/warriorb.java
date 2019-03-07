@@ -120,7 +120,6 @@ package drivers;
 public class warriorb
 {
 	
-	void warriorb_vh_stop (void);
 	void warriorb_vh_screenrefresh (struct mame_bitmap *bitmap,int full_refresh);
 	
 	

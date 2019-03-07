@@ -203,7 +203,7 @@ public class exerion
 	 *
 	 *************************************/
 	
-	void exerion_vh_stop (void)
+	public static VhStopPtr exerion_vh_stop = new VhStopPtr() { public void handler() 
 	{
 	#ifdef DEBUG_SPRITES
 		fclose (sprite_log);
@@ -223,7 +223,7 @@ public class exerion
 		background_latches = NULL;
 	
 		generic_vh_stop();
-	}
+	} };
 	
 	
 	

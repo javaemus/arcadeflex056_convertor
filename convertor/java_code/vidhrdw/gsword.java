@@ -139,11 +139,11 @@ public class gsword
 		return 0;
 	} };
 	
-	void gsword_vh_stop(void)
+	public static VhStopPtr gsword_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(dirtybuffer);
 		bitmap_free(bitmap_bg);
-	}
+	} };
 	
 	public static WriteHandlerPtr gs_charbank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

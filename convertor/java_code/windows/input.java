@@ -136,10 +136,7 @@ public class input
 	//	PROTOTYPES
 	//============================================================
 	
-	static void updatekeyboard(void);
-	static void init_keylist(void);
-	static void init_joylist(void);
-	
+	static static static 
 	
 	
 	//============================================================

@@ -26,7 +26,6 @@ public class osdependH
 	#endif
 	
 	
-	void osd_exit(void);
 	
 	
 	/******************************************************************************
@@ -62,7 +61,6 @@ public class osdependH
 	  Returns 0 on success.
 	*/
 	int osd_create_display(int width,int height,int depth,int fps,int attributes,int orientation);
-	void osd_close_display(void);
 	
 	
 	/*
@@ -184,7 +182,6 @@ public class osdependH
 	*/
 	int osd_start_audio_stream(int stereo);
 	int osd_update_audio_stream(INT16 *buffer);
-	void osd_stop_audio_stream(void);
 	
 	/*
 	  control master volume. attenuation is the attenuation in dB (a negative
@@ -258,14 +255,11 @@ public class osdependH
 	/* Joystick calibration routines BW 19981216 */
 	/* Do we need to calibrate the joystick at all? */
 	/* Preprocessing for joystick calibration. Returns 0 on success */
-	void osd_joystick_start_calibration (void);
 	/* Prepare the next calibration step. Return a description of this step. */
 	/* (e.g. "move to upper left") */
 	const char *osd_joystick_calibrate_next (void);
 	/* Get the actual joystick calibration data for the current position */
-	void osd_joystick_calibrate (void);
 	/* Postprocessing (e.g. saving joystick data to config) */
-	void osd_joystick_end_calibration (void);
 	
 	void osd_trak_read(int player,int *deltax,int *deltay);
 	

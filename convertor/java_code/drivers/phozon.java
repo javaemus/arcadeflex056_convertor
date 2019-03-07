@@ -56,11 +56,9 @@ public class phozon
 	/* memory functions */
 	
 	/* custom IO chips & CPU functions */
-	extern void phozon_init_machine(void);
-	
+	extern 
 	/* video functions */
-	extern extern void phozon_vh_stop( void );
-	extern void phozon_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
+	extern extern extern void phozon_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	extern void phozon_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 		/* CPU 1 (MAIN CPU) read addresses */

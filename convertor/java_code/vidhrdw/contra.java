@@ -168,11 +168,11 @@ public class contra
 		}
 	} };
 	
-	void contra_vh_stop(void)
+	public static VhStopPtr contra_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(private_spriteram);
 		free(private_spriteram_2);
-	}
+	} };
 	
 	
 	/***************************************************************************

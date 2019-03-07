@@ -18,8 +18,6 @@ public class starwarsH
 	
 	
 	
-	void swmathbox_init(void);
-	void swmathbox_reset(void);
 	
 	
 	

@@ -30,7 +30,6 @@ public class contra
 	
 	
 	void contra_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void contra_vh_stop(void);
 	
 	
 	public static WriteHandlerPtr contra_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)

@@ -18,9 +18,7 @@ public class surpratk
 {
 	
 	/* prototypes */
-	static void surpratk_init_machine( void );
-	static void surpratk_banking( int lines );
-	void surpratk_vh_stop( void );
+	static static void surpratk_banking( int lines );
 	void surpratk_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

@@ -78,8 +78,6 @@ package drivers;
 public class slapshot
 {
 	
-	void taito_no_buffer_eof_callback(void);
-	void slapshot_vh_stop (void);
 	void slapshot_vh_screenrefresh (struct mame_bitmap *bitmap,int full_refresh);
 	
 	static data16_t *color_ram;

@@ -104,19 +104,7 @@ public class scramble
 	void mariner_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void frogger_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
-	void init_scramble_ppi(void);
-	void init_atlantis(void);
-	void init_scramble(void);
-	void init_scrambls(void);
-	void init_theend(void);
-	void init_ckongs(void);
-	void init_mariner(void);
-	void init_froggers(void);
-	void init_mars(void);
-	void init_hotshock(void);
-	void init_cavelon(void);
 	
-	void scramble_init_machine(void);
 	
 	
 	void galaxian_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

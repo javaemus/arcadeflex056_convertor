@@ -59,10 +59,10 @@ public class vsnes
 		return ppu2c03b_init( &ppu_dual_interface );
 	} };
 	
-	void vsnes_vh_stop( void )
+	public static VhStopPtr vsnes_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		ppu2c03b_dispose();
-	}
+	} };
 	
 	/***************************************************************************
 	

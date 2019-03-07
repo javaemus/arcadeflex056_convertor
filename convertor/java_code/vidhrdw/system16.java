@@ -848,7 +848,7 @@ public class system16
 	
 	/***************************************************************************/
 	
-	void sys16_vh_stop( void ){
+	public static VhStopPtr sys16_vh_stop = new VhStopPtr() { public void handler() {
 	#if 0
 		FILE *f;
 		int i;
@@ -873,7 +873,7 @@ public class system16
 			fclose( f );
 		}
 	#endif
-	}
+	} };
 	
 	public static VhStartPtr sys16_vh_start = new VhStartPtr() { public int handler() {
 		static int bank_default[16] = {
@@ -2114,10 +2114,10 @@ public class system16
 		return 1;
 	} };
 	
-	void sys16_aburner_vh_stop( void ){
+	public static VhStopPtr sys16_aburner_vh_stop = new VhStopPtr() { public void handler() {
 		free( aburner_backdrop );
 		sys16_vh_stop();
-	}
+	} };
 	
 	static void aburner_draw_road( struct mame_bitmap *bitmap ){
 		/*

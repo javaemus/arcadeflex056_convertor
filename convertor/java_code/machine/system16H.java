@@ -72,8 +72,7 @@ extern READ16_HANDLER( SYS16_MRA16_WORKINGRAM2_SHARE );
 extern WRITE16_HANDLER( SYS16_MWA16_WORKINGRAM2_SHARE );
 
 extern void (*sys16_custom_irq)(void);
-extern void sys16_onetime_init_machine( void );
-
+extern 
 #define SYS16_MRA16_SPRITERAM		MRA16_RAM
 #define SYS16_MWA16_SPRITERAM		MWA16_RAM,&sys16_spriteram
 
@@ -220,9 +219,7 @@ extern READ16_HANDLER( sys16_textram_r );
 extern WRITE16_HANDLER( sys16_textram_w );
 extern WRITE16_HANDLER( sys16_paletteram_w );
 
-extern void sys16_aburner_vh_stop( void );
-extern void sys16_vh_stop( void );
-
+extern extern 
 /* "normal" video hardware */
 extern extern void sys16_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 

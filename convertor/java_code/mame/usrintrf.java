@@ -41,9 +41,7 @@ public class usrintrf
 	#endif
 	
 	extern int neogeo_memcard_load(int);
-	extern void neogeo_memcard_save(void);
-	extern void neogeo_memcard_eject(void);
-	extern int neogeo_memcard_create(int);
+	extern extern extern int neogeo_memcard_create(int);
 	/* MARTINEZ.F 990207 Memory Card End */
 	
 	

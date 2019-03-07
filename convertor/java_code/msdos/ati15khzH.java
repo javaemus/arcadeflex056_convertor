@@ -127,7 +127,6 @@
 /* our 4 driver functions */
 int widthati15KHz(int width);
 int setati15KHz(int vdouble,int width,int height);
-void resetati15KHz(void);
 
 /* internal functions */
 int calc_mach64_scanline(int *nHzTotal,int *nHzDispTotal,int *nHzSyncOffset,int *N,int *P,int *externaldiv,int *nActualMHz);
@@ -136,5 +135,4 @@ int calc_mach64_clock(int nTargetMHz,int *N,int *P,int *externaldiv);
 int get_mach64_port(int io_type, int io_base, int io_sel, int mm_sel);
 /* DSP */
 int setmach64DSP(int nAdd);
-void resetmach64DSP(void);
 

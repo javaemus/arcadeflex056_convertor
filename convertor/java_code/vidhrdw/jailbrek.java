@@ -64,11 +64,11 @@ public class jailbrek
 		return 0;
 	} };
 	
-	void jailbrek_vh_stop( void )
+	public static VhStopPtr jailbrek_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free( dirtybuffer );
 		bitmap_free( tmpbitmap );
-	}
+	} };
 	
 	static void drawsprites( struct mame_bitmap *bitmap )
 	{

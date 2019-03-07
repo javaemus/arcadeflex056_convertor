@@ -310,7 +310,6 @@ public class inptportH
 	#define MAX_INPUT_PORTS 20
 	
 	
-	void save_input_port_settings(void);
 	
 	const char *input_port_name(const struct InputPort *in);
 	InputSeq* input_port_type_seq(int type);
@@ -324,8 +323,6 @@ public class inptportH
 	#endif /* MAME_NET */
 	
 	void update_analog_port(int port);
-	void update_input_ports(void);	/* called by cpuintrf.c - not for external use */
-	void inputport_vblank_end(void);	/* called by cpuintrf.c - not for external use */
 	
 	int readinputport(int port);
 	

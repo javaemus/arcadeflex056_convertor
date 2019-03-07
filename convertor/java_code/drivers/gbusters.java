@@ -17,13 +17,11 @@ public class gbusters
 {
 	
 	/* prototypes */
-	static void gbusters_init_machine( void );
-	static void gbusters_banking( int lines );
+	static static void gbusters_banking( int lines );
 	
 	
 	extern int gbusters_priority;
 	
-	void gbusters_vh_stop( void );
 	void gbusters_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	static int palette_selected;

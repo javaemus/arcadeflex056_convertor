@@ -245,10 +245,10 @@ public class itech32
 	 *
 	 *************************************/
 	
-	void itech32_vh_stop(void)
+	public static VhStopPtr itech32_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(videoram16);
-	}
+	} };
 	
 	
 	

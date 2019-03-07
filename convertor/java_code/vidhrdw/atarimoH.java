@@ -89,7 +89,6 @@ public class atarimoH
 	
 	/* setup/shutdown */
 	int atarimo_init(int map, const struct atarimo_desc *desc);
-	void atarimo_free(void);
 	UINT16 *atarimo_get_code_lookup(int map, int *size);
 	UINT8 *atarimo_get_color_lookup(int map, int *size);
 	UINT8 *atarimo_get_gfx_lookup(int map, int *size);

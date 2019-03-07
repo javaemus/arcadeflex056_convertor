@@ -26,7 +26,6 @@ public class arcadecl
 	 *************************************/
 	
 	int rampart_bitmap_init(int _xdim, int _ydim);
-	void rampart_bitmap_free(void);
 	void rampart_bitmap_render(struct mame_bitmap *bitmap);
 	
 	
@@ -114,11 +113,11 @@ public class arcadecl
 	 *
 	 *************************************/
 	
-	void arcadecl_vh_stop(void)
+	public static VhStopPtr arcadecl_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		atarimo_free();
 		rampart_bitmap_free();
-	}
+	} };
 	
 	
 	

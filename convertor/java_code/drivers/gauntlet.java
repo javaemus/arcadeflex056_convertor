@@ -137,7 +137,6 @@ public class gauntlet
 	WRITE16_HANDLER( gauntlet_xscroll_w );
 	WRITE16_HANDLER( gauntlet_yscroll_w );
 	
-	void gauntlet_vh_stop(void);
 	void gauntlet_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	extern UINT8 vindctr2_screen_refresh;

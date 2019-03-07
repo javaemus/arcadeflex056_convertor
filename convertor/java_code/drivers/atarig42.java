@@ -35,7 +35,6 @@ public class atarig42
 	 *
 	 *************************************/
 	
-	void atarig42_vh_stop(void);
 	void atarig42_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	void atarig42_scanline_update(int param);

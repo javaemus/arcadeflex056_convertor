@@ -50,12 +50,12 @@ public class ninjakd2
 		return 0;
 	} };
 	
-	void ninjakd2_vh_stop(void)
+	public static VhStopPtr ninjakd2_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free(bitmap_bg);
 		bitmap_free(bitmap_sp);
 		free(bg_dirtybuffer);
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr ninjakd2_bgvideoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)

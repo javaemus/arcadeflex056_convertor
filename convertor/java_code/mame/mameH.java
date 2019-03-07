@@ -125,18 +125,13 @@ public class mameH
 	extern struct RunningMachine *Machine;
 	
 	int run_game (int game);
-	void draw_screen(void);
 	
 	/* automatically-freeing memory */
 	void *auto_malloc(size_t size);
-	void auto_malloc_start(void);
-	void auto_malloc_stop(void);
 	
 	/* next time vh_screenrefresh is called, full_refresh will be true,
 	   thus requesting a redraw of the entire screen */
-	void schedule_full_refresh(void);
 	
-	void update_video_and_audio(void);
 	/* osd_fopen() must use this to know if high score files can be used */
 	void set_led_status(int num,int on);
 	

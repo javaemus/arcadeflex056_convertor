@@ -89,11 +89,11 @@ public class playmark
 	
 	***************************************************************************/
 	
-	void bigtwin_vh_stop(void)
+	public static VhStopPtr bigtwin_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free(bgbitmap);
 		bgbitmap = 0;
-	}
+	} };
 	
 	public static VhStartPtr bigtwin_vh_start = new VhStartPtr() { public int handler() 
 	{

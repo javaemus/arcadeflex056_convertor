@@ -36,7 +36,6 @@ public class klax
 	
 	WRITE16_HANDLER( klax_latch_w );
 	
-	void klax_vh_stop(void);
 	void klax_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	void klax_scanline_update(int scanline);

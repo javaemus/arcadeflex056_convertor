@@ -99,11 +99,9 @@ public class leland
 	/* Sound routines */
 	
 	int  leland_sh_start(const struct MachineSound *msound);
-	void leland_sh_stop(void);
 	
 	int  leland_i186_sh_start(const struct MachineSound *msound);
 	int  redline_i186_sh_start(const struct MachineSound *msound);
-	void leland_i186_sound_init(void);
 	
 	void leland_i86_optimize_address(offs_t offset);
 	
@@ -116,8 +114,6 @@ public class leland
 	/* Video routines */
 	
 	
-	void leland_vh_eof(void);
-	void leland_vh_stop(void);
 	void leland_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	/* Internal routines */

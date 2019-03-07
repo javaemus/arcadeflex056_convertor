@@ -5,6 +5,7 @@
 -Skip forward reference functions
 -Improved interruptPtr support
 -Added VH_START support
+-Improved forward reference functions and added VH_STOP
 
 01/02/2019
 ==========

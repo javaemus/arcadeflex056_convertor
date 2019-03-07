@@ -164,11 +164,11 @@ public class grchamp
 		return 1;
 	} };
 	
-	void grchamp_vh_stop( void )
+	public static VhStopPtr grchamp_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free( headlight_bitmap );
 		bitmap_free( work_bitmap );
-	}
+	} };
 	
 	static void draw_text( struct mame_bitmap *bitmap )
 	{

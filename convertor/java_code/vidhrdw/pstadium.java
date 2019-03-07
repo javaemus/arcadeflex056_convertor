@@ -35,9 +35,7 @@ public class pstadium
 	static unsigned char *pstadium_paltbl;
 	
 	
-	static void pstadium_vramflip(void);
-	static void pstadium_gfxdraw(void);
-	
+	static static 
 	
 	/******************************************************************************
 	
@@ -382,7 +380,7 @@ public class pstadium
 		return 0;
 	} };
 	
-	void pstadium_vh_stop(void)
+	public static VhStopPtr pstadium_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(pstadium_paltbl);
 		free(pstadium_palette);
@@ -392,7 +390,7 @@ public class pstadium
 		pstadium_palette = 0;
 		pstadium_videoram = 0;
 		pstadium_tmpbitmap = 0;
-	}
+	} };
 	
 	void pstadium_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
 	{

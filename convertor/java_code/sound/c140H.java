@@ -4,8 +4,6 @@
 #define _NAMCO_C140_
 
 int C140_sh_start( const struct MachineSound *msound );
-void C140_sh_stop( void );
-void C140_sh_update( void );
 
 struct C140interface {
     int frequency;

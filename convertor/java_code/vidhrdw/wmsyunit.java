@@ -85,8 +85,7 @@ public class wmsyunit
 	
 	/* prototypes */
 	static void update_partial(int scanline);
-	       void wms_yunit_vh_stop(void);
-	
+	       
 	
 	
 	/*************************************
@@ -190,7 +189,7 @@ public class wmsyunit
 	 *
 	 *************************************/
 	
-	void wms_yunit_vh_stop(void)
+	public static VhStopPtr wms_yunit_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		if (wms_cmos_ram)
 			free(wms_cmos_ram);
@@ -207,7 +206,7 @@ public class wmsyunit
 		if (pen_map)
 			free(pen_map);
 		pen_map = NULL;
-	}
+	} };
 	
 	
 	

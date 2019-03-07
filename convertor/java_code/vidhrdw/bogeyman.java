@@ -54,11 +54,11 @@ public class bogeyman
 		return 0;
 	} };
 	
-	void bogeyman_vh_stop(void)
+	public static VhStopPtr bogeyman_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(dirtybuffer);
 		bitmap_free(tmpbitmap);
-	}
+	} };
 	
 	/******************************************************************************/
 	

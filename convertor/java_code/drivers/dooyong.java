@@ -59,8 +59,6 @@ public class dooyong
 	void bluehawk_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void primella_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void rshark_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void dooyong_eof_callback(void);
-	void rshark_eof_callback(void);
 	
 	
 	

@@ -90,8 +90,7 @@ public class atarigen
 	static void decompress_eeprom_word(const data16_t *data);
 	static void decompress_eeprom_byte(const data16_t *data);
 	
-	static void update_6502_irq(void);
-	static void sound_comm_timer(int reps_left);
+	static static void sound_comm_timer(int reps_left);
 	static void delayed_sound_reset(int param);
 	static void delayed_sound_w(int param);
 	static void delayed_6502_sound_w(int param);

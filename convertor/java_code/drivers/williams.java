@@ -523,10 +523,6 @@ public class williams
 	extern UINT8 *williams_bank_base;
 	
 	/* initialization */
-	void defender_init_machine(void);
-	void williams_init_machine(void);
-	void williams2_init_machine(void);
-	void joust2_init_machine(void);
 	
 	/* banking */
 	
@@ -565,12 +561,10 @@ public class williams
 	
 	
 	
-	void williams_vh_stop(void);
 	void williams_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void williams2_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
-	void williams2_vh_stop(void);
 	
 	
 	

@@ -50,13 +50,13 @@ public class cbasebal
 	
 	***************************************************************************/
 	
-	void cbasebal_vh_stop(void)
+	public static VhStopPtr cbasebal_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(cbasebal_textram);
 		cbasebal_textram = 0;
 		free(cbasebal_scrollram);
 		cbasebal_scrollram = 0;
-	}
+	} };
 	
 	public static VhStartPtr cbasebal_vh_start = new VhStartPtr() { public int handler() 
 	{

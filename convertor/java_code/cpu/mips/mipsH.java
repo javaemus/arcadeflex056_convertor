@@ -176,12 +176,9 @@ public class mipsH
 	#endif
 	
 	#define mips_readop32(A)	MIPS_READ_LONG(&OP_ROM[A])
-	extern void mips_stop(void);
-	
-	extern void mips_init(void);
-	extern void mips_reset(void *param);
-	extern void mips_exit(void);
-	extern int mips_execute(int cycles);
+	extern 
+	extern extern void mips_reset(void *param);
+	extern extern int mips_execute(int cycles);
 	extern unsigned mips_get_context(void *dst);
 	extern void mips_set_context(void *src);
 	extern unsigned mips_get_reg(int regnum);

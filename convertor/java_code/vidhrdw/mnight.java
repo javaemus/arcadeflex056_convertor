@@ -50,12 +50,12 @@ public class mnight
 		return 0;
 	} };
 	
-	void mnight_vh_stop(void)
+	public static VhStopPtr mnight_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free(bitmap_bg);
 		bitmap_free(bitmap_sp);
 		free(bg_dirtybuffer);
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr mnight_bgvideoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)

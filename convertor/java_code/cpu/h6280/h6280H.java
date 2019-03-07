@@ -43,10 +43,8 @@ public class h6280H
 	
 	extern int h6280_ICount;				/* cycle count */
 	
-	extern void h6280_init(void);
-	extern void h6280_reset(void *param);			/* Reset registers to the initial values */
-	extern void h6280_exit(void);					/* Shut down CPU */
-	extern int h6280_execute(int cycles);			/* Execute cycles - returns number of cycles actually run */
+	extern extern void h6280_reset(void *param);			/* Reset registers to the initial values */
+	extern extern int h6280_execute(int cycles);			/* Execute cycles - returns number of cycles actually run */
 	extern unsigned h6280_get_context(void *dst);	/* Get registers, return context size */
 	extern void h6280_set_context(void *src);		/* Set registers */
 	extern unsigned h6280_get_reg (int regnum);

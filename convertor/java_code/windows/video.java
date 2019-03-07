@@ -30,8 +30,7 @@ public class video
 	//============================================================
 	
 	// from input.c
-	extern void win_poll_input(void);
-	extern void win_pause_input(int pause);
+	extern extern void win_pause_input(int pause);
 	extern UINT8 win_trying_to_quit;
 	
 	

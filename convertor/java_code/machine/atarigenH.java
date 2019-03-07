@@ -86,7 +86,6 @@ public class atarigenH
 	---------------------------------------------------------------*/
 	
 	void atarigen_interrupt_reset(atarigen_int_callback update_int);
-	void atarigen_update_interrupts(void);
 	
 	void atarigen_scanline_int_set(int scanline);
 	WRITE16_HANDLER( atarigen_scanline_int_ack_w );
@@ -103,7 +102,6 @@ public class atarigenH
 		EEPROM HANDLING
 	---------------------------------------------------------------*/
 	
-	void atarigen_eeprom_reset(void);
 	
 	WRITE16_HANDLER( atarigen_eeprom_enable_w );
 	WRITE16_HANDLER( atarigen_eeprom_w );
@@ -115,7 +113,6 @@ public class atarigenH
 	READ32_HANDLER( atarigen_eeprom_upper32_r );
 	
 	void atarigen_nvram_handler(void *file,int read_or_write);
-	void atarigen_hisave(void);
 	
 	
 	/*---------------------------------------------------------------
@@ -123,7 +120,6 @@ public class atarigenH
 	---------------------------------------------------------------*/
 	
 	void atarigen_slapstic_init(int cpunum, int base, int chipnum);
-	void atarigen_slapstic_reset(void);
 	
 	WRITE16_HANDLER( atarigen_slapstic_w );
 	READ16_HANDLER( atarigen_slapstic_r );
@@ -146,7 +142,6 @@ public class atarigenH
 	WRITE32_HANDLER( atarigen_sound_upper32_w );
 	READ32_HANDLER( atarigen_sound_upper32_r );
 	
-	void atarigen_sound_reset(void);
 	WRITE16_HANDLER( atarigen_sound_reset_w );
 	
 	

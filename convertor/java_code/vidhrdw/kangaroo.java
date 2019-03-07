@@ -94,12 +94,12 @@ public class kangaroo
 	
 	***************************************************************************/
 	
-	void kangaroo_vh_stop(void)
+	public static VhStopPtr kangaroo_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free(tmpbitmap2);
 		bitmap_free(tmpbitmap);
 		free(videoram);
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr kangaroo_video_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)

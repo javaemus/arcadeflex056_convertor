@@ -118,12 +118,12 @@ public class ccastles
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void ccastles_vh_stop(void)
+	public static VhStopPtr ccastles_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free(sprite_bm);
 		bitmap_free(maskbitmap);
 		bitmap_free(tmpbitmap);
-	}
+	} };
 	
 	
 	

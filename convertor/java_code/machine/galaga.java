@@ -22,7 +22,6 @@ public class galaga
 	
 	static void *nmi_timer;
 	
-	void galaga_vh_interrupt(void);
 	
 	
 	void galaga_init_machine(void)

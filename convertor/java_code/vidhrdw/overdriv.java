@@ -83,12 +83,12 @@ public class overdriv
 		return 0;
 	} };
 	
-	void overdriv_vh_stop(void)
+	public static VhStopPtr overdriv_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		K051316_vh_stop_0();
 		K051316_vh_stop_1();
 		K053247_vh_stop();
-	}
+	} };
 	
 	
 	

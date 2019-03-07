@@ -35,19 +35,8 @@ public class mitchell
 {
 	
 	/* in machine/kabuki.c */
-	void mgakuen2_decode(void);
-	void pang_decode(void);
-	void cworld_decode(void);
-	void hatena_decode(void);
-	void spang_decode(void);
-	void sbbros_decode(void);
-	void marukin_decode(void);
-	void qtono1_decode(void);
-	void qsangoku_decode(void);
-	void block_decode(void);
 	
 	
-	void pang_vh_stop(void);
 	void pang_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

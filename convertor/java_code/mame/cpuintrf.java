@@ -212,10 +212,8 @@ public class cpuintrf
 	 *
 	 *************************************/
 	
-	static void dummy_init(void);
-	static void dummy_reset(void *param);
-	static void dummy_exit(void);
-	static int dummy_execute(int cycles);
+	static static void dummy_reset(void *param);
+	static static int dummy_execute(int cycles);
 	static void dummy_burn(int cycles);
 	static unsigned dummy_get_context(void *regs);
 	static void dummy_set_context(void *regs);

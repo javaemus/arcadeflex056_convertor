@@ -72,7 +72,7 @@ public class segasyse
 		return 0;
 	} };
 	
-	void segae_vh_stop(void)
+	public static VhStopPtr segae_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		UINT8 temp;
 	
@@ -80,7 +80,7 @@ public class segasyse
 			segae_vdp_stop(temp);
 	
 		free (cache_bitmap);
-	}
+	} };
 	
 	void segae_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
 	{

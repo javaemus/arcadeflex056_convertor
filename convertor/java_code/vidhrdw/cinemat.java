@@ -177,12 +177,12 @@ public class cinemat
 	} };
 	
 	
-	void cinemat_vh_stop (void)
+	public static VhStopPtr cinemat_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		vector_vh_stop();
-	}
+	} };
 	
-	void spacewar_vh_stop (void)
+	public static VhStopPtr spacewar_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		if (spacewar_panel != NULL)
 			artwork_free(&spacewar_panel);
@@ -191,7 +191,7 @@ public class cinemat
 			artwork_free(&spacewar_pressed_panel);
 	
 		vector_vh_stop();
-	}
+	} };
 	
 	void cinemat_vh_screenrefresh (struct mame_bitmap *bitmap, int full_refresh)
 	{

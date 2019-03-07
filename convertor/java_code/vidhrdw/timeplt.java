@@ -122,13 +122,13 @@ public class timeplt
 	
 	***************************************************************************/
 	
-	void timeplt_vh_stop(void)
+	public static VhStopPtr timeplt_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(sprite_mux_buffer);
 		free(sprite_mux_buffer_2);
 		sprite_mux_buffer = NULL;
 		sprite_mux_buffer_2 = NULL;
-	}
+	} };
 	
 	public static VhStartPtr timeplt_vh_start = new VhStartPtr() { public int handler() 
 	{

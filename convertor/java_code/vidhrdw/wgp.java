@@ -22,7 +22,6 @@ public class wgp
 	int wgp_piv_xoffs,wgp_piv_yoffs;
 	
 	
-	void wgp_vh_stop(void);
 	
 	
 	static int has_TC0110PCR(void)
@@ -139,13 +138,13 @@ public class wgp
 		return (wgp_core_vh_start(4,2,32,16));
 	} };
 	
-	void wgp_vh_stop (void)
+	public static VhStopPtr wgp_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		TC0100SCN_vh_stop();
 	
 		if (has_TC0110PCR())
 			TC0110PCR_vh_stop();
-	}
+	} };
 	
 	
 	/******************************************************************

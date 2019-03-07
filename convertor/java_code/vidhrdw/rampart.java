@@ -36,7 +36,6 @@ public class rampart
 	static int xdim, ydim;
 	
 	int rampart_bitmap_init(int _xdim, int _ydim);
-	void rampart_bitmap_free(void);
 	void rampart_bitmap_render(struct mame_bitmap *bitmap);
 	
 	
@@ -112,11 +111,11 @@ public class rampart
 	 *
 	 *************************************/
 	
-	void rampart_vh_stop(void)
+	public static VhStopPtr rampart_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		atarimo_free();
 		rampart_bitmap_free();
-	}
+	} };
 	
 	
 	

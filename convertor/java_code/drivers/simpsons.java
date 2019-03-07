@@ -18,11 +18,9 @@ public class simpsons
 {
 	
 	/* from vidhrdw */
-	void simpsons_vh_stop( void );
 	void simpsons_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	/* from machine */
-	void simpsons_init_machine( void );
 	void simpsons_nvram_handler(void *file,int read_or_write);
 	extern int simpsons_firq_enabled;
 	

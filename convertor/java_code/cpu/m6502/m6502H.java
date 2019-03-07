@@ -35,10 +35,8 @@ public class m6502H
 	
 	#ifdef RUNTIME_LOADER
 	# ifdef __cplusplus
-		extern "C" void m6502_runtime_loader_init(void);
-	# else
-		extern void m6502_runtime_loader_init(void);
-	# endif
+		extern "C" # else
+		extern # endif
 	#endif
 	
 	/* set to 1 to test cur_mrhard/cur_wmhard to avoid calls */
@@ -72,10 +70,8 @@ public class m6502H
 	
 	extern int m6502_ICount;				/* cycle count */
 	
-	extern void m6502_init(void);
-	extern void m6502_reset(void *param);
-	extern void m6502_exit(void);
-	extern int	m6502_execute(int cycles);
+	extern extern void m6502_reset(void *param);
+	extern extern int	m6502_execute(int cycles);
 	extern unsigned m6502_get_context(void *dst);
 	extern void m6502_set_context(void *src);
 	extern unsigned m6502_get_reg(int regnum);
@@ -104,10 +100,8 @@ public class m6502H
 	
 	#define m6510_ICount					m6502_ICount
 	
-	extern void m6510_init(void);
-	extern void m6510_reset(void *param);
-	extern void m6510_exit(void);
-	extern int	m6510_execute(int cycles);
+	extern extern void m6510_reset(void *param);
+	extern extern int	m6510_execute(int cycles);
 	extern unsigned m6510_get_context(void *dst);
 	extern void m6510_set_context(void *src);
 	extern unsigned m6510_get_reg(int regnum);
@@ -239,10 +233,8 @@ public class m6502H
 	
 	#define n2a03_ICount					m6502_ICount
 	
-	extern void n2a03_init(void);
-	extern void n2a03_reset(void *param);
-	extern void n2a03_exit(void);
-	extern int	n2a03_execute(int cycles);
+	extern extern void n2a03_reset(void *param);
+	extern extern int	n2a03_execute(int cycles);
 	extern unsigned n2a03_get_context(void *dst);
 	extern void n2a03_set_context(void *src);
 	extern unsigned n2a03_get_reg(int regnum);
@@ -259,8 +251,7 @@ public class m6502H
 	   Bit 7 of address $4011 (the PSG's DPCM control register), when set,
 	   causes an IRQ to be generated.  This function allows the IRQ to be called
 	   from the PSG core when such an occasion arises. */
-	extern void n2a03_irq(void);
-	#endif
+	extern #endif
 	
 	
 	/****************************************************************************
@@ -282,10 +273,8 @@ public class m6502H
 	
 	#define m65c02_ICount					m6502_ICount
 	
-	extern void m65c02_init(void);
-	extern void m65c02_reset(void *param);
-	extern void m65c02_exit(void);
-	extern int	m65c02_execute(int cycles);
+	extern extern void m65c02_reset(void *param);
+	extern extern int	m65c02_execute(int cycles);
 	extern unsigned m65c02_get_context(void *dst);
 	extern void m65c02_set_context(void *src);
 	extern unsigned m65c02_get_reg(int regnum);
@@ -315,10 +304,8 @@ public class m6502H
 	
 	#define m65sc02_ICount					m6502_ICount
 	
-	extern void m65sc02_init(void);
-	extern void m65sc02_reset(void *param);
-	extern void m65sc02_exit(void);
-	extern int	m65sc02_execute(int cycles);
+	extern extern void m65sc02_reset(void *param);
+	extern extern int	m65sc02_execute(int cycles);
 	extern unsigned m65sc02_get_context(void *dst);
 	extern void m65sc02_set_context(void *src);
 	extern unsigned m65sc02_get_reg(int regnum);

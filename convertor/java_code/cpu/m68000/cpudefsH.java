@@ -51,8 +51,7 @@ public class cpudefsH
 	
 	extern void Exception(int nr, CPTR oldpc);
 	
-	typedef void cpuop_func(void);
-	extern  cpuop_func *cpufunctbl[65536];
+	typedef extern  cpuop_func *cpufunctbl[65536];
 	
 	
 	typedef char flagtype;

@@ -414,14 +414,14 @@ public class metro
 	int metro_sprite_xoffs, metro_sprite_yoffs;
 	
 	
-	void metro_vh_stop(void)
+	public static VhStopPtr metro_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(empty_tiles);
 		empty_tiles = NULL;
 	
 		free(metro_tiletable_old);
 		metro_tiletable_old = NULL;
-	}
+	} };
 	
 	static void alloc_empty_tiles(void)
 	{

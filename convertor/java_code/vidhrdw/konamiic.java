@@ -1363,13 +1363,13 @@ public class konamiic
 		return 0;
 	}
 	
-	void K007342_vh_stop(void)
+	public static VhStopPtr K007342_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(K007342_ram);
 		K007342_ram = 0;
 		free(K007342_scroll_ram);
 		K007342_scroll_ram = 0;
-	}
+	} };
 	
 	public static ReadHandlerPtr K007342_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -1532,11 +1532,11 @@ public class konamiic
 		return 0;
 	}
 	
-	void K007420_vh_stop(void)
+	public static VhStopPtr K007420_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(K007420_ram);
 		K007420_ram = 0;
-	}
+	} };
 	
 	public static ReadHandlerPtr K007420_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -1881,11 +1881,11 @@ public class konamiic
 		return 0;
 	}
 	
-	void K052109_vh_stop(void)
+	public static VhStopPtr K052109_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(K052109_ram);
 		K052109_ram = 0;
-	}
+	} };
 	
 	
 	
@@ -2336,11 +2336,11 @@ public class konamiic
 		return 0;
 	}
 	
-	void K051960_vh_stop(void)
+	public static VhStopPtr K051960_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(K051960_ram);
 		K051960_ram = 0;
-	}
+	} };
 	
 	
 	static int K051960_fetchromdata(int byte)
@@ -2809,13 +2809,13 @@ public class konamiic
 		return 0;
 	}
 	
-	void K053245_vh_stop(void)
+	public static VhStopPtr K053245_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(K053245_ram);
 		K053245_ram = 0;
 		free(K053245_buffer);
 		K053245_buffer = 0;
-	}
+	} };
 	
 	READ16_HANDLER( K053245_word_r )
 	{
@@ -3263,11 +3263,11 @@ public class konamiic
 		return 0;
 	}
 	
-	void K053247_vh_stop(void)
+	public static VhStopPtr K053247_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(K053247_ram);
 		K053247_ram = 0;
-	}
+	} };
 	
 	READ16_HANDLER( K053247_word_r )
 	{
@@ -3817,20 +3817,20 @@ public class konamiic
 		K051316_ram[chip] = 0;
 	}
 	
-	void K051316_vh_stop_0(void)
+	public static VhStopPtr K051316_vh_stop_0 = new VhStopPtr() { public void handler() 
 	{
 		K051316_vh_stop(0);
-	}
+	} };
 	
-	void K051316_vh_stop_1(void)
+	public static VhStopPtr K051316_vh_stop_1 = new VhStopPtr() { public void handler() 
 	{
 		K051316_vh_stop(1);
-	}
+	} };
 	
-	void K051316_vh_stop_2(void)
+	public static VhStopPtr K051316_vh_stop_2 = new VhStopPtr() { public void handler() 
 	{
 		K051316_vh_stop(2);
-	}
+	} };
 	
 	int K051316_r(int chip, int offset)
 	{
@@ -4283,13 +4283,13 @@ public class konamiic
 	static void K054157_get_tile_info3(int tile_index) { K054157_get_tile_info(tile_index,3); }
 	
 	
-	void K054157_vh_stop(void)
+	public static VhStopPtr K054157_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		if(K054157_rambase) {
 			free(K054157_rambase);
 			K054157_rambase = 0;
 		}
-	}
+	} };
 	
 	static void K054157_lsu_1_256(int layer)
 	{

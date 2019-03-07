@@ -111,11 +111,11 @@ public class retofinv
 		return 0;
 	} };
 	
-	void retofinv_vh_stop(void)
+	public static VhStopPtr retofinv_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(bg_dirtybuffer);
 		bitmap_free(bitmap_bg);
-	}
+	} };
 	
 	public static WriteHandlerPtr retofinv_flip_screen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

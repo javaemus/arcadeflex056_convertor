@@ -473,7 +473,7 @@ public class cvs
 		return 0;
 	} };
 	
-	void cvs_vh_stop(void)
+	public static VhStopPtr cvs_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		generic_vh_stop();
 		bitmap_free(s2636_1_bitmap);
@@ -482,7 +482,7 @@ public class cvs
 		bitmap_free(collision_bitmap);
 		bitmap_free(collision_background);
 	    bitmap_free(scrolled_background);
-	}
+	} };
 	
 	public static InterruptPtr cvs_interrupt = new InterruptPtr() { public int handler() 
 	{

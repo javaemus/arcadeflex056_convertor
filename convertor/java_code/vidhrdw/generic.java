@@ -100,21 +100,21 @@ public class generic
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void generic_vh_stop(void)
+	public static VhStopPtr generic_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(dirtybuffer);
 		bitmap_free(tmpbitmap);
 	
 		dirtybuffer = 0;
 		tmpbitmap = 0;
-	}
+	} };
 	
-	void generic_bitmapped_vh_stop(void)
+	public static VhStopPtr generic_bitmapped_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free(tmpbitmap);
 	
 		tmpbitmap = 0;
-	}
+	} };
 	
 	
 	/***************************************************************************

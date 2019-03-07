@@ -28,14 +28,11 @@ public class neogeo
 	READ16_HANDLER( neogeo_memcard16_r );
 	WRITE16_HANDLER( neogeo_memcard16_w );
 	int neogeo_memcard_load(int);
-	void neogeo_memcard_save(void);
-	void neogeo_memcard_eject(void);
 	int neogeo_memcard_create(int);
 	
 	
 	
-	static void neogeo_custom_memory(void);
-	
+	static 
 	
 	/* This function is called on every reset */
 	void neogeo_init_machine(void)

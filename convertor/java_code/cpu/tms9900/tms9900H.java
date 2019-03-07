@@ -44,11 +44,9 @@ public class tms9900H
 	
 	extern	int tms9900_ICount;
 	
-	extern void tms9900_init(void);
-	extern void tms9900_reset(void *param);
+	extern extern void tms9900_reset(void *param);
 	extern int tms9900_execute(int cycles);
-	extern void tms9900_exit(void);
-	extern unsigned tms9900_get_context(void *dst);
+	extern extern unsigned tms9900_get_context(void *dst);
 	extern void tms9900_set_context(void *src);
 	extern unsigned tms9900_get_reg(int regnum);
 	extern void tms9900_set_reg(int regnum, unsigned val);
@@ -63,11 +61,9 @@ public class tms9900H
 	
 	extern	int tms9940_ICount;
 	
-	extern void tms9940_init(void);
-	extern void tms9940_reset(void *param);
+	extern extern void tms9940_reset(void *param);
 	extern int tms9940_execute(int cycles);
-	extern void tms9940_exit(void);
-	extern unsigned tms9940_get_context(void *dst);
+	extern extern unsigned tms9940_get_context(void *dst);
 	extern void tms9940_set_context(void *src);
 	extern unsigned tms9940_get_reg(int regnum);
 	extern void tms9940_set_reg(int regnum, unsigned val);
@@ -82,11 +78,9 @@ public class tms9900H
 	
 	extern	int tms9980a_ICount;
 	
-	extern void tms9980a_init(void);
-	extern void tms9980a_reset(void *param);
+	extern extern void tms9980a_reset(void *param);
 	extern int tms9980a_execute(int cycles);
-	extern void tms9980a_exit(void);
-	extern unsigned tms9980a_get_context(void *dst);
+	extern extern unsigned tms9980a_get_context(void *dst);
 	extern void tms9980a_set_context(void *src);
 	extern unsigned tms9980a_get_reg(int regnum);
 	extern void tms9980a_set_reg(int regnum, unsigned val);
@@ -101,11 +95,9 @@ public class tms9900H
 	
 	extern	int tms9985_ICount;
 	
-	extern void tms9985_init(void);
-	extern void tms9985_reset(void *param);
+	extern extern void tms9985_reset(void *param);
 	extern int tms9985_execute(int cycles);
-	extern void tms9985_exit(void);
-	extern unsigned tms9985_get_context(void *dst);
+	extern extern unsigned tms9985_get_context(void *dst);
 	extern void tms9985_set_context(void *src);
 	extern unsigned tms9985_get_reg(int regnum);
 	extern void tms9985_set_reg(int regnum, unsigned val);
@@ -120,11 +112,9 @@ public class tms9900H
 	
 	extern	int tms9989_ICount;
 	
-	extern void tms9989_init(void);
-	extern void tms9989_reset(void *param);
+	extern extern void tms9989_reset(void *param);
 	extern int tms9989_execute(int cycles);
-	extern void tms9989_exit(void);
-	extern unsigned tms9989_get_context(void *dst);
+	extern extern unsigned tms9989_get_context(void *dst);
 	extern void tms9989_set_context(void *src);
 	extern unsigned tms9989_get_reg(int regnum);
 	extern void tms9989_set_reg(int regnum, unsigned val);
@@ -139,11 +129,9 @@ public class tms9900H
 	
 	extern	int tms9995_ICount;
 	
-	extern void tms9995_init(void);
-	extern void tms9995_reset(void *param);
+	extern extern void tms9995_reset(void *param);
 	extern int tms9995_execute(int cycles);
-	extern void tms9995_exit(void);
-	extern unsigned tms9995_get_context(void *dst);
+	extern extern unsigned tms9995_get_context(void *dst);
 	extern void tms9995_set_context(void *src);
 	extern unsigned tms9995_get_reg(int regnum);
 	extern void tms9995_set_reg(int regnum, unsigned val);
@@ -168,11 +156,9 @@ public class tms9900H
 	
 	extern	int tms99105a_ICount;
 	
-	extern void tms99105a_init(void);
-	extern void tms99105a_reset(void *param);
+	extern extern void tms99105a_reset(void *param);
 	extern int tms99105a_execute(int cycles);
-	extern void tms99105a_exit(void);
-	extern unsigned tms99105a_get_context(void *dst);
+	extern extern unsigned tms99105a_get_context(void *dst);
 	extern void tms99105a_set_context(void *src);
 	extern unsigned tms99105a_get_reg(int regnum);
 	extern void tms99105a_set_reg(int regnum, unsigned val);
@@ -187,11 +173,9 @@ public class tms9900H
 	
 	extern	int tms99110A_ICount;
 	
-	extern void tms99110a_init(void);
-	extern void tms99110a_reset(void *param);
+	extern extern void tms99110a_reset(void *param);
 	extern int tms99110a_execute(int cycles);
-	extern void tms99110a_exit(void);
-	extern unsigned tms99110a_get_context(void *dst);
+	extern extern unsigned tms99110a_get_context(void *dst);
 	extern void tms99110a_set_context(void *src);
 	extern unsigned tms99110a_get_reg(int regnum);
 	extern void tms99110a_set_reg(int regnum, unsigned val);

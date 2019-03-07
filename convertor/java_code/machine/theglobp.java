@@ -70,7 +70,6 @@ package machine;
 public class theglobp
 {
 	
-	void pacman_init_machine(void);
 	
 	static int counter=0;
 	

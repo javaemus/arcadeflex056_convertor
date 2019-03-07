@@ -100,14 +100,14 @@ public class tubep
 		return 0;
 	} };
 	
-	void tubep_vh_stop(void)
+	public static VhStopPtr tubep_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(dirtybuff);
 		bitmap_free(tmpbitmap);
 	
 		dirtybuff = 0;
 		tmpbitmap = 0;
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr tubep_textram_w = new WriteHandlerPtr() {public void handler(int offset, int data)

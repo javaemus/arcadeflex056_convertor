@@ -87,13 +87,8 @@ public class m72
 	
 	/* in vidhrdw/m72.c */
 	extern unsigned char *m72_videoram1,*m72_videoram2,*majtitle_rowscrollram;
-	void m72_init_machine(void);
-	void xmultipl_init_machine(void);
-	void kengo_init_machine(void);
-	void m72_vh_stop(void);
 	void m72_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void majtitle_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void m72_eof_callback(void);
 	
 	
 	static unsigned char *protection_ram;

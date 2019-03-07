@@ -54,8 +54,7 @@ public class starwars
 	
 	
 	/* Local function prototypes */
-	static void run_mbox(void);
-	
+	static 
 	
 	
 	/*************************************

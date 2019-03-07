@@ -257,10 +257,7 @@ public class mamedbg
 	static const char *get_register_name( int id );
 	static unsigned get_register_or_value( char **parg, int *size );
 	static void trace_init( const char *filename, UINT8 *regs );
-	static void trace_done( void );
-	static void trace_select( void );
-	static void trace_output( void );
-	
+	static static static 
 	static static static 
 	static const char *name_rom( const char *type, int region, unsigned *base, unsigned start );
 	static const char *name_rdmem( unsigned base );
@@ -270,73 +267,22 @@ public class mamedbg
 	static int win_create(int n, UINT8 prio, int x, int y, int w, int h,
 		UINT8 co_text, UINT8 co_frame, UINT8 chr, UINT32 attributes);
 	static int DECL_SPEC win_msgbox( UINT8 color, const char *title, const char *fmt, ... );
-	static void dbg_open_windows( void );
-	static void dbg_close_windows( void );
-	
+	static static 
 	static unsigned dasm_line( unsigned pc, int times );
 	
-	static void dump_regs( void );
-	static unsigned dump_dasm( unsigned pc );
+	static static unsigned dump_dasm( unsigned pc );
 	static void dump_mem_hex( int which, unsigned len_addr, unsigned len_data );
 	static void dump_mem( int which, int set_title );
 	
 	static static int edit_cmds_parse( char *cmdline );
 	static void edit_cmds_append( const char *src );
 	
-	static void edit_regs( void );
-	static void edit_dasm( void );
-	static void edit_mem( int which );
-	static void edit_cmds(void);
+	static static static void edit_mem( int which );
+	static 
+	static static void cmd_default( int code );
 	
-	static void cmd_help( void );
-	static void cmd_default( int code );
-	
-	static void cmd_display_memory( void );
-	static void cmd_edit_memory( void );
-	static void cmd_set_memory_mode( void );
-	static void cmd_fast( void );
-	static void cmd_go_break( void );
-	static void cmd_jump( void );
-	static void cmd_replace_register( void );
-	static void cmd_brk_exec_set( void );
-	static void cmd_brk_exec_clear( void );
-	static void cmd_brk_regs_set( void );
-	static void cmd_brk_regs_clear( void );
-	static void cmd_brk_data_set( void );
-	static void cmd_brk_data_clear( void );
-	static void cmd_here( void );
-	static void cmd_dasm_to_file( void );
-	static void cmd_dump_to_file( void );
-	static void cmd_trace_to_file( void );
-	static void cmd_save_to_file( void );
-	static void cmd_set_ignore( void );
-	static void cmd_set_observe( void );
-	static void cmd_set_key_repeat( void );
-	static void cmd_set_dasm_case( void );
-	static void cmd_set_dasm_opcodes( void );
-	static void cmd_set_dasm_relative_jumps( void );
-	static void cmd_set_mem_squeezed( void );
-	static void cmd_set_element_color( void );
-	static void cmd_brk_exec_toggle( void );
-	static void cmd_brk_data_toggle( void );
-	
-	static void cmd_switch_window( void );
-	static void cmd_dasm_up( void );
-	static void cmd_dasm_down( void );
-	static void cmd_dasm_page_up( void );
-	static void cmd_dasm_page_down( void );
-	static void cmd_dasm_home( void );
-	static void cmd_dasm_end( void );
-	static void cmd_dasm_hist_follow( void );
-	static void cmd_dasm_hist_back( void );
-	static void cmd_run_to_cursor( void );
-	static void cmd_focus_next_cpu( void );
-	static void cmd_step( void );
-	static void cmd_animate( void );
-	static void cmd_step_over( void );
-	static void cmd_go( void );
-	static void cmd_search_memory( void );
-	
+	static static static static static static static static static static static static static static static static static static static static static static static static static static static static 
+	static static static static static static static static static static static static static static static static 
 	/****************************************************************************
 	 * Generic structure for saving points in the 'follow history'
 	 ****************************************************************************/
@@ -510,8 +456,6 @@ public class mamedbg
 	
 	
 	/* in usrintrf.c */
-	void switch_ui_orientation(void);
-	void switch_true_orientation(void);
 	
 	
 	struct GfxElement *build_debugger_font(void)

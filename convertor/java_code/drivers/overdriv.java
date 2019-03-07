@@ -28,7 +28,6 @@ public class overdriv
 {
 	
 	
-	void overdriv_vh_stop(void);
 	void overdriv_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

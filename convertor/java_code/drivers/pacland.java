@@ -40,7 +40,6 @@ public class pacland
 	static unsigned char *sharedram1;
 	
 	void pacland_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void pacland_vh_stop(void);
 	void pacland_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

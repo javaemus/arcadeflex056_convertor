@@ -21,7 +21,6 @@ public class prehisle
 	WRITE16_HANDLER( prehisle_video16_w );
 	WRITE16_HANDLER( prehisle_control16_w );
 	READ16_HANDLER( prehisle_control16_r );
-	void prehisle_vh_stop (void);
 	
 	static data16_t *prehisle_ram16;
 	extern data16_t *prehisle_video16;

@@ -24,7 +24,6 @@ struct YMZ280Binterface
 };
 
 int YMZ280B_sh_start(const struct MachineSound *msound);
-void YMZ280B_sh_stop(void);
 void YMZ280B_set_sample_base(int which, void *base);
 
 

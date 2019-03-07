@@ -134,15 +134,12 @@ public class sega
 	
 	/* Sound hardware prototypes */
 	int sega_sh_start (const struct MachineSound *msound);
-	void sega_sh_update(void);
 	
 	
 	int tacscan_sh_start (const struct MachineSound *msound);
-	void tacscan_sh_update(void);
 	
 	
 	/* Video hardware prototypes */
-	void sega_vh_stop (void);
 	void sega_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	public static Memory_ReadAddress readmem[]={

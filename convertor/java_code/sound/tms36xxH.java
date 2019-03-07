@@ -19,9 +19,7 @@ struct TMS36XXinterface {
 };
 
 extern int tms36xx_sh_start(const struct MachineSound *msound);
-extern void tms36xx_sh_stop(void);
-extern void tms36xx_sh_update(void);
-
+extern extern 
 /* MM6221AA interface functions */
 extern void mm6221aa_tune_w(int chip, int tune);
 

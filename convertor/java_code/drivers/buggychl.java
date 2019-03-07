@@ -95,7 +95,6 @@ public class buggychl
 	extern unsigned char *buggychl_character_ram;
 	
 	void buggychl_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void buggychl_vh_stop(void);
 	void buggychl_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

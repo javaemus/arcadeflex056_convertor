@@ -86,8 +86,7 @@ public class namcona1
 	extern WRITE16_HANDLER( namcona1_paletteram_w );
 	
 	extern void namcona1_vh_screenrefresh( struct mame_bitmap *bitmap,int full_refresh );
-	extern extern void namcona1_vh_stop( void );
-	
+	extern extern 
 	/* for MCU simulation */
 	static UINT8 coin_count[4];
 	static UINT8 coin_state;

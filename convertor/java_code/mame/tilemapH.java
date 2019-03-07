@@ -95,7 +95,6 @@ extern struct tile_info
 extern struct mame_bitmap *priority_bitmap;
 
 /* don't call these from drivers - they are called from mame.c */
-void tilemap_close( void );
 void tilemap_dispose( struct tilemap *tilemap );
 
 struct tilemap *tilemap_create(

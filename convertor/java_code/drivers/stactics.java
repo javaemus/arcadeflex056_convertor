@@ -55,7 +55,6 @@ public class stactics
 	extern unsigned char *stactics_motor_on;
 	
 	/* Defined in vidhrdw/stactics.c */
-	void stactics_vh_stop(void);
 	void stactics_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	extern unsigned char *stactics_scroll_ram;
 	extern unsigned char *stactics_videoram_b;

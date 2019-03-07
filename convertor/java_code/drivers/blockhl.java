@@ -29,11 +29,9 @@ public class blockhl
 {
 	
 	/* prototypes */
-	static void blockhl_init_machine( void );
-	static void blockhl_banking( int lines );
+	static static void blockhl_banking( int lines );
 	
 	
-	void blockhl_vh_stop( void );
 	void blockhl_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	static int palette_selected;

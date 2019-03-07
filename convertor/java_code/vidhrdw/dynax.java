@@ -396,11 +396,11 @@ public class dynax
 		return 0;
 	} };
 	
-	void dynax_vh_stop(void)
+	public static VhStopPtr dynax_vh_stop = new VhStopPtr() { public void handler() 
 	{
-	}
+	} };
 	
-	void sprtmtch_vh_stop(void)
+	public static VhStopPtr sprtmtch_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		if (dynax_pixmap[0][0])	free(dynax_pixmap[0][0]);
 		if (dynax_pixmap[0][1])	free(dynax_pixmap[0][1]);
@@ -415,7 +415,7 @@ public class dynax
 		dynax_pixmap[1][1] = 0;
 		dynax_pixmap[2][0] = 0;
 		dynax_pixmap[2][1] = 0;
-	}
+	} };
 	
 	/***************************************************************************
 	

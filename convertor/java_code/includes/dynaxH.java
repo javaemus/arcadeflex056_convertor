@@ -18,7 +18,6 @@ extern UINT8 dynax_blitter_irq;
 
 /* Functions defined in drivers: */
 
-void sprtmtch_update_irq(void);
 
 /***************************************************************************
 
@@ -54,8 +53,6 @@ extern UINT8 *dynax_bitmap[3][2];
 
 
 
-void dynax_vh_stop(void);
-void sprtmtch_vh_stop(void);
 
 void dynax_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 void sprtmtch_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

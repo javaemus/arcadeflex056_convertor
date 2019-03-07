@@ -24,10 +24,8 @@ public class m6809H
 	
 	
 	/* PUBLIC FUNCTIONS */
-	extern void m6809_init(void);
-	extern void m6809_reset(void *param);
-	extern void m6809_exit(void);
-	extern int m6809_execute(int cycles);  /* NS 970908 */
+	extern extern void m6809_reset(void *param);
+	extern extern int m6809_execute(int cycles);  /* NS 970908 */
 	extern unsigned m6809_get_context(void *dst);
 	extern void m6809_set_context(void *src);
 	extern unsigned m6809_get_reg(int regnum);

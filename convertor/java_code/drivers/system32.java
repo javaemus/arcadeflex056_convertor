@@ -194,9 +194,9 @@ public class system32
 		return 0;
 	} };
 	
-	void system32_vh_stop(void)
+	public static VhStopPtr system32_vh_stop = new VhStopPtr() { public void handler() 
 	{
-	}
+	} };
 	
 	void system32_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
 	{

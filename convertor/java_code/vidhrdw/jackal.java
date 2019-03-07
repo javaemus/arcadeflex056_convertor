@@ -70,14 +70,14 @@ public class jackal
 	} };
 	
 	
-	void jackal_vh_stop(void)
+	public static VhStopPtr jackal_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(dirtybuffer);
 		bitmap_free(tmpbitmap);
 	
 		dirtybuffer = 0;
 		tmpbitmap = 0;
-	}
+	} };
 	
 	
 	

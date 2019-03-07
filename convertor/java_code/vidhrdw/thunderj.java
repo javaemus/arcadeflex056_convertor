@@ -206,13 +206,13 @@ public class thunderj
 	 *
 	 *************************************/
 	
-	void thunderj_vh_stop(void)
+	public static VhStopPtr thunderj_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		atarian_free();
 		atarimo_free();
 		ataripf_free();
 		free(start_end);
-	}
+	} };
 	
 	
 	

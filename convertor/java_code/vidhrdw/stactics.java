@@ -342,7 +342,7 @@ public class stactics
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void stactics_vh_stop(void)
+	public static VhStopPtr stactics_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(dirty_videoram_b);
 		free(dirty_videoram_d);
@@ -361,7 +361,7 @@ public class stactics
 	    bitmap_free(bitmap_D);
 	    bitmap_free(bitmap_E);
 	    bitmap_free(bitmap_F);
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr stactics_palette_w = new WriteHandlerPtr() {public void handler(int offset, int data)

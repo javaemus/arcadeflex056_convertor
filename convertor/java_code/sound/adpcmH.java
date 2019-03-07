@@ -15,8 +15,6 @@ struct ADPCMinterface
 };
 
 int ADPCM_sh_start(const struct MachineSound *msound);
-void ADPCM_sh_stop(void);
-void ADPCM_sh_update(void);
 
 void ADPCM_play(int num, int offset, int length);
 void ADPCM_setvol(int num, int vol);
@@ -43,8 +41,6 @@ struct OKIM6295interface
 };
 
 int OKIM6295_sh_start(const struct MachineSound *msound);
-void OKIM6295_sh_stop(void);
-void OKIM6295_sh_update(void);
 void OKIM6295_set_bank_base(int which, int base);
 void OKIM6295_set_frequency(int which, int frequency);
 

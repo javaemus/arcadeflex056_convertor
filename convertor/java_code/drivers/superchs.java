@@ -42,7 +42,6 @@ package drivers;
 public class superchs
 {
 	
-	void superchs_vh_stop (void);
 	void superchs_vh_screenrefresh  (struct mame_bitmap *bitmap,int full_refresh);
 	
 	static UINT16 coin_word;
@@ -61,7 +60,6 @@ public class superchs
 	WRITE16_HANDLER(es5510_dsp_w);
 	WRITE16_HANDLER(f3_volume_w);
 	WRITE16_HANDLER(f3_es5505_bank_w);
-	void f3_68681_reset(void);
 	extern WRITE16_HANDLER( es5505_bank_w ); /* drivers/f3 */
 	
 	/*********************************************************************/

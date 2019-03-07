@@ -33,10 +33,8 @@ public class m4510H
 	
 	#ifdef RUNTIME_LOADER
 	# ifdef __cplusplus
-		extern "C" void m4510_runtime_loader_init(void);
-	# else
-		extern void m4510_runtime_loader_init(void);
-	# endif
+		extern "C" # else
+		extern # endif
 	#endif
 	
 	
@@ -53,10 +51,8 @@ public class m4510H
 	
 	extern int m4510_ICount;				/* cycle count */
 	
-	extern void m4510_init(void);
-	extern void m4510_reset(void *param);
-	extern void m4510_exit(void);
-	extern int	m4510_execute(int cycles);
+	extern extern void m4510_reset(void *param);
+	extern extern int	m4510_execute(int cycles);
 	extern unsigned m4510_get_context (void *dst);
 	extern void m4510_set_context (void *src);
 	extern unsigned m4510_get_reg (int regnum);

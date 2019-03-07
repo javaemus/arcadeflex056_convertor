@@ -97,7 +97,6 @@ public class ataxx
 	/* Sound routines */
 	
 	int  leland_i186_sh_start(const struct MachineSound *msound);
-	void leland_i186_sound_init(void);
 	
 	void leland_i86_optimize_address(offs_t offset);
 	
@@ -112,15 +111,12 @@ public class ataxx
 	
 	
 	
-	void leland_vh_eof(void);
-	void ataxx_vh_stop(void);
 	void ataxx_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	
 	/* Internal routines */
 	static void interrupt_callback(int scanline);
-	static void master_bankswitch(void);
-	
+	static 
 	
 	
 	/*************************************

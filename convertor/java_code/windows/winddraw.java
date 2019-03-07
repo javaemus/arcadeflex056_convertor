@@ -86,10 +86,7 @@ public class winddraw
 	//============================================================
 	
 	static double compute_mode_score(int width, int height, int depth, int refresh);
-	static static static static void set_brightness(void);
-	static static void erase_surfaces(void);
-	static void release_surfaces(void);
-	static void compute_color_masks(const DDSURFACEDESC *desc);
+	static static static static static static static static void compute_color_masks(const DDSURFACEDESC *desc);
 	static int render_to_blit(struct mame_bitmap *bitmap, int update);
 	static int render_to_primary(struct mame_bitmap *bitmap, int update);
 	static int blit_and_flip(LPDIRECTDRAWSURFACE target_surface, LPRECT src, LPRECT dst, int update);

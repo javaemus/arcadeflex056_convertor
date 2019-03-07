@@ -50,7 +50,6 @@ public class gridlee
 	 *
 	 *************************************/
 	
-	void gridlee_vh_stop(void);
 	
 	
 	
@@ -127,7 +126,7 @@ public class gridlee
 	 *
 	 *************************************/
 	
-	void gridlee_vh_stop(void)
+	public static VhStopPtr gridlee_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		/* free the local video RAM array */
 		if (local_videoram)
@@ -143,7 +142,7 @@ public class gridlee
 		if (scanline_palette)
 			free(scanline_palette);
 		scanline_palette = NULL;
-	}
+	} };
 	
 	
 	

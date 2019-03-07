@@ -80,10 +80,10 @@ public class phozon
 		return generic_vh_start();
 	} };
 	
-	void phozon_vh_stop( void ) {
+	public static VhStopPtr phozon_vh_stop = new VhStopPtr() { public void handler()  {
 	
 		generic_vh_stop();
-	}
+	} };
 	
 	void phozon_draw_sprite(struct mame_bitmap *dest,unsigned int code,unsigned int color,
 		int flipx,int flipy,int sx,int sy)

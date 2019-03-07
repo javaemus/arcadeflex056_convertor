@@ -266,7 +266,6 @@ package drivers;
 public class wgp
 {
 	
-	void wgp_vh_stop (void);
 	void wgp_vh_screenrefresh (struct mame_bitmap *bitmap,int full_refresh);
 	
 	//static data16_t *wgp_ram;

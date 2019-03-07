@@ -137,13 +137,8 @@ public class pacman
 	
 	extern unsigned char *pengo_soundregs;
 	
-	extern void pacplus_decode(void);
-	extern void jumpshot_decode(void);
-	extern void shootbul_decode(void);
+	extern extern extern 
 	
-	void theglobp_init_machine(void);
-	
-	void mspacman_init_machine(void);
 	
 	
 	static int speedcheat = 0;	/* a well known hack allows to make Pac Man run at four times */

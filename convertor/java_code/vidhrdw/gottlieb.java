@@ -120,18 +120,17 @@ public class gottlieb
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void gottlieb_vh_stop(void)
+	public static VhStopPtr gottlieb_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(dirtycharacter);
 		generic_vh_stop();
-	}
+	} };
 	
 	
 	
 	public static WriteHandlerPtr gottlieb_video_outputs_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-		extern void gottlieb_knocker(void);
-		static int last = 0;
+		extern 	static int last = 0;
 	
 	
 		background_priority = data & 1;

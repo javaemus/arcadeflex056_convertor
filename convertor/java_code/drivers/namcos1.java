@@ -133,37 +133,13 @@ public class namcos1
 	
 	/* from vidhrdw */
 	extern void namcos1_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	extern extern void namcos1_vh_stop(void);
-	
+	extern extern 
 	/* from machine */
 	
 	
 	
-	extern void init_namcos1( void );
-	
-	extern void init_shadowld( void );
-	extern void init_dspirit( void );
-	extern void init_quester( void );
-	extern void init_blazer( void );
-	extern void init_pacmania( void );
-	extern void init_galaga88( void );
-	extern void init_ws( void );
-	extern void init_berabohm( void );
-	extern void init_alice( void );
-	extern void init_bakutotu( void );
-	extern void init_wldcourt( void );
-	extern void init_splatter( void );
-	extern void init_faceoff( void );
-	extern void init_rompers( void );
-	extern void init_blastoff( void );
-	extern void init_ws89( void );
-	extern void init_dangseed( void );
-	extern void init_ws90( void );
-	extern void init_pistoldm( void );
-	extern void init_soukobdx( void );
-	extern void init_puzlclub( void );
-	extern void init_tankfrce( void );
-	
+	extern 
+	extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern 
 	
 	static unsigned char *nvram;
 	static size_t nvram_size;

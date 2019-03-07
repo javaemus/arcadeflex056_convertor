@@ -47,10 +47,8 @@ public class i8x41H
 	
 	extern int i8x41_ICount;				/* cycle count */
 	
-	extern void i8x41_init (void);					/* Initialize save states */
-	extern void i8x41_reset (void *param);			/* Reset registers to the initial values */
-	extern void i8x41_exit	(void); 				/* Shut down CPU core */
-	extern int	i8x41_execute(int cycles);			/* Execute cycles - returns number of cycles actually run */
+	extern extern void i8x41_reset (void *param);			/* Reset registers to the initial values */
+	extern extern int	i8x41_execute(int cycles);			/* Execute cycles - returns number of cycles actually run */
 	extern unsigned i8x41_get_context (void *dst);	/* Get registers, return context size */
 	extern void i8x41_set_context (void *src);		/* Set registers */
 	extern unsigned i8x41_get_reg (int regnum);

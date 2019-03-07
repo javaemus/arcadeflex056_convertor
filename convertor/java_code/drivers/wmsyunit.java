@@ -73,26 +73,8 @@ public class wmsyunit
 	
 	
 	/* driver-specific initialization */
-	void init_narc(void);
-	void init_narc3(void);
-	void init_smashtv(void);
-	void init_smashtv4(void);
-	void init_trog(void);
-	void init_trog3(void);
-	void init_trogp(void);
-	void init_mkla1(void);
-	void init_mkla2(void);
-	void init_mkla3(void);
-	void init_mkla4(void);
-	void init_totcarn(void);
-	void init_totcarnp(void);
-	void init_hiimpact(void);
-	void init_shimpact(void);
-	void init_strkforc(void);
-	void init_term2(void);
 	
 	/* general machine init */
-	void wms_yunit_init_machine(void);
 	
 	
 	/* external read handlers */
@@ -114,10 +96,7 @@ public class wmsyunit
 	
 	
 	/* external video routines */
-	void wms_yunit_vh_stop(void);
 	void wms_yunit_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
-	void wms_yunit_vh_eof(void);
-	void wms_zunit_vh_eof(void);
 	void wms_yunit_display_interrupt(int scanline);
 	void wms_yunit_display_addr_changed(UINT32 offs, int rowbytes, int scanline);
 	void wms_yunit_to_shiftreg(offs_t address, unsigned short *shiftreg);

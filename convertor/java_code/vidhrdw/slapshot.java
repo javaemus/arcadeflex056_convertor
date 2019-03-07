@@ -11,7 +11,6 @@ public class slapshot
 	#define TC0100SCN_GFX_NUM 1
 	
 	extern UINT8 TC0360PRI_regs[16];
-	void slapshot_vh_stop(void);
 	
 	struct tempsprite
 	{
@@ -116,7 +115,7 @@ public class slapshot
 		return (slapshot_core_vh_start());
 	} };
 	
-	void slapshot_vh_stop (void)
+	public static VhStopPtr slapshot_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(spriteram_delayed);
 		spriteram_delayed = 0;
@@ -133,7 +132,7 @@ public class slapshot
 		{
 			TC0100SCN_vh_stop();
 		}
-	}
+	} };
 	
 	
 	/************************************************************

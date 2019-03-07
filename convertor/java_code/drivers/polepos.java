@@ -71,14 +71,11 @@ public class polepos
 	
 	
 	/* from machine */
-	void polepos_init_machine(void);
 	WRITE16_HANDLER( polepos_z8002_nvi_enable_w );
 	READ16_HANDLER( polepos2_ic25_r );
 	
 	/* from sndhrdw */
 	int polepos_sh_start(const struct MachineSound *msound);
-	void polepos_sh_stop(void);
-	void polepos_sh_update(void);
 	
 	/* from vidhrdw */
 	extern data16_t *polepos_view16_memory;
@@ -86,7 +83,6 @@ public class polepos
 	extern data16_t *polepos_alpha16_memory;
 	extern data16_t *polepos_sprite16_memory;
 	
-	void polepos_vh_stop(void);
 	void polepos_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void polepos_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

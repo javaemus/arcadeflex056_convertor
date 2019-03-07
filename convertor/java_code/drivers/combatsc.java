@@ -113,9 +113,7 @@ public class combatsc
 	/* from vidhrdw/combasc.c */
 	void combasc_convert_color_prom( unsigned char *palette, unsigned short *colortable, const unsigned char *color_prom );
 	void combascb_convert_color_prom( unsigned char *palette, unsigned short *colortable, const unsigned char *color_prom );
-	void combasc_vh_stop( void );
 	
-	void combasc_init_machine( void );
 	
 	void combascb_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh );
 	void combasc_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh );

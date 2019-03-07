@@ -726,8 +726,7 @@ public class cheat
 	static void		AddResultToListByIdx(int idx);
 	static void		AddCheatToList(offs_t address, UINT8 data, int cpu);
 	static void		SetupDefaultMemoryAreas(int cpu);
-	static void		UnloadCheatDatabase(void);
-	
+	static 
 	/* Local variables */
 	static int					ActiveCheatTotal;				/* number of cheats currently active */
 	static int					LoadedCheatTotal;				/* total number of cheats */

@@ -193,14 +193,12 @@ public class taito_x
 	
 	
 	void superman_vh_screenrefresh (struct mame_bitmap *bitmap, int full_refresh);
-	void superman_vh_stop (void);
 	
 	extern size_t supes_videoram_size;
 	extern size_t supes_attribram_size;
 	extern data16_t *supes_videoram;
 	extern data16_t *supes_attribram;
 	
-	void cchip1_init_machine(void);
 	READ16_HANDLER ( cchip1_word_r );
 	WRITE16_HANDLER( cchip1_word_w );
 	

@@ -141,11 +141,11 @@ public class _1943
 	} };
 	
 	
-	void c1943_vh_stop(void)
+	public static VhStopPtr c1943_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free(sc2bitmap);
 		bitmap_free(sc1bitmap);
-	}
+	} };
 	
 	
 	

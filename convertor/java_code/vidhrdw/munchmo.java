@@ -72,11 +72,11 @@ public class munchmo
 	public static ReadHandlerPtr mnchmobl_sprite_tile_r  = new ReadHandlerPtr() { public int handler(int offset){ return mnchmobl_sprite_tile[offset]; } };
 	public static WriteHandlerPtr mnchmobl_sprite_tile_w = new WriteHandlerPtr() {public void handler(int offset, int data){ mnchmobl_sprite_tile[offset] = data; } };
 	
-	void mnchmobl_vh_stop( void )
+	public static VhStopPtr mnchmobl_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		if( tmpbitmap ) bitmap_free( tmpbitmap );
 		free( dirtybuffer );
-	}
+	} };
 	
 	public static VhStartPtr mnchmobl_vh_start = new VhStartPtr() { public int handler() 
 	{

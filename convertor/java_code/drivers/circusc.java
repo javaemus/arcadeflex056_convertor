@@ -16,7 +16,6 @@ public class circusc
 {
 	
 	
-	void konami1_decode(void);
 	
 	extern unsigned char *circusc_spritebank;
 	extern unsigned char *circusc_scroll;

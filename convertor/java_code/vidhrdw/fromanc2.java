@@ -25,8 +25,6 @@ public class fromanc2
 	static int fromanc2_gfxbank[2][4];
 	
 	
-	void fromanc2_vh_stop(void);
-	void fromancr_vh_stop(void);
 	
 	
 	/******************************************************************************
@@ -465,7 +463,7 @@ public class fromanc2
 		return 0;
 	} };
 	
-	void fromanc2_vh_stop(void)
+	public static VhStopPtr fromanc2_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		if (fromanc2_paletteram[1]) free(fromanc2_paletteram[1]);
 		fromanc2_paletteram[1] = 0;
@@ -527,7 +525,7 @@ public class fromanc2
 		fromanc2_videoram[0][1] = 0;
 		if (fromanc2_videoram[0][0]) free(fromanc2_videoram[0][0]);
 		fromanc2_videoram[0][0] = 0;
-	}
+	} };
 	
 	public static VhStartPtr fromancr_vh_start = new VhStartPtr() { public int handler() 
 	{
@@ -602,7 +600,7 @@ public class fromanc2
 		return 0;
 	} };
 	
-	void fromancr_vh_stop(void)
+	public static VhStopPtr fromancr_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		if (fromanc2_paletteram[1]) free(fromanc2_paletteram[1]);
 		fromanc2_paletteram[1] = 0;
@@ -652,7 +650,7 @@ public class fromanc2
 		fromanc2_videoram[0][1] = 0;
 		if (fromanc2_videoram[0][0]) free(fromanc2_videoram[0][0]);
 		fromanc2_videoram[0][0] = 0;
-	}
+	} };
 	
 	/******************************************************************************
 	

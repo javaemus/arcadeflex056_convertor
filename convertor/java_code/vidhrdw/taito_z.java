@@ -10,7 +10,6 @@ public class taito_z
 	#define TC0100SCN_GFX_NUM 1
 	#define TC0480SCP_GFX_NUM 1
 	
-	void taitoz_vh_stop(void);
 	
 	static int sci_spriteframe;
 	extern data16_t *taitoz_sharedram;
@@ -43,11 +42,11 @@ public class taito_z
 		return 0;
 	} };
 	
-	void TC0150ROD_vh_stop(void)
+	public static VhStopPtr TC0150ROD_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(TC0150ROD_ram);
 		TC0150ROD_ram = 0;
-	}
+	} };
 	
 	/* These scanline drawing routines lifted from Taito F3: optimise / merge ? */
 	
@@ -953,7 +952,7 @@ public class taito_z
 		return (taitoz_core_vh_start(4));
 	} };
 	
-	void taitoz_vh_stop (void)
+	public static VhStopPtr taitoz_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		if (has_TC0480SCP())
 		{
@@ -969,7 +968,7 @@ public class taito_z
 	
 		if (has_TC0110PCR())
 			TC0110PCR_vh_stop();
-	}
+	} };
 	
 	
 	/********************************************************

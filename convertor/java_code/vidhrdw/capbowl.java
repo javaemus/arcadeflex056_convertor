@@ -62,10 +62,10 @@ public class capbowl
 	 *
 	 *************************************/
 	
-	void capbowl_vh_stop(void)
+	public static VhStopPtr capbowl_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		tms34061_stop();
-	}
+	} };
 	
 	
 	/*************************************

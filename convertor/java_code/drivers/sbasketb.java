@@ -25,7 +25,6 @@ public class sbasketb
 {
 	
 	
-	void konami1_decode(void);
 	
 	
 	extern unsigned char *sbasketb_scroll;

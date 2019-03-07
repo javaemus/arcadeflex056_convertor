@@ -18,8 +18,6 @@ public class _2612intfH
 	#define YM2612interface AY8910interface
 	
 	int  YM2612_sh_start(const struct MachineSound *msound);
-	void YM2612_sh_stop(void);
-	void YM2612_sh_reset(void);
 	
 	/************************************************/
 	/* Chip 0 functions								*/

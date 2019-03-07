@@ -80,7 +80,6 @@ void namcos2_vh_update_finallap(struct mame_bitmap *bitmap, int full_refresh);
 
 /* MACHINE */
 
-void namcos2_init_machine(void);
 
 
 

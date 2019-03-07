@@ -98,12 +98,12 @@ public class ajax
 		return 0;
 	} };
 	
-	void ajax_vh_stop( void )
+	public static VhStopPtr ajax_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		K052109_vh_stop();
 		K051960_vh_stop();
 		K051316_vh_stop_0();
-	}
+	} };
 	
 	
 	

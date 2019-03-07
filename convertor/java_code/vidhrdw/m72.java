@@ -279,11 +279,11 @@ public class m72
 		return 0;
 	} };
 	
-	void m72_vh_stop(void)
+	public static VhStopPtr m72_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(m72_spriteram);
 		m72_spriteram = 0;
-	}
+	} };
 	
 	
 	

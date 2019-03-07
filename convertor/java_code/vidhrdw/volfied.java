@@ -53,7 +53,7 @@ public class volfied
 		return 0;
 	} };
 	
-	void volfied_vh_stop (void)
+	public static VhStopPtr volfied_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		if (video_ram != NULL)
 			free(video_ram);
@@ -63,7 +63,7 @@ public class volfied
 	
 		if (pixel_layer != NULL)
 			bitmap_free(pixel_layer);
-	}
+	} };
 	
 	
 	/*******************************************************

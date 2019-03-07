@@ -161,11 +161,11 @@ public class naughtyb
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void naughtyb_vh_stop(void)
+	public static VhStopPtr naughtyb_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free(tmpbitmap);
 		free(dirtybuffer);
-	}
+	} };
 	
 	
 	

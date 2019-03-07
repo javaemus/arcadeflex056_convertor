@@ -134,7 +134,6 @@ void ataripf_blend_gfx(int gfx0, int gfx1, int mask0, int mask1);
 
 /* setup/shutdown */
 int ataripf_init(int map, const struct ataripf_desc *desc);
-void ataripf_free(void);
 UINT32 *ataripf_get_lookup(int map, int *size);
 
 /* core processing */

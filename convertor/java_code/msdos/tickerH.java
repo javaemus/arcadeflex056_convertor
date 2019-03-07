@@ -14,6 +14,5 @@ public class tickerH
 	
 	#define TICKS_PER_SEC ticks_per_sec
 	
-	void init_ticker(void);
 	TICKER ticker(void);
 }

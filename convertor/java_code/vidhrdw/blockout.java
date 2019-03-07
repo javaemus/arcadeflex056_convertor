@@ -80,11 +80,11 @@ public class blockout
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void blockout_vh_stop (void)
+	public static VhStopPtr blockout_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free (tmpbitmap);
 		tmpbitmap = 0;
-	}
+	} };
 	
 	
 	

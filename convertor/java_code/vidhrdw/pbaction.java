@@ -57,12 +57,12 @@ public class pbaction
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void pbaction_vh_stop(void)
+	public static VhStopPtr pbaction_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free(tmpbitmap2);
 		free(dirtybuffer2);
 		generic_vh_stop();
-	}
+	} };
 	
 	
 	

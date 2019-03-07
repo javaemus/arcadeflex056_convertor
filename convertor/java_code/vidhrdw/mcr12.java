@@ -86,14 +86,14 @@ public class mcr12
 	} };
 	
 	
-	void mcr12_vh_stop(void)
+	public static VhStopPtr mcr12_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		generic_vh_stop();
 	
 		if (spritebitmap)
 			free(spritebitmap);
 		spritebitmap = NULL;
-	}
+	} };
 	
 	
 	

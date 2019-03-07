@@ -883,14 +883,14 @@ public class dec0
 		SET_TILE_INFO(2,tile&0xfff,tile>>12,TILE_SPLIT(pri))
 	}
 	
-	void dec0_nodma_vh_stop (void)
+	public static VhStopPtr dec0_nodma_vh_stop = new VhStopPtr() { public void handler() 
 	{
-	}
+	} };
 	
-	void dec0_vh_stop (void)
+	public static VhStopPtr dec0_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(dec0_spriteram);
-	}
+	} };
 	
 	public static VhStartPtr dec0_nodma_vh_start = new VhStartPtr() { public int handler() 
 	{

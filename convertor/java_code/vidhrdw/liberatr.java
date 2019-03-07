@@ -26,7 +26,6 @@ public class liberatr
 	unsigned char *liberatr_bitmapram;
 	
 	
-	void liberatr_vh_stop(void);
 	
 	
 	/*
@@ -380,7 +379,7 @@ public class liberatr
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void liberatr_vh_stop(void)
+	public static VhStopPtr liberatr_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		int i;
 	
@@ -405,7 +404,7 @@ public class liberatr
 			free(liberatr_planet_segs[1]);
 			liberatr_planet_segs[1] = 0;
 		}
-	}
+	} };
 	
 	
 	/***************************************************************************

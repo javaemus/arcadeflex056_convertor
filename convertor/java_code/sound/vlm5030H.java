@@ -12,8 +12,6 @@ struct VLM5030interface
 
 /* use sampling data when speech_rom == 0 */
 int VLM5030_sh_start(const struct MachineSound *msound);
-void VLM5030_sh_stop (void);
-void VLM5030_sh_update (void);
 
 /* set speech rom address */
 void VLM5030_set_rom(void *speech_rom);

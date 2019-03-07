@@ -18,8 +18,7 @@ package drivers;
 public class battlane
 {
 	
-	extern extern void battlane_vh_stop(void);
-	extern void battlane_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
+	extern extern extern void battlane_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	extern void battlane_vh_convert_color_prom (unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	extern unsigned char *battlane_bitmap;

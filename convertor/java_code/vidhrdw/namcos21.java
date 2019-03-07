@@ -448,9 +448,9 @@ public class namcos21
 		return 0;
 	} };
 	
-	void namcos21_vh_stop( void )
+	public static VhStopPtr namcos21_vh_stop = new VhStopPtr() { public void handler() 
 	{
-	}
+	} };
 	
 	static void draw_sprite( int page, struct mame_bitmap *bitmap, const data16_t *pSource )
 	{

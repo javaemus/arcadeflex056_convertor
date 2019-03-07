@@ -22,10 +22,8 @@ public class i86intfH
 	
 	/* Public functions */
 	
-	extern void i86_init(void);
-	extern void i86_reset(void *param);
-	extern void i86_exit(void);
-	extern int i86_execute(int cycles);
+	extern extern void i86_reset(void *param);
+	extern extern int i86_execute(int cycles);
 	extern unsigned i86_get_context(void *dst);
 	extern void i86_set_context(void *src);
 	extern unsigned i86_get_reg(int regnum);

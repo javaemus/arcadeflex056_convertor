@@ -82,18 +82,6 @@ public class _8080bw
 	
 	/* in sndhrdw/8080bw.c */
 	
-	void init_machine_invaders(void);
-	void init_machine_sstrngr2(void);
-	void init_machine_invad2ct(void);
-	void init_machine_sheriff(void);
-	void init_machine_gunfight(void);
-	void init_machine_boothill(void);
-	void init_machine_helifire(void);
-	void init_machine_ballbomb(void);
-	void init_machine_seawolf(void);
-	void init_machine_desertgu(void);
-	void init_machine_schaser(void);
-	void init_machine_polaris(void);
 	
 	
 	extern struct SN76477interface invaders_sn76477_interface;
@@ -109,26 +97,7 @@ public class _8080bw
 	
 	/* in vidhrdw/8080bw.c */
 	
-	void invaders_vh_stop(void);
 	
-	void init_8080bw(void);
-	void init_invaders(void);
-	void init_invadpt2(void);
-	void init_sstrngr2(void);
-	void init_invaddlx(void);
-	void init_invrvnge(void);
-	void init_invad2ct(void);
-	void init_schaser(void);
-	void init_rollingc(void);
-	void init_polaris(void);
-	void init_lupin3(void);
-	void init_seawolf(void);
-	void init_blueshrk(void);
-	void init_desertgu(void);
-	void init_spcenctr(void);
-	void init_helifire(void);
-	void init_phantom2(void);
-	void init_boothill(void);
 	
 	
 	void invaders_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

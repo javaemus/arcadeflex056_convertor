@@ -99,11 +99,11 @@ public class shangha3
 		return 0;
 	} };
 	
-	void shangha3_vh_stop(void)
+	public static VhStopPtr shangha3_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free(rawbitmap);
 		rawbitmap = 0;
-	}
+	} };
 	
 	
 	

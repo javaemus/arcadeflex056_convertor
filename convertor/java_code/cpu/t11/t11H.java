@@ -44,10 +44,8 @@ public class t11H
 	
 	
 	/* PUBLIC FUNCTIONS */
-	extern void t11_init(void);
-	extern void t11_reset(void *param);
-	extern void t11_exit(void);
-	extern int t11_execute(int cycles);    /* NS 970908 */
+	extern extern void t11_reset(void *param);
+	extern extern int t11_execute(int cycles);    /* NS 970908 */
 	extern unsigned t11_get_context(void *dst);
 	extern void t11_set_context(void *src);
 	extern unsigned t11_get_reg(int regnum);

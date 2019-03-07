@@ -266,7 +266,7 @@ public class taitosj
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void taitosj_vh_stop(void)
+	public static VhStopPtr taitosj_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		int i;
 	
@@ -284,7 +284,7 @@ public class taitosj
 		if (dirtybuffer3) free(dirtybuffer3);
 		if (dirtybuffer2) free(dirtybuffer2);
 		generic_vh_stop();
-	}
+	} };
 	
 	
 	

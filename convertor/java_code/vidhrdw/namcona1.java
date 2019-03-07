@@ -10,7 +10,6 @@ public class namcona1
 	
 	#define NAMCO_MAX_TILEMAPS 4
 	
-	void namcona1_vh_stop( void ); /* forward reference */
 	
 	/* public variables */
 	data16_t *namcona1_vreg;
@@ -256,12 +255,12 @@ public class namcona1
 		return -1; /* error */
 	} };
 	
-	void namcona1_vh_stop( void )
+	public static VhStopPtr namcona1_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free( shaperam );
 		free( cgram );
 		free( dirtychar );
-	}
+	} };
 	
 	/*************************************************************************/
 	

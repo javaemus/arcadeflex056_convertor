@@ -208,7 +208,6 @@ public class xevious
 	
 	
 	extern unsigned char *xevious_sharedram;
-	void xevious_init_machine(void);
 	
 	
 	extern unsigned char *xevious_fg_videoram,*xevious_fg_colorram;

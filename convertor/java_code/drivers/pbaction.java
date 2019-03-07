@@ -44,7 +44,6 @@ public class pbaction
 	
 	
 	extern unsigned char *pbaction_videoram2,*pbaction_colorram2;
-	void pbaction_vh_stop(void);
 	
 	void pbaction_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

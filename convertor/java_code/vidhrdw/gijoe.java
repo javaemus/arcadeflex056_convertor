@@ -43,11 +43,11 @@ public class gijoe
 		return 0;
 	} };
 	
-	void gijoe_vh_stop(void)
+	public static VhStopPtr gijoe_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		K054157_vh_stop();
 		K053247_vh_stop();
-	}
+	} };
 	
 	/* useful function to sort the three tile layers by priority order */
 	static void sortlayers(int *layer,int *pri)

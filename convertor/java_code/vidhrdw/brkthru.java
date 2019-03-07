@@ -109,11 +109,11 @@ public class brkthru
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void brkthru_vh_stop(void)
+	public static VhStopPtr brkthru_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free(tmpbitmap);
 		free(dirtybuffer);
-	}
+	} };
 	
 	
 	

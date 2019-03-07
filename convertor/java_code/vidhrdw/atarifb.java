@@ -91,12 +91,12 @@ public class atarifb
 	/***************************************************************************
 	***************************************************************************/
 	
-	void atarifb_vh_stop(void)
+	public static VhStopPtr atarifb_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		generic_vh_stop();
 		free (alphap1_dirtybuffer);
 		free (alphap2_dirtybuffer);
-	}
+	} };
 	
 	
 	/***************************************************************************

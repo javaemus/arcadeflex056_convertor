@@ -152,8 +152,7 @@ public class windowH
 	extern UINT32 win_open(UINT32 idx, struct sWindow *psWin);
 	extern UINT32 win_init_engine(UINT32 w, UINT32 h);
 	extern UINT32 win_is_initalized(UINT32 idx);
-	extern void win_exit_engine(void);
-	extern void win_close(UINT32 idx);
+	extern extern void win_close(UINT32 idx);
 	extern INT32 win_vprintf(UINT32 idx, const char *pszString, va_list arg);
 	extern INT32 DECL_SPEC win_printf(UINT32 idx, const char *pszString, ...) ARGFMT;
 	extern UINT32 DECL_SPEC win_set_title(UINT32 idx, const char *pszTitle, ... ) ARGFMT;
@@ -178,7 +177,6 @@ public class windowH
 	extern UINT8 win_get_prio(UINT32 idx);
 	extern void win_set_prio(UINT32 idx, UINT8 prio);
 	extern void win_move(UINT32 idx, UINT32 dwX, UINT32 dwY);
-	extern void win_invalidate_video(void);
-	
+	extern 
 	#endif
 }

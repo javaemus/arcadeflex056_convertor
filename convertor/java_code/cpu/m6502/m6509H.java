@@ -36,8 +36,7 @@ public class m6509H
 	#endif
 	
 	#ifdef RUNTIME_LOADER
-		extern void m6509_runtime_loader_init(void);
-	#endif
+		extern #endif
 	
 	enum {
 		M6509_PC=1, M6509_S, M6509_P, M6509_A, M6509_X, M6509_Y,
@@ -53,10 +52,8 @@ public class m6509H
 	
 	extern int m6509_ICount;				/* cycle count */
 	
-	extern void m6509_init(void);
-	extern void m6509_reset(void *param);			/* Reset registers to the initial values */
-	extern void m6509_exit(void);					/* Shut down CPU core */
-	extern int	m6509_execute(int cycles);			/* Execute cycles - returns number of cycles actually run */
+	extern extern void m6509_reset(void *param);			/* Reset registers to the initial values */
+	extern extern int	m6509_execute(int cycles);			/* Execute cycles - returns number of cycles actually run */
 	extern unsigned m6509_get_context (void *dst);	/* Get registers, return context size */
 	extern void m6509_set_context (void *src);		/* Set registers */
 	extern unsigned m6509_get_reg (int regnum);

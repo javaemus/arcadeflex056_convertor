@@ -62,14 +62,14 @@ public class nyny
 	  Stop the video hardware emulation.
 	***************************************************************************/
 	
-	void nyny_vh_stop(void)
+	public static VhStopPtr nyny_vh_stop = new VhStopPtr() { public void handler() 
 	{
 	   free(nyny_videoram);
 	   free(nyny_colourram);
 	
 	   bitmap_free(tmpbitmap1);
 	   bitmap_free(tmpbitmap2);
-	}
+	} };
 	
 	public static WriteHandlerPtr nyny_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

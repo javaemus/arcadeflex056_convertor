@@ -44,10 +44,10 @@ public class mole
 		return 1; /* error */
 	} };
 	
-	void moleattack_vh_stop( void ){
+	public static VhStopPtr moleattack_vh_stop = new VhStopPtr() { public void handler() {
 		free( dirtybuffer );
 		free( tile_data );
-	}
+	} };
 	
 	public static WriteHandlerPtr moleattack_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		if( offset<NUM_TILES ){

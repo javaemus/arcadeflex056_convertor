@@ -436,7 +436,6 @@ package drivers;
 public class taito_z
 {
 	
-	void taitoz_vh_stop (void);
 	
 	void contcirc_vh_screenrefresh (struct mame_bitmap *bitmap,int full_refresh);
 	void chasehq_vh_screenrefresh  (struct mame_bitmap *bitmap,int full_refresh);

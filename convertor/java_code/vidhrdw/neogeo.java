@@ -119,7 +119,7 @@ public class neogeo
 	
 	/******************************************************************************/
 	
-	void neogeo_vh_stop(void)
+	public static VhStopPtr neogeo_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		if (neogeo_palettebank[0])
 			free (neogeo_palettebank[0]);
@@ -136,7 +136,7 @@ public class neogeo
 		if (neogeo_ram16)
 			free (neogeo_ram16);
 		neogeo_ram16 = NULL;
-	}
+	} };
 	
 	
 	public static VhStartPtr neogeo_mvs_vh_start = new VhStartPtr() { public int handler() 

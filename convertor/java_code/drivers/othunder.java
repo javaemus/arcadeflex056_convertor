@@ -58,7 +58,6 @@ package drivers;
 public class othunder
 {
 	
-	void othunder_vh_stop (void);
 	void othunder_vh_screenrefresh (struct mame_bitmap *bitmap,int full_refresh);
 	
 	static data16_t eep_latch = 0;

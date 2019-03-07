@@ -80,9 +80,7 @@ public class harddriv
 	static int gfx_update_index;
 	
 	
-	static void harddriv_fast_draw(void);
-	static void stunrun_fast_draw(void);
-	
+	static static 
 	
 	
 	/*************************************
@@ -164,12 +162,12 @@ public class harddriv
 	} };
 	
 	
-	void harddriv_vh_stop(void)
+	public static VhStopPtr harddriv_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		if (mask_table)
 			free(mask_table);
 		mask_table = NULL;
-	}
+	} };
 	
 	
 	

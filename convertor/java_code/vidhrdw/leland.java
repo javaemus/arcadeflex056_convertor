@@ -81,8 +81,7 @@ public class leland
 	
 	public static VhStartPtr leland_vh_start = new VhStartPtr() { public int handler() 
 	{
-		void leland_vh_stop(void);
-	
+		
 		/* allocate memory */
 	    leland_video_ram = malloc(VRAM_SIZE);
 	    fgbitmap = bitmap_alloc(VIDEO_WIDTH * 8, VIDEO_HEIGHT * 8);
@@ -107,8 +106,7 @@ public class leland
 	
 	public static VhStartPtr ataxx_vh_start = new VhStartPtr() { public int handler() 
 	{
-		void ataxx_vh_stop(void);
-	
+		
 		/* first do the standard stuff */
 		if (leland_vh_start())
 			return 1;
@@ -136,7 +134,7 @@ public class leland
 	 *
 	 *************************************/
 	
-	void leland_vh_stop(void)
+	public static VhStopPtr leland_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		if (leland_video_ram)
 			free(leland_video_ram);
@@ -145,17 +143,17 @@ public class leland
 		if (fgbitmap)
 			bitmap_free(fgbitmap);
 		fgbitmap = NULL;
-	}
+	} };
 	
 	
-	void ataxx_vh_stop(void)
+	public static VhStopPtr ataxx_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		leland_vh_stop();
 	
 		if (ataxx_qram)
 			free(ataxx_qram);
 		ataxx_qram = NULL;
-	}
+	} };
 	
 	
 	

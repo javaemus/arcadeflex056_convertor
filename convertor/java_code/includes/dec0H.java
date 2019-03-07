@@ -1,6 +1,4 @@
 /* Video emulation definitions */
-void dec0_vh_stop(void);
-void dec0_nodma_vh_stop(void);
 void hbarrel_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 void baddudes_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 void birdtry_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
@@ -45,16 +43,8 @@ WRITE16_HANDLER( slyspy_24c000_w );
 WRITE16_HANDLER( slyspy_24e000_w );
 
 
-void init_slyspy(void);
-void init_hippodrm(void);
-void init_robocop(void);
-void init_baddudes(void);
-void init_hbarrel(void);
-void init_hbarrelw(void);
-void init_birdtry(void);
 
 extern void dec0_i8751_write(int data);
-extern void dec0_i8751_reset(void);
-
+extern 
 extern data16_t *dec0_ram;
 extern data8_t *robocop_shared_ram;

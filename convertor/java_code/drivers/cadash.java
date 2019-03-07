@@ -63,7 +63,6 @@ public class cadash
 	WRITE16_HANDLER( cadash_spriteflip_w );
 	
 	
-	void cadash_vh_stop(void);
 	
 	
 	

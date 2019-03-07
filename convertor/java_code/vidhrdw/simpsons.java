@@ -62,11 +62,11 @@ public class simpsons
 		return 0;
 	} };
 	
-	void simpsons_vh_stop( void )
+	public static VhStopPtr simpsons_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		K052109_vh_stop();
 		K053247_vh_stop();
-	}
+	} };
 	
 	/***************************************************************************
 	

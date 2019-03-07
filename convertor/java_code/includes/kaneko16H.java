@@ -59,9 +59,6 @@ extern kaneko16_priority_t kaneko16_priority;
 /* Machine */
 
 
-void kaneko16_vh_stop(void);
-void berlwall_vh_stop(void);
 
 void kaneko16_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 
-void kaneko16_init_machine(void);

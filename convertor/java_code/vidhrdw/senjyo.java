@@ -126,11 +126,11 @@ public class senjyo
 	
 	***************************************************************************/
 	
-	void senjyo_vh_stop(void)
+	public static VhStopPtr senjyo_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free(bgbitmap);
 		bgbitmap = 0;
-	}
+	} };
 	
 	public static VhStartPtr senjyo_vh_start = new VhStartPtr() { public int handler() 
 	{

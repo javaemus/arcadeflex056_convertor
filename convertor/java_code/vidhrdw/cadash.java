@@ -9,7 +9,6 @@ public class cadash
 	
 	#define TC0100SCN_GFX_NUM 1
 	
-	void cadash_vh_stop(void);
 	
 	struct tempsprite
 	{
@@ -82,7 +81,7 @@ public class cadash
 		return (cadash_core_vh_start());
 	} };
 	
-	void cadash_vh_stop (void)
+	public static VhStopPtr cadash_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(spritelist);
 		spritelist = 0;
@@ -91,7 +90,7 @@ public class cadash
 	
 		if (has_TC0110PCR())
 			TC0110PCR_vh_stop();
-	}
+	} };
 	
 	
 	/********************************************************

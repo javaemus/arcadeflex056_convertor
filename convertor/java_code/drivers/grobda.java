@@ -24,7 +24,6 @@ public class grobda
 	/* custom IO chips functions */
 	
 	/* INT functions */
-	void grobda_init_machine(void);
 	
 	/* video functions */
 	void grobda_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);

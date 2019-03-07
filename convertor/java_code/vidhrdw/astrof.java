@@ -105,10 +105,10 @@ public class astrof
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void astrof_vh_stop(void)
+	public static VhStopPtr astrof_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		if (colorram)  free(colorram);
-	}
+	} };
 	
 	
 	

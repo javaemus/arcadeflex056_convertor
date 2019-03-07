@@ -757,9 +757,7 @@ public class z180
 	
 	static data_t z180_readcontrol(offs_t port);
 	static void z180_writecontrol(offs_t port, data_t data);
-	static void z180_dma0(void);
-	static void z180_dma1(void);
-	
+	static static 
 	
 	
 	static data_t z180_readcontrol(offs_t port)

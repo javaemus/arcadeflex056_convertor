@@ -41,12 +41,6 @@ public class tmnt
 	WRITE16_HANDLER( ssriders_1c0300_w );
 	WRITE16_HANDLER( prmrsocr_122000_w );
 	WRITE16_HANDLER( tmnt_priority_w );
-	void punkshot_vh_stop(void);
-	void lgtnfght_vh_stop(void);
-	void detatwin_vh_stop(void);
-	void glfgreat_vh_stop(void);
-	void thndrx2_vh_stop(void);
-	void prmrsocr_vh_stop(void);
 	void mia_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void tmnt_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void punkshot_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

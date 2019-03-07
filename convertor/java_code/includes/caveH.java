@@ -29,7 +29,6 @@ void mazinger_vh_init_palette(unsigned char *palette, unsigned short *colortable
 
 
 
-void cave_vh_stop(void);
 
 void cave_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 

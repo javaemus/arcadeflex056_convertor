@@ -99,8 +99,7 @@ public class galaxian
 	static void  mariner_draw_stars(struct mame_bitmap *bitmap);
 	static void  jumpbug_draw_stars(struct mame_bitmap *bitmap);
 	static void start_stars_blink_timer(double ra, double rb, double c);
-	static void start_stars_scroll_timer(void);
-	
+	static 
 	/* bullets circuit */
 	static int darkplnt_bullet_color;
 	static void (*draw_bullets)(struct mame_bitmap *,int,int,int);	/* function to call to draw a bullet */

@@ -38,7 +38,6 @@ extern double sec_to_cycles[];
 #define SUSPEND_ANY_REASON		((UINT32)-1)
 
 
-void timer_init(void);
 void *timer_pulse(double period, int param, void(*callback)(int));
 void *timer_set(double duration, int param, void(*callback)(int));
 void timer_reset(void *which, double duration);

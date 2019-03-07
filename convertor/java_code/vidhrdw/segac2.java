@@ -49,10 +49,8 @@ public class segac2
 	static static void vdp_control_w(int data);
 	static void vdp_register_w(int data);
 	static void vdp_control_dma(int data);
-	static void vdp_dma_68k(void);
-	static void vdp_dma_fill(int);
-	static void vdp_dma_copy(void);
-	
+	static static void vdp_dma_fill(int);
+	static 
 	static void drawline(UINT16 *bitmap, int line);
 	static void get_scroll_tiles(int line, int scrollnum, UINT32 scrollbase, UINT32 *tiles, UINT8 *offset);
 	static void get_window_tiles(int line, UINT32 scrollbase, UINT32 *tiles, UINT8 *offset);
@@ -207,13 +205,13 @@ public class segac2
 	} };
 	
 	
-	void segac2_vh_stop(void)
+	public static VhStopPtr segac2_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(cache_bitmap);
 		free(transparent_lookup);
 		free(vdp_vram);
 		free(vdp_vsram);
-	}
+	} };
 	
 	
 	

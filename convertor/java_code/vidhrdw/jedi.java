@@ -111,7 +111,7 @@ public class jedi
 	 *
 	 *************************************/
 	
-	void jedi_vh_stop(void)
+	public static VhStopPtr jedi_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free(fgbitmap);
 		bitmap_free(mobitmap);
@@ -119,7 +119,7 @@ public class jedi
 		bitmap_free(bgexbitmap);
 		free(fgdirty);
 		free(bgdirty);
-	}
+	} };
 	
 	
 	

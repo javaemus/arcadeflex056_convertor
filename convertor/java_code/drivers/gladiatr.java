@@ -109,8 +109,7 @@ public class gladiatr
 	
 	/*Video functions*/
 	extern unsigned char *gladiator_text;
-	extern extern void gladiatr_vh_stop(void);
-	extern void gladiatr_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
+	extern extern extern void gladiatr_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	/*Rom bankswitching*/
 	static int banka;

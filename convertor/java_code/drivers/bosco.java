@@ -76,7 +76,6 @@ public class bosco
 {
 	
 	extern unsigned char *bosco_sharedram;
-	void bosco_init_machine(void);
 	
 	void bosco_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void bosco_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
@@ -86,11 +85,9 @@ public class bosco
 	extern size_t bosco_radarram_size;
 	extern unsigned char *bosco_staronoff;
 	extern unsigned char *bosco_starblink;
-	void bosco_vh_stop(void);
 	void bosco_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	int  bosco_sh_start(const struct MachineSound *msound);
-	void bosco_sh_stop(void);
 	extern unsigned char *pengo_soundregs;
 	
 	

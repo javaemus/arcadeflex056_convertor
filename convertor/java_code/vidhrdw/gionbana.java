@@ -36,8 +36,7 @@ public class gionbana
 	
 	
 	static void gionbana_vramflip(int vram);
-	static void gionbana_gfxdraw(void);
-	
+	static 
 	
 	/******************************************************************************
 	
@@ -411,7 +410,7 @@ public class gionbana
 		return 0;
 	} };
 	
-	void gionbana_vh_stop(void)
+	public static VhStopPtr gionbana_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(gionbana_paltbl);
 		free(gionbana_palette);
@@ -425,7 +424,7 @@ public class gionbana
 		gionbana_videoram0 = 0;
 		gionbana_tmpbitmap1 = 0;
 		gionbana_tmpbitmap0 = 0;
-	}
+	} };
 	
 	public static VhStartPtr hanamomo_vh_start = new VhStartPtr() { public int handler() 
 	{
@@ -438,7 +437,7 @@ public class gionbana
 		return 0;
 	} };
 	
-	void hanamomo_vh_stop(void)
+	public static VhStopPtr hanamomo_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(gionbana_paltbl);
 		free(gionbana_palette);
@@ -448,7 +447,7 @@ public class gionbana
 		gionbana_palette = 0;
 		gionbana_videoram0 = 0;
 		gionbana_tmpbitmap0 = 0;
-	}
+	} };
 	
 	/******************************************************************************
 	

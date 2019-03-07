@@ -260,8 +260,7 @@ public class v60
 		logerror("%s", msg);
 	}
 	
-	static void v60_try_irq(void);
-	
+	static 
 	#define STACK_REG(IS)	((IS)==0?37:36)
 	
 	static UINT32 v60ReadPSW(void)

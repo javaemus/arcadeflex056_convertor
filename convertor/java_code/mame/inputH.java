@@ -81,7 +81,6 @@ enum
 /***************************************************************************/
 /* Single code functions */
 
-void code_close(void);
 
 InputCode keyoscode_to_code(unsigned oscode);
 InputCode joyoscode_to_code(unsigned oscode);
@@ -122,7 +121,6 @@ void seq_copy(InputSeq* seqdst, InputSeq* seqsrc);
 int seq_cmp(InputSeq* seq1, InputSeq* seq2);
 void seq_name(InputSeq* seq, char* buffer, unsigned max);
 int seq_pressed(InputSeq* seq);
-void seq_read_async_start(void);
 int seq_read_async(InputSeq* code, int first);
 
 /* NOTE: It's very important that this sequence is EXACLY long SEQ_MAX */

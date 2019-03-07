@@ -114,16 +114,11 @@ public class punchout
 	extern unsigned char *punchout_bigsprite1;
 	extern unsigned char *punchout_bigsprite2;
 	extern unsigned char *punchout_palettebank;
-	void punchout_vh_stop(void);
 	void punchout_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void armwrest_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void punchout_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void armwrest_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	void init_punchout(void);
-	void init_spnchout(void);
-	void init_spnchotj(void);
-	void init_armwrest(void);
 	
 	
 	

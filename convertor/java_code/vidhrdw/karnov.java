@@ -237,11 +237,11 @@ public class karnov
 	
 	/******************************************************************************/
 	
-	void karnov_vh_stop (void)
+	public static VhStopPtr karnov_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		if (dirty_f) free(dirty_f);
 		if (bitmap_f) bitmap_free (bitmap_f);
-	}
+	} };
 	
 	public static VhStartPtr karnov_vh_start = new VhStartPtr() { public int handler() 
 	{

@@ -109,8 +109,6 @@ public class taito_b
 	extern data16_t *taitob_pixelram;
 	
 	
-	void taitob_vh_stop(void);
-	void taitob_eof_callback(void);
 	
 	void taitob_vh_screenrefresh  (struct mame_bitmap *bitmap,int full_refresh);
 	

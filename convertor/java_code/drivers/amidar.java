@@ -33,10 +33,7 @@ public class amidar
 	
 	extern struct GfxDecodeInfo galaxian_gfxdecodeinfo[];
 	
-	void init_scramble_ppi(void);
-	void init_amidar(void);
 	
-	void scramble_init_machine(void);
 	
 	
 	READ_HANDLER(amidar_ppi8255_0_r);

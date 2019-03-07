@@ -143,9 +143,9 @@ public class appoooh
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void appoooh_vh_stop(void)
+	public static VhStopPtr appoooh_vh_stop = new VhStopPtr() { public void handler() 
 	{
-	}
+	} };
 	
 	public static WriteHandlerPtr appoooh_fg_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

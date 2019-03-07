@@ -64,18 +64,8 @@ public class wmswolfu
 	
 	
 	/* driver-specific initialization */
-	void init_mk3(void);
-	void init_mk3r20(void);
-	void init_mk3r10(void);
-	void init_umk3(void);
-	void init_umk3r11(void);
-	void init_openice(void);
-	void init_nbahangt(void);
-	void init_rmpgwt(void);
-	void init_wwfmania(void);
 	
 	/* general machine init */
-	void wms_wolfu_init_machine(void);
 	
 	
 	/* external read handlers */
@@ -102,7 +92,6 @@ public class wmswolfu
 	
 	
 	/* external video routines */
-	void wms_tunit_vh_stop(void);
 	void wms_tunit_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void wms_tunit_to_shiftreg(offs_t address, unsigned short *shiftreg);
 	void wms_tunit_from_shiftreg(offs_t address, unsigned short *shiftreg);

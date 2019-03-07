@@ -70,11 +70,11 @@ public class rollerg
 		return 0;
 	} };
 	
-	void rollerg_vh_stop(void)
+	public static VhStopPtr rollerg_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		K053245_vh_stop();
 		K051316_vh_stop_0();
-	}
+	} };
 	
 	
 	

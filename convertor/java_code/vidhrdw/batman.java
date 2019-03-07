@@ -179,12 +179,12 @@ public class batman
 	 *
 	 *************************************/
 	
-	void batman_vh_stop(void)
+	public static VhStopPtr batman_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		atarian_free();
 		atarimo_free();
 		ataripf_free();
-	}
+	} };
 	
 	
 	

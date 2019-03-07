@@ -148,13 +148,13 @@ public class system1
 		return 0;
 	} };
 	
-	void system1_vh_stop(void)
+	public static VhStopPtr system1_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free(tmp_bitmap);
 		free(wbml_paged_videoram);
 		free(bg_dirtybuffer);
 		free(sprite_onscreen_map);
-	}
+	} };
 	
 	public static WriteHandlerPtr system1_videomode_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

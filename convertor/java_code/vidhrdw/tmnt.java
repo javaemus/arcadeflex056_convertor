@@ -257,41 +257,41 @@ public class tmnt
 		return 0;
 	} };
 	
-	void punkshot_vh_stop(void)
+	public static VhStopPtr punkshot_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		K052109_vh_stop();
 		K051960_vh_stop();
-	}
+	} };
 	
-	void lgtnfght_vh_stop(void)
+	public static VhStopPtr lgtnfght_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		K052109_vh_stop();
 		K053245_vh_stop();
-	}
+	} };
 	
-	void detatwin_vh_stop(void)
+	public static VhStopPtr detatwin_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		K052109_vh_stop();
 		K053245_vh_stop();
-	}
+	} };
 	
-	void glfgreat_vh_stop(void)
+	public static VhStopPtr glfgreat_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		K052109_vh_stop();
 		K053245_vh_stop();
-	}
+	} };
 	
-	void thndrx2_vh_stop(void)
+	public static VhStopPtr thndrx2_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		K052109_vh_stop();
 		K051960_vh_stop();
-	}
+	} };
 	
-	void prmrsocr_vh_stop(void)
+	public static VhStopPtr prmrsocr_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		K052109_vh_stop();
 		K053245_vh_stop();
-	}
+	} };
 	
 	
 	

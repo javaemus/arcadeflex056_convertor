@@ -93,13 +93,10 @@ public class cpuexecH
 	/* Prepare CPUs for execution */
 	
 	/* Run CPUs until the user quits */
-	void cpu_run(void);
 	
 	/* Clean up after quitting */
-	void cpu_exit(void);
 	
 	/* Force a reset after the current timeslice */
-	void machine_reset(void);
 	
 	
 	
@@ -117,7 +114,6 @@ public class cpuexecH
 		LOADSAVE_LOAD
 	};
 	void cpu_loadsave_schedule(int type, char id);
-	void cpu_loadsave_reset(void);
 	
 	
 	
@@ -288,16 +284,12 @@ public class cpuexecH
 	void cpu_yielduntil_trigger(int trigger);
 	
 	/* burn CPU cycles until the next interrupt */
-	void cpu_spinuntil_int(void);
 	
 	/* yield our timeslice until the next interrupt */
-	void cpu_yielduntil_int(void);
 	
 	/* burn CPU cycles until our timeslice is up */
-	void cpu_spin(void);
 	
 	/* yield our current timeslice */
-	void cpu_yield(void);
 	
 	/* burn CPU cycles for a specific period of time */
 	void cpu_spinuntil_time(double duration);

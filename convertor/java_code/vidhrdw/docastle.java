@@ -182,11 +182,11 @@ public class docastle
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void docastle_vh_stop(void)
+	public static VhStopPtr docastle_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free(tmpbitmap1);
 		generic_vh_stop();
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr docastle_flipscreen_off_r  = new ReadHandlerPtr() { public int handler(int offset)

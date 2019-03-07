@@ -102,10 +102,10 @@ public class digdug
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void digdug_vh_stop(void)
+	public static VhStopPtr digdug_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		generic_vh_stop();
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr digdug_vh_latch_w = new WriteHandlerPtr() {public void handler(int offset, int data)

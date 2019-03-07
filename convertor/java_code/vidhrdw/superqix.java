@@ -104,7 +104,7 @@ public class superqix
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void superqix_vh_stop(void)
+	public static VhStopPtr superqix_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(superqix_bitmapram2);
 		free(superqix_bitmapram);
@@ -113,7 +113,7 @@ public class superqix
 		bitmap_free (tmpbitmap2);
 		free(paletteram);
 		generic_vh_stop();
-	}
+	} };
 	
 	
 	

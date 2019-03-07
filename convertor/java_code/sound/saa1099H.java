@@ -19,7 +19,6 @@ extern "C" {
 #endif
 
 int saa1099_sh_start(const struct MachineSound *msound);
-void saa1099_sh_stop(void);
 
 
 #ifdef __cplusplus

@@ -192,16 +192,13 @@ public class memory
 			read8_handler r8handler, read16_handler r16handler, read32_handler r32handler,
 			write8_handler w8handler, write16_handler w16handler, write32_handler w32handler);
 	static static int init_memport(int cpunum, struct memport_data *data, int abits, int dbits, int ismemory);
-	static static static static static static void register_banks(void);
-	static int mem_address_bits_of_cpu(int cpunum);
+	static static static static static static static int mem_address_bits_of_cpu(int cpunum);
 	static int port_address_bits_of_cpu(int cpunum);
 	static 
 	#ifdef MEM_DUMP
-	static void mem_dump(void);
-	#endif
+	static #endif
 	#ifdef CHECK_MASKS
-	static void verify_masks(void);
-	#endif
+	static #endif
 	
 	
 	

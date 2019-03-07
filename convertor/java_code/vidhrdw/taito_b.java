@@ -186,13 +186,13 @@ public class taito_b
 	}
 	
 	
-	void taitob_vh_stop(void)
+	public static VhStopPtr taitob_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free(framebuffer[0]);
 		bitmap_free(framebuffer[1]);
 		bitmap_free(pixel_bitmap);
 		framebuffer[0] = framebuffer[1] = pixel_bitmap = 0;
-	}
+	} };
 	
 	static public static VhStartPtr taitob_vh_start_core = new VhStartPtr() { public int handler() 
 	{

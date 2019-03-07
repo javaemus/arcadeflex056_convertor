@@ -218,7 +218,7 @@ public class nemesis
 	
 	
 	/* free the palette dirty array */
-	void nemesis_vh_stop(void)
+	public static VhStopPtr nemesis_vh_stop = new VhStopPtr() { public void handler() 
 	{
 	#ifdef LSB_FIRST
 		nemesis_lsbify_gfx();
@@ -232,7 +232,7 @@ public class nemesis
 		free (sprite816_dirty);
 		free (sprite6464_dirty);
 		char_dirty = 0;
-	}
+	} };
 	
 	/* claim a palette dirty array */
 	public static VhStartPtr nemesis_vh_start = new VhStartPtr() { public int handler() 

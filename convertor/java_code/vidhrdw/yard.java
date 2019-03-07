@@ -200,12 +200,12 @@ public class yard
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void yard_vh_stop(void)
+	public static VhStopPtr yard_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(dirtybuffer);
 		bitmap_free(tmpbitmap);
 		bitmap_free(scroll_panel_bitmap);
-	}
+	} };
 	
 	
 	

@@ -72,7 +72,6 @@ extern const UINT8 *dbg_palette;
 //	PROTOTYPES
 //============================================================
 
-void win_mark_palette_dirty(void);
 
 
 #endif

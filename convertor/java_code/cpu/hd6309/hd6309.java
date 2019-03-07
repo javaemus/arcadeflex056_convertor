@@ -108,10 +108,7 @@ public class hd6309
 	#define false 0
 	#endif
 	
-	void CHECK_IRQ_LINES( void );
-	static void IIError(void);
-	static void DZError(void);
-	
+	static static 
 	static UINT8 hd6309_reg_layout[] = {
 		HD6309_A, HD6309_B, HD6309_E, HD6309_F, HD6309_MD, HD6309_CC, HD6309_DP,  -1,
 		HD6309_X, HD6309_Y, HD6309_S, HD6309_U, HD6309_V, -1,
@@ -127,8 +124,7 @@ public class hd6309
 		 0,23,80, 1,	/* command line window (bottom rows) */
 	};
 	
-	INLINE void fetch_effective_address( void );
-	
+	INLINE 
 	/* 6309 Registers */
 	typedef struct
 	{
@@ -383,7 +379,6 @@ public class hd6309
 		WM( (mAddr+3)&0xffff, p->b.l );
 	}
 	
-	void UpdateState( void );
 	void UpdateState( void )
 	{
 		if ( hd6309.md & MD_EM )

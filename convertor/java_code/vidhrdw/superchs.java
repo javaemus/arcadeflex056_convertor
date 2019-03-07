@@ -20,13 +20,13 @@ public class superchs
 	};
 	static struct tempsprite *spritelist;
 	
-	void superchs_vh_stop (void)
+	public static VhStopPtr superchs_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(spritelist);
 		spritelist = 0;
 	
 		TC0480SCP_vh_stop();
-	}
+	} };
 	
 	public static VhStartPtr superchs_vh_start = new VhStartPtr() { public int handler() 
 	{

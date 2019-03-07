@@ -9,7 +9,6 @@ public class ninjaw
 	
 	#define TC0100SCN_GFX_NUM 1
 	
-	void ninjaw_vh_stop(void);
 	
 	struct tempsprite
 	{
@@ -214,7 +213,7 @@ public class ninjaw
 		return (ninjaw_core_vh_start());
 	} };
 	
-	void ninjaw_vh_stop (void)
+	public static VhStopPtr ninjaw_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(spritelist);
 		spritelist = 0;
@@ -229,7 +228,7 @@ public class ninjaw
 	
 		if (has_third_TC0110PCR())
 			TC0110PCR_2_vh_stop();
-	}
+	} };
 	
 	/************************************************************
 				SPRITE DRAW ROUTINE

@@ -86,10 +86,10 @@ public class rastan
 		return 0;
 	} };
 	
-	void rastan_vh_stop(void)
+	public static VhStopPtr rastan_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		PC080SN_vh_stop();
-	}
+	} };
 	
 	
 	WRITE16_HANDLER( rastan_spritectrl_w )

@@ -173,7 +173,6 @@ package drivers;
 public class mhavoc
 {
 	
-	void mhavoc_init_machine(void);
 	
 	
 	

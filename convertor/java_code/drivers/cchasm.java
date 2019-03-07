@@ -22,7 +22,6 @@ public class cchasm
 	/* from vidhrdw/cchasm.c */
 	WRITE16_HANDLER( cchasm_refresh_control_w );
 	void cchasm_init_colors (unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void cchasm_vh_stop (void);
 	
 	extern data16_t *cchasm_ram;
 	
@@ -30,7 +29,6 @@ public class cchasm
 	WRITE16_HANDLER( cchasm_io_w );
 	READ16_HANDLER( cchasm_io_r );
 	int cchasm_sh_start(const struct MachineSound *msound);
-	void cchasm_sh_update(void);
 	
 	static MEMORY_READ16_START( readmem )
 		{ 0x000000, 0x00ffff, MRA16_ROM },

@@ -93,7 +93,6 @@ public class cvs
 	
 	void cvs_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void cvs_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void cvs_vh_stop(void);
 	
 	extern unsigned char *dirty_character;
 	extern unsigned char *character_1_ram;

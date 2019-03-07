@@ -117,7 +117,6 @@ public class beathead
 	extern data32_t *	beathead_vram_bulk_latch;
 	extern data32_t *	beathead_palette_select;
 	
-	void beathead_vh_stop(void);
 	void beathead_scanline_update(int scanline);
 	void beathead_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
@@ -161,8 +160,7 @@ public class beathead
 	 *
 	 *************************************/
 	
-	static void update_interrupts(void);
-	
+	static 
 	static void scanline_callback(int scanline)
 	{
 		/* update the video */

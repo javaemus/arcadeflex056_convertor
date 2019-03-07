@@ -45,7 +45,8 @@ public class convertMame {
     static final int SN76496 = 17;
     static final int AY8910 = 18;
     static final int MACHINE_INTERRUPT = 19;
-    static final int VH_START=20;
+    static final int VH_START = 20;
+    static final int VH_STOP = 21;
 
     public static void Convert() {
         Convertor.inpos = 0;//position of pointer inside the buffers
@@ -176,6 +177,40 @@ public class convertMame {
                     Convertor.inpos = i;
                     break;
                 }
+                case 'v': {
+                    int j = Convertor.inpos;
+                    if (!sUtil.getToken("void")) {
+                        break;
+                    }
+                    sUtil.skipSpace();
+                    Convertor.token[0] = sUtil.parseToken();
+                    sUtil.skipSpace();
+                    if (sUtil.parseChar() != '(') {
+                        Convertor.inpos = j;
+                        break;
+                    }
+                    sUtil.skipSpace();
+                    if (sUtil.getToken("void"))//an to soma tis function einai (void)
+                    {
+                        sUtil.skipSpace();
+                        if (sUtil.parseChar() != ')') {
+                            Convertor.inpos = j;
+                            break;
+                        }
+                        if (sUtil.getChar() == ';') {
+                            sUtil.skipLine();
+                            continue;
+                        }
+                        if (Convertor.token[0].contains("vh_stop")) {
+                            sUtil.putString((new StringBuilder()).append("public static VhStopPtr ").append(Convertor.token[0]).append(" = new VhStopPtr() { public void handler() ").toString());
+                            type = VH_STOP;
+                            i3 = -1;
+                            continue;
+                        }
+                    }
+                    Convertor.inpos = j;
+                }
+                break;
                 case 'e': {
                     int j1 = inpos;
                     if (getToken("enum")) {
@@ -700,7 +735,7 @@ public class convertMame {
                         }
                     }
 
-                    if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL || type == READ_HANDLER8 || type == WRITE_HANDLER8 || type == MACHINE_INTERRUPT || type == VH_START) {
+                    if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL || type == READ_HANDLER8 || type == WRITE_HANDLER8 || type == MACHINE_INTERRUPT || type == VH_START ||type == VH_STOP) {
                         i3++;
                     }
                 }
@@ -797,7 +832,7 @@ public class convertMame {
                             continue;
                         }
                     }
-                    if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL || type == READ_HANDLER8 || type == WRITE_HANDLER8 || type == MACHINE_INTERRUPT || type == VH_START) {
+                    if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL || type == READ_HANDLER8 || type == WRITE_HANDLER8 || type == MACHINE_INTERRUPT || type == VH_START || type == VH_STOP) {
                         i3--;
                         if (i3 == -1) {
                             sUtil.putString("} };");

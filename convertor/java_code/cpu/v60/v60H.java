@@ -66,11 +66,8 @@ enum {
 extern int v60_ICount;
 
 extern const char *v60_reg_names[];
-void v60_dasm_init(void);
 
-void v60_init(void);
 void v60_reset(void *param);
-void v60_exit(void);
 int v60_execute(int cycles);
 unsigned v60_get_context(void *dst);
 void v60_set_context(void *src);

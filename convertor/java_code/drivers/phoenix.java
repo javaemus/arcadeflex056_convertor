@@ -46,16 +46,11 @@ public class phoenix
 	
 	void phoenix_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void pleiads_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void phoenix_vh_stop(void);
 	void phoenix_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	int phoenix_sh_start(const struct MachineSound *msound);
-	void phoenix_sh_stop(void);
-	void phoenix_sh_update(void);
 	
 	int pleiads_sh_start(const struct MachineSound *msound);
-	void pleiads_sh_stop(void);
-	void pleiads_sh_update(void);
 	
 	
 	public static Memory_ReadAddress phoenix_readmem[]={

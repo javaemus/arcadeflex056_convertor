@@ -53,9 +53,9 @@ public class zn
 		return 0;
 	} };
 	
-	static void znqs_vh_stop( void )
+	static public static VhStopPtr znqs_vh_stop = new VhStopPtr() { public void handler() 
 	{
-	}
+	} };
 	
 	static void znqs_vh_screenrefresh( struct mame_bitmap *bitmap, int full_refresh )
 	{
@@ -576,13 +576,13 @@ public class zn
 	static UINT32 m_p_gpu_buffer[ 16 ];
 	static unsigned char m_n_gpu_buffer_offset;
 	
-	static void zn_vh_stop( void )
+	static public static VhStopPtr zn_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		if( m_p_vram != NULL )
 		{
 			free( m_p_vram );
 		}
-	}
+	} };
 	
 	static public static VhStartPtr zn_vh_start = new VhStartPtr() { public int handler() 
 	{

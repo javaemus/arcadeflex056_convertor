@@ -166,10 +166,10 @@ public class popeye
 		return 0;
 	} };
 	
-	void popeye_vh_stop(void)
+	public static VhStopPtr popeye_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free(tmpbitmap2);
-	}
+	} };
 	
 	
 	

@@ -82,12 +82,12 @@ public class tail2nos
 		return 0;
 	} };
 	
-	void tail2nos_vh_stop(void)
+	public static VhStopPtr tail2nos_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		K051316_vh_stop_0();
 		free(dirtychar);
 		dirtychar = 0;
-	}
+	} };
 	
 	
 	

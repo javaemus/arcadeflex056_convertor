@@ -27,10 +27,8 @@ public class i286intfH
 	extern int i286_ICount;
 	
 	/* Public functions */
-	extern void i286_init(void);
-	extern void i286_reset(void *param);
-	extern void i286_exit(void);
-	extern int i286_execute(int cycles);
+	extern extern void i286_reset(void *param);
+	extern extern int i286_execute(int cycles);
 	extern unsigned i286_get_context(void *dst);
 	extern void i286_set_context(void *src);
 	extern unsigned i286_get_reg(int regnum);

@@ -133,8 +133,7 @@ public class z180H
 	extern void cpu_setOPbasez180(int pc);
 	
 	extern void z180_reset (void *param);
-	extern void z180_exit (void);
-	extern int z180_execute(int cycles);
+	extern extern int z180_execute(int cycles);
 	extern void z180_burn(int cycles);
 	extern unsigned z180_get_context (void *dst);
 	extern void z180_set_context (void *src);

@@ -59,9 +59,7 @@ public class bionicc
 	extern data16_t *bionicc_txvideoram;
 	
 	void bionicc_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void bionicc_eof_callback(void);
 	
-	void bionicc_readinputs(void);
 	void bionicc_sound_cmd(int data);
 	
 	

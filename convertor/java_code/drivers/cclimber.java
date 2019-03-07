@@ -144,7 +144,6 @@ public class cclimber
 	void cclimber_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	int cclimber_sh_start(const struct MachineSound *msound);
-	void cclimber_sh_stop(void);
 	
 	
 	public static WriteHandlerPtr flip_screen_x_w = new WriteHandlerPtr() {public void handler(int offset, int data)

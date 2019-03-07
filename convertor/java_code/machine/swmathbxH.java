@@ -10,10 +10,7 @@ See drivers\starwars.c for notes
 ******************************************************************/
 
 
-void init_starwars(void);
 
-void run_mbox(void);
-void init_swmathbox (void);
 
 /* Read handlers */
 

@@ -30,10 +30,8 @@ public class i8039H
 	
 	extern int i8039_ICount;        /* T-state count                          */
 	
-	extern void i8039_init(void);
-	extern void i8039_reset(void *param);			/* Reset processor & registers	*/
-	extern void i8039_exit(void);					/* Shut down CPU emulation		*/
-	extern int i8039_execute(int cycles);			/* Execute cycles T-States - returns number of cycles actually run */
+	extern extern void i8039_reset(void *param);			/* Reset processor & registers	*/
+	extern extern int i8039_execute(int cycles);			/* Execute cycles T-States - returns number of cycles actually run */
 	extern unsigned i8039_get_context(void *dst);	/* Get registers				*/
 	extern void i8039_set_context(void *src);		/* Set registers				*/
 	extern unsigned i8039_get_reg(int regnum);		/* Get specific register	  */
@@ -80,10 +78,8 @@ public class i8039H
 	
 	#define i8035_ICount            i8039_ICount
 	
-	extern void i8035_init(void);
-	extern void i8035_reset(void *param);
-	extern void i8035_exit(void);
-	extern int i8035_execute(int cycles);
+	extern extern void i8035_reset(void *param);
+	extern extern int i8035_execute(int cycles);
 	extern unsigned i8035_get_context(void *dst);
 	extern void i8035_set_context(void *src);
 	extern unsigned i8035_get_reg(int regnum);
@@ -116,10 +112,8 @@ public class i8039H
 	
 	#define i8048_ICount            i8039_ICount
 	
-	extern void i8048_init(void);
-	extern void i8048_reset(void *param);
-	extern void i8048_exit(void);
-	extern int i8048_execute(int cycles);
+	extern extern void i8048_reset(void *param);
+	extern extern int i8048_execute(int cycles);
 	extern unsigned i8048_get_context(void *dst);
 	extern void i8048_set_context(void *src);
 	extern unsigned i8048_get_reg(int regnum);
@@ -152,10 +146,8 @@ public class i8039H
 	
 	#define n7751_ICount            i8039_ICount
 	
-	extern void n7751_init(void);
-	extern void n7751_reset(void *param);
-	extern void n7751_exit(void);
-	extern int n7751_execute(int cycles);
+	extern extern void n7751_reset(void *param);
+	extern extern int n7751_execute(int cycles);
 	extern unsigned n7751_get_context(void *dst);
 	extern void n7751_set_context(void *src);
 	extern unsigned n7751_get_reg(int regnum);

@@ -69,8 +69,6 @@
 #define MIXER_GET_PAN(mixing_level)    (((mixing_level) >> 8) & 0x03)
 #define MIXER_GET_GAIN(mixing_level)   (((mixing_level) >> 10) & 0x03)
 
-void mixer_sh_stop(void);
-void mixer_sh_update(void);
 int mixer_allocate_channel(int default_mixing_level);
 int mixer_allocate_channels(int channels,const int *default_mixing_levels);
 void mixer_set_name(int channel,const char *name);

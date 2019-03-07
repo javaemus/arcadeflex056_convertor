@@ -66,11 +66,11 @@ public class spy
 		return 0;
 	} };
 	
-	void spy_vh_stop(void)
+	public static VhStopPtr spy_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		K052109_vh_stop();
 		K051960_vh_stop();
-	}
+	} };
 	
 	
 	

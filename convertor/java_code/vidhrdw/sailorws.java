@@ -705,7 +705,7 @@ public class sailorws
 		return 0;
 	} };
 	
-	void sailorws_vh_stop(void)
+	public static VhStopPtr sailorws_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(sailorws_paltbl1);
 		free(sailorws_paltbl0);
@@ -721,7 +721,7 @@ public class sailorws
 		sailorws_videoram0 = 0;
 		sailorws_tmpbitmap1 = 0;
 		sailorws_tmpbitmap0 = 0;
-	}
+	} };
 	
 	public static VhStartPtr mjkoiura_vh_start = new VhStartPtr() { public int handler() 
 	{
@@ -737,7 +737,7 @@ public class sailorws
 		return 0;
 	} };
 	
-	void mjkoiura_vh_stop(void)
+	public static VhStopPtr mjkoiura_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(sailorws_paltbl0);
 		free(sailorws_palette);
@@ -747,7 +747,7 @@ public class sailorws
 		sailorws_palette = 0;
 		sailorws_videoram0 = 0;
 		sailorws_tmpbitmap0 = 0;
-	}
+	} };
 	
 	public static VhStartPtr mscoutm_vh_start = new VhStartPtr() { public int handler() 
 	{
@@ -768,7 +768,7 @@ public class sailorws
 		return 0;
 	} };
 	
-	void mscoutm_vh_stop(void)
+	public static VhStopPtr mscoutm_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(sailorws_paltbl1);
 		free(sailorws_paltbl0);
@@ -788,7 +788,7 @@ public class sailorws
 		sailorws_videoram0 = 0;
 		sailorws_tmpbitmap1 = 0;
 		sailorws_tmpbitmap0 = 0;
-	}
+	} };
 	
 	/******************************************************************************
 	

@@ -74,7 +74,6 @@ void artwork_free(struct artwork_info **a);
 int artwork_get_size_info(const char *file_name, struct artwork_size_info *a);
 
 /* called by mame.c */
-void artwork_kill(void);
 void artwork_draw(struct mame_bitmap *dest,struct mame_bitmap *source, int full_refresh);
 
 #ifdef __cplusplus

@@ -126,21 +126,7 @@ public class scobra
 	void minefld_vh_convert_color_prom (unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void stratgyx_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
-	void init_scramble_ppi(void);
-	void init_scobra(void);
-	void init_stratgyx(void);
-	void init_moonwar(void);
-	void init_darkplnt(void);
-	void init_tazmani2(void);
-	void init_anteater(void);
-	void init_rescue(void);
-	void init_minefld(void);
-	void init_losttomb(void);
-	void init_superbon(void);
-	void init_hustler(void);
-	void init_billiard(void);
 	
-	void scramble_init_machine(void);
 	
 	
 	void galaxian_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

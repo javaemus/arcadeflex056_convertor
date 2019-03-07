@@ -331,13 +331,13 @@ public class cave
 	} };
 	
 	
-	void cave_vh_stop(void)
+	public static VhStopPtr cave_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		if (sprite_cave)	free(sprite_cave);
 		sprite_cave = NULL;
 		if (sprite_zbuf)	free(sprite_zbuf);
 		sprite_zbuf = NULL;
-	}
+	} };
 	
 	
 	/***************************************************************************

@@ -53,10 +53,8 @@ public class asapH
 	**	PUBLIC FUNCTIONS
 	**#################################################################################################*/
 	
-	extern void asap_init(void);
-	extern void asap_reset(void *param);
-	extern void asap_exit(void);
-	extern int asap_execute(int cycles);
+	extern extern void asap_reset(void *param);
+	extern extern int asap_execute(int cycles);
 	extern unsigned asap_get_context(void *dst);
 	extern void asap_set_context(void *src);
 	extern unsigned asap_get_reg(int regnum);

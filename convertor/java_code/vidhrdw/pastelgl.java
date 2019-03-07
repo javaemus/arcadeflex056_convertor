@@ -32,8 +32,6 @@ public class pastelgl
 	static unsigned char *pastelgl_paltbl;
 	
 	
-	void pastelgl_vramflip(void);
-	void pastelgl_gfxdraw_w(void);
 	
 	
 	/******************************************************************************
@@ -296,14 +294,14 @@ public class pastelgl
 		return 0;
 	} };
 	
-	void pastelgl_vh_stop(void)
+	public static VhStopPtr pastelgl_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(pastelgl_paltbl);
 		free(pastelgl_videoram);
 		bitmap_free(pastelgl_tmpbitmap);
 		pastelgl_videoram = 0;
 		pastelgl_tmpbitmap = 0;
-	}
+	} };
 	
 	/******************************************************************************
 	

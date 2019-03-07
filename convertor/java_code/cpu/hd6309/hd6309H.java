@@ -24,10 +24,8 @@ public class hd6309H
 	
 	
 	/* PUBLIC FUNCTIONS */
-	extern void hd6309_init(void);
-	extern void hd6309_reset(void *param);
-	extern void hd6309_exit(void);
-	extern int hd6309_execute(int cycles);	/* NS 970908 */
+	extern extern void hd6309_reset(void *param);
+	extern extern int hd6309_execute(int cycles);	/* NS 970908 */
 	extern unsigned hd6309_get_context(void *dst);
 	extern void hd6309_set_context(void *src);
 	extern unsigned hd6309_get_reg(int regnum);

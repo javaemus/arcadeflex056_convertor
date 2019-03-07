@@ -41,7 +41,6 @@ public class mspacman
 	*/
 	
 	
-	void pacman_init_machine(void);
 	
 	
 	

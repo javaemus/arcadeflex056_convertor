@@ -18,14 +18,12 @@ public class gunsmoke
 	
 	
 	
-	extern void gunsmoke_init_machine(void);
-	
+	extern 
 	extern unsigned char *gunsmoke_bg_scrollx;
 	extern unsigned char *gunsmoke_bg_scrolly;
 	
 	void gunsmoke_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void gunsmoke_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void gunsmoke_vh_stop(void);
 	
 	
 	

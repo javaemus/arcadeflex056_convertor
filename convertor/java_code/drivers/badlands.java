@@ -111,7 +111,6 @@ public class badlands
 	
 	WRITE16_HANDLER( badlands_pf_bank_w );
 	
-	void badlands_vh_stop(void);
 	void badlands_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

@@ -72,12 +72,9 @@ package drivers;
 public class irobot
 {
 	
-	extern extern void irobot_vh_stop(void);
-	extern void irobot_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
+	extern extern extern void irobot_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	extern void irobot_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	void init_irobot(void);	/* convert mathbox ROMs */
-	void irobot_init_machine (void);
 	
 	
 	

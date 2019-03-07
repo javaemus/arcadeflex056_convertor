@@ -9,7 +9,6 @@ public class othunder
 	
 	#define TC0100SCN_GFX_NUM 1
 	
-	void othunder_vh_stop(void);
 	data16_t *othunder_ram;
 	
 	struct tempsprite
@@ -86,7 +85,7 @@ public class othunder
 		return (othunder_core_vh_start());
 	} };
 	
-	void othunder_vh_stop (void)
+	public static VhStopPtr othunder_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(spritelist);
 		spritelist = 0;
@@ -95,7 +94,7 @@ public class othunder
 	
 		if (has_TC0110PCR())
 			TC0110PCR_vh_stop();
-	}
+	} };
 	
 	
 	/************************************************************

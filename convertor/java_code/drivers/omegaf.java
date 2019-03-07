@@ -64,7 +64,6 @@ public class omegaf
 	extern unsigned char *omegaf_bg2_scroll_y;
 	
 	
-	void omegaf_vh_stop(void);
 	void omegaf_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	static int omegaf_bank_latch = 2;

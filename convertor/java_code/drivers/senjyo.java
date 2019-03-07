@@ -88,16 +88,10 @@ public class senjyo
 	extern UINT8 *senjyo_radarram;
 	extern UINT8 *senjyo_bgstripesram;
 	
-	void init_starforc(void);
-	void init_starfore(void);
-	void init_senjyo(void);
 	
-	void senjyo_vh_stop(void);
 	void senjyo_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	int senjyo_sh_start(const struct MachineSound *msound);
-	void senjyo_sh_stop(void);
-	void senjyo_sh_update(void);
 	
 	
 	

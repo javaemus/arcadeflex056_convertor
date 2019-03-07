@@ -175,7 +175,7 @@ public class sega
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void sega_vh_stop (void)
+	public static VhStopPtr sega_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		if (sinTable)
 			free (sinTable);
@@ -185,7 +185,7 @@ public class sega
 		cosTable = NULL;
 	
 		vector_vh_stop();
-	}
+	} };
 	
 	/***************************************************************************
 	

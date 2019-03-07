@@ -327,7 +327,7 @@ public class psychic5
 	        return 0;
 	} };
 	
-	void psychic5_vh_stop(void)
+	public static VhStopPtr psychic5_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(ps5_background_videoram);
 		free(ps5_dummy_bg_ram);
@@ -336,7 +336,7 @@ public class psychic5
 		free(ps5_foreground_videoram);
 		free(bg_dirtybuffer);
 		bitmap_free(bitmap_bg);
-	}
+	} };
 	
 	void psychic5_draw_background(struct mame_bitmap *bitmap)
 	{

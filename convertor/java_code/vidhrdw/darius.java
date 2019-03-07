@@ -80,13 +80,13 @@ public class darius
 		return 0;
 	} };
 	
-	void darius_vh_stop(void)
+	public static VhStopPtr darius_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(spritelist);
 		spritelist = 0;
 	
 		PC080SN_vh_stop();
-	}
+	} };
 	
 	/***************************************************************************/
 	

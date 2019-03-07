@@ -171,8 +171,7 @@ public class tms34010
 		NULL				/* no shiftreg functions */
 	};
 	
-	static void check_interrupt(void);
-	
+	static 
 	
 	
 	/*###################################################################################################

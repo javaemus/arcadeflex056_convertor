@@ -134,12 +134,12 @@ public class vindictr
 	 *
 	 *************************************/
 	
-	void vindictr_vh_stop(void)
+	public static VhStopPtr vindictr_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		atarian_free();
 		atarimo_free();
 		ataripf_free();
-	}
+	} };
 	
 	
 	

@@ -30,8 +30,6 @@ READ16_HANDLER( seibu_main_word_r );
 WRITE16_HANDLER( seibu_main_word_w );
 
 void seibu_ym3812_irqhandler(int linestate);
-void seibu_sound_init_1(void);
-void seibu_sound_init_2(void);
 void seibu_sound_decrypt(int cpu_region,int length);
 
 /**************************************************************************/

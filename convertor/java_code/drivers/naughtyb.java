@@ -117,14 +117,11 @@ public class naughtyb
 	extern unsigned char *naughtyb_videoram2;
 	extern unsigned char *naughtyb_scrollreg;
 	
-	void naughtyb_vh_stop(void);
 	void naughtyb_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void naughtyb_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	int naughtyb_sh_start(const struct MachineSound *msound);
 	int popflame_sh_start(const struct MachineSound *msound);
-	void pleiads_sh_stop(void);
-	void pleiads_sh_update(void);
 	
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

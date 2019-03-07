@@ -100,11 +100,10 @@ public class gladiatr
 		return 1; /* error */
 	} };
 	
-	void gladiatr_vh_stop(void);
-	void gladiatr_vh_stop(void){
+	public static VhStopPtr gladiatr_vh_stop = new VhStopPtr() { public void handler() {
 		bitmap_free(tmpbitmap);
 		free(dirtybuffer);
-	}
+	} };
 	
 	
 	static void render_background( struct mame_bitmap *bitmap );

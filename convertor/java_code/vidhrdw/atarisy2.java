@@ -175,13 +175,13 @@ public class atarisy2
 	 *
 	 *************************************/
 	
-	void atarisys2_vh_stop(void)
+	public static VhStopPtr atarisys2_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(vram);
 		atarian_free();
 		atarimo_free();
 		ataripf_free();
-	}
+	} };
 	
 	
 	

@@ -30,9 +30,7 @@ public class m6800H
 	extern int m6800_ICount;
 	
 	/* PUBLIC FUNCTIONS */
-	void m6800_init(void);
 	void m6800_reset(void *param);
-	void m6800_exit(void);
 	int	m6800_execute(int cycles);
 	unsigned m6800_get_context(void *dst);
 	void m6800_set_context(void *src);
@@ -61,9 +59,7 @@ public class m6800H
 	#define M6801_IRQ_LINE				M6800_IRQ_LINE
 	
 	#define m6801_ICount				m6800_ICount
-	void m6801_init(void);
 	void m6801_reset(void *param);
-	void m6801_exit(void);
 	int	m6801_execute(int cycles);
 	unsigned m6801_get_context(void *dst);
 	void m6801_set_context(void *src);
@@ -93,9 +89,7 @@ public class m6800H
 	#define M6802_IRQ_LINE				M6800_IRQ_LINE
 	
 	#define m6802_ICount				m6800_ICount
-	void m6802_init(void);
 	void m6802_reset(void *param);
-	void m6802_exit(void);
 	int	m6802_execute(int cycles);
 	unsigned m6802_get_context(void *dst);
 	void m6802_set_context(void *src);
@@ -126,9 +120,7 @@ public class m6800H
 	#define M6803_TIN_LINE				M6800_TIN_LINE
 	
 	#define m6803_ICount				m6800_ICount
-	void m6803_init(void);
 	void m6803_reset(void *param);
-	void m6803_exit(void);
 	int	m6803_execute(int cycles);
 	unsigned m6803_get_context(void *dst);
 	void m6803_set_context(void *src);
@@ -170,9 +162,7 @@ public class m6800H
 	#define M6808_IRQ_LINE              M6800_IRQ_LINE
 	
 	#define m6808_ICount                m6800_ICount
-	void m6808_init(void);
 	void m6808_reset(void *param);
-	void m6808_exit(void);
 	int	m6808_execute(int cycles);
 	unsigned m6808_get_context(void *dst);
 	void m6808_set_context(void *src);
@@ -204,9 +194,7 @@ public class m6800H
 	#define HD63701_TIN_LINE			 M6800_TIN_LINE
 	
 	#define hd63701_ICount				 m6800_ICount
-	void hd63701_init(void);
 	void hd63701_reset(void *param);
-	void hd63701_exit(void);
 	int	hd63701_execute(int cycles);
 	unsigned hd63701_get_context(void *dst);
 	void hd63701_set_context(void *src);
@@ -217,7 +205,6 @@ public class m6800H
 	const char *hd63701_info(void *context, int regnum);
 	unsigned hd63701_dasm(char *buffer, unsigned pc);
 	
-	void hd63701_trap_pc(void);
 	
 	#define HD63701_DDR1 M6803_DDR1
 	#define HD63701_DDR2 M6803_DDR2
@@ -247,9 +234,7 @@ public class m6800H
 	#define NSC8105_TIN_LINE			 M6800_TIN_LINE
 	
 	#define nsc8105_ICount				 m6800_ICount
-	void nsc8105_init(void);
 	void nsc8105_reset(void *param);
-	void nsc8105_exit(void);
 	int	nsc8105_execute(int cycles);
 	unsigned nsc8105_get_context(void *dst);
 	void nsc8105_set_context(void *src);

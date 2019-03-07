@@ -39,7 +39,6 @@ public class toobin
 	WRITE16_HANDLER( toobin_hscroll_w );
 	WRITE16_HANDLER( toobin_vscroll_w );
 	
-	void toobin_vh_stop(void);
 	void toobin_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	

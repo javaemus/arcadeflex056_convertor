@@ -171,7 +171,7 @@ public class toaplan1
 		return 0;
 	} };
 	
-	void rallybik_vh_stop(void)
+	public static VhStopPtr rallybik_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		int i;
 	
@@ -186,7 +186,7 @@ public class toaplan1
 	
 		free(paletteram16);
 		free(toaplan1_tileram16);
-	}
+	} };
 	
 	public static VhStartPtr toaplan1_vh_start = new VhStartPtr() { public int handler() 
 	{
@@ -221,7 +221,7 @@ public class toaplan1
 		return rallybik_vh_start();
 	} };
 	
-	void toaplan1_vh_stop(void)
+	public static VhStopPtr toaplan1_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		rallybik_vh_stop();
 	
@@ -232,7 +232,7 @@ public class toaplan1
 		bitmap_free(tmpbitmap3);
 		bitmap_free(tmpbitmap2);
 		bitmap_free(tmpbitmap1);
-	}
+	} };
 	
 	
 	

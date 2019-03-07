@@ -116,9 +116,7 @@ public class meadows
 	void meadows_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	int meadows_sh_start(const struct MachineSound *msound);
-	void meadows_sh_stop(void);
 	void meadows_sh_dac_w(int data);
-	void meadows_sh_update(void);
 	extern unsigned char meadows_0c00;
 	extern unsigned char meadows_0c01;
 	extern unsigned char meadows_0c02;

@@ -78,14 +78,14 @@ public class sprint2
 	/***************************************************************************
 	***************************************************************************/
 	
-	void sprint2_vh_stop(void)
+	public static VhStopPtr sprint2_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free(back_vid);
 		bitmap_free(grey_cars_vid);
 		bitmap_free(black_car_vid);
 		bitmap_free(white_car_vid);
 		generic_vh_stop();
-	}
+	} };
 	
 	/***************************************************************************
 	sprint2_check_collision

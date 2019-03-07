@@ -115,11 +115,11 @@ public class mappy
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void mappy_vh_stop(void)
+	public static VhStopPtr mappy_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(dirtybuffer);
 		bitmap_free(tmpbitmap);
-	}
+	} };
 	
 	
 	

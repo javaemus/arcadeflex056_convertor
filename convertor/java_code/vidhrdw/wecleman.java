@@ -943,10 +943,10 @@ public class wecleman
 		else return 1;
 	} };
 	
-	void wecleman_vh_stop(void)
+	public static VhStopPtr wecleman_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		sprite_close();
-	}
+	} };
 	
 	
 	
@@ -1032,13 +1032,13 @@ public class wecleman
 		else return 1;
 	} };
 	
-	void hotchase_vh_stop(void)
+	public static VhStopPtr hotchase_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		K051316_vh_stop_0();
 		K051316_vh_stop_1();
 	
 		sprite_close();
-	}
+	} };
 	
 	
 	

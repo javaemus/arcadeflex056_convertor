@@ -62,7 +62,6 @@ public class itech32
 	extern UINT8 itech32_planes;
 	extern UINT16 itech32_vram_height;
 	
-	void itech32_vh_stop(void);
 	void itech32_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	WRITE16_HANDLER( timekill_paletteram_w );

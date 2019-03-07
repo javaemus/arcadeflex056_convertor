@@ -61,9 +61,7 @@ public class warpwarp
 	
 	/* from sndhrdw/warpwarp.c */
 	extern int warpwarp_sh_start(const struct MachineSound *msound);
-	extern void warpwarp_sh_stop(void);
-	extern void warpwarp_sh_update(void);
-	
+	extern extern 
 	public static ReadHandlerPtr warpwarp_input_c000_7_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (readinputport(0) >> offset) & 1;

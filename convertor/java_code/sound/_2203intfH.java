@@ -22,8 +22,6 @@ public class _2203intfH
 	
 	
 	int YM2203_sh_start(const struct MachineSound *msound);
-	void YM2203_sh_stop(void);
-	void YM2203_sh_reset(void);
 	
 	void YM2203UpdateRequest(int chip);
 	

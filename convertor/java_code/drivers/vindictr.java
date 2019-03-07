@@ -36,7 +36,6 @@ public class vindictr
 	
 	WRITE16_HANDLER( vindictr_paletteram_w );
 	
-	void vindictr_vh_stop(void);
 	void vindictr_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	void vindictr_scanline_update(int scanline);

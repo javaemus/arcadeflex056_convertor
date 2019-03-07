@@ -157,13 +157,11 @@ public class gottlieb
 	
 	
 	
-	void gottlieb_vh_stop(void);
 	extern unsigned char *gottlieb_characterram;
 	void gottlieb_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	extern unsigned char *riot_ram;
-	void gottlieb_sound_init(void);
 	
 	
 	static UINT8 *audiobuffer_region;

@@ -35,7 +35,6 @@ public class suna16
 	READ16_HANDLER ( suna16_paletteram16_r );
 	WRITE16_HANDLER( suna16_paletteram16_w );
 	
-	void suna16_vh_stop(void);
 	void suna16_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

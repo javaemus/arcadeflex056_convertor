@@ -66,7 +66,6 @@ public class bagman
 {
 	
 	
-	void bagman_machine_init(void);
 	
 	
 	extern unsigned char *bagman_video_enable;

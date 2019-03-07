@@ -28,7 +28,6 @@ public class gameplan
 	
 	
 	
-	void gameplan_clear_screen(void);
 	
 	
 	/***************************************************************************

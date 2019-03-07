@@ -17,7 +17,6 @@ public class scramble
 {
 	
 	
-	void scramble_sh_init(void);
 	
 	
 	void scramble_init_machine(void)

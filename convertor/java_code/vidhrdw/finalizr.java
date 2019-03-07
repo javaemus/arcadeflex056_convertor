@@ -90,14 +90,14 @@ public class finalizr
 		return 0;
 	} };
 	
-	void finalizr_vh_stop(void)
+	public static VhStopPtr finalizr_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(dirtybuffer);
 		bitmap_free(tmpbitmap);
 	
 		dirtybuffer = 0;
 		tmpbitmap = 0;
-	}
+	} };
 	
 	
 	

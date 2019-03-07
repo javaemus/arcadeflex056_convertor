@@ -123,9 +123,7 @@ public class sound
 	//	PROTOTYPES
 	//============================================================
 	
-	static static void			dsound_kill(void);
-	static static void			dsound_destroy_buffers(void);
-	
+	static static static static 
 	
 	
 	//============================================================

@@ -58,12 +58,12 @@ public class crimfght
 	
 	***************************************************************************/
 	
-	void crimfght_vh_stop( void )
+	public static VhStopPtr crimfght_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(paletteram);
 		K052109_vh_stop();
 		K051960_vh_stop();
-	}
+	} };
 	
 	public static VhStartPtr crimfght_vh_start = new VhStartPtr() { public int handler() 
 	{

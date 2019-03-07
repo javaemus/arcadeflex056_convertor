@@ -25,14 +25,14 @@ public class flstory
 		return generic_vh_start();
 	} };
 	
-	void flstory_vh_stop(void)
+	public static VhStopPtr flstory_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(paletteram);
 		paletteram = 0;
 		free(paletteram_2);
 		paletteram_2 = 0;
 		generic_vh_stop();
-	}
+	} };
 	
 	
 	

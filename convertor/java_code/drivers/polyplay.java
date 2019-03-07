@@ -89,7 +89,6 @@ public class polyplay
 	
 	static unsigned char *polyplay_ram;
 	
-	void polyplay_reset(void);
 	
 	/* video hardware access */
 	extern unsigned char *polyplay_characterram;
@@ -99,7 +98,6 @@ public class polyplay
 	/* I/O Port handling */
 	
 	/* sound handling */
-	void poly_sound(void);
 	void set_channel1(int active);
 	void set_channel2(int active);
 	int prescale1, prescale2;
@@ -107,12 +105,9 @@ public class polyplay
 	static int channel1_const;
 	static int channel2_active;
 	static int channel2_const;
-	static void init_polyplay_sound(void);
-	void play_channel1(int data);
+	static void play_channel1(int data);
 	void play_channel2(int data);
 	int  polyplay_sh_start(const struct MachineSound *msound);
-	void polyplay_sh_stop(void);
-	void polyplay_sh_update(void);
 	
 	/* timer handling */
 	static void polyplay_timer(int param);

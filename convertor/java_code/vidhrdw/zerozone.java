@@ -30,11 +30,11 @@ public class zerozone
 	
 	
 	
-	void zerozone_vh_stop(void)
+	public static VhStopPtr zerozone_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(video_dirty);
 		video_dirty = NULL;
-	}
+	} };
 	
 	public static VhStartPtr zerozone_vh_start = new VhStartPtr() { public int handler() 
 	{

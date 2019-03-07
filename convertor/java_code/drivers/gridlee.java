@@ -104,12 +104,10 @@ public class gridlee
 	
 	
 	/* local prototypes */
-	static void poly17_init(void);
-	
+	static 
 	
 	/* video driver data & functions */
 	extern UINT8 gridlee_cocktail_flip;
-	void gridlee_vh_stop(void);
 	void gridlee_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	void gridlee_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable, const unsigned char *color_prom);
 	

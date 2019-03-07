@@ -77,7 +77,6 @@ public class galaga
 	
 	
 	extern unsigned char *galaga_sharedram;
-	void galaga_init_machine(void);
 	
 	
 	extern unsigned char *galaga_starcontrol;

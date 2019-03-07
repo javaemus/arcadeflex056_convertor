@@ -112,11 +112,11 @@ public class hyperspt
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void hyperspt_vh_stop(void)
+	public static VhStopPtr hyperspt_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(dirtybuffer);
 		bitmap_free(tmpbitmap);
-	}
+	} };
 	
 	
 	

@@ -26,7 +26,6 @@ public class mitchell
 	static int flipscreen;
 	
 	/* Declarations */
-	void pang_vh_stop(void);
 	
 	
 	
@@ -93,13 +92,13 @@ public class mitchell
 		return 0;
 	} };
 	
-	void pang_vh_stop(void)
+	public static VhStopPtr pang_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(pang_objram);
 		pang_objram = 0;
 		free(paletteram);
 		paletteram = 0;
-	}
+	} };
 	
 	
 	

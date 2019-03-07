@@ -68,10 +68,8 @@ public class m68000H
 	#define MC68000_INT_ACK_SPURIOUS      -2
 	
 	#define m68000_ICount                   m68k_ICount
-	extern void m68000_init(void);
-	extern void m68000_reset(void *param);
-	extern void m68000_exit(void);
-	extern int	m68000_execute(int cycles);
+	extern extern void m68000_reset(void *param);
+	extern extern int	m68000_execute(int cycles);
 	extern unsigned m68000_get_context(void *dst);
 	extern void m68000_set_context(void *src);
 	extern unsigned m68000_get_reg(int regnum);
@@ -97,10 +95,8 @@ public class m68000H
 	#define MC68010_INT_ACK_SPURIOUS		MC68000_INT_ACK_SPURIOUS
 	
 	#define m68010_ICount                   m68k_ICount
-	extern void m68010_init(void);
-	extern void m68010_reset(void *param);
-	extern void m68010_exit(void);
-	extern int	m68010_execute(int cycles);
+	extern extern void m68010_reset(void *param);
+	extern extern int	m68010_execute(int cycles);
 	extern unsigned m68010_get_context(void *dst);
 	extern void m68010_set_context(void *src);
 	extern unsigned m68010_get_reg(int regnum);
@@ -126,10 +122,8 @@ public class m68000H
 	#define MC68EC020_INT_ACK_SPURIOUS		MC68000_INT_ACK_SPURIOUS
 	
 	#define m68ec020_ICount                 m68k_ICount
-	extern void m68ec020_init(void);
-	extern void m68ec020_reset(void *param);
-	extern void m68ec020_exit(void);
-	extern int	m68ec020_execute(int cycles);
+	extern extern void m68ec020_reset(void *param);
+	extern extern int	m68ec020_execute(int cycles);
 	extern unsigned m68ec020_get_context(void *dst);
 	extern void m68ec020_set_context(void *src);
 	extern unsigned m68ec020_get_reg(int regnum);
@@ -155,10 +149,8 @@ public class m68000H
 	#define MC68020_INT_ACK_SPURIOUS		MC68000_INT_ACK_SPURIOUS
 	
 	#define m68020_ICount                   m68k_ICount
-	extern void m68020_init(void);
-	extern void m68020_reset(void *param);
-	extern void m68020_exit(void);
-	extern int	m68020_execute(int cycles);
+	extern extern void m68020_reset(void *param);
+	extern extern int	m68020_execute(int cycles);
 	extern unsigned m68020_get_context(void *dst);
 	extern void m68020_set_context(void *src);
 	extern unsigned m68020_get_reg(int regnum);

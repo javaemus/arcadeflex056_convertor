@@ -141,11 +141,11 @@ public class legionna
 		return 0;
 	} };
 	
-	void legionna_vh_stop(void)
+	public static VhStopPtr legionna_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free (legionna_scrollram16);
 		legionna_scrollram16 = 0;
-	}
+	} };
 	
 	
 	/*************************************************************************

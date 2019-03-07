@@ -28,10 +28,8 @@ public class z80H
 	
 	extern int z80_ICount;              /* T-state count                        */
 	
-	extern void z80_init(void);
-	extern void z80_reset (void *param);
-	extern void z80_exit (void);
-	extern int z80_execute(int cycles);
+	extern extern void z80_reset (void *param);
+	extern extern int z80_execute(int cycles);
 	extern void z80_burn(int cycles);
 	extern unsigned z80_get_context (void *dst);
 	extern void z80_set_context (void *src);

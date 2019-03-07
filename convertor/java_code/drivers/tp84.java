@@ -96,7 +96,6 @@ public class tp84
 	extern unsigned char *tp84_scrollx;
 	extern unsigned char *tp84_scrolly;
 	void tp84_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void tp84_vh_stop(void);
 	void tp84_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

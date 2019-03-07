@@ -282,11 +282,11 @@ public class combatsc
 		return 1;
 	} };
 	
-	void combasc_vh_stop(void)
+	public static VhStopPtr combasc_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(private_spriteram[0]);
 		free(private_spriteram[1]);
-	}
+	} };
 	
 	
 	/***************************************************************************

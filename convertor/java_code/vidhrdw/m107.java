@@ -270,10 +270,10 @@ public class m107
 		return 0;
 	} };
 	
-	void m107_vh_stop(void)
+	public static VhStopPtr m107_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(m107_spriteram);
-	}
+	} };
 	
 	/*****************************************************************************/
 	

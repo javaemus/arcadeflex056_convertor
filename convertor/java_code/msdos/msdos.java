@@ -18,12 +18,8 @@ public class msdos
 	#endif
 	
 	
-	void msdos_init_input(void);
-	void msdos_shutdown_sound(void);
-	void msdos_shutdown_input(void);
 	int  frontend_help (int argc, char **argv);
 	void parse_cmdline (int argc, char **argv, int game, char *override_default_rompath);
-	void init_inpdir(void);
 	
 	
 	int  ignorecfg;

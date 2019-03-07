@@ -51,9 +51,7 @@ struct pia6821_interface
 extern "C" {
 #endif
 
-void pia_unconfig(void);
 void pia_config(int which, int addressing, const struct pia6821_interface *intf);
-void pia_reset(void);
 int pia_read(int which, int offset);
 void pia_write(int which, int offset, int data);
 void pia_set_input_a(int which, int data);

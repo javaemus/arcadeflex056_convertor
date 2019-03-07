@@ -21,7 +21,6 @@ public class cloak
 	static unsigned char *tmpvideoram,*tmpvideoram2;
 	
 	
-	void cloak_vh_stop(void);
 	
 	
 	/***************************************************************************
@@ -208,7 +207,7 @@ public class cloak
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void cloak_vh_stop(void)
+	public static VhStopPtr cloak_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		if (charbitmap)  bitmap_free(charbitmap);
 		if (tmpbitmap2)  bitmap_free(tmpbitmap2);
@@ -216,7 +215,7 @@ public class cloak
 		if (dirtybuffer) free(dirtybuffer);
 		if (tmpvideoram) free(tmpvideoram);
 		if (tmpvideoram2) free(tmpvideoram2);
-	}
+	} };
 	
 	
 	/***************************************************************************

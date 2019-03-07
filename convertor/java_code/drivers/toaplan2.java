@@ -168,11 +168,6 @@ public class toaplan2
 	WRITE16_HANDLER( batrider_objectbank_w );
 	WRITE16_HANDLER( batrider_textdata_decode );
 	
-	void toaplan2_0_eof_callback(void);
-	void toaplan2_1_eof_callback(void);
-	void batrider_0_eof_callback(void);
-	void toaplan2_0_vh_stop(void);
-	void toaplan2_1_vh_stop(void);
 	void toaplan2_0_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void truxton2_0_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void dogyuun_1_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

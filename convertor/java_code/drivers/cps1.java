@@ -23,10 +23,6 @@ public class cps1
 	
 	
 	/* in machine/kabuki.c */
-	void wof_decode(void);
-	void dino_decode(void);
-	void punisher_decode(void);
-	void slammast_decode(void);
 	
 	
 	

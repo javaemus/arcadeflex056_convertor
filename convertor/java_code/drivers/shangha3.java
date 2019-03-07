@@ -36,7 +36,6 @@ public class shangha3
 	WRITE16_HANDLER( shangha3_flipscreen_w );
 	WRITE16_HANDLER( shangha3_gfxlist_addr_w );
 	WRITE16_HANDLER( shangha3_blitter_go_w );
-	void shangha3_vh_stop(void);
 	void shangha3_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

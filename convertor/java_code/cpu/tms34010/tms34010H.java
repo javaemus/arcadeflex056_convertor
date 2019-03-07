@@ -77,9 +77,7 @@ public class tms34010H
 	
 	
 	/* PUBLIC FUNCTIONS - 34010 */
-	void		tms34010_init(void);
 	void		tms34010_reset(void *param);
-	void		tms34010_exit(void);
 	int			tms34010_execute(int cycles);
 	unsigned	tms34010_get_context(void *dst);
 	void		tms34010_set_context(void *src);
@@ -96,9 +94,7 @@ public class tms34010H
 	
 	
 	/* PUBLIC FUNCTIONS - 34020 */
-	void		tms34020_init(void);
 	void 		tms34020_reset(void *param);
-	void 		tms34020_exit(void);
 	int			tms34020_execute(int cycles);
 	unsigned 	tms34020_get_context(void *dst);
 	void 		tms34020_set_context(void *src);

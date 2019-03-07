@@ -19,6 +19,5 @@ struct K054539interface {
 
 
 int K054539_sh_start( const struct MachineSound *msound );
-void K054539_sh_stop( void );
 
 #endif /* __K054539_H__ */

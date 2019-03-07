@@ -693,13 +693,13 @@ public class astrocde
 	
 	/****************************************************************************/
 	
-	void astrocde_vh_stop(void)
+	public static VhStopPtr astrocde_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(rng);
 		rng = 0;
 		free(star);
 		star = 0;
-	}
+	} };
 	
 	public static VhStartPtr astrocde_vh_start = new VhStartPtr() { public int handler() 
 	{

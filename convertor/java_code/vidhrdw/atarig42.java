@@ -168,12 +168,12 @@ public class atarig42
 	 *
 	 *************************************/
 	
-	void atarig42_vh_stop(void)
+	public static VhStopPtr atarig42_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		atarian_free();
 		atarirle_free();
 		ataripf_free();
-	}
+	} };
 	
 	
 	

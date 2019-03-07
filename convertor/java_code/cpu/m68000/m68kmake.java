@@ -236,8 +236,6 @@ public class m68kmake
 	void generate_opcode_handler(FILE* filep, body_struct* body, replace_struct* replace, opcode_struct* opinfo, int ea_mode);
 	void generate_opcode_ea_variants(FILE* filep, body_struct* body, replace_struct* replace, opcode_struct* op);
 	void generate_opcode_cc_variants(FILE* filep, body_struct* body, replace_struct* replace, opcode_struct* op_in, int offset);
-	void process_opcode_handlers(void);
-	void populate_table(void);
 	void read_insert(char* insert);
 	
 	

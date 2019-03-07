@@ -101,12 +101,12 @@ public class snk
 		return 1;
 	} };
 	
-	void snk_vh_stop( void ){
+	public static VhStopPtr snk_vh_stop = new VhStopPtr() { public void handler() {
 		bitmap_free( tmpbitmap );
 		tmpbitmap = 0;
 		free( dirtybuffer );
 		dirtybuffer = 0;
-	}
+	} };
 	
 	/**************************************************************************************/
 	

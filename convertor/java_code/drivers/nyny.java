@@ -44,7 +44,6 @@ public class nyny
 	
 	void nyny_init_palette(unsigned char *obsolete,unsigned short *game_colortable,const unsigned char *color_prom);
 	void nyny_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void nyny_vh_stop(void);
 	
 	unsigned char *nyny_videoram ;
 	unsigned char *nyny_colourram ;

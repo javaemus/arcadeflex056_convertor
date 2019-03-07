@@ -15,41 +15,14 @@ extern void *tape_timer;
 
 extern extern extern extern extern extern extern extern extern 
 extern extern 
-extern void decocass_init_machine(void);
-extern void ctsttape_init_machine(void);
-extern void clocknch_init_machine(void);
-extern void ctisland_init_machine(void);
-extern void csuperas_init_machine(void);
-extern void castfant_init_machine(void);
-extern void cluckypo_init_machine(void);
-extern void cterrani_init_machine(void);
-extern void cexplore_init_machine(void);
-extern void cprogolf_init_machine(void);
-extern void cmissnx_init_machine(void);
-extern void cdiscon1_init_machine(void);
-extern void cptennis_init_machine(void);
-extern void ctornado_init_machine(void);
-extern void cbnj_init_machine(void);
-extern void cburnrub_init_machine(void);
-extern void cbtime_init_machine(void);
-extern void cgraplop_init_machine(void);
-extern void clapapa_init_machine(void);
-extern void cfghtice_init_machine(void);
-extern void cprobowl_init_machine(void);
-extern void cnightst_init_machine(void);
-extern void cprosocc_init_machine(void);
-extern void cppicf_init_machine(void);
-extern void cscrtry_init_machine(void);
-extern void cbdash_init_machine(void);
-
+extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern 
 extern extern extern extern 
 /* from drivers/decocass.c */
 extern 
 /* from vidhrdw/decocass.c */
 extern extern extern extern extern extern extern extern extern extern extern 
 extern extern extern extern extern extern extern extern extern extern extern extern 
-extern extern void decocass_vh_stop (void);
-extern void decocass_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
+extern extern extern void decocass_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 
 extern unsigned char *decocass_charram;
 extern unsigned char *decocass_fgvideoram;

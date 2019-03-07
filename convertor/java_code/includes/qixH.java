@@ -22,9 +22,6 @@ public class qixH
 	extern UINT8 *qix_68705_port_out;
 	extern UINT8 *qix_68705_ddr;
 	
-	void qix_init_machine(void);
-	void qixmcu_init_machine(void);
-	void slither_init_machine(void);
 	
 	
 	
@@ -39,7 +36,6 @@ public class qixH
 	extern UINT8 *qix_videoaddress;
 	extern UINT8 qix_cocktail_flip;
 	
-	void qix_vh_stop(void);
 	void qix_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	void qix_scanline_callback(int scanline);

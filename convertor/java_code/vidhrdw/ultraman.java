@@ -102,13 +102,13 @@ public class ultraman
 		return 0;
 	} };
 	
-	void ultraman_vh_stop(void)
+	public static VhStopPtr ultraman_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		K051960_vh_stop();
 		K051316_vh_stop_0();
 		K051316_vh_stop_1();
 		K051316_vh_stop_2();
-	}
+	} };
 	
 	
 	

@@ -94,10 +94,10 @@ public class suna16
 		else						return 1;
 	} };
 	
-	void suna16_vh_stop(void)
+	public static VhStopPtr suna16_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		if (paletteram16_2 != NULL)	free(paletteram16_2);
-	}
+	} };
 	
 	READ16_HANDLER( suna16_paletteram16_r )
 	{

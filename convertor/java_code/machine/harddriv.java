@@ -51,7 +51,6 @@ public class harddriv
 	
 	/* from slapstic.c */
 	int slapstic_tweak(offs_t offset);
-	void slapstic_reset(void);
 	
 	
 	/* from vidhrdw */

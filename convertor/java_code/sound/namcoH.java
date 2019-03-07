@@ -11,7 +11,6 @@ struct namco_interface
 };
 
 int namco_sh_start(const struct MachineSound *msound);
-void namco_sh_stop(void);
 
 
 

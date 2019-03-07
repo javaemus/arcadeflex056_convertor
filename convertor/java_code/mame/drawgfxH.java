@@ -161,7 +161,6 @@ public class drawgfxH
 	
 	void decodechar(struct GfxElement *gfx,int num,const unsigned char *src,const struct GfxLayout *gl);
 	struct GfxElement *decodegfx(const unsigned char *src,const struct GfxLayout *gl);
-	void set_pixel_functions(void);
 	void freegfx(struct GfxElement *gfx);
 	void drawgfx(struct mame_bitmap *dest,const struct GfxElement *gfx,
 			unsigned int code,unsigned int color,int flipx,int flipy,int sx,int sy,
@@ -194,7 +193,6 @@ public class drawgfxH
 	
 	/* Alpha blending functions */
 	extern int alpha_active;
-	void alpha_init(void);
 	INLINE void alpha_set_level(int level) {
 		if(level == 0)
 			level = -1;

@@ -90,7 +90,6 @@ public class wmstunit
 	
 	
 	/* prototypes */
-	void wms_tunit_vh_stop(void);
 	
 	
 	/* macros */
@@ -164,7 +163,7 @@ public class wmstunit
 	 *
 	 *************************************/
 	
-	void wms_tunit_vh_stop(void)
+	public static VhStopPtr wms_tunit_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		if (pen_map)
 			free(pen_map);
@@ -173,7 +172,7 @@ public class wmstunit
 		if (local_videoram)
 			free(local_videoram);
 		local_videoram = NULL;
-	}
+	} };
 	
 	
 	

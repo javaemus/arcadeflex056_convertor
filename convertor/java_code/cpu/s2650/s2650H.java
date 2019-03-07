@@ -30,10 +30,8 @@ public class s2650H
 	
 	extern int s2650_ICount;
 	
-	extern void s2650_init(void);
-	extern void s2650_reset(void *param);
-	extern void s2650_exit(void);
-	extern int s2650_execute(int cycles);
+	extern extern void s2650_reset(void *param);
+	extern extern int s2650_execute(int cycles);
 	extern unsigned s2650_get_context(void *dst);
 	extern void s2650_set_context(void *src);
 	extern unsigned s2650_get_reg(int regnum);

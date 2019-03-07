@@ -24,7 +24,6 @@ public class m79amb
 	 */
 	
 	
-	void ramtek_sh_update(void);
 	
 	/*
 	 * since these functions aren't used anywhere else, i've made them

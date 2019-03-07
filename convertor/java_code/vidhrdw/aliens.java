@@ -81,12 +81,12 @@ public class aliens
 		return 0;
 	} };
 	
-	void aliens_vh_stop( void )
+	public static VhStopPtr aliens_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(paletteram);
 		K052109_vh_stop();
 		K051960_vh_stop();
-	}
+	} };
 	
 	
 	

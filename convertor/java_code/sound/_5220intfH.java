@@ -11,11 +11,8 @@ struct TMS5220interface
 };
 
 int tms5220_sh_start(const struct MachineSound *msound);
-void tms5220_sh_stop(void);
-void tms5220_sh_update(void);
 
 
-void tms5220_reset(void);
 void tms5220_set_frequency(int frequency);
 
 #endif

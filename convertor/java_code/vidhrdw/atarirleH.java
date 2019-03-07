@@ -68,7 +68,6 @@ public class atarirleH
 	
 	/* setup/shutdown */
 	int atarirle_init(int map, const struct atarirle_desc *desc);
-	void atarirle_free(void);
 	
 	/* core processing */
 	void atarirle_render(int map, struct mame_bitmap *bitmap, ataripf_overrender_cb callback);

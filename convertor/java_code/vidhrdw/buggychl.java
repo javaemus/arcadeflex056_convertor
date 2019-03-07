@@ -38,7 +38,7 @@ public class buggychl
 	
 	
 	
-	void buggychl_vh_stop(void)
+	public static VhStopPtr buggychl_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(dirtybuffer);
 		dirtybuffer = NULL;
@@ -50,7 +50,7 @@ public class buggychl
 		tmpbitmap1 = NULL;
 		bitmap_free(tmpbitmap2);
 		tmpbitmap2 = NULL;
-	}
+	} };
 	
 	public static VhStartPtr buggychl_vh_start = new VhStartPtr() { public int handler() 
 	{

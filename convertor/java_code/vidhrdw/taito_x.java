@@ -35,9 +35,9 @@ public class taito_x
 		return 0;
 	} };
 	
-	void superman_vh_stop (void)
+	public static VhStopPtr superman_vh_stop = new VhStopPtr() { public void handler() 
 	{
-	}
+	} };
 	
 	/**************************************************************************/
 	

@@ -105,7 +105,6 @@ public class pokeyH
 	
 	
 	int pokey_sh_start (const struct MachineSound *msound);
-	void pokey_sh_stop (void);
 	
 	
 	

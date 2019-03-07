@@ -109,7 +109,6 @@ public class rockola
 	void rockola_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	int rockola_sh_start(const struct MachineSound *msound);
-	void rockola_sh_update(void);
 	
 	
 	

@@ -309,26 +309,11 @@ public class playch10
 	#define N2A03_DEFAULTCLOCK (21477272.724 / 12)
 	
 	/* from vidhrdw */
-	extern extern void playch10_vh_stop( void );
-	extern void playch10_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
+	extern extern extern void playch10_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	extern void playch10_vh_screenrefresh( struct mame_bitmap *bitmap, int full_refresh );
 	
 	/* from machine */
-	extern void pc10_init_machine( void );
-	extern void init_playch10( void );	/* standard games */
-	extern void init_pc_gun( void );	/* gun games */
-	extern void init_pc_hrz( void );	/* horizontal games */
-	extern void init_pcaboard( void );	/* a-board games */
-	extern void init_pcbboard( void );	/* b-board games */
-	extern void init_pccboard( void );	/* c-board games */
-	extern void init_pcdboard( void );	/* d-board games */
-	extern void init_pceboard( void );	/* e-board games */
-	extern void init_pcfboard( void );	/* f-board games */
-	extern void init_pcgboard( void );	/* g-board games */
-	extern void init_pchboard( void );	/* h-board games */
-	extern void init_pciboard( void );	/* i-board games */
-	extern void init_pckboard( void );	/* k-board games */
-	extern int pc10_sdcs;
+	extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern int pc10_sdcs;
 	extern int pc10_nmi_enable;
 	extern int pc10_dog_di;
 	

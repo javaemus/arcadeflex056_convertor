@@ -18,7 +18,6 @@ public class rollrace
 	
 	void rollrace_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void wiz_vh_convert_color_prom(unsigned char *game_palette, unsigned short *game_colortable,const unsigned char *color_prom);
-	void rollrace_vh_stop(void);
 	
 	public static WriteHandlerPtr rollrace_backgroundpage_w = new WriteHandlerPtr() {public void handler(int offset, int data);
 	public static WriteHandlerPtr rollrace_backgroundcolor_w = new WriteHandlerPtr() {public void handler(int offset, int data);

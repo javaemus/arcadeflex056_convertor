@@ -553,9 +553,6 @@ enum {
 /************************************************************************/
 
 int  discrete_sh_start (const struct MachineSound *msound);
-void discrete_sh_stop (void);
-void discrete_sh_reset (void);
-void discrete_sh_update (void);
 
 WRITE_HANDLER(discrete_sound_w);
 READ_HANDLER(discrete_sound_r);

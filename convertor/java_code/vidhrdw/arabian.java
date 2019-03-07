@@ -239,11 +239,11 @@ public class arabian
 	 *
 	 *************************************/
 	
-	void arabian_vh_stop(void)
+	public static VhStopPtr arabian_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(converted_gfx);
 		free(main_bitmap);
-	}
+	} };
 	
 	
 	

@@ -434,7 +434,6 @@ public class cpuintrfH
 	void cpuintrf_push_context(int cpunum);
 	
 	/* restore the previous context */
-	void cpuintrf_pop_context(void);
 	
 	
 	
@@ -450,7 +449,6 @@ public class cpuintrfH
 	/* return the current icount */
 	
 	/* ensure banking is reset properly */
-	void activecpu_reset_banking(void);
 	
 	/* set the IRQ line on a CPU -- drivers use cpu_set_irq_line() */
 	void activecpu_set_irq_line(int irqline, int state);
@@ -697,7 +695,6 @@ public class cpuintrfH
 	 *************************************/
 	
 	/* dump the states of all CPUs */
-	void cpu_dump_states(void);
 	
 	/* set a callback function for reset on the 68k */
 	void cpu_set_m68k_reset(int cpunum, void (*resetfn)(void));

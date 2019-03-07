@@ -9,7 +9,6 @@ public class warriorb
 	
 	#define TC0100SCN_GFX_NUM 1
 	
-	void warriorb_vh_stop(void);
 	
 	struct tempsprite
 	{
@@ -138,7 +137,7 @@ public class warriorb
 		return (warriorb_core_vh_start(4,1));
 	} };
 	
-	void warriorb_vh_stop (void)
+	public static VhStopPtr warriorb_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(spritelist);
 		spritelist = 0;
@@ -150,7 +149,7 @@ public class warriorb
 	
 		if (has_second_TC0110PCR())
 			TC0110PCR_1_vh_stop();
-	}
+	} };
 	
 	
 	/************************************************************

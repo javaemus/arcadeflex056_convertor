@@ -116,7 +116,6 @@ public class m92
 	#define M92_SCANLINES	256
 	
 	/* From vidhrdw/m92.c */
-	void m92_vh_stop(void);
 	void m92_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void m92_vh_raster_partial_refresh(struct mame_bitmap *bitmap,int start_line,int end_line);
 	

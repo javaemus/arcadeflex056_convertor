@@ -47,7 +47,6 @@ public class rpunch
 	 *
 	 *************************************/
 	
-	void rpunch_vh_stop(void);
 	
 	
 	
@@ -140,12 +139,12 @@ public class rpunch
 	 *
 	 *************************************/
 	
-	void rpunch_vh_stop(void)
+	public static VhStopPtr rpunch_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		if (rpunch_bitmapsum)
 			free(rpunch_bitmapsum);
 		rpunch_bitmapsum = NULL;
-	}
+	} };
 	
 	
 	

@@ -23,10 +23,8 @@ public class ajax
 	
 	
 	/* from machine/ajax.c */
-	void ajax_init_machine( void );
 	
 	/* from vidhrdw/ajax.c */
-	void ajax_vh_stop( void );
 	void ajax_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh );
 	
 	/****************************************************************************/

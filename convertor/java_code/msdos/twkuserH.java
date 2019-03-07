@@ -36,7 +36,6 @@ typedef struct
 
 typedef Register *RegisterPtr;
 
-void readyVgaRegs(void);
 void outRegArray(Register *r, int n);
 void outReg(Register r);
 int loadRegArray(char *fpath, RegisterPtr *array);

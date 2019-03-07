@@ -59,7 +59,6 @@ public class victory
 	
 	
 	/* function prototypes */
-	void victory_vh_stop(void);
 	
 	static static static static static static 
 	
@@ -118,7 +117,7 @@ public class victory
 	 *
 	 *************************************/
 	
-	void victory_vh_stop(void)
+	public static VhStopPtr victory_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		/* free dirty maps */
 		if (bgdirty)
@@ -149,7 +148,7 @@ public class victory
 		if (bram)
 			free(bram);
 		bram = NULL;
-	}
+	} };
 	
 	
 	

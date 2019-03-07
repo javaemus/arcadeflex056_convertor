@@ -129,11 +129,11 @@ public class relief
 	 *
 	 *************************************/
 	
-	void relief_vh_stop(void)
+	public static VhStopPtr relief_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		atarimo_free();
 		ataripf_free();
-	}
+	} };
 	
 	
 	

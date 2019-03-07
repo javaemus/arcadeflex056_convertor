@@ -289,9 +289,6 @@ public class sndintrfH
 	};
 	
 	
-	void sound_stop(void);
-	void sound_update(void);
-	void sound_reset(void);
 	
 	/* returns name of the sound system */
 	const char *sound_name(const struct MachineSound *msound);

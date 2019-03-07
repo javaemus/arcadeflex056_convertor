@@ -230,12 +230,12 @@ public class turbo
 	} };
 	
 	
-	void turbo_vh_stop(void)
+	public static VhStopPtr turbo_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(sprite_expanded_data);
 		free(back_expanded_data);
 		free(road_expanded_palette);
-	}
+	} };
 	
 	
 	/***************************************************************************

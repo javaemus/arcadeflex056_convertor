@@ -21,7 +21,6 @@ public class winmain
 	
 	// from config.c
 	int  cli_frontend_init (int argc, char **argv);
-	void cli_frontend_exit (void);
 	
 	
 	
@@ -119,8 +118,7 @@ public class winmain
 	
 	void osd_exit(void)
 	{
-		extern void win_shutdown_input(void);
-		win_shutdown_input();
+		extern 	win_shutdown_input();
 		osd_set_leds(0);
 	}
 	

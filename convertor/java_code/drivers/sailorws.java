@@ -101,10 +101,7 @@ public class sailorws
 	
 	
 	void sailorws_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
-	void sailorws_vh_stop(void);
-	void mjkoiura_vh_stop(void);
 	void mscoutm_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
-	void mscoutm_vh_stop(void);
 	
 	
 	

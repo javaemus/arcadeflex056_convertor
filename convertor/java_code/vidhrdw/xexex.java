@@ -24,10 +24,10 @@ public class xexex
 		return 0;
 	}
 	
-	void xexexbg_vh_stop(void)
+	public static VhStopPtr xexexbg_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(xexexbg_ram);
-	}
+	} };
 	
 	WRITE16_HANDLER( xexexbg_w )
 	{
@@ -243,12 +243,12 @@ public class xexex
 		return 0;
 	} };
 	
-	void xexex_vh_stop(void)
+	public static VhStopPtr xexex_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		xexexbg_vh_stop();
 		K054157_vh_stop();
 		K053247_vh_stop();
-	}
+	} };
 	
 	/* useful function to sort the four tile layers by priority order */
 	/* suboptimal, but for such a size who cares ? */

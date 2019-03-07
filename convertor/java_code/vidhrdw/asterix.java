@@ -64,11 +64,11 @@ public class asterix
 		return 0;
 	} };
 	
-	void asterix_vh_stop(void)
+	public static VhStopPtr asterix_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		K054157_vh_stop();
 		K053245_vh_stop();
-	}
+	} };
 	
 	/* useful function to sort the three tile layers by priority order */
 	static void sortlayers(int *layer,int *pri)

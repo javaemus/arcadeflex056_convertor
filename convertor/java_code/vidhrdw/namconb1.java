@@ -447,7 +447,7 @@ public class namconb1
 		return 0; /* no error */
 	} };
 	
-	void namconb1_vh_stop( void )
+	public static VhStopPtr namconb1_vh_stop = new VhStopPtr() { public void handler() 
 	{
-	}
+	} };
 }

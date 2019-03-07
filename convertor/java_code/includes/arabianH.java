@@ -21,7 +21,6 @@ public class arabianH
 	extern UINT8 arabian_video_control;
 	extern UINT8 arabian_flip_screen;
 	
-	void arabian_vh_stop(void);
 	void arabian_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	void arabian_vh_convert_color_prom(unsigned char *obsolete, unsigned short *colortable, const unsigned char *color_prom);
 	

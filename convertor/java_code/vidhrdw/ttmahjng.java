@@ -77,11 +77,11 @@ public class ttmahjng
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void ttmahjng_vh_stop(void)
+	public static VhStopPtr ttmahjng_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free(tmpbitmap1);
 		bitmap_free(tmpbitmap2);
-	}
+	} };
 	
 	/***************************************************************************
 	  ttmahjng_out0_w

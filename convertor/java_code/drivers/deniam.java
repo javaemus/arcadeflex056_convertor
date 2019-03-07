@@ -44,8 +44,6 @@ public class deniam
 	
 	extern data16_t *deniam_videoram,*deniam_textram;
 	
-	void init_logicpro(void);
-	void init_karianx(void);
 	WRITE16_HANDLER( deniam_videoram_w );
 	WRITE16_HANDLER( deniam_textram_w );
 	WRITE16_HANDLER( deniam_palette_w );

@@ -134,12 +134,12 @@ public class skullxbo
 	 *
 	 *************************************/
 	
-	void skullxbo_vh_stop(void)
+	public static VhStopPtr skullxbo_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		atarian_free();
 		atarimo_free();
 		ataripf_free();
-	}
+	} };
 	
 	
 	

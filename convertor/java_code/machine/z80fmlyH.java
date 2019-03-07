@@ -24,8 +24,6 @@ void z80ctc_init (z80ctc_interface *intf);
 double z80ctc_getperiod (int which, int ch);
 
 void z80ctc_reset (int which);
-void z80ctc_0_reset (void);
-void z80ctc_1_reset (void);
 
 void z80ctc_w (int which, int offset, int data);
 
@@ -68,7 +66,6 @@ int z80pio_interrupt( int which );
 void z80pio_reti( int which );
 
 /* mame interface */
-void z80pio_0_reset (void);
 
 /* this functions can use when C/D = A0 , A/B = A1 */
 

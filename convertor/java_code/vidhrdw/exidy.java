@@ -186,12 +186,12 @@ public class exidy
 	 *
 	 *************************************/
 	
-	void exidy_vh_stop(void)
+	public static VhStopPtr exidy_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free(motion_object_1_vid);
 		bitmap_free(motion_object_2_vid);
 		generic_vh_stop();
-	}
+	} };
 	
 	
 	

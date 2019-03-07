@@ -21,8 +21,7 @@ public class cyberbal
 	static UINT8 sound_data_from_68k_ready, sound_data_from_6502_ready;
 	
 	
-	static void update_sound_68k_interrupts(void);
-	
+	static 
 	
 	
 	void cyberbal_sound_reset(void)

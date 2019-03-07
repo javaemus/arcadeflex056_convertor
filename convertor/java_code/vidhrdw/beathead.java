@@ -60,11 +60,11 @@ public class beathead
 	} };
 	
 	
-	void beathead_vh_stop(void)
+	public static VhStopPtr beathead_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(hsyncram);
 		hsyncram = 0;
-	}
+	} };
 	
 	
 	

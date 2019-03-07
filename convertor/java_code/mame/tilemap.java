@@ -146,8 +146,7 @@ public class tilemap
 	static void pbt32( UINT32 *dest, const UINT16 *source, const UINT8 *pMask, int mask, int value, int count, UINT8 *pri, UINT32 pcode );
 	
 	static void install_draw_handlers( struct tilemap *tilemap );
-	static void tilemap_reset(void);
-	
+	static 
 	static void update_tile_info( struct tilemap *tilemap, UINT32 cached_indx, UINT32 cached_col, UINT32 cached_row );
 	
 	/***********************************************************************************/

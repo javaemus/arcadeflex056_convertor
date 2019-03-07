@@ -42,8 +42,6 @@ public class genericH
 	extern struct mame_bitmap *tmpbitmap;
 	
 	
-	void generic_vh_stop(void);
-	void generic_bitmapped_vh_stop(void);
 	void generic_bitmapped_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	READ16_HANDLER( spriteram16_r );
 	WRITE16_HANDLER( spriteram16_w );

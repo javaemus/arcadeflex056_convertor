@@ -201,7 +201,7 @@ public class battlane
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void battlane_vh_stop(void)
+	public static VhStopPtr battlane_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		if (screen_bitmap)
 		{
@@ -215,7 +215,7 @@ public class battlane
 	    {
 	        free(bkgnd_bitmap);
 	    }
-	}
+	} };
 	
 	/***************************************************************************
 	

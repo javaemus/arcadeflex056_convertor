@@ -27,11 +27,9 @@ public class gaplus
 	/* custom IO chips functions */
 	
 	extern extern extern 
-	extern extern void gaplus_vh_stop( void );
-	extern void gaplus_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
+	extern extern extern void gaplus_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	extern void gaplus_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	extern void gaplus_init_machine(void);
-	
+	extern 
 	public static Memory_ReadAddress readmem_cpu1[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_ReadAddress( 0x0000, 0x03ff, videoram_r ),				/* video RAM */

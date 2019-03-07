@@ -46,10 +46,8 @@ public class irobot
 	static void *irvg_timer;
 	static void *irmb_timer;
 	#endif
-	extern void run_video(void);
-	
-	extern void irobot_poly_clear(void);
-	
+	extern 
+	extern 
 	extern struct mame_bitmap *polybitmapt;
 	
 	static UINT8 *comRAM[2], *mbRAM, *mbROM;
@@ -63,8 +61,7 @@ public class irobot
 	UINT8 irobot_bufsel;
 	UINT8 irobot_alphamap;
 	
-	static void irmb_run(void);
-	
+	static 
 	
 	/***********************************************************************/
 	

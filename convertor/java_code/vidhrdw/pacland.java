@@ -126,13 +126,13 @@ public class pacland
 		return 0;
 	} };
 	
-	void pacland_vh_stop(void)
+	public static VhStopPtr pacland_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free(tmpbitmap3);
 		bitmap_free(tmpbitmap2);
 		bitmap_free(tmpbitmap);
 		free( dirtybuffer );
-	}
+	} };
 	
 	
 	

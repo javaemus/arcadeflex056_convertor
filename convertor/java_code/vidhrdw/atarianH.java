@@ -74,7 +74,6 @@ struct atarian_desc
 
 /* setup/shutdown */
 int atarian_init(int map, const struct atarian_desc *desc);
-void atarian_free(void);
 UINT32 *atarian_get_lookup(int map, int *size);
 
 /* core processing */

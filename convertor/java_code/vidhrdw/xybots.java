@@ -132,12 +132,12 @@ public class xybots
 	 *
 	 *************************************/
 	
-	void xybots_vh_stop(void)
+	public static VhStopPtr xybots_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		atarian_free();
 		atarimo_free();
 		ataripf_free();
-	}
+	} };
 	
 	
 	

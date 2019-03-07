@@ -24,7 +24,6 @@ public class blockout
 	WRITE16_HANDLER( blockout_videoram_w );
 	WRITE16_HANDLER( blockout_paletteram_w );
 	WRITE16_HANDLER( blockout_frontcolor_w );
-	void blockout_vh_stop(void);
 	void blockout_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

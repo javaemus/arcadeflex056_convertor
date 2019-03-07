@@ -19,7 +19,6 @@ public class atarijsaH
 	
 	void atarijsa_init(int cpunum, int inputport, int testport, int testmask);
 	void atarijsa3_init_adpcm(int region);
-	void atarijsa_reset(void);
 	
 	
 	extern const struct Memory_ReadAddress atarijsa1_readmem[];

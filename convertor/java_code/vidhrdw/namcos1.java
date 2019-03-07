@@ -426,13 +426,13 @@ public class namcos1
 		return 0;
 	} };
 	
-	void namcos1_vh_stop( void )
+	public static VhStopPtr namcos1_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(namcos1_videoram);
 	
 		free(mask_ptr);
 		free(mask_data);
-	}
+	} };
 	
 	
 	

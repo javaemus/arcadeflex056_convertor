@@ -116,14 +116,14 @@ public class megazone
 		return 0;
 	} };
 	
-	void megazone_vh_stop(void)
+	public static VhStopPtr megazone_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(dirtybuffer);
 		bitmap_free(tmpbitmap);
 	
 		dirtybuffer = 0;
 		tmpbitmap = 0;
-	}
+	} };
 	
 	
 	/***************************************************************************

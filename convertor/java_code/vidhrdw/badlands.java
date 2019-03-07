@@ -117,11 +117,11 @@ public class badlands
 	 *
 	 *************************************/
 	
-	void badlands_vh_stop(void)
+	public static VhStopPtr badlands_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		atarimo_free();
 		ataripf_free();
-	}
+	} };
 	
 	
 	

@@ -26,7 +26,6 @@ public class exedexes
 	extern unsigned char *exedexes_nbg_xscroll;
 	void exedexes_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void exedexes_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void exedexes_eof_callback(void);
 	
 	
 	

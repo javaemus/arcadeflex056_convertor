@@ -341,12 +341,12 @@ public class segar
 	
 	***************************************************************************/
 	
-	void spaceod_vh_stop(void)
+	public static VhStopPtr spaceod_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free(sv.horizbackbitmap);
 		bitmap_free(sv.vertbackbitmap);
 		generic_vh_stop();
-	}
+	} };
 	
 	/***************************************************************************
 	This port controls which background to draw for Space Odyssey.	The temp_scene

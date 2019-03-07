@@ -100,7 +100,5 @@ void SN76477_set_pitch_voltage(int chip, double voltage);
 void SN76477_set_vco_voltage(int chip, double voltage);
 
 int SN76477_sh_start(const struct MachineSound *msound);
-void SN76477_sh_stop(void);
-void SN76477_sh_update(void);
 
 #endif

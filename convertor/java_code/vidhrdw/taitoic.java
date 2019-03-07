@@ -757,7 +757,7 @@ public class taitoic
 		return 0;
 	}
 	
-	void PC080SN_vh_stop(void)
+	public static VhStopPtr PC080SN_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		int i;
 	
@@ -766,7 +766,7 @@ public class taitoic
 			free(PC080SN_ram[i]);
 			PC080SN_ram[i] = 0;
 		}
-	}
+	} };
 	
 	READ16_HANDLER( PC080SN_word_0_r )
 	{
@@ -1384,7 +1384,7 @@ public class taitoic
 		return 0;
 	}
 	
-	void TC0080VCO_vh_stop(void)
+	public static VhStopPtr TC0080VCO_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free( TC0080VCO_ram );
 		TC0080VCO_ram = 0;
@@ -1393,7 +1393,7 @@ public class taitoic
 		TC0080VCO_char_dirty = 0;
 	
 		return;
-	}
+	} };
 	
 	
 	static WRITE16_HANDLER( TC0080VCO_scrollram_w )
@@ -2364,7 +2364,7 @@ public class taitoic
 		return 0;
 	}
 	
-	void TC0100SCN_vh_stop(void)
+	public static VhStopPtr TC0100SCN_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		int i;
 	
@@ -2375,7 +2375,7 @@ public class taitoic
 			free(TC0100SCN_char_dirty[i]);
 			TC0100SCN_char_dirty[i] = 0;
 		}
-	}
+	} };
 	
 	
 	READ16_HANDLER( TC0100SCN_word_0_r )
@@ -2721,16 +2721,16 @@ public class taitoic
 		return TC0280GRD_vh_start(gfxnum);
 	}
 	
-	void TC0280GRD_vh_stop(void)
+	public static VhStopPtr TC0280GRD_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(TC0280GRD_ram);
 		TC0280GRD_ram = 0;
-	}
+	} };
 	
-	void TC0430GRW_vh_stop(void)
+	public static VhStopPtr TC0430GRW_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		TC0280GRD_vh_stop();
-	}
+	} };
 	
 	READ16_HANDLER( TC0280GRD_word_r )
 	{
@@ -3223,13 +3223,13 @@ public class taitoic
 		return 0;
 	}
 	
-	void TC0480SCP_vh_stop(void)
+	public static VhStopPtr TC0480SCP_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(TC0480SCP_ram);
 		TC0480SCP_ram = 0;
 		free(TC0480SCP_char_dirty);
 		TC0480SCP_char_dirty = 0;
-	}
+	} };
 	
 	READ32_HANDLER( TC0480SCP_ctrl_long_r )
 	{
@@ -4114,23 +4114,23 @@ public class taitoic
 		return 0;
 	} };
 	
-	void TC0110PCR_vh_stop(void)
+	public static VhStopPtr TC0110PCR_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(TC0110PCR_ram[0]);
 		TC0110PCR_ram[0] = 0;
-	}
+	} };
 	
-	void TC0110PCR_1_vh_stop(void)
+	public static VhStopPtr TC0110PCR_1_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(TC0110PCR_ram[1]);
 		TC0110PCR_ram[1] = 0;
-	}
+	} };
 	
-	void TC0110PCR_2_vh_stop(void)
+	public static VhStopPtr TC0110PCR_2_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(TC0110PCR_ram[2]);
 		TC0110PCR_ram[2] = 0;
-	}
+	} };
 	
 	READ16_HANDLER( TC0110PCR_word_r )
 	{

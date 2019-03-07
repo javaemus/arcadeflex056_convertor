@@ -41,10 +41,10 @@ public class missile
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void missile_vh_stop(void)
+	public static VhStopPtr missile_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free (missile_videoram);
-	}
+	} };
 	
 	/********************************************************************************************/
 	public static ReadHandlerPtr missile_video_r  = new ReadHandlerPtr() { public int handler(int offset)

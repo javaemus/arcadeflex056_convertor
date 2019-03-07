@@ -16,14 +16,12 @@ public class berzerk
 	
 	extern unsigned char* berzerk_magicram;
 	
-	void berzerk_init_machine(void);
 	
 	void berzerk_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	
 	int  berzerk_sh_start(const struct MachineSound *msound);
-	void berzerk_sh_update(void);
 	
 	
 	static unsigned char *nvram;

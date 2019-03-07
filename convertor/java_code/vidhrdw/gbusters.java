@@ -62,11 +62,11 @@ public class gbusters
 		return 0;
 	} };
 	
-	void gbusters_vh_stop(void)
+	public static VhStopPtr gbusters_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		K052109_vh_stop();
 		K051960_vh_stop();
-	}
+	} };
 	
 	
 	void gbusters_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)

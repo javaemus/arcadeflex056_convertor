@@ -246,13 +246,13 @@ public class mpatrol
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void mpatrol_vh_stop(void)
+	public static VhStopPtr mpatrol_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free(bgbitmap[0]);
 		bitmap_free(bgbitmap[1]);
 		bitmap_free(bgbitmap[2]);
 		generic_vh_stop();
-	}
+	} };
 	
 	
 	

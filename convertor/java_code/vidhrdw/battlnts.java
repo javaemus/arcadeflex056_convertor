@@ -68,11 +68,11 @@ public class battlnts
 		return 0;
 	} };
 	
-	void battlnts_vh_stop(void)
+	public static VhStopPtr battlnts_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		K007342_vh_stop();
 		K007420_vh_stop();
-	}
+	} };
 	
 	/***************************************************************************
 	

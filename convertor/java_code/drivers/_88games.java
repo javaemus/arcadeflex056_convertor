@@ -14,14 +14,12 @@ public class _88games
 {
 	
 	
-	static void k88games_init_machine( void );
-	static void k88games_banking( int lines );
+	static static void k88games_banking( int lines );
 	
 	static unsigned char *ram;
 	static int videobank;
 	
 	extern int k88games_priority;
-	void k88games_vh_stop(void);
 	void k88games_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

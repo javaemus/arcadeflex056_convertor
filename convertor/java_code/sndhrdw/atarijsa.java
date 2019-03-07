@@ -63,8 +63,7 @@ public class atarijsa
 	static UINT8 tms5220_volume;
 	static UINT8 oki6295_volume;
 	
-	static void update_all_volumes(void);
-	
+	static 
 	
 	
 	/*************************************

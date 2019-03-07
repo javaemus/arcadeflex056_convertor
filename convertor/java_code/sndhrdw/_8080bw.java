@@ -50,9 +50,7 @@ public class _8080bw
 	
 	
 	static int  schaser_sh_start(const struct MachineSound *msound);
-	static void schaser_sh_stop(void);
-	static void schaser_sh_update(void);
-	
+	static static 
 	
 	
 	struct SN76477interface invaders_sn76477_interface =

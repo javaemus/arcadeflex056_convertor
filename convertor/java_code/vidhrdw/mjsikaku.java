@@ -36,13 +36,7 @@ public class mjsikaku
 	static unsigned char *mjsikaku_palette;
 	
 	
-	static void mjsikaku_vramflip(void);
-	static void mjsikaku_gfxdraw(void);
-	static void secolove_gfxdraw(void);
-	static void bijokkoy_gfxdraw(void);
-	static void seiha_gfxdraw(void);
-	static void crystal2_gfxdraw(void);
-	
+	static static static static static static 
 	
 	/******************************************************************************
 	
@@ -1190,7 +1184,7 @@ public class mjsikaku
 		return 0;
 	} };
 	
-	void mjsikaku_vh_stop(void)
+	public static VhStopPtr mjsikaku_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(mjsikaku_palette);
 		free(mjsikaku_videoworkram);
@@ -1200,7 +1194,7 @@ public class mjsikaku
 		mjsikaku_videoworkram = 0;
 		mjsikaku_videoram = 0;
 		mjsikaku_tmpbitmap = 0;
-	}
+	} };
 	
 	/******************************************************************************
 	

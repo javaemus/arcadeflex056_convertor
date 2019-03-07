@@ -57,15 +57,8 @@ public class wmstunit
 	
 	
 	/* driver-specific initialization */
-	void init_mk(void);
-	void init_mk2(void);
-	void init_mk2r14(void);
-	void init_nbajam(void);
-	void init_nbajam20(void);
-	void init_nbajamte(void);
 	
 	/* general machine init */
-	void wms_tunit_init_machine(void);
 	
 	
 	/* external read handlers */
@@ -88,7 +81,6 @@ public class wmstunit
 	
 	
 	/* external video routines */
-	void wms_tunit_vh_stop(void);
 	void wms_tunit_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void wms_tunit_to_shiftreg(offs_t address, unsigned short *shiftreg);
 	void wms_tunit_from_shiftreg(offs_t address, unsigned short *shiftreg);

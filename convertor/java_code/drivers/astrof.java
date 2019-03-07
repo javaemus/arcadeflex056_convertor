@@ -48,7 +48,6 @@ public class astrof
 	extern unsigned char *tomahawk_protection;
 	
 	void astrof_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void astrof_vh_stop(void);
 	void astrof_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	extern struct Samplesinterface astrof_samples_interface;

@@ -34,9 +34,7 @@ public class hyhoo
 	static unsigned char *hyhoo_palette;
 	
 	
-	static void hyhoo_vramflip(void);
-	static void hyhoo_gfxdraw(void);
-	
+	static static 
 	
 	/******************************************************************************
 	
@@ -365,7 +363,7 @@ public class hyhoo
 		return 0;
 	} };
 	
-	void hyhoo_vh_stop(void)
+	public static VhStopPtr hyhoo_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(hyhoo_palette);
 		free(hyhoo_videoworkram);
@@ -375,7 +373,7 @@ public class hyhoo
 		hyhoo_videoworkram = 0;
 		hyhoo_videoram = 0;
 		hyhoo_tmpbitmap = 0;
-	}
+	} };
 	
 	/******************************************************************************
 	

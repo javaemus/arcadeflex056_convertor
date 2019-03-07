@@ -115,11 +115,11 @@ public class taito_h
 		return 0;
 	} };
 	
-	void syvalion_vh_stop(void)
+	public static VhStopPtr syvalion_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		TC0080VCO_vh_stop();
 		return;
-	}
+	} };
 	
 	
 	/***************************************************************************

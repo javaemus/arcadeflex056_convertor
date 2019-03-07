@@ -167,8 +167,6 @@ public class galaxian
 	void galaxian_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	int  galaxian_sh_start(const struct MachineSound *msound);
-	void galaxian_sh_stop(void);
-	void galaxian_sh_update(void);
 	
 	
 	

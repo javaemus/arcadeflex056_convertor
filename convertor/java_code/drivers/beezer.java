@@ -20,7 +20,6 @@ public class beezer
 	void beezer_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	/* from machine/beezer.c */
-	void init_beezer(void);
 	
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

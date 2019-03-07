@@ -243,12 +243,12 @@ public class kaneko16
 	} };
 	
 	
-	void kaneko16_vh_stop(void)
+	public static VhStopPtr kaneko16_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		if (spritelist.first_sprite)
 			free(spritelist.first_sprite);
 		spritelist.first_sprite = 0;		// multisession safety
-	}
+	} };
 	
 	
 	/* Berlwall has an additional hi-color background */
@@ -325,14 +325,14 @@ public class kaneko16
 		return kaneko16_vh_start_1xVIEW2();
 	} };
 	
-	void berlwall_vh_stop(void)
+	public static VhStopPtr berlwall_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		if (kaneko16_bg15_bitmap)
 			bitmap_free(kaneko16_bg15_bitmap);
 	
 		kaneko16_bg15_bitmap = 0;	// multisession safety
 		kaneko16_vh_stop();
-	}
+	} };
 	
 	
 	

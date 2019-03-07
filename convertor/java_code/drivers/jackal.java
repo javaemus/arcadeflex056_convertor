@@ -32,8 +32,6 @@ public class jackal
 	
 	extern unsigned char *jackal_videoctrl;
 	
-	void jackal_init_machine(void);
-	void jackal_vh_stop(void);
 	
 	
 	

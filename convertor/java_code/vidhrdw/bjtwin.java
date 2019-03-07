@@ -83,14 +83,14 @@ public class bjtwin
 	
 	***************************************************************************/
 	
-	void nmk_vh_stop(void)
+	public static VhStopPtr nmk_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(spriteram_old);
 		free(spriteram_old2);
 		spriteram_old = NULL;
 		spriteram_old2 = NULL;
 		if (background_bitmap) bitmap_free(background_bitmap);
-	}
+	} };
 	
 	public static VhStartPtr bioship_vh_start = new VhStartPtr() { public int handler() 
 	{

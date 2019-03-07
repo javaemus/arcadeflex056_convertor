@@ -48,7 +48,6 @@ public class playmark
 	extern size_t bigtwin_bgvideoram_size;
 	extern data16_t *wbeachvl_videoram1,*wbeachvl_videoram2,*wbeachvl_videoram3;
 	
-	void bigtwin_vh_stop(void);
 	WRITE16_HANDLER( wbeachvl_txvideoram_w );
 	WRITE16_HANDLER( wbeachvl_fgvideoram_w );
 	WRITE16_HANDLER( wbeachvl_bgvideoram_w );

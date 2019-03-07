@@ -50,12 +50,12 @@ public class tehkanwc
 		return 0;
 	} };
 	
-	void tehkanwc_vh_stop(void)
+	public static VhStopPtr tehkanwc_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(dirtybuffer1);
 		bitmap_free(tmpbitmap1);
 		generic_vh_stop();
-	}
+	} };
 	
 	
 	

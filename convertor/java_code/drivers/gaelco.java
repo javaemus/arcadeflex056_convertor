@@ -21,7 +21,6 @@ public class gaelco
 	
 	/* from vidhrdw/gaelco.c */
 	WRITE16_HANDLER( gaelco_vram_w );
-	void gaelco_vh_stop(void);
 	
 	
 	#define TILELAYOUT8(NUM) static GfxLayout tilelayout8_##NUM = new GfxLayout\

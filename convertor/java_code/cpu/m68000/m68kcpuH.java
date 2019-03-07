@@ -919,16 +919,8 @@ public class m68kcpuH
 	
 	INLINE void m68ki_exception_trap(uint vector);
 	INLINE void m68ki_exception_trapN(uint vector);
-	INLINE void m68ki_exception_trace(void);
-	INLINE void m68ki_exception_privilege_violation(void);
-	INLINE void m68ki_exception_1010(void);
-	INLINE void m68ki_exception_1111(void);
-	INLINE void m68ki_exception_illegal(void);
-	INLINE void m68ki_exception_format_error(void);
-	INLINE void m68ki_exception_address_error(void);
-	INLINE void m68ki_exception_interrupt(uint int_level);
-	INLINE void m68ki_check_interrupts(void);            /* ASG: check for interrupts */
-	
+	INLINE INLINE INLINE INLINE INLINE INLINE INLINE INLINE void m68ki_exception_interrupt(uint int_level);
+	INLINE 
 	/* quick disassembly (used for logging) */
 	char* m68ki_disassemble_quick(unsigned int pc, unsigned int cpu_type);
 	

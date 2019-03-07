@@ -28,14 +28,12 @@ public class z8000H
 	#define Z8000_HALT		0x0100	/* halted flag	*/
 	
 	/* PUBLIC FUNCTIONS */
-	extern void z8000_init(void);
-	extern unsigned z8000_get_context(void *dst);
+	extern extern unsigned z8000_get_context(void *dst);
 	extern void z8000_set_context(void *src);
 	extern unsigned z8000_get_reg(int regnum);
 	extern void z8000_set_reg(int regnum, unsigned val);
 	extern void z8000_reset(void *param);
-	extern void z8000_exit(void);
-	extern int	z8000_execute(int cycles);
+	extern extern int	z8000_execute(int cycles);
 	extern void z8000_set_irq_line(int irqline, int state);
 	extern void z8000_set_irq_callback(int (*callback)(int irqline));
 	extern const char *z8000_info(void *context, int regnum);

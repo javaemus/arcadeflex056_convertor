@@ -260,7 +260,7 @@ public class atarisy1
 	 *
 	 *************************************/
 	
-	void atarisys1_vh_stop(void)
+	public static VhStopPtr atarisys1_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		atarian_free();
 		atarimo_free();
@@ -268,7 +268,7 @@ public class atarisy1
 		bitmap_free(priority_copy);
 		bitmap_free(trans_bitmap_mo);
 		bitmap_free(trans_bitmap_pf);
-	}
+	} };
 	
 	
 	

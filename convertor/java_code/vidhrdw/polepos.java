@@ -171,11 +171,11 @@ public class polepos
 		return 0;
 	} };
 	
-	void polepos_vh_stop(void)
+	public static VhStopPtr polepos_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free(view_bitmap);
 		free(view_dirty);
-	}
+	} };
 	
 	
 	/***************************************************************************

@@ -32,7 +32,6 @@ public class toki
 	extern data16_t *toki_sprites_dataram16;
 	extern data16_t *toki_scrollram16;
 	
-	void toki_eof_callback(void);
 	void toki_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void tokib_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	WRITE16_HANDLER( toki_background1_videoram16_w );

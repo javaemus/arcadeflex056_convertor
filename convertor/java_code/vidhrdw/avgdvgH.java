@@ -38,7 +38,5 @@ void avg_init_palette_astdelux  (unsigned char *palette, unsigned short *colorta
  * right now, but in src/vidhrdw/avgdvg.c itself. */
 WRITE16_HANDLER( quantum_colorram_w );
 
-void dvg_stop(void);
-void avg_stop(void);
 
 #endif

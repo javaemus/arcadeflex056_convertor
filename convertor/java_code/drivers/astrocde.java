@@ -83,14 +83,11 @@ public class astrocde
 	void seawolf2_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
-	void astrocde_vh_stop(void);
 	
 	int  wow_sh_start(const struct MachineSound *msound);
-	void wow_sh_update(void);
 	
 	
 	int  gorf_sh_start(const struct MachineSound *msound);
-	void gorf_sh_update(void);
 	
 	
 	

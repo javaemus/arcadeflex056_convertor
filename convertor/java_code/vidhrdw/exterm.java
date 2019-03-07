@@ -88,9 +88,9 @@ public class exterm
 		return 0;
 	} };
 	
-	void exterm_vh_stop(void)
+	public static VhStopPtr exterm_vh_stop = new VhStopPtr() { public void handler() 
 	{
-	}
+	} };
 	
 	
 	

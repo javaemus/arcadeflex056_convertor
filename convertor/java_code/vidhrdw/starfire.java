@@ -64,11 +64,11 @@ public class starfire
 	 *
 	 *************************************/
 	
-	void starfire_vh_stop(void)
+	public static VhStopPtr starfire_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free(tmpbitmap);
 		free(scanline_dirty);
-	}
+	} };
 	
 	
 	

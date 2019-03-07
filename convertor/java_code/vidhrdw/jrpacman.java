@@ -110,11 +110,11 @@ public class jrpacman
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void jrpacman_vh_stop(void)
+	public static VhStopPtr jrpacman_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(dirtybuffer);
 		bitmap_free(tmpbitmap);
-	}
+	} };
 	
 	
 	

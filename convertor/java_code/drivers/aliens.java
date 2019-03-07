@@ -17,11 +17,9 @@ public class aliens
 {
 	
 	/* prototypes */
-	static void aliens_init_machine( void );
-	static void aliens_banking( int lines );
+	static static void aliens_banking( int lines );
 	
 	
-	void aliens_vh_stop( void );
 	void aliens_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

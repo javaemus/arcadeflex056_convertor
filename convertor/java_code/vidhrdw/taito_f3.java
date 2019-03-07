@@ -456,7 +456,7 @@ public class taito_f3
 		memcpy(spriteram32_buffered,spriteram32,spriteram_size);
 	}
 	
-	void f3_vh_stop (void)
+	public static VhStopPtr f3_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		if (DEBUG_F3) {
 			FILE *fp;
@@ -494,7 +494,7 @@ public class taito_f3
 			free(pivot_dirty);
 			pivot_dirty=0;
 		}
-	}
+	} };
 	
 	public static VhStartPtr f3_vh_start = new VhStartPtr() { public int handler() 
 	{

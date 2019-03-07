@@ -64,11 +64,11 @@ public class vendetta
 		return 0;
 	} };
 	
-	void vendetta_vh_stop(void)
+	public static VhStopPtr vendetta_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		K052109_vh_stop();
 		K053247_vh_stop();
-	}
+	} };
 	
 	
 	

@@ -107,8 +107,7 @@ public class m6809
 		 0,23,80, 1,	/* command line window (bottom rows) */
 	};
 	
-	INLINE void fetch_effective_address( void );
-	
+	INLINE 
 	/* 6809 Registers */
 	typedef struct
 	{

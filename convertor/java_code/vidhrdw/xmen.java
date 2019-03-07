@@ -66,11 +66,11 @@ public class xmen
 		return 0;
 	} };
 	
-	void xmen_vh_stop(void)
+	public static VhStopPtr xmen_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		K052109_vh_stop();
 		K053247_vh_stop();
-	}
+	} };
 	
 	
 	

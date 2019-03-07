@@ -401,15 +401,15 @@ public class toaplan2
 		free( spriteram16_next[controller] );
 		free(  spriteram16_new[controller] );
 	}
-	void toaplan2_0_vh_stop(void)
+	public static VhStopPtr toaplan2_0_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		toaplan2_vh_stop(0);
-	}
-	void toaplan2_1_vh_stop(void)
+	} };
+	public static VhStopPtr toaplan2_1_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		toaplan2_vh_stop(1);
 		toaplan2_vh_stop(0);
-	}
+	} };
 	
 	static int create_tilemaps_0(void)
 	{

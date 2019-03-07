@@ -195,14 +195,14 @@ public class phoenix
 	
 	***************************************************************************/
 	
-	void phoenix_vh_stop(void)
+	public static VhStopPtr phoenix_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(videoram_pg1);
 		free(videoram_pg2);
 	
 		videoram_pg1 = 0;
 		videoram_pg2 = 0;
-	}
+	} };
 	
 	
 	/***************************************************************************

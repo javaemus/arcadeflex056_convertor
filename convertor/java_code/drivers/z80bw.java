@@ -42,15 +42,11 @@ public class z80bw
 {
 	
 	
-	void invaders_vh_stop(void);
 	
 	void invadpt2_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void invaders_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	void astinvad_sh_update(void);
 	
-	void init_astinvad(void);
-	void init_spaceint(void);
 	
 	extern struct Samplesinterface astinvad_samples_interface;
 	

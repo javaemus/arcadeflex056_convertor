@@ -195,12 +195,12 @@ public class rallyx
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void rallyx_vh_stop(void)
+	public static VhStopPtr rallyx_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free(tmpbitmap1);
 		free(dirtybuffer2);
 		generic_vh_stop();
-	}
+	} };
 	
 	
 	

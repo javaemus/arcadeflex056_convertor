@@ -341,13 +341,13 @@ public class omegaf
 		return 0;
 	} };
 	
-	void omegaf_vh_stop(void)
+	public static VhStopPtr omegaf_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free( omegaf_bg0_videoram );
 		free( omegaf_bg1_videoram );
 		free( omegaf_bg2_videoram );
 		bitmap_free(bitmap_sp);
-	}
+	} };
 	
 	
 	/***************************************************************************

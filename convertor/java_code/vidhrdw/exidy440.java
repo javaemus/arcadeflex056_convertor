@@ -47,8 +47,6 @@ public class exidy440
 	static UINT8 topsecex_last_yscroll;
 	
 	/* function prototypes */
-	void exidy440_vh_stop(void);
-	void exidy440_update_firq(void);
 	void exidy440_update_callback(int param);
 	
 	static void scanline_callback(int param);
@@ -130,7 +128,7 @@ public class exidy440
 	 *
 	 *************************************/
 	
-	void exidy440_vh_stop(void)
+	public static VhStopPtr exidy440_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		/* free VRAM */
 		if (local_videoram)
@@ -151,7 +149,7 @@ public class exidy440
 		if (spriteram_buffer)
 			free(spriteram_buffer);
 		spriteram_buffer = NULL;
-	}
+	} };
 	
 	
 	

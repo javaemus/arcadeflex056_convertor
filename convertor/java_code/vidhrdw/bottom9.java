@@ -88,12 +88,12 @@ public class bottom9
 		return 0;
 	} };
 	
-	void bottom9_vh_stop(void)
+	public static VhStopPtr bottom9_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		K052109_vh_stop();
 		K051960_vh_stop();
 		K051316_vh_stop_0();
-	}
+	} };
 	
 	
 	

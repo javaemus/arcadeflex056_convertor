@@ -479,7 +479,7 @@ public class niyanpai
 		return 0;
 	} };
 	
-	void niyanpai_vh_stop(void)
+	public static VhStopPtr niyanpai_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(niyanpai_paltbl2);
 		free(niyanpai_paltbl1);
@@ -501,7 +501,7 @@ public class niyanpai
 		niyanpai_tmpbitmap2 = 0;
 		niyanpai_tmpbitmap1 = 0;
 		niyanpai_tmpbitmap0 = 0;
-	}
+	} };
 	
 	/******************************************************************************
 	

@@ -18,10 +18,8 @@ public class crimfght
 	
 	
 	/* prototypes */
-	static void crimfght_init_machine( void );
-	static void crimfght_banking( int lines );
+	static static void crimfght_banking( int lines );
 	
-	void crimfght_vh_stop( void );
 	void crimfght_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

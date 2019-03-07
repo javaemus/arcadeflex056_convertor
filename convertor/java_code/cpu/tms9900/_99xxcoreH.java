@@ -235,8 +235,7 @@ public class _99xxcoreH
 	static UINT16 decipheraddrbyte(UINT16 opcode);
 	static void contextswitch(UINT16 addr);
 	
-	static void field_interrupt(void);
-	
+	static 
 	/***************************/
 	/* Mame Interface Routines */
 	/***************************/
@@ -419,8 +418,7 @@ public class _99xxcoreH
 	static int disable_interrupt_recognition = 0;
 	
 	#if (TMS99XX_MODEL == TMS9995_ID)
-	static void reset_decrementer(void);
-	#endif
+	static #endif
 	
 	#if (TMS99XX_MODEL == TMS9900_ID)
 		/*16-bit data bus, 16-bit address bus*/

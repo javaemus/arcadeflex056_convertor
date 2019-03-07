@@ -105,11 +105,11 @@ public class ssozumo
 	} };
 	
 	
-	void ssozumo_vh_stop(void)
+	public static VhStopPtr ssozumo_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(dirtybuffer);
 		bitmap_free(tmpbitmap);
-	}
+	} };
 	
 	
 	void ssozumo_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)

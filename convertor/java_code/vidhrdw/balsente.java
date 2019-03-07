@@ -51,7 +51,6 @@ public class balsente
 	 *
 	 *************************************/
 	
-	void balsente_vh_stop(void);
 	
 	
 	
@@ -110,7 +109,7 @@ public class balsente
 	 *
 	 *************************************/
 	
-	void balsente_vh_stop(void)
+	public static VhStopPtr balsente_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		/* free the local video RAM array */
 		if (local_videoram)
@@ -126,7 +125,7 @@ public class balsente
 		if (scanline_palette)
 			free(scanline_palette);
 		scanline_palette = NULL;
-	}
+	} };
 	
 	
 	

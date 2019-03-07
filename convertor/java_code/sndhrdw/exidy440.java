@@ -123,8 +123,7 @@ public class exidy440
 	static void play_cvsd(int ch);
 	static void stop_cvsd(int ch);
 	
-	static void reset_sound_cache(void);
-	static INT16 *add_to_sound_cache(UINT8 *input, int address, int length, int bits, int frequency);
+	static static INT16 *add_to_sound_cache(UINT8 *input, int address, int length, int bits, int frequency);
 	static INT16 *find_or_add_to_sound_cache(int address, int length, int bits, int frequency);
 	
 	static void decode_and_filter_cvsd(UINT8 *data, int bytes, int maskbits, int frequency, INT16 *dest);
@@ -146,8 +145,7 @@ public class exidy440
 	static int wavlength;
 	
 	static void write_wav_header(int frequency);
-	static void finish_wav_file(void);
-	
+	static 
 	#endif
 	
 	

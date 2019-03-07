@@ -51,11 +51,11 @@ public class sidearms
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void sidearms_vh_stop(void)
+	public static VhStopPtr sidearms_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free(tmpbitmap2);
 		generic_vh_stop();
-	}
+	} };
 	
 	
 	

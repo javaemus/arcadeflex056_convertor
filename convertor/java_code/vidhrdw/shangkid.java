@@ -60,9 +60,9 @@ public class shangkid
 		return background?0:1;
 	} };
 	
-	void shangkid_vh_stop( void )
+	public static VhStopPtr shangkid_vh_stop = new VhStopPtr() { public void handler() 
 	{
-	}
+	} };
 	
 	public static WriteHandlerPtr shangkid_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

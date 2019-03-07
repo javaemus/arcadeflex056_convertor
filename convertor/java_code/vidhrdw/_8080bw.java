@@ -286,10 +286,10 @@ public class _8080bw
 	} };
 	
 	
-	void invaders_vh_stop(void)
+	public static VhStopPtr invaders_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		if (use_tmpbitmap)  generic_bitmapped_vh_stop();
-	}
+	} };
 	
 	
 	void invaders_flip_screen_w(int data)

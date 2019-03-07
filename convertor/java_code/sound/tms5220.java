@@ -72,11 +72,9 @@ public class tms5220
 	
 	
 	/* Static function prototypes */
-	static void process_command(void);
-	static int extract_bits(int count);
+	static static int extract_bits(int count);
 	static int parse_frame(int removeit);
-	static void check_buffer_low(void);
-	static void set_interrupt_state(int state);
+	static static void set_interrupt_state(int state);
 	
 	
 	#define DEBUG_5220	0

@@ -31,7 +31,6 @@ public class dday
 	static void *countdown_timer;
 	static int timer_value;
 	
-	void dday_vh_stop(void);
 	
 	
 	/* Note: There seems to be no way to reset this timer via hardware.
@@ -281,12 +280,12 @@ public class dday
 		return 0;
 	} };
 	
-	void dday_vh_stop(void)
+	public static VhStopPtr dday_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		if (main_bitmap)  bitmap_free(main_bitmap);
 	
 		stop_countdown_timer();
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr dday_bgvideoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)

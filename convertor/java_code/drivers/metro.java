@@ -98,7 +98,6 @@ public class metro
 	WRITE16_HANDLER( metro_vram_2_w );
 	
 	
-	void metro_vh_stop(void);
 	
 	void metro_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

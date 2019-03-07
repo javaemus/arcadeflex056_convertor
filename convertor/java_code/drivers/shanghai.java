@@ -719,10 +719,10 @@ public class shanghai
 		return HD63484_start();
 	} };
 	
-	void shanghai_vh_stop(void)
+	public static VhStopPtr shanghai_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		HD63484_stop();
-	}
+	} };
 	
 	void shanghai_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
 	{

@@ -52,8 +52,7 @@ public class ygv608
 	static struct mame_bitmap *work_bitmap = NULL;
 	
 	#ifdef MAME_DEBUG
-	static void ShowYGV608Registers( void );
-	static void dump_block( char *name, unsigned char *block, int len );
+	static static void dump_block( char *name, unsigned char *block, int len );
 	#endif
 	
 	/* interrupt generated every 1ms second */
@@ -409,13 +408,13 @@ public class ygv608
 		return 0;
 	} };
 	
-	void ygv608_vh_stop(void)
+	public static VhStopPtr ygv608_vh_stop = new VhStopPtr() { public void handler() 
 	{
 	#ifdef _ENABLE_ROTATE_ZOOM
 		if( work_bitmap )
 			bitmap_free( work_bitmap );
 	#endif
-	}
+	} };
 	
 	static void draw_sprites( struct mame_bitmap *bitmap )
 	{
@@ -836,9 +835,7 @@ public class ygv608
 	#endif
 	}
 	
-	static void HandleYGV608Reset( void );
-	static void HandleRomTransfers( void );
-	static void SetPreShortcuts( int reg, int data );
+	static static static void SetPreShortcuts( int reg, int data );
 	static void SetPostShortcuts( int reg );
 	
 	READ16_HANDLER( ygv608_r )

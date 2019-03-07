@@ -777,7 +777,6 @@ public class memoryH
 	***************************************************************************/
 	
 	/* ----- memory setup function ----- */
-	void		memory_shutdown(void);
 	void		memory_set_context(int activecpu);
 	
 	/* ----- dynamic bank handlers ----- */

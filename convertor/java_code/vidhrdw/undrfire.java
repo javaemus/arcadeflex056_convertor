@@ -26,7 +26,7 @@ public class undrfire
 	
 	/******************************************************************/
 	
-	void undrfire_vh_stop (void)
+	public static VhStopPtr undrfire_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(spritelist);
 		spritelist = 0;
@@ -34,7 +34,7 @@ public class undrfire
 		TC0100SCN_vh_stop();
 	
 		TC0480SCP_vh_stop();
-	}
+	} };
 	
 	public static VhStartPtr undrfire_vh_start = new VhStartPtr() { public int handler() 
 	{

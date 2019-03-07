@@ -30,7 +30,6 @@ public class zaxxon
 	#define FUTSPY_VID	2
 	
 	
-	void zaxxon_vh_stop(void);
 	
 	
 	/***************************************************************************
@@ -274,12 +273,12 @@ public class zaxxon
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void zaxxon_vh_stop(void)
+	public static VhStopPtr zaxxon_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		if (backgroundbitmap1)  bitmap_free(backgroundbitmap1);
 		if (backgroundbitmap2)  bitmap_free(backgroundbitmap2);
 		generic_vh_stop();
-	}
+	} };
 	
 	
 	/***************************************************************************

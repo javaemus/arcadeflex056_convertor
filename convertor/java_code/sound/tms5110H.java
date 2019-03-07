@@ -15,7 +15,6 @@
 
 
 
-void tms5110_reset(void);
 void tms5110_set_M0_callback(int (*func)(void));
 
 void tms5110_CTL_set(int data);

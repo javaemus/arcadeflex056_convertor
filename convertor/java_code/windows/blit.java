@@ -64,100 +64,14 @@ public class blit
 	//	IMPORTS
 	//============================================================
 	
-	extern void asmblit1_16_to_16_x1(void);
-	extern void asmblit1_16_to_16_x2(void);
-	extern void asmblit1_16_to_16_x3(void);
-	extern void asmblit1_16_to_24_x1(void);
-	extern void asmblit1_16_to_24_x2(void);
-	extern void asmblit1_16_to_24_x3(void);
-	extern void asmblit1_16_to_32_x1(void);
-	extern void asmblit1_16_to_32_x2(void);
-	extern void asmblit1_16_to_32_x3(void);
-	
-	extern void asmblit1_24_to_16_x1(void);
-	extern void asmblit1_24_to_16_x2(void);
-	extern void asmblit1_24_to_16_x3(void);
-	extern void asmblit1_24_to_24_x1(void);
-	extern void asmblit1_24_to_24_x2(void);
-	extern void asmblit1_24_to_24_x3(void);
-	extern void asmblit1_24_to_32_x1(void);
-	extern void asmblit1_24_to_32_x2(void);
-	extern void asmblit1_24_to_32_x3(void);
-	
-	extern void asmblit1_32_to_16_x1(void);
-	extern void asmblit1_32_to_16_x2(void);
-	extern void asmblit1_32_to_16_x3(void);
-	extern void asmblit1_32_to_24_x1(void);
-	extern void asmblit1_32_to_24_x2(void);
-	extern void asmblit1_32_to_24_x3(void);
-	extern void asmblit1_32_to_32_x1(void);
-	extern void asmblit1_32_to_32_x2(void);
-	extern void asmblit1_32_to_32_x3(void);
-	
-	extern void asmblit16_16_to_16_x1(void);
-	extern void asmblit16_16_to_16_x1_mmx(void);
-	extern void asmblit16_16_to_16_x2(void);
-	extern void asmblit16_16_to_16_x2_mmx(void);
-	extern void asmblit16_16_to_16_x3(void);
-	extern void asmblit16_16_to_16_x3_mmx(void);
-	extern void asmblit16_16_to_24_x1(void);
-	extern void asmblit16_16_to_24_x2(void);
-	extern void asmblit16_16_to_24_x3(void);
-	extern void asmblit16_16_to_32_x1(void);
-	extern void asmblit16_16_to_32_x1_mmx(void);
-	extern void asmblit16_16_to_32_x2(void);
-	extern void asmblit16_16_to_32_x2_mmx(void);
-	extern void asmblit16_16_to_32_x3(void);
-	extern void asmblit16_16_to_32_x3_mmx(void);
-	
-	extern void asmblit16_24_to_16_x1(void);
-	extern void asmblit16_24_to_16_x2(void);
-	extern void asmblit16_24_to_16_x3(void);
-	extern void asmblit16_24_to_24_x1(void);
-	extern void asmblit16_24_to_24_x2(void);
-	extern void asmblit16_24_to_24_x3(void);
-	extern void asmblit16_24_to_32_x1(void);
-	extern void asmblit16_24_to_32_x2(void);
-	extern void asmblit16_24_to_32_x3(void);
-	
-	extern void asmblit16_32_to_16_x1(void);
-	extern void asmblit16_32_to_16_x2(void);
-	extern void asmblit16_32_to_16_x3(void);
-	extern void asmblit16_32_to_24_x1(void);
-	extern void asmblit16_32_to_24_x2(void);
-	extern void asmblit16_32_to_24_x3(void);
-	extern void asmblit16_32_to_32_x1(void);
-	extern void asmblit16_32_to_32_x2(void);
-	extern void asmblit16_32_to_32_x3(void);
-	
-	extern void asmblit1_16_to_16_rgb(void);
-	extern void asmblit16_16_to_16_rgb(void);
-	extern void asmblit1_16_to_32_rgb(void);
-	extern void asmblit16_16_to_32_rgb(void);
-	
-	extern void asmblit_header(void);
-	extern void asmblit_header_dirty(void);
-	extern void asmblit_yloop_top(void);
-	extern void asmblit_yloop_top_dirty(void);
-	extern void asmblit_middlexloop_header(void);
-	extern void asmblit_middlexloop_header_dirty(void);
-	extern void asmblit_middlexloop_top(void);
-	extern void asmblit_middlexloop_top_dirty(void);
-	extern void asmblit_middlexloop_bottom(void);
-	extern void asmblit_middlexloop_bottom_dirty(void);
-	extern void asmblit_lastxloop_header(void);
-	extern void asmblit_lastxloop_header_dirty(void);
-	extern void asmblit_lastxloop_top(void);
-	extern void asmblit_lastxloop_top_dirty(void);
-	extern void asmblit_lastxloop_bottom(void);
-	extern void asmblit_lastxloop_bottom_dirty(void);
-	extern void asmblit_yloop_bottom_dirty(void);
-	extern void asmblit_yloop_bottom(void);
-	extern void asmblit_footer(void);
-	extern void asmblit_footer_dirty(void);
-	extern void asmblit_footer_mmx(void);
-	extern void asmblit_footer_mmx_dirty(void);
-	
+	extern extern extern extern extern extern extern extern extern 
+	extern extern extern extern extern extern extern extern extern 
+	extern extern extern extern extern extern extern extern extern 
+	extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern 
+	extern extern extern extern extern extern extern extern extern 
+	extern extern extern extern extern extern extern extern extern 
+	extern extern extern extern 
+	extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern 
 	extern extern 
 	
 	//============================================================

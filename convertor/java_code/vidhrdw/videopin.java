@@ -205,7 +205,7 @@ public class videopin
 	} };
 	
 	
-	void videopin_vh_stop(void)
+	public static VhStopPtr videopin_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		generic_vh_stop();
 	
@@ -213,6 +213,6 @@ public class videopin
 		if (videopin_backdrop)
 			artwork_free(&videopin_backdrop);
 	    videopin_backdrop = NULL;
-	}
+	} };
 	
 }

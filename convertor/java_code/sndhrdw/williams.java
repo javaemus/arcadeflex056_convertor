@@ -181,8 +181,7 @@ public class williams
 	static int williams_custom_start(const struct MachineSound *msound);
 	
 	static int dcs_custom_start(const struct MachineSound *msound);
-	static void dcs_custom_stop(void);
-	
+	static 
 	static void williams_cvsd_ym2151_irq(int state);
 	static void williams_adpcm_ym2151_irq(int state);
 	static void williams_cvsd_irqa(int state);
@@ -195,8 +194,7 @@ public class williams
 	static void counter_enable(int param);
 	
 	
-	static void update_counter(void);
-	static void cvsd_update(int num, INT16 *buffer, int length);
+	static static void cvsd_update(int num, INT16 *buffer, int length);
 	static void dac_update(int num, INT16 *buffer, int length);
 	
 	static INT16 get_next_cvsd_sample(int bit);
@@ -213,8 +211,7 @@ public class williams
 	static void dcs_dac_update(int num, INT16 *buffer, int length);
 	static WRITE16_HANDLER( dcs_speedup1_w );
 	static WRITE16_HANDLER( dcs_speedup2_w );
-	static void dcs_speedup_common(void);
-	
+	static 
 	
 	/***************************************************************************
 		PROCESSOR STRUCTURES

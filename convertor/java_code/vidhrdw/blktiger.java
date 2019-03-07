@@ -75,11 +75,11 @@ public class blktiger
 	
 	***************************************************************************/
 	
-	void blktiger_vh_stop(void)
+	public static VhStopPtr blktiger_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(scroll_ram);
 		scroll_ram = NULL;
-	}
+	} };
 	
 	public static VhStartPtr blktiger_vh_start = new VhStartPtr() { public int handler() 
 	{

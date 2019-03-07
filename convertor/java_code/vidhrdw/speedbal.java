@@ -122,13 +122,13 @@ public class speedbal
 	
 	} };
 	
-	void speedbal_vh_stop (void)
+	public static VhStopPtr speedbal_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		bitmap_free (bitmap_ch);
 		bitmap_free (bitmap_bg);
 		free (bg_dirtybuffer);
 		free (ch_dirtybuffer);
-	}
+	} };
 	
 	
 	

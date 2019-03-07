@@ -23,10 +23,8 @@ public class cbasebal
 	
 	
 	/* in machine/kabuki.c */
-	void pang_decode(void);
 	
 	
-	void cbasebal_vh_stop(void);
 	void cbasebal_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

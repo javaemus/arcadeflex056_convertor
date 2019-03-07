@@ -97,7 +97,7 @@ public class fromance
 	 *
 	 *************************************/
 	
-	void fromance_vh_stop(void)
+	public static VhStopPtr fromance_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		/* free all RAM */
 		free(local_paletteram);
@@ -106,7 +106,7 @@ public class fromance
 		local_videoram[1] = 0;
 		free(local_videoram[0]);
 		local_videoram[0] = 0;
-	}
+	} };
 	
 	
 	

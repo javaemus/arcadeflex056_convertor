@@ -285,10 +285,10 @@ public class cclimber
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void cclimber_vh_stop(void)
+	public static VhStopPtr cclimber_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		generic_vh_stop();
-	}
+	} };
 	
 	
 	

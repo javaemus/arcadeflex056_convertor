@@ -33,7 +33,6 @@ public class lastduel
 	WRITE16_HANDLER( madgear_scroll2_w );
 	WRITE16_HANDLER( lastduel_scroll_w );
 	void lastduel_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void lastduel_eof_callback(void);
 	
 	extern data16_t *lastduel_vram,*lastduel_scroll2,*lastduel_scroll1;
 	

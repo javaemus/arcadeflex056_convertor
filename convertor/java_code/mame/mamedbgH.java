@@ -104,12 +104,9 @@ public class mamedbgH
 	extern const char *set_ea_info( int what, unsigned address, int size, int acc );
 	
 	/* Startup and shutdown functions; called from cpu_run */
-	extern void mame_debug_init(void);
-	extern void mame_debug_exit(void);
-	
+	extern extern 
 	/* This is the main entry into the mame debugger */
-	extern void MAME_Debug(void);
-	
+	extern 
 	extern int debug_trace_delay;	/* set to 0 to force a screen update */
 	
 	/***************************************************************************

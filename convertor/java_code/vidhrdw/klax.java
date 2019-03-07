@@ -101,11 +101,11 @@ public class klax
 	 *
 	 *************************************/
 	
-	void klax_vh_stop(void)
+	public static VhStopPtr klax_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		atarimo_free();
 		ataripf_free();
-	}
+	} };
 	
 	
 	

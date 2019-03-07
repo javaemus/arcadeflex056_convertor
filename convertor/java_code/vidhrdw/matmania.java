@@ -172,13 +172,13 @@ public class matmania
 	  Stop the video hardware emulation.
 	
 	***************************************************************************/
-	void matmania_vh_stop(void)
+	public static VhStopPtr matmania_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(dirtybuffer);
 		free(dirtybuffer2);
 		bitmap_free(tmpbitmap);
 		bitmap_free(tmpbitmap2);
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr matmania_videoram3_w = new WriteHandlerPtr() {public void handler(int offset, int data)

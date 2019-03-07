@@ -101,7 +101,6 @@ public class bosco
 	static int credits;
 	
 	void bosco_sample_play(int, int);
-	void bosco_vh_interrupt(void);
 	
 	static void *nmi_timer_1, *nmi_timer_2;
 	

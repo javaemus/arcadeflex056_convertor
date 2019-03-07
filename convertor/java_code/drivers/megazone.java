@@ -16,7 +16,6 @@ public class megazone
 {
 	
 	
-	void konami1_decode(void);
 	
 	extern unsigned char *megazone_scrollx;
 	extern unsigned char *megazone_scrolly;
@@ -30,7 +29,6 @@ public class megazone
 	static int i8039_irqenable;
 	static int i8039_status;
 	
-	void megazone_vh_stop(void);
 	
 	void megazone_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void megazone_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

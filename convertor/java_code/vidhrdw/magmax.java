@@ -251,14 +251,14 @@ public class magmax
 	
 	}
 	
-	void magmax_vh_stop(void)
+	public static VhStopPtr magmax_vh_stop = new VhStopPtr() { public void handler() 
 	{
 		free(prom_tab);
 		prom_tab = 0;
 	
 		bitmap_free(tmpbitmap);
 		tmpbitmap = 0;
-	}
+	} };
 	
 	public static VhStartPtr magmax_vh_start = new VhStartPtr() { public int handler() 
 	{

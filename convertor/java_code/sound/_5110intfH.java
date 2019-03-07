@@ -12,12 +12,9 @@ struct TMS5110interface
 };
 
 int tms5110_sh_start(const struct MachineSound *msound);
-void tms5110_sh_stop(void);
-void tms5110_sh_update(void);
 
 
 
-void tms5110_reset(void);
 void tms5110_set_frequency(int frequency);
 
 #endif

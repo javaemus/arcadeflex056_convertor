@@ -19,7 +19,6 @@ public class mcrH
 	
 	/************ Generic MCR routines ***************/
 	
-	void mcr_sound_init(void);
 	
 	void ssio_reset_w(int state);
 	
