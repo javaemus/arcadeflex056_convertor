@@ -568,7 +568,7 @@ public class twin16
 		}
 	}
 	
-	void twin16_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh ){
+	public static VhUpdatePtr twin16_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int fullrefresh) {
 		if( twin16_spriteram_process_enable() && need_process_spriteram ) twin16_spriteram_process();
 		need_process_spriteram = 1;
 	
@@ -579,5 +579,5 @@ public class twin16
 		draw_text( bitmap );
 	
 		show_video_register( bitmap );
-	}
+	} };
 }

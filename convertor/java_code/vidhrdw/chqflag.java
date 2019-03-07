@@ -102,7 +102,7 @@ public class chqflag
 	
 	***************************************************************************/
 	
-	void chqflag_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh )
+	public static VhUpdatePtr chqflag_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int fullrefresh) 
 	{
 		fillbitmap(bitmap,Machine->pens[0],&Machine->visible_area);
 	
@@ -111,5 +111,5 @@ public class chqflag
 		K051316_zoom_draw_1(bitmap,TILEMAP_FRONT,0);
 		K051960_sprites_draw(bitmap,1,1);
 		K051316_zoom_draw_0(bitmap,0,0);
-	}
+	} };
 }

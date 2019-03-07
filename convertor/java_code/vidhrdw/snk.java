@@ -610,7 +610,7 @@ public class snk
 		}
 	}
 	
-	void tdfever_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh ){
+	public static VhUpdatePtr tdfever_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int fullrefresh) {
 		const unsigned char *ram = memory_region(REGION_CPU1);
 	//	shadows_visible = !shadows_visible;
 	
@@ -632,9 +632,9 @@ public class snk
 			unsigned char text_attributes = ram[0xc8c0];
 			tdfever_draw_text( bitmap, text_attributes, 0,0, 0xf800 );
 		}
-	}
+	} };
 	
-	void ftsoccer_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh ){
+	public static VhUpdatePtr ftsoccer_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int fullrefresh) {
 		const unsigned char *ram = memory_region(REGION_CPU1);
 	//	shadows_visible = !shadows_visible;
 		{
@@ -655,7 +655,7 @@ public class snk
 			unsigned char text_attributes = ram[0xc8c0];
 			tdfever_draw_text( bitmap, text_attributes, 0,0, 0xf800 );
 		}
-	}
+	} };
 	
 	static void gwar_draw_sprites_16x16( struct mame_bitmap *bitmap, int xscroll, int yscroll ){
 		const struct GfxElement *gfx = Machine->gfx[2];

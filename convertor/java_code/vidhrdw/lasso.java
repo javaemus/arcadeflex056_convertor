@@ -352,7 +352,7 @@ public class lasso
 	
 	***************************************************************************/
 	
-	void lasso_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh )
+	public static VhUpdatePtr lasso_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int fullrefresh) 
 	{
 		int layers_ctrl = -1;
 	
@@ -369,9 +369,9 @@ public class lasso
 		else					fillbitmap(bitmap,Machine->pens[0],NULL);
 		if (layers_ctrl & 2)	draw_lasso(bitmap);
 		if (layers_ctrl & 4)	draw_sprites(bitmap, 0);
-	}
+	} };
 	
-	void chameleo_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh )
+	public static VhUpdatePtr chameleo_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int fullrefresh) 
 	{
 		int layers_ctrl = -1;
 	
@@ -388,10 +388,10 @@ public class lasso
 		else					fillbitmap(bitmap,Machine->pens[0],NULL);
 	//	if (layers_ctrl & 2)	draw_lasso(bitmap);
 		if (layers_ctrl & 4)	draw_sprites(bitmap, 0);
-	}
+	} };
 	
 	
-	void wwjgtin_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh )
+	public static VhUpdatePtr wwjgtin_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int fullrefresh) 
 	{
 		int layers_ctrl = -1;
 	
@@ -414,5 +414,5 @@ public class lasso
 	
 		if (layers_ctrl & 4)	draw_sprites(bitmap, 1);	// reverse order
 		if (layers_ctrl & 2)	tilemap_draw(bitmap, background,  0,0);
-	}
+	} };
 }

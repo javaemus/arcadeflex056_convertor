@@ -115,8 +115,6 @@ public class combatsc
 	void combascb_convert_color_prom( unsigned char *palette, unsigned short *colortable, const unsigned char *color_prom );
 	
 	
-	void combascb_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh );
-	void combasc_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh );
 	
 	
 	

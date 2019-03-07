@@ -52,11 +52,9 @@ public class tsamurai
 	
 	
 	
-	extern void tsamurai_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh );
-	extern extern unsigned char *tsamurai_videoram;
+	extern extern extern unsigned char *tsamurai_videoram;
 	
-	extern extern void vsgongf_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh );
-	
+	extern extern 
 	static AY8910interface ay8910_interface = new AY8910interface
 	(
 		1, /* number of chips */

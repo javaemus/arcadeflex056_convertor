@@ -153,12 +153,12 @@ public class cabal
 	}
 	
 	
-	void cabal_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh )
+	public static VhUpdatePtr cabal_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int fullrefresh) 
 	{
 		tilemap_draw(bitmap,background_layer,TILEMAP_IGNORE_TRANSPARENCY,0);
 		cabal_draw_sprites(bitmap);
 		tilemap_draw(bitmap,text_layer,0,0);
-	}
+	} };
 	
 	
 }

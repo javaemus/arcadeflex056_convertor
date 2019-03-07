@@ -41,9 +41,7 @@ public class marvins
 	**
 	***************************************************************************/
 	
-	extern extern void marvins_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh );
-	extern void madcrash_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh );
-	
+	extern extern extern 
 	/***************************************************************************
 	**
 	**	Sound System

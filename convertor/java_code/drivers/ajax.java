@@ -25,7 +25,6 @@ public class ajax
 	/* from machine/ajax.c */
 	
 	/* from vidhrdw/ajax.c */
-	void ajax_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh );
 	
 	/****************************************************************************/
 	

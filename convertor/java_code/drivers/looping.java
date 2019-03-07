@@ -175,11 +175,11 @@ public class looping
 		}
 	}
 	
-	void looping_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh )
+	public static VhUpdatePtr looping_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int fullrefresh) 
 	{
 		tilemap_draw( bitmap,tilemap,0,0 );
 		draw_sprites( bitmap );
-	}
+	} };
 	
 	public static WriteHandlerPtr looping_intack = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

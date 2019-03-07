@@ -496,7 +496,7 @@ public class combatsc
 	}
 	
 	
-	void combasc_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh )
+	public static VhUpdatePtr combasc_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int fullrefresh) 
 	{
 		int i;
 	
@@ -579,7 +579,7 @@ public class combatsc
 			clip.min_x = clip.max_x - 7;
 			fillbitmap(bitmap,Machine->pens[0],&clip);
 		}
-	}
+	} };
 	
 	
 	
@@ -656,7 +656,7 @@ public class combatsc
 		}
 	}
 	
-	void combascb_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh )
+	public static VhUpdatePtr combascb_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int fullrefresh) 
 	{
 		int i;
 	
@@ -684,5 +684,5 @@ public class combatsc
 		}
 	
 		tilemap_draw( bitmap,textlayer,0,0);
-	}
+	} };
 }

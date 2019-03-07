@@ -12,6 +12,3 @@ void lasso_vh_convert_color_prom  (unsigned char *palette,unsigned short *colort
 void wwjgtin_vh_convert_color_prom(unsigned char *palette,unsigned short *colortable,const unsigned char *color_prom);
 
 
-void lasso_vh_screenrefresh   ( struct mame_bitmap *bitmap, int fullrefresh );
-void chameleo_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh );
-void wwjgtin_vh_screenrefresh ( struct mame_bitmap *bitmap, int fullrefresh );

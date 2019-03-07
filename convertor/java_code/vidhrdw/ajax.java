@@ -113,7 +113,7 @@ public class ajax
 	
 	***************************************************************************/
 	
-	void ajax_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh )
+	public static VhUpdatePtr ajax_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int fullrefresh) 
 	{
 		K052109_tilemap_update();
 	
@@ -136,5 +136,5 @@ public class ajax
 		K052109_tilemap_draw(bitmap,0,0,8);
 	
 		K051960_sprites_draw(bitmap,-1,-1);
-	}
+	} };
 }

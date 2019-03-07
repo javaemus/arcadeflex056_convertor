@@ -322,7 +322,7 @@ public class marvins
 		}
 	}
 	
-	void marvins_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh )
+	public static VhUpdatePtr marvins_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int fullrefresh) 
 	{
 		unsigned char *mem = memory_region(REGION_CPU1);
 	
@@ -364,9 +364,9 @@ public class marvins
 		draw_sprites( bitmap, sprite_scrollx+29+1, sprite_scrolly, 1, sprite_partition );
 		tilemap_draw( bitmap,tx_tilemap,0 ,0);
 		draw_status( bitmap );
-	}
+	} };
 	
-	void madcrash_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh )
+	public static VhUpdatePtr madcrash_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int fullrefresh) 
 	{
 		extern int madcrash_vreg;
 		unsigned char *mem = memory_region(REGION_CPU1)+madcrash_vreg;
@@ -405,5 +405,5 @@ public class marvins
 	
 		tilemap_draw( bitmap,tx_tilemap,0 ,0);
 		draw_status( bitmap );
-	}
+	} };
 }

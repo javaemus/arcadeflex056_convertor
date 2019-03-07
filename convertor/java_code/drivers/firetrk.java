@@ -531,7 +531,7 @@ public class firetrk
 		}
 	}
 	
-	void firetruck_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh )
+	public static VhUpdatePtr firetruck_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int fullrefresh) 
 	{
 		draw_background( bitmap );
 		draw_text( bitmap );
@@ -539,7 +539,7 @@ public class firetrk
 	
 		// Map horn button onto discrete sound emulation
 		discrete_sound_w(0x01,input_port_6_r(0));
-	}
+	} };
 	
 	public static ReadHandlerPtr firetruck_dsw_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

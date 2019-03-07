@@ -21,7 +21,6 @@ public class chqflag
 	
 	
 	/* from vidhrdw/chqflag.c */
-	void chqflag_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh );
 	
 	public static InterruptPtr chqflag_interrupt = new InterruptPtr() { public int handler() 
 	{

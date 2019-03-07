@@ -244,7 +244,7 @@ public class bloodbro
 	
 	
 	
-	void bloodbro_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh )
+	public static VhUpdatePtr bloodbro_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int fullrefresh) 
 	{
 		tilemap_set_scrollx(bg_tilemap,0,bloodbro_scroll[0x10]);	/* ? */
 		tilemap_set_scrolly(bg_tilemap,0,bloodbro_scroll[0x11]);	/* ? */
@@ -257,9 +257,9 @@ public class bloodbro
 		tilemap_draw(bitmap,fg_tilemap,0,1);
 		bloodbro_draw_sprites(bitmap);
 		tilemap_draw(bitmap,tx_tilemap,0,0);
-	}
+	} };
 	
-	void weststry_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh )
+	public static VhUpdatePtr weststry_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int fullrefresh) 
 	{
 	//	tilemap_set_scrollx(bg_tilemap,0,bloodbro_scroll[0x10]);	/* ? */
 	//	tilemap_set_scrolly(bg_tilemap,0,bloodbro_scroll[0x11]);	/* ? */
@@ -272,10 +272,10 @@ public class bloodbro
 		tilemap_draw(bitmap,fg_tilemap,0,1);
 		weststry_draw_sprites(bitmap);
 		tilemap_draw(bitmap,tx_tilemap,0,0);
-	}
+	} };
 	
 	
-	void skysmash_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh )
+	public static VhUpdatePtr skysmash_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int fullrefresh) 
 	{
 		tilemap_set_scrollx(bg_tilemap,0,bloodbro_scroll[0x08]);
 		tilemap_set_scrolly(bg_tilemap,0,bloodbro_scroll[0x09]);	/* ? */
@@ -288,7 +288,7 @@ public class bloodbro
 		tilemap_draw(bitmap,fg_tilemap,0,1);
 		bloodbro_draw_sprites(bitmap);
 		tilemap_draw(bitmap,tx_tilemap,0,0);
-	}
+	} };
 	
 	
 }

@@ -49,8 +49,7 @@ package drivers;
 public class cabal
 {
 	
-	extern extern void cabal_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh );
-	WRITE16_HANDLER( cabal_flipscreen_w );
+	extern extern WRITE16_HANDLER( cabal_flipscreen_w );
 	WRITE16_HANDLER( cabal_background_videoram16_w );
 	WRITE16_HANDLER( cabal_text_videoram16_w );
 	

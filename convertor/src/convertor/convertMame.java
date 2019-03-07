@@ -178,6 +178,7 @@ public class convertMame {
                     Convertor.inpos = i;
                     break;
                 }
+                
                 case 'v': {
                     int j = Convertor.inpos;
                     if (!sUtil.getToken("void")) {
@@ -192,8 +193,7 @@ public class convertMame {
                     }
                     sUtil.skipSpace();
                     if (sUtil.getToken("struct mame_bitmap *bitmap,int full_refresh")
-                            || sUtil.getToken("struct mame_bitmap *bitmap, int full_refresh")
-                            ) {
+                            || sUtil.getToken("struct mame_bitmap *bitmap, int full_refresh")) {
                         sUtil.skipSpace();
                         if (sUtil.parseChar() != ')') {
                             Convertor.inpos = j;
@@ -205,6 +205,24 @@ public class convertMame {
                         }
                         if (Convertor.token[0].contains("vh_screenrefresh")) {
                             sUtil.putString((new StringBuilder()).append("public static VhUpdatePtr ").append(Convertor.token[0]).append(" = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) ").toString());
+                            type = VH_SCREENREFRESH;
+                            i3 = -1;
+                            continue;
+                        }
+
+                    }
+                    if (sUtil.getToken("struct mame_bitmap *bitmap, int fullrefresh")) {
+                        sUtil.skipSpace();
+                        if (sUtil.parseChar() != ')') {
+                            Convertor.inpos = j;
+                            break;
+                        }
+                        if (sUtil.getChar() == ';') {
+                            sUtil.skipLine();
+                            continue;
+                        }
+                        if (Convertor.token[0].contains("vh_screenrefresh")) {
+                            sUtil.putString((new StringBuilder()).append("public static VhUpdatePtr ").append(Convertor.token[0]).append(" = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int fullrefresh) ").toString());
                             type = VH_SCREENREFRESH;
                             i3 = -1;
                             continue;
@@ -756,9 +774,9 @@ public class convertMame {
                         }
                     }
 
-                    if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL 
-                            || type == READ_HANDLER8 || type == WRITE_HANDLER8 || type == MACHINE_INTERRUPT 
-                            || type == VH_START || type == VH_STOP ||type == VH_SCREENREFRESH) {
+                    if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL
+                            || type == READ_HANDLER8 || type == WRITE_HANDLER8 || type == MACHINE_INTERRUPT
+                            || type == VH_START || type == VH_STOP || type == VH_SCREENREFRESH) {
                         i3++;
                     }
                 }
@@ -855,8 +873,8 @@ public class convertMame {
                             continue;
                         }
                     }
-                    if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL 
-                            || type == READ_HANDLER8 || type == WRITE_HANDLER8 || type == MACHINE_INTERRUPT 
+                    if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL
+                            || type == READ_HANDLER8 || type == WRITE_HANDLER8 || type == MACHINE_INTERRUPT
                             || type == VH_START || type == VH_STOP || type == VH_SCREENREFRESH) {
                         i3--;
                         if (i3 == -1) {

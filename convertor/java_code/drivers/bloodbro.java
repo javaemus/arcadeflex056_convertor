@@ -52,10 +52,7 @@ package drivers;
 public class bloodbro
 {
 	
-	extern void bloodbro_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh );
-	extern void weststry_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh );
-	extern void skysmash_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh );
-	extern 
+	extern extern extern extern 
 	WRITE16_HANDLER( bloodbro_bgvideoram_w );
 	WRITE16_HANDLER( bloodbro_fgvideoram_w );
 	WRITE16_HANDLER( bloodbro_txvideoram_w );

@@ -197,7 +197,7 @@ public class tsamurai
 		}
 	}
 	
-	void tsamurai_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh )
+	public static VhUpdatePtr tsamurai_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int fullrefresh) 
 	{
 		int i;
 	
@@ -221,7 +221,7 @@ public class tsamurai
 		tilemap_draw(bitmap,background,0,0);
 		draw_sprites(bitmap);
 		tilemap_draw(bitmap,foreground,0,0);
-	}
+	} };
 	
 	/***************************************************************************
 	
@@ -259,7 +259,7 @@ public class tsamurai
 		return 0;
 	} };
 	
-	void vsgongf_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh )
+	public static VhUpdatePtr vsgongf_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int fullrefresh) 
 	{
 		static int k;
 		if( keyboard_pressed( KEYCODE_Q ) ){
@@ -271,5 +271,5 @@ public class tsamurai
 	
 		tilemap_draw(bitmap,foreground,0,0);
 		draw_sprites(bitmap);
-	}
+	} };
 }
