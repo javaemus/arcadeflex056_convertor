@@ -270,7 +270,7 @@ public class xexex
 		SWAP(2, 3)
 	}
 	int xdump = 0;
-	void xexex_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr xexex_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int layer[4];
 		int plane;
@@ -311,5 +311,5 @@ public class xexex
 		}
 	
 		K054157_tilemap_draw(bitmap, 0, 0, 0);
-	}
+	} };
 }

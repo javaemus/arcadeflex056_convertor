@@ -160,7 +160,7 @@ public class kingobox
 	
 	
 	
-	void kingobox_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr kingobox_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -243,9 +243,9 @@ public class kingobox
 					sx*8,sy*8,
 					&Machine->visible_area,TRANSPARENCY_PEN,0);
 		}
-	}
+	} };
 	
-	void ringking_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr ringking_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -324,5 +324,5 @@ public class kingobox
 					sx*8,sy*8,
 					&Machine->visible_area,TRANSPARENCY_PEN,0);
 		}
-	}
+	} };
 }

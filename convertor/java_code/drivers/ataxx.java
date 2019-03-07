@@ -111,7 +111,6 @@ public class ataxx
 	
 	
 	
-	void ataxx_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	
 	/* Internal routines */

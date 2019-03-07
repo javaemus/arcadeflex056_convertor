@@ -1496,7 +1496,7 @@ public class galaxian
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void galaxian_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr galaxian_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int x,y;
 		int offs,color_mask;
@@ -1669,7 +1669,7 @@ public class galaxian
 					sx,sy,
 					flip_screen_x ? spritevisibleareaflipx : spritevisiblearea,TRANSPARENCY_PEN,0);
 		}
-	}
+	} };
 	
 	
 	public static InterruptPtr hunchbks_vh_interrupt = new InterruptPtr() { public int handler() 

@@ -40,7 +40,6 @@ public class hanaawas
 	
 	
 	void hanaawas_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void hanaawas_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	public static ReadHandlerPtr hanaawas_input_port_0_r  = new ReadHandlerPtr() { public int handler(int offset)

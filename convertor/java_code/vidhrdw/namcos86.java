@@ -361,7 +361,7 @@ public class namcos86
 	
 	
 	
-	void namcos86_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr namcos86_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int layer;
 	
@@ -400,5 +400,5 @@ public class namcos86
 		usrintf_showmessage(buf);
 	}
 	#endif
-	}
+	} };
 }

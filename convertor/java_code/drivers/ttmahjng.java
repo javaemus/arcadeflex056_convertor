@@ -18,7 +18,6 @@ public class ttmahjng
 	extern size_t ttmahjng_videoram_size;
 	
 	void ttmahjng_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void ttmahjng_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	static int psel;

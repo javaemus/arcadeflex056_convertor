@@ -398,7 +398,7 @@ public class arabian
 	 *
 	 *************************************/
 	
-	void arabian_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr arabian_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		pen_t *colortable = &Machine->remapped_colortable[(arabian_video_control >> 3) << 8];
 		int y;
@@ -420,5 +420,5 @@ public class arabian
 				draw_scanline8(bitmap, 0, BITMAP_HEIGHT - 1 - y, BITMAP_WIDTH, scanline, colortable, -1);
 			}
 		}
-	}
+	} };
 }

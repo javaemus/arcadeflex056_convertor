@@ -415,10 +415,10 @@ public class retofinv
 	
 	***************************************************************************/
 	
-	void retofinv_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr retofinv_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		retofinv_draw_background(bitmap);
 		retofinv_render_sprites(bitmap);
 		retofinv_draw_foreground(bitmap);
-	}
+	} };
 }

@@ -304,7 +304,7 @@ public class toki
 	 *
 	 *************************************/
 	
-	void toki_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr toki_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int i,background_y_scroll,foreground_y_scroll,latch1,latch2;
 	
@@ -336,9 +336,9 @@ public class toki
 		}
 		toki_draw_sprites (bitmap);
 		tilemap_draw(bitmap,text_layer,0,0);
-	}
+	} };
 	
-	void tokib_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr tokib_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_set_scroll_rows(foreground_layer,1);
 		tilemap_set_scroll_rows(background_layer,1);
@@ -357,5 +357,5 @@ public class toki
 	
 		tokib_draw_sprites (bitmap);
 		tilemap_draw(bitmap,text_layer,0,0);
-	}
+	} };
 }

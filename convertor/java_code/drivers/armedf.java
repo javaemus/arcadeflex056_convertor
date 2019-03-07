@@ -28,7 +28,6 @@ package drivers;
 public class armedf
 {
 	
-	void armedf_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	WRITE16_HANDLER( armedf_bg_videoram_w );
 	WRITE16_HANDLER( armedf_fg_videoram_w );

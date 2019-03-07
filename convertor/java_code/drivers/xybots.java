@@ -34,7 +34,6 @@ public class xybots
 	 *
 	 *************************************/
 	
-	void xybots_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	
 	

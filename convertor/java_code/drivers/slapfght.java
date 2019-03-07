@@ -201,8 +201,6 @@ public class slapfght
 	extern unsigned char *slapfight_colorram;
 	extern size_t slapfight_videoram_size;
 	extern unsigned char *slapfight_scrollx_lo,*slapfight_scrollx_hi,*slapfight_scrolly;
-	void slapfight_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void perfrman_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	/* MACHINE */
 	

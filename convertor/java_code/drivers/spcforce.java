@@ -43,7 +43,6 @@ public class spcforce
 	
 	extern unsigned char *spcforce_scrollram;
 	
-	void spcforce_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	public static InterruptPtr spcforce_interrupt = new InterruptPtr() { public int handler() 

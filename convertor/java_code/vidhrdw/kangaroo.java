@@ -315,7 +315,7 @@ public class kangaroo
 	
 	***************************************************************************/
 	
-	void kangaroo_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr kangaroo_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int scrollx, scrolly;
 	
@@ -352,5 +352,5 @@ public class kangaroo
 			copyscrollbitmap(bitmap,tmpbitmap,1,&scrollx,1,&scrolly,&Machine->visible_area,TRANSPARENCY_NONE,0);
 			copybitmap(bitmap,tmpbitmap2,0,0,0,0,&Machine->visible_area,TRANSPARENCY_COLOR,16);
 		}
-	}
+	} };
 }

@@ -167,7 +167,7 @@ public class m90
 		markdirty(pf2_wide_layer,m90_video_control_data[0xc] & 0x2,offset);
 	} };
 	
-	void m90_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr m90_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		static int last_pf1,last_pf2;
 		int pf1_base = m90_video_control_data[0xa] & 0x3;
@@ -267,5 +267,5 @@ public class m90
 		}
 	
 		m90_drawsprites(bitmap);
-	}
+	} };
 }

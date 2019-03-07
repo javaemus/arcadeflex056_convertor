@@ -3,14 +3,6 @@ extern data16_t *f2_sprite_extension;
 extern size_t f2_spriteext_size;
 
 
-void taitof2_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-void taitof2_pri_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-void taitof2_pri_roz_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-void ssi_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-void thundfox_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-void deadconx_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-void metalb_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-void yesnoj_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 
 WRITE16_HANDLER( taitof2_spritebank_w );
 READ16_HANDLER ( koshien_spritebank_r );

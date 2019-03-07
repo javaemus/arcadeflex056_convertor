@@ -62,7 +62,6 @@ public class mappy
 	
 	
 	/* video driver data & functions */
-	void mappy_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void mappy_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	/* sound driver data & functions */

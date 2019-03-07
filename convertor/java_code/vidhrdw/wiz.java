@@ -274,7 +274,7 @@ public class wiz
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void wiz_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr wiz_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int bank;
 		const struct rectangle* visible_area;
@@ -289,15 +289,15 @@ public class wiz
 	
 		draw_sprites(bitmap, spriteram_2, 6,    visible_area);
 		draw_sprites(bitmap, spriteram  , bank, visible_area);
-	}
+	} };
 	
 	
-	void stinger_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr stinger_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		fillbitmap(bitmap,Machine->pens[bgpen],&Machine->visible_area);
 		draw_background(bitmap, 2 + char_bank[0], 1);
 		draw_foreground(bitmap, 1);
 		draw_sprites(bitmap, spriteram_2, 4, &Machine->visible_area);
 		draw_sprites(bitmap, spriteram  , 5, &Machine->visible_area);
-	}
+	} };
 }

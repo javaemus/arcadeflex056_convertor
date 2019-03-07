@@ -26,7 +26,6 @@ public class sbrkout
 {
 	
 	/* vidhrdw/sbrkout.c */
-	void sbrkout_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	extern unsigned char *sbrkout_horiz_ram;
 	extern unsigned char *sbrkout_vert_ram;
 	

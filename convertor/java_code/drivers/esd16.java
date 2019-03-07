@@ -38,7 +38,6 @@ public class esd16
 	WRITE16_HANDLER( esd16_vram_0_w );
 	WRITE16_HANDLER( esd16_vram_1_w );
 	
-	void esd16_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	/***************************************************************************

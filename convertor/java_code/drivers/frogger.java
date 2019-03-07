@@ -99,7 +99,6 @@ public class frogger
 	
 	
 	
-	void galaxian_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	READ_HANDLER(frogger_ppi8255_0_r);

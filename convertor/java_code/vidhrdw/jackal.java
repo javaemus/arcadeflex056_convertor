@@ -206,7 +206,7 @@ public class jackal
 	}
 	
 	
-	void jackal_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr jackal_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		unsigned char *sr, *ss;
 		int offs,i;
@@ -289,5 +289,5 @@ public class jackal
 		/* Draw the sprites. */
 		jackal_draw_sprites(bitmap,ss,0x0f5,3);
 		jackal_draw_sprites(bitmap,sr,0x500,1);
-	}
+	} };
 }

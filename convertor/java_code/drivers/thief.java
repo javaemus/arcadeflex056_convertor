@@ -38,7 +38,6 @@ public class thief
 	static UINT8 thief_input_select;
 	
 	
-	void thief_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	public static InterruptPtr thief_interrupt = new InterruptPtr() { public int handler() 

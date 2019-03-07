@@ -25,7 +25,6 @@ public class xain
 	
 	static unsigned char *xain_sharedram;
 	
-	void xain_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	extern unsigned char *xain_charram, *xain_bgram0, *xain_bgram1;
 	

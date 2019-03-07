@@ -16,7 +16,7 @@ public class snowbros
 {
 	
 	
-	void snowbros_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr snowbros_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int x=0,y=0,offs;
 	
@@ -84,9 +84,9 @@ public class snowbros
 						&Machine->visible_area,TRANSPARENCY_PEN,0);
 			}
 		}
-	}
+	} };
 	
-	void wintbob_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr wintbob_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -117,5 +117,5 @@ public class snowbros
 						&Machine->visible_area,TRANSPARENCY_PEN,0);
 			}
 		}
-	}
+	} };
 }

@@ -562,7 +562,7 @@ public class nemesis
 	
 	/******************************************************************************/
 	
-	void nemesis_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr nemesis_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -587,9 +587,9 @@ public class nemesis
 		draw_sprites(bitmap);
 		tilemap_draw(bitmap,background,1,0);
 		tilemap_draw(bitmap,foreground,1,0);
-	}
+	} };
 	
-	void twinbee_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr twinbee_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -624,9 +624,9 @@ public class nemesis
 	
 		tilemap_draw(bitmap,background,1,0);
 		tilemap_draw(bitmap,foreground,1,0);
-	}
+	} };
 	
-	void salamand_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr salamand_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 		struct rectangle clip;
@@ -690,5 +690,5 @@ public class nemesis
 	
 			tilemap_draw(bitmap,background,1,0);
 		}
-	}
+	} };
 }

@@ -20,7 +20,6 @@ public class bottom9
 	
 	extern int bottom9_video_enable;
 	
-	void bottom9_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

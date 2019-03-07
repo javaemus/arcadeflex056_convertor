@@ -214,11 +214,11 @@ public class xain
 		}
 	}
 	
-	void xain_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr xain_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_draw(bitmap,bgram0_tilemap,0,0);
 		tilemap_draw(bitmap,bgram1_tilemap,0,0);
 		draw_sprites(bitmap);
 		tilemap_draw(bitmap,char_tilemap,0,0);
-	}
+	} };
 }

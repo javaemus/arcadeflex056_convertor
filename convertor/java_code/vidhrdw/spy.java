@@ -80,7 +80,7 @@ public class spy
 	
 	***************************************************************************/
 	
-	void spy_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr spy_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		K052109_tilemap_update();
 	
@@ -93,5 +93,5 @@ public class spy
 											/* priority over layer B but not layer A. */
 		K051960_sprites_draw(bitmap,2,2);
 		K052109_tilemap_draw(bitmap,0,0,0);
-	}
+	} };
 }

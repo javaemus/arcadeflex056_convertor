@@ -293,7 +293,7 @@ public class contra
 		K007121_sprites_draw(bank,bitmap,source,base_color,40,0,-1);
 	}
 	
-	void contra_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr contra_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_set_scrollx( fg_tilemap,0, K007121_ctrlram[0][0x00] - 40 );
 		tilemap_set_scrolly( fg_tilemap,0, K007121_ctrlram[0][0x02] );
@@ -305,5 +305,5 @@ public class contra
 		draw_sprites( bitmap, 0 );
 		draw_sprites( bitmap, 1 );
 		tilemap_draw( bitmap, tx_tilemap, 0 ,0);
-	}
+	} };
 }

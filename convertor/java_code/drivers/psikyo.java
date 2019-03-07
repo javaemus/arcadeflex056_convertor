@@ -52,7 +52,6 @@ public class psikyo
 	WRITE32_HANDLER( psikyo_vram_0_w );
 	WRITE32_HANDLER( psikyo_vram_1_w );
 	
-	void psikyo_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	/* Variables only used here */
 	

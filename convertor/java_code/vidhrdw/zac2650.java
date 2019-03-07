@@ -173,7 +173,7 @@ public class zac2650
 	    spritebitmap = 0;
 	} };
 	
-	void tinvader_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr tinvader_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -282,5 +282,5 @@ public class zac2650
 	    if(SpriteCollision(1,2)) CollisionSprite |= 0x04;
 	    if(SpriteCollision(1,4)) CollisionSprite |= 0x02;
 	//  if(SpriteCollision(2,4)) CollisionSprite |= 0x01;	/* Not Used */
-	}
+	} };
 }

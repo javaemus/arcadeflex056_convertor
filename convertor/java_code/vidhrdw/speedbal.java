@@ -291,7 +291,7 @@ public class speedbal
 	 *				   *
 	 *************************************/
 	
-	void speedbal_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr speedbal_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		// first background
 		speedbal_draw_background (bitmap);
@@ -301,5 +301,5 @@ public class speedbal
 	
 		// thirth sprites
 		speedbal_draw_sprites (bitmap);
-	}
+	} };
 }

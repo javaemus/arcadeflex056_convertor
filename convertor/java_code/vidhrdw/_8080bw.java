@@ -37,12 +37,7 @@ public class _8080bw
 	static void (*plot_pixel_p)(int x, int y, int col);
 	
 	
-	static void vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	static void seawolf_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	static void blueshrk_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	static void desertgu_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	static void phantom2_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	
+	static static static static static 
 	static void plot_pixel_8080 (int x, int y, int col);
 	static void plot_pixel_8080_tmpbitmap (int x, int y, int col);
 	
@@ -541,13 +536,13 @@ public class _8080bw
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void invaders_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr invaders_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		vh_screenrefresh_p(bitmap, full_refresh);
-	}
+	} };
 	
 	
-	static void vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	static public static VhUpdatePtr vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		if (full_refresh)
 		{
@@ -564,7 +559,7 @@ public class _8080bw
 			osd_mark_dirty( sight_xc, sight_ys, sight_xc, sight_ye );
 			osd_mark_dirty( sight_xs, sight_yc, sight_xe, sight_yc );
 		}
-	}
+	} };
 	
 	
 	static void draw_sight(struct mame_bitmap *bitmap,int x_center, int y_center)
@@ -625,32 +620,32 @@ public class _8080bw
 	}
 	
 	
-	static void seawolf_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	static public static VhUpdatePtr seawolf_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* update the bitmap (and erase old cross) */
 		vh_screenrefresh(bitmap, full_refresh);
 	
 	    draw_sight(bitmap,((input_port_0_r(0) & 0x1f) * 8) + 4, 31);
-	}
+	} };
 	
-	static void blueshrk_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	static public static VhUpdatePtr blueshrk_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* update the bitmap (and erase old cross) */
 		vh_screenrefresh(bitmap, full_refresh);
 	
 	    draw_sight(bitmap,((input_port_0_r(0) & 0x7f) * 2) - 12, 31);
-	}
+	} };
 	
-	static void desertgu_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	static public static VhUpdatePtr desertgu_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* update the bitmap (and erase old cross) */
 		vh_screenrefresh(bitmap, full_refresh);
 	
 		draw_sight(bitmap,((input_port_0_r(0) & 0x7f) * 2) - 30,
 				   ((input_port_2_r(0) & 0x7f) * 2) - 30);
-	}
+	} };
 	
-	static void phantom2_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	static public static VhUpdatePtr phantom2_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		unsigned char *clouds;
 		int x, y;
@@ -678,7 +673,7 @@ public class _8080bw
 				}
 			}
 		}
-	}
+	} };
 	
 	
 	void invadpt2_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)

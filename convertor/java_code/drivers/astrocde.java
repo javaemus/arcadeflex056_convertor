@@ -77,10 +77,8 @@ public class astrocde
 	extern const char *gorf_sample_names[];
 	
 	void astrocde_init_palette(unsigned char *game_palette, unsigned short *game_colortable,const unsigned char *color_prom);
-	void astrocde_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
-	void seawolf2_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

@@ -24,8 +24,6 @@ package drivers;
 public class ddragon3
 {
 	
-	void ddragon3_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void ctribe_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	WRITE16_HANDLER( ddragon3_scroll16_w );
 	
 	extern 

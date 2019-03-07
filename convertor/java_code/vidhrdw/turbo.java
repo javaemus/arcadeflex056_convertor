@@ -586,7 +586,7 @@ public class turbo
 		drew_frame = 0;
 	}
 	
-	void turbo_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr turbo_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* update the sprite data */
 		update_sprite_info();
@@ -599,5 +599,5 @@ public class turbo
 	
 		/* indicate that we drew this frame, so that the eof callback doesn't bother doing anything */
 		drew_frame = 1;
-	}
+	} };
 }

@@ -19,7 +19,6 @@ public class strnskil
 	
 	void strnskil_vh_convert_color_prom(unsigned char *palette,
 		unsigned short *colortable,const unsigned char *color_prom);
-	void strnskil_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	static UINT8 *strnskil_sharedram;
 	

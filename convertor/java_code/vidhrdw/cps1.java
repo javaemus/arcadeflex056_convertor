@@ -1728,7 +1728,7 @@ public class cps1
 	
 	***************************************************************************/
 	
-	void cps1_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr cps1_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 	    int layercontrol,l0,l1,l2,l3;
 		int videocontrol=cps1_port(0x22);
@@ -1848,7 +1848,7 @@ public class cps1
 			cps1_dump_video();
 		}
 	#endif
-	}
+	} };
 	
 	void cps1_eof_callback(void)
 	{

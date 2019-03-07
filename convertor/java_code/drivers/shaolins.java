@@ -21,7 +21,6 @@ public class shaolins
 	extern unsigned char *shaolins_scroll;
 	
 	void shaolins_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void shaolins_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	public static InterruptPtr shaolins_interrupt = new InterruptPtr() { public int handler() 

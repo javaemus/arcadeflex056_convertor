@@ -1265,7 +1265,7 @@ public class victory
 	 *
 	 *************************************/
 	
-	void victory_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr victory_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int bgcollmask = (video_control & 4) ? 4 : 7;
 		int count = 0;
@@ -1299,5 +1299,5 @@ public class victory
 	
 		/* indicate that we already did collision detection */
 		update_complete = 1;
-	}
+	} };
 }

@@ -203,7 +203,7 @@ public class pengo
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void pengo_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr pengo_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -302,5 +302,5 @@ public class pengo
 					sx - 256,sy + xoffsethack,
 					&spritevisiblearea,TRANSPARENCY_COLOR,0);
 	    }
-	}
+	} };
 }

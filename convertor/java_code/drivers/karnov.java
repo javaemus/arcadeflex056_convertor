@@ -46,7 +46,6 @@ public class karnov
 {
 	
 	void karnov_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void karnov_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	WRITE16_HANDLER( karnov_playfield_w );
 	WRITE16_HANDLER( karnov_videoram_w );
 	void karnov_flipscreen_w(int data);

@@ -67,7 +67,7 @@ public class olibochu
 	
 	
 	
-	void olibochu_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr olibochu_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -126,7 +126,7 @@ public class olibochu
 					sx,sy,
 					&Machine->visible_area,TRANSPARENCY_PEN,0);
 		}
-	}
+	} };
 	
 	
 	

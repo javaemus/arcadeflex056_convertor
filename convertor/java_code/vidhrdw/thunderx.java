@@ -85,7 +85,7 @@ public class thunderx
 	
 	***************************************************************************/
 	
-	void scontra_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr scontra_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		K052109_tilemap_update();
 	
@@ -106,5 +106,5 @@ public class thunderx
 		K052109_tilemap_draw(bitmap,0,0,4);
 	
 		K051960_sprites_draw(bitmap,-1,-1);
-	}
+	} };
 }

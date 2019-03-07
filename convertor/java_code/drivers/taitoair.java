@@ -174,7 +174,6 @@ public class taitoair
 	
 	static data16_t *taitoh_68000_mainram;
 	
-	void		recordbr_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	static WRITE16_HANDLER( airsys_paletteram16_w )	/* xxBBBBxRRRRxGGGG */

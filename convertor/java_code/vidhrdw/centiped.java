@@ -144,7 +144,7 @@ public class centiped
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void centiped_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr centiped_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -209,5 +209,5 @@ public class centiped
 					flip_screen ? &spritevisiblearea_flip : &spritevisiblearea,
 					TRANSPARENCY_PEN,0);
 		}
-	}
+	} };
 }

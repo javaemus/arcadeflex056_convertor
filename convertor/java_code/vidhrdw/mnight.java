@@ -208,7 +208,7 @@ public class mnight
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void mnight_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr mnight_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int scrollx,scrolly;
 	
@@ -233,5 +233,5 @@ public class mnight
 			mnight_draw_foreground(bitmap);
 		}
 	
-	}
+	} };
 }

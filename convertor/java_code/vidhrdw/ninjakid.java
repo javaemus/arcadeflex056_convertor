@@ -265,7 +265,7 @@ public class ninjakid
 		}
 	}
 	
-	void ninjakid_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr ninjakid_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs,chr,col,px,py,x,y;
 	
@@ -307,5 +307,5 @@ public class ninjakid
 		}
 	
 	
-	}
+	} };
 }

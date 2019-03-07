@@ -161,12 +161,12 @@ public class ultraman
 	
 	***************************************************************************/
 	
-	void ultraman_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr ultraman_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		K051316_zoom_draw_2(bitmap,0,0);
 		K051316_zoom_draw_1(bitmap,0,0);
 		K051960_sprites_draw(bitmap,0,0);
 		K051316_zoom_draw_0(bitmap,0,0);
 		K051960_sprites_draw(bitmap,1,1);
-	}
+	} };
 }

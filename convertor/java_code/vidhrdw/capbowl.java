@@ -110,7 +110,7 @@ public class capbowl
 	 *
 	 *************************************/
 	
-	void capbowl_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr capbowl_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int halfwidth = (Machine->visible_area.max_x - Machine->visible_area.min_x + 1) / 2;
 		struct tms34061_display state;
@@ -163,5 +163,5 @@ public class capbowl
 				draw_scanline8(bitmap, Machine->visible_area.min_x, y, halfwidth * 2, scanline, &Machine->pens[16 * y], -1);
 				state.dirty[y] = 0;
 			}
-	}
+	} };
 }

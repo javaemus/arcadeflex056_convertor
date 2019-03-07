@@ -78,7 +78,6 @@ public class exterm
 	/* Functions in vidhrdw/exterm.c */
 	void exterm_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
-	void exterm_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void exterm_to_shiftreg_master(unsigned int address, unsigned short* shiftreg);
 	void exterm_from_shiftreg_master(unsigned int address, unsigned short* shiftreg);
 	void exterm_to_shiftreg_slave(unsigned int address, unsigned short* shiftreg);

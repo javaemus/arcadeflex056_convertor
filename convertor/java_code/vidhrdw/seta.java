@@ -707,16 +707,16 @@ public class seta
 	***************************************************************************/
 	
 	/* For games without tilemaps */
-	void seta_vh_screenrefresh_no_layers(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr seta_vh_screenrefresh_no_layers = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		fillbitmap(bitmap,Machine->pens[0],&Machine->visible_area);
 		seta_draw_sprites(bitmap);
-	}
+	} };
 	
 	
 	
 	/* For games with 1 or 2 tilemaps */
-	void seta_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr seta_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int layers_ctrl = -1;
 		int enab_0, enab_1, x_0, x_1, y_0, y_1;
@@ -841,5 +841,5 @@ public class seta
 			}
 		}
 	
-	}
+	} };
 }

@@ -30,7 +30,6 @@ public class vball
 	extern int vb_scrollx_hi;
 	extern int vball_gfxset;
 	
-	void vb_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	extern void vb_bgprombank_w(int bank);
 	extern void vb_spprombank_w(int bank);
 	extern extern extern /* end of extern code & data */

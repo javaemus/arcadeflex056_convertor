@@ -86,7 +86,7 @@ public class asterix
 		SWAP(1,2)
 	}
 	
-	void asterix_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr asterix_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int layer[3];
 		int new_base;
@@ -144,5 +144,5 @@ public class asterix
 		K053245_sprites_draw(bitmap);
 	
 		K054157_tilemap_draw(bitmap, 2, 0, 0);
-	}
+	} };
 }

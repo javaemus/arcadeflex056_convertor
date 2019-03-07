@@ -121,7 +121,7 @@ public class meadows
 	/*************************************************************/
 	/* Screen refresh											 */
 	/*************************************************************/
-	void meadows_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr meadows_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int 	i;
 	
@@ -148,7 +148,7 @@ public class meadows
 		}
 		/* now draw the sprites */
 		meadows_draw_sprites(bitmap);
-	}
+	} };
 	
 	/*************************************************************/
 	/*                                                           */

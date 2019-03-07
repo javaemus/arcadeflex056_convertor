@@ -51,10 +51,7 @@ public class nemesis
 	WRITE16_HANDLER( nemesis_videoram2f_word_w );
 	READ16_HANDLER( nemesis_characterram_word_r );
 	WRITE16_HANDLER( nemesis_characterram_word_w );
-	void nemesis_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	void twinbee_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void salamand_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	WRITE16_HANDLER( salamander_palette_word_w );
 	

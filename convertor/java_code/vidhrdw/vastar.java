@@ -198,7 +198,7 @@ public class vastar
 		}
 	}
 	
-	void vastar_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr vastar_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int i;
 	
@@ -237,5 +237,5 @@ public class vastar
 			logerror("Unimplemented priority %X\n", *vastar_sprite_priority);
 			break;
 		}
-	}
+	} };
 }

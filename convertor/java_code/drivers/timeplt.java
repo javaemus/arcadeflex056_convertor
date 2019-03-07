@@ -53,7 +53,6 @@ public class timeplt
 	extern unsigned char *timeplt_videoram,*timeplt_colorram;
 	
 	void timeplt_vh_convert_color_prom(unsigned char *obsolete,unsigned short *colortable,const unsigned char *color_prom);
-	void timeplt_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

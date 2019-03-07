@@ -230,7 +230,7 @@ public class vulgus
 		}
 	}
 	
-	void vulgus_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr vulgus_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_set_scrollx(bg_tilemap, 0, vulgus_scroll_low[1] + 256 * vulgus_scroll_high[1]);
 		tilemap_set_scrolly(bg_tilemap, 0, vulgus_scroll_low[0] + 256 * vulgus_scroll_high[0]);
@@ -238,5 +238,5 @@ public class vulgus
 		tilemap_draw(bitmap,bg_tilemap,0,0);
 		draw_sprites(bitmap);
 		tilemap_draw(bitmap,fg_tilemap,0,0);
-	}
+	} };
 }

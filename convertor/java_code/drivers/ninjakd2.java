@@ -230,7 +230,6 @@ package drivers;
 public class ninjakd2
 {
 	
-	void ninjakd2_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	extern unsigned char 	*ninjakd2_scrolly_ram;
 	extern unsigned char 	*ninjakd2_scrollx_ram;

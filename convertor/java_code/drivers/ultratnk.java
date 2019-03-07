@@ -69,7 +69,7 @@ public class ultratnk
 			TRANSPARENCY_PEN, 0 );
 	}
 	
-	void ultratnk_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr ultratnk_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int code;
 		int sx,sy;
@@ -96,7 +96,7 @@ public class ultratnk
 		/* copy the character mapped graphics */
 		copybitmap(bitmap,tmpbitmap,0,0,0,0,&Machine->visible_area,TRANSPARENCY_NONE,0);
 		draw_sprites( bitmap );
-	}
+	} };
 	
 	public static WriteHandlerPtr da_latch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

@@ -123,7 +123,6 @@ public class digdug
 	extern unsigned char *digdug_sharedram;
 	
 	extern unsigned char *digdug_vlatches;
-	void digdug_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void digdug_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	extern unsigned char *pengo_soundregs;

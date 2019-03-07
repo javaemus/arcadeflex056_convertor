@@ -46,7 +46,6 @@ public class terracre
 	
 	
 	void terrac_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void terracre_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	//void terracre_vh_screenrefresh(struct mame_bitmap *bitmap);
 	WRITE16_HANDLER( terrac_videoram2_w );
 	READ16_HANDLER( terrac_videoram2_r );

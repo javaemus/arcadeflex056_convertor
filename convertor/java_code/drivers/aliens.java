@@ -20,7 +20,6 @@ public class aliens
 	static static void aliens_banking( int lines );
 	
 	
-	void aliens_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	static int palette_selected;

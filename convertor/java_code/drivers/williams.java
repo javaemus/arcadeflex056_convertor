@@ -561,8 +561,6 @@ public class williams
 	
 	
 	
-	void williams_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void williams2_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

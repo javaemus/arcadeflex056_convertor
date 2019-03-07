@@ -239,7 +239,7 @@ public class blmbycar
 	
 	***************************************************************************/
 	
-	void blmbycar_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr blmbycar_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int i,layers_ctrl = -1;
 	
@@ -275,5 +275,5 @@ public class blmbycar
 	
 		if (layers_ctrl&8)
 			blmbycar_draw_sprites(bitmap);
-	}
+	} };
 }

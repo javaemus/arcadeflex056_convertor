@@ -21,7 +21,7 @@ public class beezer
 		return ignore_interrupt();
 	} };
 	
-	void beezer_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr beezer_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int x, y;
 		const UINT8 *ram = memory_region(REGION_CPU1);
@@ -35,7 +35,7 @@ public class beezer
 					plot_pixel (bitmap, x, y, Machine->pens[(ram[0x80*y+x] >> 4)& 0x0f]);
 				}
 			}
-	}
+	} };
 	
 	public static WriteHandlerPtr beezer_map_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

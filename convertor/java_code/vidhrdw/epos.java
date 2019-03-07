@@ -107,7 +107,7 @@ public class epos
 	  To be used by bitmapped games not using sprites.
 	
 	***************************************************************************/
-	void epos_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr epos_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		if (full_refresh)
 		{
@@ -120,5 +120,5 @@ public class epos
 				epos_videoram_w(offs, videoram[offs]);
 			}
 		}
-	}
+	} };
 }

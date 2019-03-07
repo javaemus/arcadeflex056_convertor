@@ -177,8 +177,6 @@ public class dkong
 	
 	void dkong_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void dkong3_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void radarscp_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void dkong_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

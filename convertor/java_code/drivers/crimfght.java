@@ -20,7 +20,6 @@ public class crimfght
 	/* prototypes */
 	static static void crimfght_banking( int lines );
 	
-	void crimfght_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	public static WriteHandlerPtr crimfght_coin_w = new WriteHandlerPtr() {public void handler(int offset, int data)

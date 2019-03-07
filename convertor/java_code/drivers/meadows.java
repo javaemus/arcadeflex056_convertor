@@ -113,7 +113,6 @@ public class meadows
 	/* Externals                                                 */
 	/*                                                           */
 	/*************************************************************/
-	void meadows_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	int meadows_sh_start(const struct MachineSound *msound);
 	void meadows_sh_dac_w(int data);

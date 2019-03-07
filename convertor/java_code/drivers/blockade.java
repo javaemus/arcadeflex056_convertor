@@ -43,7 +43,6 @@ public class blockade
 	/* #define BLOCKADE_LOG 1 */
 	
 	/* in vidhrdw */
-	void blockade_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	/* These are used to simulate coin latch circuitry */

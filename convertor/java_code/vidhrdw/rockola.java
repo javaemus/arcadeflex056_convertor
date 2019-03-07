@@ -198,7 +198,7 @@ public class rockola
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void rockola_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr rockola_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -285,11 +285,11 @@ public class rockola
 					8*sx,8*sy,
 					&Machine->visible_area,TRANSPARENCY_PEN,0);
 		}
-	}
+	} };
 	
 	
 	/* Zarzon's background doesn't scroll, and the color code selection is different. */
-	void satansat_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr satansat_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -360,5 +360,5 @@ public class rockola
 					8*sx,8*sy,
 					&Machine->visible_area,TRANSPARENCY_PEN,0);
 		}
-	}
+	} };
 }

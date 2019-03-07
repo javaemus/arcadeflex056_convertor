@@ -160,7 +160,7 @@ public class galpanic
 		}
 	}
 	
-	void galpanic_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr galpanic_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* copy the temporary bitmap to the screen */
 		copybitmap(bitmap,tmpbitmap,0,0,0,0,&Machine->visible_area,TRANSPARENCY_NONE,0);
@@ -168,9 +168,9 @@ public class galpanic
 		draw_fgbitmap(bitmap);
 	
 		galpanic_draw_sprites(bitmap);
-	}
+	} };
 	
-	void comad_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr comad_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* copy the temporary bitmap to the screen */
 		copybitmap(bitmap,tmpbitmap,0,0,0,0,&Machine->visible_area,TRANSPARENCY_NONE,0);
@@ -178,5 +178,5 @@ public class galpanic
 		draw_fgbitmap(bitmap);
 	
 		comad_draw_sprites(bitmap);
-	}
+	} };
 }

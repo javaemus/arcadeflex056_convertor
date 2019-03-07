@@ -385,7 +385,7 @@ public class cclimber
 	}
 	
 	
-	void cclimber_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr cclimber_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -499,11 +499,11 @@ public class cclimber
 		if ((cclimber_bigspriteram[0] & 1) == 0)
 			/* draw the "big sprite" over sprites */
 			drawbigsprite(bitmap);
-	}
+	} };
 	
 	
 	
-	void swimmer_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr swimmer_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -617,5 +617,5 @@ public class cclimber
 		if ((cclimber_bigspriteram[0] & 1) == 0)
 			/* draw the "big sprite" over sprites */
 			drawbigsprite(bitmap);
-	}
+	} };
 }

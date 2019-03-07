@@ -174,7 +174,6 @@ public class spiders
 	/* VIDHRDW */
 	
 	void nyny_init_palette(unsigned char *obsolete,unsigned short *game_colortable,const unsigned char *color_prom);
-	void spiders_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	/* MACHINE */
 	

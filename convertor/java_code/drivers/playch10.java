@@ -310,8 +310,7 @@ public class playch10
 	
 	/* from vidhrdw */
 	extern extern extern void playch10_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	extern void playch10_vh_screenrefresh( struct mame_bitmap *bitmap, int full_refresh );
-	
+	extern 
 	/* from machine */
 	extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern int pc10_sdcs;
 	extern int pc10_nmi_enable;

@@ -165,7 +165,7 @@ public class toypop
 		}
 	}
 	
-	void toypop_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr toypop_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		register int offs, x, y;
 	
@@ -239,5 +239,5 @@ public class toypop
 				}
 			}
 		}
-	}
+	} };
 }

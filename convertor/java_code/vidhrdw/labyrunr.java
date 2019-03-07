@@ -151,7 +151,7 @@ public class labyrunr
 	
 	***************************************************************************/
 	
-	void labyrunr_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr labyrunr_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_set_scrollx(layer0,0,K007121_ctrlram[0][0x00] - 40);
 		tilemap_set_scrolly(layer0,0,K007121_ctrlram[0][0x02]);
@@ -159,5 +159,5 @@ public class labyrunr
 		tilemap_draw(bitmap,layer0,0,0);
 		K007121_sprites_draw(0,bitmap,spriteram,(K007121_ctrlram[0][6]&0x30)*2,40,0,-1);
 		tilemap_draw(bitmap,layer1,0,0);
-	}
+	} };
 }

@@ -63,9 +63,6 @@ public class locomotn
 	extern size_t rallyx_radarram_size;
 	extern unsigned char *rallyx_scrollx,*rallyx_scrolly;
 	void locomotn_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void locomotn_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void jungler_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void commsega_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	public static WriteHandlerPtr coin_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)

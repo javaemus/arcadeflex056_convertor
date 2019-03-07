@@ -6,6 +6,7 @@
 -Improved interruptPtr support
 -Added VH_START support
 -Improved forward reference functions and added VH_STOP
+-Added VH_UPDATE support
 
 01/02/2019
 ==========

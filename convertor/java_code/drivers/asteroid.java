@@ -151,7 +151,6 @@ public class asteroid
 	
 	
 	void llander_init_colors (unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void llander_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	public static WriteHandlerPtr astdelux_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)

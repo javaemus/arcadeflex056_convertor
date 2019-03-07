@@ -38,9 +38,7 @@ public class galivan
 {
 	
 	void galivan_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void galivan_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	void ninjemak_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	
 	

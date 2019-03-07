@@ -60,5 +60,4 @@ extern kaneko16_priority_t kaneko16_priority;
 
 
 
-void kaneko16_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 

@@ -563,7 +563,7 @@ public class leland
 	 *
 	 *************************************/
 	
-	void leland_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr leland_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		const UINT8 *background_prom = memory_region(REGION_USER1);
 		const struct GfxElement *gfx = Machine->gfx[0];
@@ -621,7 +621,7 @@ public class leland
 	
 		/* Merge the two bitmaps together */
 		copybitmap(bitmap, fgbitmap, 0, 0, 0, 0, &Machine->visible_area, TRANSPARENCY_BLEND, 6);
-	}
+	} };
 	
 	
 	
@@ -631,7 +631,7 @@ public class leland
 	 *
 	 *************************************/
 	
-	void ataxx_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr ataxx_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		const struct GfxElement *gfx = Machine->gfx[0];
 		int x, y, chunk;
@@ -679,5 +679,5 @@ public class leland
 	
 		/* Merge the two bitmaps together */
 		copybitmap(bitmap, fgbitmap, 0, 0, 0, 0, &Machine->visible_area, TRANSPARENCY_BLEND, 6);
-	}
+	} };
 }

@@ -175,7 +175,7 @@ public class citycon
 		palette_set_color(color,r,g,b);
 	}
 	
-	void citycon_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr citycon_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs,scroll;
 	
@@ -199,5 +199,5 @@ public class citycon
 		tilemap_draw(bitmap,bg_tilemap,0,0);
 		tilemap_draw(bitmap,fg_tilemap,0,0);
 		draw_sprites(bitmap);
-	}
+	} };
 }

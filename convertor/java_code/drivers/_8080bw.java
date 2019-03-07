@@ -100,7 +100,6 @@ public class _8080bw
 	
 	
 	
-	void invaders_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	void invadpt2_vh_convert_color_prom(unsigned char *pallete, unsigned short *colortable,const unsigned char *color_prom);
 	void helifire_vh_convert_color_prom(unsigned char *pallete, unsigned short *colortable,const unsigned char *color_prom);

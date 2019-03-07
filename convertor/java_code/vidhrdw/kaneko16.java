@@ -811,7 +811,7 @@ public class kaneko16
 	
 	***************************************************************************/
 	
-	void kaneko16_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr kaneko16_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int layers_flip_0, layers_flip_1 = 0;
 		int layers_ctrl = -1;
@@ -979,5 +979,5 @@ public class kaneko16
 	
 		if (layers_ctrl & (0xf<<16))
 			kaneko16_draw_sprites(bitmap, (layers_ctrl >> 16) & 0xf);
-	}
+	} };
 }

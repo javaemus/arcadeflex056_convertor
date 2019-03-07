@@ -82,8 +82,7 @@ public class skydiver
 {
 	
 	/* vidhrdw/skydiver.c */
-	extern void skydiver_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	
+	extern 
 	static int skydiver_nmion;
 	
 	public static ReadHandlerPtr skydiver_input_0_r  = new ReadHandlerPtr() { public int handler(int offset)

@@ -1329,7 +1329,7 @@ public class toaplan1
 	
 	
 	
-	void toaplan1_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr toaplan1_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* discover what data will be drawn */
 		toaplan1_find_sprites();
@@ -1337,9 +1337,9 @@ public class toaplan1
 	
 		toaplan1_render(bitmap);
 		toaplan1_sprite_render(bitmap);
-	}
+	} };
 	
-	void zerowing_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr zerowing_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* discover what data will be drawn */
 		toaplan1_find_sprites();
@@ -1347,9 +1347,9 @@ public class toaplan1
 	
 		zerowing_render(bitmap);
 		toaplan1_sprite_render(bitmap);
-	}
+	} };
 	
-	void demonwld_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr demonwld_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* discover what data will be drawn */
 		toaplan1_find_sprites();
@@ -1357,16 +1357,16 @@ public class toaplan1
 	
 		demonwld_render(bitmap);
 		toaplan1_sprite_render(bitmap);
-	}
+	} };
 	
-	void rallybik_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr rallybik_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* discover what data will be drawn */
 		rallybik_find_tiles();
 		rallybik_find_sprites();
 	
 		rallybik_render(bitmap);
-	}
+	} };
 	
 	
 	

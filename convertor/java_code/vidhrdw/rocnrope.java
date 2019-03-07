@@ -100,7 +100,7 @@ public class rocnrope
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void rocnrope_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr rocnrope_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -152,5 +152,5 @@ public class rocnrope
 					240-spriteram[offs],spriteram_2[offs + 1],
 					&Machine->visible_area,TRANSPARENCY_COLOR,0);
 		}
-	}
+	} };
 }

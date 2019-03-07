@@ -21,7 +21,6 @@ public class aeroboto
 	extern int aeroboto_charbank;
 	
 	void aeroboto_gfxctrl_w(int ofset,int data);
-	void aeroboto_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

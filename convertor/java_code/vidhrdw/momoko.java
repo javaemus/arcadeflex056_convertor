@@ -108,7 +108,7 @@ public class momoko
 	
 	/****************************************************************************/
 	
-	void momoko_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr momoko_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int x, y, dx, dy, rx, ry, radr, chr, sy, fx, fy, px, py, offs, col, pri, flip ;
 	
@@ -327,5 +327,5 @@ public class momoko
 				}
 			}
 		}
-	}
+	} };
 }

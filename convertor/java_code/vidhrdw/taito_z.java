@@ -1760,7 +1760,7 @@ public class taito_z
 	                        SCREEN REFRESH
 	**************************************************************/
 	
-	void contcirc_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr contcirc_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		UINT8 layer[3];
 	
@@ -1781,12 +1781,12 @@ public class taito_z
 		TC0100SCN_tilemap_draw(bitmap,0,layer[2],0,4);
 	
 		contcirc_draw_sprites_16x8(bitmap,7);
-	}
+	} };
 	
 	
 	/* Nightstr and ChaseHQ */
 	
-	void chasehq_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr chasehq_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		UINT8 layer[3];
 	
@@ -1807,10 +1807,10 @@ public class taito_z
 		TC0100SCN_tilemap_draw(bitmap,0,layer[2],0,4);
 	
 		chasehq_draw_sprites_16x16(bitmap,7);
-	}
+	} };
 	
 	
-	void bshark_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr bshark_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		UINT8 layer[3];
 	
@@ -1831,10 +1831,10 @@ public class taito_z
 		TC0100SCN_tilemap_draw(bitmap,0,layer[2],0,4);
 	
 		bshark_draw_sprites_16x8(bitmap,8);
-	}
+	} };
 	
 	
-	void sci_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr sci_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		UINT8 layer[3];
 	
@@ -1855,10 +1855,10 @@ public class taito_z
 		TC0100SCN_tilemap_draw(bitmap,0,layer[2],0,4);
 	
 		sci_draw_sprites_16x8(bitmap,6);
-	}
+	} };
 	
 	
-	void aquajack_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr aquajack_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		UINT8 layer[3];
 	
@@ -1879,10 +1879,10 @@ public class taito_z
 		TC0100SCN_tilemap_draw(bitmap,0,layer[2],0,4);
 	
 		aquajack_draw_sprites_16x8(bitmap,3);
-	}
+	} };
 	
 	
-	void spacegun_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr spacegun_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		UINT8 layer[3];
 	
@@ -2009,10 +2009,10 @@ public class taito_z
 	
 			draw_crosshair(bitmap,screenx,screeny,&Machine->visible_area);
 		}
-	}
+	} };
 	
 	
-	void dblaxle_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr dblaxle_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		UINT8 layer[5];
 		UINT16 priority;
@@ -2043,7 +2043,7 @@ public class taito_z
 		TC0480SCP_tilemap_draw(bitmap,layer[3],0,4);
 	
 		TC0480SCP_tilemap_draw(bitmap,layer[4],0,0);	/* Text layer */
-	}
+	} };
 	
 	
 }

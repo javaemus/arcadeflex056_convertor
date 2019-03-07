@@ -21,7 +21,6 @@ public class retofinv
 	
 	/* in vidhrdw */
 	void retofinv_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void retofinv_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	extern size_t retofinv_videoram_size;
 	extern unsigned char *retofinv_sprite_ram1;

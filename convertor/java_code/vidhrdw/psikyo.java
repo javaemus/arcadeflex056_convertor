@@ -313,7 +313,7 @@ public class psikyo
 	
 	***************************************************************************/
 	
-	void psikyo_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr psikyo_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int i, layers_ctrl = -1;
 	
@@ -418,5 +418,5 @@ public class psikyo
 	
 		/* Sprites can go below layer 1 (and 0?) */
 		if (layers_ctrl & 4)	psikyo_draw_sprites(bitmap);
-	}
+	} };
 }

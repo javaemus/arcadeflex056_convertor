@@ -250,7 +250,7 @@ public class wwfwfest
 		return 0;
 	} };
 	
-	void wwfwfest_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr wwfwfest_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		if (wwfwfest_pri == 0x0078) {
 			tilemap_set_scrolly( bg0_tilemap, 0, wwfwfest_bg0_scrolly  );
@@ -286,5 +286,5 @@ public class wwfwfest
 			wwfwfest_drawsprites(bitmap);
 			tilemap_draw(bitmap,fg0_tilemap,0,0);
 		}
-	}
+	} };
 }

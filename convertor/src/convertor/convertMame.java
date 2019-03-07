@@ -47,6 +47,7 @@ public class convertMame {
     static final int MACHINE_INTERRUPT = 19;
     static final int VH_START = 20;
     static final int VH_STOP = 21;
+    static final int VH_SCREENREFRESH = 22;
 
     public static void Convert() {
         Convertor.inpos = 0;//position of pointer inside the buffers
@@ -190,6 +191,26 @@ public class convertMame {
                         break;
                     }
                     sUtil.skipSpace();
+                    if (sUtil.getToken("struct mame_bitmap *bitmap,int full_refresh")
+                            || sUtil.getToken("struct mame_bitmap *bitmap, int full_refresh")
+                            ) {
+                        sUtil.skipSpace();
+                        if (sUtil.parseChar() != ')') {
+                            Convertor.inpos = j;
+                            break;
+                        }
+                        if (sUtil.getChar() == ';') {
+                            sUtil.skipLine();
+                            continue;
+                        }
+                        if (Convertor.token[0].contains("vh_screenrefresh")) {
+                            sUtil.putString((new StringBuilder()).append("public static VhUpdatePtr ").append(Convertor.token[0]).append(" = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) ").toString());
+                            type = VH_SCREENREFRESH;
+                            i3 = -1;
+                            continue;
+                        }
+
+                    }
                     if (sUtil.getToken("void"))//an to soma tis function einai (void)
                     {
                         sUtil.skipSpace();
@@ -735,7 +756,9 @@ public class convertMame {
                         }
                     }
 
-                    if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL || type == READ_HANDLER8 || type == WRITE_HANDLER8 || type == MACHINE_INTERRUPT || type == VH_START ||type == VH_STOP) {
+                    if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL 
+                            || type == READ_HANDLER8 || type == WRITE_HANDLER8 || type == MACHINE_INTERRUPT 
+                            || type == VH_START || type == VH_STOP ||type == VH_SCREENREFRESH) {
                         i3++;
                     }
                 }
@@ -832,7 +855,9 @@ public class convertMame {
                             continue;
                         }
                     }
-                    if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL || type == READ_HANDLER8 || type == WRITE_HANDLER8 || type == MACHINE_INTERRUPT || type == VH_START || type == VH_STOP) {
+                    if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL 
+                            || type == READ_HANDLER8 || type == WRITE_HANDLER8 || type == MACHINE_INTERRUPT 
+                            || type == VH_START || type == VH_STOP || type == VH_SCREENREFRESH) {
                         i3--;
                         if (i3 == -1) {
                             sUtil.putString("} };");

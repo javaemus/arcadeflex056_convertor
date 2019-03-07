@@ -20,7 +20,6 @@ public class rastan
 	WRITE16_HANDLER( rastan_spritectrl_w );
 	WRITE16_HANDLER( rastan_spriteflip_w );
 	
-	void rastan_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	static int banknum = -1;

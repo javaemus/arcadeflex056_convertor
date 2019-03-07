@@ -178,13 +178,13 @@ public class tigeroad
 	
 	
 	
-	void tigeroad_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr tigeroad_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		render_background( bitmap,0 );
 		render_sprites( bitmap );
 		render_background( bitmap,1 );
 		render_text( bitmap );
-	}
+	} };
 	
 	void tigeroad_eof_callback(void)
 	{

@@ -227,7 +227,7 @@ public class beathead
 	 *
 	 *************************************/
 	
-	void beathead_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr beathead_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int x, y;
 	
@@ -244,5 +244,5 @@ public class beathead
 			/* then draw it */
 			draw_scanline8(bitmap, 0, y, 336, scanline, &Machine->pens[scanline_palette[y] * 256], -1);
 		}
-	}
+	} };
 }

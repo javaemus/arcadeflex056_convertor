@@ -21,8 +21,6 @@ package drivers;
 public class tumblep
 {
 	
-	void tumblep_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void tumblepb_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	WRITE16_HANDLER( tumblep_pf1_data_w );
 	WRITE16_HANDLER( tumblep_pf2_data_w );

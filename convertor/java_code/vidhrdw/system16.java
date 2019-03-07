@@ -1271,7 +1271,7 @@ public class system16
 		tilemap_set_enable( foreground2, sys18_fg2_active );
 	}
 	
-	void sys16_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh){
+	public static VhUpdatePtr sys16_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) {
 		if (sys16_refreshenable == 0) return;
 	
 		if( sys16_update_proc ) sys16_update_proc();
@@ -1296,9 +1296,9 @@ public class system16
 		tilemap_draw( bitmap, text_layer, 0, 0xf );
 	
 		draw_sprites( bitmap,0 );
-	}
+	} };
 	
-	void sys18_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh){
+	public static VhUpdatePtr sys18_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) {
 		if (sys16_refreshenable == 0) return;
 		if( sys16_update_proc ) sys16_update_proc();
 		update_page();
@@ -1331,7 +1331,7 @@ public class system16
 		tilemap_draw( bitmap, text_layer, 0, 0xf );
 	
 		draw_sprites( bitmap, 0 );
-	}
+	} };
 	
 	
 	static void render_gr(struct mame_bitmap *bitmap,int priority){
@@ -1645,7 +1645,7 @@ public class system16
 		}
 	}
 	
-	void sys16_hangon_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh){
+	public static VhUpdatePtr sys16_hangon_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) {
 		if (sys16_refreshenable == 0) return;
 		if( sys16_update_proc ) sys16_update_proc();
 		update_page();
@@ -1666,7 +1666,7 @@ public class system16
 		tilemap_draw( bitmap, text_layer, 0, 0xf );
 	
 		draw_sprites( bitmap, 0 );
-	}
+	} };
 	
 	static void render_grv2(struct mame_bitmap *bitmap,int priority)
 	{
@@ -2008,7 +2008,7 @@ public class system16
 		return 0;
 	} };
 	
-	void sys16_outrun_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh){
+	public static VhUpdatePtr sys16_outrun_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) {
 		if( sys16_refreshenable ){
 			if( sys16_update_proc ) sys16_update_proc();
 			update_page();
@@ -2030,7 +2030,7 @@ public class system16
 	
 			tilemap_draw( bitmap, text_layer, 0, 0 );
 		}
-	}
+	} };
 	
 	/***************************************************************************/
 	
@@ -2324,7 +2324,7 @@ public class system16
 		tilemap_set_scrolly( foreground2, 0, -256+sys16_fg2_scrolly );
 	}
 	
-	void sys16_aburner_vh_screenrefresh( struct mame_bitmap *bitmap, int full_refresh ){
+	public static VhUpdatePtr sys16_aburner_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) {
 		sys16_aburner_vh_screenrefresh_helper();
 		update_page();
 	
@@ -2351,5 +2351,5 @@ public class system16
 		draw_sprites( bitmap, 1 );
 	
 	//	debug_draw( bitmap, 8,8,sys16_roadram[0x1000] );
-	}
+	} };
 }

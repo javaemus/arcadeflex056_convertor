@@ -77,7 +77,6 @@ public class suna8
 	/* Functions defined in vidhrdw: */
 	
 	
-	void suna8_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	/***************************************************************************
@@ -414,7 +413,7 @@ public class suna8
 	*/
 	#define TILEMAPS 0
 	
-	void suna8_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr suna8_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 	#ifdef MAME_DEBUG
 	#if TILEMAPS
@@ -462,5 +461,5 @@ public class suna8
 			suna8_draw_normal_sprites(bitmap);
 			suna8_draw_text_sprites(bitmap);
 		}
-	}
+	} };
 }

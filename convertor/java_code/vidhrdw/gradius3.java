@@ -159,7 +159,7 @@ public class gradius3
 	
 	***************************************************************************/
 	
-	void gradius3_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr gradius3_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		static GfxLayout charlayout = new GfxLayout
 		(

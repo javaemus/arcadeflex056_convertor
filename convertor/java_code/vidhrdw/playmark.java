@@ -275,7 +275,7 @@ public class playmark
 	}
 	
 	
-	void bigtwin_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr bigtwin_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		palette_set_color(256,0,0,0);	/* keep the background black */
 	
@@ -283,13 +283,13 @@ public class playmark
 		tilemap_draw(bitmap,fg_tilemap,0,0);
 		draw_sprites(bitmap,4);
 		tilemap_draw(bitmap,tx_tilemap,0,0);
-	}
+	} };
 	
-	void wbeachvl_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr wbeachvl_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_draw(bitmap,bg_tilemap,0,0);
 		tilemap_draw(bitmap,fg_tilemap,0,0);
 		draw_sprites(bitmap,0);
 		tilemap_draw(bitmap,tx_tilemap,0,0);
-	}
+	} };
 }

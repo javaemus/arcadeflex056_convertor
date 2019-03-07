@@ -370,7 +370,7 @@ public class dday
 	
 	***************************************************************************/
 	
-	void dday_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr dday_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_draw(main_bitmap,bg_tilemap,TILEMAP_BACK,0);
 		tilemap_draw(main_bitmap,fg_tilemap,0,0);
@@ -409,5 +409,5 @@ public class dday
 		{
 			copybitmap(bitmap,main_bitmap,0,0,0,0,&Machine->visible_area,TRANSPARENCY_NONE,0);
 		}
-	}
+	} };
 }

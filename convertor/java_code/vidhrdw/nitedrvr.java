@@ -55,7 +55,7 @@ public class nitedrvr
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void nitedrvr_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr nitedrvr_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs,roadway;
 		char gear_buf[] =  {0x07,0x05,0x01,0x12,0x00,0x00}; /* "GEAR  " */
@@ -118,5 +118,5 @@ public class nitedrvr
 					track_buf[offs + 6*nitedrvr_track],0,
 					0,0,(offs+26)*8,31*8,
 					&Machine->visible_area,TRANSPARENCY_NONE,0);
-	}
+	} };
 }

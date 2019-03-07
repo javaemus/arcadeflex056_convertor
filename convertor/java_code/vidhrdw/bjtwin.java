@@ -441,16 +441,16 @@ public class bjtwin
 		}
 	}
 	
-	void macross_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr macross_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_set_scrollx(tx_tilemap,0,-videoshift);
 	
 		tilemap_draw(bitmap,bg_tilemap,0,0);
 		draw_sprites(bitmap,0,0);
 		tilemap_draw(bitmap,tx_tilemap,0,0);
-	}
+	} };
 	
-	void gunnail_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr gunnail_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int i;
 	
@@ -459,9 +459,9 @@ public class bjtwin
 		tilemap_set_scrolly(bg_tilemap,0,gunnail_scrolly);
 	
 		macross_vh_screenrefresh(bitmap,full_refresh);
-	}
+	} };
 	
-	void bioship_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr bioship_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		data16_t *tilerom = (data16_t *)memory_region(REGION_GFX5);
 		int scrollx=-(bioship_scroll[1] + bioship_scroll[0]*256);
@@ -508,9 +508,9 @@ public class bjtwin
 		tilemap_draw(bitmap,bg_tilemap,0,0);
 		draw_sprites(bitmap,0,0);
 		tilemap_draw(bitmap,tx_tilemap,0,0);
-	}
+	} };
 	
-	void strahl_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr strahl_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_set_scrollx(tx_tilemap,0,-videoshift);
 	
@@ -518,15 +518,15 @@ public class bjtwin
 		tilemap_draw(bitmap,fg_tilemap,0,0);
 		draw_sprites(bitmap,0,0);
 		tilemap_draw(bitmap,tx_tilemap,0,0);
-	}
+	} };
 	
-	void bjtwin_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr bjtwin_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_set_scrollx(bg_tilemap,0,-videoshift);
 	
 		tilemap_draw(bitmap,bg_tilemap,0,0);
 		draw_sprites(bitmap,0,0);
-	}
+	} };
 	
 	void nmk_eof_callback(void)
 	{

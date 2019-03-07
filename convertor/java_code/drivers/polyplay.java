@@ -93,7 +93,6 @@ public class polyplay
 	/* video hardware access */
 	extern unsigned char *polyplay_characterram;
 	void polyplay_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void polyplay_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	/* I/O Port handling */
 	

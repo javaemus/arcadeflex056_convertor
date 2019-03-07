@@ -43,7 +43,6 @@ public class afega
 	
 	void grdnstrm_vh_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
-	void afega_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	/***************************************************************************

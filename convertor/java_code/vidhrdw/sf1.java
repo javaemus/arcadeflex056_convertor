@@ -237,7 +237,7 @@ public class sf1
 	}
 	
 	
-	void sf1_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr sf1_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		if (sf1_active & 0x20)
 			tilemap_draw(bitmap,bg_tilemap,0,0);
@@ -250,5 +250,5 @@ public class sf1
 			draw_sprites(bitmap);
 	
 		tilemap_draw(bitmap,tx_tilemap,0,0);
-	}
+	} };
 }

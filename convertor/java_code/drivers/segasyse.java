@@ -193,7 +193,6 @@ public class segasyse
 	
 	/*- in (vidhrdw/segasyse.c) -*/
 	
-	void segae_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	unsigned char segae_vdp_ctrl_r ( UINT8 chip );
 	unsigned char segae_vdp_data_r ( UINT8 chip );

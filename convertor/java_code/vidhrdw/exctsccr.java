@@ -223,7 +223,7 @@ public class exctsccr
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void exctsccr_vh_screenrefresh( struct mame_bitmap *bitmap, int full_refresh ) {
+	public static VhUpdatePtr exctsccr_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh)  {
 		int offs;
 	
 		/* background chars */
@@ -255,5 +255,5 @@ public class exctsccr
 		/* draw sprites */
 		exctsccr_drawsprites( bitmap );
 	
-	}
+	} };
 }

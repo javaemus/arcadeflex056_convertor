@@ -250,7 +250,7 @@ public class gaelco
 	
 	***************************************************************************/
 	
-	void maniacsq_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr maniacsq_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* set scroll registers */
 		tilemap_set_scrolly(pant[0], 0, gaelco_vregs[0]);
@@ -278,9 +278,9 @@ public class gaelco
 		tilemap_draw(bitmap,pant[1],0,0);
 		tilemap_draw(bitmap,pant[0],0,0);
 		gaelco_draw_sprites(bitmap,0);
-	}
+	} };
 	
-	void bigkarnk_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr bigkarnk_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* set scroll registers */
 		tilemap_set_scrolly(pant[0], 0, gaelco_vregs[0]);
@@ -318,5 +318,5 @@ public class gaelco
 		tilemap_draw(bitmap,pant[0],TILEMAP_FRONT | 0,0);
 	
 		gaelco_draw_sprites(bitmap,4);
-	}
+	} };
 }

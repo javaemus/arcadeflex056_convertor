@@ -421,7 +421,7 @@ public class mcr12
 	 *
 	 *************************************/
 	
-	void mcr1_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr mcr1_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* mark everything dirty on a full refresh or cocktail flip change */
 		if (full_refresh || last_cocktail_flip != mcr_cocktail_flip)
@@ -433,10 +433,10 @@ public class mcr12
 	
 		/* redraw everything, merging the bitmaps */
 		mcr1_update_background(bitmap);
-	}
+	} };
 	
 	
-	void mcr2_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr mcr2_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* mark everything dirty on a full refresh or cocktail flip change */
 		if (full_refresh || last_cocktail_flip != mcr_cocktail_flip)
@@ -448,7 +448,7 @@ public class mcr12
 	
 		/* redraw everything, merging the bitmaps */
 		mcr2_update_background(bitmap, 1);
-	}
+	} };
 	
 	
 	
@@ -462,7 +462,7 @@ public class mcr12
 	
 	extern void mcr3_update_sprites(struct mame_bitmap *bitmap, int color_mask, int code_xor, int dx, int dy);
 	
-	void journey_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr journey_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* mark everything dirty on a cocktail flip change */
 		if (last_cocktail_flip != mcr_cocktail_flip)
@@ -477,5 +477,5 @@ public class mcr12
 	
 		/* draw the sprites */
 		mcr3_update_sprites(bitmap, 0x03, 0, 0, 0);
-	}
+	} };
 }

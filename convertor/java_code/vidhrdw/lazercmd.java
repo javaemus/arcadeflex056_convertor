@@ -115,7 +115,7 @@ public class lazercmd
 	} };
 	
 	
-	void lazercmd_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr lazercmd_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int i,x,y;
 	
@@ -154,5 +154,5 @@ public class lazercmd
 		x = marker_x - 1;             /* normal video lags marker by 1 pixel */
 		y = vert_scale(marker_y) - VERT_CHR; /* first line used as scratch pad */
 		plot_pattern(bitmap,x,y);
-	}
+	} };
 }

@@ -176,13 +176,13 @@ public class srumbler
 	}
 	
 	
-	void srumbler_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr srumbler_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_draw(bitmap,bg_tilemap,TILEMAP_BACK,0);
 		draw_sprites(bitmap);
 		tilemap_draw(bitmap,bg_tilemap,TILEMAP_FRONT,0);
 		tilemap_draw(bitmap,fg_tilemap,0,0);
-	}
+	} };
 	
 	void srumbler_eof_callback(void)
 	{

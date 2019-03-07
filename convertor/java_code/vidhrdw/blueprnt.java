@@ -90,7 +90,7 @@ public class blueprnt
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void blueprnt_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr blueprnt_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 		int scroll[32];
@@ -200,5 +200,5 @@ public class blueprnt
 						&Machine->visible_area,TRANSPARENCY_PEN,0);
 			}
 		}
-	}
+	} };
 }

@@ -20,7 +20,6 @@ public class thunderx
 	static static static void thunderx_banking(int lines);
 	
 	extern int scontra_priority;
-	void scontra_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	static int unknown_enable = 0;
 	extern int debug_key_pressed;

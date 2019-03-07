@@ -361,10 +361,10 @@ public class m107
 	
 	/*****************************************************************************/
 	
-	void m107_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr m107_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* Nothing - screen refresh is handled by raster interrupt routine */
-	}
+	} };
 	
 	/*****************************************************************************/
 	

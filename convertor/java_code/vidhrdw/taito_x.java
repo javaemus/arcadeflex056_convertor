@@ -140,7 +140,7 @@ public class taito_x
 	}
 	
 	
-	void superman_vh_screenrefresh (struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr superman_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int bankbase;
 		int attribfix;
@@ -190,5 +190,5 @@ public class taito_x
 		if (dislayer[1]==0)
 	#endif
 		superman_draw_sprites (bitmap,bankbase,cocktail);
-	}
+	} };
 }

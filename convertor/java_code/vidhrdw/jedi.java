@@ -316,7 +316,7 @@ public class jedi
 	 *
 	 *************************************/
 	
-	void jedi_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr jedi_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int bgexdirty[32][2];
 		int offs;
@@ -439,5 +439,5 @@ public class jedi
 			bounds.max_y = y + (tall ? 31 : 15);
 			fillbitmap(mobitmap, 0, &bounds);
 	    }
-	}
+	} };
 }

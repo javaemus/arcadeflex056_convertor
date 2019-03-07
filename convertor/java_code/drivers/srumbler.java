@@ -20,7 +20,6 @@ public class srumbler
 	extern unsigned char *srumbler_backgroundram,*srumbler_foregroundram;
 	
 	
-	void srumbler_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

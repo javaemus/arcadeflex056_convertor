@@ -178,7 +178,7 @@ public class geebee
 		}
 	}
 	
-	void geebee_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr geebee_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -245,5 +245,5 @@ public class geebee
 				for( x = 0; x < 4; x++ )
 					geebee_plot(bitmap,geebee_ball_h+x+5,geebee_ball_v+y-2);
 		}
-	}
+	} };
 }

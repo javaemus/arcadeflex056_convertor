@@ -138,7 +138,7 @@ public class hyperspt
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void hyperspt_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr hyperspt_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -232,13 +232,13 @@ public class hyperspt
 					sx-256,sy,
 					&Machine->visible_area,TRANSPARENCY_COLOR,0);
 		}
-	}
+	} };
 	
 	
 	
 	/* Only difference with Hyper Sports is the way tiles are selected (1536 tiles */
 	/* instad of 1024). Plus, it has 256 sprites instead of 512. */
-	void roadf_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr roadf_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -332,5 +332,5 @@ public class hyperspt
 					sx-256,sy,
 					&Machine->visible_area,TRANSPARENCY_COLOR,0);
 		}
-	}
+	} };
 }

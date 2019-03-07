@@ -44,7 +44,6 @@ public class z80bw
 	
 	
 	void invadpt2_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void invaders_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

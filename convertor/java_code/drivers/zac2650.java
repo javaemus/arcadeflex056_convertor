@@ -19,7 +19,6 @@ public class zac2650
 	
 	extern unsigned char *s2636ram;
 	
-	void tinvader_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	
@@ -287,7 +286,6 @@ public class zac2650
 	 *
 	 */
 	
-	void invaders_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

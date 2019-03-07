@@ -485,11 +485,11 @@ public class polepos
 	
 	***************************************************************************/
 	
-	void polepos_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr polepos_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		draw_view(bitmap);
 		draw_road(bitmap);
 		draw_sprites(bitmap);
 		draw_alpha(bitmap);
-	}
+	} };
 }

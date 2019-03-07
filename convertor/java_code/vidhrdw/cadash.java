@@ -245,7 +245,7 @@ public class cadash
 					SCREEN REFRESH
 	**************************************************************/
 	
-	void cadash_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr cadash_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		UINT8 layer[3];
 	
@@ -278,6 +278,6 @@ public class cadash
 			usrintf_showmessage(buf);
 		}
 	#endif
-	}
+	} };
 	
 }

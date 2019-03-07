@@ -1439,7 +1439,7 @@ public class wecleman
 								WEC Le Mans 24
 	***************************************************************************/
 	
-	void wecleman_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr wecleman_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int i, layers_ctrl = -1;
 	
@@ -1504,7 +1504,7 @@ public class wecleman
 		/* Draw the text layer */
 		if (layers_ctrl & 4)
 			tilemap_draw(bitmap, txt_tilemap,  0,0);
-	}
+	} };
 	
 	
 	
@@ -1517,7 +1517,7 @@ public class wecleman
 									Hot Chase
 	***************************************************************************/
 	
-	void hotchase_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr hotchase_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int layers_ctrl = -1;
 	
@@ -1549,5 +1549,5 @@ public class wecleman
 		/* Draw the foreground (text) */
 		if (layers_ctrl & 4)
 			K051316_zoom_draw_1(bitmap,0,0);
-	}
+	} };
 }

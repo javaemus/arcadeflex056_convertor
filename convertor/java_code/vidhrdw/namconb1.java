@@ -270,7 +270,7 @@ public class namconb1
 		namconb1_workram32[0x601e/4] |= credits;
 	}
 	
-	void namconb1_vh_screenrefresh( struct mame_bitmap *bitmap,int full_refresh )
+	public static VhUpdatePtr namconb1_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int beamx,beamy;
 	
@@ -362,7 +362,7 @@ public class namconb1
 			beamy = readinputport(7);
 			draw_crosshair( bitmap, beamx, beamy, &Machine->visible_area );
 		}
-	}
+	} };
 	
 	public static VhStartPtr namconb1_vh_start = new VhStartPtr() { public int handler() 
 	{

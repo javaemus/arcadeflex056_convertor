@@ -427,7 +427,7 @@ public class exidy
 	 *
 	 *************************************/
 	
-	void exidy_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr exidy_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int sx, sy;
 	
@@ -463,5 +463,5 @@ public class exidy
 	
 		/* indicate that we already updated the background */
 		update_complete = 1;
-	}
+	} };
 }

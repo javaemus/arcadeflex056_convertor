@@ -148,21 +148,21 @@ public class shootout
 		}
 	}
 	
-	void shootout_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr shootout_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		fillbitmap(priority_bitmap,0,NULL);
 	
 		tilemap_draw(bitmap,background,0,0);
 		tilemap_draw(bitmap,foreground,0,1);
 		draw_sprites( bitmap,3/*bank bits */ );
-	}
+	} };
 	
-	void shootouj_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr shootouj_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		fillbitmap(priority_bitmap,0,NULL);
 	
 		tilemap_draw(bitmap,background,0,1);
 		tilemap_draw(bitmap,foreground,0,2);
 		draw_sprites( bitmap,2/*bank bits*/ );
-	}
+	} };
 }

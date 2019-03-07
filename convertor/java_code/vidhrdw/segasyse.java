@@ -82,7 +82,7 @@ public class segasyse
 		free (cache_bitmap);
 	} };
 	
-	void segae_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr segae_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int i;
 	
@@ -90,7 +90,7 @@ public class segasyse
 	
 		for (i = 0;i < 192;i++)
 			draw_scanline8(bitmap,0,i,256,&cache_bitmap[i * (16+256+16) +16],Machine->pens,-1);
-	}
+	} };
 	
 	
 	/*******************************************************************************

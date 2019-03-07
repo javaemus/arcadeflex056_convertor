@@ -179,7 +179,7 @@ public class berzerk
 	  To be used by bitmapped games not using sprites.
 	
 	***************************************************************************/
-	void berzerk_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr berzerk_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		if (full_refresh)
 		{
@@ -192,5 +192,5 @@ public class berzerk
 				berzerk_videoram_w(offs, videoram[offs]);
 			}
 		}
-	}
+	} };
 }

@@ -23,8 +23,7 @@ public class bsktball
 	extern 
 	/* vidhrdw/bsktball.c */
 	extern unsigned char *bsktball_motion;
-	extern void bsktball_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	
+	extern 
 	
 	/* sound hardware - temporary */
 	

@@ -538,7 +538,7 @@ public class tmnt
 		SWAP(1,2)
 	}
 	
-	void mia_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr mia_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		K052109_tilemap_update();
 	
@@ -547,9 +547,9 @@ public class tmnt
 		K052109_tilemap_draw(bitmap,1,0,0);
 		if ((priorityflag & 1) == 0) K051960_sprites_draw(bitmap,0,0);
 		K052109_tilemap_draw(bitmap,0,0,0);
-	}
+	} };
 	
-	void tmnt_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr tmnt_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		K052109_tilemap_update();
 	
@@ -558,10 +558,10 @@ public class tmnt
 		K052109_tilemap_draw(bitmap,1,0,0);
 		if ((priorityflag & 1) == 0) K051960_sprites_draw(bitmap,0,0);
 		K052109_tilemap_draw(bitmap,0,0,0);
-	}
+	} };
 	
 	
-	void punkshot_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr punkshot_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		bg_colorbase       = K053251_get_palette_index(K053251_CI0);
 		sprite_colorbase   = K053251_get_palette_index(K053251_CI1);
@@ -586,10 +586,10 @@ public class tmnt
 		K052109_tilemap_draw(bitmap,sorted_layer[2],0,4);
 	
 		K051960_sprites_draw(bitmap,-1,-1);
-	}
+	} };
 	
 	
-	void lgtnfght_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr lgtnfght_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		bg_colorbase       = K053251_get_palette_index(K053251_CI0);
 		sprite_colorbase   = K053251_get_palette_index(K053251_CI1);
@@ -615,9 +615,9 @@ public class tmnt
 		K052109_tilemap_draw(bitmap,sorted_layer[2],0,4);
 	
 		K053245_sprites_draw(bitmap);
-	}
+	} };
 	
-	void glfgreat_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr glfgreat_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		bg_colorbase       = K053251_get_palette_index(K053251_CI0);
 		sprite_colorbase   = K053251_get_palette_index(K053251_CI1);
@@ -643,9 +643,9 @@ public class tmnt
 		K052109_tilemap_draw(bitmap,sorted_layer[2],0,4);
 	
 		K053245_sprites_draw(bitmap);
-	}
+	} };
 	
-	void tmnt2_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr tmnt2_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		static int lastdim;
 		int i,newdim;
@@ -676,10 +676,10 @@ public class tmnt
 			else
 				palette_set_shadow_factor(PALETTE_DEFAULT_SHADOW_FACTOR);
 		}
-	}
+	} };
 	
 	
-	void thndrx2_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr thndrx2_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		bg_colorbase       = K053251_get_palette_index(K053251_CI0);
 		sprite_colorbase   = K053251_get_palette_index(K053251_CI1);
@@ -705,5 +705,5 @@ public class tmnt
 		K052109_tilemap_draw(bitmap,sorted_layer[2],0,4);
 	
 		K051960_sprites_draw(bitmap,-1,-1);
-	}
+	} };
 }

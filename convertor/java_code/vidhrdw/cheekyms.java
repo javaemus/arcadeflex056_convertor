@@ -123,7 +123,7 @@ public class cheekyms
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void cheekyms_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr cheekyms_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -224,5 +224,5 @@ public class cheekyms
 	
 		/* copy the temporary bitmap to the screen over the sprites */
 		copybitmap(bitmap,tmpbitmap,0,0,0,0,&Machine->visible_area,TRANSPARENCY_PEN,Machine->pens[4*char_palette]);
-	}
+	} };
 }

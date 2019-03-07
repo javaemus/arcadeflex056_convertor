@@ -80,7 +80,6 @@ public class sauro
 	unsigned char *sauro_videoram2;
 	unsigned char *sauro_colorram2;
 	
-	void sauro_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	public static WriteHandlerPtr sauro_sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)

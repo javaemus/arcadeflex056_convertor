@@ -581,7 +581,7 @@ public class taito_b
 	profiler_mark(PROFILER_END);
 	}
 	
-	void taitob_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr taitob_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		if ((video_control & 0x20) == 0)
 		{
@@ -619,7 +619,7 @@ public class taito_b
 		draw_framebuffer(bitmap,0);
 	
 		tilemap_draw(bitmap,tx_tilemap,0,0);
-	}
+	} };
 	
 	
 	

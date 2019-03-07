@@ -134,7 +134,6 @@ package drivers;
 public class undrfire
 {
 	
-	void undrfire_vh_screenrefresh (struct mame_bitmap *bitmap,int full_refresh);
 	
 	/* F3 sound */
 	READ16_HANDLER(f3_68000_share_r);

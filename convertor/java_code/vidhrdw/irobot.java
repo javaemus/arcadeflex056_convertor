@@ -396,7 +396,7 @@ public class irobot
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void irobot_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr irobot_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		UINT8 *bitmap_base = irobot_bufsel ? polybitmap1 : polybitmap2;
 		int x, y, offs;
@@ -420,5 +420,5 @@ public class irobot
 							8*x,8*y,
 							&Machine->visible_area,TRANSPARENCY_COLOR,transp);
 				}
-	}
+	} };
 }

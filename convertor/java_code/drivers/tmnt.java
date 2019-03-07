@@ -41,13 +41,6 @@ public class tmnt
 	WRITE16_HANDLER( ssriders_1c0300_w );
 	WRITE16_HANDLER( prmrsocr_122000_w );
 	WRITE16_HANDLER( tmnt_priority_w );
-	void mia_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void tmnt_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void punkshot_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void lgtnfght_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void glfgreat_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void tmnt2_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void thndrx2_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	static int tmnt_soundlatch;
 	
 	static READ16_HANDLER( K052109_word_noA12_r )

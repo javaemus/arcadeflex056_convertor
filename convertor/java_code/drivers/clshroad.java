@@ -37,7 +37,6 @@ public class clshroad
 	
 	
 	void firebatl_vh_convert_color_prom(unsigned char *obsolete,unsigned short *colortable,const unsigned char *color_prom);
-	void clshroad_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	extern unsigned char *wiping_soundregs;
 	int wiping_sh_start(const struct MachineSound *msound);

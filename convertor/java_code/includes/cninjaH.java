@@ -4,9 +4,6 @@ extern data16_t *cninja_pf3_rowscroll,*cninja_pf4_rowscroll;
 extern data16_t *cninja_pf1_data,*cninja_pf2_data;
 extern data16_t *cninja_pf3_data,*cninja_pf4_data;
 
-void cninja_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-void edrandy_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-void robocop2_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 
 WRITE16_HANDLER( cninja_pf1_data_w );
 WRITE16_HANDLER( cninja_pf2_data_w );

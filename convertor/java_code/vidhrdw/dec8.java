@@ -441,7 +441,7 @@ public class dec8
 	
 	/******************************************************************************/
 	
-	void cobracom_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr cobracom_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_set_scrollx( dec8_pf0_tilemap,0, (dec8_pf0_control[0x10]<<8)+dec8_pf0_control[0x11] );
 		tilemap_set_scrolly( dec8_pf0_tilemap,0, (dec8_pf0_control[0x12]<<8)+dec8_pf0_control[0x13] );
@@ -454,7 +454,7 @@ public class dec8
 		tilemap_draw(bitmap,dec8_pf1_tilemap,0,0);
 		draw_sprites2(bitmap,2);
 		tilemap_draw(bitmap,dec8_fix_tilemap,0,0);
-	}
+	} };
 	
 	/******************************************************************************/
 	
@@ -527,7 +527,7 @@ public class dec8
 	
 	/******************************************************************************/
 	
-	void ghostb_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr ghostb_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 	   if (dec8_pf0_control[0]&0x4) { /* Rowscroll */
 	 		int offs;
@@ -544,7 +544,7 @@ public class dec8
 		tilemap_draw(bitmap,dec8_pf0_tilemap,0,0);
 		draw_sprites1(bitmap,0);
 		tilemap_draw(bitmap,dec8_fix_tilemap,0,0);
-	}
+	} };
 	
 	static void get_ghostb_fix_tile_info( int tile_index )
 	{
@@ -576,7 +576,7 @@ public class dec8
 	
 	/******************************************************************************/
 	
-	void oscar_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr oscar_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_set_scrollx( dec8_pf0_tilemap,0, (dec8_pf0_control[0x10]<<8)+dec8_pf0_control[0x11] );
 		tilemap_set_scrolly( dec8_pf0_tilemap,0, (dec8_pf0_control[0x12]<<8)+dec8_pf0_control[0x13] );
@@ -588,7 +588,7 @@ public class dec8
 		draw_sprites2(bitmap,0);
 		tilemap_draw(bitmap,dec8_pf0_tilemap,TILEMAP_FRONT | 1,0);
 		tilemap_draw(bitmap,dec8_fix_tilemap,0,0);
-	}
+	} };
 	
 	static void get_oscar_fix_tile_info( int tile_index )
 	{
@@ -622,7 +622,7 @@ public class dec8
 	
 	/******************************************************************************/
 	
-	void lastmiss_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr lastmiss_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_set_scrollx( dec8_pf0_tilemap,0, ((scroll2[0]<<8)+scroll2[1]) );
 		tilemap_set_scrolly( dec8_pf0_tilemap,0, ((scroll2[2]<<8)+scroll2[3]) );
@@ -630,9 +630,9 @@ public class dec8
 		tilemap_draw(bitmap,dec8_pf0_tilemap,0,0);
 		draw_sprites1(bitmap,0);
 		tilemap_draw(bitmap,dec8_fix_tilemap,0,0);
-	}
+	} };
 	
-	void shackled_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr shackled_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_set_scrollx( dec8_pf0_tilemap,0, ((scroll2[0]<<8)+scroll2[1]) );
 		tilemap_set_scrolly( dec8_pf0_tilemap,0, ((scroll2[2]<<8)+scroll2[3]) );
@@ -643,7 +643,7 @@ public class dec8
 		draw_sprites1(bitmap,0);
 		tilemap_draw(bitmap,dec8_pf0_tilemap,TILEMAP_FRONT | 1,0);
 		tilemap_draw(bitmap,dec8_fix_tilemap,0,0);
-	}
+	} };
 	
 	static UINT32 lastmiss_scan_rows(UINT32 col,UINT32 row,UINT32 num_cols,UINT32 num_rows)
 	{
@@ -710,7 +710,7 @@ public class dec8
 	
 	/******************************************************************************/
 	
-	void srdarwin_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr srdarwin_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_set_scrollx( dec8_pf0_tilemap,0, (scroll2[0]<<8)+scroll2[1] );
 	
@@ -721,7 +721,7 @@ public class dec8
 		tilemap_draw(bitmap,dec8_pf0_tilemap,TILEMAP_FRONT | 0,0);
 		srdarwin_drawsprites(bitmap,1);
 		tilemap_draw(bitmap,dec8_fix_tilemap,0,0);
-	}
+	} };
 	
 	static void get_srdarwin_fix_tile_info( int tile_index )
 	{
@@ -769,7 +769,7 @@ public class dec8
 	
 	/******************************************************************************/
 	
-	void gondo_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr gondo_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_set_scrollx( dec8_pf0_tilemap,0, ((scroll2[0]<<8)+scroll2[1]) );
 		tilemap_set_scrolly( dec8_pf0_tilemap,0, ((scroll2[2]<<8)+scroll2[3]) );
@@ -779,9 +779,9 @@ public class dec8
 		tilemap_draw(bitmap,dec8_pf0_tilemap,TILEMAP_FRONT,0);
 		draw_sprites1(bitmap,1);
 		tilemap_draw(bitmap,dec8_fix_tilemap,0,0);
-	}
+	} };
 	
-	void garyoret_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr garyoret_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_set_scrollx( dec8_pf0_tilemap,0, ((scroll2[0]<<8)+scroll2[1]) );
 		tilemap_set_scrolly( dec8_pf0_tilemap,0, ((scroll2[2]<<8)+scroll2[3]) );
@@ -790,7 +790,7 @@ public class dec8
 		draw_sprites1(bitmap,0);
 		tilemap_draw(bitmap,dec8_pf0_tilemap,1,0);
 		tilemap_draw(bitmap,dec8_fix_tilemap,0,0);
-	}
+	} };
 	
 	static void get_gondo_fix_tile_info( int tile_index )
 	{

@@ -295,7 +295,7 @@ public class tp84
 	}
 	
 	
-	void tp84_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr tp84_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 		int coloffset;
@@ -361,7 +361,7 @@ public class tp84
 		/* Copy the frontmost playfield. */
 		copybitmap(bitmap,tmpbitmap2,0,0,0,0,&topvisiblearea,TRANSPARENCY_NONE,0);
 		copybitmap(bitmap,tmpbitmap2,0,0,0,0,&bottomvisiblearea,TRANSPARENCY_NONE,0);
-	}
+	} };
 	
 	
 	public static InterruptPtr tp84_6809_interrupt = new InterruptPtr() { public int handler() 

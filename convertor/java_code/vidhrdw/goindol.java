@@ -142,7 +142,7 @@ public class goindol
 		}
 	}
 	
-	void goindol_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr goindol_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_set_scrollx(fg_tilemap,0,*goindol_fg_scrollx);
 		tilemap_set_scrolly(fg_tilemap,0,*goindol_fg_scrolly);
@@ -151,5 +151,5 @@ public class goindol
 		tilemap_draw(bitmap,fg_tilemap,0,0);
 		draw_sprites(bitmap,1,spriteram);
 		draw_sprites(bitmap,0,spriteram_2);
-	}
+	} };
 }

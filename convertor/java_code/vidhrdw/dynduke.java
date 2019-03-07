@@ -199,7 +199,7 @@ public class dynduke
 		}
 	}
 	
-	void dynduke_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr dynduke_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* Setup the tilemaps */
 		tilemap_set_scrolly( bg_layer,0, ((dynduke_scroll_ram[0x02]&0x30)<<4)+((dynduke_scroll_ram[0x04]&0x7f)<<1)+((dynduke_scroll_ram[0x04]&0x80)>>7) );
@@ -221,5 +221,5 @@ public class dynduke
 		tilemap_draw(bitmap,fg_layer,0,0);
 		draw_sprites(bitmap,3);
 		tilemap_draw(bitmap,tx_layer,0,0);
-	}
+	} };
 }

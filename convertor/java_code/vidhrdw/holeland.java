@@ -199,17 +199,17 @@ public class holeland
 		}
 	}
 	
-	void holeland_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr holeland_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 	/*tilemap_mark_all_tiles_dirty(bg_tilemap); */
 		tilemap_draw(bitmap,bg_tilemap,TILEMAP_BACK,0);
 		holeland_draw_sprites(bitmap);
 		tilemap_draw(bitmap,bg_tilemap,TILEMAP_FRONT,0);
-	}
+	} };
 	
-	void crzrally_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr crzrally_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_draw(bitmap,bg_tilemap,0,0);
 		crzrally_draw_sprites(bitmap);
-	}
+	} };
 }

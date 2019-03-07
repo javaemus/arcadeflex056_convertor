@@ -265,7 +265,7 @@ public class gladiatr
 	
 	
 	
-	void gladiatr_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr gladiatr_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		if (video_attributes & 0x20)	/* screen refresh enable? */
 		{
@@ -273,5 +273,5 @@ public class gladiatr
 			render_sprites( bitmap );
 			render_text( bitmap );
 		}
-	}
+	} };
 }

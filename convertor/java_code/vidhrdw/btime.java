@@ -554,7 +554,7 @@ public class btime
 	}
 	
 	
-	void btime_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr btime_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 	    if (full_refresh)
 	        memset(dirtybuffer,1,videoram_size);
@@ -590,10 +590,10 @@ public class btime
 	    }
 	
 	    drawsprites(bitmap, 0, 1, 0, videoram, 0x20);
-	}
+	} };
 	
 	
-	void eggs_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr eggs_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 	    if (full_refresh)
 	        memset(dirtybuffer,1,videoram_size);
@@ -604,10 +604,10 @@ public class btime
 	    copybitmap(bitmap,tmpbitmap,0,0,0,0,&Machine->visible_area,TRANSPARENCY_NONE,0);
 	
 	    drawsprites(bitmap, 0, 0, 0, videoram, 0x20);
-	}
+	} };
 	
 	
-	void lnc_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr lnc_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 	    if (full_refresh)
 	        memset(dirtybuffer,1,videoram_size);
@@ -618,10 +618,10 @@ public class btime
 	    copybitmap(bitmap,tmpbitmap,0,0,0,0,&Machine->visible_area,TRANSPARENCY_NONE,0);
 	
 	    drawsprites(bitmap, 0, 1, 2, videoram, 0x20);
-	}
+	} };
 	
 	
-	void zoar_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr zoar_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 	    if (full_refresh)
 	        memset(dirtybuffer,1,videoram_size);
@@ -643,10 +643,10 @@ public class btime
 	    /* The order is important for correct priorities */
 	    drawsprites(bitmap, btime_palette + 1, 1, 2, videoram + 0x1f, 0x20);
 	    drawsprites(bitmap, btime_palette + 1, 1, 2, videoram,        0x20);
-	}
+	} };
 	
 	
-	void bnj_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr bnj_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 	    if (full_refresh)
 	    {
@@ -709,10 +709,10 @@ public class btime
 	
 	        drawsprites(bitmap, 0, 0, 0, videoram, 0x20);
 	    }
-	}
+	} };
 	
 	
-	void cookrace_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr cookrace_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 	    int offs;
 	
@@ -748,10 +748,10 @@ public class btime
 	    drawchars(bitmap, TRANSPARENCY_PEN, 0, -1);
 	
 	    drawsprites(bitmap, 0, 1, 0, videoram, 0x20);
-	}
+	} };
 	
 	
-	void disco_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr disco_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 	    if (full_refresh)
 	        memset(dirtybuffer,1,videoram_size);
@@ -764,5 +764,5 @@ public class btime
 	    copybitmap(bitmap,tmpbitmap,0,0,0,0,&Machine->visible_area,TRANSPARENCY_NONE,0);
 	
 	    drawsprites(bitmap, btime_palette, 0, 0, spriteram, 1);
-	}
+	} };
 }

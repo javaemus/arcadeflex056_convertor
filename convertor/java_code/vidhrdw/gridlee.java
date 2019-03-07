@@ -240,7 +240,7 @@ public class gridlee
 	 *
 	 *************************************/
 	
-	void gridlee_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr gridlee_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int x, y, i;
 	
@@ -334,5 +334,5 @@ public class gridlee
 					src += 4;
 			}
 		}
-	}
+	} };
 }

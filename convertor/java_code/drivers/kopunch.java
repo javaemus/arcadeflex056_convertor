@@ -41,7 +41,7 @@ public class kopunch
 		}
 	}
 	
-	void kopunch_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr kopunch_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	static int bank=0;
@@ -92,7 +92,7 @@ public class kopunch
 					8*sx,8*sy,
 					&Machine->visible_area,TRANSPARENCY_PEN,0);
 		}
-	}
+	} };
 	
 	
 	public static InterruptPtr kopunch_interrupt = new InterruptPtr() { public int handler() 

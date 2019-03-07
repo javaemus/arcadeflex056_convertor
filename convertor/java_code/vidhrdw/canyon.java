@@ -22,7 +22,7 @@ public class canyon
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void canyon_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr canyon_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 	    int offs;
 	
@@ -84,5 +84,5 @@ public class canyon
 					0,0,sx,sy,
 					&Machine->visible_area,TRANSPARENCY_PEN,0);
 		}
-	}
+	} };
 }

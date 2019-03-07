@@ -460,7 +460,7 @@ public class liberatr
 	}
 	
 	
-	void liberatr_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr liberatr_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		if (full_refresh)
 		{
@@ -482,5 +482,5 @@ public class liberatr
 	
 		/* draw the planet */
 		liberatr_draw_planet();
-	}
+	} };
 }

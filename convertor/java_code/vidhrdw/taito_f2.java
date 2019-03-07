@@ -1081,7 +1081,7 @@ public class taito_f2
 	
 	
 	/* SSI */
-	void ssi_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr ssi_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		taitof2_handle_sprite_buffering();
 	
@@ -1090,10 +1090,10 @@ public class taito_f2
 		fillbitmap(priority_bitmap,0,NULL);
 		fillbitmap(bitmap,Machine->pens[0],&Machine->visible_area);
 		draw_sprites(bitmap,NULL);
-	}
+	} };
 	
 	
-	void yesnoj_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr yesnoj_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		taitof2_handle_sprite_buffering();
 	
@@ -1105,10 +1105,10 @@ public class taito_f2
 		TC0100SCN_tilemap_draw(bitmap,0,TC0100SCN_bottomlayer(0),0,0);
 		TC0100SCN_tilemap_draw(bitmap,0,TC0100SCN_bottomlayer(0)^1,0,0);
 		TC0100SCN_tilemap_draw(bitmap,0,2,0,0);
-	}
+	} };
 	
 	
-	void taitof2_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr taitof2_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		taitof2_handle_sprite_buffering();
 	
@@ -1120,10 +1120,10 @@ public class taito_f2
 		TC0100SCN_tilemap_draw(bitmap,0,TC0100SCN_bottomlayer(0)^1,0,0);
 		draw_sprites(bitmap,NULL);
 		TC0100SCN_tilemap_draw(bitmap,0,2,0,0);
-	}
+	} };
 	
 	
-	void taitof2_pri_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr taitof2_pri_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int tilepri[3];
 		int spritepri[4];
@@ -1175,7 +1175,7 @@ public class taito_f2
 			usrintf_showmessage(buf);
 		}
 	#endif
-	}
+	} };
 	
 	
 	
@@ -1189,7 +1189,7 @@ public class taito_f2
 	}
 	
 	
-	void taitof2_pri_roz_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr taitof2_pri_roz_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int tilepri[3];
 		int spritepri[4];
@@ -1258,12 +1258,12 @@ public class taito_f2
 	
 			draw_sprites(bitmap,primasks);
 		}
-	}
+	} };
 	
 	
 	
 	/* Thunderfox */
-	void thundfox_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr thundfox_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int tilepri[2][3];
 		int spritepri[4];
@@ -1360,7 +1360,7 @@ public class taito_f2
 			TC0100SCN_tilemap_draw(bitmap,1,layer[1][2],0,0);
 			TC0100SCN_tilemap_draw(bitmap,0,layer[0][2],0,0);
 		}
-	}
+	} };
 	
 	
 	
@@ -1392,7 +1392,7 @@ public class taito_f2
 	
 	********************************************************************/
 	
-	void metalb_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr metalb_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		UINT8 layer[5];
 		UINT8 tilepri[5];
@@ -1454,11 +1454,11 @@ public class taito_f2
 		*/
 	
 		TC0480SCP_tilemap_draw(bitmap,layer[4],0,0);
-	}
+	} };
 	
 	
 	/* Deadconx, Footchmp */
-	void deadconx_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr deadconx_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		UINT8 layer[5];
 		UINT8 tilepri[5];
@@ -1520,5 +1520,5 @@ public class taito_f2
 		*/
 	
 		TC0480SCP_tilemap_draw(bitmap,layer[4],0,0);
-	}
+	} };
 }

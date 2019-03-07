@@ -618,7 +618,7 @@ public class omegaf
 		}
 	}
 	
-	void omegaf_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr omegaf_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		fillbitmap(bitmap,Machine->pens[15],&Machine->visible_area);	// ??
 	
@@ -634,5 +634,5 @@ public class omegaf
 		else										/* normal sprite mode */
 			draw_sprites(bitmap);
 		tilemap_draw(bitmap, fg_tilemap, 0, 0);
-	}
+	} };
 }

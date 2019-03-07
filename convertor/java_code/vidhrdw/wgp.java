@@ -722,7 +722,7 @@ public class wgp
 	                        SCREEN REFRESH
 	**************************************************************/
 	
-	void wgp_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr wgp_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int i;
 		UINT8 layer[3];
@@ -838,6 +838,6 @@ public class wgp
 			}
 		}
 	#endif
-	}
+	} };
 	
 }

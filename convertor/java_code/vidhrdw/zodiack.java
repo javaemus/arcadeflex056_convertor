@@ -122,7 +122,7 @@ public class zodiack
 	
 	***************************************************************************/
 	
-	void zodiack_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr zodiack_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -262,5 +262,5 @@ public class zodiack
 					//&spritevisiblearea,TRANSPARENCY_PEN,0);
 					&Machine->visible_area,TRANSPARENCY_PEN,0);
 		}
-	}
+	} };
 }

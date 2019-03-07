@@ -96,7 +96,6 @@ public class wmsyunit
 	
 	
 	/* external video routines */
-	void wms_yunit_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	void wms_yunit_display_interrupt(int scanline);
 	void wms_yunit_display_addr_changed(UINT32 offs, int rowbytes, int scanline);
 	void wms_yunit_to_shiftreg(offs_t address, unsigned short *shiftreg);

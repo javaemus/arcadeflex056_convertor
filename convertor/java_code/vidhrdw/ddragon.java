@@ -254,7 +254,7 @@ public class ddragon
 	#undef DRAW_SPRITE
 	
 	
-	void ddragon_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr ddragon_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int scrollx = ddragon_scrollx_hi + *ddragon_scrollx_lo;
 		int scrolly = ddragon_scrolly_hi + *ddragon_scrolly_lo;
@@ -265,5 +265,5 @@ public class ddragon
 		tilemap_draw(bitmap,bg_tilemap,0,0);
 		draw_sprites(bitmap);
 		tilemap_draw(bitmap,fg_tilemap,0,0);
-	}
+	} };
 }

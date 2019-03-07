@@ -16,8 +16,7 @@ public class subs
 {
 	
 	/* vidhrdw/subs.c */
-	extern void subs_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	
+	extern 
 	/* machine/subs.c */
 	extern extern 
 	public static Memory_ReadAddress readmem[]={

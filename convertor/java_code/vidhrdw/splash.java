@@ -198,7 +198,7 @@ public class splash
 	
 	***************************************************************************/
 	
-	void splash_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr splash_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* set scroll registers */
 		tilemap_set_scrolly(screen[0], 0, splash_vregs[0]);
@@ -209,5 +209,5 @@ public class splash
 		tilemap_draw(bitmap,screen[1],0,0);
 		splash_draw_sprites(bitmap);
 		tilemap_draw(bitmap,screen[0],0,0);
-	}
+	} };
 }

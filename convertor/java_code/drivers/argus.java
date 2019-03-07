@@ -110,9 +110,6 @@ public class argus
 	extern data8_t *argus_bg1_scrolly;
 	extern data8_t *butasan_bg1ram;
 	
-	void argus_vh_screenrefresh   (struct mame_bitmap *bitmap,int full_refresh);
-	void valtric_vh_screenrefresh (struct mame_bitmap *bitmap,int full_refresh);
-	void butasan_vh_screenrefresh (struct mame_bitmap *bitmap,int full_refresh);
 	
 	static data8_t argus_bank_latch   = 0x00;
 	static data8_t butasan_page_latch = 0x00;

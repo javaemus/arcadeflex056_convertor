@@ -69,13 +69,11 @@ public class mcr68
 	
 	WRITE16_HANDLER( mcr68_videoram_w );
 	WRITE16_HANDLER( mcr68_paletteram_w );
-	void mcr68_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	WRITE16_HANDLER( zwackery_videoram_w );
 	WRITE16_HANDLER( zwackery_paletteram_w );
 	WRITE16_HANDLER( zwackery_spriteram_w );
 	void zwackery_convert_color_prom(unsigned char *palette, unsigned short *colortable, const unsigned char *color_prom);
-	void zwackery_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	
 	

@@ -221,12 +221,12 @@ public class volfied
 		}
 	}
 	
-	void volfied_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr volfied_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		refresh_pixel_layer();
 	
 		copybitmap(bitmap, pixel_layer, 0, 0, 0, 0, &Machine->visible_area, TRANSPARENCY_NONE, 0);
 	
 		draw_sprites(bitmap);
-	}
+	} };
 }

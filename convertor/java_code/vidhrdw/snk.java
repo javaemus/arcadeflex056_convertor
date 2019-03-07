@@ -221,7 +221,7 @@ public class snk
 		}
 	}
 	
-	void tnk3_vh_screenrefresh( struct mame_bitmap *bitmap, int full_refresh )
+	public static VhUpdatePtr tnk3_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		unsigned char *ram = memory_region(REGION_CPU1);
 		int attributes = ram[0xc800];
@@ -257,7 +257,7 @@ public class snk
 			tnk3_draw_text( bitmap, bank, &ram[0xf800] );
 			tnk3_draw_status( bitmap, bank, &ram[0xfc00] );
 		}
-	}
+	} };
 	
 	/************************************************************************************/
 	
@@ -307,7 +307,7 @@ public class snk
 			TRANSPARENCY_NONE,0);
 	}
 	
-	void sgladiat_vh_screenrefresh( struct mame_bitmap *bitmap, int full_refresh )
+	public static VhUpdatePtr sgladiat_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		unsigned char *pMem = memory_region(REGION_CPU1);
 		int attributes, scrollx, scrolly;
@@ -323,7 +323,7 @@ public class snk
 		tnk3_draw_sprites( bitmap, scrollx, scrolly );
 	
 		tnk3_draw_text( bitmap, 0, &pMem[0xf000] );
-	}
+	} };
 	
 	/**************************************************************************************/
 	
@@ -477,7 +477,7 @@ public class snk
 		}
 	}
 	
-	void ikari_vh_screenrefresh( struct mame_bitmap *bitmap, int full_refresh){
+	public static VhUpdatePtr ikari_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) {
 		const unsigned char *ram = memory_region(REGION_CPU1);
 	
 	//	shadows_visible = !shadows_visible;
@@ -503,7 +503,7 @@ public class snk
 		}
 		ikari_draw_text( bitmap );
 		ikari_draw_status( bitmap );
-	}
+	} };
 	
 	/**************************************************************/
 	
@@ -720,7 +720,7 @@ public class snk
 		}
 	}
 	
-	void gwar_vh_screenrefresh( struct mame_bitmap *bitmap, int full_refresh ){
+	public static VhUpdatePtr gwar_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) {
 		const unsigned char *ram = memory_region(REGION_CPU1);
 		unsigned char bg_attributes, sp_attributes;
 	
@@ -782,6 +782,6 @@ public class snk
 				tdfever_draw_text( bitmap, text_attributes,0,0, 0xf800 );
 			}
 		}
-	}
+	} };
 	
 }

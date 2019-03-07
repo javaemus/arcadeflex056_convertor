@@ -243,7 +243,7 @@ public class blktiger
 		}
 	}
 	
-	void blktiger_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr blktiger_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		fillbitmap(bitmap,Machine->pens[1023],&Machine->visible_area);
 	
@@ -258,7 +258,7 @@ public class blktiger
 	
 		if (chon)
 			tilemap_draw(bitmap,tx_tilemap,0,0);
-	}
+	} };
 	
 	void blktiger_eof_callback(void)
 	{

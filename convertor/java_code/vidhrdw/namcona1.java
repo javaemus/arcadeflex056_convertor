@@ -508,7 +508,7 @@ public class namcona1
 		}
 	}
 	
-	void namcona1_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr namcona1_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int bg_to_show = -1;
 		int which;
@@ -571,5 +571,5 @@ public class namcona1
 		}
 	
 		draw_sprites( bitmap );
-	}
+	} };
 }

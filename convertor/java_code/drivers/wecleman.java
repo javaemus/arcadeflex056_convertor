@@ -274,9 +274,7 @@ public class wecleman
 	WRITE16_HANDLER( wecleman_pageram_w );
 	READ16_HANDLER( wecleman_txtram_r );
 	WRITE16_HANDLER( wecleman_txtram_w );
-	void wecleman_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	void hotchase_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

@@ -71,7 +71,6 @@ public class exprraid
 	
 	/* from vidhrdw */
 	extern unsigned char *exprraid_bgcontrol;
-	void exprraid_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	/*****************************************************************************************/

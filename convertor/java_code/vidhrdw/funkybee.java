@@ -115,7 +115,7 @@ public class funkybee
 	}
 	
 	
-	void funkybee_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr funkybee_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -163,6 +163,6 @@ public class funkybee
 					videoram[0x1f11],8*offs,
 					0,TRANSPARENCY_PEN,0);
 		}
-	}
+	} };
 	
 }

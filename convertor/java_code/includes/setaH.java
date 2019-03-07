@@ -32,8 +32,6 @@ void zingzip_vh_init_palette (unsigned char *palette, unsigned short *colortable
 
 
 
-void seta_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-void seta_vh_screenrefresh_no_layers(struct mame_bitmap *bitmap,int full_refresh);
 
 
 /* Variables and functions defined in vidhrdw/seta2.c */
@@ -43,7 +41,6 @@ extern data16_t *seta2_vregs;
 WRITE16_HANDLER( seta2_vregs_w );
 
 void seta2_vh_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-void seta2_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 
 
 /* Variables and functions defined in sndhrdw/seta.c */

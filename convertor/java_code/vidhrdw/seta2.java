@@ -392,12 +392,12 @@ public class seta2
 	
 	***************************************************************************/
 	
-	void seta2_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr seta2_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* Black or pens[0]? */
 		fillbitmap(bitmap,Machine->pens[0],&Machine->visible_area);
 	
 		if (!(seta2_vregs[0x30/2] & 1))	// BLANK SCREEN
 			seta2_draw_sprites(bitmap);
-	}
+	} };
 }

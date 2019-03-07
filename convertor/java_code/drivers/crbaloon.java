@@ -60,7 +60,6 @@ public class crbaloon
 	
 	
 	void crbaloon_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void crbaloon_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	int val06,val08,val0a;

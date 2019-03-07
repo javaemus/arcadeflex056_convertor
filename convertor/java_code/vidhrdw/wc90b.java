@@ -154,7 +154,7 @@ public class wc90b
 		}
 	}
 	
-	void wc90b_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr wc90b_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_set_scrollx(bg_tilemap,0,8 * wc90b_scroll2x[0] + 256);
 		tilemap_set_scrolly(bg_tilemap,0,wc90b_scroll2y[0] + ((wc90b_scroll2y[0] < 0x10 || wc90b_scroll2y[0] == 0xff) ? 256 : 0));
@@ -168,5 +168,5 @@ public class wc90b
 		draw_sprites( bitmap, 1 );
 		tilemap_draw(bitmap,tx_tilemap,0,0);
 		draw_sprites( bitmap, 0 );
-	}
+	} };
 }

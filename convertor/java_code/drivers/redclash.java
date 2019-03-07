@@ -35,7 +35,6 @@ public class redclash
 	extern data8_t *redclash_textram;
 	
 	void redclash_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void redclash_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

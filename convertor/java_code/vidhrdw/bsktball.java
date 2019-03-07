@@ -24,7 +24,7 @@ public class bsktball
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void bsktball_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr bsktball_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 	    int offs,motion;
 	
@@ -78,6 +78,6 @@ public class bsktball
 					flipx,0,sx,sy,
 					&Machine->visible_area,TRANSPARENCY_PEN,0);
 		}
-	}
+	} };
 	
 }

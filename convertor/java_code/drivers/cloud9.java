@@ -56,8 +56,7 @@ package drivers;
 public class cloud9
 {
 	
-	extern void cloud9_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	
+	extern 
 	extern unsigned char *cloud9_vram2;
 	extern unsigned char *cloud9_bitmap_regs;
 	extern unsigned char *cloud9_auto_inc_x;

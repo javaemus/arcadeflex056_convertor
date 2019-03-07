@@ -17,7 +17,6 @@ package drivers;
 public class mnight
 {
 	
-	void mnight_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	extern unsigned char    *mnight_scrolly_ram;
 	extern unsigned char    *mnight_scrollx_ram;

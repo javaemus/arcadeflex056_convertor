@@ -1,11 +1,4 @@
 /* Video emulation definitions */
-void hbarrel_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-void baddudes_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-void birdtry_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-void robocop_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-void hippodrm_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-void slyspy_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-void midres_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 
 extern data16_t *dec0_pf1_rowscroll,*dec0_pf2_rowscroll,*dec0_pf3_rowscroll;
 extern data16_t *dec0_pf1_colscroll,*dec0_pf2_colscroll,*dec0_pf3_colscroll;

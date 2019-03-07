@@ -104,11 +104,6 @@ public class cosmic
 	void cosmica_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void cosmicg_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void magspot2_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void panic_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void magspot2_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void cosmica_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void cosmicg_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void nomnlnd_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	static unsigned int pixel_clock = 0;

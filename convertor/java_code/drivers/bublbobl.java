@@ -146,7 +146,6 @@ public class bublbobl
 	/* vidhrdw/bublbobl.c */
 	extern unsigned char *bublbobl_objectram;
 	extern size_t bublbobl_objectram_size;
-	void bublbobl_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	/* machine/bublbobl.c */
 	extern unsigned char *bublbobl_sharedram1,*bublbobl_sharedram2;

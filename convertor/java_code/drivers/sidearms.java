@@ -30,7 +30,6 @@ public class sidearms
 	extern unsigned char *sidearms_bg2_scrollx,*sidearms_bg2_scrolly;
 	
 	void sidearms_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void sidearms_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	public static WriteHandlerPtr sidearms_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)

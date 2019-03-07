@@ -295,7 +295,7 @@ public class darkseal
 	
 	/******************************************************************************/
 	
-	void darkseal_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr darkseal_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		flipscreen=!(darkseal_control_0[0]&0x80);
 		tilemap_set_flip(ALL_TILEMAPS,flipscreen ? (TILEMAP_FLIPY | TILEMAP_FLIPX) : 0);
@@ -323,7 +323,7 @@ public class darkseal
 		tilemap_draw(bitmap,pf2_tilemap,0,0);
 		darkseal_drawsprites(bitmap);
 		tilemap_draw(bitmap,pf1_tilemap,0,0);
-	}
+	} };
 	
 	/******************************************************************************/
 }

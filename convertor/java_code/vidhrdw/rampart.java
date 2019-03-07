@@ -125,12 +125,12 @@ public class rampart
 	 *
 	 *************************************/
 	
-	void rampart_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr rampart_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* draw the layers */
 		rampart_bitmap_render(bitmap);
 		atarimo_render(0, bitmap, NULL, NULL);
-	}
+	} };
 	
 	
 	

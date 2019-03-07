@@ -32,7 +32,6 @@ public class pandoras
 	
 	/* from vidhrdw */
 	void pandoras_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void pandoras_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	public static InterruptPtr pandoras_interrupt_a = new InterruptPtr() { public int handler() {
 		if (irq_enable_a)

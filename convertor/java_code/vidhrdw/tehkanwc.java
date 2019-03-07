@@ -158,7 +158,7 @@ public class tehkanwc
 	
 	
 	
-	void tehkanwc_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr tehkanwc_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -246,5 +246,5 @@ public class tehkanwc
 	
 		gridiron_drawled(bitmap,led0,0);
 		gridiron_drawled(bitmap,led1,1);
-	}
+	} };
 }

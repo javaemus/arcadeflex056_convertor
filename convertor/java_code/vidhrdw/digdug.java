@@ -164,7 +164,7 @@ public class digdug
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void digdug_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr digdug_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs,pfindex,pfcolor;
 		unsigned char *pf;
@@ -331,5 +331,5 @@ public class digdug
 				}
 			}
 		}
-	}
+	} };
 }

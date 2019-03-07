@@ -28,7 +28,7 @@ public class bublbobl
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void bublbobl_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr bublbobl_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 		int sx,sy,xc,yc;
@@ -107,5 +107,5 @@ public class bublbobl
 	
 			sx += 16;
 		}
-	}
+	} };
 }

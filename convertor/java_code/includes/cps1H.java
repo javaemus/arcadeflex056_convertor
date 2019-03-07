@@ -26,7 +26,6 @@ READ16_HANDLER( cps2_objram2_r );
 WRITE16_HANDLER( cps2_objram1_w );
 WRITE16_HANDLER( cps2_objram2_w );
 
-void cps1_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 
 
 extern struct QSound_interface qsound_interface;

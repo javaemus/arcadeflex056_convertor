@@ -118,7 +118,7 @@ public class pushman
 		}
 	}
 	
-	void pushman_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr pushman_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* Setup the tilemaps */
 		tilemap_set_scrollx( bg_tilemap,0, control[0] );
@@ -127,5 +127,5 @@ public class pushman
 		tilemap_draw(bitmap,bg_tilemap,0,0);
 		draw_sprites(bitmap);
 		tilemap_draw(bitmap,tx_tilemap,0,0);
-	}
+	} };
 }

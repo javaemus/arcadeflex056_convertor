@@ -277,7 +277,7 @@ public class pacland
 	
 	
 	
-	void pacland_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr pacland_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 		int sx,sy, code, flipx, flipy, color;
@@ -408,5 +408,5 @@ public class pacland
 		copybitmap(bitmap,tmpbitmap3,0,0,0,0,&Machine->visible_area,TRANSPARENCY_COLOR,0x7f);
 	
 		pacland_draw_sprites(bitmap,1);
-	}
+	} };
 }

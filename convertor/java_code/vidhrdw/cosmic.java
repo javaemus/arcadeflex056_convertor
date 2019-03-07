@@ -275,7 +275,7 @@ public class cosmic
 	} };
 	
 	
-	void cosmicg_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr cosmicg_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		if (full_refresh)
 		{
@@ -288,10 +288,10 @@ public class cosmic
 		}
 	
 		copybitmap(bitmap,tmpbitmap,0,0,0,0,&Machine->visible_area,TRANSPARENCY_NONE,0);
-	}
+	} };
 	
 	
-	void panic_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr panic_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -333,10 +333,10 @@ public class cosmic
 						&Machine->visible_area,TRANSPARENCY_PEN,0);
 			}
 		}
-	}
+	} };
 	
 	
-	void cosmica_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr cosmica_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -379,10 +379,10 @@ public class cosmic
 	            }
 	        }
 		}
-	}
+	} };
 	
 	
-	void magspot2_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr magspot2_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -425,10 +425,10 @@ public class cosmic
 	            }
 	        }
 		}
-	}
+	} };
 	
 	
-	void nomnlnd_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr nomnlnd_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -493,5 +493,5 @@ public class cosmic
 						&Machine->visible_area,TRANSPARENCY_NONE,0);
 	        }
 	    }
-	}
+	} };
 }

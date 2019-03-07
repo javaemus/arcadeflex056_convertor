@@ -256,7 +256,7 @@ public class baraduke
 		}
 	}
 	
-	void baraduke_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr baraduke_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -300,9 +300,9 @@ public class baraduke
 					flipscreen,flipscreen,sx*8,sy*8,
 					&Machine->visible_area,TRANSPARENCY_PEN,3);
 		}
-	}
+	} };
 	
-	void metrocrs_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr metrocrs_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -344,5 +344,5 @@ public class baraduke
 					flipscreen,flipscreen,sx*8,sy*8,
 					&Machine->visible_area,TRANSPARENCY_PEN,3);
 		}
-	}
+	} };
 }

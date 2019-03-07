@@ -453,7 +453,7 @@ public class gionbana
 	
 	
 	******************************************************************************/
-	void gionbana_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr gionbana_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int x, y;
 		unsigned char color;
@@ -498,5 +498,5 @@ public class gionbana
 		{
 			fillbitmap(bitmap, Machine->pens[0xff], 0);
 		}
-	}
+	} };
 }

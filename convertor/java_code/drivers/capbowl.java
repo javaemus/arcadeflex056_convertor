@@ -88,7 +88,6 @@ public class capbowl
 {
 	
 	
-	void capbowl_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	extern unsigned char *capbowl_rowaddress;

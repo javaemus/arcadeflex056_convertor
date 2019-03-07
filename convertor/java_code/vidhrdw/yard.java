@@ -251,7 +251,7 @@ public class yard
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void yard_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr yard_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -384,5 +384,5 @@ public class yard
 			           xpos,0,
 					   flip_screen ? &panelvisibleareaflip : &panelvisiblearea,TRANSPARENCY_NONE,0);
 		}
-	}
+	} };
 }

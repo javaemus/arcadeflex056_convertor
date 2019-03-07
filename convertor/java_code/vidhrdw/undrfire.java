@@ -255,7 +255,7 @@ public class undrfire
 					SCREEN REFRESH
 	**************************************************************/
 	
-	void undrfire_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr undrfire_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		UINT8 layer[5];
 		UINT8 pivlayer[3];
@@ -402,5 +402,5 @@ public class undrfire
 			}
 		}
 	#endif
-	}
+	} };
 }

@@ -152,7 +152,7 @@ public class flkatck
 	
 	***************************************************************************/
 	
-	void flkatck_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr flkatck_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 	#if 0
 	usrintf_showmessage("%02x-%02x-%02x-%02x-%02x-%02x-%02x-%02x  %02x-%02x-%02x-%02x-%02x-%02x-%02x-%02x",
@@ -168,5 +168,5 @@ public class flkatck
 		tilemap_draw(bitmap,k007121_tilemap[0],0,0);
 		K007121_sprites_draw(0,bitmap,&k007121_ram[0x1000],0,40,0,-1);
 		tilemap_draw(bitmap,k007121_tilemap[1],0,0);
-	}
+	} };
 }

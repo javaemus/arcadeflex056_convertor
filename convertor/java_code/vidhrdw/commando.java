@@ -168,12 +168,12 @@ public class commando
 		}
 	}
 	
-	void commando_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr commando_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_draw(bitmap,bg_tilemap,0,0);
 		draw_sprites(bitmap);
 		tilemap_draw(bitmap,fg_tilemap,0,0);
-	}
+	} };
 	
 	void commando_eof_callback(void)
 	{

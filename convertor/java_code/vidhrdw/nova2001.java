@@ -130,7 +130,7 @@ public class nova2001
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void nova2001_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr nova2001_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -232,5 +232,5 @@ public class nova2001
 					8*sx,8*sy,
 					&Machine->visible_area,TRANSPARENCY_PEN,0);
 		}
-	}
+	} };
 }

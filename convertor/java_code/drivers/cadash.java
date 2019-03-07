@@ -57,7 +57,6 @@ package drivers;
 public class cadash
 {
 	
-	void cadash_vh_screenrefresh (struct mame_bitmap *bitmap,int full_refresh);
 	
 	WRITE16_HANDLER( cadash_spritectrl_w );
 	WRITE16_HANDLER( cadash_spriteflip_w );

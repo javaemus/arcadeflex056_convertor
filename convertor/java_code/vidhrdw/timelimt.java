@@ -225,7 +225,7 @@ public class timelimt
 	
 	***************************************************************************/
 	
-	void timelimt_vh_screenrefresh( struct mame_bitmap *bitmap, int full_refresh )
+	public static VhUpdatePtr timelimt_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		if ( full_refresh )
 		{
@@ -235,5 +235,5 @@ public class timelimt
 		draw_background( bitmap );
 		drawsprites( bitmap );
 		draw_foreground(  bitmap );
-	}
+	} };
 }

@@ -96,7 +96,6 @@ public class gionbana
 	#define	SIGNED_DAC	0		// 0:unsigned DAC, 1:signed DAC
 	
 	
-	void gionbana_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	void gionbana_radrx_w(int data);
 	void gionbana_radry_w(int data);

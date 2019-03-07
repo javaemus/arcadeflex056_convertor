@@ -144,7 +144,7 @@ public class alpha68k
 	
 	/******************************************************************************/
 	
-	void alpha68k_II_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr alpha68k_II_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		static int last_bank=0;
 	
@@ -162,7 +162,7 @@ public class alpha68k
 		draw_sprites(bitmap,2,0x000);
 		draw_sprites(bitmap,2,0x400);
 		tilemap_draw(bitmap,fix_tilemap,0,0);
-	}
+	} };
 	
 	/******************************************************************************/
 	
@@ -285,7 +285,7 @@ public class alpha68k
 		}
 	}
 	
-	void alpha68k_V_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr alpha68k_V_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		static int last_bank=0;
 	
@@ -313,9 +313,9 @@ public class alpha68k
 		}
 	
 		tilemap_draw(bitmap,fix_tilemap,0,0);
-	}
+	} };
 	
-	void alpha68k_V_sb_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr alpha68k_V_sb_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		static int last_bank=0;
 	
@@ -333,7 +333,7 @@ public class alpha68k
 		draw_sprites_V(bitmap,0,0x0000,0x07c0,0x4000,0x8000,0x3fff);
 	
 		tilemap_draw(bitmap,fix_tilemap,0,0);
-	}
+	} };
 	
 	/******************************************************************************/
 	
@@ -373,7 +373,7 @@ public class alpha68k
 		}
 	}
 	
-	void alpha68k_I_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr alpha68k_I_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		fillbitmap(bitmap,Machine->pens[0],&Machine->visible_area);
 	
@@ -382,7 +382,7 @@ public class alpha68k
 	draw_sprites2(bitmap,2,0x0800);
 	draw_sprites2(bitmap,1,0x0400);
 	//
-	}
+	} };
 	
 	/******************************************************************************/
 	
@@ -452,14 +452,14 @@ public class alpha68k
 		}
 	}
 	
-	void kyros_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr kyros_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		fillbitmap(bitmap,Machine->pens[0],&Machine->visible_area);
 	
 		kyros_draw_sprites(bitmap,2,0x0800);
 		kyros_draw_sprites(bitmap,3,0x0c00);
 		kyros_draw_sprites(bitmap,1,0x0400);
-	}
+	} };
 	
 	/******************************************************************************/
 	
@@ -493,14 +493,14 @@ public class alpha68k
 		}
 	}
 	
-	void sstingry_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr sstingry_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		fillbitmap(bitmap,Machine->pens[0],&Machine->visible_area);
 	
 		sstingry_draw_sprites(bitmap,2,0x0800);
 		sstingry_draw_sprites(bitmap,3,0x0c00);
 		sstingry_draw_sprites(bitmap,1,0x0400);
-	}
+	} };
 	
 	/******************************************************************************/
 	
@@ -535,7 +535,7 @@ public class alpha68k
 		return 0;
 	} };
 	
-	void kouyakyu_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr kouyakyu_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		fillbitmap(bitmap,1,&Machine->visible_area);
 	
@@ -544,5 +544,5 @@ public class alpha68k
 	sstingry_draw_sprites(bitmap,1,0x0400);
 	
 		tilemap_draw(bitmap,fix_tilemap,0,0);
-	}
+	} };
 }

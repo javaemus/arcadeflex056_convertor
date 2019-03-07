@@ -1320,7 +1320,7 @@ public class taito_f3
 	
 	/******************************************************************************/
 	
-	void f3_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr f3_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int use_custom[4],tpri[4],zoom[4];
 		int sprite_pri[4],layer_pri[4],enable[4],alpha[4];
@@ -1685,5 +1685,5 @@ public class taito_f3
 	
 		if (DEBUG_F3 && keyboard_pressed(KEYCODE_0))
 			print_debug_info(tpri[0],tpri[1],tpri[2],tpri[3],use_custom[0],use_custom[1],use_custom[2],use_custom[3]);
-	}
+	} };
 }

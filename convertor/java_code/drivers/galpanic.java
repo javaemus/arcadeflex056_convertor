@@ -61,8 +61,6 @@ public class galpanic
 	void galpanic_init_palette(unsigned char *game_palette, unsigned short *game_colortable,const unsigned char *color_prom);
 	WRITE16_HANDLER( galpanic_bgvideoram_w );
 	WRITE16_HANDLER( galpanic_paletteram_w );
-	void galpanic_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void comad_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

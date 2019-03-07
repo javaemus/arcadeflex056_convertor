@@ -83,7 +83,7 @@ public class exzisus
 	  Screen refresh
 	***************************************************************************/
 	
-	void exzisus_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr exzisus_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 		int sx, sy, xc, yc;
@@ -220,7 +220,7 @@ public class exzisus
 				gfx_offs += height << 1;
 			}
 		}
-	}
+	} };
 	
 	
 }

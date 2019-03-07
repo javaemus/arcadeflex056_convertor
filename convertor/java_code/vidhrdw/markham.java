@@ -56,7 +56,7 @@ public class markham
 		flipscreen = data & 1;
 	} };
 	
-	void markham_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr markham_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 	
 		int offs,chr,col,x,y,px,py,fx,fy,bank ;
@@ -138,5 +138,5 @@ public class markham
 				&Machine->visible_area,TRANSPARENCY_COLOR,0);
 		}
 	
-	}
+	} };
 }

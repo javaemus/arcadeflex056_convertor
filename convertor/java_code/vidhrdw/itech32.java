@@ -1122,7 +1122,7 @@ public class itech32
 	 *
 	 *************************************/
 	
-	void itech32_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr itech32_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int y;
 	
@@ -1155,5 +1155,5 @@ public class itech32
 			else
 				draw_scanline16(bitmap, 0, y, 384, src1, Machine->pens, -1);
 		}
-	}
+	} };
 }

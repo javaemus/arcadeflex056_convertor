@@ -201,7 +201,7 @@ public class yunsung8
 	
 	***************************************************************************/
 	
-	void yunsung8_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr yunsung8_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int layers_ctrl = (~yunsung8_layers_ctrl) >> 4;
 	
@@ -219,5 +219,5 @@ public class yunsung8
 		else				fillbitmap(bitmap,Machine->pens[0],&Machine->visible_area);
 	
 		if (layers_ctrl&2)	tilemap_draw(bitmap, tilemap_1, 0,0);
-	}
+	} };
 }

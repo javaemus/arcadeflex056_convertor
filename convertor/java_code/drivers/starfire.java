@@ -55,7 +55,6 @@ public class starfire
 	
 	
 	/* In vidhrdw/starfire.c */
-	void starfire_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	extern extern extern void starfire_video_update(int scanline, int count);
 	
 	

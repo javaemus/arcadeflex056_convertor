@@ -127,11 +127,11 @@ public class arcadecl
 	 *
 	 *************************************/
 	
-	void arcadecl_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr arcadecl_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* draw the layers */
 		rampart_bitmap_render(bitmap);
 		if (has_mo)
 			atarimo_render(0, bitmap, NULL, NULL);
-	}
+	} };
 }

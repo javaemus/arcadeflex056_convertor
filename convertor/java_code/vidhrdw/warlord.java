@@ -79,7 +79,7 @@ public class warlord
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void warlord_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr warlord_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs, upright_mode, palette;
 	
@@ -157,5 +157,5 @@ public class warlord
 					sx, sy,
 					&Machine->visible_area,TRANSPARENCY_PEN,0);
 		}
-	}
+	} };
 }

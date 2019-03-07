@@ -103,10 +103,8 @@ public class rockola
 	extern const char *vanguard_sample_names[];
 	
 	void satansat_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void satansat_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	void rockola_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void rockola_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	int rockola_sh_start(const struct MachineSound *msound);
 	

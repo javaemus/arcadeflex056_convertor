@@ -281,7 +281,7 @@ public class williams
 	}
 	
 	
-	void williams_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr williams_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* full refresh forces us to redraw everything */
 		if (full_refresh)
@@ -289,7 +289,7 @@ public class williams
 	
 		/* copy the pixels into the final result */
 		copy_pixels(bitmap, &Machine->visible_area, -1);
-	}
+	} };
 	
 	
 	
@@ -371,7 +371,7 @@ public class williams
 	 *
 	 *************************************/
 	
-	void williams2_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr williams2_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		UINT8 *tileram = &memory_region(REGION_CPU1)[0xc000];
 		int xpixeloffset, xtileoffset;
@@ -406,7 +406,7 @@ public class williams
 	
 		/* copy the bitmap data on top of that */
 		copy_pixels(bitmap, &Machine->visible_area, 0);
-	}
+	} };
 	
 	
 	

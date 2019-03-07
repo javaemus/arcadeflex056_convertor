@@ -199,7 +199,7 @@ public class _1943
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void c1943_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr c1943_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs,sx,sy;
 		int bg_scrolly, bg_scrollx;
@@ -400,5 +400,5 @@ public class _1943
 						&Machine->visible_area,TRANSPARENCY_COLOR,79);
 			}
 		}
-	}
+	} };
 }

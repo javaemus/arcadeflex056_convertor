@@ -92,7 +92,7 @@ public class stadhero
 	
 	/******************************************************************************/
 	
-	void stadhero_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr stadhero_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		flipscreen=stadhero_pf2_control_0[0]&0x80;
 		tilemap_set_flip(ALL_TILEMAPS,flipscreen ? (TILEMAP_FLIPY | TILEMAP_FLIPX) : 0);
@@ -102,7 +102,7 @@ public class stadhero
 		tilemap_draw(bitmap,pf2_tilemap,0,0);
 		stadhero_drawsprites(bitmap,0x00,0x00);
 		tilemap_draw(bitmap,pf1_tilemap,0,0);
-	}
+	} };
 	
 	/******************************************************************************/
 	

@@ -347,7 +347,7 @@ public class dkong
 		}
 	}
 	
-	void radarscp_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr radarscp_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		palette_set_color(256,0xff,0x00,0x00);	/* stars */
 	
@@ -357,14 +357,14 @@ public class dkong
 		draw_tiles(bitmap);
 		draw_grid(bitmap);
 		draw_sprites(bitmap);
-	}
+	} };
 	
-	void dkong_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr dkong_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		if (full_refresh)
 			memset(dirtybuffer,1,videoram_size);
 	
 		draw_tiles(bitmap);
 		draw_sprites(bitmap);
-	}
+	} };
 }

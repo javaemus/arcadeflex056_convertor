@@ -24,7 +24,6 @@ public class mermaid
 	
 	
 	void mermaid_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void mermaid_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	static unsigned char *mermaid_AY8910_enable;

@@ -1495,7 +1495,7 @@ public class toaplan2
 		Draw the game screen in the given mame_bitmap.
 	***************************************************************************/
 	
-	void toaplan2_0_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr toaplan2_0_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int priority;
 	
@@ -1516,9 +1516,9 @@ public class toaplan2
 			if (sprite_priority[0][priority])
 				draw_sprites(bitmap,0,priority,0);
 		}
-	}
+	} };
 	
-	void dogyuun_1_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr dogyuun_1_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int priority;
 	
@@ -1548,9 +1548,9 @@ public class toaplan2
 			if (sprite_priority[0][priority])
 				draw_sprites(bitmap,0,priority,0);
 		}
-	}
+	} };
 	
-	void batsugun_1_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr batsugun_1_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int priority;
 	
@@ -1580,15 +1580,15 @@ public class toaplan2
 			if (sprite_priority[1][priority])
 				draw_sprites(bitmap,1,priority,0);
 		}
-	}
+	} };
 	
-	void truxton2_0_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr truxton2_0_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		toaplan2_0_vh_screenrefresh(bitmap, full_refresh);
 		tilemap_draw(bitmap,tx_tilemap,0,0);
-	}
+	} };
 	
-	void batrider_0_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr batrider_0_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int priority;
 	
@@ -1620,7 +1620,7 @@ public class toaplan2
 		}
 	
 		tilemap_draw(bitmap,tx_tilemap,0,0);
-	}
+	} };
 	
 	
 	void toaplan2_0_eof_callback(void)

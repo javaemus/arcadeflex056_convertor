@@ -46,7 +46,6 @@ public class taito_f3
 	
 	#define TRY_ALPHA 0
 	
-	void f3_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	extern data32_t *f3_vram,*f3_line_ram;
 	extern data32_t *f3_pf_data,*f3_pivot_ram;

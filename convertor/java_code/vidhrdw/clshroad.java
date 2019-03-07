@@ -354,7 +354,7 @@ public class clshroad
 	
 	***************************************************************************/
 	
-	void clshroad_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr clshroad_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int scrollx  = clshroad_vregs[ 0 ] + (clshroad_vregs[ 1 ] << 8);
 	//	int priority = clshroad_vregs[ 2 ];
@@ -367,5 +367,5 @@ public class clshroad
 		tilemap_draw(bitmap,tilemap_0b,0,0);
 		draw_sprites(bitmap);
 		tilemap_draw(bitmap,tilemap_1,0,0);
-	}
+	} };
 }

@@ -125,7 +125,7 @@ public class gotya
 	}
 	
 	
-	void gotya_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr gotya_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -213,5 +213,5 @@ public class gotya
 		draw_status_row(bitmap, 33, 13);	/* from RAM or 'hardcoded' into the hardware. Likely the latter */
 		draw_status_row(bitmap, 35, 14);
 		draw_status_row(bitmap, 34, 15);
-	}
+	} };
 }

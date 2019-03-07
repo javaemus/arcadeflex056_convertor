@@ -69,7 +69,7 @@ public class vsnes
 	  Display refresh
 	
 	***************************************************************************/
-	void vsnes_vh_screenrefresh( struct mame_bitmap *bitmap,int full_refresh )
+	public static VhUpdatePtr vsnes_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* render the ppu */
 		ppu2c03b_render( 0, bitmap, 0, 0, 0, 0 );
@@ -84,13 +84,13 @@ public class vsnes
 	
 			}
 	
-		}
+		} };
 	
 	
-	void vsdual_vh_screenrefresh( struct mame_bitmap *bitmap,int full_refresh )
+	public static VhUpdatePtr vsdual_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* render the ppu's */
 		ppu2c03b_render( 0, bitmap, 0, 0, 0, 0 );
 		ppu2c03b_render( 1, bitmap, 0, 0, 32*8, 0 );
-	}
+	} };
 }

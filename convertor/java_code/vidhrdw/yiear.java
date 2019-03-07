@@ -99,7 +99,7 @@ public class yiear
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void yiear_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr yiear_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -176,5 +176,5 @@ public class yiear
 				sx,sy,
 				&Machine->visible_area,TRANSPARENCY_PEN,0);
 		}
-	}
+	} };
 }

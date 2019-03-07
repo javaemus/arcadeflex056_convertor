@@ -100,8 +100,6 @@ public class sailorws
 	#define	SIGNED_DAC	0		// 0:unsigned DAC, 1:signed DAC
 	
 	
-	void sailorws_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
-	void mscoutm_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	
 	

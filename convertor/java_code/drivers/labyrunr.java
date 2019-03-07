@@ -22,7 +22,6 @@ public class labyrunr
 	/* from vidhrdw/labyrunr.c */
 	extern unsigned char *labyrunr_videoram1,*labyrunr_videoram2;
 	void labyrunr_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void labyrunr_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	public static InterruptPtr labyrunr_interrupt = new InterruptPtr() { public int handler() 
 	{

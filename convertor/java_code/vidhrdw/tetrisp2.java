@@ -338,7 +338,7 @@ public class tetrisp2
 	
 	***************************************************************************/
 	
-	void tetrisp2_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr tetrisp2_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int i,layers_ctrl = -1;
 	
@@ -389,5 +389,5 @@ public class tetrisp2
 		if (layers_ctrl & 1)	tilemap_draw(bitmap,tilemap_0, 0, 0);
 		if (layers_ctrl & 8)	for (i=0xf;i>=0;i--)	tetrisp2_draw_sprites(bitmap,i);
 		if (layers_ctrl & 2)	tilemap_draw(bitmap,tilemap_1, 0, 0);
-	}
+	} };
 }

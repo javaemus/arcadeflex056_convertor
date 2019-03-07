@@ -30,7 +30,7 @@ public class videopin
 	
 	
 	
-	void videopin_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr videopin_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 		int balloffs[4], offsc=0;
@@ -188,7 +188,7 @@ public class videopin
 	
 		/* copy the temporary bitmap to the destination bitmap */
 		copybitmap(bitmap,tmpbitmap,0,0,0,0,&Machine->visible_area,TRANSPARENCY_NONE,0);
-	}
+	} };
 	
 	
 	public static VhStartPtr videopin_vh_start = new VhStartPtr() { public int handler() 

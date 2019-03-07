@@ -100,7 +100,7 @@ public class exterm
 	 *
 	 *************************************/
 	
-	void exterm_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr exterm_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		data16_t *bgsrc, *fgsrc;
 		int x, y;
@@ -158,5 +158,5 @@ public class exterm
 			/* draw the scanline */
 			draw_scanline16(bitmap, 0, y, 256, scanline, Machine->pens, -1);
 		}
-	}
+	} };
 }

@@ -151,7 +151,6 @@ public class atarisy2
 	
 	void atarisys2_scanline_update(int scanline);
 	
-	void atarisys2_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	extern data16_t *atarisys2_slapstic;
 	

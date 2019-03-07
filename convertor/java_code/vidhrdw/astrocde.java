@@ -796,7 +796,7 @@ public class astrocde
 	
 	
 	
-	void astrocde_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr astrocde_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		if (full_refresh)
 		{
@@ -805,9 +805,9 @@ public class astrocde
 			for (i = 0;i < MAX_LINES;i++)
 				wow_update_line(bitmap,i);
 		}
-	}
+	} };
 	
-	void seawolf2_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr seawolf2_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int centre;
 		unsigned char *RAM = memory_region(REGION_CPU1);
@@ -841,5 +841,5 @@ public class astrocde
 				draw_crosshair(bitmap,centre,33,&Machine->visible_area);
 			}
 		}
-	}
+	} };
 }

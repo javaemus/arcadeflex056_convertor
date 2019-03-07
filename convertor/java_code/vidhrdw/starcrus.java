@@ -523,7 +523,7 @@ public class starcrus
 	    return 0;
 	}
 	
-	void starcrus_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr starcrus_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 	    fillbitmap(bitmap,Machine->pens[0],&Machine->visible_area);
 	
@@ -597,7 +597,7 @@ public class starcrus
 	        collision_reg |= 0x04;
 	    }
 	
-	}
+	} };
 	
 	public static ReadHandlerPtr starcrus_coll_det_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

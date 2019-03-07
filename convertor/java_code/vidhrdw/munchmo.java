@@ -209,10 +209,10 @@ public class munchmo
 		}
 	}
 	
-	void mnchmobl_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr mnchmobl_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		draw_background( bitmap );
 		draw_sprites( bitmap );
 		draw_status( bitmap );
-	}
+	} };
 }

@@ -84,7 +84,7 @@ public class bladestl
 	
 	***************************************************************************/
 	
-	void bladestl_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr bladestl_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		K007342_tilemap_update();
 	
@@ -93,5 +93,5 @@ public class bladestl
 		K007342_tilemap_draw( bitmap, 1, 1 | TILEMAP_IGNORE_TRANSPARENCY ,0);
 		K007342_tilemap_draw( bitmap, 0, 0 ,0);
 		K007342_tilemap_draw( bitmap, 0, 1 ,0);
-	}
+	} };
 }

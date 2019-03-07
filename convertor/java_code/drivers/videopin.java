@@ -25,8 +25,7 @@ public class videopin
 {
 	
 	/* vidhrdw/videopin.c */
-	extern extern extern void videopin_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	extern struct artwork_info *videopin_backdrop;
+	extern extern extern extern struct artwork_info *videopin_backdrop;
 	
 	
 	/* machine/videopin.c */

@@ -27,7 +27,7 @@ public class mexico86
 	
 	
 	
-	void mexico86_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr mexico86_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 		int sx,sy,xc,yc;
@@ -104,9 +104,9 @@ public class mexico86
 				}
 			}
 		}
-	}
+	} };
 	
-	void kikikai_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr kikikai_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 		int sx,sy,xc,yc;
@@ -182,5 +182,5 @@ public class mexico86
 				}
 			}
 		}
-	}
+	} };
 }

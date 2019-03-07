@@ -53,7 +53,6 @@ public class milliped
 	
 	
 	void milliped_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void milliped_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	/*
 	 * This wrapper routine is necessary because Millipede requires a direction bit

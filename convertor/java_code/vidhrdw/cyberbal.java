@@ -395,11 +395,11 @@ public class cyberbal
 	 *
 	 *************************************/
 	
-	void cyberbal_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr cyberbal_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* draw the layers */
 		ataripf_render(current_screen, bitmap);
 		atarimo_render(current_screen, bitmap, NULL, NULL);
 		atarian_render(current_screen, bitmap);
-	}
+	} };
 }

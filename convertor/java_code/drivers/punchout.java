@@ -116,8 +116,6 @@ public class punchout
 	extern unsigned char *punchout_palettebank;
 	void punchout_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void armwrest_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void punchout_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void armwrest_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

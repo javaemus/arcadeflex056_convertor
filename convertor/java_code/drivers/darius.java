@@ -138,7 +138,6 @@ public class darius
 	
 	
 	
-	void darius_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	static UINT16 cpua_ctrl;
 	static UINT16 coin_word=0;

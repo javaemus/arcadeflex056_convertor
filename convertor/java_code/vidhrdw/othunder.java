@@ -283,7 +283,7 @@ public class othunder
 					SCREEN REFRESH
 	**************************************************************/
 	
-	void othunder_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr othunder_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int layer[3];
 	
@@ -400,6 +400,6 @@ public class othunder
 			/* player 2 */
 			draw_crosshair(bitmap,screenx,screeny,&Machine->visible_area);
 		}
-	}
+	} };
 	
 }

@@ -392,7 +392,7 @@ public class pstadium
 		pstadium_tmpbitmap = 0;
 	} };
 	
-	void pstadium_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr pstadium_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int x, y;
 		int color;
@@ -421,9 +421,9 @@ public class pstadium
 		{
 			fillbitmap(bitmap, Machine->pens[0x00], 0);
 		}
-	}
+	} };
 	
-	void galkoku_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr galkoku_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int x, y;
 		int color;
@@ -452,5 +452,5 @@ public class pstadium
 		{
 			fillbitmap(bitmap, Machine->pens[0x00], 0);
 		}
-	}
+	} };
 }

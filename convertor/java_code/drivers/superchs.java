@@ -42,7 +42,6 @@ package drivers;
 public class superchs
 {
 	
-	void superchs_vh_screenrefresh  (struct mame_bitmap *bitmap,int full_refresh);
 	
 	static UINT16 coin_word;
 	static data32_t *superchs_ram;

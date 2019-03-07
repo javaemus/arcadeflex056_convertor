@@ -20,8 +20,6 @@ public class skykid
 	extern unsigned char *skykid_textram, *spriteram, *skykid_videoram;
 	
 	/* from vidhrdw/skykid.c */
-	void skykid_vh_screenrefresh( struct mame_bitmap *bitmap,int full_refresh );
-	void drgnbstr_vh_screenrefresh( struct mame_bitmap *bitmap,int full_refresh );
 	void skykid_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	

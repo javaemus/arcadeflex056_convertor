@@ -31,7 +31,7 @@ public class spcforce
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void spcforce_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr spcforce_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -64,5 +64,5 @@ public class spcforce
 					sx, sy,
 					&Machine->visible_area,TRANSPARENCY_PEN,0);
 		}
-	}
+	} };
 }

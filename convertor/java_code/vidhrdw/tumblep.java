@@ -167,7 +167,7 @@ public class tumblep
 	
 	/******************************************************************************/
 	
-	void tumblep_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr tumblep_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -188,9 +188,9 @@ public class tumblep
 		else
 			tilemap_draw(bitmap,pf1_alt_tilemap,0,0);
 		tumblep_drawsprites(bitmap);
-	}
+	} };
 	
-	void tumblepb_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr tumblepb_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs,offs2;
 	
@@ -212,5 +212,5 @@ public class tumblep
 		else
 			tilemap_draw(bitmap,pf1_alt_tilemap,0,0);
 		tumblep_drawsprites(bitmap);
-	}
+	} };
 }

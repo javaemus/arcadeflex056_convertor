@@ -35,7 +35,6 @@ public class lsasquad
 	
 	/* in vidhrdw/lsasquad.c */
 	extern unsigned char *lsasquad_scrollram;
-	void lsasquad_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	/* in machine/lsasquad.c */
 	extern int lsasquad_invertcoin;

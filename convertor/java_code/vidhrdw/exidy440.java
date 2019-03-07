@@ -602,7 +602,7 @@ public class exidy440
 	 *
 	 *************************************/
 	
-	void exidy440_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr exidy440_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* if we need a full refresh, mark all scanlines dirty */
 		if (full_refresh)
@@ -629,5 +629,5 @@ public class exidy440
 				update_screen(bitmap, 0);
 			}
 		}
-	}
+	} };
 }

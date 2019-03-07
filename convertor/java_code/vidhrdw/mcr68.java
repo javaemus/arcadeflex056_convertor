@@ -195,7 +195,7 @@ public class mcr68
 	 *
 	 *************************************/
 	
-	void mcr68_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr mcr68_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* draw the background */
 		mcr68_update_background(tmpbitmap, 0);
@@ -211,7 +211,7 @@ public class mcr68
 	
 		/* draw the high-priority sprites */
 		mcr68_update_sprites(bitmap, 1);
-	}
+	} };
 	
 	
 	
@@ -461,7 +461,7 @@ public class mcr68
 	 *
 	 *************************************/
 	
-	void zwackery_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr zwackery_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* draw the background */
 		zwackery_update_background(tmpbitmap, 0);
@@ -477,5 +477,5 @@ public class mcr68
 	
 		/* draw the high-priority sprites */
 		zwackery_update_sprites(bitmap, 1);
-	}
+	} };
 }

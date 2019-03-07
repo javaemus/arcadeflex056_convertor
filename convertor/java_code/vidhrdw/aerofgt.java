@@ -448,7 +448,7 @@ public class aerofgt
 	}
 	
 	
-	void pspikes_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr pspikes_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int i,scrolly;
 	
@@ -462,9 +462,9 @@ public class aerofgt
 	
 		tilemap_draw(bitmap,bg1_tilemap,0,0);
 		turbofrc_drawsprites(bitmap,0);
-	}
+	} };
 	
-	void karatblz_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr karatblz_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_set_scrollx(bg1_tilemap,0,bg1scrollx-8);
 		tilemap_set_scrolly(bg1_tilemap,0,bg1scrolly);
@@ -479,9 +479,9 @@ public class aerofgt
 		/* we use the priority buffer so sprites are drawn front to back */
 		turbofrc_drawsprites(bitmap,1);
 		turbofrc_drawsprites(bitmap,0);
-	}
+	} };
 	
-	void spinlbrk_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr spinlbrk_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int i,scrolly;
 	
@@ -501,9 +501,9 @@ public class aerofgt
 		/* we use the priority buffer so sprites are drawn front to back */
 		turbofrc_drawsprites(bitmap,0);
 		turbofrc_drawsprites(bitmap,1);
-	}
+	} };
 	
-	void turbofrc_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr turbofrc_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int i,scrolly;
 	
@@ -524,9 +524,9 @@ public class aerofgt
 		/* we use the priority buffer so sprites are drawn front to back */
 		turbofrc_drawsprites(bitmap,1);
 		turbofrc_drawsprites(bitmap,0);
-	}
+	} };
 	
-	void aerofgt_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr aerofgt_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_set_scrollx(bg1_tilemap,0,aerofgt_rasterram[0x0000]-18);
 		tilemap_set_scrolly(bg1_tilemap,0,bg1scrolly);
@@ -544,5 +544,5 @@ public class aerofgt
 	
 		aerofgt_drawsprites(bitmap,2);
 		aerofgt_drawsprites(bitmap,3);
-	}
+	} };
 }

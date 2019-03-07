@@ -62,7 +62,6 @@ public class route16
 	extern size_t route16_videoram_size;
 	
 	void route16_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void route16_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	public static Memory_ReadAddress cpu1_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

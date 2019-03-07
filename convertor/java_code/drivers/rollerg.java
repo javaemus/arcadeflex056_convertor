@@ -18,7 +18,6 @@ public class rollerg
 	/* prototypes */
 	static static void rollerg_banking( int lines );
 	
-	void rollerg_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

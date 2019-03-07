@@ -221,7 +221,7 @@ public class skykid
 		}
 	}
 	
-	void skykid_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr skykid_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -263,5 +263,5 @@ public class skykid
 		}
 		if ((priority & 0xf0) == 0x50)
 			skykid_draw_sprites(bitmap);
-	}
+	} };
 }

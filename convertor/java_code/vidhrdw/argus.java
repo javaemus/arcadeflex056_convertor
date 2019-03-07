@@ -1368,7 +1368,7 @@ public class argus
 	}
 	#endif
 	
-	void argus_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr argus_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* scroll BG0 and render tile at proper position */
 		argus_bg0_scroll_handle();
@@ -1380,18 +1380,18 @@ public class argus
 		tilemap_draw(bitmap, bg1_tilemap, 0, 0);
 		argus_draw_sprites(bitmap, 1);
 		tilemap_draw(bitmap, tx_tilemap,  0, 0);
-	}
+	} };
 	
-	void valtric_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr valtric_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		fillbitmap(bitmap, Machine->pens[0], &Machine->visible_area);
 	
 		tilemap_draw(bitmap, bg1_tilemap, 0, 0);
 		valtric_draw_sprites(bitmap);
 		tilemap_draw(bitmap, tx_tilemap,  0, 0);
-	}
+	} };
 	
-	void butasan_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr butasan_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		fillbitmap(bitmap, Machine->pens[0], &Machine->visible_area);
 	
@@ -1403,5 +1403,5 @@ public class argus
 	#ifdef MAME_DEBUG
 		butasan_log_vram();
 	#endif
-	}
+	} };
 }

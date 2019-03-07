@@ -186,7 +186,7 @@ public class darius
 	
 	
 	
-	void darius_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr darius_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		UINT8 layer[2];
 	
@@ -211,6 +211,6 @@ public class darius
 			int primasks[2] = {0xfc,0xf0};
 			darius_draw_sprites(bitmap,primasks,-8);
 		}
-	}
+	} };
 	
 }

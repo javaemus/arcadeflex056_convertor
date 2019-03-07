@@ -194,9 +194,9 @@ public class sega
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void sega_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr sega_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		sega_generate_vector_list();
 		vector_vh_screenrefresh(bitmap,full_refresh);
-	}
+	} };
 }

@@ -358,7 +358,7 @@ public class rpunch
 	 *
 	 *************************************/
 	
-	void rpunch_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr rpunch_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int effbins;
 	
@@ -371,5 +371,5 @@ public class rpunch
 		draw_sprites(bitmap, effbins, gins);
 		if (rpunch_bitmapram)
 			draw_bitmap(bitmap);
-	}
+	} };
 }

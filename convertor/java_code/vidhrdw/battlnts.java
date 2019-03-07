@@ -80,12 +80,12 @@ public class battlnts
 	
 	***************************************************************************/
 	
-	void battlnts_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh){
+	public static VhUpdatePtr battlnts_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) {
 	
 		K007342_tilemap_update();
 	
 		K007342_tilemap_draw( bitmap, 0, TILEMAP_IGNORE_TRANSPARENCY ,0);
 		K007420_sprites_draw( bitmap );
 		K007342_tilemap_draw( bitmap, 0, 1 | TILEMAP_IGNORE_TRANSPARENCY ,0);
-	}
+	} };
 }

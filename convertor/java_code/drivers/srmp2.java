@@ -70,10 +70,7 @@ public class srmp2
 	***************************************************************************/
 	
 	void srmp2_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void srmp2_vh_screenrefresh     (struct mame_bitmap *bitmap,int full_refresh);
 	void srmp3_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void srmp3_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void mjyuugi_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	extern int srmp2_color_bank;

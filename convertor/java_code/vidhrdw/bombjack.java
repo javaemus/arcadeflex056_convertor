@@ -61,7 +61,7 @@ public class bombjack
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void bombjack_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr bombjack_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs,base;
 	
@@ -200,5 +200,5 @@ public class bombjack
 					sx,sy,
 					&Machine->visible_area,TRANSPARENCY_PEN,0);
 		}
-	}
+	} };
 }

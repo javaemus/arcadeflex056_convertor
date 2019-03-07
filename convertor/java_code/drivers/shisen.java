@@ -15,7 +15,6 @@ public class shisen
 {
 	
 	/* in vidhrdw/sichuan2.c */
-	void sichuan2_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

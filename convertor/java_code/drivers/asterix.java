@@ -13,7 +13,6 @@ package drivers;
 public class asterix
 {
 	
-	void asterix_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	WRITE16_HANDLER( asterix_spritebank_w );
 	
 	static unsigned char cur_control2;

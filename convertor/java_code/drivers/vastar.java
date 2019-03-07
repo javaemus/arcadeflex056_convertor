@@ -76,7 +76,6 @@ public class vastar
 	extern data8_t *vastar_bg1_scroll,*vastar_bg2_scroll;
 	extern data8_t *vastar_sprite_priority;
 	
-	void vastar_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	static unsigned char *vastar_sharedram;
 	

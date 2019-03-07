@@ -35,11 +35,8 @@ public class system1H
 	
 	void system1_define_background_memory(int Mode);
 	
-	void system1_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void system1_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
-	void choplifter_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void wbml_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	#endif
 }

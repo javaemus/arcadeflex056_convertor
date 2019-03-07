@@ -580,10 +580,10 @@ public class neogeo
 	profiler_mark(PROFILER_END);
 	}
 	
-	void neogeo_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr neogeo_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		screenrefresh(bitmap,&Machine->visible_area);
-	}
+	} };
 	
 	static int next_update_first_line;
 	extern int neogeo_raster_enable;

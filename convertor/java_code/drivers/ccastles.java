@@ -91,7 +91,6 @@ public class ccastles
 	extern unsigned char *ccastles_scrollx;
 	extern unsigned char *ccastles_scrolly;
 	
-	void ccastles_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

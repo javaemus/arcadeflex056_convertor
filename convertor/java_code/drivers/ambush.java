@@ -47,7 +47,6 @@ public class ambush
 	extern unsigned char *ambush_colorbank;
 	
 	void ambush_vh_convert_color_prom(unsigned char *obsolete,unsigned short *colortable,const unsigned char *color_prom);
-	void ambush_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	public static WriteHandlerPtr ambush_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)

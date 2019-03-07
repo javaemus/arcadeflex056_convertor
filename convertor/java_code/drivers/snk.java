@@ -72,13 +72,7 @@ public class snk
 	extern void snk_4bpp_shadow_vh_convert_color_prom(unsigned char *obsolete,unsigned short *colortable,const unsigned char *color_prom);
 	
 	extern extern 
-	extern void tnk3_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	extern void ikari_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	extern void tdfever_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	extern void ftsoccer_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	extern void gwar_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	// extern void psychos_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh); /* not needed? */
-	
+	extern extern extern extern extern // extern 
 	/*********************************************************************/
 	
 	#define SNK_NMI_ENABLE	1

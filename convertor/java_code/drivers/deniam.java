@@ -49,7 +49,6 @@ public class deniam
 	WRITE16_HANDLER( deniam_palette_w );
 	READ16_HANDLER( deniam_coinctrl_r );
 	WRITE16_HANDLER( deniam_coinctrl_w );
-	void deniam_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

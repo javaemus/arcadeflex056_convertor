@@ -92,7 +92,6 @@ public class wmswolfu
 	
 	
 	/* external video routines */
-	void wms_tunit_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void wms_tunit_to_shiftreg(offs_t address, unsigned short *shiftreg);
 	void wms_tunit_from_shiftreg(offs_t address, unsigned short *shiftreg);
 	void wms_tunit_display_addr_changed(UINT32 offs, int rowbytes, int scanline);

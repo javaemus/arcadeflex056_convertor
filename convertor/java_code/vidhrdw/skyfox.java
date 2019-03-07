@@ -291,10 +291,10 @@ public class skyfox
 	***************************************************************************/
 	
 	
-	void skyfox_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr skyfox_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		fillbitmap(bitmap,Machine->pens[255],&Machine->visible_area);	// the bg is black
 		skyfox_draw_background(bitmap);
 		skyfox_draw_sprites(bitmap);
-	}
+	} };
 }

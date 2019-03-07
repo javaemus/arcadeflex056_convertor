@@ -31,7 +31,6 @@ public class tigeroad
 	
 	WRITE16_HANDLER( tigeroad_videoctrl_w );
 	WRITE16_HANDLER( tigeroad_scroll_w );
-	void tigeroad_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	static data16_t *ram16;

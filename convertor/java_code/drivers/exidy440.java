@@ -261,8 +261,6 @@ public class exidy440
 	extern UINT8 exidy440_firq_beam;
 	extern UINT8 topsecex_yscroll;
 	
-	void exidy440_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void topsecex_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

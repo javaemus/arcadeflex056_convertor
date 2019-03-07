@@ -597,7 +597,7 @@ public class cninja
 		}
 	}
 	
-	void cninja_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr cninja_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		static int last_pf2_bank, last_pf3_bank;
 		int pf23_control;
@@ -633,9 +633,9 @@ public class cninja
 		tilemap_draw(bitmap,pf4_tilemap,TILEMAP_FRONT,0);
 		cninja_drawsprites(bitmap,1);
 		tilemap_draw(bitmap,pf1_tilemap,0,0);
-	}
+	} };
 	
-	void edrandy_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr edrandy_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int pf23_control;
 	
@@ -665,9 +665,9 @@ public class cninja
 		cninja_drawsprites(bitmap,0);
 		cninja_drawsprites(bitmap,1);
 		tilemap_draw(bitmap,pf1_tilemap,0,0);
-	}
+	} };
 	
-	void robocop2_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr robocop2_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		static int last_pf2_bank,last_pf3_bank,last_pf4_bank;
 		int pf23_control,pf14_control;
@@ -729,5 +729,5 @@ public class cninja
 		}
 		robocop2_drawsprites(bitmap,0);
 		tilemap_draw(bitmap,pf1_tilemap,0,0);
-	}
+	} };
 }

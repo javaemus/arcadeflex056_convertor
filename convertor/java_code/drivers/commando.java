@@ -50,7 +50,6 @@ public class commando
 	extern unsigned char *commando_fgvideoram;
 	extern unsigned char *commando_bgvideoram;
 	
-	void commando_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

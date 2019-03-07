@@ -498,7 +498,7 @@ public class tunhunt
 				TRANSPARENCY_PEN,0 );
 	}
 	
-	void tunhunt_vh_screenrefresh( struct mame_bitmap *bitmap, int full_refresh )
+	public static VhUpdatePtr tunhunt_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		const UINT8 *pMem = memory_region( REGION_CPU1 );
 	
@@ -525,7 +525,7 @@ public class tunhunt
 			tunhunt_control&0x10 ); /* hstretch */
 	
 		draw_text( bitmap );
-	}
+	} };
 	
 	public static ReadHandlerPtr tunhunt_button_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

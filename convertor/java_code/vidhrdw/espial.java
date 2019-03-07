@@ -91,7 +91,7 @@ public class espial
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void espial_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr espial_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -169,5 +169,5 @@ public class espial
 						sx,sy,
 						&Machine->visible_area,TRANSPARENCY_PEN,0);
 		}
-	}
+	} };
 }

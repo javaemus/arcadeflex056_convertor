@@ -205,7 +205,7 @@ public class mcr3
 	 *
 	 *************************************/
 	
-	void mcr3_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr mcr3_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* mark everything dirty on a cocktail flip change */
 		if (last_cocktail_flip != mcr_cocktail_flip)
@@ -220,7 +220,7 @@ public class mcr3
 	
 		/* draw the sprites */
 		mcr3_update_sprites(bitmap, 0x03, 0, 0, 0);
-	}
+	} };
 	
 	
 	
@@ -230,7 +230,7 @@ public class mcr3
 	 *
 	 *************************************/
 	
-	void mcrmono_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr mcrmono_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* mark everything dirty on a cocktail flip change */
 		if (last_cocktail_flip != mcr_cocktail_flip)
@@ -245,7 +245,7 @@ public class mcr3
 	
 		/* draw the sprites */
 		mcr3_update_sprites(bitmap, 0x03, 0, 0, 0);
-	}
+	} };
 	
 	
 	
@@ -324,7 +324,7 @@ public class mcr3
 	 *
 	 *************************************/
 	
-	void spyhunt_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr spyhunt_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		static const struct rectangle clip = { 0, 30*16-1, 0, 30*16-1 };
 		int offs, scrollx, scrolly;
@@ -386,7 +386,7 @@ public class mcr3
 				drawgfx(bitmap, Machine->gfx[2], buffer[offs], 0, 0, 0,
 						30 * 16, (29 - offs) * 16, &Machine->visible_area, TRANSPARENCY_NONE, 0);
 		}
-	}
+	} };
 	
 	/*************************************
 	 *
@@ -452,7 +452,7 @@ public class mcr3
 	 *
 	 *************************************/
 	
-	void dotron_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr dotron_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		struct rectangle sclip;
 		int offs;
@@ -494,7 +494,7 @@ public class mcr3
 	
 		/* draw the sprites */
 		mcr3_update_sprites(bitmap, 0x03, 0, DOTRON_X_START, DOTRON_Y_START);
-	}
+	} };
 	
 	/*************************************
 	 *

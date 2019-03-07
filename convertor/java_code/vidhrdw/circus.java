@@ -155,7 +155,7 @@ public class circus
 	}
 	
 	
-	void circus_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr circus_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 		int sx,sy;
@@ -228,10 +228,10 @@ public class circus
 				}
 			}
 		}
-	}
+	} };
 	
 	
-	void robotbowl_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr robotbowl_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 		int sx,sy;
@@ -323,9 +323,9 @@ public class circus
 			}
 		}
 	
-	}
+	} };
 	
-	void crash_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr crash_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 		int sx,sy;
@@ -386,5 +386,5 @@ public class circus
 				}
 			}
 		}
-	}
+	} };
 }

@@ -89,7 +89,6 @@ public class senjyo
 	extern UINT8 *senjyo_bgstripesram;
 	
 	
-	void senjyo_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	int senjyo_sh_start(const struct MachineSound *msound);
 	

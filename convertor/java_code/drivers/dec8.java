@@ -46,14 +46,6 @@ public class dec8
 {
 	
 	void ghostb_vh_convert_color_prom(unsigned char *obsolete,unsigned short *colortable,const unsigned char *color_prom);
-	void cobracom_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
-	void ghostb_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
-	void srdarwin_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
-	void gondo_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
-	void garyoret_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
-	void lastmiss_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
-	void shackled_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
-	void oscar_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	
 	/******************************************************************************/

@@ -21,7 +21,6 @@ package drivers;
 public class madmotor
 {
 	
-	void madmotor_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	READ16_HANDLER( madmotor_pf1_rowscroll_r );
 	WRITE16_HANDLER( madmotor_pf1_rowscroll_w );

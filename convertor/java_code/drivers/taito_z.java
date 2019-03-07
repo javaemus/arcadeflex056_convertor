@@ -437,13 +437,6 @@ public class taito_z
 {
 	
 	
-	void contcirc_vh_screenrefresh (struct mame_bitmap *bitmap,int full_refresh);
-	void chasehq_vh_screenrefresh  (struct mame_bitmap *bitmap,int full_refresh);
-	void bshark_vh_screenrefresh   (struct mame_bitmap *bitmap,int full_refresh);
-	void sci_vh_screenrefresh      (struct mame_bitmap *bitmap,int full_refresh);
-	void aquajack_vh_screenrefresh (struct mame_bitmap *bitmap,int full_refresh);
-	void spacegun_vh_screenrefresh (struct mame_bitmap *bitmap,int full_refresh);
-	void dblaxle_vh_screenrefresh  (struct mame_bitmap *bitmap,int full_refresh);
 	
 	READ16_HANDLER ( sci_spriteframe_r );
 	WRITE16_HANDLER( sci_spriteframe_w );

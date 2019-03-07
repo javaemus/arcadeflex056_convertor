@@ -301,7 +301,7 @@ public class fuuki16
 		}
 	}
 	
-	void fuuki16_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr fuuki16_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		data16_t layer0_scrollx, layer0_scrolly;
 		data16_t layer1_scrollx, layer1_scrolly;
@@ -355,5 +355,5 @@ public class fuuki16
 		fuuki16_draw_layer(bitmap, middleground,0, 2);
 	
 		fuuki16_draw_sprites(bitmap);
-	}
+	} };
 }

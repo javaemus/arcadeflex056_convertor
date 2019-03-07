@@ -329,7 +329,6 @@ typedef struct _ygv608 {
 } YGV608, *pYGV608;
 
 
-void ygv608_vh_update( struct mame_bitmap *bitmap, int full_refresh );
 
 READ16_HANDLER( ygv608_r );
 WRITE16_HANDLER( ygv608_w );

@@ -17,7 +17,6 @@ public class berzerk
 	extern unsigned char* berzerk_magicram;
 	
 	
-	void berzerk_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

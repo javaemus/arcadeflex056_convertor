@@ -88,7 +88,7 @@ public class playch10
 	
 	***************************************************************************/
 	
-	void playch10_vh_screenrefresh( struct mame_bitmap *bitmap,int full_refresh )
+	public static VhUpdatePtr playch10_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -160,5 +160,5 @@ public class playch10
 	
 		/* copy the temporary bitmap to the screen */
 		copybitmap( bitmap, tmpbitmap, 0, 0, 0, 0, &top_monitor, TRANSPARENCY_NONE, 0 );
-	}
+	} };
 }

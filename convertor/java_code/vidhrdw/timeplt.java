@@ -235,12 +235,12 @@ public class timeplt
 		}
 	}
 	
-	void timeplt_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr timeplt_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_draw(bitmap,bg_tilemap,0,0);
 		draw_sprites(bitmap);
 		tilemap_draw(bitmap,bg_tilemap,1,0);
-	}
+	} };
 	
 	
 	public static InterruptPtr timeplt_interrupt = new InterruptPtr() { public int handler() 

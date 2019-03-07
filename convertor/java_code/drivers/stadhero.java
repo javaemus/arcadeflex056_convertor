@@ -16,7 +16,6 @@ public class stadhero
 {
 	
 	/* Video emulation definitions */
-	void stadhero_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	extern data16_t *stadhero_pf1_data,*stadhero_pf2_data;
 	

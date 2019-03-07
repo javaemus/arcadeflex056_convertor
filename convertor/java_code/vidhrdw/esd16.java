@@ -52,7 +52,6 @@ public class esd16
 	WRITE16_HANDLER( esd16_vram_0_w );
 	WRITE16_HANDLER( esd16_vram_1_w );
 	
-	void esd16_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	/***************************************************************************
@@ -216,7 +215,7 @@ public class esd16
 	
 	***************************************************************************/
 	
-	void esd16_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr esd16_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int layers_ctrl = -1;
 	
@@ -241,5 +240,5 @@ public class esd16
 		if (layers_ctrl & 2)	tilemap_draw(bitmap,tilemap_1,0,0);
 	
 		if (layers_ctrl & 4)	esd16_draw_sprites(bitmap);
-	}
+	} };
 }

@@ -34,7 +34,6 @@ public class kyugo
 	extern size_t kyugo_videoram_size;
 	extern unsigned char *kyugo_back_scrollY_lo;
 	extern unsigned char *kyugo_back_scrollX;
-	void kyugo_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	static unsigned char *shared_ram;

@@ -151,7 +151,6 @@ public class wardner
 	/******************** Video stuff **********************/
 	READ_HANDLER ( wardner_videoram_r );
 	
-	void toaplan0_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	extern int twincobr_display_on;
 	

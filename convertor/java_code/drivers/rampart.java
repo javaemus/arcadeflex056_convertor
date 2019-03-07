@@ -36,7 +36,6 @@ public class rampart
 	
 	WRITE16_HANDLER( rampart_bitmap_w );
 	
-	void rampart_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	extern data16_t *rampart_bitmap;
 	

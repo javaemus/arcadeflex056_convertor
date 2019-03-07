@@ -34,10 +34,7 @@ public class circus
 	
 	
 	extern 
-	extern void crash_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	extern void circus_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	extern void robotbowl_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	
+	extern extern extern 
 	extern 
 	static int circus_interrupt;
 	

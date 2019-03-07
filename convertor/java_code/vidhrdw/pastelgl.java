@@ -307,7 +307,7 @@ public class pastelgl
 	
 	
 	******************************************************************************/
-	void pastelgl_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr pastelgl_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int x, y;
 		unsigned char color;
@@ -333,5 +333,5 @@ public class pastelgl
 		{
 			fillbitmap(bitmap, Machine->pens[0x00], 0);
 		}
-	}
+	} };
 }

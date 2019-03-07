@@ -24,7 +24,6 @@ public class bking2
 {
 	
 	void bking2_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void bking2_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	static int sndnmi_enable = 1;

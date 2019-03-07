@@ -20,7 +20,6 @@ public class ironhors
 	static unsigned char *ironhors_interrupt_enable;
 	
 	void ironhors_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void ironhors_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

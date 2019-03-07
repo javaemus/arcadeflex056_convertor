@@ -107,9 +107,6 @@ public class zaxxon
 	extern unsigned char *zaxxon_background_color_bank;
 	extern unsigned char *zaxxon_background_enable;
 	void zaxxon_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void zaxxon_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void razmataz_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void ixion_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	extern int zaxxon_vid_type;
 	
 	

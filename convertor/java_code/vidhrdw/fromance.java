@@ -390,7 +390,7 @@ public class fromance
 	 *
 	 *************************************/
 	
-	void fromance_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr fromance_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_set_scrollx(bg_tilemap, 0, scrollx[0]);
 		tilemap_set_scrolly(bg_tilemap, 0, scrolly[0]);
@@ -399,10 +399,10 @@ public class fromance
 	
 		tilemap_draw(bitmap, bg_tilemap, 0, 0);
 		tilemap_draw(bitmap, fg_tilemap, 0, 0);
-	}
+	} };
 	
 	
-	void pipedrm_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr pipedrm_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* there seems to be no logical mapping for the X scroll register -- maybe it's gone */
 		tilemap_set_scrolly(bg_tilemap, 0, scrolly[1]);
@@ -413,5 +413,5 @@ public class fromance
 	
 		draw_sprites(bitmap, 0);
 		draw_sprites(bitmap, 1);
-	}
+	} };
 }

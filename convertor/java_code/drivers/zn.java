@@ -57,7 +57,7 @@ public class zn
 	{
 	} };
 	
-	static void znqs_vh_screenrefresh( struct mame_bitmap *bitmap, int full_refresh )
+	static public static VhUpdatePtr znqs_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int refresh = full_refresh;
 	
@@ -124,7 +124,7 @@ public class zn
 			dt[ 3 ].text = 0; /* terminate array */
 			displaytext( Machine->scrbitmap, dt );
 		}
-	}
+	} };
 	
 	static struct QSound_interface qsound_interface =
 	{
@@ -614,7 +614,7 @@ public class zn
 		}
 	}
 	
-	static void zn_vh_screenrefresh( struct mame_bitmap *bitmap, int full_refresh )
+	static public static VhUpdatePtr zn_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		UINT16 n_x;
 		UINT16 n_y;
@@ -647,7 +647,7 @@ public class zn
 				}
 			}
 		}
-	}
+	} };
 	
 	static void triangle( UINT32 n_x1, UINT32 n_y1, UINT32 n_x2, UINT32 n_y2, UINT32 n_x3, UINT32 n_y3, UINT32 n_colour )
 	{

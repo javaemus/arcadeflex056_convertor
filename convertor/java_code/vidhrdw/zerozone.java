@@ -51,7 +51,7 @@ public class zerozone
 		return 0;
 	} };
 	
-	void zerozone_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr zerozone_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -81,5 +81,5 @@ public class zerozone
 						0,TRANSPARENCY_NONE,0);
 			}
 		}
-	}
+	} };
 }

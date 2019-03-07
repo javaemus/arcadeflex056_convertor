@@ -193,13 +193,13 @@ public class cinemat
 		vector_vh_stop();
 	} };
 	
-	void cinemat_vh_screenrefresh (struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr cinemat_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 	    vector_vh_screenrefresh(bitmap, full_refresh);
 	    vector_clear_list ();
-	}
+	} };
 	
-	void spacewar_vh_screenrefresh (struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr spacewar_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 	    int tk[] = {3, 8, 4, 9, 1, 6, 2, 7, 5, 0};
 		int i, pwidth, pheight, key, row, col, sw_option;
@@ -264,7 +264,7 @@ public class cinemat
 			}
 		}
 	    sw_option_change = sw_option;
-	}
+	} };
 	
 	int cinemat_clear_list(void)
 	{

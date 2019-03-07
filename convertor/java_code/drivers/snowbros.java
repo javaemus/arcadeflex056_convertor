@@ -15,8 +15,6 @@ package drivers;
 public class snowbros
 {
 	
-	void snowbros_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void wintbob_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

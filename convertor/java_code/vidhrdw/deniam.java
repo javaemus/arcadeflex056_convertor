@@ -380,7 +380,7 @@ public class deniam
 		}
 	}
 	
-	void deniam_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr deniam_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int bg_scrollx,bg_scrolly,fg_scrollx,fg_scrolly;
 		int page;
@@ -416,5 +416,5 @@ public class deniam
 		tilemap_draw(bitmap,tx_tilemap,0,4);
 	
 		draw_sprites(bitmap);
-	}
+	} };
 }

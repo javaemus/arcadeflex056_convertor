@@ -112,7 +112,7 @@ public class ssozumo
 	} };
 	
 	
-	void ssozumo_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr ssozumo_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int	offs;
 		int	sx, sy;
@@ -168,5 +168,5 @@ public class ssozumo
 						&Machine->visible_area, TRANSPARENCY_PEN, 0);
 			}
 		}
-	}
+	} };
 }

@@ -123,11 +123,11 @@ public class generic
 	  To be used by bitmapped games not using sprites.
 	
 	***************************************************************************/
-	void generic_bitmapped_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr generic_bitmapped_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		if (full_refresh)
 			copybitmap(bitmap,tmpbitmap,0,0,0,0,&Machine->visible_area,TRANSPARENCY_NONE,0);
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr videoram_r  = new ReadHandlerPtr() { public int handler(int offset)

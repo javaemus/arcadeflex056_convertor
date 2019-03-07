@@ -95,7 +95,6 @@ public class kangaroo
 	extern unsigned char *kangaroo_blitter;
 	extern unsigned char *kangaroo_scroll;
 	void kangaroo_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void kangaroo_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

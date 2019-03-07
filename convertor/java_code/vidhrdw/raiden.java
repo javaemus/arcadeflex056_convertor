@@ -168,7 +168,7 @@ public class raiden
 		}
 	}
 	
-	void raiden_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr raiden_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* Setup the tilemaps, alternate version has different scroll positions */
 		if (ALTERNATE == 0) {
@@ -195,5 +195,5 @@ public class raiden
 	
 		/* Text layer */
 		tilemap_draw(bitmap,tx_layer,0,0);
-	}
+	} };
 }

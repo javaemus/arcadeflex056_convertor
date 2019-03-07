@@ -175,10 +175,10 @@ public class pandoras
 		}
 	}
 	
-	void pandoras_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr pandoras_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_draw( bitmap, layer0, 1 ,0);
 		draw_sprites( bitmap, &pandoras_sharedram[0x800] );
 		tilemap_draw( bitmap, layer0, 0 ,0);
-	}
+	} };
 }

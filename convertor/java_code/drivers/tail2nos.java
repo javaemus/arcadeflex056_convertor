@@ -25,7 +25,6 @@ public class tail2nos
 	READ16_HANDLER( tail2nos_zoomdata_r );
 	WRITE16_HANDLER( tail2nos_zoomdata_w );
 	WRITE16_HANDLER( tail2nos_gfxbank_w );
-	void tail2nos_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	public static ReadHandlerPtr pip  = new ReadHandlerPtr() { public int handler(int offset)

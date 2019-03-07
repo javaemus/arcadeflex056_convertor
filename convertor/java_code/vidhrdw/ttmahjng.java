@@ -218,7 +218,7 @@ public class ttmahjng
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void ttmahjng_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr ttmahjng_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		if (video_remap_1)
 		{
@@ -255,7 +255,7 @@ public class ttmahjng
 	
 		copybitmap(bitmap,tmpbitmap2,0,0,0,0,&Machine->visible_area,TRANSPARENCY_NONE,0);
 		copybitmap(bitmap,tmpbitmap1,0,0,0,0,&Machine->visible_area,TRANSPARENCY_COLOR,0);
-	}
+	} };
 	
 	/***************************************************************************
 	  mofify_pen

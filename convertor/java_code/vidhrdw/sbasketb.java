@@ -100,7 +100,7 @@ public class sbasketb
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void sbasketb_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr sbasketb_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs,i;
 		int sx,sy,code,color,flipx,flipy;
@@ -201,5 +201,5 @@ public class sbasketb
 						&Machine->visible_area,TRANSPARENCY_PEN,0);
 			}
 		}
-	}
+	} };
 }

@@ -168,7 +168,7 @@ public class rastan
 	}
 	
 	
-	void rastan_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr rastan_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int layer[2];
 	
@@ -191,7 +191,7 @@ public class rastan
 			usrintf_showmessage(buf);
 		}
 	#endif
-	}
+	} };
 	
 	/***************************************************************************/
 	
@@ -203,7 +203,7 @@ public class rastan
 		beamy = ((input_port_6_r(0) * 256) >> 8);	//+19
 	}
 	
-	void opwolf_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr opwolf_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int layer[2];
 	
@@ -232,11 +232,11 @@ public class rastan
 			usrintf_showmessage(buf);
 		}
 	#endif
-	}
+	} };
 	
 	/***************************************************************************/
 	
-	void rainbow_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr rainbow_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 		int sprite_colbank = (sprite_ctrl & 0xe0) >> 1;
@@ -304,7 +304,7 @@ public class rastan
 			usrintf_showmessage(buf);
 		}
 	#endif
-	}
+	} };
 	
 	/***************************************************************************
 	
@@ -316,7 +316,7 @@ public class rastan
 	
 	*/
 	
-	void jumping_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr jumping_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs,layer[2];
 		int sprite_colbank = (sprite_ctrl & 0xe0) >> 1;
@@ -367,6 +367,6 @@ public class rastan
 			usrintf_showmessage(buf);
 		}
 	#endif
-	}
+	} };
 	
 }

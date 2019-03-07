@@ -120,7 +120,7 @@ public class shaolins
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void shaolins_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr shaolins_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 		int sx,sy;
@@ -171,5 +171,5 @@ public class shaolins
 						/* transparency_color, otherwise sprites in test mode are not visible */
 			}
 		}
-	}
+	} };
 }

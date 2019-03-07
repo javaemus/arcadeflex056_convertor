@@ -117,7 +117,7 @@ public class redclash
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void redclash_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr redclash_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int i,offs;
 	
@@ -243,5 +243,5 @@ public class redclash
 		}
 	
 	//usrintf_showmessage("%d%d%d",star2,star1,star0);
-	}
+	} };
 }

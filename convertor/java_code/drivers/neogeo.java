@@ -215,9 +215,7 @@ public class neogeo
 	
 	
 	/* from vidhrdw/neogeo.c */
-	void neogeo_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void neogeo_vh_raster_partial_refresh(struct mame_bitmap *bitmap,int current_line);
-	void neogeo_vh_raster_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	WRITE16_HANDLER( neogeo_paletteram16_w );
 	READ16_HANDLER( neogeo_paletteram16_r );
 	WRITE16_HANDLER( neogeo_setpalbank0_16_w );

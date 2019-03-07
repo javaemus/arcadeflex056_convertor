@@ -23,8 +23,7 @@ public class redalert
 	extern unsigned char *redalert_spriteram1;
 	extern unsigned char *redalert_spriteram2;
 	extern unsigned char *redalert_characterram;
-	extern void redalert_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	
+	extern 
 	/* sndhrdw/redalert.c */
 	
 	

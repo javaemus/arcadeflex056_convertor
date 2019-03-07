@@ -255,7 +255,7 @@ public class unico16
 	
 	***************************************************************************/
 	
-	void unico16_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr unico16_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int gunx[256] = {
 			0x160,0x162,0x164,0x165,
@@ -316,5 +316,5 @@ public class unico16
 				gunx[readinputport(6)&0xff] - 0x08 -3,
 				readinputport(5) -0x17 -3,
 				&Machine->visible_area);
-	}
+	} };
 }

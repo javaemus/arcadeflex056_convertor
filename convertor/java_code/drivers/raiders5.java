@@ -32,7 +32,6 @@ package drivers;
 public class raiders5
 {
 	
-	void raiders5_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	extern UINT8 *raiders5_fgram;
 	extern size_t raiders5_fgram_size;

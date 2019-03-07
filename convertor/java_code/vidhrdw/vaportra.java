@@ -230,7 +230,7 @@ public class vaportra
 	}
 	
 	
-	void vaportra_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr vaportra_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int pri=vaportra_control_2[0];
 	
@@ -282,5 +282,5 @@ public class vaportra
 	
 		vaportra_drawsprites(bitmap,1);
 		tilemap_draw(bitmap,pf1_tilemap,0,0);
-	}
+	} };
 }

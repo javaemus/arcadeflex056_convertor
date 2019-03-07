@@ -231,7 +231,7 @@ public class cbuster
 	
 	/******************************************************************************/
 	
-	void twocrude_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr twocrude_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 		int pf23_control,pf14_control;
@@ -403,5 +403,5 @@ public class cbuster
 	
 		twocrude_drawsprites(bitmap,1);
 		tilemap_draw(bitmap,pf1_tilemap,0,0);
-	}
+	} };
 }

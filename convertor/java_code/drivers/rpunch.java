@@ -120,7 +120,6 @@ public class rpunch
 	
 	
 	/* video driver data & functions */
-	void rpunch_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	extern data16_t *rpunch_bitmapram;
 	extern size_t rpunch_bitmapram_size;

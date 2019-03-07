@@ -54,7 +54,7 @@ public class arkanoid
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void arkanoid_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr arkanoid_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -126,5 +126,5 @@ public class arkanoid
 					sx,sy,
 					&Machine->visible_area,TRANSPARENCY_PEN,0);
 		}
-	}
+	} };
 }

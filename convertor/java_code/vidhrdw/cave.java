@@ -1876,7 +1876,7 @@ public class cave
 	{	 cave_tilemap_draw( bitmap, tilemap_2, cave_vram_2, cave_vctrl_2, flags, priority, priority2 );	}
 	
 	
-	void cave_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr cave_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int pri, pri2;
 		int layers_ctrl = -1;
@@ -1967,5 +1967,5 @@ public class cave
 				if (layers_ctrl&(1<<(pri+8)))	cave_tilemap_2_draw(bitmap, pri, 0, pri2);
 			}
 		}
-	}
+	} };
 }

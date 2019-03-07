@@ -724,7 +724,7 @@ public class shanghai
 		HD63484_stop();
 	} };
 	
-	void shanghai_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr shanghai_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int x,y,b;
 	
@@ -760,7 +760,7 @@ public class shanghai
 				}
 			}
 		}
-	}
+	} };
 	
 	
 	public static InterruptPtr shanghai_interrupt = new InterruptPtr() { public int handler() 

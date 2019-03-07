@@ -94,7 +94,6 @@ public class warlord
 {
 	
 	void warlord_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void warlord_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	public static WriteHandlerPtr warlord_led_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

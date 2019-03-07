@@ -496,7 +496,7 @@ public class dec0
 	
 	/******************************************************************************/
 	
-	void hbarrel_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr hbarrel_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		dec0_pf1_update();
 		dec0_pf2_update();
@@ -512,11 +512,11 @@ public class dec0
 	
 		dec0_drawsprites(bitmap,0x08,0x00);
 		dec0_pf1_draw(bitmap,0,0);
-	}
+	} };
 	
 	/******************************************************************************/
 	
-	void baddudes_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr baddudes_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* WARNING: priority inverted wrt all the other games */
 		dec0_pf1_update();
@@ -562,11 +562,11 @@ public class dec0
 		}
 	
 		dec0_pf1_draw(bitmap,0,0);
-	}
+	} };
 	
 	/******************************************************************************/
 	
-	void robocop_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr robocop_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int trans;
 	
@@ -612,11 +612,11 @@ public class dec0
 			dec0_drawsprites(bitmap,0x00,0x00);
 	
 		dec0_pf1_draw(bitmap,0,0);
-	}
+	} };
 	
 	/******************************************************************************/
 	
-	void birdtry_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr birdtry_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* This game doesn't have the extra playfield chip on the game board */
 		dec0_pf1_update();
@@ -625,11 +625,11 @@ public class dec0
 		dec0_pf2_draw(bitmap,TILEMAP_FRONT|TILEMAP_IGNORE_TRANSPARENCY,1);
 		dec0_drawsprites(bitmap,0x00,0x00);
 		dec0_pf1_draw(bitmap,0,0);
-	}
+	} };
 	
 	/******************************************************************************/
 	
-	void hippodrm_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr hippodrm_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		dec0_pf1_update();
 		dec0_pf2_update();
@@ -652,11 +652,11 @@ public class dec0
 	
 		dec0_drawsprites(bitmap,0x00,0x00);
 		dec0_pf1_draw(bitmap,0,0);
-	}
+	} };
 	
 	/******************************************************************************/
 	
-	void slyspy_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr slyspy_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		dec0_pf1_update();
 		dec0_pf2_update();
@@ -674,11 +674,11 @@ public class dec0
 			dec0_pf2_draw(bitmap,TILEMAP_FRONT,1);
 	
 		dec0_pf1_draw(bitmap,0,0);
-	}
+	} };
 	
 	/******************************************************************************/
 	
-	void midres_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr midres_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int trans;
 	
@@ -719,7 +719,7 @@ public class dec0
 			dec0_drawsprites(bitmap,0x00,0x00);
 	
 		dec0_pf1_draw(bitmap,0,0);
-	}
+	} };
 	
 	/******************************************************************************/
 	

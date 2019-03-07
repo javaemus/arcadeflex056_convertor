@@ -158,7 +158,6 @@ public class gottlieb
 	
 	
 	extern unsigned char *gottlieb_characterram;
-	void gottlieb_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	extern unsigned char *riot_ram;

@@ -195,7 +195,7 @@ public class hcastle
 	
 	/*****************************************************************************/
 	
-	void hcastle_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr hcastle_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		static int old_pf1,old_pf2;
 	
@@ -236,5 +236,5 @@ public class hcastle
 			draw_sprites( bitmap, buffered_spriteram, 0 );
 			draw_sprites( bitmap, buffered_spriteram_2, 1 );
 		}
-	}
+	} };
 }

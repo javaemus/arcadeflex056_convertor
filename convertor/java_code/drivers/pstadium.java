@@ -85,8 +85,6 @@ public class pstadium
 	#define	SIGNED_DAC	0		// 0:unsigned DAC, 1:signed DAC
 	
 	
-	void pstadium_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
-	void galkoku_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	void pstadium_radrx_w(int data);
 	void pstadium_radry_w(int data);

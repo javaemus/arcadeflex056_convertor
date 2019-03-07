@@ -46,7 +46,7 @@ public class sauro
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void sauro_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr sauro_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs,code,sx,sy,color,flipx;
 	
@@ -172,5 +172,5 @@ public class sauro
 					sx,sy,
 					&Machine->visible_area,TRANSPARENCY_PEN,0);
 		}
-	}
+	} };
 }

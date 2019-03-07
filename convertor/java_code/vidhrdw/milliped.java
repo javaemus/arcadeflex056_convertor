@@ -107,7 +107,7 @@ public class milliped
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void milliped_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr milliped_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -195,5 +195,5 @@ public class milliped
 			}
 	
 		}
-	}
+	} };
 }

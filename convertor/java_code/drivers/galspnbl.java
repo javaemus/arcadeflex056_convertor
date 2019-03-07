@@ -35,7 +35,6 @@ public class galspnbl
 	void galspnbl_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	WRITE16_HANDLER( galspnbl_bgvideoram_w );
 	WRITE16_HANDLER( galspnbl_scroll_w );
-	void galspnbl_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	static WRITE16_HANDLER( soundcommand_w )

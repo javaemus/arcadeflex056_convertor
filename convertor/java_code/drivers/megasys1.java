@@ -142,7 +142,6 @@ public class megasys1
 	/* Functions defined in vidhrdw: */
 	
 	void megasys1_convert_prom(unsigned char *obsolete,unsigned short *colortable,const unsigned char *prom);
-	void megasys1_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	READ16_HANDLER( megasys1_vregs_C_r );
 	

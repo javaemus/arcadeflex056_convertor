@@ -270,13 +270,13 @@ public class gsword
 		}
 	}
 	
-	void gsword_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr gsword_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int scrollx=0, scrolly=-(*gs_scrolly_ram);
 	
 		render_background(bitmap_bg);
 		copyscrollbitmap(bitmap,bitmap_bg,1,&scrollx,1,&scrolly,&Machine->visible_area,TRANSPARENCY_NONE,0);
 		render_sprites(bitmap);
-	}
+	} };
 	
 }

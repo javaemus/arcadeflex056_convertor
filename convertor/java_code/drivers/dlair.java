@@ -48,7 +48,7 @@ public class dlair
 		led1 = data;
 	} };
 	
-	void dlair_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr dlair_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -115,7 +115,7 @@ public class dlair
 	if ((led1 & 64) == 0) drawgfx(bitmap,Machine->uifont,'x',0,0,0,
 		32+8,16,&Machine->visible_area,TRANSPARENCY_NONE,0);
 	}
-	}
+	} };
 	
 	
 	

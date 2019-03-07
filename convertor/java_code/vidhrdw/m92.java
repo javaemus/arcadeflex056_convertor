@@ -567,7 +567,7 @@ public class m92
 	
 	/*****************************************************************************/
 	
-	void m92_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr m92_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* Screen refresh is handled by raster interrupt routine, here
 			we just check the keyboard */
@@ -584,7 +584,7 @@ public class m92
 			flip_screen_set(0);
 		else
 			flip_screen_set(1);
-	}
+	} };
 	
 	static void m92_update_scroll_positions(void)
 	{

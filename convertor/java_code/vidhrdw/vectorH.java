@@ -47,7 +47,6 @@ public class vectorH
 	extern unsigned char *vectorram;
 	extern size_t vectorram_size;
 	
-	void vector_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void vector_draw_to (int x2, int y2, int col, int intensity, int dirty);
 	void vector_add_point (int x, int y, int color, int intensity);
 	void vector_add_clip (int minx, int miny, int maxx, int maxy);

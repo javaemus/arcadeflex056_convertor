@@ -283,7 +283,7 @@ public class afega
 	
 	***************************************************************************/
 	
-	void afega_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr afega_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int layers_ctrl = -1;
 	
@@ -312,5 +312,5 @@ public class afega
 		if (layers_ctrl & 2) 	afega_draw_sprites(bitmap);
 	
 		if (layers_ctrl & 4)	tilemap_draw(bitmap,tilemap_1,0,0);
-	}
+	} };
 }

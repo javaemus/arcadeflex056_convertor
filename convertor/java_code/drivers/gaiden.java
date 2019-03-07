@@ -42,7 +42,6 @@ public class gaiden
 	
 	extern data16_t *gaiden_videoram,*gaiden_videoram2,*gaiden_videoram3;
 	
-	void gaiden_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	WRITE16_HANDLER( gaiden_videoram_w );
 	WRITE16_HANDLER( gaiden_videoram2_w );
@@ -57,7 +56,6 @@ public class gaiden
 	WRITE16_HANDLER( gaiden_bgscrollx_w );
 	WRITE16_HANDLER( gaiden_bgscrolly_w );
 	
-	void gaiden_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

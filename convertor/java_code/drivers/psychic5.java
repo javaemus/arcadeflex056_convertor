@@ -318,7 +318,6 @@ package drivers;
 public class psychic5
 {
 	
-	void psychic5_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	static int psychic5_bank_latch = 0x0;

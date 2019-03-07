@@ -23,7 +23,7 @@ public class prehisle
 	
 	/******************************************************************************/
 	
-	void prehisle_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr prehisle_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs, mx, my, color, tile;
 		int tile_base;
@@ -148,7 +148,7 @@ public class prehisle
 					8*mx,8*my,
 					&Machine->visible_area,TRANSPARENCY_PEN,15);
 		}
-	}
+	} };
 	
 	/******************************************************************************/
 	

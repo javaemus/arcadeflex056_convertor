@@ -192,7 +192,6 @@ public class taito_x
 {
 	
 	
-	void superman_vh_screenrefresh (struct mame_bitmap *bitmap, int full_refresh);
 	
 	extern size_t supes_videoram_size;
 	extern size_t supes_attribram_size;

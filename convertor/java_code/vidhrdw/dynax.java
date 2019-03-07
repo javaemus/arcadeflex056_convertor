@@ -425,10 +425,10 @@ public class dynax
 	
 	***************************************************************************/
 	
-	void dynax_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr dynax_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 	//	fillbitmap(bitmap,Machine->pens[0],&Machine->visible_area);
-	}
+	} };
 	
 	
 	void sprtmtch_copylayer(struct mame_bitmap *bitmap,int i)
@@ -485,7 +485,7 @@ public class dynax
 		}
 	}
 	
-	void sprtmtch_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr sprtmtch_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 	#ifdef MAME_DEBUG
 	#if 0
@@ -546,5 +546,5 @@ public class dynax
 		if (layers_ctrl & 4)	sprtmtch_copylayer( bitmap, 2 );
 	}
 	
-	}
+	} };
 }

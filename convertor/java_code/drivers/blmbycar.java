@@ -37,7 +37,6 @@ public class blmbycar
 	WRITE16_HANDLER( blmbycar_vram_0_w );
 	WRITE16_HANDLER( blmbycar_vram_1_w );
 	
-	void blmbycar_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	/***************************************************************************

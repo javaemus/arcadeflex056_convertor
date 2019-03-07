@@ -192,7 +192,6 @@ public class topspeed
 	WRITE16_HANDLER( rainbow_spritectrl_w );
 	WRITE16_HANDLER( rastan_spriteflip_w );
 	
-	void topspeed_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	static UINT16 cpua_ctrl = 0xff;

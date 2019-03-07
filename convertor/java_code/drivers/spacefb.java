@@ -132,7 +132,6 @@ public class spacefb
 {
 	
 	
-	void spacefb_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void spacefb_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	

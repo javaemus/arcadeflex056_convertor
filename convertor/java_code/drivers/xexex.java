@@ -33,7 +33,6 @@ public class xexex
 {
 	
 	
-	void xexex_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void xexex_set_alpha(int on);
 	
 	READ16_HANDLER( xexexbg_r );

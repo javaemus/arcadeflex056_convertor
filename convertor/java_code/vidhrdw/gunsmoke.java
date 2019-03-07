@@ -168,7 +168,7 @@ public class gunsmoke
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void gunsmoke_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr gunsmoke_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs,sx,sy;
 		int bg_scrolly, bg_scrollx;
@@ -310,5 +310,5 @@ public class gunsmoke
 						&Machine->visible_area,TRANSPARENCY_COLOR,79);
 			}
 		}
-	}
+	} };
 }

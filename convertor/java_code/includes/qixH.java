@@ -36,7 +36,6 @@ public class qixH
 	extern UINT8 *qix_videoaddress;
 	extern UINT8 qix_cocktail_flip;
 	
-	void qix_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	void qix_scanline_callback(int scanline);
 	

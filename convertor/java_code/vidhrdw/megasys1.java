@@ -978,7 +978,7 @@ public class megasys1
 	***************************************************************************/
 	
 	
-	void megasys1_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr megasys1_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int i,flag,pri,primask;
 		int active_layers;
@@ -1070,5 +1070,5 @@ public class megasys1
 	
 		if (active_layers & 0x08)
 			draw_sprites(bitmap);
-	}
+	} };
 }

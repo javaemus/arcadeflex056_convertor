@@ -18,7 +18,6 @@ public class ultraman
 	
 	/* from vidhrdw/ultraman.c */
 	WRITE16_HANDLER( ultraman_gfxctrl_w );
-	void ultraman_vh_screenrefresh( struct mame_bitmap *bitmap,int full_refresh );
 	
 	
 	

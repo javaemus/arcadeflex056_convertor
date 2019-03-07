@@ -33,7 +33,7 @@ public class aeroboto
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void aeroboto_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr aeroboto_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -96,5 +96,5 @@ public class aeroboto
 					sx,sy,
 					&Machine->visible_area,TRANSPARENCY_PEN,0);
 		}
-	}
+	} };
 }

@@ -59,7 +59,6 @@ public class legionna
 	WRITE16_HANDLER( legionna_text_w );
 	WRITE16_HANDLER( legionna_control_w );
 	
-	void legionna_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	extern data16_t *legionna_back_data,*legionna_fore_data,*legionna_mid_data,*legionna_scrollram16,*legionna_textram;
 	static data16_t *mcu_ram;

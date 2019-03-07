@@ -67,7 +67,7 @@ public class minivadr
 	} };
 	
 	
-	void minivadr_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr minivadr_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		if (full_refresh)
 		{
@@ -78,5 +78,5 @@ public class minivadr
 			for (offs = 0; offs < videoram_size; offs++)
 				minivadr_videoram_w(offs,videoram[offs]);
 		}
-	}
+	} };
 }

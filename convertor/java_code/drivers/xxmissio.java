@@ -17,7 +17,6 @@ package drivers;
 public class xxmissio
 {
 	
-	void xxmissio_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	extern UINT8 *xxmissio_fgram;
 	extern size_t xxmissio_fgram_size;

@@ -24,7 +24,6 @@ public class yard
 	extern unsigned char *yard_score_panel_disabled;
 	
 	void yard_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void yard_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

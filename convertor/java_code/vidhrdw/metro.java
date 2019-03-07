@@ -873,7 +873,7 @@ public class metro
 	}
 	
 	
-	void metro_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr metro_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int i,pri,sprites_pri,layers_ctrl = -1;
 		data8_t *dirtyindex;
@@ -974,5 +974,5 @@ public class metro
 				for (i = 0; i < 0x20; i++)
 					metro_draw_sprites(bitmap, i);
 		}
-	}
+	} };
 }

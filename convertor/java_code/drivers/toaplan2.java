@@ -168,11 +168,6 @@ public class toaplan2
 	WRITE16_HANDLER( batrider_objectbank_w );
 	WRITE16_HANDLER( batrider_textdata_decode );
 	
-	void toaplan2_0_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void truxton2_0_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void dogyuun_1_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void batsugun_1_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void batrider_0_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	/********* Video wrappers for PIPIBIBI *********/

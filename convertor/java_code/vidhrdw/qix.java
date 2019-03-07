@@ -297,7 +297,7 @@ public class qix
 	 *
 	 *************************************/
 	
-	void qix_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr qix_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int y;
 	
@@ -307,5 +307,5 @@ public class qix
 			pen_t *pens = &Machine->pens[(palette_cache[y] & 3) * 256];
 			draw_scanline8(bitmap, 0, y, 256, &videoram_cache[y * 256], pens, -1);
 		}
-	}
+	} };
 }

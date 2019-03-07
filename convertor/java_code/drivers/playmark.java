@@ -55,8 +55,6 @@ public class playmark
 	WRITE16_HANDLER( bigtwin_bgvideoram_w );
 	WRITE16_HANDLER( bigtwin_scroll_w );
 	WRITE16_HANDLER( wbeachvl_scroll_w );
-	void bigtwin_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void wbeachvl_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

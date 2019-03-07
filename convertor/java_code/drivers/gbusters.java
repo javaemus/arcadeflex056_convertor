@@ -22,7 +22,6 @@ public class gbusters
 	
 	extern int gbusters_priority;
 	
-	void gbusters_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	static int palette_selected;
 	static unsigned char *ram;

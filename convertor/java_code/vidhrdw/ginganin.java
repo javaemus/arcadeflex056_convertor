@@ -258,7 +258,7 @@ public class ginganin
 	}
 	
 	
-	void ginganin_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr ginganin_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int layers_ctrl1;
 	
@@ -302,6 +302,6 @@ public class ginganin
 		if (layers_ctrl1 & 8)	draw_sprites(bitmap);
 		if (layers_ctrl1 & 4)	tilemap_draw(bitmap, tx_tilemap, 0,0);
 	
-	}
+	} };
 	
 }

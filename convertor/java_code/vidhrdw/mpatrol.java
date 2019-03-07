@@ -373,7 +373,7 @@ public class mpatrol
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void mpatrol_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr mpatrol_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs,i;
 	
@@ -518,5 +518,5 @@ public class mpatrol
 					sx,sy,
 					&Machine->visible_area,TRANSPARENCY_COLOR,128+32);
 		}
-	}
+	} };
 }

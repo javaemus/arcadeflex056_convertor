@@ -374,12 +374,12 @@ public class thunderj
 	 *
 	 *************************************/
 	
-	void thunderj_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr thunderj_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* draw the layers */
 		ataripf_render(0, bitmap);
 		ataripf_render(1, bitmap);
 		atarimo_render(0, bitmap, overrender0_callback, overrender1_callback);
 		atarian_render(0, bitmap);
-	}
+	} };
 }

@@ -129,11 +129,6 @@ public class bjtwin
 	WRITE16_HANDLER( mustang_scroll_w );
 	WRITE16_HANDLER( vandyke_scroll_w );
 	
-	void bioship_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void strahl_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void macross_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void gunnail_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void bjtwin_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

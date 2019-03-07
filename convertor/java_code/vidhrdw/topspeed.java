@@ -133,7 +133,7 @@ public class topspeed
 	
 	/***************************************************************************/
 	
-	void topspeed_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr topspeed_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		UINT8 layer[4];
 	
@@ -215,7 +215,7 @@ public class topspeed
 	#endif
 	
 		topspeed_draw_sprites(bitmap);
-	}
+	} };
 	
 	
 }

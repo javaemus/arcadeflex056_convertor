@@ -257,7 +257,7 @@ public class warriorb
 					SCREEN REFRESH
 	**************************************************************/
 	
-	void warriorb_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr warriorb_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		UINT8 layer[3];
 	
@@ -291,6 +291,6 @@ public class warriorb
 			int primasks[2] = {0xf0,0xfc};
 			warriorb_draw_sprites(bitmap,primasks,8);
 		}
-	}
+	} };
 	
 }

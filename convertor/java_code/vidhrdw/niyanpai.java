@@ -507,7 +507,7 @@ public class niyanpai
 	
 	
 	******************************************************************************/
-	void niyanpai_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr niyanpai_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int x, y;
 		unsigned short color;
@@ -549,5 +549,5 @@ public class niyanpai
 		{
 			copyscrollbitmap(bitmap, niyanpai_tmpbitmap2, 1, &niyanpai_scrollx[2], 1, &niyanpai_scrolly[2], &Machine->visible_area, TRANSPARENCY_PEN, Machine->pens[0x02ff]);
 		}
-	}
+	} };
 }

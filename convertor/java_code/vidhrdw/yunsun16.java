@@ -221,7 +221,7 @@ public class yunsun16
 	***************************************************************************/
 	
 	
-	void yunsun16_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr yunsun16_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int layers_ctrl = -1;
 	
@@ -271,5 +271,5 @@ public class yunsun16
 			clip.max_y = Machine->visible_area.max_y;
 			fillbitmap(bitmap,Machine->pens[0],&clip);
 		}
-	}
+	} };
 }

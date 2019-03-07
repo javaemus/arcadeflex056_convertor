@@ -403,7 +403,7 @@ public class sprint2
 	  the main emulation engine.
 	
 	***************************************************************************/
-	static void sprint_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	static public static VhUpdatePtr sprint_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs,car;
 	
@@ -449,7 +449,7 @@ public class sprint2
 		/* Refresh our collision detection buffers */
 		sprint2_check_collision1(bitmap);
 		sprint2_check_collision2(bitmap);
-	}
+	} };
 	
 	
 	static void draw_gear_indicator(int gear, struct mame_bitmap *bitmap, int x, int color)
@@ -468,18 +468,18 @@ public class sprint2
 	}
 	
 	
-	void sprint2_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr sprint2_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		sprint_vh_screenrefresh(bitmap,full_refresh);
 	
 		draw_gear_indicator(sprint2_gear1, bitmap, 25, 1);
 		draw_gear_indicator(sprint2_gear2, bitmap, 1 , 0);
-	}
+	} };
 	
-	void sprint1_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr sprint1_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		sprint_vh_screenrefresh(bitmap,full_refresh);
 	
 		draw_gear_indicator(sprint2_gear1, bitmap, 12, 1);
-	}
+	} };
 }

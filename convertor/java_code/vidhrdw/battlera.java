@@ -401,10 +401,10 @@ public class battlera
 	
 	/******************************************************************************/
 	
-	void battlera_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr battlera_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* Nothing */
-	}
+	} };
 	
 	static void partial_refresh(struct mame_bitmap *bitmap,int current_line)
 	{

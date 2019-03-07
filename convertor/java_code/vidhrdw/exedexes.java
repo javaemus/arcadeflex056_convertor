@@ -159,7 +159,7 @@ public class exedexes
 	}
 	
 	
-	void exedexes_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr exedexes_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs,sx,sy;
 	
@@ -243,7 +243,7 @@ public class exedexes
 						&Machine->visible_area,TRANSPARENCY_COLOR,207);
 			}
 		}
-	}
+	} };
 	
 	void exedexes_eof_callback(void)
 	{

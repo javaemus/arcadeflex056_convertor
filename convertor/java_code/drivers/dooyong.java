@@ -53,12 +53,6 @@ public class dooyong
 	extern data16_t *rshark_scroll1,*rshark_scroll2,*rshark_scroll3,*rshark_scroll4;
 	
 	WRITE16_HANDLER( rshark_ctrl_w );
-	void lastday_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void gulfstrm_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void pollux_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void bluehawk_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void primella_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void rshark_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

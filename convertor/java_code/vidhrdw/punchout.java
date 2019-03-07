@@ -438,7 +438,7 @@ public class punchout
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void punchout_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr punchout_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -614,10 +614,10 @@ public class punchout
 					sx,sy + 8*TOP_MONITOR_ROWS - 16,
 					&bottomvisiblearea,TRANSPARENCY_COLOR,1024);
 		}
-	}
+	} };
 	
 	
-	void armwrest_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr armwrest_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -802,5 +802,5 @@ public class punchout
 					8*sx,8*sy + 8*TOP_MONITOR_ROWS - 16,
 					&backgroundvisiblearea,TRANSPARENCY_PEN,7);
 		}
-	}
+	} };
 }

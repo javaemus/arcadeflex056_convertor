@@ -42,7 +42,6 @@ public class powerins
 	WRITE16_HANDLER( powerins_vram_0_w );
 	WRITE16_HANDLER( powerins_vram_1_w );
 	
-	void powerins_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	/***************************************************************************

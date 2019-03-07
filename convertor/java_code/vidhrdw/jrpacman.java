@@ -192,7 +192,7 @@ public class jrpacman
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void jrpacman_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr jrpacman_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int i,offs;
 		int scrolly[36];
@@ -327,5 +327,5 @@ public class jrpacman
 	
 		if (*jrpacman_bgpriority & 1)
 			copyscrollbitmap(bitmap,tmpbitmap,0,0,36,scrolly,&Machine->visible_area,TRANSPARENCY_COLOR,0);
-	}
+	} };
 }

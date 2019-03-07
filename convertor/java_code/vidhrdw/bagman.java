@@ -88,7 +88,7 @@ public class bagman
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void bagman_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr bagman_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -165,5 +165,5 @@ public class bagman
 						sx,sy+1,	/* compensate misplacement */
 						&Machine->visible_area,TRANSPARENCY_PEN,0);
 		}
-	}
+	} };
 }

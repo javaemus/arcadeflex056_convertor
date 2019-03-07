@@ -46,7 +46,6 @@ public class zaccaria
 	extern data8_t *zaccaria_videoram,*zaccaria_attributesram;
 	
 	void zaccaria_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void zaccaria_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	static int dsw;

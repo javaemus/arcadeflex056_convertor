@@ -52,7 +52,7 @@ public class skychut
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void skychut_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr skychut_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 		if (full_refresh)
@@ -79,7 +79,7 @@ public class skychut
 			}
 		}
 	
-	}
+	} };
 	
 	UINT8* iremm15_chargen;
 	
@@ -109,7 +109,7 @@ public class skychut
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void iremm15_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr iremm15_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 		if (full_refresh)
@@ -135,6 +135,6 @@ public class skychut
 			}
 		}
 	
-	}
+	} };
 	
 }

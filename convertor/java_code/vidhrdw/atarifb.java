@@ -26,7 +26,6 @@ public class atarifb
 	
 	extern int atarifb_game;
 	
-	void atarifb_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	struct rectangle bigfield_area = {  4*8, 34*8-1, 0*8, 32*8-1 };
 	struct rectangle left_area =     {  0*8,  3*8-1, 0*8, 32*8-1 };
@@ -106,7 +105,7 @@ public class atarifb
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void atarifb_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr atarifb_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs,obj;
 		int sprite_bank;
@@ -418,5 +417,5 @@ public class atarifb
 		for (x = 0;x < 20;x++)
 				drawgfx(bitmap,Machine->uifont,buf2[x],UI_COLOR_NORMAL,0,0,6*x,0,0,TRANSPARENCY_NONE,0);
 	}
-	}
+	} };
 }

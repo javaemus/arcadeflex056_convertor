@@ -74,8 +74,6 @@ public class gberet
 	extern unsigned char *gberet_spritebank;
 	extern unsigned char *gberet_scrollram;
 	void gberet_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void gberet_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void gberetb_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

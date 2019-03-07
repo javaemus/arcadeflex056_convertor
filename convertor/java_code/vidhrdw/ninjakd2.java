@@ -203,7 +203,7 @@ public class ninjakd2
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void ninjakd2_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr ninjakd2_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int scrollx,scrolly;
 	
@@ -227,5 +227,5 @@ public class ninjakd2
 			ninjakd2_draw_foreground(bitmap);
 		}
 	
-	}
+	} };
 }

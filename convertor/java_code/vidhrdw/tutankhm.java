@@ -66,7 +66,7 @@ public class tutankhm
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void tutankhm_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr tutankhm_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		if (full_refresh)
 		{
@@ -104,7 +104,7 @@ public class tutankhm
 	
 			copyscrollbitmap(bitmap,tmpbitmap,0,0,32,scroll,&Machine->visible_area,TRANSPARENCY_NONE,0);
 		}
-	}
+	} };
 	
 	
 	

@@ -458,24 +458,24 @@ public class srmp2
 	}
 	
 	
-	void srmp2_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr srmp2_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		fillbitmap(bitmap, Machine->pens[0x1f0], &Machine->visible_area);
 		srmp2_draw_sprites(bitmap);
-	}
+	} };
 	
 	
-	void srmp3_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr srmp3_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		fillbitmap(bitmap, Machine->pens[0x1f0], &Machine->visible_area);
 		srmp3_draw_sprites(bitmap);
-	}
+	} };
 	
 	
-	void mjyuugi_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr mjyuugi_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		fillbitmap(bitmap, Machine->pens[0x1f0], &Machine->visible_area);
 		mjyuugi_draw_sprites(bitmap);
-	}
+	} };
 	
 }

@@ -117,7 +117,7 @@ public class mainevt
 	
 	/*****************************************************************************/
 	
-	void mainevt_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr mainevt_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		K052109_tilemap_update();
 	
@@ -128,9 +128,9 @@ public class mainevt
 		K052109_tilemap_draw(bitmap,0,0,8);
 	
 		K051960_sprites_draw(bitmap,-1,-1);
-	}
+	} };
 	
-	void dv_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr dv_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		K052109_tilemap_update();
 	
@@ -138,5 +138,5 @@ public class mainevt
 		K052109_tilemap_draw(bitmap,2,0,0);
 		K051960_sprites_draw(bitmap,0,0);
 		K052109_tilemap_draw(bitmap,0,0,0);
-	}
+	} };
 }

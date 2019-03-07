@@ -1162,68 +1162,68 @@ public class m62
 	}
 	
 	
-	void kungfum_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr kungfum_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		kungfum_draw_background(bitmap,0);
 		draw_sprites(bitmap);
 		kungfum_draw_background(bitmap,1);
-	}
+	} };
 	
-	void battroad_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr battroad_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		battroad_draw_background(bitmap, 0);
 		draw_priority_sprites(bitmap, 0);
 		battroad_draw_background(bitmap, 1);
 		draw_priority_sprites(bitmap, 1);
 		battroad_draw_text(bitmap);
-	}
+	} };
 	
-	void ldrun_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr ldrun_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		ldrun_draw_background(bitmap, 0);
 		draw_priority_sprites(bitmap, 0);
 		ldrun_draw_background(bitmap, 1);
 		draw_priority_sprites(bitmap, 1);
-	}
+	} };
 	
-	void ldrun4_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr ldrun4_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		ldrun4_draw_background(bitmap);
 		draw_sprites(bitmap);
-	}
+	} };
 	
-	void lotlot_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr lotlot_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		lotlot_draw_background(bitmap);
 		draw_sprites(bitmap);
-	}
+	} };
 	
-	void kidniki_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr kidniki_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		kidniki_draw_background(bitmap);
 		draw_sprites(bitmap);
 		kidniki_draw_text(bitmap);
-	}
+	} };
 	
-	void spelunkr_vh_screenrefresh( struct mame_bitmap *bitmap, int full_refresh )
+	public static VhUpdatePtr spelunkr_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		spelunkr_draw_background(bitmap);
 		draw_sprites(bitmap);
 		spelunkr_draw_text(bitmap);
-	}
+	} };
 	
-	void spelunk2_vh_screenrefresh( struct mame_bitmap *bitmap, int full_refresh )
+	public static VhUpdatePtr spelunk2_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		spelunk2_draw_background(bitmap);
 		draw_sprites(bitmap);
 		spelunkr_draw_text(bitmap);
-	}
+	} };
 	
-	void youjyudn_vh_screenrefresh( struct mame_bitmap *bitmap, int full_refresh )
+	public static VhUpdatePtr youjyudn_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		youjyudn_draw_background(bitmap,0);
 		draw_sprites(bitmap);
 		youjyudn_draw_background(bitmap,1);
 		youjyudn_draw_text(bitmap);
-	}
+	} };
 }

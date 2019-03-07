@@ -85,8 +85,6 @@ public class rainbow
 	
 	//data16_t *rainbow_mainram;
 	
-	void rainbow_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void jumping_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	WRITE16_HANDLER( rainbow_spritectrl_w );
 	WRITE16_HANDLER( rastan_spriteflip_w );

@@ -98,7 +98,7 @@ public class overdriv
 	
 	***************************************************************************/
 	
-	void overdriv_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr overdriv_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		sprite_colorbase  = K053251_get_palette_index(K053251_CI0);
 		road_colorbase[1] = K053251_get_palette_index(K053251_CI1);
@@ -112,5 +112,5 @@ public class overdriv
 		K051316_zoom_draw_1(bitmap,0,1);
 	
 		K053247_sprites_draw(bitmap);
-	}
+	} };
 }

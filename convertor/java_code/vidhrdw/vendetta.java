@@ -94,7 +94,7 @@ public class vendetta
 		SWAP(1,2)
 	}
 	
-	void vendetta_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr vendetta_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int layer[3];
 	
@@ -122,5 +122,5 @@ public class vendetta
 		K052109_tilemap_draw(bitmap,layer[2],0,4);
 	
 		K053247_sprites_draw(bitmap);
-	}
+	} };
 }

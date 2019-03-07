@@ -66,7 +66,7 @@ public class qwakprot
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void qwakprot_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr qwakprot_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -139,5 +139,5 @@ public class qwakprot
 			}
 	
 		}
-	}
+	} };
 }

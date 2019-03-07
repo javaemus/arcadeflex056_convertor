@@ -140,7 +140,6 @@ public class jedi
 	extern UINT8 *jedi_backgroundram;
 	extern size_t jedi_backgroundram_size;
 	
-	void jedi_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

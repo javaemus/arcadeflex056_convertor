@@ -794,7 +794,7 @@ public class sailorws
 	
 	
 	******************************************************************************/
-	void sailorws_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr sailorws_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int x, y;
 		unsigned short color;
@@ -873,9 +873,9 @@ public class sailorws
 	#endif
 			}
 		}
-	}
+	} };
 	
-	void mscoutm_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr mscoutm_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int x, y;
 		unsigned short color;
@@ -920,5 +920,5 @@ public class sailorws
 				copyscrollbitmap(bitmap, sailorws_tmpbitmap1, 1, &sailorws_scrollx[1], 1, &sailorws_scrolly[1], &Machine->visible_area, TRANSPARENCY_PEN, Machine->pens[0x1ff]);
 			}
 		}
-	}
+	} };
 }

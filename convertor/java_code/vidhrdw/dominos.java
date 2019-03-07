@@ -22,7 +22,7 @@ public class dominos
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void dominos_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr dominos_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -51,5 +51,5 @@ public class dominos
 		/* copy the character mapped graphics */
 		copybitmap(bitmap,tmpbitmap,0,0,0,0,&Machine->visible_area,TRANSPARENCY_NONE,0);
 	
-	}
+	} };
 }

@@ -412,7 +412,7 @@ public class grchamp
 		}
 	}
 	
-	void grchamp_vh_screenrefresh( struct mame_bitmap *bitmap,int full_refresh ){
+	public static VhUpdatePtr grchamp_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) {
 		int bFog = grchamp_videoreg0&0x40;
 	
 		draw_background( bitmap ); /* 3 layers */
@@ -439,5 +439,5 @@ public class grchamp
 		draw_text( bitmap );
 		if( grchamp_videoreg0&0x80 ) draw_radar( bitmap );
 		draw_tachometer( bitmap );
-	}
+	} };
 }

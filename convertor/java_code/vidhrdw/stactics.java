@@ -542,7 +542,7 @@ public class stactics
 	
 	***************************************************************************/
 	
-	void stactics_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr stactics_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 	    int offs, sx, sy, i;
 	    int char_number;
@@ -923,5 +923,5 @@ public class stactics
 	        dirty_chardata_f[i] &= 0x01;
 	    }
 	
-	}
+	} };
 }

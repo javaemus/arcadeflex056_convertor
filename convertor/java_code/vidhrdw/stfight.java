@@ -303,7 +303,7 @@ public class stfight
 	}
 	
 	
-	void stfight_vh_screenrefresh( struct mame_bitmap *bitmap,int full_refresh )
+	public static VhUpdatePtr stfight_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		fillbitmap(priority_bitmap,0,NULL);
 	
@@ -316,5 +316,5 @@ public class stfight
 			draw_sprites(bitmap);
 	
 		tilemap_draw(bitmap,tx_tilemap,0,0);
-	}
+	} };
 }

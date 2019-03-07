@@ -84,7 +84,6 @@ public class polepos
 	extern data16_t *polepos_sprite16_memory;
 	
 	void polepos_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void polepos_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	WRITE16_HANDLER( polepos_view16_w );
 	WRITE16_HANDLER( polepos_road16_w );

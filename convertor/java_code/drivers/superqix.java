@@ -25,7 +25,6 @@ public class superqix
 	
 	
 	
-	void superqix_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

@@ -141,7 +141,7 @@ public class fastlane
 	
 	***************************************************************************/
 	
-	void fastlane_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr fastlane_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int i, xoffs;
 	
@@ -155,5 +155,5 @@ public class fastlane
 		tilemap_draw(bitmap,layer0,0,0);
 		K007121_sprites_draw(0,bitmap,spriteram,0,40,0,-1);
 		tilemap_draw(bitmap,layer1,0,0);
-	}
+	} };
 }

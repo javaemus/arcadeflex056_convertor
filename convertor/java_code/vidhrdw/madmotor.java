@@ -279,7 +279,7 @@ public class madmotor
 	
 	/******************************************************************************/
 	
-	void madmotor_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr madmotor_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -309,5 +309,5 @@ public class madmotor
 		tilemap_draw(bitmap,madmotor_pf2_tilemap,0,0);
 		madmotor_drawsprites(bitmap,0x00,0x00);
 		tilemap_draw(bitmap,madmotor_pf1_tilemap,0,0);
-	}
+	} };
 }

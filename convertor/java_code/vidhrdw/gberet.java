@@ -281,19 +281,19 @@ public class gberet
 	}
 	
 	
-	void gberet_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr gberet_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_draw(bitmap,bg_tilemap,TILEMAP_IGNORE_TRANSPARENCY|0,0);
 		tilemap_draw(bitmap,bg_tilemap,TILEMAP_IGNORE_TRANSPARENCY|1,0);
 		draw_sprites(bitmap);
 		tilemap_draw(bitmap,bg_tilemap,0,0);
-	}
+	} };
 	
-	void gberetb_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr gberetb_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_draw(bitmap,bg_tilemap,TILEMAP_IGNORE_TRANSPARENCY|0,0);
 		tilemap_draw(bitmap,bg_tilemap,TILEMAP_IGNORE_TRANSPARENCY|1,0);
 		draw_sprites_bootleg(bitmap);
 		tilemap_draw(bitmap,bg_tilemap,0,0);
-	}
+	} };
 }

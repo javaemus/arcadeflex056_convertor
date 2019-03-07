@@ -69,7 +69,6 @@ public class bagman
 	
 	
 	extern unsigned char *bagman_video_enable;
-	void bagman_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void bagman_vh_convert_color_prom(unsigned char *obsolete,unsigned short *colortable, const unsigned char *color_prom);
 	
 	

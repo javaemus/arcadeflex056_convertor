@@ -657,7 +657,7 @@ public class decocass
 		sprite_dirty = NULL;
 	} };
 	
-	void decocass_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr decocass_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int scrollx, scrolly_l, scrolly_r;
 	
@@ -756,6 +756,6 @@ public class decocass
 		tilemap_draw(bitmap, fg_tilemap, 0, 0);
 		draw_sprites(bitmap, (color_center_bot >> 1) & 1, 0, 0, decocass_fgvideoram, 0x20);
 		draw_missiles(bitmap, 1, 0, decocass_colorram, 0x20);
-	}
+	} };
 	
 }

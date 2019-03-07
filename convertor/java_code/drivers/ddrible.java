@@ -30,7 +30,6 @@ public class ddrible
 	
 	/* video hardware functions */
 	void ddrible_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void ddrible_vh_screenrefresh( struct mame_bitmap *bitmap, int full_refresh );
 	
 	
 	public static InterruptPtr ddrible_interrupt_0 = new InterruptPtr() { public int handler() 

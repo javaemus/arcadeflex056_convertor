@@ -229,7 +229,7 @@ public class cop01
 	}
 	
 	
-	void cop01_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr cop01_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_set_scrollx(bg_tilemap,0,mightguy_vreg[1] + 256 * (mightguy_vreg[2] & 1));
 		tilemap_set_scrolly(bg_tilemap,0,mightguy_vreg[3]);
@@ -238,5 +238,5 @@ public class cop01
 		draw_sprites(bitmap);
 		tilemap_draw(bitmap,bg_tilemap,TILEMAP_FRONT,0);
 		tilemap_draw(bitmap,fg_tilemap,0,0 );
-	}
+	} };
 }

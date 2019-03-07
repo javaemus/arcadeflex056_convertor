@@ -14,7 +14,6 @@ package drivers;
 public class xmen
 {
 	
-	void xmen_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	/***************************************************************************

@@ -183,7 +183,7 @@ public class dcon
 		}
 	}
 	
-	void dcon_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr dcon_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* Setup the tilemaps */
 		tilemap_set_scrollx( background_layer,0, dcon_scroll_ram[0] );
@@ -205,5 +205,5 @@ public class dcon
 		draw_sprites(bitmap,0);
 		draw_sprites(bitmap,3);
 		tilemap_draw(bitmap,text_layer,0,0);
-	}
+	} };
 }

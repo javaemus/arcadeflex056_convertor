@@ -17,8 +17,6 @@ public class vigilant
 {
 	
 	/* vidhrdw/vigilant.c */
-	void vigilant_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void kikcubic_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	public static WriteHandlerPtr vigilant_bank_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)

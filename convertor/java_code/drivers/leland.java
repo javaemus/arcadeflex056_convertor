@@ -114,7 +114,6 @@ public class leland
 	/* Video routines */
 	
 	
-	void leland_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	/* Internal routines */
 	static void interrupt_callback(int scanline);

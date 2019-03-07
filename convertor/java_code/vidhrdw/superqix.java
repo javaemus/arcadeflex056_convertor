@@ -202,7 +202,7 @@ public class superqix
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void superqix_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr superqix_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs,i;
 		unsigned char pens[16];
@@ -323,5 +323,5 @@ public class superqix
 		}
 	
 		sqix_minx=1000;sqix_maxx=-1;sqix_miny=1000;sqix_maxy=-1;
-	}
+	} };
 }

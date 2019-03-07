@@ -198,10 +198,10 @@ public class system32
 	{
 	} };
 	
-	void system32_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr system32_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		fillbitmap(bitmap, 0, 0);
-	}
+	} };
 	
 	static MachineDriver machine_driver_ga2 = new MachineDriver
 	(

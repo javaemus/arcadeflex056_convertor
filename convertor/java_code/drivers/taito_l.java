@@ -55,7 +55,6 @@ package drivers;
 public class taito_l
 {
 	
-	void taitol_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	void taitol_chardef14_m(int offset);
 	void taitol_chardef15_m(int offset);

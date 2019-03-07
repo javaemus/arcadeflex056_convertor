@@ -18,7 +18,6 @@ public class solomon
 	extern unsigned char *solomon_bgvideoram;
 	extern unsigned char *solomon_bgcolorram;
 	
-	void solomon_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	public static WriteHandlerPtr solomon_sh_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

@@ -157,7 +157,7 @@ public class funkyjet
 	
 	/******************************************************************************/
 	
-	void funkyjet_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr funkyjet_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		flipscreen=funkyjet_control_0[0]&0x80;
 		tilemap_set_flip(ALL_TILEMAPS,flipscreen ? (TILEMAP_FLIPY | TILEMAP_FLIPX) : 0);
@@ -181,5 +181,5 @@ public class funkyjet
 		tilemap_draw(bitmap,pf2_tilemap,0,0);
 		tilemap_draw(bitmap,pf1_tilemap,0,0);
 		funkyjet_drawsprites(bitmap);
-	}
+	} };
 }

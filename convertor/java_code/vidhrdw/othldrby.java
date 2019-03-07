@@ -200,7 +200,7 @@ public class othldrby
 		}
 	}
 	
-	void othldrby_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr othldrby_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int layer;
 	
@@ -237,7 +237,7 @@ public class othldrby
 		for (layer = 0;layer < 3;layer++)
 			tilemap_draw(bitmap,tilemap[layer],3,0);
 		draw_sprites(bitmap,3);
-	}
+	} };
 	
 	void othldrby_eof_callback(void)
 	{

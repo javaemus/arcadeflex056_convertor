@@ -135,7 +135,7 @@ public class redalert
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void redalert_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr redalert_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs,i;
 	
@@ -246,6 +246,6 @@ public class redalert
 		/* copy the character mapped graphics */
 		copybitmap(bitmap,tmpbitmap,0,0,0,0,&Machine->visible_area,TRANSPARENCY_NONE,0);
 	
-	}
+	} };
 	
 }

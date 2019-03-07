@@ -364,7 +364,7 @@ public class senjyo
 		}
 	}
 	
-	void senjyo_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr senjyo_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int i;
 	
@@ -463,5 +463,5 @@ public class senjyo
 		ui_text(baf,0,30);
 	}
 	#endif
-	}
+	} };
 }

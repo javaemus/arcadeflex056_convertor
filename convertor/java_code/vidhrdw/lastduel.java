@@ -257,7 +257,7 @@ public class lastduel
 		}
 	}
 	
-	void lastduel_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr lastduel_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_draw(bitmap,bg_tilemap,0,0);
 		tilemap_draw(bitmap,fg_tilemap,TILEMAP_BACK,0);
@@ -265,7 +265,7 @@ public class lastduel
 		tilemap_draw(bitmap,fg_tilemap,TILEMAP_FRONT,0);
 		draw_sprites(bitmap,1);
 		tilemap_draw(bitmap,tx_tilemap,0,0);
-	}
+	} };
 	
 	
 	void lastduel_eof_callback(void)

@@ -57,7 +57,6 @@ public class warpwarp
 	
 	extern unsigned char *warpwarp_bulletsram;
 	void warpwarp_init_palette(unsigned char *obsolete,unsigned short *colortable,const unsigned char *color_prom);
-	void warpwarp_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	/* from sndhrdw/warpwarp.c */
 	extern int warpwarp_sh_start(const struct MachineSound *msound);

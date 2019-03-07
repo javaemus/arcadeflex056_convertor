@@ -252,7 +252,7 @@ public class appoooh
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void appoooh_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr appoooh_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_draw(bitmap,bg_tilemap,0,0);
 	
@@ -277,5 +277,5 @@ public class appoooh
 	
 		if (priority != 0)	/* fg in front of sprites */
 			tilemap_draw(bitmap,fg_tilemap,0,0);
-	}
+	} };
 }

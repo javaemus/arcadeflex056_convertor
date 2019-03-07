@@ -56,15 +56,8 @@ package drivers;
 public class alpha68k
 {
 	
-	void kyros_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
-	void sstingry_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
-	void alpha68k_I_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
-	void kouyakyu_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	void kyros_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void alpha68k_II_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	WRITE16_HANDLER( alpha68k_II_video_bank_w );
-	void alpha68k_V_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
-	void alpha68k_V_sb_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	void alpha68k_V_video_bank_w(int bank);
 	void alpha68k_flipscreen_w(int flip);
 	WRITE16_HANDLER( alpha68k_V_video_control_w );

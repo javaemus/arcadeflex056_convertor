@@ -37,7 +37,6 @@ public class lkage
 	
 	
 	extern unsigned char *lkage_scroll, *lkage_vreg;
-	void lkage_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

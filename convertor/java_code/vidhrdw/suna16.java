@@ -225,10 +225,10 @@ public class suna16
 	
 	***************************************************************************/
 	
-	void suna16_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr suna16_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* I believe background is black */
 		fillbitmap(bitmap,Machine->pens[512],&Machine->visible_area);
 		suna16_draw_sprites(bitmap);
-	}
+	} };
 }

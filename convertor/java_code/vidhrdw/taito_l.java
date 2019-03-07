@@ -315,7 +315,7 @@ public class taito_l
 	}
 	
 	
-	void taitol_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr taitol_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int dx,dy;
 	
@@ -351,7 +351,7 @@ public class taito_l
 		}
 		else
 			fillbitmap(bitmap,Machine->pens[0],&Machine->visible_area);
-	}
+	} };
 	
 	
 	

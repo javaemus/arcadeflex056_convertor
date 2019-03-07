@@ -73,8 +73,7 @@ public class kchamp
 	
 	/* from vidhrdw */
 	extern void kchamp_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	extern void kchamp_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	extern extern 
+	extern extern extern 
 	
 	static int nmi_enable = 0;
 	static int sound_nmi_enable = 0;

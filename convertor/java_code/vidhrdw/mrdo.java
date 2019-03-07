@@ -244,11 +244,11 @@ public class mrdo
 		}
 	}
 	
-	void mrdo_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr mrdo_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		fillbitmap(bitmap,Machine->pens[0],&Machine->visible_area);
 		tilemap_draw(bitmap,bg_tilemap,0,0);
 		tilemap_draw(bitmap,fg_tilemap,0,0);
 		draw_sprites(bitmap);
-	}
+	} };
 }

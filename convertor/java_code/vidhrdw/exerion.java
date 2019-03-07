@@ -412,7 +412,7 @@ public class exerion
 	 *
 	 *************************************/
 	
-	void exerion_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr exerion_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int sx, sy, offs, i;
 	
@@ -494,5 +494,5 @@ public class exerion
 					exerion_cocktail_flip, exerion_cocktail_flip, x, y,
 					&Machine->visible_area, TRANSPARENCY_PEN, 0);
 			}
-	}
+	} };
 }

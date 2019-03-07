@@ -563,7 +563,7 @@ public class harddriv
 	 *
 	 *************************************/
 	
-	void harddriv_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr harddriv_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		struct gfx_update_entry *draw_state;
 		UINT32 curr_offset = 0;
@@ -643,7 +643,7 @@ public class harddriv
 			if (draw_state[1].offset != draw_state[0].offset)
 				curr_offset = 0;
 		}
-	}
+	} };
 	
 	
 	

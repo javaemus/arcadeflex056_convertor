@@ -97,7 +97,7 @@ public class lsasquad
 		}
 	}
 	
-	void lsasquad_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr lsasquad_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		fillbitmap(bitmap,Machine->pens[511],&Machine->visible_area);
 	
@@ -105,5 +105,5 @@ public class lsasquad
 		draw_layer(bitmap,lsasquad_scrollram + 0x080);
 		draw_sprites(bitmap);
 		draw_layer(bitmap,lsasquad_scrollram + 0x100);
-	}
+	} };
 }

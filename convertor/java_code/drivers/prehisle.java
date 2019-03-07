@@ -17,7 +17,6 @@ package drivers;
 public class prehisle
 {
 	
-	void prehisle_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	WRITE16_HANDLER( prehisle_video16_w );
 	WRITE16_HANDLER( prehisle_control16_w );
 	READ16_HANDLER( prehisle_control16_r );

@@ -127,7 +127,7 @@ public class trackfld
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void trackfld_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr trackfld_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -226,5 +226,5 @@ public class trackfld
 					sx-256,sy,
 					&Machine->visible_area,TRANSPARENCY_COLOR,0);
 		}
-	}
+	} };
 }

@@ -205,7 +205,7 @@ public class bankp
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void bankp_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr bankp_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -286,5 +286,5 @@ public class bankp
 				copyscrollbitmap(bitmap,tmpbitmap,1,&scroll,0,0,&Machine->visible_area,TRANSPARENCY_COLOR,0);
 			}
 		}
-	}
+	} };
 }

@@ -34,7 +34,6 @@ public class gradius3
 	READ16_HANDLER( gradius3_gfxrom_r );
 	READ16_HANDLER( gradius3_gfxram_r );
 	WRITE16_HANDLER( gradius3_gfxram_w );
-	void gradius3_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

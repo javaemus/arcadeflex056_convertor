@@ -54,7 +54,5 @@ extern UINT8 *dynax_bitmap[3][2];
 
 
 
-void dynax_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-void sprtmtch_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 
 void sprtmtch_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);

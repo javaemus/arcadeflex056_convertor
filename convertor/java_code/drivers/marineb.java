@@ -53,11 +53,6 @@ public class marineb
 	
 	
 	
-	void marineb_vh_screenrefresh (struct mame_bitmap *bitmap,int full_refresh);
-	void changes_vh_screenrefresh (struct mame_bitmap *bitmap,int full_refresh);
-	void springer_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void hoccer_vh_screenrefresh  (struct mame_bitmap *bitmap,int full_refresh);
-	void hopprobo_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	static void marineb_init_machine(void)

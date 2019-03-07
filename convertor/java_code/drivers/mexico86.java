@@ -32,8 +32,6 @@ public class mexico86
 	/* in vidhrdw/mexico86.c */
 	extern unsigned char *mexico86_videoram,*mexico86_objectram;
 	extern size_t mexico86_objectram_size;
-	void mexico86_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void kikikai_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

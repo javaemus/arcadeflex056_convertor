@@ -17,7 +17,6 @@ public class parodius
 	
 	/* prototypes */
 	static static void parodius_banking( int lines );
-	void parodius_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	static int videobank;
 	static unsigned char *ram;

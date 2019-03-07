@@ -84,7 +84,7 @@ public class royalmah
 	} };
 	
 	
-	void royalmah_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr royalmah_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		if (full_refresh)
 		{
@@ -97,7 +97,7 @@ public class royalmah
 				royalmah_videoram_w(offs, videoram[offs]);
 			}
 		}
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr royalmah_rom_w = new WriteHandlerPtr() {public void handler(int offset, int data)

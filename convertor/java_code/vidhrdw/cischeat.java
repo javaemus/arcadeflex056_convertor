@@ -1103,7 +1103,7 @@ public class cischeat
 									Big Run
 	**************************************************************************/
 	
-	void bigrun_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr bigrun_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int i;
 		int megasys1_active_layers1, flag;
@@ -1149,14 +1149,14 @@ public class cischeat
 		cischeat_tmap_DRAW(2)
 	
 		megasys1_active_layers = megasys1_active_layers1;
-	}
+	} };
 	
 	
 	/**************************************************************************
 									Cisco Heat
 	**************************************************************************/
 	
-	void cischeat_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr cischeat_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int megasys1_active_layers1, flag;
 	
@@ -1203,7 +1203,7 @@ public class cischeat
 	
 	
 		megasys1_active_layers = megasys1_active_layers1;
-	}
+	} };
 	
 	
 	
@@ -1211,7 +1211,7 @@ public class cischeat
 								F1 GrandPrix Star
 	**************************************************************************/
 	
-	void f1gpstar_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr f1gpstar_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int megasys1_active_layers1, flag;
 	
@@ -1262,7 +1262,7 @@ public class cischeat
 	
 	
 		megasys1_active_layers = megasys1_active_layers1;
-	}
+	} };
 	
 	
 	
@@ -1276,7 +1276,7 @@ public class cischeat
 		READ16_HANDLER( scudhamm_motor_status_r );
 		READ16_HANDLER( scudhamm_analog_r );
 	
-	void scudhamm_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr scudhamm_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int megasys1_active_layers1, flag;
 		megasys1_active_layers = 0x0d;
@@ -1321,5 +1321,5 @@ public class cischeat
 		cischeat_tmap_DRAW(2)
 	
 		megasys1_active_layers = megasys1_active_layers1;
-	}
+	} };
 }

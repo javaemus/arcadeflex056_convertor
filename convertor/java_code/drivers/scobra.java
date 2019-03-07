@@ -129,7 +129,6 @@ public class scobra
 	
 	
 	
-	void galaxian_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	READ_HANDLER ( galaxian_videoram_r );
 	
 	extern struct GfxDecodeInfo galaxian_gfxdecodeinfo[];

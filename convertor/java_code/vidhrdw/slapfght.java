@@ -204,7 +204,7 @@ public class slapfght
 	
 	***************************************************************************/
 	
-	void perfrman_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr perfrman_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_set_flip( pf1_tilemap, flipscreen ? (TILEMAP_FLIPY | TILEMAP_FLIPX) : 0);
 		tilemap_set_scrolly( pf1_tilemap ,0 , 0 );
@@ -224,10 +224,10 @@ public class slapfght
 	#ifdef MAME_DEBUG
 		slapfght_log_vram();
 	#endif
-	}
+	} };
 	
 	
-	void slapfight_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr slapfight_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -271,5 +271,5 @@ public class slapfght
 	#ifdef MAME_DEBUG
 		slapfght_log_vram();
 	#endif
-	}
+	} };
 }

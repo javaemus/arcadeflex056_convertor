@@ -115,8 +115,7 @@ public class atarifb
 	extern unsigned char *atarifb_alphap2_vram;
 	extern unsigned char *atarifb_scroll_register;
 	
-	extern extern extern void atarifb_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	
+	extern extern extern 
 	/* machine/atarifb.c */
 	
 	int atarifb_lamp1, atarifb_lamp2;

@@ -82,7 +82,7 @@ public class crbaloon
 	
 	 ***************************************************************************/
 	
-	void crbaloon_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr crbaloon_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs,x,y;
 		int bx,by;
@@ -173,5 +173,5 @@ public class crbaloon
 				0,0,
 				bx,by,
 				&Machine->visible_area,TRANSPARENCY_PEN,0);
-	}
+	} };
 }

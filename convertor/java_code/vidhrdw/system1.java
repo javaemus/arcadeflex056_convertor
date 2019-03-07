@@ -530,7 +530,7 @@ public class system1
 		}
 	}
 	
-	void system1_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr system1_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int drawn;
 	
@@ -546,7 +546,7 @@ public class system1
 		/* even if screen is off, sprites must still be drawn to update the collision table */
 		if (system1_video_mode & 0x10)  /* screen off */
 			fillbitmap(bitmap,Machine->pens[0],&Machine->visible_area);
-	}
+	} };
 	
 	
 	
@@ -670,7 +670,7 @@ public class system1
 		}
 	}
 	
-	void choplifter_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr choplifter_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int drawn;
 	
@@ -694,7 +694,7 @@ public class system1
 			memory_region(REGION_CPU1)[0xC085]=33;
 		}
 	#endif
-	}
+	} };
 	
 	
 	
@@ -807,7 +807,7 @@ public class system1
 	}
 	
 	
-	void wbml_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr wbml_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		wbml_draw_bg(bitmap,0);
 		draw_sprites(bitmap);
@@ -817,5 +817,5 @@ public class system1
 		/* even if screen is off, sprites must still be drawn to update the collision table */
 		if (system1_video_mode & 0x10)  /* screen off */
 			fillbitmap(bitmap,Machine->pens[0],&Machine->visible_area);
-	}
+	} };
 }

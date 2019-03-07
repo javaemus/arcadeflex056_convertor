@@ -162,7 +162,7 @@ public class fastfred
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void fastfred_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr fastfred_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs, charbank, colorbank;
 	
@@ -269,5 +269,5 @@ public class fastfred
 					sx,sy,
 					flip_screen_x ? &spritevisibleareaflipx : &spritevisiblearea,TRANSPARENCY_PEN,0);
 		}
-	}
+	} };
 }

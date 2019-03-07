@@ -94,7 +94,6 @@ public class foodf
 	WRITE16_HANDLER( foodf_paletteram_w );
 	
 	void foodf_set_flip(int flip);
-	void foodf_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

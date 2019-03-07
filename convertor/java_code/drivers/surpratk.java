@@ -19,7 +19,6 @@ public class surpratk
 	
 	/* prototypes */
 	static static void surpratk_banking( int lines );
-	void surpratk_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	static int videobank;

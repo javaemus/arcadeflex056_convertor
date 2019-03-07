@@ -56,7 +56,6 @@ public class gaelco
 								BIG KARNAK
 	  ============================================================================*/
 	
-	void bigkarnk_vh_screenrefresh( struct mame_bitmap *bitmap,int full_refresh );
 	
 	
 	static MEMORY_READ16_START( bigkarnk_readmem )
@@ -308,7 +307,6 @@ public class gaelco
 						BIOMECHANICAL TOY & MANIAC SQUARE
 	  ============================================================================*/
 	
-	void maniacsq_vh_screenrefresh( struct mame_bitmap *bitmap,int full_refresh );
 	
 	
 	static MEMORY_READ16_START( maniacsq_readmem )

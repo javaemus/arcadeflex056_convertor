@@ -279,7 +279,7 @@ public class buggychl
 	}
 	
 	
-	void buggychl_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr buggychl_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int code;
 	
@@ -305,5 +305,5 @@ public class buggychl
 	
 		for (code = 0;code < 256;code++)
 			dirtychar[code] = 0;
-	}
+	} };
 }

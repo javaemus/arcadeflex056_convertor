@@ -779,7 +779,7 @@ public class itech8
 	 *
 	 *************************************/
 	
-	void itech8_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr itech8_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int y, ty;
 	
@@ -841,5 +841,5 @@ public class itech8
 		/* extra rendering for slikshot */
 		if (slikshot)
 			slikshot_extra_draw(bitmap);
-	}
+	} };
 }

@@ -192,11 +192,11 @@ public class eprom
 	 *
 	 *************************************/
 	
-	void eprom_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr eprom_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* draw the layers */
 		ataripf_render(0, bitmap);
 		atarimo_render(0, bitmap, overrender_callback, NULL);
 		atarian_render(0, bitmap);
-	}
+	} };
 }

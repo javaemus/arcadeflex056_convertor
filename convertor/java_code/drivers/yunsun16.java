@@ -50,7 +50,6 @@ public class yunsun16
 	WRITE16_HANDLER( yunsun16_vram_0_w );
 	WRITE16_HANDLER( yunsun16_vram_1_w );
 	
-	void yunsun16_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	/***************************************************************************

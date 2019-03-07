@@ -28,7 +28,6 @@ public class momoko
 	extern data8_t *momoko_bg_scrollx;
 	extern data8_t *momoko_bg_scrolly;
 	
-	void momoko_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	public static WriteHandlerPtr momoko_fg_select_w = new WriteHandlerPtr() {public void handler(int offset, int data);
 	public static WriteHandlerPtr momoko_bg_select_w = new WriteHandlerPtr() {public void handler(int offset, int data);

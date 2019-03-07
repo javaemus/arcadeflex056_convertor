@@ -221,20 +221,15 @@ extern WRITE16_HANDLER( sys16_paletteram_w );
 
 extern extern 
 /* "normal" video hardware */
-extern extern void sys16_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-
+extern extern 
 /* hang-on video hardware */
-extern extern void sys16_hangon_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-
+extern extern 
 /* outrun video hardware */
-extern extern void sys16_outrun_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-
+extern extern 
 /* aburner video hardware */
-extern extern void sys16_aburner_vh_screenrefresh( struct mame_bitmap *bitmap, int full_refresh );
-
+extern extern 
 /* system18 video hardware */
-extern extern void sys18_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-
+extern extern 
 /* video driver constants (vary with game) */
 extern int sys16_gr_bitmap_width;
 extern int sys16_sprxoffset;

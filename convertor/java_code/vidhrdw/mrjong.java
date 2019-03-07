@@ -82,7 +82,7 @@ public class mrjong
 	  Draw the game screen in the given mame_bitmap.
 	
 	***************************************************************************/
-	void mrjong_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr mrjong_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -154,5 +154,5 @@ public class mrjong
 					sx, sy,
 					&Machine->visible_area, TRANSPARENCY_PEN, 0);
 		}
-	}
+	} };
 }

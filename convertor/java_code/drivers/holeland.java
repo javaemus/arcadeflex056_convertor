@@ -20,8 +20,6 @@ package drivers;
 public class holeland
 {
 	
-	void holeland_vh_screenrefresh( struct mame_bitmap *bitmap,int full_refresh );
-	void crzrally_vh_screenrefresh( struct mame_bitmap *bitmap,int full_refresh );
 	
 	
 	

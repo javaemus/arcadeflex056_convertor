@@ -30,8 +30,6 @@ public class mainevt
 {
 	
 	
-	void mainevt_vh_screenrefresh (struct mame_bitmap *bitmap,int full_refresh);
-	void dv_vh_screenrefresh (struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

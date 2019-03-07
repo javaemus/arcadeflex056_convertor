@@ -37,7 +37,6 @@ public class volfied
 	READ16_HANDLER( volfied_video_ctrl_r );
 	READ16_HANDLER( volfied_cchip_r );
 	
-	void volfied_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	
 	

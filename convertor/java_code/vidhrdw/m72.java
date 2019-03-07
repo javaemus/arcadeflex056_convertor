@@ -655,7 +655,7 @@ public class m72
 	}
 	
 	
-	void m72_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr m72_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		if (video_off)
 		{
@@ -668,9 +668,9 @@ public class m72
 		draw_sprites(bitmap);
 		draw_bg(bitmap,TILEMAP_FRONT);
 		draw_fg(bitmap,TILEMAP_FRONT);
-	}
+	} };
 	
-	void majtitle_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr majtitle_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int i;
 	
@@ -701,7 +701,7 @@ public class m72
 		draw_sprites(bitmap);
 		tilemap_draw(bitmap,bg_tilemap,TILEMAP_FRONT,0);
 		draw_fg(bitmap,TILEMAP_FRONT);
-	}
+	} };
 	
 	
 	void m72_eof_callback(void)

@@ -183,7 +183,7 @@ public class gottlieb
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void gottlieb_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr gottlieb_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 	    int offs;
 	
@@ -257,5 +257,5 @@ public class gottlieb
 	
 		if (background_priority)
 			copybitmap(bitmap,tmpbitmap,0,0,0,0,&Machine->visible_area,TRANSPARENCY_COLOR,0);
-	}
+	} };
 }

@@ -70,9 +70,7 @@ public class vsnes
 	
 	/* from vidhrdw */
 	extern extern extern void vsnes_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	extern void vsnes_vh_screenrefresh( struct mame_bitmap *bitmap, int full_refresh );
-	extern extern void vsdual_vh_screenrefresh( struct mame_bitmap *bitmap, int full_refresh );
-	extern void vsdual_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
+	extern extern extern extern void vsdual_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	/* from machine */
 	extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern 

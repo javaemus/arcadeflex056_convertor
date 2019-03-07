@@ -153,7 +153,6 @@ package drivers;
 public class ninjaw
 {
 	
-	void ninjaw_vh_screenrefresh (struct mame_bitmap *bitmap,int full_refresh);
 	
 	static UINT16 cpua_ctrl = 0xff;
 	

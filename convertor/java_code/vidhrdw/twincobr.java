@@ -283,7 +283,7 @@ public class twincobr
 	
 	
 	
-	void toaplan0_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr toaplan0_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		static int offs,code,tile,color;
 	
@@ -426,7 +426,7 @@ public class twincobr
 	
 		/* draw the sprites in high priority */
 		twincobr_draw_sprites (bitmap, 0x0c00);
-	}
+	} };
 	
 	void toaplan0_eof_callback(void)
 	{

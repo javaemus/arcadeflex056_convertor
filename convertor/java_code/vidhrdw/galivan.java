@@ -407,7 +407,7 @@ public class galivan
 	}
 	
 	
-	void galivan_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr galivan_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_set_scrollx(bg_tilemap,0,scrollx[0] + 256 * (scrollx[1] & 0x07));
 		tilemap_set_scrolly(bg_tilemap,0,scrolly[0] + 256 * (scrolly[1] & 0x07));
@@ -422,9 +422,9 @@ public class galivan
 		draw_sprites(bitmap);
 	
 		tilemap_draw(bitmap,tx_tilemap,1,0);
-	}
+	} };
 	
-	void ninjemak_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr ninjemak_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		/* (scrollx[1] & 0x40) does something */
 		tilemap_set_scrollx(bg_tilemap,0,scrollx[0] + 256 * (scrollx[1] & 0x1f));
@@ -438,5 +438,5 @@ public class galivan
 		draw_sprites(bitmap);
 	
 		tilemap_draw(bitmap,tx_tilemap,0,0);
-	}
+	} };
 }

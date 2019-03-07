@@ -140,7 +140,6 @@ public class sega
 	
 	
 	/* Video hardware prototypes */
-	void sega_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

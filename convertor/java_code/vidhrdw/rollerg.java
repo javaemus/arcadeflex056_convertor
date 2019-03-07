@@ -84,11 +84,11 @@ public class rollerg
 	
 	***************************************************************************/
 	
-	void rollerg_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr rollerg_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		fillbitmap(priority_bitmap,0,NULL);
 		fillbitmap(bitmap,Machine->pens[16 * bg_colorbase],&Machine->visible_area);
 		K051316_zoom_draw_0(bitmap,0,1);
 		K053245_sprites_draw(bitmap);
-	}
+	} };
 }

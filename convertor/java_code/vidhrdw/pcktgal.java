@@ -50,7 +50,7 @@ public class pcktgal
 		last_flip=flipscreen;
 	} };
 	
-	void pcktgal_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr pcktgal_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -112,5 +112,5 @@ public class pcktgal
 						&Machine->visible_area,TRANSPARENCY_PEN,0);
 			}
 		}
-	}
+	} };
 }

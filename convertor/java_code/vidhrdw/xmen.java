@@ -97,7 +97,7 @@ public class xmen
 	}
 	
 	
-	void xmen_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr xmen_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int layer[3];
 	
@@ -128,5 +128,5 @@ public class xmen
 	
 		pdrawgfx_shadow_lowpri = 1;	/* fix shadows of boulders in front of feet */
 		K053247_sprites_draw(bitmap);
-	}
+	} };
 }

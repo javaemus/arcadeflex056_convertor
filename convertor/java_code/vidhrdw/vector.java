@@ -831,7 +831,7 @@ public class vector
 		}
 	}
 	
-	void vector_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr vector_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int i;
 		int temp_x, temp_y;
@@ -891,7 +891,7 @@ public class vector
 			}
 			new++;
 		}
-	}
+	} };
 	
 	#endif /* if !(defined xgl) && !(defined xfx) && !(defined svgafx) */
 }

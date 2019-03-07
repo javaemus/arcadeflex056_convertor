@@ -226,7 +226,7 @@ public class legionna
 	}
 	
 	
-	void legionna_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr legionna_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 	#ifdef MAME_DEBUG
 		static int dislayer[5];	/* Layer toggles to help get the layers correct */
@@ -305,5 +305,5 @@ public class legionna
 		if (dislayer[4]==0)
 	#endif
 		tilemap_draw(bitmap,text_layer,0,0);
-	}
+	} };
 }

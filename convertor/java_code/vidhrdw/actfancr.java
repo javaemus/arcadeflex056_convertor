@@ -138,7 +138,7 @@ public class actfancr
 	
 	/******************************************************************************/
 	
-	void actfancr_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr actfancr_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int my,mx,offs,color,tile,mult;
 		int scrollx=(actfancr_control_1[0x10]+(actfancr_control_1[0x11]<<8));
@@ -228,9 +228,9 @@ public class actfancr
 				tile,color,flipscreen,flipscreen,8*mx,8*my,
 				&Machine->visible_area,TRANSPARENCY_PEN,0);
 		}
-	}
+	} };
 	
-	void triothep_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr triothep_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int my,mx,offs,color,tile,i,mult;
 		int scrollx=(actfancr_control_1[0x10]+(actfancr_control_1[0x11]<<8));
@@ -324,5 +324,5 @@ public class actfancr
 				tile,color,flipscreen,flipscreen,8*mx,8*my,
 				&Machine->visible_area,TRANSPARENCY_PEN,0);
 		}
-	}
+	} };
 }

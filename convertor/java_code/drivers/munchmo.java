@@ -31,7 +31,6 @@ public class munchmo
 	extern UINT8 *mnchmobl_sprite_tile;
 	
 	void mnchmobl_convert_color_prom(unsigned char *obsolete,unsigned short *colortable,const unsigned char *color_prom);
-	void mnchmobl_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	/***************************************************************************/

@@ -205,7 +205,7 @@ public class cbasebal
 		}
 	}
 	
-	void cbasebal_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr cbasebal_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		if (bg_on)
 			tilemap_draw(bitmap,bg_tilemap,0,0);
@@ -217,5 +217,5 @@ public class cbasebal
 	
 		if (text_on)
 			tilemap_draw(bitmap,fg_tilemap,0,0);
-	}
+	} };
 }

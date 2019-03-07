@@ -151,7 +151,7 @@ public class thief
 		return 1;
 	} };
 	
-	void thief_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh){
+	public static VhUpdatePtr thief_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) {
 		unsigned int offs;
 		int flipscreen = thief_video_control&1;
 		const pen_t *pal_data = Machine->pens;
@@ -205,7 +205,7 @@ public class thief
 			}
 		}
 		copybitmap(bitmap,page,0,0,0,0,&Machine->visible_area,TRANSPARENCY_NONE,0);
-	}
+	} };
 	
 	/***************************************************************************/
 	

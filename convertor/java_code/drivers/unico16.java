@@ -47,7 +47,6 @@ public class unico16
 	WRITE16_HANDLER( unico16_vram_2_w );
 	WRITE16_HANDLER( unico16_palette_w );
 	
-	void unico16_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	/***************************************************************************
 	

@@ -281,21 +281,21 @@ public class lwings
 		}
 	}
 	
-	void lwings_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr lwings_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_draw(bitmap,bg1_tilemap,0,0);
 		lwings_draw_sprites(bitmap);
 		tilemap_draw(bitmap,fg_tilemap,0,0);
-	}
+	} };
 	
-	void trojan_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr trojan_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_draw(bitmap,bg2_tilemap,0,0);
 		tilemap_draw(bitmap,bg1_tilemap,TILEMAP_BACK,0);
 		trojan_draw_sprites(bitmap);
 		tilemap_draw(bitmap,bg1_tilemap,TILEMAP_FRONT,0);
 		tilemap_draw(bitmap,fg_tilemap,0,0);
-	}
+	} };
 	
 	void lwings_eof_callback(void)
 	{

@@ -267,7 +267,7 @@ public class bosco
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void bosco_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr bosco_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs,sx,sy;
 	
@@ -432,7 +432,7 @@ public class bosco
 				}
 			}
 		}
-	}
+	} };
 	
 	void bosco_vh_interrupt(void)
 	{

@@ -106,7 +106,7 @@ public class kyugo
 	
 	
 	
-	void kyugo_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr kyugo_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 		const UINT8 *color_codes = memory_region(REGION_PROMS) + 0x300;
@@ -187,5 +187,5 @@ public class kyugo
 					8*sx, 8*sy,
 					&Machine->visible_area,TRANSPARENCY_PEN,0);
 		}
-	}
+	} };
 }

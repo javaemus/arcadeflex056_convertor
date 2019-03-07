@@ -111,7 +111,7 @@ public class ladybug
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void ladybug_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr ladybug_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int i,offs;
 	
@@ -214,5 +214,5 @@ public class ladybug
 				}
 			}
 		}
-	}
+	} };
 }

@@ -55,7 +55,6 @@ public class cyberbal
 	WRITE16_HANDLER( cyberbal_paletteram_0_w );
 	WRITE16_HANDLER( cyberbal_paletteram_1_w );
 	
-	void cyberbal_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	void cyberbal_scanline_update(int param);
 	

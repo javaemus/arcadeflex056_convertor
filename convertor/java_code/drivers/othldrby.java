@@ -30,7 +30,6 @@ public class othldrby
 	WRITE16_HANDLER( othldrby_vreg_addr_w );
 	WRITE16_HANDLER( othldrby_vreg_w );
 	
-	void othldrby_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

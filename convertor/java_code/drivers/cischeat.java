@@ -179,10 +179,6 @@ public class cischeat
 	WRITE16_HANDLER( scudhamm_vregs_w );
 	
 	
-	void bigrun_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void cischeat_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void f1gpstar_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void scudhamm_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	/**************************************************************************

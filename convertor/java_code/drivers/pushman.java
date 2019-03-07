@@ -25,7 +25,6 @@ package drivers;
 public class pushman
 {
 	
-	void pushman_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	WRITE16_HANDLER( pushman_scroll_w );
 	WRITE16_HANDLER( pushman_videoram_w );
 	

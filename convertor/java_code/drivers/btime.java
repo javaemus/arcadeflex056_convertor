@@ -67,13 +67,6 @@ public class btime
 	
 	
 	
-	void btime_vh_screenrefresh   (struct mame_bitmap *bitmap,int full_refresh);
-	void cookrace_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	void bnj_vh_screenrefresh     (struct mame_bitmap *bitmap,int full_refresh);
-	void lnc_vh_screenrefresh     (struct mame_bitmap *bitmap,int full_refresh);
-	void zoar_vh_screenrefresh    (struct mame_bitmap *bitmap,int full_refresh);
-	void disco_vh_screenrefresh   (struct mame_bitmap *bitmap,int full_refresh);
-	void eggs_vh_screenrefresh    (struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

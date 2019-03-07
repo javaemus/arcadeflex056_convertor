@@ -163,9 +163,9 @@ public class hexion
 	
 	***************************************************************************/
 	
-	void hexion_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr hexion_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_draw(bitmap,tilemap[1],0,0);
 		tilemap_draw(bitmap,tilemap[0],0,0);
-	}
+	} };
 }

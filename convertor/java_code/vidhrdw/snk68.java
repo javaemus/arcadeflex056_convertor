@@ -221,7 +221,7 @@ public class snk68
 	}
 	
 	
-	void pow_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr pow_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		fillbitmap(bitmap,Machine->pens[2047],&Machine->visible_area);
 	
@@ -234,7 +234,7 @@ public class snk68
 		draw_sprites(bitmap,0,0x800);
 	
 		tilemap_draw(bitmap,fix_tilemap,0,0);
-	}
+	} };
 	
 	
 	static void draw_sprites2(struct mame_bitmap *bitmap, int j, int z, int pos)
@@ -302,7 +302,7 @@ public class snk68
 	}
 	
 	
-	void searchar_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr searchar_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		fillbitmap(bitmap,Machine->pens[2047],&Machine->visible_area);
 	
@@ -315,6 +315,6 @@ public class snk68
 		draw_sprites2(bitmap,4,0x1000,0x800);
 	
 		tilemap_draw(bitmap,fix_tilemap,0,0);
-	}
+	} };
 	
 }

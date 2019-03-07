@@ -158,9 +158,9 @@ public class amspdwy
 	
 	***************************************************************************/
 	
-	void amspdwy_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr amspdwy_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		tilemap_draw(bitmap,tilemap,0,0);
 		draw_sprites(bitmap);
-	}
+	} };
 }

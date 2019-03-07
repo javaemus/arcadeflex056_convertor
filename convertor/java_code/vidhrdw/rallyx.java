@@ -247,7 +247,7 @@ public class rallyx
 	
 	***************************************************************************/
 	
-	void rallyx_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr rallyx_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs,sx,sy;
 		int scrollx,scrolly;
@@ -412,11 +412,11 @@ public class rallyx
 					x,y,
 					&Machine->visible_area,TRANSPARENCY_PEN,3);
 		}
-	}
+	} };
 	
 	
 	
-	void jungler_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr jungler_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs,sx,sy;
 		int scrollx,scrolly;
@@ -538,11 +538,11 @@ public class rallyx
 					x,y,
 					&Machine->visible_area,TRANSPARENCY_PEN,0);
 		}
-	}
+	} };
 	
 	
 	
-	void locomotn_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr locomotn_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs,sx,sy;
 	
@@ -680,11 +680,11 @@ public class rallyx
 	//				&Machine->visible_area,TRANSPARENCY_PEN,3);
 					flipscreen ? &spritevisibleareaflip : &spritevisiblearea,TRANSPARENCY_PEN,3);
 		}
-	}
+	} };
 	
 	
 	
-	void commsega_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr commsega_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs,sx,sy;
 	
@@ -834,5 +834,5 @@ public class rallyx
 					x,y,
 					&Machine->visible_area,TRANSPARENCY_PEN,3);
 		}
-	}
+	} };
 }

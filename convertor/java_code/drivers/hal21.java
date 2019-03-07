@@ -166,7 +166,7 @@ public class hal21
 	public static WriteHandlerPtr hal21_vreg4_w = new WriteHandlerPtr() {public void handler(int offset, int data){ hal21_vreg[4] = data; } };
 	public static WriteHandlerPtr hal21_vreg5_w = new WriteHandlerPtr() {public void handler(int offset, int data){ hal21_vreg[5] = data; } };
 	
-	void aso_vh_screenrefresh( struct mame_bitmap *bitmap, int full_refresh ){
+	public static VhUpdatePtr aso_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) {
 		unsigned char *ram = memory_region(REGION_CPU1);
 		int attributes = hal21_vreg[1];
 		{
@@ -210,7 +210,7 @@ public class hal21
 			}
 		}
 	*/
-	}
+	} };
 	
 	
 	static InputPortPtr input_ports_hal21 = new InputPortPtr(){ public void handler() { 

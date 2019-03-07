@@ -101,7 +101,7 @@ public class _88games
 	
 	***************************************************************************/
 	
-	void k88games_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr k88games_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		K052109_tilemap_update();
 	
@@ -123,5 +123,5 @@ public class _88games
 			K051960_sprites_draw(bitmap,1,1);
 			K052109_tilemap_draw(bitmap,0,0,0);
 		}
-	}
+	} };
 }

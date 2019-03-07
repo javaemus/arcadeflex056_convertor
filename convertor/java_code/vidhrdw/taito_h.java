@@ -448,7 +448,7 @@ public class taito_h
 	
 	/**************************************************************************/
 	
-	void syvalion_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr syvalion_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		TC0080VCO_tilemap_update();
 	
@@ -462,10 +462,10 @@ public class taito_h
 		TC0080VCO_tilemap_draw(bitmap,1,0,0);
 		syvalion_draw_sprites (bitmap);
 		TC0080VCO_tilemap_draw(bitmap,2,0,0);
-	}
+	} };
 	
 	
-	void recordbr_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr recordbr_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		TC0080VCO_tilemap_update();
 	
@@ -492,10 +492,10 @@ public class taito_h
 	#endif
 	
 		TC0080VCO_tilemap_draw(bitmap,2,0,0);
-	}
+	} };
 	
 	
-	void dleague_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr dleague_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		TC0080VCO_tilemap_update();
 	
@@ -522,6 +522,6 @@ public class taito_h
 	#endif
 	
 		TC0080VCO_tilemap_draw(bitmap,2,0,0);
-	}
+	} };
 	
 }

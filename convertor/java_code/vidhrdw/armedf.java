@@ -295,7 +295,7 @@ public class armedf
 	
 	
 	
-	void armedf_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr armedf_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int sprite_enable = armedf_vreg & 0x200;
 	
@@ -338,7 +338,7 @@ public class armedf
 		if( sprite_enable ) draw_sprites( bitmap, 1 );
 		tilemap_draw( bitmap, tx_tilemap, 0, 0);
 		if( sprite_enable ) draw_sprites( bitmap, 0 );
-	}
+	} };
 	
 	void armedf_eof_callback(void)
 	{

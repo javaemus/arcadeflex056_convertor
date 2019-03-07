@@ -46,7 +46,6 @@ public class suna8
 	
 	
 	
-	void suna8_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	/***************************************************************************

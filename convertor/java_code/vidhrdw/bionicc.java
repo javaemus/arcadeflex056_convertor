@@ -231,7 +231,7 @@ public class bionicc
 		}
 	}
 	
-	void bionicc_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr bionicc_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		fillbitmap(bitmap,Machine->pens[0],&Machine->visible_area);
 		tilemap_draw(bitmap,fg_tilemap,1|TILEMAP_BACK,0);	/* nothing in FRONT */
@@ -240,7 +240,7 @@ public class bionicc
 		bionicc_draw_sprites(bitmap);
 		tilemap_draw(bitmap,fg_tilemap,0|TILEMAP_FRONT,0);
 		tilemap_draw(bitmap,tx_tilemap,0,0);
-	}
+	} };
 	
 	void bionicc_eof_callback(void)
 	{

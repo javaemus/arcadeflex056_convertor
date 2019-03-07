@@ -52,7 +52,6 @@ public class arkanoid
 	
 	
 	
-	void arkanoid_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

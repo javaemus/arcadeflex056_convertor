@@ -243,7 +243,7 @@ public class bking2
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void bking2_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr bking2_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -313,5 +313,5 @@ public class bking2
 				crow_flip,crow_flip,
 				crow_flip ? xld3-16 : 256-xld3, crow_flip ? yld3-16 : 256-yld3,
 				&Machine->visible_area,TRANSPARENCY_PEN,0);
-	}
+	} };
 }

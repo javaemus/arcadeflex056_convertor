@@ -72,7 +72,7 @@ public class spiders
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void spiders_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr spiders_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int loop,data0,data1,data2,col;
 	
@@ -148,5 +148,5 @@ public class spiders
 			/* Now copy the temp bitmap to the screen */
 			copybitmap(bitmap,tmpbitmap,0,0,0,0,&Machine->visible_area,TRANSPARENCY_NONE,0);
 		}
-	}
+	} };
 }

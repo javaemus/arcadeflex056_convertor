@@ -204,12 +204,12 @@ public class karnov
 	
 	/******************************************************************************/
 	
-	void karnov_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr karnov_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		draw_background(bitmap);
 		draw_sprites(bitmap);
 		tilemap_draw(bitmap,fix_tilemap,0,0);
-	}
+	} };
 	
 	/******************************************************************************/
 	

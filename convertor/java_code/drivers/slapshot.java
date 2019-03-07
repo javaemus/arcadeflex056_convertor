@@ -78,7 +78,6 @@ package drivers;
 public class slapshot
 {
 	
-	void slapshot_vh_screenrefresh (struct mame_bitmap *bitmap,int full_refresh);
 	
 	static data16_t *color_ram;
 	

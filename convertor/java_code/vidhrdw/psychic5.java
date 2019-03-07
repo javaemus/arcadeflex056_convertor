@@ -561,7 +561,7 @@ public class psychic5
 	
 	
 	
-	void psychic5_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr psychic5_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int bg_scrollx,bg_scrolly;
 	
@@ -669,5 +669,5 @@ public class psychic5
 			bg_clip_mode=-10;
 		}
 		psychic5_draw_foreground(bitmap);
-	}
+	} };
 }

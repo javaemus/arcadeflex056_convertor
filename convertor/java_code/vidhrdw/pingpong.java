@@ -106,7 +106,7 @@ public class pingpong
 	  Draw the game screen in the given mame_bitmap.
 	
 	***************************************************************************/
-	void pingpong_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr pingpong_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -166,5 +166,5 @@ public class pingpong
 					sx,sy,
 					&spritevisiblearea,TRANSPARENCY_COLOR,0);
 		}
-	}
+	} };
 }

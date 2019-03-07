@@ -201,7 +201,7 @@ public class superpac
 	
 	***************************************************************************/
 	
-	void superpac_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr superpac_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -297,5 +297,5 @@ public class superpac
 	
 		/* Color 31 still has priority over that (ghost eyes in Pac 'n Pal) */
 		draw_sprites(bitmap, &Machine->visible_area, TRANSPARENCY_PENS);
-	}
+	} };
 }

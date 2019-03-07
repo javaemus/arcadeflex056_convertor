@@ -229,7 +229,6 @@ public class twincobr
 	WRITE16_HANDLER( twincobr_crtc_reg_sel_w );
 	WRITE16_HANDLER( twincobr_crtc_data_w );
 	
-	void toaplan0_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

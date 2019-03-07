@@ -25,7 +25,6 @@ public class vendetta
 	static static void vendetta_banking( int lines );
 	static void vendetta_video_banking( int select );
 	
-	void vendetta_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	/***************************************************************************

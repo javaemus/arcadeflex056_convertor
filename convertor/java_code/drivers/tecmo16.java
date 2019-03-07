@@ -41,7 +41,6 @@ public class tecmo16
 	WRITE16_HANDLER( tecmo16_scroll_char_x_w );
 	WRITE16_HANDLER( tecmo16_scroll_char_y_w );
 	
-	void tecmo16_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	/******************************************************************************/
 	

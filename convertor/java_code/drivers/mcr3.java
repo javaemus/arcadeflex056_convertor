@@ -104,15 +104,11 @@ public class mcr3
 	extern size_t spyhunt_alpharam_size;
 	
 	
-	void mcr3_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	void mcrmono_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	void dotron_change_light(int light);
-	void dotron_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	void spyhunt_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void spyhunt_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

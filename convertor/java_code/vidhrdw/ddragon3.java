@@ -184,7 +184,7 @@ public class ddragon3
 		}
 	}
 	
-	void ddragon3_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr ddragon3_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		if( ddragon3_bg_tilebase != old_ddragon3_bg_tilebase )
 		{
@@ -210,9 +210,9 @@ public class ddragon3
 			draw_sprites( bitmap );
 			tilemap_draw( bitmap, foreground, 0 ,0);
 		}
-	}
+	} };
 	
-	void ctribe_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr ctribe_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		if( ddragon3_bg_tilebase != old_ddragon3_bg_tilebase )
 		{
@@ -228,6 +228,6 @@ public class ddragon3
 		tilemap_draw( bitmap, background, 0 ,0);
 		tilemap_draw( bitmap, foreground, 0 ,0);
 		draw_sprites( bitmap );
-	}
+	} };
 	
 }

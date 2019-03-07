@@ -261,7 +261,7 @@ public class gaiden
 		}
 	}
 	
-	void gaiden_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr gaiden_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		fillbitmap(priority_bitmap,0,NULL);
 		fillbitmap(bitmap,Machine->pens[0x200],&Machine->visible_area);
@@ -270,5 +270,5 @@ public class gaiden
 		tilemap_draw(bitmap,text_layer,0,4);
 	
 		draw_sprites( bitmap );
-	}
+	} };
 }

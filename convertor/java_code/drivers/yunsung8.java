@@ -48,7 +48,6 @@ public class yunsung8
 	READ_HANDLER ( yunsung8_videoram_r );
 	
 	
-	void yunsung8_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	

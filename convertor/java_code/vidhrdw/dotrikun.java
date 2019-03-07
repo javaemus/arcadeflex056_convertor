@@ -75,7 +75,7 @@ public class dotrikun
 	} };
 	
 	
-	void dotrikun_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr dotrikun_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		if (full_refresh)
 		{
@@ -86,5 +86,5 @@ public class dotrikun
 			for (offs = 0; offs < videoram_size; offs++)
 				dotrikun_videoram_w(offs,videoram[offs]);
 		}
-	}
+	} };
 }

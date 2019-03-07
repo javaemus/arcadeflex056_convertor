@@ -21,7 +21,6 @@ public class ssozumo
 	extern unsigned char *ssozumo_scroll;
 	
 	void ssozumo_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable, const unsigned char *color_prom);
-	void ssozumo_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	
 	public static InterruptPtr ssozumo_interrupt = new InterruptPtr() { public int handler() 

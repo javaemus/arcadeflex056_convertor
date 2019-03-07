@@ -36,7 +36,6 @@ public class niyanpai
 	#define	SIGNED_DAC	0		// 0:unsigned DAC, 1:signed DAC
 	
 	
-	void niyanpai_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	READ16_HANDLER( niyanpai_palette_r );
 	WRITE16_HANDLER( niyanpai_palette_w );

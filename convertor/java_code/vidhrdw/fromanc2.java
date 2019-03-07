@@ -656,7 +656,7 @@ public class fromanc2
 	
 	
 	******************************************************************************/
-	void fromanc2_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr fromanc2_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int vram;
 	//	int layer;
@@ -822,9 +822,9 @@ public class fromanc2
 	
 		copybitmap(bitmap, fromanc2_tmpbitmapx[0], 0, 0,   0, 0, 0, TRANSPARENCY_NONE, 0);
 		copybitmap(bitmap, fromanc2_tmpbitmapx[1], 0, 0, 352, 0, 0, TRANSPARENCY_NONE, 0);
-	}
+	} };
 	
-	void fromancr_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr fromancr_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int vram;
 		int layer;
@@ -883,5 +883,5 @@ public class fromanc2
 	
 		copybitmap(bitmap, fromanc2_tmpbitmapx[0], 0, 0,   0, 0, 0, TRANSPARENCY_NONE, 0);
 		copybitmap(bitmap, fromanc2_tmpbitmapx[1], 0, 0, 352, 0, 0, TRANSPARENCY_NONE, 0);
-	}
+	} };
 }

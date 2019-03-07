@@ -295,7 +295,7 @@ public class segac2
 	
 	
 	/* core refresh: computes the final screen */
-	void segac2_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr segac2_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int y;
 	
@@ -305,7 +305,7 @@ public class segac2
 		/* generate the final screen */
 		for (y = 0; y < 224; y++)
 			draw_scanline16(bitmap, 8, y, 320, &cache_bitmap[y * BITMAP_WIDTH + 8], Machine->pens, -1);
-	}
+	} };
 	
 	
 	

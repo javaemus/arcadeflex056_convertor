@@ -142,7 +142,7 @@ public class vicdual
 	  the main emulation engine.
 	
 	***************************************************************************/
-	void vicdual_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr vicdual_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs;
 	
@@ -194,5 +194,5 @@ public class vicdual
 		{
 			if (dirtycharacter[offs] == 2) dirtycharacter[offs] = 0;
 		}
-	}
+	} };
 }

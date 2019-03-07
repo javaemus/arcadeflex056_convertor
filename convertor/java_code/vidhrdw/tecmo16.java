@@ -257,7 +257,7 @@ public class tecmo16
 	
 	/******************************************************************************/
 	
-	void tecmo16_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr tecmo16_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		fillbitmap(priority_bitmap,0,NULL);
 		fillbitmap(bitmap,Machine->pens[0x300],&Machine->visible_area);
@@ -266,5 +266,5 @@ public class tecmo16
 		tilemap_draw(bitmap,tx_tilemap,0,4);
 	
 		draw_sprites(bitmap);
-	}
+	} };
 }

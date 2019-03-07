@@ -85,7 +85,7 @@ public class surpratk
 		SWAP(1,2)
 	}
 	
-	void surpratk_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr surpratk_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int layer[3];
 	
@@ -114,5 +114,5 @@ public class surpratk
 		K052109_tilemap_draw(bitmap,layer[2],0,4);
 	
 		K053245_sprites_draw(bitmap);
-	}
+	} };
 }

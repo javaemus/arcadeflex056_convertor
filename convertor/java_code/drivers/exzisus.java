@@ -61,7 +61,6 @@ public class exzisus
 	READ_HANDLER ( exzisus_objectram_0_r );
 	READ_HANDLER ( exzisus_objectram_1_r );
 	
-	void exzisus_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	
 	/***************************************************************************

@@ -901,7 +901,7 @@ public class wmstunit
 	 *
 	 *************************************/
 	
-	void wms_tunit_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
+	public static VhUpdatePtr wms_tunit_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int v, width, xoffs;
 		UINT32 offset;
@@ -928,5 +928,5 @@ public class wmstunit
 			draw_scanline16(bitmap, xoffs, v, width, &local_videoram[offset], pen_map, -1);
 			offset = (offset + 512) & 0x3ffff;
 		}
-	}
+	} };
 }

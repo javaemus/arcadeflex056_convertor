@@ -81,8 +81,7 @@ public class geebee
 	extern void geebee_init_palette(unsigned char *sys_palette, unsigned short *sys_colortable, const unsigned char *color_prom);
 	extern void navalone_init_palette(unsigned char *sys_palette, unsigned short *sys_colortable, const unsigned char *color_prom);
 	
-	extern extern extern extern extern void geebee_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
-	
+	extern extern extern extern extern 
 	/* from sndhrdw/geebee.c */
 	extern int geebee_sh_start(const struct MachineSound *msound);
 	extern extern 

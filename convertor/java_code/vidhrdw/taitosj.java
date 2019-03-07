@@ -767,7 +767,7 @@ public class taitosj
 	}
 	
 	
-	void taitosj_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr taitosj_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		int offs,i;
 	
@@ -885,5 +885,5 @@ public class taitosj
 		check_sprite_plane_collision();
 	
 		/*check_plane_plane_collision();*/	/*not implemented !!!*/
-	}
+	} };
 }

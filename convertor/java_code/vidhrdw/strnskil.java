@@ -57,7 +57,7 @@ public class strnskil
 		strnskil_flipscreen = (data >> 3) & 1;
 	} };
 	
-	void strnskil_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
+	public static VhUpdatePtr strnskil_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 	
 		int offs,chr,col,x,y,px,py,fx,fy,bank,d ;
@@ -149,5 +149,5 @@ public class strnskil
 				&Machine->visible_area,TRANSPARENCY_COLOR,0);
 		}
 	
-	}
+	} };
 }
