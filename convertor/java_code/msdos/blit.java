@@ -10,22 +10,9 @@ public class blit
 	
 	
 	/* from video.c (required for 15.75KHz Arcade Monitor Modes) */
-	extern int half_yres;
-	extern int unchained;
 	
 	extern char *dirty_new;
 	
-	extern int gfx_xoffset;
-	extern int gfx_yoffset;
-	extern int gfx_display_lines;
-	extern int gfx_display_columns;
-	extern int gfx_width;
-	extern int gfx_height;
-	extern int skiplines;
-	extern int skipcolumns;
-	extern int use_triplebuf;
-	extern int triplebuf_pos,triplebuf_page_width;
-	extern int mmxlfb;
 	
 	unsigned int doublepixel[256];
 	unsigned int quadpixel[256]; /* for quadring pixels */
@@ -52,9 +39,7 @@ public class blit
 	#if 0
 	   int seg;
 	   long a;
-		extern void (*_pm_vesa_scroller)(void);	/* in Allegro */
-		extern int _mmio_segment;	/* in Allegro */
-	   if (_pm_vesa_scroller) {            /* use protected mode interface? */
+			   if (_pm_vesa_scroller) {            /* use protected mode interface? */
 	      seg = _mmio_segment ? _mmio_segment : _my_ds();
 	
 	      a = ((x * BYTES_PER_PIXEL(screen->vtable->color_depth)) +
@@ -962,8 +947,7 @@ public class blit
 			address_offset = bmp_write_line(screen, vesa_line+1) - address; \
 			address += xoffs; \
 			{ \
-			extern void asmblit_##MX##x_##MY##y_##SL##sl_##BPP##bpp##PALETTIZED \
-				(int, int, unsigned char *, int, unsigned long, unsigned long); \
+						(int, int, unsigned char *, int, unsigned long, unsigned long); \
 			asmblit_##MX##x_##MY##y_##SL##sl_##BPP##bpp##PALETTIZED \
 				(width, gfx_display_lines, src, line_offs, address, address_offset); \
 			} \

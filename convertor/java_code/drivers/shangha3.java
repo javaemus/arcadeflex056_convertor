@@ -31,7 +31,6 @@ public class shangha3
 	
 	extern data16_t *shangha3_ram;
 	extern size_t shangha3_ram_size;
-	extern int shangha3_do_shadows;
 	
 	WRITE16_HANDLER( shangha3_flipscreen_w );
 	WRITE16_HANDLER( shangha3_gfxlist_addr_w );

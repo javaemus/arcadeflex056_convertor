@@ -460,7 +460,6 @@ public class mcr12
 	 *
 	 *************************************/
 	
-	extern void mcr3_update_sprites(struct mame_bitmap *bitmap, int color_mask, int code_xor, int dx, int dy);
 	
 	public static VhUpdatePtr journey_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{

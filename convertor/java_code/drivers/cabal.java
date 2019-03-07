@@ -49,7 +49,7 @@ package drivers;
 public class cabal
 {
 	
-	extern extern WRITE16_HANDLER( cabal_flipscreen_w );
+	WRITE16_HANDLER( cabal_flipscreen_w );
 	WRITE16_HANDLER( cabal_background_videoram16_w );
 	WRITE16_HANDLER( cabal_text_videoram16_w );
 	

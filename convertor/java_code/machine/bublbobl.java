@@ -19,7 +19,6 @@ public class bublbobl
 	
 	
 	unsigned char *bublbobl_sharedram1,*bublbobl_sharedram2;
-	extern int bublbobl_video_enable;
 	
 	
 	public static ReadHandlerPtr bublbobl_sharedram1_r  = new ReadHandlerPtr() { public int handler(int offset)

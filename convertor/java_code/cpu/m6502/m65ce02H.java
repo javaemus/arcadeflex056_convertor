@@ -34,7 +34,7 @@ public class m65ce02H
 	#ifdef RUNTIME_LOADER
 	# ifdef __cplusplus
 		extern "C" # else
-		extern # endif
+		# endif
 	#endif
 	
 	enum {
@@ -45,18 +45,9 @@ public class m65ce02H
 	
 	#define M65CE02_IRQ_LINE				M6502_IRQ_LINE
 	
-	extern int m65ce02_ICount;				/* cycle count */
 	
-	extern void m65ce02_reset(void *param);
-	extern extern int	m65ce02_execute(int cycles);
 	extern unsigned m65ce02_get_context (void *dst);
-	extern void m65ce02_set_context (void *src);
 	extern unsigned m65ce02_get_reg (int regnum);
-	extern void m65ce02_set_reg (int regnum, unsigned val);
-	extern void m65ce02_set_irq_line(int irqline, int state);
-	extern void m65ce02_set_irq_callback(int (*callback)(int irqline));
-	extern void m65ce02_state_save(void *file);
-	extern void m65ce02_state_load(void *file);
 	extern const char *m65ce02_info(void *context, int regnum);
 	extern unsigned m65ce02_dasm(char *buffer, unsigned pc);
 	

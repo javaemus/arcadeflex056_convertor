@@ -14,10 +14,6 @@ public class gen15khz
 	int	wait_interlace;      /* config flag - indicates if we're waiting for odd/even updates */
 	static int display_interlaced=0;  /* interlaced display */
 	
-	extern int video_sync;
-	extern int wait_vsync;
-	extern int use_triplebuf;
-	extern int unchained;
 	
 	/* Generic SVGA 15.75KHz code and SVGA 15.75KHz driver selection */
 	

@@ -263,7 +263,6 @@ public class wecleman
 	
 	extern data16_t *wecleman_pageram, *wecleman_txtram, *wecleman_roadram, *wecleman_unknown;
 	extern size_t wecleman_roadram_size;
-	extern int wecleman_bgpage[4], wecleman_fgpage[4], *wecleman_gfx16_RAM;
 	
 	
 	/* Functions defined in vidhrdw: */

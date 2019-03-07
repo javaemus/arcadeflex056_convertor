@@ -8,7 +8,6 @@ public class bladestl
 {
 	
 	static int layer_colorbase[2];
-	extern int bladestl_spritebank;
 	
 	void bladestl_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
 	{

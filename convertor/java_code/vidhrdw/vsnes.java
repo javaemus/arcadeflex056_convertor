@@ -8,7 +8,6 @@ public class vsnes
 {
 	
 	/* from machine */
-	extern int vsnes_gun_controller;
 	
 	
 	void vsnes_vh_convert_color_prom( unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom )

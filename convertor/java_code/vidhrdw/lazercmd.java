@@ -13,7 +13,6 @@ package vidhrdw;
 public class lazercmd
 {
 	
-	extern int marker_x, marker_y;
 	
 	static int video_inverted = 0;
 	

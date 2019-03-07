@@ -156,8 +156,7 @@ public class mermaid
 		for (offs = spriteram_size - 4;offs >= 0;offs -= 4)
 		{
 	#ifdef MAME_DEBUG
-			extern int debug_key_pressed;
-	#endif
+			#endif
 			UINT8 flipx,flipy,sx,sy,code,bank = 0;
 	
 	

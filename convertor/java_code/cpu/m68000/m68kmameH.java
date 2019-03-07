@@ -14,7 +14,6 @@ package cpu.m68000;
 public class m68kmameH
 {
 	
-	extern int m68ki_remaining_cycles;
 	
 	/* Configuration switches (see m68kconf.h for explanation) */
 	#define M68K_SEPARATE_READS         OPT_ON
@@ -110,7 +109,6 @@ public class m68kmameH
 	// cores can't agree on the same name for the icount variable, so we force the
 	// issue with a Mac-specific hack.
 	#ifdef macintosh
-	extern int m68k_ICount;
 	#else
 	#define m68ki_remaining_cycles m68k_ICount
 	#endif
@@ -134,7 +132,6 @@ public class m68kmameH
 	// cores can't agree on the same name for the icount variable, so we force the
 	// issue with a Mac-specific hack.
 	#ifdef macintosh
-	extern int M68020_ICount;
 	#else
 	#define m68ki_remaining_cycles m68k_ICount
 	#endif

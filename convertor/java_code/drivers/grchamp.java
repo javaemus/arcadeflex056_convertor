@@ -51,17 +51,14 @@ public class grchamp
 {
 	
 	/* from vidhrdw */
-	extern void grchamp_convert_color_prom(	UINT8 *palette,	UINT16 *colortable,	const UINT8 *color_prom );
-	extern extern extern extern extern UINT8 *grchamp_videoram;
+	extern extern UINT8 *grchamp_videoram;
 	extern UINT8 *grchamp_radar;
 	extern UINT8 grchamp_player_ypos;
 	
 	extern extern extern extern extern 
 	/* from machine */
-	extern int grchamp_cpu_irq_enable[2];
+	extern extern extern 
 	extern extern extern extern 
-	extern extern extern extern 
-	extern int grchamp_collision;
 	
 	/***************************************************************************/
 	

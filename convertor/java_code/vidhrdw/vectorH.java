@@ -42,7 +42,6 @@ public class vectorH
 	|(((((c) >> 4) & 0xf) * 0x11) << 8) \
 	|(((((c) >> 8) & 0xf) * 0x11) << 16)
 	
-	extern int translucency;  /* translucent vectors  */
 	
 	extern unsigned char *vectorram;
 	extern size_t vectorram_size;

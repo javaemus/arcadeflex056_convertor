@@ -81,8 +81,6 @@ public class chinagat
 	
 	
 	
-	extern int technos_video_hw;
-	extern int ddragon_scrollx_hi, ddragon_scrolly_hi;
 	extern data8_t *ddragon_scrollx_lo;
 	extern data8_t *ddragon_scrolly_lo;
 	extern data8_t *ddragon_bgvideoram,*ddragon_fgvideoram;

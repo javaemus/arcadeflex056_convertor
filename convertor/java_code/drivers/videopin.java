@@ -25,11 +25,11 @@ public class videopin
 {
 	
 	/* vidhrdw/videopin.c */
-	extern extern extern extern struct artwork_info *videopin_backdrop;
+	extern struct artwork_info *videopin_backdrop;
 	
 	
 	/* machine/videopin.c */
-	extern 
+	
 	
 	
 	

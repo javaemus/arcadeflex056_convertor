@@ -22,7 +22,6 @@ public class goindol
 	extern data8_t *spriteram_2;
 	extern size_t goindol_fg_videoram_size;
 	extern size_t goindol_bg_videoram_size;
-	extern int goindol_char_bank;
 	
 	
 	public static WriteHandlerPtr goindol_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)

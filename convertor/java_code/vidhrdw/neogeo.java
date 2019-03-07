@@ -73,7 +73,6 @@ public class neogeo
 	
 	extern data16_t *neogeo_ram16;
 	extern unsigned int neogeo_frame_counter;
-	extern int neogeo_game_fix;
 	
 	
 	/*
@@ -586,7 +585,6 @@ public class neogeo
 	} };
 	
 	static int next_update_first_line;
-	extern int neogeo_raster_enable;
 	
 	void neogeo_vh_raster_partial_refresh(struct mame_bitmap *bitmap,int current_line)
 	{

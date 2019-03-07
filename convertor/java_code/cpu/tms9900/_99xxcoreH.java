@@ -756,8 +756,7 @@ public class _99xxcoreH
 					logerror("> PC %4.4x :%4.4x %4.4x : R=%4.4x %4.4x %4.4x %4.4x %4.4x %4.4x %4.4x %4.4x %4.4x %4.4x%4.4x %4.4x %4.4x %4.4x %4.4x %4.4x :T=%d\n",I.PC,I.STATUS,I.WP,I.FR[0],I.FR[1],I.FR[2],I.FR[3],I.FR[4],I.FR[5],I.FR[6],I.FR[7],I.FR[8],I.FR[9],I.FR[10],I.FR[11],I.FR[12],I.FR[13],I.FR[14],I.FR[15],TMS99XX_ICOUNT);
 						#if 0	/* useful with TI99/4a driver */
 						{
-							extern int gpl_addr;
-							logerror("> GPL pointer %4.4x\n", gpl_addr);
+													logerror("> GPL pointer %4.4x\n", gpl_addr);
 						}
 						#endif
 					#endif

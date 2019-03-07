@@ -20,9 +20,6 @@ public class sf1
 	
 	
 	extern data16_t *sf1_objectram,*sf1_videoram;
-	extern int sf1_deltaxb;
-	extern int sf1_deltaxm;
-	extern int sf1_active;
 	
 	WRITE16_HANDLER( sf1_bg_scroll_w );
 	WRITE16_HANDLER( sf1_fg_scroll_w );

@@ -30,7 +30,7 @@ public class sbrkout
 	extern unsigned char *sbrkout_vert_ram;
 	
 	/* machine/sbrkout.c */
-	extern 
+	
 	
 	/* sound hardware - temporary */
 	

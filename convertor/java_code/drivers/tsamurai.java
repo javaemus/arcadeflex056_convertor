@@ -52,9 +52,9 @@ public class tsamurai
 	
 	
 	
-	extern extern extern unsigned char *tsamurai_videoram;
+	extern unsigned char *tsamurai_videoram;
 	
-	extern extern 
+	
 	static AY8910interface ay8910_interface = new AY8910interface
 	(
 		1, /* number of chips */

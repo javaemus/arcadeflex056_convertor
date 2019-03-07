@@ -109,7 +109,7 @@ package drivers;
 public class renegade
 {
 	
-	extern extern 
+	
 	extern unsigned char *renegade_textram;
 	
 	/********************************************************************************************/

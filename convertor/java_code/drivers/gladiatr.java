@@ -109,7 +109,7 @@ public class gladiatr
 	
 	/*Video functions*/
 	extern unsigned char *gladiator_text;
-	extern extern extern 
+	
 	/*Rom bankswitching*/
 	static int banka;
 	

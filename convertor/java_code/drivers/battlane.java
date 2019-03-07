@@ -18,11 +18,9 @@ package drivers;
 public class battlane
 {
 	
-	extern extern extern extern void battlane_vh_convert_color_prom (unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	extern unsigned char *battlane_bitmap;
 	extern size_t battlane_bitmap_size;
-	extern void battlane_set_video_flip(int);
 	
 	
 	/* CPU interrupt control register */

@@ -59,8 +59,7 @@ public class warpwarp
 	void warpwarp_init_palette(unsigned char *obsolete,unsigned short *colortable,const unsigned char *color_prom);
 	
 	/* from sndhrdw/warpwarp.c */
-	extern int warpwarp_sh_start(const struct MachineSound *msound);
-	extern extern 
+	
 	public static ReadHandlerPtr warpwarp_input_c000_7_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (readinputport(0) >> offset) & 1;

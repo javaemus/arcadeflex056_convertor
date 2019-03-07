@@ -45,19 +45,14 @@ typedef UINT8 DIRTYGRID[DIRTY_V * DIRTY_H];
 //============================================================
 
 // current frameskip/autoframeskip settings
-extern int			frameskip;
-extern int			autoframeskip;
 
 // dirty grid setting
-extern int			use_dirty;
 extern DIRTYGRID	dirty_grid;
 
 // gamma and brightness adjustments
 extern float		gamma_correct;
 
 // speed throttling
-extern int			throttle;
-extern int			game_speed_percent;
 
 // palette lookups
 extern UINT32 *		palette_16bit_lookup;

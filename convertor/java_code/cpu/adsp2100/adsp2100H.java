@@ -89,21 +89,14 @@ public class adsp2100H
 	**	PUBLIC GLOBALS
 	**#################################################################################################*/
 	
-	extern int adsp2100_icount;
 	
 	
 	/*###################################################################################################
 	**	PUBLIC FUNCTIONS
 	**#################################################################################################*/
 	
-	extern extern void adsp2100_reset(void *param);
-	extern extern int adsp2100_execute(int cycles);    /* NS 970908 */
 	extern unsigned adsp2100_get_context(void *dst);
-	extern void adsp2100_set_context(void *src);
 	extern unsigned adsp2100_get_reg(int regnum);
-	extern void adsp2100_set_reg(int regnum, unsigned val);
-	extern void adsp2100_set_irq_line(int irqline, int state);
-	extern void adsp2100_set_irq_callback(int (*callback)(int irqline));
 	extern const char *adsp2100_info(void *context, int regnum);
 	extern unsigned adsp2100_dasm(char *buffer, unsigned pc);
 	
@@ -145,20 +138,12 @@ public class adsp2100H
 	#define ADSP2105_IRQ1		1		/* IRQ1 */
 	#define ADSP2105_IRQ2		2		/* IRQ2 */
 	
-	extern extern void adsp2105_reset(void *param);
-	extern extern int adsp2105_execute(int cycles);    /* NS 970908 */
 	extern unsigned adsp2105_get_context(void *dst);
-	extern void adsp2105_set_context(void *src);
 	extern unsigned adsp2105_get_reg(int regnum);
-	extern void adsp2105_set_reg(int regnum, unsigned val);
-	extern void adsp2105_set_irq_line(int irqline, int state);
-	extern void adsp2105_set_irq_callback(int (*callback)(int irqline));
 	extern const char *adsp2105_info(void *context, int regnum);
 	extern unsigned adsp2105_dasm(char *buffer, unsigned pc);
 	
 	#if SUPPORT_2101_EXTENSIONS
-	extern void adsp2105_set_rx_callback( RX_CALLBACK cb );
-	extern void adsp2105_set_tx_callback( TX_CALLBACK cb );
 	#endif
 	#endif
 	

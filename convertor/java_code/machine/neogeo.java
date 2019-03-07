@@ -13,7 +13,6 @@ public class neogeo
 	static int sram_locked;
 	static offs_t sram_protection_hack;
 	
-	extern int neogeo_has_trackball;
 	
 	
 	/***************** MEMCARD GLOBAL VARIABLES ******************/

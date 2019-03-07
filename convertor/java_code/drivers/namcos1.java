@@ -132,13 +132,13 @@ public class namcos1
 {
 	
 	/* from vidhrdw */
-	extern extern extern 
+	
 	/* from machine */
 	
 	
 	
-	extern 
-	extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern 
+	
+	
 	
 	static unsigned char *nvram;
 	static size_t nvram_size;

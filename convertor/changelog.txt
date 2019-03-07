@@ -8,6 +8,7 @@
 -Improved forward reference functions and added VH_STOP
 -Added VH_UPDATE support
 -Improved VH_UPDATE support
+-Remove forward functions that starts with extern
 
 01/02/2019
 ==========

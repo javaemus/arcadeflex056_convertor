@@ -151,9 +151,6 @@ public class segac2
 	
 	/* in vidhrdw\segac2.c */
 	extern UINT8		segac2_vdp_regs[];
-	extern int			segac2_bg_palbase;
-	extern int			segac2_sp_palbase;
-	extern int			segac2_palbank;
 	
 	void	segac2_update_display(int scanline);
 	void	segac2_enable_display(int enable);

@@ -71,7 +71,6 @@ enum {
 	NAMCOS2_KYUUKAI_DOUCHUUKI
 };
 
-extern int namcos2_gametype;
 
 /*********************************************/
 
@@ -151,7 +150,6 @@ extern data16_t namcos2_68k_key[];
 READ16_HANDLER( namcos2_68k_protect_r );
 WRITE16_HANDLER( namcos2_68k_protect_w );
 
-extern int namcos2_68k_protect;
 
 
 

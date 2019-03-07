@@ -19,7 +19,6 @@ public class m68000H
 		M68K_A0, M68K_A1, M68K_A2, M68K_A3, M68K_A4, M68K_A5, M68K_A6, M68K_A7
 	};
 	
-	extern int m68k_ICount;
 	
 	/* Redirect memory calls */
 	
@@ -68,17 +67,10 @@ public class m68000H
 	#define MC68000_INT_ACK_SPURIOUS      -2
 	
 	#define m68000_ICount                   m68k_ICount
-	extern extern void m68000_reset(void *param);
-	extern extern int	m68000_execute(int cycles);
 	extern unsigned m68000_get_context(void *dst);
-	extern void m68000_set_context(void *src);
 	extern unsigned m68000_get_reg(int regnum);
-	extern void m68000_set_reg(int regnum, unsigned val);
-	extern void m68000_set_irq_line(int irqline, int state);
-	extern void m68000_set_irq_callback(int (*callback)(int irqline));
 	extern const char *m68000_info(void *context, int regnum);
 	extern unsigned m68000_dasm(char *buffer, unsigned pc);
-	extern void m68000_memory_interface_set(int Entry,void * memory_routine);
 	
 	/****************************************************************************
 	 * M68010 section
@@ -95,14 +87,8 @@ public class m68000H
 	#define MC68010_INT_ACK_SPURIOUS		MC68000_INT_ACK_SPURIOUS
 	
 	#define m68010_ICount                   m68k_ICount
-	extern extern void m68010_reset(void *param);
-	extern extern int	m68010_execute(int cycles);
 	extern unsigned m68010_get_context(void *dst);
-	extern void m68010_set_context(void *src);
 	extern unsigned m68010_get_reg(int regnum);
-	extern void m68010_set_reg(int regnum, unsigned val);
-	extern void m68010_set_irq_line(int irqline, int state);
-	extern void m68010_set_irq_callback(int (*callback)(int irqline));
 	const char *m68010_info(void *context, int regnum);
 	extern unsigned m68010_dasm(char *buffer, unsigned pc);
 	#endif
@@ -122,14 +108,8 @@ public class m68000H
 	#define MC68EC020_INT_ACK_SPURIOUS		MC68000_INT_ACK_SPURIOUS
 	
 	#define m68ec020_ICount                 m68k_ICount
-	extern extern void m68ec020_reset(void *param);
-	extern extern int	m68ec020_execute(int cycles);
 	extern unsigned m68ec020_get_context(void *dst);
-	extern void m68ec020_set_context(void *src);
 	extern unsigned m68ec020_get_reg(int regnum);
-	extern void m68ec020_set_reg(int regnum, unsigned val);
-	extern void m68ec020_set_irq_line(int irqline, int state);
-	extern void m68ec020_set_irq_callback(int (*callback)(int irqline));
 	const char *m68ec020_info(void *context, int regnum);
 	extern unsigned m68ec020_dasm(char *buffer, unsigned pc);
 	#endif
@@ -149,14 +129,8 @@ public class m68000H
 	#define MC68020_INT_ACK_SPURIOUS		MC68000_INT_ACK_SPURIOUS
 	
 	#define m68020_ICount                   m68k_ICount
-	extern extern void m68020_reset(void *param);
-	extern extern int	m68020_execute(int cycles);
 	extern unsigned m68020_get_context(void *dst);
-	extern void m68020_set_context(void *src);
 	extern unsigned m68020_get_reg(int regnum);
-	extern void m68020_set_reg(int regnum, unsigned val);
-	extern void m68020_set_irq_line(int irqline, int state);
-	extern void m68020_set_irq_callback(int (*callback)(int irqline));
 	const char *m68020_info(void *context, int regnum);
 	extern unsigned m68020_dasm(char *buffer, unsigned pc);
 	#endif

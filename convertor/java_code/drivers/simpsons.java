@@ -21,7 +21,6 @@ public class simpsons
 	
 	/* from machine */
 	void simpsons_nvram_handler(void *file,int read_or_write);
-	extern int simpsons_firq_enabled;
 	
 	/***************************************************************************
 	

@@ -20,7 +20,6 @@ public class gbusters
 	static static void gbusters_banking( int lines );
 	
 	
-	extern int gbusters_priority;
 	
 	
 	static int palette_selected;

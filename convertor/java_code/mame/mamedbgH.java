@@ -13,7 +13,6 @@ public class mamedbgH
 	#define DEBUGGER_TOTAL_COLORS 16
 	
 	/* If this flag is set, a CPU core should call MAME_Debug from it's execution loop */
-	extern int mame_debug;
 	
 	#ifdef  MAME_DEBUG
 	
@@ -104,10 +103,9 @@ public class mamedbgH
 	extern const char *set_ea_info( int what, unsigned address, int size, int acc );
 	
 	/* Startup and shutdown functions; called from cpu_run */
-	extern extern 
+	
 	/* This is the main entry into the mame debugger */
-	extern 
-	extern int debug_trace_delay;	/* set to 0 to force a screen update */
+	
 	
 	/***************************************************************************
 	 * Convenience macro for the CPU cores, this is defined to empty

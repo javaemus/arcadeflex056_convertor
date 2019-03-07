@@ -35,8 +35,7 @@ public class exctsccr
 {
 	
 	/* from vidhrdw */
-	extern extern void exctsccr_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	extern extern 
+	
 	/* from machine */
 	extern unsigned char *exctsccr_mcu_ram;
 	

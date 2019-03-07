@@ -17,7 +17,6 @@ public class tms34010
 {
 	
 	#ifdef MAME_DEBUG
-	extern int debug_key_pressed;
 	#endif
 	
 	
@@ -178,38 +177,6 @@ public class tms34010
 	**	FUNCTION TABLES
 	**#################################################################################################*/
 	
-	extern void wfield_01(offs_t offset,data32_t data);
-	extern void wfield_02(offs_t offset,data32_t data);
-	extern void wfield_03(offs_t offset,data32_t data);
-	extern void wfield_04(offs_t offset,data32_t data);
-	extern void wfield_05(offs_t offset,data32_t data);
-	extern void wfield_06(offs_t offset,data32_t data);
-	extern void wfield_07(offs_t offset,data32_t data);
-	extern void wfield_08(offs_t offset,data32_t data);
-	extern void wfield_09(offs_t offset,data32_t data);
-	extern void wfield_10(offs_t offset,data32_t data);
-	extern void wfield_11(offs_t offset,data32_t data);
-	extern void wfield_12(offs_t offset,data32_t data);
-	extern void wfield_13(offs_t offset,data32_t data);
-	extern void wfield_14(offs_t offset,data32_t data);
-	extern void wfield_15(offs_t offset,data32_t data);
-	extern void wfield_16(offs_t offset,data32_t data);
-	extern void wfield_17(offs_t offset,data32_t data);
-	extern void wfield_18(offs_t offset,data32_t data);
-	extern void wfield_19(offs_t offset,data32_t data);
-	extern void wfield_20(offs_t offset,data32_t data);
-	extern void wfield_21(offs_t offset,data32_t data);
-	extern void wfield_22(offs_t offset,data32_t data);
-	extern void wfield_23(offs_t offset,data32_t data);
-	extern void wfield_24(offs_t offset,data32_t data);
-	extern void wfield_25(offs_t offset,data32_t data);
-	extern void wfield_26(offs_t offset,data32_t data);
-	extern void wfield_27(offs_t offset,data32_t data);
-	extern void wfield_28(offs_t offset,data32_t data);
-	extern void wfield_29(offs_t offset,data32_t data);
-	extern void wfield_30(offs_t offset,data32_t data);
-	extern void wfield_31(offs_t offset,data32_t data);
-	extern void wfield_32(offs_t offset,data32_t data);
 	
 	static void (*wfield_functions[32])(offs_t offset,data32_t data) =
 	{

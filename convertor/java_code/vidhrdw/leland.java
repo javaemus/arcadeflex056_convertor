@@ -69,7 +69,6 @@ public class leland
 	/* sound routines */
 	extern UINT8 leland_dac_control;
 	
-	extern void leland_dac_update(int dacnum, UINT8 sample);
 	
 	
 	

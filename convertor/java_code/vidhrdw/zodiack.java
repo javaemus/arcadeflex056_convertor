@@ -21,7 +21,6 @@ public class zodiack
 	unsigned char *zodiack_bulletsram;
 	size_t zodiack_bulletsram_size;
 	
-	extern int percuss_hardware;
 	
 	static int flipscreen;
 	

@@ -30,18 +30,11 @@ public class usrintrf
 	#ifndef TINY_COMPILE
 	#ifndef CPSMAME
 	int 		memcard_menu(struct mame_bitmap *bitmap, int);
-	extern int	mcd_action;
-	extern int	mcd_number;
-	extern int	memcard_status;
-	extern int	memcard_number;
-	extern int	memcard_manager;
 	extern struct GameDriver driver_neogeo;
 	#endif
 	#endif
 	#endif
 	
-	extern int neogeo_memcard_load(int);
-	extern extern extern int neogeo_memcard_create(int);
 	/* MARTINEZ.F 990207 Memory Card End */
 	
 	
@@ -3672,8 +3665,7 @@ public class usrintrf
 	
 	void init_user_interface(void)
 	{
-		extern int snapno;	/* in common.c */
-	
+		
 		snapno = 0; /* reset snapshot counter */
 	
 		setup_menu_init();

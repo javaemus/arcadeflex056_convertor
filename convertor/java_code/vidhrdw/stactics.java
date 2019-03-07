@@ -68,8 +68,6 @@ public class stactics
 {
 	
 	/* These are defined in machine/stactics.c */
-	extern int stactics_vert_pos;
-	extern int stactics_horiz_pos;
 	extern unsigned char *stactics_motor_on;
 	
 	/* These are needed by machine/stactics.c  */

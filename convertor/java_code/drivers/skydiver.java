@@ -82,7 +82,7 @@ public class skydiver
 {
 	
 	/* vidhrdw/skydiver.c */
-	extern 
+	
 	static int skydiver_nmion;
 	
 	public static ReadHandlerPtr skydiver_input_0_r  = new ReadHandlerPtr() { public int handler(int offset)

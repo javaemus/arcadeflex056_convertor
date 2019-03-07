@@ -46,8 +46,6 @@ public class inptport
 	#define MAMECFGSTRING_V8 "MAMECFG\x8"
 	#define MAMEDEFSTRING_V8 "MAMEDEF\7"
 	
-	extern void *record;
-	extern void *playback;
 	
 	extern unsigned int dispensed_tickets;
 	extern unsigned int coins[COIN_COUNTERS];

@@ -60,16 +60,11 @@ public class atarigenH
 		GLOBALS
 	##########################################################################*/
 	
-	extern int 				atarigen_scanline_int_state;
-	extern int 				atarigen_sound_int_state;
-	extern int 				atarigen_video_int_state;
 	
 	extern const data16_t *	atarigen_eeprom_default;
 	extern data16_t *		atarigen_eeprom;
 	extern size_t 			atarigen_eeprom_size;
 	
-	extern int 				atarigen_cpu_to_sound_ready;
-	extern int 				atarigen_sound_to_cpu_ready;
 	
 	extern data16_t *		atarivc_data;
 	extern data16_t *		atarivc_eof_data;

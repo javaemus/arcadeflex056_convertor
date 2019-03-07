@@ -554,8 +554,7 @@ public class timer
 	
 	#ifdef MAME_DEBUG
 	{
-		extern int debug_key_delay;
-		debug_key_delay = 0x7ffe;
+			debug_key_delay = 0x7ffe;
 	}
 	#endif
 	

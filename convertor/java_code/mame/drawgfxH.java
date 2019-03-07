@@ -143,7 +143,6 @@ public class drawgfxH
 	
 	/* By default, when drawing sprites with pdrawgfx, shadows affect the sprites below them. */
 	/* Set this flag to 1 to make shadows only affect the background, leaving sprites at full brightness. */
-	extern int pdrawgfx_shadow_lowpri;
 	
 	
 	typedef void (*plot_pixel_proc)(struct mame_bitmap *bitmap,int x,int y,UINT32 pen);
@@ -192,7 +191,6 @@ public class drawgfxH
 	
 	
 	/* Alpha blending functions */
-	extern int alpha_active;
 	INLINE void alpha_set_level(int level) {
 		if(level == 0)
 			level = -1;

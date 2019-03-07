@@ -208,7 +208,6 @@ public class neogeo
 	WRITE16_HANDLER( neogeo_sram16_w );
 	void neogeo_nvram_handler(void *file,int read_or_write);
 	
-	extern int	memcard_status;
 	READ16_HANDLER( neogeo_memcard16_r );
 	WRITE16_HANDLER( neogeo_memcard16_w );
 	

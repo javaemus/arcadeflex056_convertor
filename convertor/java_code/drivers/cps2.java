@@ -41,7 +41,7 @@ public class cps2
 	extern data16_t *cps2_objram1,*cps2_objram2;
 	extern data16_t *cps2_output;
 	extern size_t cps2_output_size;
-	extern 
+	
 	
 	public static InterruptPtr cps2_interrupt = new InterruptPtr() { public int handler() 
 	{

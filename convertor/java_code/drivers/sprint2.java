@@ -45,7 +45,7 @@ public class sprint2
 {
 	
 	/* vidhrdw/sprint2.c */
-	extern extern extern extern extern unsigned char *sprint2_vert_car_ram;
+	extern unsigned char *sprint2_vert_car_ram;
 	extern unsigned char *sprint2_horiz_ram;
 	
 	/* machine/sprint2.c */

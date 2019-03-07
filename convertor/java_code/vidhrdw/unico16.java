@@ -47,7 +47,6 @@ public class unico16
 	
 	/* Variables defined in drivers: */
 	
-	extern int unico16_has_lightgun;
 	
 	/* Variables needed by drivers: */
 	

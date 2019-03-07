@@ -9,9 +9,6 @@ public class ati15khz
 	
 	
 	
-	extern int center_x;
-	extern int center_y;
-	extern int use_triplebuf;
 	
 	/* Save values */
 	static int DSPSet;

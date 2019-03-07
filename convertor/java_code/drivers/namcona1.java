@@ -85,7 +85,7 @@ public class namcona1
 	extern READ16_HANDLER( namcona1_paletteram_r );
 	extern WRITE16_HANDLER( namcona1_paletteram_w );
 	
-	extern extern extern 
+	
 	/* for MCU simulation */
 	static UINT8 coin_count[4];
 	static UINT8 coin_state;

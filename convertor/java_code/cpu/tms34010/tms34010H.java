@@ -130,7 +130,6 @@ public class tms34010H
 	
 	
 	/* PUBLIC GLOBALS */
-	extern int tms34010_ICount;
 	#define tms34020_ICount tms34010_ICount
 	
 	

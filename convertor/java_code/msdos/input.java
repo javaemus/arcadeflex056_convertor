@@ -602,7 +602,6 @@ public class input
 	#ifndef MESS
 	#ifndef TINY_COMPILE
 	#ifndef CPSMAME
-	extern int no_of_tiles;
 	extern struct GameDriver driver_neogeo;
 	#endif
 	#endif

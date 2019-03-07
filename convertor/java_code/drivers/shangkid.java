@@ -60,11 +60,9 @@ public class shangkid
 {
 	
 	/* from vidhrdw/shangkid.c */
-	extern extern extern void shangkid_screenrefresh( struct mame_bitmap *bitmap, int fullfresh );
 	extern extern UINT8 *shangkid_videoreg;
-	extern int shangkid_gfx_type;
 	
-	extern 
+	
 	/***************************************************************************************/
 	
 	static data8_t bbx_sound_enable;

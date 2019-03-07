@@ -129,7 +129,6 @@ void TC0480SCP_tilemap_draw(struct mame_bitmap *bitmap,int layer,int flags,UINT3
    returned in the lowest four nibbles  (msn = bottom layer; lsn = top) */
 
 /* Undrfire needs to read this for a sprite/tile priority hack */
-extern int TC0480SCP_pri_reg;
 
 
 /***************************************************************************/

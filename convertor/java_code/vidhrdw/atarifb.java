@@ -24,7 +24,6 @@ public class atarifb
 	unsigned char *alphap1_dirtybuffer;
 	unsigned char *alphap2_dirtybuffer;
 	
-	extern int atarifb_game;
 	
 	
 	struct rectangle bigfield_area = {  4*8, 34*8-1, 0*8, 32*8-1 };
@@ -282,7 +281,6 @@ public class atarifb
 	{
 		int x;
 		char buf1[25], buf2[25];
-	extern int atarifb_lamp1, atarifb_lamp2;
 	
 		switch (atarifb_game)
 		{

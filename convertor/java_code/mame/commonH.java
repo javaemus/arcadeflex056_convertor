@@ -345,7 +345,6 @@ size_t memory_region_length(int num);
 int new_memory_region(int num, size_t length, UINT32 flags);
 void free_memory_region(int num);
 
-extern int flip_screen_x, flip_screen_y;
 
 void flip_screen_set(int on);
 void flip_screen_x_set(int on);

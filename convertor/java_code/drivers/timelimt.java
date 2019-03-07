@@ -19,8 +19,7 @@ public class timelimt
 {
 	
 	/* from vidhrdw */
-	extern extern extern void timelimt_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	extern 
+	
 	extern extern extern extern extern 
 	extern data8_t *timelimt_bg_videoram;
 	extern size_t timelimt_bg_videoram_size;

@@ -18,7 +18,6 @@ public class bottom9
 {
 	
 	
-	extern int bottom9_video_enable;
 	
 	
 	

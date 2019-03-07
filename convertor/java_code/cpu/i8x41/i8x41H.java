@@ -45,18 +45,9 @@ public class i8x41H
 	#define I8X41_INT_TEST0 1	/* test0 line */
 	#define I8X41_INT_TEST1 2	/* test1 line (also counter interrupt; taken on cntr overflow)	*/
 	
-	extern int i8x41_ICount;				/* cycle count */
 	
-	extern extern void i8x41_reset (void *param);			/* Reset registers to the initial values */
-	extern extern int	i8x41_execute(int cycles);			/* Execute cycles - returns number of cycles actually run */
 	extern unsigned i8x41_get_context (void *dst);	/* Get registers, return context size */
-	extern void i8x41_set_context (void *src);		/* Set registers */
 	extern unsigned i8x41_get_reg (int regnum);
-	extern void i8x41_set_reg (int regnum, unsigned val);
-	extern void i8x41_set_irq_line(int irqline, int state);
-	extern void i8x41_set_irq_callback(int (*callback)(int irqline));
-	extern void i8x41_state_save(void *file);
-	extern void i8x41_state_load(void *file);
 	extern const char *i8x41_info(void *context, int regnum);
 	extern unsigned i8x41_dasm(char *buffer, unsigned pc);
 	

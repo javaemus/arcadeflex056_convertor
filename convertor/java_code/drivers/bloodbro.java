@@ -52,7 +52,7 @@ package drivers;
 public class bloodbro
 {
 	
-	extern extern extern extern 
+	
 	WRITE16_HANDLER( bloodbro_bgvideoram_w );
 	WRITE16_HANDLER( bloodbro_fgvideoram_w );
 	WRITE16_HANDLER( bloodbro_txvideoram_w );

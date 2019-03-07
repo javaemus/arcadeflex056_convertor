@@ -67,12 +67,9 @@ package drivers;
 public class snk
 {
 	
-	extern void aso_vh_convert_color_prom(unsigned char *obsolete,unsigned short *colortable,const unsigned char *color_prom);
-	extern void snk_3bpp_shadow_vh_convert_color_prom(unsigned char *obsolete,unsigned short *colortable,const unsigned char *color_prom);
-	extern void snk_4bpp_shadow_vh_convert_color_prom(unsigned char *obsolete,unsigned short *colortable,const unsigned char *color_prom);
 	
-	extern extern 
-	extern extern extern extern extern // extern 
+	
+	// 
 	/*********************************************************************/
 	
 	#define SNK_NMI_ENABLE	1
@@ -80,7 +77,6 @@ public class snk
 	static int cpuA_latch, cpuB_latch;
 	
 	static unsigned char *shared_ram, *io_ram, *shared_ram2;
-	extern int snk_bg_tilemap_baseaddr, gwar_sprite_placement;
 	
 	/*********************************************************************/
 	

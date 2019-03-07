@@ -16,10 +16,6 @@ public class sprint2
 {
 	
 	/* machine/sprint2.c */
-	extern int sprint2_collision1_data;
-	extern int sprint2_collision2_data;
-	extern int sprint2_gear1;
-	extern int sprint2_gear2;
 	
 	unsigned char *sprint2_horiz_ram;
 	unsigned char *sprint2_vert_car_ram;

@@ -119,16 +119,12 @@ public class asmintf
 	#ifdef A68K0
 	extern a68k_cpu_context M68000_regs;
 	
-	extern void CONVENTION M68000_RUN(void);
-	extern void CONVENTION M68000_RESET(void);
 	
 	#endif
 	
 	#ifdef A68K2
 	extern a68k_cpu_context M68020_regs;
 	
-	extern void CONVENTION M68020_RUN(void);
-	extern void CONVENTION M68020_RESET(void);
 	#endif
 	
 	/***************************************************************************/
@@ -686,8 +682,7 @@ public class asmintf
 	const char *m68000_info(void *context, int regnum)
 	{
 	#ifdef MAME_DEBUG
-	//extern int m68k_disassemble(char* str_buff, int pc, int cputype);
-	#endif
+	//#endif
 	
 	    static char buffer[32][47+1];
 		static int which;
@@ -1081,8 +1076,7 @@ public class asmintf
 	const char *m68020_info(void *context, int regnum)
 	{
 	#ifdef MAME_DEBUG
-	//extern int m68k_disassemble(char* str_buff, int pc, int cputype);
-	#endif
+	//#endif
 	
 	    static char buffer[32][47+1];
 		static int which;

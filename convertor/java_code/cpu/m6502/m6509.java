@@ -63,7 +63,6 @@ public class m6509
 	m6509_interface=
 	CPU0(M6509,    m6509,    1,  0,1.00,M6509_INT_NONE,    M6509_INT_IRQ,  M6509_INT_NMI,  8, 20,     0,20,LE,1, 3 );
 	
-	extern void m6509_runtime_loader_init(void)
 	{
 		cpuintf[CPU_M6509]=m6509_interface;
 	}

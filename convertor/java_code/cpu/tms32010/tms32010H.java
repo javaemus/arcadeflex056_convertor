@@ -32,7 +32,6 @@ public class tms32010H
 		TMS320C10_STK0, TMS320C10_STK1, TMS320C10_STK2, TMS320C10_STK3
 	};
 	
-	extern	int tms320c10_icount;		/* T-state count */
 	
 	#define TMS320C10_DATA_OFFSET	0x0000
 	#define TMS320C10_PGM_OFFSET	0x8000

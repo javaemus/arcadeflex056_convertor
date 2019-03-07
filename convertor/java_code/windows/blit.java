@@ -24,7 +24,6 @@ public class blit
 	//============================================================
 	
 	// from winmain.c
-	extern int verbose;
 	
 	
 	
@@ -64,15 +63,15 @@ public class blit
 	//	IMPORTS
 	//============================================================
 	
-	extern extern extern extern extern extern extern extern extern 
-	extern extern extern extern extern extern extern extern extern 
-	extern extern extern extern extern extern extern extern extern 
-	extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern 
-	extern extern extern extern extern extern extern extern extern 
-	extern extern extern extern extern extern extern extern extern 
-	extern extern extern extern 
-	extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern 
-	extern extern 
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	//============================================================
 	//	GLOBAL VARIABLES

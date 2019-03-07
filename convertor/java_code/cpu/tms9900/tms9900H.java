@@ -42,16 +42,9 @@ public class tms9900H
 	
 	#if (HAS_TMS9900)
 	
-	extern	int tms9900_ICount;
 	
-	extern extern void tms9900_reset(void *param);
-	extern int tms9900_execute(int cycles);
-	extern extern unsigned tms9900_get_context(void *dst);
-	extern void tms9900_set_context(void *src);
+	extern unsigned tms9900_get_context(void *dst);
 	extern unsigned tms9900_get_reg(int regnum);
-	extern void tms9900_set_reg(int regnum, unsigned val);
-	extern void tms9900_set_irq_line(int irqline, int state);
-	extern void tms9900_set_irq_callback(int (*callback)(int irqline));
 	extern const char *tms9900_info(void *context, int regnum);
 	extern unsigned tms9900_dasm(char *buffer, unsigned pc);
 	
@@ -59,16 +52,9 @@ public class tms9900H
 	
 	#if (HAS_TMS9940)
 	
-	extern	int tms9940_ICount;
 	
-	extern extern void tms9940_reset(void *param);
-	extern int tms9940_execute(int cycles);
-	extern extern unsigned tms9940_get_context(void *dst);
-	extern void tms9940_set_context(void *src);
+	extern unsigned tms9940_get_context(void *dst);
 	extern unsigned tms9940_get_reg(int regnum);
-	extern void tms9940_set_reg(int regnum, unsigned val);
-	extern void tms9940_set_irq_line(int irqline, int state);
-	extern void tms9940_set_irq_callback(int (*callback)(int irqline));
 	extern const char *tms9940_info(void *context, int regnum);
 	extern unsigned tms9940_dasm(char *buffer, unsigned pc);
 	
@@ -76,16 +62,9 @@ public class tms9900H
 	
 	#if (HAS_TMS9980)
 	
-	extern	int tms9980a_ICount;
 	
-	extern extern void tms9980a_reset(void *param);
-	extern int tms9980a_execute(int cycles);
-	extern extern unsigned tms9980a_get_context(void *dst);
-	extern void tms9980a_set_context(void *src);
+	extern unsigned tms9980a_get_context(void *dst);
 	extern unsigned tms9980a_get_reg(int regnum);
-	extern void tms9980a_set_reg(int regnum, unsigned val);
-	extern void tms9980a_set_irq_line(int irqline, int state);
-	extern void tms9980a_set_irq_callback(int (*callback)(int irqline));
 	extern const char *tms9980a_info(void *context, int regnum);
 	extern unsigned tms9980a_dasm(char *buffer, unsigned pc);
 	
@@ -93,16 +72,9 @@ public class tms9900H
 	
 	#if (HAS_TMS9985)
 	
-	extern	int tms9985_ICount;
 	
-	extern extern void tms9985_reset(void *param);
-	extern int tms9985_execute(int cycles);
-	extern extern unsigned tms9985_get_context(void *dst);
-	extern void tms9985_set_context(void *src);
+	extern unsigned tms9985_get_context(void *dst);
 	extern unsigned tms9985_get_reg(int regnum);
-	extern void tms9985_set_reg(int regnum, unsigned val);
-	extern void tms9985_set_irq_line(int irqline, int state);
-	extern void tms9985_set_irq_callback(int (*callback)(int irqline));
 	extern const char *tms9985_info(void *context, int regnum);
 	extern unsigned tms9985_dasm(char *buffer, unsigned pc);
 	
@@ -110,16 +82,9 @@ public class tms9900H
 	
 	#if (HAS_TMS9989)
 	
-	extern	int tms9989_ICount;
 	
-	extern extern void tms9989_reset(void *param);
-	extern int tms9989_execute(int cycles);
-	extern extern unsigned tms9989_get_context(void *dst);
-	extern void tms9989_set_context(void *src);
+	extern unsigned tms9989_get_context(void *dst);
 	extern unsigned tms9989_get_reg(int regnum);
-	extern void tms9989_set_reg(int regnum, unsigned val);
-	extern void tms9989_set_irq_line(int irqline, int state);
-	extern void tms9989_set_irq_callback(int (*callback)(int irqline));
 	extern const char *tms9989_info(void *context, int regnum);
 	extern unsigned tms9989_dasm(char *buffer, unsigned pc);
 	
@@ -127,16 +92,9 @@ public class tms9900H
 	
 	#if (HAS_TMS9995)
 	
-	extern	int tms9995_ICount;
 	
-	extern extern void tms9995_reset(void *param);
-	extern int tms9995_execute(int cycles);
-	extern extern unsigned tms9995_get_context(void *dst);
-	extern void tms9995_set_context(void *src);
+	extern unsigned tms9995_get_context(void *dst);
 	extern unsigned tms9995_get_reg(int regnum);
-	extern void tms9995_set_reg(int regnum, unsigned val);
-	extern void tms9995_set_irq_line(int irqline, int state);
-	extern void tms9995_set_irq_callback(int (*callback)(int irqline));
 	extern const char *tms9995_info(void *context, int regnum);
 	extern unsigned tms9995_dasm(char *buffer, unsigned pc);
 	
@@ -154,16 +112,9 @@ public class tms9900H
 	
 	#if (HAS_TMS99105A)
 	
-	extern	int tms99105a_ICount;
 	
-	extern extern void tms99105a_reset(void *param);
-	extern int tms99105a_execute(int cycles);
-	extern extern unsigned tms99105a_get_context(void *dst);
-	extern void tms99105a_set_context(void *src);
+	extern unsigned tms99105a_get_context(void *dst);
 	extern unsigned tms99105a_get_reg(int regnum);
-	extern void tms99105a_set_reg(int regnum, unsigned val);
-	extern void tms99105a_set_irq_line(int irqline, int state);
-	extern void tms99105a_set_irq_callback(int (*callback)(int irqline));
 	extern const char *tms99105a_info(void *context, int regnum);
 	extern unsigned tms99105a_dasm(char *buffer, unsigned pc);
 	
@@ -171,16 +122,9 @@ public class tms9900H
 	
 	#if (HAS_TMS99110A)
 	
-	extern	int tms99110A_ICount;
 	
-	extern extern void tms99110a_reset(void *param);
-	extern int tms99110a_execute(int cycles);
-	extern extern unsigned tms99110a_get_context(void *dst);
-	extern void tms99110a_set_context(void *src);
+	extern unsigned tms99110a_get_context(void *dst);
 	extern unsigned tms99110a_get_reg(int regnum);
-	extern void tms99110a_set_reg(int regnum, unsigned val);
-	extern void tms99110a_set_irq_line(int irqline, int state);
-	extern void tms99110a_set_irq_callback(int (*callback)(int irqline));
 	extern const char *tms99110a_info(void *context, int regnum);
 	extern unsigned tms99110a_dasm(char *buffer, unsigned pc);
 	

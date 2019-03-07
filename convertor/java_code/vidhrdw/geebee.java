@@ -22,16 +22,6 @@ public class geebee
 {
 	
 	/* from machine/geebee.c */
-	extern int geebee_ball_h;
-	extern int geebee_ball_v;
-	extern int geebee_lamp1;
-	extern int geebee_lamp2;
-	extern int geebee_lamp3;
-	extern int geebee_counter;
-	extern int geebee_lock_out_coil;
-	extern int geebee_bgw;
-	extern int geebee_ball_on;
-	extern int geebee_inv;
 	
 	#ifdef MAME_DEBUG
 	char geebee_msg[32+1];

@@ -189,4 +189,4 @@ typedef struct {
 /* opcode execution table */
 extern Z8000_exec *z8000_exec;
 
-extern extern 
+

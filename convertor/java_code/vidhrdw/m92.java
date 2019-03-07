@@ -65,7 +65,7 @@ public class m92
 	the need to dirty the top playfield twice a frame */
 	#define RYPELEO_SPEEDUP m92_game_kludge==1
 	
-	extern int m92_sprite_buffer_busy;
+	int m92_sprite_buffer_busy;
 	static int m92_palette_bank;
 	
 	/*****************************************************************************/

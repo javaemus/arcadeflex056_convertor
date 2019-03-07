@@ -17,8 +17,6 @@ public class video
 	
 	
 	/* from blit.c, for VGA triple buffering */
-	extern int xpage_size;
-	extern int no_xpages;
 	void unchain_vga(Register *pReg);
 	
 	static int warming_up;
@@ -2311,8 +2309,7 @@ public class video
 			vfcount += waittable[frameskip][frameskip_counter];
 			if (vfcount >= video_fps)
 			{
-				extern int vector_updates; /* avgdvg_go_w()'s per Mame frame, should be 1 */
-	
+				
 	
 				vfcount = 0;
 				vups = vector_updates;

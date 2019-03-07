@@ -136,7 +136,7 @@ public class pacman
 	
 	extern unsigned char *pengo_soundregs;
 	
-	extern extern extern 
+	
 	
 	
 	

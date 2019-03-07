@@ -22,10 +22,8 @@ public class m107
 {
 	
 	extern unsigned char *m107_vram_data;
-	extern int m107_spritesystem;
 	static unsigned char *m107_ram;
 	static int m107_irq_vectorbase,m107_vblank,raster_enable;
-	extern int m107_raster_irq_position,m107_sprite_list;
 	
 	#define m107_IRQ_0 ((m107_irq_vectorbase+0)/4) /* VBL interrupt*/
 	#define m107_IRQ_1 ((m107_irq_vectorbase+4)/4) /* ??? */

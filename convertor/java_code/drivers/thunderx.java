@@ -19,10 +19,8 @@ public class thunderx
 	
 	static static static void thunderx_banking(int lines);
 	
-	extern int scontra_priority;
 	
 	static int unknown_enable = 0;
-	extern int debug_key_pressed;
 	
 	/***************************************************************************/
 	

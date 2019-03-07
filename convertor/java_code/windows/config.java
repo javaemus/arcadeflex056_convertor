@@ -42,7 +42,6 @@ public class config
 	extern struct rc_option mess_opts[];
 	#endif
 	
-	extern int frontend_help(char *gamename);
 	static int config_handle_arg(char *arg);
 	
 	static FILE *logfile;
@@ -51,7 +50,6 @@ public class config
 	static int showusage;
 	static int readconfig;
 	static int createconfig;
-	extern int verbose;
 	
 	static struct rc_struct *rc;
 	
@@ -61,7 +59,6 @@ public class config
 	
 	/* fix me - need to have the core call osd_set_mastervolume with this value */
 	/* instead of relying on the name of an osd variable */
-	extern int attenuation;
 	
 	static char *debugres;
 	static char *playbackname;

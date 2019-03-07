@@ -15,7 +15,6 @@ package drivers;
 public class rockrage
 {
 	
-	extern int rockrage_irq_enable;
 	
 	/* from vidhrdw */
 	void rockrage_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);

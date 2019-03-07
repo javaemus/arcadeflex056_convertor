@@ -32,8 +32,7 @@ public class window
 	//============================================================
 	
 	// from input.c
-	extern void win_pause_input(int pause);
-	extern extern UINT8 win_trying_to_quit;
+	extern UINT8 win_trying_to_quit;
 	
 	
 	

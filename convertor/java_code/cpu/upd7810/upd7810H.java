@@ -30,16 +30,9 @@ enum {
  */
 typedef int (*upd7810_io_callback)(int ioline, int state);
 
-extern int upd7810_icount;						/* cycle count */
 
-extern extern void upd7810_reset (void *param);		/* Reset registers to the initial values */
-extern extern int	upd7810_execute(int cycles);		/* Execute cycles - returns number of cycles actually run */
 extern unsigned upd7810_get_context (void *dst);/* Get registers, return context size */
-extern void upd7810_set_context (void *src);	/* Set registers */
 extern unsigned upd7810_get_reg (int regnum);
-extern void upd7810_set_reg (int regnum, unsigned val);
-extern void upd7810_set_irq_line(int irqline, int state);
-extern void upd7810_set_irq_callback(int (*callback)(int irqline));
 extern const char *upd7810_info(void *context, int regnum);
 extern unsigned upd7810_dasm(char *buffer, unsigned pc);
 

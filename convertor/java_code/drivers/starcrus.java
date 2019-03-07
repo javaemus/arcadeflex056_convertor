@@ -19,10 +19,6 @@ public class starcrus
 {
 	
 	/* included from vidhrdw/starcrus.c */
-	extern extern extern extern int p1_sprite;
-	extern int p2_sprite;
-	extern int s1_sprite;
-	extern int s2_sprite;
 	
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

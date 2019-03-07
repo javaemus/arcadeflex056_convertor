@@ -1154,8 +1154,7 @@ public class bublbobl
 	
 	static void init_tokio(void)
 	{
-		extern int bublbobl_video_enable;
-	
+		
 		/* preemptively enable video, the bit is not mapped for this game and */
 		/* I don't know if it even has it. */
 		bublbobl_video_enable = 1;

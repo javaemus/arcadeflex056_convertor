@@ -140,7 +140,6 @@ public class wardner
 	WRITE16_HANDLER( twincobr_dsp_w );
 	
 	static int wardner_membank = 0;
-	extern int twincobr_intenable;
 	
 	data8_t *wardner_sharedram;
 	data8_t *wardner_spare_pal_ram;
@@ -152,7 +151,6 @@ public class wardner
 	READ_HANDLER ( wardner_videoram_r );
 	
 	
-	extern int twincobr_display_on;
 	
 	
 	

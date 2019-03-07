@@ -23,13 +23,6 @@ public class twincobr
 	data8_t  *wardner_mainram;
 	
 	
-	extern int twincobr_fg_rom_bank;
-	extern int twincobr_bg_ram_bank;
-	extern int twincobr_display_on;
-	extern int twincobr_flip_screen;
-	extern int twincobr_flip_x_base;
-	extern int twincobr_flip_y_base;
-	extern int wardner_sprite_hack;
 	
 	static int dsp_execute;
 	static unsigned int dsp_addr_w, main_ram_seg;

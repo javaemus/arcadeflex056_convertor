@@ -46,7 +46,6 @@ public class airbustr
 	
 	/* Variables defined in drivers */
 	extern unsigned char *spriteram;
-	extern int flipscreen;
 	
 	
 	/***************************************************************************

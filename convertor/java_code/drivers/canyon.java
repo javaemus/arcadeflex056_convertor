@@ -32,7 +32,7 @@ public class canyon
 {
 	
 	/* vidhrdw/canyon.c */
-	extern 
+	
 	public static ReadHandlerPtr canyon_options_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		switch (offset & 0x03)

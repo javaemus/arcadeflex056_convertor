@@ -23,7 +23,6 @@ public class crtc6845
 {
 	
 	
-	extern int spiders_page_flip;
 	
 	public static ReadHandlerPtr crtc6845_register_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

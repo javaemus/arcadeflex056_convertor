@@ -20,7 +20,6 @@ public class videopin
 	/*static*/ struct artwork_info *videopin_backdrop = NULL;
 	
 	/* machine/videopin.c */
-	extern int ball_position;
 	
 	/* Playfield and ball clipping area
 	 * This '+8' is to adjust display to the approximate backdrop

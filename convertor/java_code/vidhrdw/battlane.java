@@ -33,7 +33,6 @@ public class battlane
 	static int battlane_scrolly;
 	static int battlane_scrollx;
 	
-	extern int battlane_cpu_control;
 	
 	static struct mame_bitmap *bkgnd_bitmap;  /* scroll bitmap */
 	

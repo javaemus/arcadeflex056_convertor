@@ -56,10 +56,9 @@ public class phozon
 	/* memory functions */
 	
 	/* custom IO chips & CPU functions */
-	extern 
+	
 	/* video functions */
-	extern extern extern void phozon_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	extern 
+	
 		/* CPU 1 (MAIN CPU) read addresses */
 	public static Memory_ReadAddress readmem_cpu1[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

@@ -136,8 +136,7 @@ public class crbaloon
 	
 	public static ReadHandlerPtr crbaloon_IN2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
-		extern int crbaloon_collision;
-	
+		
 		if (crbaloon_collision != 0)
 		{
 			return (input_port_2_r(0) & 0xf0) | 0x08;

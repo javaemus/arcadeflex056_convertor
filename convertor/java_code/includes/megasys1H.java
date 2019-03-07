@@ -175,13 +175,6 @@ extern struct tilemap *megasys1_tmap[3];
 extern data16_t *megasys1_scrollram_0, *megasys1_scrollram_1, *megasys1_scrollram_2;
 extern data16_t *megasys1_objectram, *megasys1_vregs, *megasys1_ram;
 
-extern int megasys1_scroll_flag[3], megasys1_scrollx[3], megasys1_scrolly[3], megasys1_pages_per_tmap_x[3], megasys1_pages_per_tmap_y[3];
-extern int megasys1_active_layers, megasys1_sprite_bank;
-extern int megasys1_screen_flag, megasys1_sprite_flag;
-extern int megasys1_bits_per_color_code;
-extern int megasys1_8x8_scroll_0_factor, megasys1_16x16_scroll_0_factor;
-extern int megasys1_8x8_scroll_1_factor, megasys1_16x16_scroll_1_factor;
-extern int megasys1_8x8_scroll_2_factor, megasys1_16x16_scroll_2_factor;
 
 
 /* Functions */

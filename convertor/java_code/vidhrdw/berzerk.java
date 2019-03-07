@@ -16,7 +16,6 @@ public class berzerk
 {
 	
 	unsigned char *berzerk_magicram;
-	extern int berzerk_irq_end_of_screen;
 	
 	static int magicram_control = 0xff;
 	static int magicram_latch = 0xff;

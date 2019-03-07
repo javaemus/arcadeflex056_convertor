@@ -72,8 +72,7 @@ package drivers;
 public class irobot
 {
 	
-	extern extern extern void irobot_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	extern 
+	
 	
 	
 	

@@ -15,9 +15,7 @@ public class v30intfH
 	#define v30_ICount i86_ICount
 	
 	/* Public functions */
-	extern extern void v30_reset(void *param);
 	#define v30_exit i86_exit
-	extern int v30_execute(int cycles);
 	#define v30_get_context i86_get_context
 	#define v30_set_context i86_set_context
 	#define v30_get_reg i86_get_reg

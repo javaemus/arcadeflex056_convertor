@@ -33,9 +33,9 @@ public class circus
 {
 	
 	
-	extern 
-	extern extern extern 
-	extern 
+	
+	
+	
 	static int circus_interrupt;
 	
 	public static ReadHandlerPtr ripcord_IN2_r  = new ReadHandlerPtr() { public int handler(int offset)

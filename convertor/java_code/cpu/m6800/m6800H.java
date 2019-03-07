@@ -27,7 +27,6 @@ public class m6800H
 										/* fall  eddge : ASSERT_LINE -> CLEAR_LINE      */
 										/* it is usuali to use PULSE_LINE state         */
 	/* PUBLIC GLOBALS */
-	extern int m6800_ICount;
 	
 	/* PUBLIC FUNCTIONS */
 	void m6800_reset(void *param);

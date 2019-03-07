@@ -12,7 +12,6 @@ public class kingobox
 	size_t kingobox_videoram1_size;
 	unsigned char *kingobox_scroll_y;
 	
-	extern int kingofb_nmi_enable;
 	
 	static int palette_bank;
 	

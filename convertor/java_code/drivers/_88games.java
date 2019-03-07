@@ -19,7 +19,6 @@ public class _88games
 	static unsigned char *ram;
 	static int videobank;
 	
-	extern int k88games_priority;
 	
 	
 	static unsigned char *nvram;

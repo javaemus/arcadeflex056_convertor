@@ -23,7 +23,6 @@ public class flkatck
 	void flkatck_vh_screenrefresh(struct mame_bitmap *bitmap,int fullrefresh);
 	
 	extern unsigned char *k007121_ram;
-	extern int flkatck_irq_enabled;
 	
 	/***************************************************************************/
 	

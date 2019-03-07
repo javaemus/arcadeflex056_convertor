@@ -1301,7 +1301,6 @@ public class ataxx
 	 *
 	 *************************************/
 	
-	extern void leland_rotate_memory(int cpunum);
 	
 	static void init_ataxx(void)
 	{

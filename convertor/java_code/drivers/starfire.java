@@ -55,7 +55,6 @@ public class starfire
 	
 	
 	/* In vidhrdw/starfire.c */
-	extern extern extern void starfire_video_update(int scanline, int count);
 	
 	
 	

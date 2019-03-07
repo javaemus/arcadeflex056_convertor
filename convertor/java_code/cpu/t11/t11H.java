@@ -40,18 +40,11 @@ public class t11H
 	
 	
 	/* PUBLIC GLOBALS */
-	extern int  t11_ICount;
 	
 	
 	/* PUBLIC FUNCTIONS */
-	extern extern void t11_reset(void *param);
-	extern extern int t11_execute(int cycles);    /* NS 970908 */
 	extern unsigned t11_get_context(void *dst);
-	extern void t11_set_context(void *src);
 	extern unsigned t11_get_reg(int regnum);
-	extern void t11_set_reg(int regnum, unsigned val);
-	extern void t11_set_irq_line(int irqline, int state);
-	extern void t11_set_irq_callback(int (*callback)(int irqline));
 	extern const char *t11_info(void *context, int regnum);
 	extern unsigned t11_dasm(char *buffer, unsigned pc);
 	

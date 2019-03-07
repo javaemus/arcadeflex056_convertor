@@ -454,8 +454,7 @@ public class sound
 	
 	static void updateaudiostream(void)
 	{
-		extern int throttle;
-		INT16 *data = stream_cache_data;
+			INT16 *data = stream_cache_data;
 		int stereo = stream_cache_stereo;
 		int len = stream_cache_len;
 		int buflen;

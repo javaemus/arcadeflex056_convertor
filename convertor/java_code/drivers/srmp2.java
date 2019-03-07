@@ -73,9 +73,6 @@ public class srmp2
 	void srmp3_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
-	extern int srmp2_color_bank;
-	extern int srmp3_gfx_bank;
-	extern int mjyuugi_gfx_bank;
 	
 	static int srmp2_adpcm_bank;
 	static int srmp2_adpcm_data;

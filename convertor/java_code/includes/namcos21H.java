@@ -9,7 +9,6 @@ enum
 	NAMCOS21_WINRUN91
 };
 
-extern int namcos21_gametype;
 extern data16_t *namcos21_dspram16;
 
 #define NAMCOS21_NUM_COLORS 0x8000

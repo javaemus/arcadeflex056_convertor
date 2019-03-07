@@ -28,7 +28,6 @@ public class sound
 	//	IMPORTS
 	//============================================================
 	
-	extern int verbose;
 	
 	
 	

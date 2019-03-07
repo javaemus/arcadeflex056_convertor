@@ -47,7 +47,6 @@ public class marineb
 	
 	
 	extern unsigned char *marineb_column_scroll;
-	extern int marineb_active_low_flipscreen;
 	
 	void espial_vh_convert_color_prom(unsigned char *obsolete,unsigned short *colortable,const unsigned char *color_prom);
 	

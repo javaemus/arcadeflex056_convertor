@@ -66,7 +66,6 @@ int AY8910_sh_start(const struct MachineSound *msound);
 /* When both of AY8910 and YM2203 or YM2608 or YM2610 are used.      */
 /* It must be called AY8910_sh_start () before AY8910_sh_start_ym()  */
 
-extern int ay8910_index_ym;
 
 int AY8910_sh_start_ym(const struct MachineSound *msound);
 #endif

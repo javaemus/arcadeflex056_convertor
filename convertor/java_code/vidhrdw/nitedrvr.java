@@ -16,8 +16,6 @@ public class nitedrvr
 {
 	
 	/* machine/nitedrvr.c */
-	extern int nitedrvr_gear;
-	extern int nitedrvr_track;
 	
 	/* local */
 	unsigned char *nitedrvr_hvc;

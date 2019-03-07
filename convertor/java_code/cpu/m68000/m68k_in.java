@@ -99,7 +99,6 @@ M68KMAKE_PROTOTYPE_FOOTER
 
 /* Build the opcode handler table */
 
-extern void (*m68ki_instruction_jump_table[0x10000])(void); /* opcode handler jump table */
 extern unsigned char m68ki_cycles[][0x10000];
 
 

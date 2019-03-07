@@ -57,7 +57,6 @@ public class congo
 	extern struct GfxLayout zaxxon_charlayout1;
 	extern struct GfxLayout zaxxon_charlayout2;
 	
-	extern int zaxxon_vid_type;
 	extern unsigned char *zaxxon_background_position;
 	extern unsigned char *zaxxon_background_enable;
 	void zaxxon_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);

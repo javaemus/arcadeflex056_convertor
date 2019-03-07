@@ -147,12 +147,10 @@ public class windowH
 	extern UINT32 screen_w;
 	extern UINT32 screen_h;
 	
-	extern void win_erase_eol(UINT32 idx, UINT8 bChar);
 	extern INT32 win_putc(UINT32 idx, UINT8 bChar);
 	extern UINT32 win_open(UINT32 idx, struct sWindow *psWin);
 	extern UINT32 win_init_engine(UINT32 w, UINT32 h);
 	extern UINT32 win_is_initalized(UINT32 idx);
-	extern extern void win_close(UINT32 idx);
 	extern INT32 win_vprintf(UINT32 idx, const char *pszString, va_list arg);
 	extern INT32 DECL_SPEC win_printf(UINT32 idx, const char *pszString, ...) ARGFMT;
 	extern UINT32 DECL_SPEC win_set_title(UINT32 idx, const char *pszTitle, ... ) ARGFMT;
@@ -164,19 +162,7 @@ public class windowH
 	extern UINT32 win_get_y_abs(UINT32 idx);
 	extern UINT32 win_get_w(UINT32 idx);
 	extern UINT32 win_get_h(UINT32 idx);
-	extern void win_set_w(UINT32 idx, UINT32 w);
-	extern void win_set_h(UINT32 idx, UINT32 w);
-	extern void win_set_color(UINT32 idx, UINT32 color);
-	extern void win_set_title_color(UINT32 idx, UINT32 color);
-	extern void win_set_frame_color(UINT32 idx, UINT32 color);
-	extern void win_set_curpos(UINT32 idx, UINT32 x, UINT32 y);
-	extern void win_set_cursor(UINT32 idx, UINT32 dwCursorState);
-	extern void win_hide(UINT32 idx);
-	extern void win_show(UINT32 idx);
-	extern void win_update(UINT32 idx);
 	extern UINT8 win_get_prio(UINT32 idx);
-	extern void win_set_prio(UINT32 idx, UINT8 prio);
-	extern void win_move(UINT32 idx, UINT32 dwX, UINT32 dwY);
-	extern 
+	
 	#endif
 }

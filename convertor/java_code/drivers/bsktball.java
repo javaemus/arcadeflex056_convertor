@@ -20,10 +20,10 @@ public class bsktball
 {
 	
 	/* machine/bsktball.c */
-	extern 
+	
 	/* vidhrdw/bsktball.c */
 	extern unsigned char *bsktball_motion;
-	extern 
+	
 	
 	/* sound hardware - temporary */
 	

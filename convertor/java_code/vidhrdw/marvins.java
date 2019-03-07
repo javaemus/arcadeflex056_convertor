@@ -368,8 +368,7 @@ public class marvins
 	
 	public static VhUpdatePtr madcrash_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int fullrefresh) 
 	{
-		extern int madcrash_vreg;
-		unsigned char *mem = memory_region(REGION_CPU1)+madcrash_vreg;
+			unsigned char *mem = memory_region(REGION_CPU1)+madcrash_vreg;
 	
 		int attributes = mem[0x8600]; /* 0x20: normal, 0xa0: video flipped */
 		int bg_scrolly = mem[0xf800];

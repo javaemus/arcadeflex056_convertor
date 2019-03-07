@@ -8,21 +8,18 @@
 #define LOG(n,x)
 #endif
 
-extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern int tape_dir;
-extern int tape_speed;
-extern double tape_time0;
-extern void *tape_timer;
+extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern double tape_time0;
 
 extern extern extern extern extern extern extern extern extern 
 extern extern 
-extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern 
+
 extern extern extern extern 
 /* from drivers/decocass.c */
 extern 
 /* from vidhrdw/decocass.c */
 extern extern extern extern extern extern extern extern extern extern extern 
 extern extern extern extern extern extern extern extern extern extern extern extern 
-extern extern extern 
+
 extern unsigned char *decocass_charram;
 extern unsigned char *decocass_fgvideoram;
 extern unsigned char *decocass_colorram;

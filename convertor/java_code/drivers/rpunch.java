@@ -123,7 +123,6 @@ public class rpunch
 	
 	extern data16_t *rpunch_bitmapram;
 	extern size_t rpunch_bitmapram_size;
-	extern int rpunch_sprite_palette;
 	
 	static UINT8 sound_data;
 	static UINT8 sound_busy;

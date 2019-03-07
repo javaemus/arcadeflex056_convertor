@@ -219,7 +219,6 @@ public class toaplan2
 	static int sprite_flip[2] = { 0, 0 };
 	static int tx_flip = 0;
 	
-	extern int toaplan2_sub_cpu;
 	
 	
 	

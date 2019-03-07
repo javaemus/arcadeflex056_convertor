@@ -76,15 +76,12 @@ public class geebee
 {
 	
 	/* from machine/geebee.c */
-	extern extern 
-	/* from vidhrdw/geebee.c */
-	extern void geebee_init_palette(unsigned char *sys_palette, unsigned short *sys_colortable, const unsigned char *color_prom);
-	extern void navalone_init_palette(unsigned char *sys_palette, unsigned short *sys_colortable, const unsigned char *color_prom);
 	
-	extern extern extern extern extern 
+	/* from vidhrdw/geebee.c */
+	
+	
 	/* from sndhrdw/geebee.c */
-	extern int geebee_sh_start(const struct MachineSound *msound);
-	extern extern 
+	
 	/*******************************************************
 	 *
 	 * memory regions

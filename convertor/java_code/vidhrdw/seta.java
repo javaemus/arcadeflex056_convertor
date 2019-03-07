@@ -158,7 +158,6 @@ public class seta
 	data16_t *seta_vram_2, *seta_vram_3, *seta_vctrl_2;
 	data16_t *seta_vregs;
 	
-	extern int seta_tiles_offset;
 	
 	
 	WRITE16_HANDLER( seta_vregs_w )

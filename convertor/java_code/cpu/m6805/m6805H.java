@@ -17,17 +17,10 @@ public class m6805H
 	#define M6805_IRQ_LINE		0
 	
 	/* PUBLIC GLOBALS */
-	extern int  m6805_ICount;
 	
 	/* PUBLIC FUNCTIONS */
-	extern extern void m6805_reset(void *param);
-	extern extern int	m6805_execute(int cycles);
 	extern unsigned m6805_get_context(void *dst);
-	extern void m6805_set_context(void *src);
 	extern unsigned m6805_get_reg(int regnum);
-	extern void m6805_set_reg(int regnum, unsigned val);
-	extern void m6805_set_irq_line(int irqline, int state);
-	extern void m6805_set_irq_callback(int (*callback)(int irqline));
 	extern const char *m6805_info(void *context, int regnum);
 	extern unsigned m6805_dasm(char *buffer, unsigned pc);
 	
@@ -45,14 +38,8 @@ public class m6805H
 	#define M68705_IRQ_LINE				M6805_IRQ_LINE
 	
 	#define m68705_ICount				m6805_ICount
-	extern extern void m68705_reset(void *param);
-	extern extern int	m68705_execute(int cycles);
 	extern unsigned m68705_get_context(void *dst);
-	extern void m68705_set_context(void *src);
 	extern unsigned m68705_get_reg(int regnum);
-	extern void m68705_set_reg(int regnum, unsigned val);
-	extern void m68705_set_irq_line(int irqline, int state);
-	extern void m68705_set_irq_callback(int (*callback)(int irqline));
 	extern const char *m68705_info(void *context, int regnum);
 	extern unsigned m68705_dasm(char *buffer, unsigned pc);
 	#endif
@@ -84,14 +71,8 @@ public class m6805H
 	#define HD63705_INT_NMI				0x08
 	
 	#define hd63705_ICount				m6805_ICount
-	extern extern void hd63705_reset(void *param);
-	extern extern int	hd63705_execute(int cycles);
 	extern unsigned hd63705_get_context(void *dst);
-	extern void hd63705_set_context(void *src);
 	extern unsigned hd63705_get_reg(int regnum);
-	extern void hd63705_set_reg(int regnum, unsigned val);
-	extern void hd63705_set_irq_line(int irqline, int state);
-	extern void hd63705_set_irq_callback(int (*callback)(int irqline));
 	extern const char *hd63705_info(void *context, int regnum);
 	extern unsigned hd63705_dasm(char *buffer, unsigned pc);
 	#endif

@@ -28,7 +28,6 @@ public class twincobr
 	int wardner_sprite_hack = 0;	/* Required for weird sprite priority in wardner  */
 									/* when hero is in shop. Hero should cover shop owner */
 	
-	extern int toaplan_main_cpu;	/* Main CPU type.  0 = 68000, 1 = Z80 */
 	
 	static size_t twincobr_bgvideoram_size,twincobr_fgvideoram_size;
 	static int txscrollx = 0;

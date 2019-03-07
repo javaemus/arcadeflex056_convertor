@@ -14,20 +14,10 @@ struct sys16_sprite_attributes {
 	int x,y, screen_height;	/* in screen coordinates */
 };
 
-extern int (*sys16_spritesystem)(
 	struct sys16_sprite_attributes *sprite,
 	const UINT16 *source,
 	int bJustGetColor );
 
-extern int sys16_sprite_shinobi( struct sys16_sprite_attributes *sprite, const UINT16 *source, int bJustGetColor );
-extern int sys16_sprite_passshot( struct sys16_sprite_attributes *sprite, const UINT16 *source, int bJustGetColor );
-extern int sys16_sprite_aurail( struct sys16_sprite_attributes *sprite, const UINT16 *source, int bJustGetColor );
-extern int sys16_sprite_fantzone( struct sys16_sprite_attributes *sprite, const UINT16 *source, int bJustGetColor );
-extern int sys16_sprite_quartet2( struct sys16_sprite_attributes *sprite, const UINT16 *source, int bJustGetColor );
-extern int sys16_sprite_hangon( struct sys16_sprite_attributes *sprite, const UINT16 *source, int bJustGetColor );
-extern int sys16_sprite_sharrier( struct sys16_sprite_attributes *sprite, const UINT16 *source, int bJustGetColor );
-extern int sys16_sprite_outrun( struct sys16_sprite_attributes *sprite, const UINT16 *source, int bJustGetColor );
-extern int sys16_sprite_aburner( struct sys16_sprite_attributes *sprite, const UINT16 *source, int bJustGetColor );
 
 #ifdef TRANSPARENT_SHADOWS
 #define NumOfShadowColors 32
@@ -37,8 +27,6 @@ extern int sys16_sprite_aburner( struct sys16_sprite_attributes *sprite, const U
 #define ShadowColorsMultiplier 1
 #endif
 
-extern int sys16_sh_shadowpal;
-extern int sys16_MaxShadowColors;
 
 extern data16_t *sys16_tileram;
 extern data16_t *sys16_textram;
@@ -53,11 +41,7 @@ extern data16_t *sys16_extraram2;
 extern data16_t *sys16_extraram3;
 extern data16_t *sys16_extraram4;
 
-extern void sys16_patch_code( int offset, int data );
-extern void sys16_patch_code2( int offset, int data );
-extern void sys16_patch_z80code( int offset, int data );
 
-extern void sys16_interleave_sprite_data( int bank_size );
 
 #define SYS16_MWA16_PALETTERAM	sys16_paletteram_w, &paletteram16
 #define SYS16_MRA16_PALETTERAM	paletteram16_word_r
@@ -71,8 +55,7 @@ extern void sys16_interleave_sprite_data( int bank_size );
 extern READ16_HANDLER( SYS16_MRA16_WORKINGRAM2_SHARE );
 extern WRITE16_HANDLER( SYS16_MWA16_WORKINGRAM2_SHARE );
 
-extern void (*sys16_custom_irq)(void);
-extern 
+
 #define SYS16_MRA16_SPRITERAM		MRA16_RAM
 #define SYS16_MWA16_SPRITERAM		MWA16_RAM,&sys16_spriteram
 
@@ -219,56 +202,22 @@ extern READ16_HANDLER( sys16_textram_r );
 extern WRITE16_HANDLER( sys16_textram_w );
 extern WRITE16_HANDLER( sys16_paletteram_w );
 
-extern extern 
+
 /* "normal" video hardware */
-extern extern 
+
 /* hang-on video hardware */
-extern extern 
+
 /* outrun video hardware */
-extern extern 
+
 /* aburner video hardware */
-extern extern 
+
 /* system18 video hardware */
-extern extern 
+
 /* video driver constants (vary with game) */
-extern int sys16_gr_bitmap_width;
-extern int sys16_sprxoffset;
-extern int sys16_bgxoffset;
-extern int sys16_fgxoffset;
-extern int *sys16_obj_bank;
-extern int sys16_textmode;
-extern int sys16_textlayer_lo_min;
-extern int sys16_textlayer_lo_max;
-extern int sys16_textlayer_hi_min;
-extern int sys16_textlayer_hi_max;
-extern int sys16_dactype;
-extern int sys16_bg1_trans;
-extern int sys16_bg_priority_mode;
-extern int sys16_fg_priority_mode;
-extern int sys16_bg_priority_value;
-extern int sys16_fg_priority_value;
-extern int sys16_spritelist_end;
-extern int sys16_tilebank_switch;
-extern int sys16_rowscroll_scroll;
-extern int sys16_quartet_title_kludge;
-extern void (* sys16_update_proc)( void );
 
 /* video driver registers */
-extern int sys16_refreshenable;
-extern int sys16_tile_bank0;
-extern int sys16_tile_bank1;
-extern int sys16_bg_scrollx, sys16_bg_scrolly;
-extern int sys16_bg_page[4];
-extern int sys16_fg_scrollx, sys16_fg_scrolly;
-extern int sys16_fg_page[4];
 
-extern int sys16_bg2_scrollx, sys16_bg2_scrolly;
-extern int sys16_bg2_page[4];
-extern int sys16_fg2_scrollx, sys16_fg2_scrolly;
-extern int sys16_fg2_page[4];
 
-extern int sys18_bg2_active;
-extern int sys18_fg2_active;
 extern data16_t *sys18_splittab_bg_x;
 extern data16_t *sys18_splittab_bg_y;
 extern data16_t *sys18_splittab_fg_x;
@@ -282,8 +231,6 @@ extern data16_t *sys16_gr_ver;
 extern data16_t *sys16_gr_hor;
 extern data16_t *sys16_gr_pal;
 extern data16_t *sys16_gr_flip;
-extern int sys16_gr_palette;
-extern int sys16_gr_palette_default;
 extern unsigned char sys16_gr_colorflip[2][4];
 extern data16_t *sys16_gr_second_road;
 

@@ -55,8 +55,8 @@ public class twin16
 	WRITE16_HANDLER( fround_gfx_bank_w );
 	WRITE16_HANDLER( twin16_video_register_w );
 	
-	extern extern extern 
-	extern 
+	
+	
 	/******************************************************************************************/
 	
 	UINT16 twin16_custom_vidhrdw;

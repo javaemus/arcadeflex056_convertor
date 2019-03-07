@@ -119,7 +119,6 @@ public class astrocde
 	
 	extern char totalword[256], *totalword_ptr;
 	extern char oldword[256];
-	extern int plural;
 	
 	int wow_sh_start(const struct MachineSound *msound)
 	{

@@ -23,7 +23,7 @@ public class redalert
 	extern unsigned char *redalert_spriteram1;
 	extern unsigned char *redalert_spriteram2;
 	extern unsigned char *redalert_characterram;
-	extern 
+	
 	/* sndhrdw/redalert.c */
 	
 	

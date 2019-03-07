@@ -49,7 +49,6 @@ public class cpudefsH
 	} pair68000;
 	
 	
-	extern void Exception(int nr, CPTR oldpc);
 	
 	typedef extern  cpuop_func *cpufunctbl[65536];
 	

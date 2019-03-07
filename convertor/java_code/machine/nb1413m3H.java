@@ -198,25 +198,6 @@ enum {
 	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );\
 	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 
-extern extern void nb1413m3_nmi_clock_w(int data);
-extern extern void nb1413m3_nvram_handler(void *file, int read_or_write);
-extern int nb1413m3_sndrom_r(int offset);
-extern void nb1413m3_sndrombank1_w(int data);
-extern void nb1413m3_sndrombank2_w(int data);
-extern int nb1413m3_gfxrom_r(int offset);
-extern void nb1413m3_gfxrombank_w(int data);
-extern void nb1413m3_gfxradr_l_w(int data);
-extern void nb1413m3_gfxradr_h_w(int data);
-extern void nb1413m3_inputportsel_w(int data);
-extern extern extern extern extern extern extern extern extern void nb1413m3_outcoin_w(int data);
-extern void nb1413m3_vcrctrl_w(int data);
 
-extern int nb1413m3_type;
-extern int nb1413m3_int_count;
-extern int nb1413m3_sndrombank1;
-extern int nb1413m3_sndrombank2;
-extern int nb1413m3_busyctr;
-extern int nb1413m3_busyflag;
-extern int nb1413m3_inputport;
 extern unsigned char *nb1413m3_nvram;
 extern size_t nb1413m3_nvram_size;

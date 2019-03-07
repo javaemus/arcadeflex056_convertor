@@ -17,17 +17,10 @@ public class config
 {
 	/* types of monitors supported */
 	/* from main() */
-	extern int ignorecfg;
 	
 	/* from video.c */
-	extern int frameskip,autoframeskip;
-	extern int scanlines, use_tweaked, video_sync, wait_vsync, use_triplebuf;
-	extern int stretch, use_mmx, use_dirty;
-	extern int vgafreq, always_synced, skiplines, skipcolumns;
 	extern float osd_gamma_correction;
-	extern int gfx_mode, gfx_width, gfx_height;
 	
-	extern int monitor_type;
 	
 	extern unsigned char tw224x288_h, tw224x288_v;
 	extern unsigned char tw240x256_h, tw240x256_v;
@@ -58,10 +51,8 @@ public class config
 	
 	
 	/* from sound.c */
-	extern int soundcard, usestereo, attenuation, sampleratedetect;
 	
 	/* from input.c */
-	extern int use_mouse, joystick, use_hotrod, steadykey;
 	
 	/* from cheat.c */
 	extern char *cheatfile;
@@ -94,14 +85,10 @@ public class config
 	#endif
 	
 	/* from video.c, for centering tweaked modes */
-	extern int center_x;
-	extern int center_y;
 	
 	/*from video.c flag for 15.75KHz modes (req. for 15.75KHz Arcade Monitor Modes)*/
-	extern int arcade_mode;
 	
 	/*from svga15kh.c flag to allow delay for odd/even fields for interlaced displays (req. for 15.75KHz Arcade Monitor Modes)*/
-	extern int wait_interlace;
 	
 	static int mame_argc;
 	static char **mame_argv;

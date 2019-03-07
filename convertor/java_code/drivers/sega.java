@@ -128,7 +128,6 @@ public class sega
 {
 	
 	extern unsigned char *sega_mem;
-	extern void sega_security(int chip);
 	
 	
 	

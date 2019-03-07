@@ -36,7 +36,6 @@ public class cbuster
 	extern data16_t *twocrude_pf3_rowscroll,*twocrude_pf4_rowscroll;
 	extern data16_t *twocrude_pf1_data, *twocrude_pf2_data, *twocrude_pf3_data, *twocrude_pf4_data;
 	static data16_t *twocrude_ram;
-	extern void twocrude_pri_w(int pri);
 	WRITE16_HANDLER( twocrude_update_sprites_w );
 	static data16_t prot;
 	

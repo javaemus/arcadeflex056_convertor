@@ -37,7 +37,6 @@ public class lsasquad
 	extern unsigned char *lsasquad_scrollram;
 	
 	/* in machine/lsasquad.c */
-	extern int lsasquad_invertcoin;
 	
 	
 	

@@ -7,7 +7,6 @@
 #ifndef CHEAT_H
 #define CHEAT_H
 
-extern int he_did_cheat;
 
 
 int cheat_menu(struct mame_bitmap *bitmap, int selection);

@@ -17,43 +17,24 @@ public class necintrfH
 		NEC_VECTOR, NEC_PENDING, NEC_NMI_STATE, NEC_IRQ_STATE};
 	
 	/* Public variables */
-	extern int nec_ICount;
 	
 	/* Public functions */
 	
 	#define v20_ICount nec_ICount
-	extern extern void v20_reset(void *param);
-	extern extern int v20_execute(int cycles);
 	extern unsigned v20_get_context(void *dst);
-	extern void v20_set_context(void *src);
 	extern unsigned v20_get_reg(int regnum);
-	extern void v20_set_reg(int regnum, unsigned val);
-	extern void v20_set_irq_line(int irqline, int state);
-	extern void v20_set_irq_callback(int (*callback)(int irqline));
 	extern const char *v20_info(void *context, int regnum);
 	extern unsigned v20_dasm(char *buffer, unsigned pc);
 	
 	#define v30_ICount nec_ICount
-	extern extern void v30_reset(void *param);
-	extern extern int v30_execute(int cycles);
 	extern unsigned v30_get_context(void *dst);
-	extern void v30_set_context(void *src);
 	extern unsigned v30_get_reg(int regnum);
-	extern void v30_set_reg(int regnum, unsigned val);
-	extern void v30_set_irq_line(int irqline, int state);
-	extern void v30_set_irq_callback(int (*callback)(int irqline));
 	extern const char *v30_info(void *context, int regnum);
 	extern unsigned v30_dasm(char *buffer, unsigned pc);
 	
 	#define v33_ICount nec_ICount
-	extern extern void v33_reset(void *param);
-	extern extern int v33_execute(int cycles);
 	extern unsigned v33_get_context(void *dst);
-	extern void v33_set_context(void *src);
 	extern unsigned v33_get_reg(int regnum);
-	extern void v33_set_reg(int regnum, unsigned val);
-	extern void v33_set_irq_line(int irqline, int state);
-	extern void v33_set_irq_callback(int (*callback)(int irqline));
 	extern const char *v33_info(void *context, int regnum);
 	extern unsigned v33_dasm(char *buffer, unsigned pc);
 	

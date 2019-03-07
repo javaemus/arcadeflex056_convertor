@@ -205,7 +205,7 @@ public class airbustr
 	extern unsigned char *airbustr_bgram, *airbustr_fgram;
 	
 	/* Functions defined in vidhrdw */
-	extern extern 
+	
 	/* Debug stuff (bound to go away sometime) */
 	int u1, u2, u3, u4;
 	

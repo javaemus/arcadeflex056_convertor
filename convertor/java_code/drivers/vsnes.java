@@ -69,11 +69,9 @@ public class vsnes
 	#define N2A03_DEFAULTCLOCK ( 21477272.724 / 12 )
 	
 	/* from vidhrdw */
-	extern extern extern void vsnes_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	extern extern extern extern void vsdual_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	/* from machine */
-	extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern extern 
+	
 	
 	extern extern extern extern extern extern 
 	/******************************************************************************/

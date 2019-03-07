@@ -67,7 +67,6 @@ public class m6502
 		n2a03_interface=
 	CPU0(N2A03,    n2a03,    1,  0,1.00,N2A03_INT_NONE,    N2A03_INT_IRQ,  N2A03_INT_NMI,  8, 16,     0,16,LE,1, 3);
 	
-	extern void m6502_runtime_loader_init(void)
 	{
 		cpuintf[CPU_M6502]=m6502_interface;
 		cpuintf[CPU_M6510]=m6510_interface;

@@ -8,9 +8,6 @@ public class playch10
 {
 	
 	/* from machine */
-	extern int pc10_sdcs;			/* ShareD Chip Select */
-	extern int pc10_dispmask;		/* Display Mask */
-	extern int pc10_gun_controller;	/* wether we need to draw a crosshair or not */
 	
 	void playch10_vh_convert_color_prom( unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom )
 	{
@@ -45,7 +42,6 @@ public class playch10
 		ppu2c03b_init_palette( palette );
 	}
 	
-	extern int pc10_int_detect;
 	
 	static void ppu_irq( int num )
 	{

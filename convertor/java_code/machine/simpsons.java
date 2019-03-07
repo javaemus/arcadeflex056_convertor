@@ -8,7 +8,6 @@ public class simpsons
 {
 	
 	/* from vidhrdw */
-	extern void simpsons_video_banking( int select );
 	extern unsigned char *simpsons_xtraram;
 	
 	int simpsons_firq_enabled;

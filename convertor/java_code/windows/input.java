@@ -26,7 +26,6 @@ public class input
 	//	IMPORTS
 	//============================================================
 	
-	extern int verbose;
 	
 	
 	

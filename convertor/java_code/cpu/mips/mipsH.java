@@ -49,7 +49,6 @@ public class mipsH
 		MIPS_CP0R30, MIPS_CP0R31
 	};
 	
-	extern int mips_ICount;
 	
 	#define MIPS_IRQ0	( 0 )
 	#define MIPS_IRQ1	( 1 )
@@ -176,15 +175,9 @@ public class mipsH
 	#endif
 	
 	#define mips_readop32(A)	MIPS_READ_LONG(&OP_ROM[A])
-	extern 
-	extern extern void mips_reset(void *param);
-	extern extern int mips_execute(int cycles);
+	
 	extern unsigned mips_get_context(void *dst);
-	extern void mips_set_context(void *src);
 	extern unsigned mips_get_reg(int regnum);
-	extern void mips_set_reg(int regnum, unsigned val);
-	extern void mips_set_irq_line(int irqline, int linestate);
-	extern void mips_set_irq_callback(int (*callback)(int irqline));
 	extern const char *mips_info(void *context, int regnum);
 	extern unsigned mips_dasm(char *buffer, unsigned pc);
 	

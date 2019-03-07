@@ -15,7 +15,6 @@ package vidhrdw;
 public class spiders
 {
 	
-	extern int spiders_video_flip;
 	
 	static int bitflip[256];
 	static int *screenbuffer;

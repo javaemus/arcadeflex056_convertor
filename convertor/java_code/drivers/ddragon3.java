@@ -26,7 +26,7 @@ public class ddragon3
 	
 	WRITE16_HANDLER( ddragon3_scroll16_w );
 	
-	extern 
+	
 	extern data16_t *ddragon3_bg_videoram16;
 	WRITE16_HANDLER( ddragon3_bg_videoram16_w );
 	READ16_HANDLER( ddragon3_bg_videoram16_r );

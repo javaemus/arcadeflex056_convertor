@@ -27,11 +27,7 @@ public class vball
 	extern unsigned char *vb_videoram;
 	extern unsigned char *vb_fgattribram;
 	extern unsigned char *vb_scrollx_lo;
-	extern int vb_scrollx_hi;
-	extern int vball_gfxset;
 	
-	extern void vb_bgprombank_w(int bank);
-	extern void vb_spprombank_w(int bank);
 	extern extern extern /* end of extern code & data */
 	
 	/* private globals */

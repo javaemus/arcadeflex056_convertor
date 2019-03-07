@@ -209,7 +209,6 @@ public class twincobr
 	
 	extern data16_t *twincobr_68k_dsp_ram;
 	extern unsigned char *twincobr_sharedram;
-	extern int twincobr_intenable;
 	
 	
 	/**************** Video stuff ******************/

@@ -20,8 +20,6 @@ public class hal21
 {
 	
 	
-	extern void tnk3_draw_text( struct mame_bitmap *bitmap, int bank, unsigned char *source );
-	extern void tnk3_draw_status( struct mame_bitmap *bitmap, int bank, unsigned char *source );
 	
 	static int scrollx_base; /* this is the only difference in video hardware found so far */
 	

@@ -100,7 +100,7 @@ public class cloak
 	
 	static unsigned char *enable_nvRAM;
 	static unsigned char *cloak_sharedram;
-	extern extern extern 
+	
 	
 	static unsigned char *nvram;
 	static size_t nvram_size;

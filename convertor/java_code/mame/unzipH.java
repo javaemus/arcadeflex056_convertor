@@ -134,7 +134,6 @@ public class unzipH
 	
 	
 	/* public globals */
-	extern int	gUnzipQuiet;	/* flag controls error messages */
 	
 	#ifdef __cplusplus
 	}

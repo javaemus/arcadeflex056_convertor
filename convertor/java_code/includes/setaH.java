@@ -15,7 +15,6 @@ extern data16_t *seta_vram_0, *seta_vram_1, *seta_vctrl_0;
 extern data16_t *seta_vram_2, *seta_vram_3, *seta_vctrl_2;
 extern data16_t *seta_vregs;
 
-extern int seta_tiles_offset;
 
 WRITE16_HANDLER( seta_vram_0_w );
 WRITE16_HANDLER( seta_vram_1_w );
@@ -45,7 +44,6 @@ void seta2_vh_init_palette(unsigned char *palette, unsigned short *colortable,co
 
 /* Variables and functions defined in sndhrdw/seta.c */
 
-extern int seta_samples_bank;
 
 READ_HANDLER ( seta_sound_r );
 

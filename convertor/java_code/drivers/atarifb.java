@@ -115,7 +115,7 @@ public class atarifb
 	extern unsigned char *atarifb_alphap2_vram;
 	extern unsigned char *atarifb_scroll_register;
 	
-	extern extern extern 
+	
 	/* machine/atarifb.c */
 	
 	int atarifb_lamp1, atarifb_lamp2;

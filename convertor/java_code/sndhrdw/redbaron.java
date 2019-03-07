@@ -19,7 +19,6 @@ public class redbaron
 {
 	
 	/* used in drivers/redbaron.c to select joystick pot */
-	extern int rb_input_select;
 	
 	/* Statics */
 	static INT16 *vol_lookup = NULL;

@@ -34,7 +34,7 @@ public class m4510H
 	#ifdef RUNTIME_LOADER
 	# ifdef __cplusplus
 		extern "C" # else
-		extern # endif
+		# endif
 	#endif
 	
 	
@@ -49,18 +49,9 @@ public class m4510H
 	
 	#define M4510_IRQ_LINE					M6502_IRQ_LINE
 	
-	extern int m4510_ICount;				/* cycle count */
 	
-	extern extern void m4510_reset(void *param);
-	extern extern int	m4510_execute(int cycles);
 	extern unsigned m4510_get_context (void *dst);
-	extern void m4510_set_context (void *src);
 	extern unsigned m4510_get_reg (int regnum);
-	extern void m4510_set_reg (int regnum, unsigned val);
-	extern void m4510_set_irq_line(int irqline, int state);
-	extern void m4510_set_irq_callback(int (*callback)(int irqline));
-	extern void m4510_state_save(void *file);
-	extern void m4510_state_load(void *file);
 	extern const char *m4510_info(void *context, int regnum);
 	extern unsigned m4510_dasm(char *buffer, unsigned pc);
 	

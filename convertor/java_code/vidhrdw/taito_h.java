@@ -59,10 +59,8 @@ public class taito_h
 	extern data16_t	*TC0080VCO_chain_ram_1;
 	extern data16_t	*TC0080VCO_spriteram;
 	extern data16_t	*TC0080VCO_scroll_ram;
-	extern int		TC0080VCO_flipscreen;
 	
 	/* Needed in the sprite palette color marking */
-	extern int TC0080VCO_has_tx;
 	
 	/* These are hand-tuned values */
 	static int zoomy_conv_table[] =

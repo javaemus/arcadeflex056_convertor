@@ -46,7 +46,6 @@ public class ccpuH
 	#endif
 	
 	/* an ICount variable (mostly irrelevant) */
-	extern int ccpu_icount;
 	
 	#define CCPU_DATA_OFFSET    0x0000
 	#define CCPU_PGM_OFFSET     0x8000
@@ -135,15 +134,9 @@ public class ccpuH
 	typedef struct scCpuStruct CONTEXTCCPU;
 	
 	extern CINELONG cineExec(CINELONG);
-	extern extern void cineSetJMI(int);
-	extern void cineSetMSize(int);
-	extern void cineSetMonitor(int);
-	extern void cSetContext(CONTEXTCCPU *);
-	extern void cGetContext(CONTEXTCCPU *);
 	extern CINELONG cineGetElapsedTicks(int);
-	extern extern CINELONG cGetContextSize(void);
+	extern CINELONG cGetContextSize(void);
 	
-	extern int bNewFrame;
 	
 	#endif
 }

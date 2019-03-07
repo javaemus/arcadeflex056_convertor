@@ -15,8 +15,6 @@ package vidhrdw;
 public class ddrible
 {
 	
-	extern int ddrible_int_enable_0;
-	extern int ddrible_int_enable_1;
 	
 	unsigned char *ddrible_fg_videoram;
 	unsigned char *ddrible_bg_videoram;

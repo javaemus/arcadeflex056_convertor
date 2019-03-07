@@ -178,7 +178,7 @@ public class convertMame {
                     Convertor.inpos = i;
                     break;
                 }
-                
+
                 case 'v': {
                     int j = Convertor.inpos;
                     if (!sUtil.getToken("void")) {
@@ -251,12 +251,12 @@ public class convertMame {
                 }
                 break;
                 case 'e': {
-                    int j1 = inpos;
+                    i = Convertor.inpos;
                     if (getToken("enum")) {
                         skipSpace();
 
                         if (parseChar() != '{') {
-                            inpos = j1;
+                            inpos = i;
                             break;
                         }
                         skipSpace();
@@ -267,13 +267,13 @@ public class convertMame {
                             skipSpace();
                             c2 = parseChar();
                             if (c2 != '}' && c2 != ',') {
-                                inpos = j1;
+                                inpos = i;
                                 break;
                             }
                             skipSpace();
                         } while (c2 == ',');
                         if (parseChar() != ';') {
-                            inpos = j1;
+                            inpos = i;
                             break;
                         }
                         int k5 = 0;
@@ -281,10 +281,20 @@ public class convertMame {
                             sUtil.putString((new StringBuilder()).append("public static final int ").append(token[k5]).append(" = ").append(k5).append(";\n\t").toString());
                             k5++;
                         }
-                    } else {
-                        break;
+                        continue;
+                    } else if (getToken("extern")) {
+                        skipSpace();
+                        if (sUtil.getToken("void")) {
+                            skipLine();
+                            continue;
+                        }
+                        if (sUtil.getToken("int")) {
+                            skipLine();
+                            continue;
+                        }
                     }
-                    continue;
+                    Convertor.inpos = i;
+                    break;
                 }
                 case 's': {
                     i = Convertor.inpos;

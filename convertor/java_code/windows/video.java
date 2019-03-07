@@ -30,7 +30,6 @@ public class video
 	//============================================================
 	
 	// from input.c
-	extern extern void win_pause_input(int pause);
 	extern UINT8 win_trying_to_quit;
 	
 	
@@ -1002,8 +1001,7 @@ public class video
 		if (vfcount >= (int)video_fps)
 		{
 			// from vidhrdw/avgdvg.c
-			extern int vector_updates;
-	
+			
 			vfcount -= (int)video_fps;
 			vups = vector_updates;
 			vector_updates = 0;

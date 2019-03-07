@@ -107,7 +107,6 @@ public class zaxxon
 	extern unsigned char *zaxxon_background_color_bank;
 	extern unsigned char *zaxxon_background_enable;
 	void zaxxon_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	extern int zaxxon_vid_type;
 	
 	
 	

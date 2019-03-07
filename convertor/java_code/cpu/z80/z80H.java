@@ -26,19 +26,9 @@ public class z80H
 		Z80_TABLE_ex	/* cycles counts for taken jr/jp/call and interrupt latency (rst opcodes) */
 	};
 	
-	extern int z80_ICount;              /* T-state count                        */
 	
-	extern extern void z80_reset (void *param);
-	extern extern int z80_execute(int cycles);
-	extern void z80_burn(int cycles);
 	extern unsigned z80_get_context (void *dst);
-	extern void z80_set_context (void *src);
-	extern void *z80_get_cycle_table (int which);
-	extern void z80_set_cycle_table (int which, void *new_tbl);
 	extern unsigned z80_get_reg (int regnum);
-	extern void z80_set_reg (int regnum, unsigned val);
-	extern void z80_set_irq_line(int irqline, int state);
-	extern void z80_set_irq_callback(int (*irq_callback)(int));
 	extern const char *z80_info(void *context, int regnum);
 	extern unsigned z80_dasm(char *buffer, unsigned pc);
 	

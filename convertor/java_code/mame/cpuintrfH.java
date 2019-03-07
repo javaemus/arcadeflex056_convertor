@@ -753,16 +753,14 @@ public class cpuintrfH
 	/* return a the index of the active CPU */
 	INLINE int cpu_getactivecpu(void)
 	{
-		extern int activecpu;
-		return activecpu;
+			return activecpu;
 	}
 	
 	
 	/* return a the total number of registered CPUs */
 	INLINE int cpu_gettotalcpu(void)
 	{
-		extern int totalcpu;
-		return totalcpu;
+			return totalcpu;
 	}
 	
 	

@@ -16,9 +16,9 @@ public class subs
 {
 	
 	/* vidhrdw/subs.c */
-	extern 
+	
 	/* machine/subs.c */
-	extern extern 
+	
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_ReadAddress( 0x0000, 0x0007, subs_control_r ),

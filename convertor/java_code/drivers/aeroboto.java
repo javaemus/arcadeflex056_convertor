@@ -18,7 +18,6 @@ public class aeroboto
 	
 	extern unsigned char *aeroboto_videoram;
 	extern unsigned char *aeroboto_fgscroll,*aeroboto_bgscroll;
-	extern int aeroboto_charbank;
 	
 	void aeroboto_gfxctrl_w(int ofset,int data);
 	

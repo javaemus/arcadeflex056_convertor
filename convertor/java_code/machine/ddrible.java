@@ -19,8 +19,6 @@ public class ddrible
 	unsigned char *ddrible_sharedram;
 	unsigned char *ddrible_snd_sharedram;
 	
-	extern int ddrible_int_enable_0;
-	extern int ddrible_int_enable_1;
 	
 	void ddrible_init_machine( void )
 	{

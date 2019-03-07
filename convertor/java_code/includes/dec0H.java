@@ -37,7 +37,6 @@ WRITE16_HANDLER( slyspy_24e000_w );
 
 
 
-extern void dec0_i8751_write(int data);
-extern 
+
 extern data16_t *dec0_ram;
 extern data8_t *robocop_shared_ram;

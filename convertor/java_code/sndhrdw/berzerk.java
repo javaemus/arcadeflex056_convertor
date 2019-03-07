@@ -53,8 +53,6 @@ public class berzerk
 	int samplereset = 0;
 	int voicevolume = 100;
 	long samplefrequency = 22320;
-	extern int berzerkplayvoice; /* works in parallel with the read function in machine.c */
-	extern int collision;
 	int deathsound = 0;          /* trigger for playing collision sound */
 	int nextdata5 = -1;
 	

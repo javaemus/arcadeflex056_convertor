@@ -28,16 +28,9 @@ public class i8039H
 		   I8039_R5,   I8039_R6, I8039_R7,  I8039_P1, I8039_P2
 	};
 	
-	extern int i8039_ICount;        /* T-state count                          */
 	
-	extern extern void i8039_reset(void *param);			/* Reset processor & registers	*/
-	extern extern int i8039_execute(int cycles);			/* Execute cycles T-States - returns number of cycles actually run */
 	extern unsigned i8039_get_context(void *dst);	/* Get registers				*/
-	extern void i8039_set_context(void *src);		/* Set registers				*/
 	extern unsigned i8039_get_reg(int regnum);		/* Get specific register	  */
-	extern void i8039_set_reg(int regnum, unsigned val);    /* Set specific register 	 */
-	extern void i8039_set_irq_line(int irqline, int state);
-	extern void i8039_set_irq_callback(int (*callback)(int irqline));
 	extern const char *i8039_info(void *context, int regnum);
 	extern unsigned i8039_dasm(char *buffer, unsigned pc);
 	
@@ -78,14 +71,8 @@ public class i8039H
 	
 	#define i8035_ICount            i8039_ICount
 	
-	extern extern void i8035_reset(void *param);
-	extern extern int i8035_execute(int cycles);
 	extern unsigned i8035_get_context(void *dst);
-	extern void i8035_set_context(void *src);
 	extern unsigned i8035_get_reg(int regnum);
-	extern void i8035_set_reg(int regnum, unsigned val);
-	extern void i8035_set_irq_line(int irqline, int state);
-	extern void i8035_set_irq_callback(int (*callback)(int irqline));
 	extern const char *i8035_info(void *context, int regnum);
 	extern unsigned i8035_dasm(char *buffer, unsigned pc);
 	#endif
@@ -112,14 +99,8 @@ public class i8039H
 	
 	#define i8048_ICount            i8039_ICount
 	
-	extern extern void i8048_reset(void *param);
-	extern extern int i8048_execute(int cycles);
 	extern unsigned i8048_get_context(void *dst);
-	extern void i8048_set_context(void *src);
 	extern unsigned i8048_get_reg(int regnum);
-	extern void i8048_set_reg(int regnum, unsigned val);
-	extern void i8048_set_irq_line(int irqline, int state);
-	extern void i8048_set_irq_callback(int (*callback)(int irqline));
 	const char *i8048_info(void *context, int regnum);
 	extern unsigned i8048_dasm(char *buffer, unsigned pc);
 	#endif
@@ -146,14 +127,8 @@ public class i8039H
 	
 	#define n7751_ICount            i8039_ICount
 	
-	extern extern void n7751_reset(void *param);
-	extern extern int n7751_execute(int cycles);
 	extern unsigned n7751_get_context(void *dst);
-	extern void n7751_set_context(void *src);
 	extern unsigned n7751_get_reg(int regnum);
-	extern void n7751_set_reg(int regnum, unsigned val);
-	extern void n7751_set_irq_line(int irqline, int state);
-	extern void n7751_set_irq_callback(int (*callback)(int irqline));
 	extern const char *n7751_info(void *context, int regnum);
 	extern unsigned n7751_dasm(char *buffer, unsigned pc);
 	#endif

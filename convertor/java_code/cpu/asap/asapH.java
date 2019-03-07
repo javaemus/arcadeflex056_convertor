@@ -46,25 +46,17 @@ public class asapH
 	**	PUBLIC GLOBALS
 	**#################################################################################################*/
 	
-	extern int asap_icount;
 	
 	
 	/*###################################################################################################
 	**	PUBLIC FUNCTIONS
 	**#################################################################################################*/
 	
-	extern extern void asap_reset(void *param);
-	extern extern int asap_execute(int cycles);
 	extern unsigned asap_get_context(void *dst);
-	extern void asap_set_context(void *src);
 	extern unsigned asap_get_reg(int regnum);
-	extern void asap_set_reg(int regnum, unsigned val);
-	extern void asap_set_irq_line(int irqline, int state);
-	extern void asap_set_irq_callback(int (*callback)(int irqline));
 	extern const char *asap_info(void *context, int regnum);
 	extern unsigned asap_dasm(char *buffer, unsigned pc);
 	
-	extern void asap_set_cpi(int cpi);
 	
 	#ifdef MAME_DEBUG
 	extern unsigned asap_dasm(char *buffer, unsigned pc);

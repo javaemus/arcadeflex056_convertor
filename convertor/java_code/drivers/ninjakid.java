@@ -30,7 +30,7 @@ public class ninjakid
 	
 	extern extern extern 
 	extern extern 
-	extern extern extern 
+	extern 
 	extern 
 	/******************************************************************************/
 	

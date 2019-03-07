@@ -24,7 +24,6 @@ public class skyfox
 	
 	/* Variables defined in vidhrdw: */
 	
-	extern int skyfox_bg_pos, skyfox_bg_ctrl;
 	
 	
 	/* Functions defined in vidhrdw: */

@@ -681,7 +681,6 @@ public class wecleman
 	
 	/* Variables defined in driver: */
 	
-	extern int wecleman_selected_ip, wecleman_irqctrl;
 	
 	
 	
