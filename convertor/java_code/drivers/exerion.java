@@ -53,13 +53,13 @@ public class exerion
 	} };
 	
 	
-	static int exerion_interrupt(void)
+	public static InterruptPtr exerion_interrupt = new InterruptPtr() { public int handler() 
 	{
 		/* Exerion triggers NMIs on coin insertion */
 		if (readinputport(4) & 1)
 			return nmi_interrupt();
 		else return ignore_interrupt();
-	}
+	} };
 	
 	
 	

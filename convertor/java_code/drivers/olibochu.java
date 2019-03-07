@@ -349,13 +349,13 @@ public class olibochu
 	
 	
 	
-	static int olibochu_interrupt(void)
+	public static InterruptPtr olibochu_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (cpu_getiloops() == 0)
 			return 0xcf;	/* RST 08h */
 		else
 			return 0xd7;	/* RST 10h */
-	}
+	} };
 	
 	static MachineDriver machine_driver_olibochu = new MachineDriver
 	(

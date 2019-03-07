@@ -25,11 +25,11 @@ public class parodius
 	static int videobank;
 	static unsigned char *ram;
 	
-	static int parodius_interrupt(void)
+	public static InterruptPtr parodius_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (K052109_is_IRQ_enabled()) return interrupt();
 		else return ignore_interrupt();
-	}
+	} };
 	
 	public static ReadHandlerPtr bankedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

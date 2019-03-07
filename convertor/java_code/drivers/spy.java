@@ -24,7 +24,7 @@ public class spy
 	
 	
 	
-	static int spy_interrupt(void)
+	public static InterruptPtr spy_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (K052109_is_IRQ_enabled())
 		{
@@ -32,7 +32,7 @@ public class spy
 			else return interrupt();
 		}
 		else return ignore_interrupt();
-	}
+	} };
 	
 	
 	static int rambank;

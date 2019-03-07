@@ -99,19 +99,19 @@ public class srmp2
 	
 	***************************************************************************/
 	
-	static int srmp2_interrupt(void)
+	public static InterruptPtr srmp2_interrupt = new InterruptPtr() { public int handler() 
 	{
 		switch (cpu_getiloops())
 		{
 			case 0:		return 4;	/* vblank */
 			default:	return 2;	/* sound */
 		}
-	}
+	} };
 	
-	static int srmp3_interrupt(void)
+	public static InterruptPtr srmp3_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return interrupt();
-	}
+	} };
 	
 	
 	static void init_srmp2(void)

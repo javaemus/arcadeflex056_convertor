@@ -80,11 +80,11 @@ public class gunbustr
 		cpu_cause_interrupt(0,5);
 	}
 	
-	static int gunbustr_interrupt(void)
+	public static InterruptPtr gunbustr_interrupt = new InterruptPtr() { public int handler() 
 	{
 		timer_set(TIME_IN_CYCLES(200000-500,0),0, gunbustr_interrupt5);
 		return 4;
-	}
+	} };
 	
 	static WRITE32_HANDLER( gunbustr_palette_w )
 	{

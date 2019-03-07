@@ -246,10 +246,10 @@ public class dynduke
 	/* Parameters: YM3812 frequency, Oki frequency, Oki memory region */
 	SEIBU_SOUND_SYSTEM_YM3812_HARDWARE(14318180/4,8000,REGION_SOUND1);
 	
-	static int dynduke_interrupt(void)
+	public static InterruptPtr dynduke_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 0xc8/4;	/* VBL */
-	}
+	} };
 	
 	static void dynduke_eof_callback(void)
 	{

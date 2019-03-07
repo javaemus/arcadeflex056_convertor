@@ -393,7 +393,7 @@ public class leland
 	}
 	
 	
-	static int master_interrupt(void)
+	public static InterruptPtr master_interrupt = new InterruptPtr() { public int handler() 
 	{
 		/* check for coins here */
 		if ((readinputport(1) & 0x0e) != 0x0e)
@@ -401,7 +401,7 @@ public class leland
 	
 		/* generate an interrupt if requested */
 		return ignore_interrupt();
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr master_nmi_clear_r  = new ReadHandlerPtr() { public int handler(int offset)

@@ -622,7 +622,7 @@ public class playch10
 		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static int playch10_interrupt( void ) {
+	public static InterruptPtr playch10_interrupt = new InterruptPtr() { public int handler()  {
 	
 		/* LS161A, Sheet 1 - bottom left of Z80 */
 		if ( !pc10_dog_di && !pc10_nmi_enable ) {
@@ -634,7 +634,7 @@ public class playch10
 			return nmi_interrupt();
 	
 		return ignore_interrupt();
-	}
+	} };
 	
 	static struct NESinterface nes_interface =
 	{

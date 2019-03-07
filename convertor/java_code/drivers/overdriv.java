@@ -154,17 +154,17 @@ public class overdriv
 	
 	
 	
-	static int cpuA_interrupt(void)
+	public static InterruptPtr cpuA_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (cpu_getiloops()) return 5;
 		return 4;
-	}
+	} };
 	
-	static int cpuB_interrupt(void)
+	public static InterruptPtr cpuB_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (K053246_is_IRQ_enabled()) return 4;
 		else return ignore_interrupt();
-	}
+	} };
 	
 	
 	static void overdriv_init(void)

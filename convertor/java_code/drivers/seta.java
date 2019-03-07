@@ -3686,7 +3686,7 @@ public class seta
 	
 	#define SETA_INTERRUPTS_NUM 2
 	
-	static int seta_interrupt_1_and_2(void)
+	public static InterruptPtr seta_interrupt_1_and_2 = new InterruptPtr() { public int handler() 
 	{
 		switch (cpu_getiloops())
 		{
@@ -3694,9 +3694,9 @@ public class seta
 			case 1:		return 2;
 			default:	return ignore_interrupt();
 		}
-	}
+	} };
 	
-	static int seta_interrupt_2_and_4(void)
+	public static InterruptPtr seta_interrupt_2_and_4 = new InterruptPtr() { public int handler() 
 	{
 		switch (cpu_getiloops())
 		{
@@ -3704,12 +3704,12 @@ public class seta
 			case 1:		return 4;
 			default:	return ignore_interrupt();
 		}
-	}
+	} };
 	
 	
 	#define SETA_SUB_INTERRUPTS_NUM 2
 	
-	static int seta_sub_interrupt(void)
+	public static InterruptPtr seta_sub_interrupt = new InterruptPtr() { public int handler() 
 	{
 		switch (cpu_getiloops())
 		{
@@ -3717,7 +3717,7 @@ public class seta
 			case 1:		return interrupt();
 			default:	return ignore_interrupt();
 		}
-	}
+	} };
 	
 	
 	/***************************************************************************
@@ -4488,14 +4488,14 @@ public class seta
 	
 	
 	#define TNDRCADE_SUB_INTERRUPTS_NUM 			1+16
-	static int tndrcade_sub_interrupt(void)
+	public static InterruptPtr tndrcade_sub_interrupt = new InterruptPtr() { public int handler() 
 	{
 		switch (cpu_getiloops())
 		{
 			case 0:		return nmi_interrupt();
 			default:	return interrupt();
 		}
-	}
+	} };
 	
 	static MachineDriver machine_driver_tndrcade = new MachineDriver
 	(
@@ -4689,7 +4689,7 @@ public class seta
 	   call in the latter (sound related?) */
 	
 	
-	static int wrofaero_interrupt(void)
+	public static InterruptPtr wrofaero_interrupt = new InterruptPtr() { public int handler() 
 	{
 		static int enab = 0;
 		switch (cpu_getiloops())
@@ -4724,7 +4724,7 @@ public class seta
 	#endif
 			default:	return ignore_interrupt();
 		}
-	}
+	} };
 	
 	
 	static MachineDriver machine_driver_wrofaero = new MachineDriver

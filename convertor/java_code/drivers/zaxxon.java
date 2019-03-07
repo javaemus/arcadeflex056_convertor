@@ -291,12 +291,12 @@ public class zaxxon
 	
 	***************************************************************************/
 	
-	static int zaxxon_interrupt(void)
+	public static InterruptPtr zaxxon_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (readinputport(5) & 1)	/* get status of the F2 key */
 			return nmi_interrupt(); /* trigger self test */
 		else return interrupt();
-	}
+	} };
 	
 	static InputPortPtr input_ports_zaxxon = new InputPortPtr(){ public void handler() { 
 		PORT_START(); 	/* IN0 */

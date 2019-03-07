@@ -237,14 +237,14 @@ public class twincobr
 	
 	
 	
-	static int twincobr_interrupt(void)
+	public static InterruptPtr twincobr_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (twincobr_intenable) {
 			twincobr_intenable = 0;
 			return MC68000_IRQ_4;
 		}
 		else return ignore_interrupt();
-	}
+	} };
 	
 	static MEMORY_READ16_START( readmem )
 		{ 0x000000, 0x02ffff, MRA16_ROM },

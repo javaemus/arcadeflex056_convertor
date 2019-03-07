@@ -26,11 +26,11 @@ public class bottom9
 	
 	
 	
-	static int bottom9_interrupt(void)
+	public static InterruptPtr bottom9_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (K052109_is_IRQ_enabled()) return interrupt();
 		else return ignore_interrupt();
-	}
+	} };
 	
 	
 	static int zoomreadroms,K052109_selected;
@@ -106,11 +106,11 @@ public class bottom9
 	
 	static int nmienable;
 	
-	static int bottom9_sound_interrupt(void)
+	public static InterruptPtr bottom9_sound_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (nmienable) return nmi_interrupt();
 		else return ignore_interrupt();
-	}
+	} };
 	
 	public static WriteHandlerPtr nmi_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

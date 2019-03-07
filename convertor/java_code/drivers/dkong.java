@@ -1031,10 +1031,10 @@ public class dkong
 		}
 	);
 	
-	static int hunchbkd_interrupt(void)
+	public static InterruptPtr hunchbkd_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 0x03;	/* hunchbkd S2650 interrupt vector */
-	}
+	} };
 	
 	static MachineDriver machine_driver_hunchbkd = new MachineDriver
 	(

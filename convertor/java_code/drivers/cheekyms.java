@@ -55,12 +55,12 @@ public class cheekyms
 	};
 	
 	
-	static int cheekyms_interrupt(void)
+	public static InterruptPtr cheekyms_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (readinputport(2) & 1)	/* Coin */
 			return nmi_interrupt();
 		else return interrupt();
-	}
+	} };
 	
 	
 	static InputPortPtr input_ports_cheekyms = new InputPortPtr(){ public void handler() { 

@@ -241,13 +241,13 @@ public class bzone
 		return (res);
 	} };
 	
-	static int bzone_interrupt(void)
+	public static InterruptPtr bzone_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (readinputport(0) & 0x10)
 			return nmi_interrupt();
 		else
 			return ignore_interrupt();
-	}
+	} };
 	
 	int rb_input_select;
 	

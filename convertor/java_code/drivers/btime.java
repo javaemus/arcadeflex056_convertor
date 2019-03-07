@@ -516,20 +516,20 @@ public class btime
 		return ignore_interrupt();
 	}
 	
-	static int btime_irq_interrupt(void)
+	public static InterruptPtr btime_irq_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return btime_interrupt(interrupt, 1);
-	}
+	} };
 	
-	static int zoar_irq_interrupt(void)
+	public static InterruptPtr zoar_irq_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return btime_interrupt(interrupt, 0);
-	}
+	} };
 	
-	static int btime_nmi_interrupt(void)
+	public static InterruptPtr btime_nmi_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return btime_interrupt(nmi_interrupt, 0);
-	}
+	} };
 	
 	public static WriteHandlerPtr sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

@@ -145,11 +145,11 @@ public class taito_b
 		cpu_cause_interrupt(0,MC68000_IRQ_2);
 	}
 	
-	static int rastansaga2_interrupt(void)
+	public static InterruptPtr rastansaga2_interrupt = new InterruptPtr() { public int handler() 
 	{
 		timer_set(TIME_IN_CYCLES(5000,0),0,rsaga2_interrupt2);
 		return MC68000_IRQ_4;
-	}
+	} };
 	
 	
 	void crimec_interrupt3(int x)
@@ -157,11 +157,11 @@ public class taito_b
 		cpu_cause_interrupt(0,MC68000_IRQ_3);
 	}
 	
-	static int crimec_interrupt(void)
+	public static InterruptPtr crimec_interrupt = new InterruptPtr() { public int handler() 
 	{
 		timer_set(TIME_IN_CYCLES(5000,0),0,crimec_interrupt3);
 		return MC68000_IRQ_5;
-	}
+	} };
 	
 	
 	void hitice_interrupt6(int x)
@@ -169,11 +169,11 @@ public class taito_b
 		cpu_cause_interrupt(0,MC68000_IRQ_6);
 	}
 	
-	static int hitice_interrupt(void)
+	public static InterruptPtr hitice_interrupt = new InterruptPtr() { public int handler() 
 	{
 		timer_set(TIME_IN_CYCLES(5000,0),0,hitice_interrupt6);
 		return MC68000_IRQ_4;
-	}
+	} };
 	
 	
 	void rambo3_interrupt1(int x)
@@ -181,11 +181,11 @@ public class taito_b
 		cpu_cause_interrupt(0,MC68000_IRQ_1);
 	}
 	
-	static int rambo3_interrupt(void)
+	public static InterruptPtr rambo3_interrupt = new InterruptPtr() { public int handler() 
 	{
 		timer_set(TIME_IN_CYCLES(5000,0),0,rambo3_interrupt1);
 		return MC68000_IRQ_6;
-	}
+	} };
 	
 	
 	void pbobble_interrupt5(int x)
@@ -193,66 +193,66 @@ public class taito_b
 		cpu_cause_interrupt(0,MC68000_IRQ_5);
 	}
 	
-	static int pbobble_interrupt(void)
+	public static InterruptPtr pbobble_interrupt = new InterruptPtr() { public int handler() 
 	{
 		timer_set(TIME_IN_CYCLES(5000,0),0,pbobble_interrupt5);
 		return MC68000_IRQ_3;
-	}
+	} };
 	
 	void viofight_interrupt1(int x)
 	{
 		cpu_cause_interrupt(0,MC68000_IRQ_1);
 	}
 	
-	static int viofight_interrupt(void)
+	public static InterruptPtr viofight_interrupt = new InterruptPtr() { public int handler() 
 	{
 		timer_set(TIME_IN_CYCLES(5000,0),0,viofight_interrupt1);
 		return MC68000_IRQ_4;
-	}
+	} };
 	
 	void masterw_interrupt4(int x)
 	{
 		cpu_cause_interrupt(0,MC68000_IRQ_4);
 	}
 	
-	static int masterw_interrupt(void)
+	public static InterruptPtr masterw_interrupt = new InterruptPtr() { public int handler() 
 	{
 		timer_set(TIME_IN_CYCLES(5000,0),0,masterw_interrupt4);
 		return MC68000_IRQ_5;
-	}
+	} };
 	
 	void silentd_interrupt6(int x)
 	{
 		cpu_cause_interrupt(0,MC68000_IRQ_6);
 	}
 	
-	static int silentd_interrupt(void)
+	public static InterruptPtr silentd_interrupt = new InterruptPtr() { public int handler() 
 	{
 		timer_set(TIME_IN_CYCLES(5000,0),0,silentd_interrupt6);
 		return MC68000_IRQ_4;
-	}
+	} };
 	
 	void selfeena_interrupt4(int x)
 	{
 		cpu_cause_interrupt(0,MC68000_IRQ_4);
 	}
 	
-	static int selfeena_interrupt(void)
+	public static InterruptPtr selfeena_interrupt = new InterruptPtr() { public int handler() 
 	{
 		timer_set(TIME_IN_CYCLES(5000,0),0,selfeena_interrupt4);
 		return MC68000_IRQ_6;
-	}
+	} };
 	
 	void sbm_interrupt5(int x)//4
 	{
 		cpu_cause_interrupt(0,MC68000_IRQ_5);
 	}
 	
-	static int sbm_interrupt(void)//5
+	public static InterruptPtr sbm_interrupt = new InterruptPtr() { public int handler() //5
 	{
 		timer_set(TIME_IN_CYCLES(10000,0),0,sbm_interrupt5);
 		return MC68000_IRQ_4;
-	}
+	} };
 	
 	
 	

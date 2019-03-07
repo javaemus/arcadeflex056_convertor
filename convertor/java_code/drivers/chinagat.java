@@ -555,12 +555,12 @@ public class chinagat
 		{ 60 }
 	};
 	
-	static int chinagat_interrupt(void)
+	public static InterruptPtr chinagat_interrupt = new InterruptPtr() { public int handler() 
 	{
 		cpu_set_irq_line(0, 1, HOLD_LINE);	/* hold the FIRQ line */
 		cpu_set_nmi_line(0, PULSE_LINE);	/* pulse the NMI line */
 		return ignore_interrupt();
-	}
+	} };
 	
 	/* This is only on the second bootleg board */
 	static struct YM2203interface ym2203_interface =

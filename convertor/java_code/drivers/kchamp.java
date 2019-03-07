@@ -421,13 +421,13 @@ public class kchamp
 	
 	
 	
-	static int kc_interrupt( void ) {
+	public static InterruptPtr kc_interrupt = new InterruptPtr() { public int handler()  {
 	
 		if ( nmi_enable )
 			return Z80_NMI_INT;
 	
 		return ignore_interrupt();
-	}
+	} };
 	
 	static void msmint( int data ) {
 	

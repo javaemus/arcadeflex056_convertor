@@ -174,7 +174,7 @@ public class pacman
 		cpu_setbank(2,&rom[bankaddr+0x4000]);
 	}
 	
-	static int pacman_interrupt(void)
+	public static InterruptPtr pacman_interrupt = new InterruptPtr() { public int handler() 
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -196,9 +196,9 @@ public class pacman
 		}
 	
 		return interrupt();
-	}
+	} };
 	
-	static int mspacman_interrupt(void)
+	public static InterruptPtr mspacman_interrupt = new InterruptPtr() { public int handler() 
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -220,7 +220,7 @@ public class pacman
 		}
 	
 		return interrupt();
-	}
+	} };
 	
 	public static WriteHandlerPtr pacman_leds_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

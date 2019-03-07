@@ -25,7 +25,7 @@ public class labyrunr
 	int labyrunr_vh_start(void);
 	void labyrunr_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	static int labyrunr_interrupt(void)
+	public static InterruptPtr labyrunr_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (cpu_getiloops() == 0)
 		{
@@ -36,7 +36,7 @@ public class labyrunr
 			if (K007121_ctrlram[0][0x07] & 0x01) return nmi_interrupt();
 		}
 		return ignore_interrupt();
-	}
+	} };
 	
 	public static WriteHandlerPtr labyrunr_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

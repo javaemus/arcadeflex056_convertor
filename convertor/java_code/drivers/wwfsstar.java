@@ -302,7 +302,7 @@ public class wwfsstar
 	 file)
 	*******************************************************************************/
 	
-	static int wwfsstar_interrupt(void) {
+	public static InterruptPtr wwfsstar_interrupt = new InterruptPtr() { public int handler()  {
 		if( cpu_getiloops() == 0 ){
 			vbl = 1;
 		}
@@ -317,7 +317,7 @@ public class wwfsstar
 		}
 	
 		return ignore_interrupt();
-	}
+	} };
 	
 	/*******************************************************************************
 	 Sound Stuff..

@@ -291,7 +291,7 @@ public class shootout
 		{ shootout_snd2_irq },
 	};
 	
-	static int shootout_interrupt(void)
+	public static InterruptPtr shootout_interrupt = new InterruptPtr() { public int handler() 
 	{
 		static int coin = 0;
 	
@@ -304,7 +304,7 @@ public class shootout
 			coin = 0;
 	
 		return ignore_interrupt();
-	}
+	} };
 	
 	static MachineDriver machine_driver_shootout = new MachineDriver
 	(

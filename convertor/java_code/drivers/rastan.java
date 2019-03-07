@@ -28,10 +28,10 @@ public class rastan
 	static int banknum = -1;
 	
 	
-	static int rastan_interrupt(void)
+	public static InterruptPtr rastan_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 5;  /* Interrupt vector 5 */
-	}
+	} };
 	
 	
 	static READ16_HANDLER( rastan_cycle_r )

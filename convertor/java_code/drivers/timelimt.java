@@ -213,12 +213,12 @@ public class timelimt
 		new WriteHandlerPtr[] { 0 }
 	);
 	
-	static int timelimt_irq( void ) {
+	public static InterruptPtr timelimt_irq = new InterruptPtr() { public int handler()  {
 		if ( nmi_enabled )
 			return nmi_interrupt();
 	
 		return ignore_interrupt();
-	}
+	} };
 	
 	/***************************************************************************/
 	

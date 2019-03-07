@@ -99,12 +99,12 @@ public class astrof
 	  slots.
 	
 	***************************************************************************/
-	static int astrof_interrupt(void)
+	public static InterruptPtr astrof_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (readinputport(2) & 1)	/* Coin */
 			return nmi_interrupt();
 		else return ignore_interrupt();
-	}
+	} };
 	
 	
 	static InputPortPtr input_ports_astrof = new InputPortPtr(){ public void handler() { 

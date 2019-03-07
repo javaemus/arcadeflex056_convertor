@@ -43,14 +43,14 @@ public class thief
 	void thief_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
-	static int thief_interrupt( void )
+	public static InterruptPtr thief_interrupt = new InterruptPtr() { public int handler() 
 	{
 		/* SLAM switch causes an NMI if it's pressed */
 		if( (input_port_3_r(0) & 0x10) == 0 )
 			return nmi_interrupt();
 	
 		return interrupt();
-	}
+	} };
 	
 	/**********************************************************/
 	

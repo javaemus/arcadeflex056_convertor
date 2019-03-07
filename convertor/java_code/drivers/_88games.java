@@ -43,11 +43,11 @@ public class _88games
 	}
 	
 	
-	static int k88games_interrupt(void)
+	public static InterruptPtr k88games_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (K052109_is_IRQ_enabled()) return interrupt();
 		else return ignore_interrupt();
-	}
+	} };
 	
 	static int zoomreadroms;
 	

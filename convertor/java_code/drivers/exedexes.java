@@ -30,11 +30,11 @@ public class exedexes
 	
 	
 	
-	static int exedexes_interrupt(void)
+	public static InterruptPtr exedexes_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (cpu_getiloops() != 0) return 0x00cf;	/* RST 08h */
 		else return 0x00d7;	/* RST 10h - vblank */
-	}
+	} };
 	
 	
 	

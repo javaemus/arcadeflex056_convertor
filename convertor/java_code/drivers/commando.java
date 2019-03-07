@@ -56,10 +56,10 @@ public class commando
 	
 	
 	
-	static int commando_interrupt(void)
+	public static InterruptPtr commando_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 0x00d7;	/* RST 10h - VBLANK */
-	}
+	} };
 	
 	
 	

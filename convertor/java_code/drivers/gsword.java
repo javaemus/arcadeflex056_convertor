@@ -229,7 +229,7 @@ public class gsword
 		TAITO8741_start(&gsword_8741interface);
 	}
 	
-	static int gsword_snd_interrupt(void)
+	public static InterruptPtr gsword_snd_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if( (gsword_nmi_count+=gsword_nmi_step) >= 4)
 		{
@@ -237,7 +237,7 @@ public class gsword
 			return Z80_NMI_INT;
 		}
 		return ignore_interrupt();
-	}
+	} };
 	
 	public static WriteHandlerPtr gsword_nmi_set_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

@@ -360,17 +360,17 @@ public class toaplan2
 	  Interrupt handlers
 	***************************************************************************/
 	
-	static int toaplan2_interrupt(void)
+	public static InterruptPtr toaplan2_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return MC68000_IRQ_4;
-	}
+	} };
 	
-	static int truxton2_interrupt(void)
+	public static InterruptPtr truxton2_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return MC68000_IRQ_2;
-	}
+	} };
 	
-	static int batrider_sound_interrupt(void)	/* Batrider uses NMI for sound cpu */
+	public static InterruptPtr batrider_sound_interrupt = new InterruptPtr() { public int handler() 	/* Batrider uses NMI for sound cpu */
 	{
 		if (batrider_z80nmi_enabled)
 		{
@@ -379,7 +379,7 @@ public class toaplan2
 		}
 		else
 			return ignore_interrupt();
-	}
+	} };
 	
 	
 	/***************************************************************************

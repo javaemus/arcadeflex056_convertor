@@ -27,7 +27,7 @@ public class pingpong
 		/* other bits unknown */
 	} };
 	
-	static int pingpong_interrupt(void)
+	public static InterruptPtr pingpong_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (cpu_getiloops() == 0)
 		{
@@ -39,7 +39,7 @@ public class pingpong
 		}
 	
 		return ignore_interrupt();
-	}
+	} };
 	
 	
 	

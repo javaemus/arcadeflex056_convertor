@@ -46,10 +46,10 @@ public class spcforce
 	void spcforce_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
-	static int spcforce_interrupt(void)
+	public static InterruptPtr spcforce_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return I8085_RST75;
-	}
+	} };
 	
 	
 	static int spcforce_SN76496_latch;

@@ -110,10 +110,10 @@ public class omegaf
 	  Interrupts
 	**************************************************************************/
 	
-	static int omegaf_interrupt(void)
+	public static InterruptPtr omegaf_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 0x00d7;	/* RST 10h */
-	}
+	} };
 	
 	
 	/**************************************************************************

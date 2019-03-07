@@ -71,10 +71,10 @@ public class othunder
 					INTERRUPTS
 	***********************************************************/
 	
-	static int othunder_interrupt(void)
+	public static InterruptPtr othunder_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 5;
-	}
+	} };
 	
 	static void othunder_gun_interrupt(int x)
 	{

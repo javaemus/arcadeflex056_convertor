@@ -513,10 +513,10 @@ public class niyanpai
 	INPUT_PORTS_END(); }}; 
 	
 	
-	static int niyanpai_interrupt(void)
+	public static InterruptPtr niyanpai_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return m68_level1_irq();
-	}
+	} };
 	
 	static Z80_DaisyChain daisy_chain_sound[] =
 	{

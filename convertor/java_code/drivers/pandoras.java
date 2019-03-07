@@ -35,17 +35,17 @@ public class pandoras
 	int pandoras_vh_start(void);
 	void pandoras_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	static int pandoras_interrupt_a( void ){
+	public static InterruptPtr pandoras_interrupt_a = new InterruptPtr() { public int handler() {
 		if (irq_enable_a)
 			return M6809_INT_IRQ;
 		return ignore_interrupt();
-	}
+	} };
 	
-	static int pandoras_interrupt_b( void ){
+	public static InterruptPtr pandoras_interrupt_b = new InterruptPtr() { public int handler() {
 		if (irq_enable_b)
 			return M6809_INT_IRQ;
 		return ignore_interrupt();
-	}
+	} };
 	
 	public static ReadHandlerPtr pandoras_sharedram_r  = new ReadHandlerPtr() { public int handler(int offset){
 		return pandoras_sharedram[offset];

@@ -1148,11 +1148,11 @@ public class dooyong
 		}
 	);
 	
-	static int rshark_interrupt(void)
+	public static InterruptPtr rshark_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (cpu_getiloops() == 0) return 5;
 		else return 6;
-	}
+	} };
 	
 	static MachineDriver machine_driver_rshark = new MachineDriver
 	(

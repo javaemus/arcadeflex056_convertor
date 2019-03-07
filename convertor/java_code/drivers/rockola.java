@@ -252,7 +252,7 @@ public class rockola
 	
 	
 	
-	static int satansat_interrupt(void)
+	public static InterruptPtr satansat_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (cpu_getiloops() != 0)
 		{
@@ -262,9 +262,9 @@ public class rockola
 			else return ignore_interrupt();
 		}
 		else return interrupt();	/* one IRQ per frame */
-	}
+	} };
 	
-	static int rockola_interrupt(void)
+	public static InterruptPtr rockola_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (cpu_getiloops() != 0)
 		{
@@ -274,7 +274,7 @@ public class rockola
 			else return ignore_interrupt();
 		}
 		else return interrupt();	/* one IRQ per frame */
-	}
+	} };
 	
 	
 	

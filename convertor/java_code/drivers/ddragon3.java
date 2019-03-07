@@ -85,7 +85,7 @@ public class ddragon3
 	
 	extern UINT16 ddragon3_vreg;
 	
-	static int ddragon3_cpu_interrupt(void) { /* 6:0x177e - 5:0x176a */
+	public static InterruptPtr ddragon3_cpu_interrupt = new InterruptPtr() { public int handler()  { /* 6:0x177e - 5:0x176a */
 		if( cpu_getiloops() == 0 ){
 			return MC68000_IRQ_6;  /* VBlank */
 		}
@@ -93,7 +93,7 @@ public class ddragon3
 			return MC68000_IRQ_5; /* Input Ports */
 		}
 		return ignore_interrupt();
-	}
+	} };
 	
 	static data16_t reg[8];
 	

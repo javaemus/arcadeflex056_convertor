@@ -45,14 +45,14 @@ public class munchmo
 		mnchmobl_nmi_enable = data;
 	} };
 	
-	static int mnchmobl_interrupt( void )
+	public static InterruptPtr mnchmobl_interrupt = new InterruptPtr() { public int handler() 
 	{
 		static int which;
 		which = !which;
 		if( which ) return interrupt();
 		if( mnchmobl_nmi_enable ) return nmi_interrupt();
 		return ignore_interrupt();
-	}
+	} };
 	
 	public static WriteHandlerPtr mnchmobl_soundlatch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

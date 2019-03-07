@@ -377,12 +377,12 @@ public class wwfwfest
 	 Interrupt Function
 	*******************************************************************************/
 	
-	static int wwfwfest_interrupt(void) {
+	public static InterruptPtr wwfwfest_interrupt = new InterruptPtr() { public int handler()  {
 		if( cpu_getiloops() == 0 )
 			return MC68000_IRQ_3;
 	
 		 return MC68000_IRQ_2;
-	}
+	} };
 	
 	/*******************************************************************************
 	 Sound Stuff..

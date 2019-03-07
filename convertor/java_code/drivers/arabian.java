@@ -93,12 +93,12 @@ public class arabian
 	 *
 	 *************************************/
 	
-	static int generate_interrupt(void)
+	public static InterruptPtr generate_interrupt = new InterruptPtr() { public int handler() 
 	{
 		/* IRQ is acknowledged by the Z80 acknowledge pin */
 		cpu_set_irq_line(0, 0, HOLD_LINE);
 		return ignore_interrupt();
-	}
+	} };
 	
 	
 	

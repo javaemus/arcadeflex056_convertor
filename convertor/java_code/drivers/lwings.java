@@ -68,19 +68,19 @@ public class lwings
 		coin_counter_w(0,data & 0x80);
 	} };
 	
-	static int lwings_interrupt(void)
+	public static InterruptPtr lwings_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 0x00d7; /* RST 10h */
-	}
+	} };
 	
-	static int avengers_interrupt( void )
+	public static InterruptPtr avengers_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if( cpu_getiloops()==0 )
 		{
 			return interrupt();
 		}
 		return nmi_interrupt();
-	}
+	} };
 	
 	public static WriteHandlerPtr avengers_protection_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

@@ -156,12 +156,12 @@ public class congo
 	  to tie that event to a keypress.
 	
 	***************************************************************************/
-	static int congo_interrupt(void)
+	public static InterruptPtr congo_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (readinputport(5) & 1)	/* get status of the F2 key */
 			return nmi_interrupt(); /* trigger self test */
 		else return interrupt();
-	}
+	} };
 	
 	/* almost the same as Zaxxon; UP and DOWN are inverted, and the joystick is 4 way. */
 	static InputPortPtr input_ports_congo = new InputPortPtr(){ public void handler() { 

@@ -257,7 +257,7 @@ public class skyfox
 	/* Check for coin insertion once a frame (polling a fake input port).
 	   Generate an NMI in case. Scroll the background too. */
 	
-	static int skyfox_interrupt(void)
+	public static InterruptPtr skyfox_interrupt = new InterruptPtr() { public int handler() 
 	{
 		/* Scroll the bg */
 		skyfox_bg_pos += (skyfox_bg_ctrl >> 1) & 0x7;	// maybe..
@@ -265,7 +265,7 @@ public class skyfox
 		/* Check coin 1 & 2 */
 		if ((readinputport(4) & 3) == 3)	return ignore_interrupt();
 		else								return nmi_interrupt();
-	}
+	} };
 	
 	static struct YM2203interface skyfox_ym2203_interface =
 	{

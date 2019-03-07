@@ -414,10 +414,10 @@ public class actfancr
 	
 	/******************************************************************************/
 	
-	static int actfan_interrupt(void)
+	public static InterruptPtr actfan_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return H6280_INT_IRQ1;
-	}
+	} };
 	
 	static MachineDriver machine_driver_actfancr = new MachineDriver
 	(

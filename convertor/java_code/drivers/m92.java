@@ -1105,15 +1105,15 @@ public class m92
 	
 	/***************************************************************************/
 	
-	static int m92_interrupt(void)
+	public static InterruptPtr m92_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (osd_skip_this_frame()==0)
 			m92_vh_raster_partial_refresh(Machine->scrbitmap,0,249);
 	
 		return M92_IRQ_0; /* VBL */
-	}
+	} };
 	
-	static int m92_raster_interrupt(void)
+	public static InterruptPtr m92_raster_interrupt = new InterruptPtr() { public int handler() 
 	{
 		static int last_line=0;
 		int line = M92_SCANLINES - cpu_getiloops();
@@ -1141,7 +1141,7 @@ public class m92
 		}
 	
 		return ignore_interrupt();
-	}
+	} };
 	
 	void m92_sprite_interrupt(void)
 	{

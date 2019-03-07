@@ -30,13 +30,13 @@ public class gbusters
 	static int palette_selected;
 	static unsigned char *ram;
 	
-	static int gbusters_interrupt( void )
+	public static InterruptPtr gbusters_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (K052109_is_IRQ_enabled())
 			return KONAMI_INT_IRQ;
 		else
 			return ignore_interrupt();
-	}
+	} };
 	
 	public static ReadHandlerPtr bankedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

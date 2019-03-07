@@ -44,6 +44,7 @@ public class convertMame {
     static final int MACHINEDRIVER = 16;
     static final int SN76496 = 17;
     static final int AY8910 = 18;
+    static final int MACHINE_INTERRUPT = 19;
 
     public static void Convert() {
         Convertor.inpos = 0;//position of pointer inside the buffers
@@ -174,6 +175,40 @@ public class convertMame {
                     }
                     if (!sUtil.getToken("struct")) //static but not static struct
                     {
+                        if (sUtil.getToken("int")) {
+                            sUtil.skipSpace();
+                            Convertor.token[0] = sUtil.parseToken();
+                            sUtil.skipSpace();
+                            if (sUtil.parseChar() != '(') {
+                                Convertor.inpos = i;
+                                break;
+                            }
+                            sUtil.skipSpace();
+                            if (sUtil.getToken("void"))//an to soma tis function einai (void)
+                            {
+                                sUtil.skipSpace();
+                                if (sUtil.parseChar() != ')') {
+                                    Convertor.inpos = i;
+                                    break;
+                                }
+
+                                if (Convertor.token[0].contains("_interrupt")) {
+                                    sUtil.putString((new StringBuilder()).append("public static InterruptPtr ").append(Convertor.token[0]).append(" = new InterruptPtr() { public int handler() ").toString());
+                                    type = MACHINE_INTERRUPT;
+                                    i3 = -1;
+                                    continue;
+                                }
+                                if (Convertor.token[0].contains("_irq")) {
+                                    sUtil.putString((new StringBuilder()).append("public static InterruptPtr ").append(Convertor.token[0]).append(" = new InterruptPtr() { public int handler() ").toString());
+                                    type = MACHINE_INTERRUPT;
+                                    i3 = -1;
+                                    continue;
+                                }
+                            }
+
+                            Convertor.inpos = i;
+                            break;
+                        }
                         if (sUtil.getToken("void")) {
                             sUtil.skipSpace();
                             Convertor.token[0] = sUtil.parseToken();
@@ -621,7 +656,7 @@ public class convertMame {
                         }
                     }
 
-                    if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL || type == READ_HANDLER8 || type == WRITE_HANDLER8) {
+                    if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL || type == READ_HANDLER8 || type == WRITE_HANDLER8 ||  type == MACHINE_INTERRUPT) {
                         i3++;
                     }
                 }
@@ -718,7 +753,7 @@ public class convertMame {
                             continue;
                         }
                     }
-                    if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL || type == READ_HANDLER8 || type == WRITE_HANDLER8) {
+                    if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL || type == READ_HANDLER8 || type == WRITE_HANDLER8 ||  type == MACHINE_INTERRUPT) {
                         i3--;
                         if (i3 == -1) {
                             sUtil.putString("} };");

@@ -281,7 +281,7 @@ public class segac2
 	
 	
 	/* interrupt callback to generate the VBLANK interrupt */
-	static int vblank_interrupt(void)
+	public static InterruptPtr vblank_interrupt = new InterruptPtr() { public int handler() 
 	{
 		/* generate the interrupt */
 		vblank_int = 1;
@@ -290,7 +290,7 @@ public class segac2
 		/* set a timer to turn it off */
 		timer_set(cpu_getscanlineperiod() * (22. / 342.), 0, vdp_int6_off);
 		return ignore_interrupt();
-	}
+	} };
 	
 	
 	/* interrupt callback to generate the YM3438 interrupt */

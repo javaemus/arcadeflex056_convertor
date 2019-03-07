@@ -351,19 +351,19 @@ public class wgp
 	
 	/***** Routines for particular games *****/
 	
-	static int wgp_interrupt(void)
+	public static InterruptPtr wgp_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 4;
-	}
+	} };
 	
 	/* FWIW offset of 10000,10500 on ints can get CPUB obeying the
 	   first CPUA command the same frame; probably not necessary */
 	
-	static int wgp_cpub_interrupt(void)
+	public static InterruptPtr wgp_cpub_interrupt = new InterruptPtr() { public int handler() 
 	{
 		timer_set(TIME_IN_CYCLES(200000-500,0),0, wgp_cpub_interrupt6);
 		return 4;
-	}
+	} };
 	
 	
 	/**********************************************************

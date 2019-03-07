@@ -227,12 +227,12 @@ public class z80bw
 	------------------------------------------------------------------------------*/
 	
 	
-	static int spaceint_interrupt(void)
+	public static InterruptPtr spaceint_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (readinputport(2) & 1)	/* Coin */
 			return nmi_interrupt();
 		else return interrupt();
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress spaceint_readmem[]={

@@ -41,13 +41,13 @@ public class blockhl
 	static unsigned char *ram;
 	static int rombank;
 	
-	static int blockhl_interrupt( void )
+	public static InterruptPtr blockhl_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (K052109_is_IRQ_enabled() && rombank == 0)	/* kludge to prevent crashes */
 			return KONAMI_INT_IRQ;
 		else
 			return ignore_interrupt();
-	}
+	} };
 	
 	public static ReadHandlerPtr bankedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

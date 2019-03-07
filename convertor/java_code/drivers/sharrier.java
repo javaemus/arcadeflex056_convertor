@@ -120,10 +120,10 @@ public class sharrier
 		page[2] = data&0xf;
 	}
 	
-	static int sys16_interrupt( void ){
+	public static InterruptPtr sys16_interrupt = new InterruptPtr() { public int handler() {
 		if(sys16_custom_irq) sys16_custom_irq();
 		return 4; /* Interrupt vector 4, used by VBlank */
-	}
+	} };
 	
 	static WRITE16_HANDLER( sound_command_nmi_w ){
 		if( ACCESSING_LSB ){

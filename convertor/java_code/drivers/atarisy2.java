@@ -265,14 +265,14 @@ public class atarisy2
 	 *
 	 *************************************/
 	
-	static int vblank_interrupt(void)
+	public static InterruptPtr vblank_interrupt = new InterruptPtr() { public int handler() 
 	{
 		/* clock the VBLANK through */
 		if (interrupt_enable[0] & 8)
 			atarigen_video_int_gen();
 	
 		return ignore_interrupt();
-	}
+	} };
 	
 	
 	static WRITE16_HANDLER( int0_ack_w )

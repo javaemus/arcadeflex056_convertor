@@ -189,10 +189,10 @@ public class undrfire
 		cpu_cause_interrupt(0,5);
 	}
 	
-	static int undrfire_interrupt(void)
+	public static InterruptPtr undrfire_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 4;
-	}
+	} };
 	
 	
 	/**********************************************************

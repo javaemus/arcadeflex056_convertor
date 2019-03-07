@@ -137,11 +137,11 @@ public class spacefb
 	
 	
 	
-	static int spacefb_interrupt(void)
+	public static InterruptPtr spacefb_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (cpu_getiloops() != 0) return (0x00cf);		/* RST 08h */
 		else return (0x00d7);		/* RST 10h */
-	}
+	} };
 	
 	
 	unsigned char spacefb_sound_latch;

@@ -353,7 +353,7 @@ public class renegade
 		}
 	} };
 	
-	static int renegade_interrupt(void)
+	public static InterruptPtr renegade_interrupt = new InterruptPtr() { public int handler() 
 	{
 	/*
 		static int coin;
@@ -372,7 +372,7 @@ public class renegade
 		if( count )
 		return nmi_interrupt();
 		return interrupt();
-	}
+	} };
 	
 	public static WriteHandlerPtr renegade_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

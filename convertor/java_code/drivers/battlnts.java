@@ -21,13 +21,13 @@ public class battlnts
 	void battlnts_vh_stop(void);
 	void battlnts_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	static int battlnts_interrupt( void )
+	public static InterruptPtr battlnts_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (K007342_is_INT_enabled())
 			return HD6309_INT_IRQ;
 		else
 			return ignore_interrupt();
-	}
+	} };
 	
 	public static WriteHandlerPtr battlnts_sh_irqtrigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

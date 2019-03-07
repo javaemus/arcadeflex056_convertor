@@ -2205,11 +2205,11 @@ public class bjtwin
 	};
 	
 	
-	static int nmk_interrupt(void)
+	public static InterruptPtr nmk_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (cpu_getiloops() == 0) return 4;
 		return 2;
-	}
+	} };
 	
 	
 	static MachineDriver machine_driver_urashima = new MachineDriver

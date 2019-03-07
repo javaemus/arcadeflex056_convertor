@@ -620,12 +620,12 @@ public class kaneko16
 	
 	
 	/* Called once/frame to generate the VBLANK interrupt */
-	static int sandscrp_interrupt(void)
+	public static InterruptPtr sandscrp_interrupt = new InterruptPtr() { public int handler() 
 	{
 		vblank_irq = 1;
 		update_irq_state();
 		return ignore_interrupt();
-	}
+	} };
 	
 	
 	static void sandscrp_eof_callback(void)

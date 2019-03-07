@@ -180,7 +180,7 @@ public class ultratnk
 		return 0;
 	} };
 	
-	static int ultratnk_interrupt(void)
+	public static InterruptPtr ultratnk_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if( input_port_1_r(0) & 0x40 )
 		{
@@ -188,7 +188,7 @@ public class ultratnk
 			return nmi_interrupt();
 		}
 		return ignore_interrupt();
-	}
+	} };
 	
 	public static WriteHandlerPtr ultratnk_leds_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

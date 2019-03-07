@@ -583,13 +583,13 @@ public class kingobox
 		{ 25 }
 	};
 	
-	static int kingobox_interrupt( void ) {
+	public static InterruptPtr kingobox_interrupt = new InterruptPtr() { public int handler()  {
 	
 		if ( kingofb_nmi_enable )
 			return nmi_interrupt();
 	
 		return ignore_interrupt();
-	}
+	} };
 	
 	static MachineDriver machine_driver_kingofb = new MachineDriver
 	(

@@ -524,10 +524,10 @@ public class taito_z
 	
 	/* 68000 A */
 	
-	static int taitoz_interrupt(void)
+	public static InterruptPtr taitoz_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 4;
-	}
+	} };
 	
 	static void taitoz_interrupt6(int x)
 	{
@@ -536,10 +536,10 @@ public class taito_z
 	
 	/* 68000 B */
 	
-	static int taitoz_cpub_interrupt(void)
+	public static InterruptPtr taitoz_cpub_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 4;
-	}
+	} };
 	
 	static void taitoz_cpub_interrupt5(int x)
 	{
@@ -559,37 +559,37 @@ public class taito_z
 	
 	/***** Routines for particular games *****/
 	
-	static int contcirc_interrupt(void)
+	public static InterruptPtr contcirc_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 6;
-	}
+	} };
 	
-	static int contcirc_cpub_interrupt(void)
+	public static InterruptPtr contcirc_cpub_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 6;
-	}
+	} };
 	
-	static int chasehq_interrupt(void)
+	public static InterruptPtr chasehq_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 4;
-	}
+	} };
 	
-	static int chq_cpub_interrupt(void)
+	public static InterruptPtr chq_cpub_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 4;
-	}
+	} };
 	
-	static int bshark_interrupt(void)
+	public static InterruptPtr bshark_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 4;
-	}
+	} };
 	
-	static int bshark_cpub_interrupt(void)
+	public static InterruptPtr bshark_cpub_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 4;
-	}
+	} };
 	
-	static int sci_interrupt(void)
+	public static InterruptPtr sci_interrupt = new InterruptPtr() { public int handler() 
 	{
 		/* Need 2 int4's per int6 else (-$6b63,A5) never set to 1 which
 		   causes all sprites to vanish! Spriteram has areas for 2 frames
@@ -600,49 +600,49 @@ public class taito_z
 		if (sci_int6)
 			timer_set(TIME_IN_CYCLES(200000-500,0),0, taitoz_interrupt6);
 		return 4;
-	}
+	} };
 	
-	static int sci_cpub_interrupt(void)
+	public static InterruptPtr sci_cpub_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 4;
-	}
+	} };
 	
-	static int nightstr_interrupt(void)
+	public static InterruptPtr nightstr_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 4;
-	}
+	} };
 	
-	static int nightstr_cpub_interrupt(void)
+	public static InterruptPtr nightstr_cpub_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 4;
-	}
+	} };
 	
-	static int aquajack_interrupt(void)
+	public static InterruptPtr aquajack_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 4;
-	}
+	} };
 	
-	static int aquajack_cpub_interrupt(void)
+	public static InterruptPtr aquajack_cpub_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 4;	/* int4 goes straight to RTE */
-	}
+	} };
 	
-	static int spacegun_interrupt(void)
+	public static InterruptPtr spacegun_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 4;
-	}
+	} };
 	
-	static int spacegun_cpub_interrupt(void)
+	public static InterruptPtr spacegun_cpub_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 4;
-	}
+	} };
 	
 	/* Double Axle seems to keep only 1 sprite frame in sprite ram,
 	   which is probably wrong. Game seems to work with no int 6's
 	   at all. Cpu control byte has 0,4,8,c poked into 2nd nibble
 	   and it seems possible this should be causing int6's ? */
 	
-	static int dblaxle_interrupt(void)
+	public static InterruptPtr dblaxle_interrupt = new InterruptPtr() { public int handler() 
 	{
 		// Unsure how many int6's per frame, copy SCI for now
 		dblaxle_int6 = !dblaxle_int6;
@@ -651,14 +651,14 @@ public class taito_z
 			timer_set(TIME_IN_CYCLES(200000-500,0),0, taitoz_interrupt6);
 	
 		return 4;
-	}
+	} };
 	
-	static int dblaxle_cpub_interrupt(void)
+	public static InterruptPtr dblaxle_cpub_interrupt = new InterruptPtr() { public int handler() 
 	{
 		// Unsure how many int6's per frame
 		timer_set(TIME_IN_CYCLES(200000-500,0),0, taitoz_interrupt6);
 		return 4;
-	}
+	} };
 	
 	
 	/******************************************************************

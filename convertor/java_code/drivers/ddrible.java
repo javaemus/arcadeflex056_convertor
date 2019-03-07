@@ -34,19 +34,19 @@ public class ddrible
 	void ddrible_vh_screenrefresh( struct mame_bitmap *bitmap, int full_refresh );
 	
 	
-	static int ddrible_interrupt_0( void )
+	public static InterruptPtr ddrible_interrupt_0 = new InterruptPtr() { public int handler() 
 	{
 		if (ddrible_int_enable_0)
 			return M6809_INT_FIRQ;
 		return ignore_interrupt();
-	}
+	} };
 	
-	static int ddrible_interrupt_1( void )
+	public static InterruptPtr ddrible_interrupt_1 = new InterruptPtr() { public int handler() 
 	{
 		if (ddrible_int_enable_1)
 			return M6809_INT_FIRQ;
 		return ignore_interrupt();
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr ddrible_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)

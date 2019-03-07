@@ -90,7 +90,7 @@ public class tagteam
 	
 	
 	
-	static int tagteam_interrupt(void)
+	public static InterruptPtr tagteam_interrupt = new InterruptPtr() { public int handler() 
 	{
 		static int coin;
 		int port;
@@ -108,7 +108,7 @@ public class tagteam
 		else coin = 0;
 	
 	        return ignore_interrupt();
-	}
+	} };
 	
 	static InputPortPtr input_ports_tagteam = new InputPortPtr(){ public void handler() { 
 		PORT_START();       /* IN0 */

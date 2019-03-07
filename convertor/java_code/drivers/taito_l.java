@@ -252,7 +252,7 @@ public class taito_l
 	
 	
 	
-	static int vbl_interrupt(void)
+	public static InterruptPtr vbl_interrupt = new InterruptPtr() { public int handler() 
 	{
 		/* kludge to make plgirls boot */
 		if (cpunum_get_reg(0,Z80_IM) != 2) return ignore_interrupt();
@@ -267,7 +267,7 @@ public class taito_l
 			return irq_adr_table[2];
 	
 		return ignore_interrupt();
-	}
+	} };
 	
 	public static WriteHandlerPtr irq_adr_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

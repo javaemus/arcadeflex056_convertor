@@ -453,10 +453,10 @@ public class megasys1
 	
 	/* See stdragon, which is interrupt driven */
 	#define SOUND_INTERRUPT_NUM		8
-	static int sound_interrupt(void)
+	public static InterruptPtr sound_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 4;
-	}
+	} };
 	
 	
 	/***************************************************************************

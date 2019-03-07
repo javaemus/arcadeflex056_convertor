@@ -24,7 +24,7 @@ public class fastlane
 	int fastlane_vh_start(void);
 	void fastlane_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	static int fastlane_interrupt(void)
+	public static InterruptPtr fastlane_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (cpu_getiloops() == 0)
 		{
@@ -35,7 +35,7 @@ public class fastlane
 			if (K007121_ctrlram[0][0x07] & 0x01) return nmi_interrupt();
 		}
 		return ignore_interrupt();
-	}
+	} };
 	
 	public static WriteHandlerPtr k007121_registers_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

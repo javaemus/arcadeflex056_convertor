@@ -229,14 +229,14 @@ public class hexion
 	
 	
 	
-	static int hexion_interrupt(void)
+	public static InterruptPtr hexion_interrupt = new InterruptPtr() { public int handler() 
 	{
 		/* NMI handles start and coin inputs, origin unknown */
 		if (cpu_getiloops())
 			return nmi_interrupt();
 		else
 			return interrupt();
-	}
+	} };
 	
 	static MachineDriver machine_driver_hexion = new MachineDriver
 	(

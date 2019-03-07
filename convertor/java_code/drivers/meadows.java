@@ -283,7 +283,7 @@ public class meadows
 	/* Interrupt for the sound cpu                               */
 	/*                                                           */
 	/*************************************************************/
-	static int sound_interrupt(void)
+	public static InterruptPtr sound_interrupt = new InterruptPtr() { public int handler() 
 	{
 		static	int sense_state = 0;
 	
@@ -291,7 +291,7 @@ public class meadows
 		sense_state ^= 1;
 		cpu_set_irq_line( 1, 1, (sense_state) ? ASSERT_LINE : CLEAR_LINE );
 		return ignore_interrupt();
-	}
+	} };
 	
 	/*************************************************************/
 	/*                                                           */

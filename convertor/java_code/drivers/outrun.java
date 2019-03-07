@@ -194,10 +194,10 @@ public class outrun
 		}
 	}
 	
-	static int sys16_interrupt( void ){
+	public static InterruptPtr sys16_interrupt = new InterruptPtr() { public int handler() {
 		if(sys16_custom_irq) sys16_custom_irq();
 		return 4; /* Interrupt vector 4, used by VBlank */
-	}
+	} };
 	
 	public static IO_ReadPort sound_readport[]={
 		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
@@ -1049,11 +1049,11 @@ public class outrun
 	INPUT_PORTS_END(); }}; 
 	
 	/***************************************************************************/
-	static int or_interrupt( void ){
+	public static InterruptPtr or_interrupt = new InterruptPtr() { public int handler() {
 		int intleft=cpu_getiloops();
 		if(intleft!=0) return 2;
 		else return 4;
-	}
+	} };
 	
 	
 	#define MACHINE_DRIVER_OUTRUN( GAMENAME,INITMACHINE) \

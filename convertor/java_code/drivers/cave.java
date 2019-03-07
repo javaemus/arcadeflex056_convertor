@@ -69,20 +69,20 @@ public class cave
 	}
 	
 	/* Called once/frame to generate the VBLANK interrupt */
-	static int cave_interrupt(void)
+	public static InterruptPtr cave_interrupt = new InterruptPtr() { public int handler() 
 	{
 		vblank_irq = 1;
 		update_irq_state();
 		return ignore_interrupt();
-	}
+	} };
 	
-	static int mazinger_interrupt(void)
+	public static InterruptPtr mazinger_interrupt = new InterruptPtr() { public int handler() 
 	{
 		unknown_irq = 1;
 		return cave_interrupt();
-	}
+	} };
 	
-	static int metmqstr_interrupt(void)
+	public static InterruptPtr metmqstr_interrupt = new InterruptPtr() { public int handler() 
 	{
 		switch( cpu_getiloops() )
 		{
@@ -96,7 +96,7 @@ public class cave
 				update_irq_state();
 				return ignore_interrupt();
 		}
-	}
+	} };
 	
 	/* Called by the YMZ280B to set the IRQ state */
 	static void sound_irq_gen(int state)

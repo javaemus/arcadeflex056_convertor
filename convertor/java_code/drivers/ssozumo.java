@@ -26,7 +26,7 @@ public class ssozumo
 	void ssozumo_vh_stop(void);
 	
 	
-	static int ssozumo_interrupt(void)
+	public static InterruptPtr ssozumo_interrupt = new InterruptPtr() { public int handler() 
 	{
 		static int coin;
 	
@@ -41,7 +41,7 @@ public class ssozumo
 		else coin = 0;
 	
 		return interrupt();
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr ssozumo_sh_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)

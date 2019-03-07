@@ -492,12 +492,12 @@ public class ddragon
 		{ 15 }
 	};
 	
-	static int ddragon_interrupt(void)
+	public static InterruptPtr ddragon_interrupt = new InterruptPtr() { public int handler() 
 	{
 	    cpu_set_irq_line(0, 1, HOLD_LINE); /* hold the FIRQ line */
 	    cpu_set_nmi_line(0, PULSE_LINE); /* pulse the NMI line */
 	    return ignore_interrupt();
-	}
+	} };
 	
 	
 	

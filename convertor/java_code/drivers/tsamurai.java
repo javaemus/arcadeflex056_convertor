@@ -89,9 +89,9 @@ public class tsamurai
 		nmi_enabled = data;
 	} };
 	
-	static int samurai_interrupt( void ){
+	public static InterruptPtr samurai_interrupt = new InterruptPtr() { public int handler() {
 		return nmi_enabled?nmi_interrupt():ignore_interrupt();
-	}
+	} };
 	
 	public static ReadHandlerPtr unknown_d803_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -405,9 +405,9 @@ public class tsamurai
 		vsgongf_sound_nmi_enabled = data;
 	} };
 	
-	static int vsgongf_sound_interrupt( void ){
+	public static InterruptPtr vsgongf_sound_interrupt = new InterruptPtr() { public int handler() {
 		return vsgongf_sound_nmi_enabled ? nmi_interrupt() : ignore_interrupt();
-	}
+	} };
 	
 	public static ReadHandlerPtr vsgongf_a006_r  = new ReadHandlerPtr() { public int handler(int offset){
 		return 0x80; /* sound CPU busy? */

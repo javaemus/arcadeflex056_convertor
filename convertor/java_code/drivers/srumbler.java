@@ -56,7 +56,7 @@ public class srumbler
 		srumbler_bankswitch_w(0,0);
 	}
 	
-	static int srumbler_interrupt(void)
+	public static InterruptPtr srumbler_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (cpu_getiloops()==0)
 		{
@@ -66,7 +66,7 @@ public class srumbler
 		{
 			return M6809_INT_FIRQ;
 		}
-	}
+	} };
 	
 	
 	

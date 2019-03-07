@@ -38,9 +38,9 @@ public class system18
 	
 	/***************************************************************************/
 	
-	static int sys18_interrupt( void ){
+	public static InterruptPtr sys18_interrupt = new InterruptPtr() { public int handler() {
 		return 4; /* Interrupt vector 4: VBlank */
-	}
+	} };
 	
 	/***************************************************************************/
 	

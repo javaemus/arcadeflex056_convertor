@@ -97,7 +97,7 @@ public class gijoe
 		}
 	}
 	
-	static int gijoe_interrupt(void)
+	public static InterruptPtr gijoe_interrupt = new InterruptPtr() { public int handler() 
 	{
 		switch (cpu_getiloops())
 		{
@@ -109,7 +109,7 @@ public class gijoe
 				return 6;       /* ??? */
 		}
 		return ignore_interrupt();
-	}
+	} };
 	
 	
 	

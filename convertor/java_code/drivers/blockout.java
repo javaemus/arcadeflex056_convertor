@@ -29,13 +29,13 @@ public class blockout
 	void blockout_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
-	static int blockout_interrupt(void)
+	public static InterruptPtr blockout_interrupt = new InterruptPtr() { public int handler() 
 	{
 		/* interrupt 6 is vblank */
 		/* interrupt 5 reads coin inputs - might have to be triggered only */
 		/* when a coin is inserted */
 		return 6 - cpu_getiloops();
-	}
+	} };
 	
 	static WRITE16_HANDLER( blockout_sound_command_w )
 	{

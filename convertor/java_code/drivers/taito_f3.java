@@ -416,11 +416,11 @@ public class taito_f3
 	
 	/******************************************************************************/
 	
-	static int f3_interrupt(void)
+	public static InterruptPtr f3_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (cpu_getiloops()) return 3;
 		return 2;
-	}
+	} };
 	
 	static void f3_machine_reset(void)
 	{

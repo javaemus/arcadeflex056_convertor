@@ -127,7 +127,7 @@ public class jrpacman
 	}
 	
 	
-	static int jrpacman_interrupt(void)
+	public static InterruptPtr jrpacman_interrupt = new InterruptPtr() { public int handler() 
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -148,7 +148,7 @@ public class jrpacman
 		}
 	
 		return interrupt();
-	}
+	} };
 	
 	
 	

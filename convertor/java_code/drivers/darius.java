@@ -199,15 +199,15 @@ public class darius
 					INTERRUPTS
 	***********************************************************/
 	
-	static int darius_interrupt(void)
+	public static InterruptPtr darius_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 4;
-	}
+	} };
 	
-	static int darius_cpub_interrupt(void)
+	public static InterruptPtr darius_cpub_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 4;
-	}
+	} };
 	
 	
 	/**********************************************************

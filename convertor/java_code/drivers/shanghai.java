@@ -763,11 +763,11 @@ public class shanghai
 	}
 	
 	
-	static int shanghai_interrupt(void)
+	public static InterruptPtr shanghai_interrupt = new InterruptPtr() { public int handler() 
 	{
 		interrupt_vector_w(0,0x80);
 		return interrupt();
-	}
+	} };
 	
 	public static WriteHandlerPtr shanghai_coin_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

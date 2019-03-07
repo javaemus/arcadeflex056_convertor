@@ -257,7 +257,7 @@ public class cosmic
 	    #endif
 	} };
 	
-	static int panic_interrupt(void)
+	public static InterruptPtr panic_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (cpu_getiloops() != 0)
 		{
@@ -275,9 +275,9 @@ public class cosmic
 	    {
 	        return 0x00d7;		/* RST 10h */
 	    }
-	}
+	} };
 	
-	static int cosmica_interrupt(void)
+	public static InterruptPtr cosmica_interrupt = new InterruptPtr() { public int handler() 
 	{
 	    pixel_clock = (pixel_clock + 2) & 63;
 	
@@ -290,9 +290,9 @@ public class cosmic
 	    }
 		else
 	       	return ignore_interrupt();
-	}
+	} };
 	
-	static int cosmicg_interrupt(void)
+	public static InterruptPtr cosmicg_interrupt = new InterruptPtr() { public int handler() 
 	{
 		/* Increment Pixel Clock */
 	
@@ -325,9 +325,9 @@ public class cosmic
 		}
 	
 		return ignore_interrupt();
-	}
+	} };
 	
-	static int magspot2_interrupt(void)
+	public static InterruptPtr magspot2_interrupt = new InterruptPtr() { public int handler() 
 	{
 		/* Coin 1 causes an IRQ, Coin 2 an NMI */
 		if (input_port_4_r(0) & 0x01)
@@ -341,7 +341,7 @@ public class cosmic
 		}
 	
 		return ignore_interrupt();
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr cosmica_pixel_clock_r  = new ReadHandlerPtr() { public int handler(int offset)

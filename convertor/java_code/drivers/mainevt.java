@@ -38,11 +38,11 @@ public class mainevt
 	
 	
 	
-	static int mainevt_interrupt(void)
+	public static InterruptPtr mainevt_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (K052109_is_IRQ_enabled()) return M6809_INT_IRQ;
 		else return ignore_interrupt();
-	}
+	} };
 	
 	
 	static int nmi_enable;
@@ -52,11 +52,11 @@ public class mainevt
 		nmi_enable = data;
 	} };
 	
-	static int dv_interrupt(void)
+	public static InterruptPtr dv_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (nmi_enable) return M6809_INT_NMI;
 		else return ignore_interrupt();
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr mainevt_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)

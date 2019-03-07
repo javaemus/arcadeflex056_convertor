@@ -116,7 +116,7 @@ public class pinbo
 	
 	
 	
-	static int pinbo_interrupt(void)
+	public static InterruptPtr pinbo_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (cpu_getiloops() != 0)
 		{
@@ -126,7 +126,7 @@ public class pinbo
 			else return ignore_interrupt();
 		}
 		else return interrupt();	/* one IRQ per frame */
-	}
+	} };
 	
 	public static WriteHandlerPtr pinbo_sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

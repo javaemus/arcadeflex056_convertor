@@ -28,11 +28,11 @@ public class surpratk
 	static int videobank;
 	static unsigned char *ram;
 	
-	static int surpratk_interrupt(void)
+	public static InterruptPtr surpratk_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (K052109_is_IRQ_enabled()) return interrupt();
 		else return ignore_interrupt();
-	}
+	} };
 	
 	public static ReadHandlerPtr bankedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

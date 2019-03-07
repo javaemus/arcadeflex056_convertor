@@ -1347,12 +1347,12 @@ public class alpha68k
 		{ 100 }
 	};
 	
-	static int kyros_interrupt(void)
+	public static InterruptPtr kyros_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (cpu_getiloops() == 0)
 			return 1;
 		return 2;
-	}
+	} };
 	
 	/******************************************************************************/
 	

@@ -478,10 +478,10 @@ public class m90
 		{ 60 }
 	};
 	
-	static int m90_interrupt(void)
+	public static InterruptPtr m90_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 0x60/4;
-	}
+	} };
 	
 	
 	

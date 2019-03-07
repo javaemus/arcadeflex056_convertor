@@ -132,10 +132,10 @@ public class m79amb
 		memcpy(game_palette,palette,sizeof(palette));
 	}
 	
-	static int M79_interrupt(void)
+	public static InterruptPtr M79_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 0x00cf;  /* RST 08h */
-	}
+	} };
 	
 	static void init_m79amb(void)
 	{

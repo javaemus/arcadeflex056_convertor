@@ -437,15 +437,15 @@ public class m107
 	
 	/***************************************************************************/
 	
-	static int m107_interrupt(void)
+	public static InterruptPtr m107_interrupt = new InterruptPtr() { public int handler() 
 	{
 		m107_vblank=0;
 		m107_vh_raster_partial_refresh(Machine->scrbitmap,0,248);
 	
 		return m107_IRQ_0; /* VBL */
-	}
+	} };
 	
-	static int m107_raster_interrupt(void)
+	public static InterruptPtr m107_raster_interrupt = new InterruptPtr() { public int handler() 
 	{
 		static int last_line=0;
 		int line = 256 - cpu_getiloops();
@@ -485,7 +485,7 @@ public class m107
 			m107_vblank=0;
 	
 		return ignore_interrupt();
-	}
+	} };
 	
 	static MachineDriver machine_driver_firebarr = new MachineDriver
 	(

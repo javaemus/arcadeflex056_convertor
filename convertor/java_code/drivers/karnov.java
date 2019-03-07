@@ -648,7 +648,7 @@ public class karnov
 	
 	/******************************************************************************/
 	
-	static int karnov_interrupt(void)
+	public static InterruptPtr karnov_interrupt = new InterruptPtr() { public int handler() 
 	{
 		static int latch;
 	
@@ -661,7 +661,7 @@ public class karnov
 		}
 	
 		return 7;	/* VBL */
-	}
+	} };
 	
 	static void sound_irq(int linestate)
 	{

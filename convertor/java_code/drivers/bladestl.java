@@ -41,7 +41,7 @@ public class bladestl
 	void bladestl_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void bladestl_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
-	static int bladestl_interrupt( void )
+	public static InterruptPtr bladestl_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (cpu_getiloops() == 0){
 			if (K007342_is_INT_enabled())
@@ -51,7 +51,7 @@ public class bladestl
 			return nmi_interrupt();
 		}
 		return ignore_interrupt();
-	}
+	} };
 	
 	public static ReadHandlerPtr trackball_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

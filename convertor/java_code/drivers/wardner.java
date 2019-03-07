@@ -161,14 +161,14 @@ public class wardner
 	
 	
 	
-	static int wardner_interrupt(void)
+	public static InterruptPtr wardner_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (twincobr_intenable) {
 			twincobr_intenable = 0;
 			return interrupt();
 		}
 		else return ignore_interrupt();
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr CRTC_reg_sel_w = new WriteHandlerPtr() {public void handler(int offset, int data)

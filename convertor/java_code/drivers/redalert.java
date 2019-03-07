@@ -237,7 +237,7 @@ public class redalert
 	
 	
 	
-	static int redalert_interrupt(void)
+	public static InterruptPtr redalert_interrupt = new InterruptPtr() { public int handler() 
 	{
 		static int lastcoin = 0;
 		int newcoin;
@@ -260,7 +260,7 @@ public class redalert
 	
 		lastcoin = newcoin;
 		return interrupt();
-	}
+	} };
 	
 	static AY8910interface ay8910_interface = new AY8910interface
 	(

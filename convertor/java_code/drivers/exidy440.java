@@ -320,12 +320,12 @@ public class exidy440
 	}
 	
 	
-	static int main_interrupt(void)
+	public static InterruptPtr main_interrupt = new InterruptPtr() { public int handler() 
 	{
 		/* generate coin interrupts */
 		handle_coins();
 		return exidy440_vblank_interrupt();
-	}
+	} };
 	
 	
 	static void init_machine(void)

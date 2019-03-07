@@ -368,7 +368,7 @@ public class namcos86
 		int_enabled[1] = 1;
 	} };
 	
-	static int namco86_interrupt1(void)
+	public static InterruptPtr namco86_interrupt1 = new InterruptPtr() { public int handler() 
 	{
 		if (int_enabled[0])
 		{
@@ -377,9 +377,9 @@ public class namcos86
 		}
 	
 		return ignore_interrupt();
-	}
+	} };
 	
-	static int namco86_interrupt2(void)
+	public static InterruptPtr namco86_interrupt2 = new InterruptPtr() { public int handler() 
 	{
 		if (int_enabled[1])
 		{
@@ -388,7 +388,7 @@ public class namcos86
 		}
 	
 		return ignore_interrupt();
-	}
+	} };
 	
 	public static WriteHandlerPtr namcos86_coin_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

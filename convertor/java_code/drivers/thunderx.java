@@ -31,15 +31,15 @@ public class thunderx
 	
 	/***************************************************************************/
 	
-	static int scontra_interrupt( void )
+	public static InterruptPtr scontra_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (K052109_is_IRQ_enabled())
 			return KONAMI_INT_IRQ;
 		else
 			return ignore_interrupt();
-	}
+	} };
 	
-	static int thunderx_interrupt( void )
+	public static InterruptPtr thunderx_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (K052109_is_IRQ_enabled())
 		{
@@ -47,7 +47,7 @@ public class thunderx
 			else if (cpu_getiloops() & 1) return KONAMI_INT_FIRQ;	/* ??? */
 		}
 		return ignore_interrupt();
-	}
+	} };
 	
 	
 	static int palette_selected;

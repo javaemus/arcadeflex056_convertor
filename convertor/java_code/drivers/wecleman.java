@@ -1230,11 +1230,11 @@ public class wecleman
 	
 	
 	
-	static int wecleman_interrupt( void )
+	public static InterruptPtr wecleman_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (cpu_getiloops() == 0)	return 4;	/* once */
 		else						return 5;	/* to read input ports */
-	}
+	} };
 	
 	
 	static struct YM2151interface ym2151_interface =

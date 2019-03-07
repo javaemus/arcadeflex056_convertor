@@ -773,11 +773,11 @@ public class taito_f2
 		cpu_cause_interrupt(0,MC68000_IRQ_6);
 	}
 	
-	static int taitof2_interrupt(void)
+	public static InterruptPtr taitof2_interrupt = new InterruptPtr() { public int handler() 
 	{
 		timer_set(TIME_IN_CYCLES(500,0),0, taitof2_interrupt6);
 		return MC68000_IRQ_5;
-	}
+	} };
 	
 	
 	/****************************************************************

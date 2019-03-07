@@ -182,7 +182,7 @@ public class zn
 	MEMORY_END
 	
 	
-	static int qsound_interrupt( void )
+	public static InterruptPtr qsound_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if( queue_len == 2 )
 		{
@@ -197,7 +197,7 @@ public class zn
 			return nmi_interrupt();
 		}
 		return interrupt();
-	}
+	} };
 	
 	static void znqs_init_machine( void )
 	{

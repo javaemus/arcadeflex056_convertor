@@ -23,13 +23,13 @@ public class rockrage
 	void rockrage_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void rockrage_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
-	static int rockrage_interrupt( void )
+	public static InterruptPtr rockrage_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (K007342_is_INT_enabled())
 	        return HD6309_INT_IRQ;
 	    else
 			return ignore_interrupt();
-	}
+	} };
 	
 	public static WriteHandlerPtr rockrage_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

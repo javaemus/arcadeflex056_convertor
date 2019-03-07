@@ -24,7 +24,7 @@ public class ironhors
 	
 	
 	
-	static int ironhors_interrupt(void)
+	public static InterruptPtr ironhors_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (cpu_getiloops() == 0)
 		{
@@ -35,7 +35,7 @@ public class ironhors
 			if (*ironhors_interrupt_enable & 1) return nmi_interrupt();
 		}
 		return ignore_interrupt();
-	}
+	} };
 	
 	public static WriteHandlerPtr ironhors_sh_irqtrigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

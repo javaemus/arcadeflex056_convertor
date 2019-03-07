@@ -271,17 +271,17 @@ public class lastduel
 		{ irqhandler }
 	};
 	
-	static int lastduel_interrupt(void)
+	public static InterruptPtr lastduel_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (cpu_getiloops() == 0) return 2; /* VBL */
 		else return 4; /* Controls */
-	}
+	} };
 	
-	static int madgear_interrupt(void)
+	public static InterruptPtr madgear_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (cpu_getiloops() == 0) return 5; /* VBL */
 		else return 6; /* Controls */
-	}
+	} };
 	
 	static MachineDriver machine_driver_lastduel = new MachineDriver
 	(

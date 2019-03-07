@@ -25,7 +25,7 @@ public class chqflag
 	void chqflag_vh_stop( void );
 	void chqflag_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh );
 	
-	static int chqflag_interrupt( void )
+	public static InterruptPtr chqflag_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (cpu_getiloops() == 0){
 			if (K051960_is_IRQ_enabled()) return KONAMI_INT_IRQ;
@@ -34,7 +34,7 @@ public class chqflag
 			if (K051960_is_NMI_enabled()) return nmi_interrupt();
 		}
 		return ignore_interrupt();
-	}
+	} };
 	
 	public static WriteHandlerPtr chqflag_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

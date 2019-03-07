@@ -29,7 +29,7 @@ public class finalizr
 	
 	
 	
-	static int finalizr_interrupt(void)
+	public static InterruptPtr finalizr_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (cpu_getiloops() == 0)
 		{
@@ -40,7 +40,7 @@ public class finalizr
 			if (*finalizr_interrupt_enable & 1) return nmi_interrupt();
 		}
 		return ignore_interrupt();
-	}
+	} };
 	
 	public static WriteHandlerPtr finalizr_coin_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

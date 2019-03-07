@@ -90,15 +90,15 @@ public class opwolf
 	
 	//void opwolf_irq_handler(int irq);
 	
-	static int opwolf_interrupt(void)
+	public static InterruptPtr opwolf_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 5;  /* interrupt vector 5: others are RTE */
-	}
+	} };
 	
-	static int sub_z80_interrupt(void)
+	public static InterruptPtr sub_z80_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 1;  // ??
-	}
+	} };
 	
 	
 	/**********************************************************

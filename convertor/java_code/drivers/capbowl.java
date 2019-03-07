@@ -168,13 +168,13 @@ public class capbowl
 	 *
 	 *************************************/
 	
-	static int capbowl_interrupt(void)
+	public static InterruptPtr capbowl_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (readinputport(4) & 1)	/* get status of the F2 key */
 			return nmi_interrupt();	/* trigger self test */
 	
 		return ignore_interrupt();
-	}
+	} };
 	
 	
 	

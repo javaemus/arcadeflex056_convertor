@@ -325,11 +325,11 @@ public class xmen
 	
 	
 	
-	static int xmen_interrupt(void)
+	public static InterruptPtr xmen_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (cpu_getiloops() == 0) return m68_level5_irq();
 		else return m68_level3_irq();
-	}
+	} };
 	
 	static MachineDriver machine_driver_xmen = new MachineDriver
 	(

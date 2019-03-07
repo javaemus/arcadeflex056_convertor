@@ -32,7 +32,7 @@ public class mystston
 	
 	
 	
-	static int mystston_interrupt(void)
+	public static InterruptPtr mystston_interrupt = new InterruptPtr() { public int handler() 
 	{
 		static int coin;
 	
@@ -48,7 +48,7 @@ public class mystston
 		else coin = 0;
 	
 		return interrupt();
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr mystston_soundcontrol_w = new WriteHandlerPtr() {public void handler(int offset, int data)

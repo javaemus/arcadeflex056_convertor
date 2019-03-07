@@ -145,19 +145,19 @@ public class tmnt
 	
 	
 	
-	static int punkshot_interrupt(void)
+	public static InterruptPtr punkshot_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (K052109_is_IRQ_enabled()) return m68_level4_irq();
 		else return ignore_interrupt();
 	
-	}
+	} };
 	
-	static int lgtnfght_interrupt(void)
+	public static InterruptPtr lgtnfght_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (K052109_is_IRQ_enabled()) return m68_level5_irq();
 		else return ignore_interrupt();
 	
-	}
+	} };
 	
 	
 	

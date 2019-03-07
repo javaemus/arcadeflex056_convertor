@@ -168,15 +168,15 @@ public class twin16
 		soundlatch_w( 0, twin16_sound_command&0xff );
 	}
 	
-	static int CPUA_interrupt( void )
+	public static InterruptPtr CPUA_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return CPUA_IRQ_ENABLE?MC68000_IRQ_5:ignore_interrupt();
-	}
+	} };
 	
-	static int CPUB_interrupt( void )
+	public static InterruptPtr CPUB_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return CPUB_IRQ_ENABLE?MC68000_IRQ_5:ignore_interrupt();
-	}
+	} };
 	
 	static READ16_HANDLER( twin16_sprite_status_r )
 	{

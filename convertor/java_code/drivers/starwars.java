@@ -90,11 +90,11 @@ public class starwars
 	 *
 	 *************************************/
 	
-	static int generate_irq(void)
+	public static InterruptPtr generate_irq = new InterruptPtr() { public int handler() 
 	{
 		cpu_set_irq_line(0, M6809_IRQ_LINE, ASSERT_LINE);
 		return ignore_interrupt();
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr irq_ack_w = new WriteHandlerPtr() {public void handler(int offset, int data)

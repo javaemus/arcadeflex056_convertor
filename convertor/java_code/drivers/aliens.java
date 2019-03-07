@@ -30,11 +30,11 @@ public class aliens
 	static unsigned char *ram;
 	
 	
-	static int aliens_interrupt( void )
+	public static InterruptPtr aliens_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (K051960_is_IRQ_enabled()) return interrupt();
 		else return ignore_interrupt();
-	}
+	} };
 	
 	public static ReadHandlerPtr bankedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

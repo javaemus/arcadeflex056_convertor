@@ -277,10 +277,10 @@ public class system16
 	
 	/***************************************************************************/
 	
-	static int sys16_interrupt( void ){
+	public static InterruptPtr sys16_interrupt = new InterruptPtr() { public int handler() {
 		if(sys16_custom_irq) sys16_custom_irq();
 		return 4; /* Interrupt vector 4, used by VBlank */
-	}
+	} };
 	
 	/***************************************************************************/
 	
@@ -1241,11 +1241,11 @@ public class system16
 	INPUT_PORTS_END(); }}; 
 	
 	/***************************************************************************/
-	static int ap_interrupt( void ){
+	public static InterruptPtr ap_interrupt = new InterruptPtr() { public int handler() {
 		int intleft=cpu_getiloops();
 		if(intleft!=0) return 2;
 		else return 4;
-	}
+	} };
 	
 	static MachineDriver machine_driver_atomicp = new MachineDriver
 	(

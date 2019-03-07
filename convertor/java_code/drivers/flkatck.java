@@ -38,13 +38,13 @@ public class flkatck
 		K007232_bankswitch(0,RAM + bank_A,RAM + bank_B);
 	}
 	
-	static int flkatck_interrupt( void )
+	public static InterruptPtr flkatck_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (flkatck_irq_enabled)
 			return HD6309_INT_IRQ;
 		else
 			return ignore_interrupt();
-	}
+	} };
 	
 	public static WriteHandlerPtr flkatck_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

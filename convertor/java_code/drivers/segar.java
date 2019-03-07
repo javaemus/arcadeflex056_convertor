@@ -92,12 +92,12 @@ public class segar
 	  tie that event to a keypress.
 	
 	***************************************************************************/
-	static int segar_interrupt(void)
+	public static InterruptPtr segar_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (readinputport(5) & 1)       /* get status of the F2 key */
 			return nmi_interrupt(); /* trigger self test */
 		else return interrupt();
-	}
+	} };
 	
 	/***************************************************************************
 	

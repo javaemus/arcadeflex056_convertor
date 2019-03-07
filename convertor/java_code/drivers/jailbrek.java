@@ -34,21 +34,21 @@ public class jailbrek
 		flip_screen_set(data & 0x08);
 	} };
 	
-	static int jb_interrupt(void)
+	public static InterruptPtr jb_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (irq_enable)
 			return interrupt();
 		else
 			return ignore_interrupt();
-	}
+	} };
 	
-	static int jb_interrupt_nmi(void)
+	public static InterruptPtr jb_interrupt_nmi = new InterruptPtr() { public int handler() 
 	{
 		if (nmi_enable)
 			return nmi_interrupt();
 		else
 			return ignore_interrupt();
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr jailbrek_speech_r  = new ReadHandlerPtr() { public int handler(int offset) {

@@ -874,9 +874,9 @@ public class aburner
 		return 4; /* vblank */
 	}
 	
-	static int aburner_interrupt2( void ){
+	public static InterruptPtr aburner_interrupt2 = new InterruptPtr() { public int handler() {
 		return 4; /* Interrupt vector 4, used by VBlank */
-	}
+	} };
 	
 	static MachineDriver machine_driver_aburner = new MachineDriver
 	(

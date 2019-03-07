@@ -317,7 +317,7 @@ public class exprraid
 		{ irqhandler }
 	};
 	
-	static int exprraid_interrupt(void)
+	public static InterruptPtr exprraid_interrupt = new InterruptPtr() { public int handler() 
 	{
 		static int coin = 0;
 	
@@ -330,7 +330,7 @@ public class exprraid
 			coin = 0;
 	
 		return ignore_interrupt();
-	}
+	} };
 	
 	static MachineDriver machine_driver_exprraid = new MachineDriver
 	(

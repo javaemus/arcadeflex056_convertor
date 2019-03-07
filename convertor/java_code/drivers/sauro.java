@@ -265,11 +265,11 @@ public class sauro
 	};
 	
 	
-	static int sauron_interrupt(void)
+	public static InterruptPtr sauron_interrupt = new InterruptPtr() { public int handler() 
 	{
 		cpu_cause_interrupt(1,Z80_NMI_INT);
 		return -1000;	/* IRQ, why isn't there a constant defined? */
-	}
+	} };
 	
 	static struct YM3526interface ym3812_interface =
 	{

@@ -130,10 +130,10 @@ public class warriorb
 					INTERRUPTS
 	***********************************************************/
 	
-	static int warriorb_interrupt(void)
+	public static InterruptPtr warriorb_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 4;
-	}
+	} };
 	
 	
 	/***********************************************************

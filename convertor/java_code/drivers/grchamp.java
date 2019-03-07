@@ -374,7 +374,7 @@ public class grchamp
 	);
 	
 	
-	static int grchamp_interrupt( void )
+	public static InterruptPtr grchamp_interrupt = new InterruptPtr() { public int handler() 
 	{
 		int cpu = cpu_getactivecpu();
 	
@@ -385,7 +385,7 @@ public class grchamp
 		}
 	
 		return ignore_interrupt();
-	}
+	} };
 	
 	static struct MachineDriver machine_driver_grchamp =
 	{

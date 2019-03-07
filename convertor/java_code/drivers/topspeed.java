@@ -258,19 +258,19 @@ public class topspeed
 	}
 	
 	
-	static int topspeed_interrupt(void)
+	public static InterruptPtr topspeed_interrupt = new InterruptPtr() { public int handler() 
 	{
 		/* Unsure how many int6's per frame */
 		timer_set(TIME_IN_CYCLES(200000-500,0),0, topspeed_interrupt6);
 		return 5;
-	}
+	} };
 	
-	static int topspeed_cpub_interrupt(void)
+	public static InterruptPtr topspeed_cpub_interrupt = new InterruptPtr() { public int handler() 
 	{
 		/* Unsure how many int6's per frame */
 		timer_set(TIME_IN_CYCLES(200000-500,0),0, topspeed_cpub_interrupt6);
 		return 5;
-	}
+	} };
 	
 	
 	

@@ -198,10 +198,10 @@ public class ninjaw
 					INTERRUPTS
 	***********************************************************/
 	
-	static int ninjaw_interrupt(void)
+	public static InterruptPtr ninjaw_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 4;
-	}
+	} };
 	
 	
 	/*****************************************

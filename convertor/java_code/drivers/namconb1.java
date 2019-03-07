@@ -423,11 +423,11 @@ public class namconb1
 		{ 0x700000, 0x707fff, MWA32_RAM, &paletteram32 },
 	MEMORY_END
 	
-	static int namconb1_interrupt( void )
+	public static InterruptPtr namconb1_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if( namconb1_type == key_gunbulet ) return 5;
 		return 2;
-	}
+	} };
 	
 	static struct MachineDriver machine_driver_namconb1 =
 	{

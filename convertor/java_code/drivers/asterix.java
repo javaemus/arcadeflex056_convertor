@@ -99,13 +99,13 @@ public class asterix
 		}
 	}
 	
-	static int asterix_interrupt(void)
+	public static InterruptPtr asterix_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (K054157_is_IRQ_enabled())
 			return 5;       /* ??? All irqs have the same vector, and the
 	                           mask used is 0 or 7 */
 		return ignore_interrupt();
-	}
+	} };
 	
 	static READ16_HANDLER( asterix_sound_r )
 	{

@@ -136,14 +136,14 @@ public class system32
 		irq_init();
 	}
 	
-	static int system32_interrupt(void)
+	public static InterruptPtr system32_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if(cpu_getiloops())
 			irq_raise(1);
 		else
 			irq_raise(0);
 		return ignore_interrupt();
-	}
+	} };
 	
 	static InputPortPtr input_ports_ga2 = new InputPortPtr(){ public void handler() { 
 		PORT_START(); 

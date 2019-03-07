@@ -268,7 +268,7 @@ public class simpsons
 	//	{ nmi_callback }
 	};
 	
-	static int simpsons_irq(void)
+	public static InterruptPtr simpsons_irq = new InterruptPtr() { public int handler() 
 	{
 		if (cpu_getiloops() == 0)
 		{
@@ -282,7 +282,7 @@ public class simpsons
 		}
 	
 		return ignore_interrupt();
-	}
+	} };
 	
 	static MachineDriver machine_driver_simpsons = new MachineDriver
 	(

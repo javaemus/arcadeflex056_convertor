@@ -149,12 +149,12 @@ public class slapshot
 	}
 	
 	
-	static int slapshot_interrupt(void)
+	public static InterruptPtr slapshot_interrupt = new InterruptPtr() { public int handler() 
 	{
 		timer_set(TIME_IN_CYCLES(200000-500,0),0, slapshot_interrupt6);
 	
 		return 5;
-	}
+	} };
 	
 	
 	/**********************************************************

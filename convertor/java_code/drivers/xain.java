@@ -104,7 +104,7 @@ public class xain
 	//	logerror("write %02x to 68705\n",data);
 	} };
 	
-	static int xainA_interrupt(void)
+	public static InterruptPtr xainA_interrupt = new InterruptPtr() { public int handler() 
 	{
 		/* returning nmi on iloops() == 0 will cause lockups because the nmi handler */
 		/* waits for the vblank bit to be clear and there are other places in the code */
@@ -114,7 +114,7 @@ public class xain
 		else
 			cpu_set_irq_line(0,M6809_FIRQ_LINE,ASSERT_LINE);
 		return ignore_interrupt();
-	}
+	} };
 	
 	
 	

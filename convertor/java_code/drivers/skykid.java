@@ -29,13 +29,13 @@ public class skykid
 	static int irq_disabled = 1;
 	static int inputport_selected;
 	
-	static int skykid_interrupt( void )
+	public static InterruptPtr skykid_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (irq_disabled == 0)
 			return M6809_INT_IRQ;
 		else
 			return ignore_interrupt();
-	}
+	} };
 	
 	public static WriteHandlerPtr skykid_irq_ctrl_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

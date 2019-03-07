@@ -156,7 +156,7 @@ public class xexex
 		parse_control2();
 	}
 	
-	static int xexex_interrupt(void)
+	public static InterruptPtr xexex_interrupt = new InterruptPtr() { public int handler() 
 	{
 		switch (cpu_getiloops())
 		{
@@ -176,7 +176,7 @@ public class xexex
 				break;
 		}
 		return ignore_interrupt();
-	}
+	} };
 	
 	static WRITE16_HANDLER( sound_cmd1_w )
 	{

@@ -284,14 +284,14 @@ public class circus
 			memory_region(REGION_GFX2)[i] ^= 0xFF;
 	}
 	
-	static int ripcord_interrupt (void)
+	public static InterruptPtr ripcord_interrupt = new InterruptPtr() { public int handler() 
 	{
 		circus_interrupt = 0;
 		if (1)
 			return ignore_interrupt();
 		else
 			return interrupt();
-	}
+	} };
 	
 	static struct DACinterface dac_interface =
 	{

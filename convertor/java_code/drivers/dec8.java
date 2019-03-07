@@ -2020,7 +2020,7 @@ public class dec8
 	
 	/******************************************************************************/
 	
-	static int ghostb_interrupt(void)
+	public static InterruptPtr ghostb_interrupt = new InterruptPtr() { public int handler() 
 	{
 		static int latch[4];
 		int i8751_out=readinputport(4);
@@ -2039,18 +2039,18 @@ public class dec8
 		if (nmi_enable) return M6809_INT_NMI; /* VBL */
 	
 		return ignore_interrupt();
-	}
+	} };
 	
-	static int gondo_interrupt(void)
+	public static InterruptPtr gondo_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (nmi_enable)
 			return M6809_INT_NMI; /* VBL */
 	
 		return ignore_interrupt();
-	}
+	} };
 	
 	/* Coins generate NMI's */
-	static int oscar_interrupt(void)
+	public static InterruptPtr oscar_interrupt = new InterruptPtr() { public int handler() 
 	{
 		static int latch=1;
 	
@@ -2061,7 +2061,7 @@ public class dec8
 	    }
 	
 		return ignore_interrupt();
-	}
+	} };
 	
 	/******************************************************************************/
 	

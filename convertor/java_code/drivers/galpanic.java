@@ -67,12 +67,12 @@ public class galpanic
 	
 	
 	
-	static int galpanic_interrupt(void)
+	public static InterruptPtr galpanic_interrupt = new InterruptPtr() { public int handler() 
 	{
 		/* IRQ 3 drives the game, IRQ 5 updates the palette */
 		if (cpu_getiloops() != 0) return 5;
 		else return 3;
-	}
+	} };
 	
 	static WRITE16_HANDLER( galpanic_6295_bankswitch_w )
 	{

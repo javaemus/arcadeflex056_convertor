@@ -404,13 +404,13 @@ public class vendetta
 		{ 0 }
 	};
 	
-	static int vendetta_irq( void )
+	public static InterruptPtr vendetta_irq = new InterruptPtr() { public int handler() 
 	{
 		if (irq_enabled)
 			return KONAMI_INT_IRQ;
 		else
 			return ignore_interrupt();
-	}
+	} };
 	
 	static MachineDriver machine_driver_vendetta = new MachineDriver
 	(

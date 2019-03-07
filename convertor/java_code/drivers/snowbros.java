@@ -20,10 +20,10 @@ public class snowbros
 	
 	
 	
-	static int snowbros_interrupt(void)
+	public static InterruptPtr snowbros_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return cpu_getiloops() + 2;	/* IRQs 4, 3, and 2 */
-	}
+	} };
 	
 	
 	
