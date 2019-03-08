@@ -1067,12 +1067,12 @@ public class exidy440
 	 *
 	 *************************************/
 	
-	static struct CustomSound_interface custom_interface =
-	{
+	static CustomSound_interface custom_interface = new CustomSound_interface
+	(
 		exidy440_sh_start,
 		exidy440_sh_stop,
 		exidy440_sh_update
-	};
+	);
 	
 	
 	

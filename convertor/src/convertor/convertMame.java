@@ -50,6 +50,7 @@ public class convertMame {
     static final int VH_SCREENREFRESH = 22;
     static final int DRIVER_INIT = 23;
     static final int MACHINE_INIT = 24;
+    static final int CUSTOM_SOUND = 25;
 
     public static void Convert() {
         Convertor.inpos = 0;//position of pointer inside the buffers
@@ -257,7 +258,7 @@ public class convertMame {
                             type = MACHINE_INIT;
                             i3 = -1;
                             continue;
-                        } else if (Convertor.token[0].startsWith("init_") && !Convertor.token[0].contains("table")&& !Convertor.token[0].contains("machine")&& !Convertor.token[0].contains("palette")) {
+                        } else if (Convertor.token[0].startsWith("init_") && !Convertor.token[0].contains("table") && !Convertor.token[0].contains("machine") && !Convertor.token[0].contains("palette")) {
                             sUtil.putString((new StringBuilder()).append("public static InitDriverPtr ").append(Convertor.token[0]).append(" = new InitDriverPtr() { public void handler() ").toString());
                             type = DRIVER_INIT;
                             i3 = -1;
@@ -369,7 +370,7 @@ public class convertMame {
                                 i3 = -1;
                                 continue;
                             }
-                            if (Convertor.token[0].startsWith("init_") && !Convertor.token[0].contains("table")&& !Convertor.token[0].contains("machine")&& !Convertor.token[0].contains("palette")) {
+                            if (Convertor.token[0].startsWith("init_") && !Convertor.token[0].contains("table") && !Convertor.token[0].contains("machine") && !Convertor.token[0].contains("palette")) {
                                 sUtil.putString((new StringBuilder()).append("public static InitDriverPtr ").append(Convertor.token[0]).append(" = new InitDriverPtr() { public void handler() ").toString());
                                 type = DRIVER_INIT;
                                 i3 = -1;
@@ -622,6 +623,19 @@ public class convertMame {
                                 i3 = -1;
                                 continue;
                             }
+                        } else if (sUtil.getToken("CustomSound_interface")) {
+                            sUtil.skipSpace();
+                            Convertor.token[0] = sUtil.parseToken();
+                            sUtil.skipSpace();
+                            if (sUtil.parseChar() != '=') {
+                                Convertor.inpos = i;
+                            } else {
+                                sUtil.skipSpace();
+                                sUtil.putString("static CustomSound_interface " + Convertor.token[0] + " = new CustomSound_interface");
+                                type = CUSTOM_SOUND;
+                                i3 = -1;
+                                continue;
+                            }
                         }
                         Convertor.inpos = i;
                         break;
@@ -804,6 +818,15 @@ public class convertMame {
                             continue;
                         }
                     }
+                    if (type == CUSTOM_SOUND) {
+                        i3++;
+                        insideagk[i3] = 0;
+                        if (i3 == 0) {
+                            Convertor.outbuf[(Convertor.outpos++)] = '(';
+                            Convertor.inpos += 1;
+                            continue;
+                        }
+                    }
                     if (type == SN76496) {
                         i3++;
                         insideagk[i3] = 0;
@@ -891,6 +914,15 @@ public class convertMame {
                         }
                     }
                     if (type == AY8910) {
+                        i3--;
+                        if (i3 == -1) {
+                            Convertor.outbuf[(Convertor.outpos++)] = 41;
+                            Convertor.inpos += 1;
+                            type = -1;
+                            continue;
+                        }
+                    }
+                    if (type == CUSTOM_SOUND) {
                         i3--;
                         if (i3 == -1) {
                             Convertor.outbuf[(Convertor.outpos++)] = 41;

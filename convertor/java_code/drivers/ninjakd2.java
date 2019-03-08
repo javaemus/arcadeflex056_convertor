@@ -505,12 +505,12 @@ public class ninjakd2
 		25	/* volume */
 	};
 	
-	static struct CustomSound_interface custom_interface =
-	{
+	static CustomSound_interface custom_interface = new CustomSound_interface
+	(
 		ninjakd2_init_samples,
 		0,
 		0
-	};
+	);
 	
 	/* handler called by the 2203 emulator when the internal timers cause an IRQ */
 	static void irqhandler(int irq)

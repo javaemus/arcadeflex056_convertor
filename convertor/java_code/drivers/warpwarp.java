@@ -363,12 +363,12 @@ public class warpwarp
 		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct CustomSound_interface custom_interface =
-	{
+	static CustomSound_interface custom_interface = new CustomSound_interface
+	(
 		warpwarp_sh_start,
 		warpwarp_sh_stop,
 		warpwarp_sh_update
-	};
+	);
 	
 	
 	#define MACHINE(NAME)								\

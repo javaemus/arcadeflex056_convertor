@@ -367,12 +367,12 @@ public class victory
 	 *
 	 *************************************/
 	
-	static struct CustomSound_interface custom_interface =
-	{
+	static CustomSound_interface custom_interface = new CustomSound_interface
+	(
 	    victory_sh_start,
 	    0,
 		0
-	};
+	);
 	
 	
 	static struct TMS5220interface tms5220_interface =

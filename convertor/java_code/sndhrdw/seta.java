@@ -62,12 +62,12 @@ public class seta
 	
 	int seta_samples_bank;
 	
-	struct CustomSound_interface seta_sound_interface =
-	{
+	static CustomSound_interface seta_sound_interface = new CustomSound_interface
+	(
 		seta_sh_start,
 		0,
 		0,
-	};
+	);
 	
 	
 	

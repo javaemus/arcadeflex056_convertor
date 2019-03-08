@@ -424,12 +424,12 @@ public class bosco
 	};
 	
 	
-	static struct CustomSound_interface custom_interface =
-	{
+	static CustomSound_interface custom_interface = new CustomSound_interface
+	(
 		bosco_sh_start,
 		bosco_sh_stop,
 		0
-	};
+	);
 	
 	
 	static MachineDriver machine_driver_bosco = new MachineDriver

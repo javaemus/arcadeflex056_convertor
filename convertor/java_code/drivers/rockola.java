@@ -678,12 +678,12 @@ public class rockola
 	
 	
 	
-	static struct CustomSound_interface custom_interface =
-	{
+	static CustomSound_interface custom_interface = new CustomSound_interface
+	(
 		rockola_sh_start,
 		0,
 		rockola_sh_update
-	};
+	);
 	
 	static struct Samplesinterface vanguard_samples_interface =
 	{

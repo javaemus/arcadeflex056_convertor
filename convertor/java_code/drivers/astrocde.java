@@ -593,19 +593,19 @@ public class astrocde
 		{255}			/* Volume */
 	};
 	
-	static struct CustomSound_interface gorf_custom_interface =
-	{
+	static CustomSound_interface gorf_custom_interface = new CustomSound_interface
+	(
 		gorf_sh_start,
 		0,
 		gorf_sh_update
-	};
+	);
 	
-	static struct CustomSound_interface wow_custom_interface =
-	{
+	static CustomSound_interface wow_custom_interface = new CustomSound_interface
+	(
 		wow_sh_start,
 		0,
 		wow_sh_update
-	};
+	);
 	
 	
 	

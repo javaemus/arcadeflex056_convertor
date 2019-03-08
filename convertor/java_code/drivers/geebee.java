@@ -429,12 +429,12 @@ public class geebee
 		new GfxDecodeInfo(-1)							   /* end of array */
 	};
 	
-	static struct CustomSound_interface custom_interface =
-	{
+	static CustomSound_interface custom_interface = new CustomSound_interface
+	(
 		geebee_sh_start,
 		geebee_sh_stop,
 		geebee_sh_update
-	};
+	);
 	
 	static MachineDriver machine_driver_geebee = new MachineDriver
 	(

@@ -665,12 +665,12 @@ public class ninjaw
 		return 0;
 	}
 	
-	static struct CustomSound_interface subwoofer_interface =
-	{
+	static CustomSound_interface subwoofer_interface = new CustomSound_interface
+	(
 		subwoofer_sh_start,
 		0, /* none */
 		0 /* none */
-	};
+	);
 	
 	
 	/*************************************************************

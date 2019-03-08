@@ -1405,12 +1405,12 @@ public class tnzs
 		100					/* volume */
 	};
 	
-	static struct CustomSound_interface custom_interface =
-	{
+	static CustomSound_interface custom_interface = new CustomSound_interface
+	(
 		kageki_init_samples,
 		0,
 		0
-	};
+	);
 	
 	
 	static MachineDriver machine_driver_arknoid2 = new MachineDriver

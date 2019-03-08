@@ -809,11 +809,11 @@ public class exidy
 		targ_sample_names
 	};
 	
-	static struct CustomSound_interface targ_custom_interface =
-	{
+	static CustomSound_interface targ_custom_interface = new CustomSound_interface
+	(
 		targ_sh_start,
 		targ_sh_stop
-	};
+	);
 	
 	static struct DACinterface targ_DAC_interface =
 	{
@@ -827,10 +827,10 @@ public class exidy
 		{ 80 }
 	};
 	
-	static struct CustomSound_interface exidy_custom_interface =
-	{
+	static CustomSound_interface exidy_custom_interface = new CustomSound_interface
+	(
 		exidy_sh_start
-	};
+	);
 	
 	
 	

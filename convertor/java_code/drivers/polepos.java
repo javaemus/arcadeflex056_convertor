@@ -414,12 +414,12 @@ public class polepos
 		1				/* stereo */
 	};
 	
-	static struct CustomSound_interface custom_interface =
-	{
+	static CustomSound_interface custom_interface = new CustomSound_interface
+	(
 		polepos_sh_start,
 		polepos_sh_stop,
 		polepos_sh_update
-	};
+	);
 	
 	static const char *polepos_sample_names[] =
 	{

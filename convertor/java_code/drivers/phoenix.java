@@ -497,12 +497,12 @@ public class phoenix
 	    { 0.21 },       /* tune speed (time between beats) */
 	};
 	
-	static struct CustomSound_interface phoenix_custom_interface =
-	{
+	static CustomSound_interface phoenix_custom_interface = new CustomSound_interface
+	(
 		phoenix_sh_start,
 		phoenix_sh_stop,
 		phoenix_sh_update
-	};
+	);
 	
 	static struct TMS36XXinterface pleiads_tms36xx_interface =
 	{
@@ -519,12 +519,12 @@ public class phoenix
 		{ {0.33,0.33,0,0.33,0,0.33} }
 	};
 	
-	static struct CustomSound_interface pleiads_custom_interface =
-	{
+	static CustomSound_interface pleiads_custom_interface = new CustomSound_interface
+	(
 		pleiads_sh_start,
 		pleiads_sh_stop,
 		pleiads_sh_update
-	};
+	);
 	
 	static AY8910interface survival_ay8910_interface = new AY8910interface
 	(

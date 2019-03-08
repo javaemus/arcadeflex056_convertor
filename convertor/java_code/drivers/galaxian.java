@@ -2007,12 +2007,12 @@ public class galaxian
 	};
 	
 	
-	static struct CustomSound_interface custom_interface =
-	{
+	static CustomSound_interface custom_interface = new CustomSound_interface
+	(
 		galaxian_sh_start,
 		galaxian_sh_stop,
 		galaxian_sh_update
-	};
+	);
 	
 	static AY8910interface jumpbug_ay8910_interface = new AY8910interface
 	(

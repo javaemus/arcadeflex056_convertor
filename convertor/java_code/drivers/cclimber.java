@@ -432,12 +432,12 @@ public class cclimber
 		new WriteHandlerPtr[] { 0 }
 	);
 	
-	static struct CustomSound_interface custom_interface =
-	{
+	static CustomSound_interface custom_interface = new CustomSound_interface
+	(
 		cclimber_sh_start,
 		cclimber_sh_stop,
 		0
-	};
+	);
 	
 	
 	

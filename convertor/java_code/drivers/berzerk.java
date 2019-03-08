@@ -412,12 +412,12 @@ public class berzerk
 		berzerk_sample_names
 	};
 	
-	static struct CustomSound_interface custom_interface =
-	{
+	static CustomSound_interface custom_interface = new CustomSound_interface
+	(
 		berzerk_sh_start,
 		0,
 		berzerk_sh_update
-	};
+	);
 	
 	
 	

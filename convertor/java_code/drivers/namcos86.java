@@ -1200,12 +1200,12 @@ public class namcos86
 		40	/* volume */
 	};
 	
-	static struct CustomSound_interface custom_interface =
-	{
+	static CustomSound_interface custom_interface = new CustomSound_interface
+	(
 		rt_decode_sample,
 		0,
 		0
-	};
+	);
 	
 	
 	public static InitMachinePtr namco86_init_machine = new InitMachinePtr() { public void handler() ( void )

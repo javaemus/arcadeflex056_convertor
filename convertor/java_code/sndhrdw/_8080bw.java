@@ -672,12 +672,12 @@ public class _8080bw
 		{ 50 }
 	};
 	
-	struct CustomSound_interface schaser_custom_interface =
-	{
+	static CustomSound_interface schaser_custom_interface = new CustomSound_interface
+	(
 		schaser_sh_start,
 		schaser_sh_stop,
 		schaser_sh_update
-	};
+	);
 	
 	static INT16 backgroundwave[32] =
 	{

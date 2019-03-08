@@ -115,12 +115,12 @@ public class polyplay
 	
 	
 	/* Polyplay Sound Interface */
-	static struct CustomSound_interface custom_interface =
-	{
+	static CustomSound_interface custom_interface = new CustomSound_interface
+	(
 		polyplay_sh_start,
 		polyplay_sh_stop,
 		polyplay_sh_update
-	} };;
+	);
 	
 	
 	void polyplay_reset(void)

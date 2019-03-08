@@ -333,10 +333,10 @@ public class williams
 	****************************************************************************/
 	
 	/* Custom structure (all non-DCS variants) */
-	struct CustomSound_interface williams_custom_interface =
-	{
+	static CustomSound_interface williams_custom_interface = new CustomSound_interface
+	(
 		williams_custom_start,0,0
-	};
+	);
 	
 	/* YM2151 structure (CVSD variant) */
 	struct YM2151interface williams_cvsd_ym2151_interface =
@@ -394,10 +394,10 @@ public class williams
 	};
 	
 	/* Custom structure (DCS variant) */
-	struct CustomSound_interface williams_dcs_custom_interface =
-	{
+	static CustomSound_interface williams_dcs_custom_interface = new CustomSound_interface
+	(
 		dcs_custom_start,dcs_custom_stop,0
-	};
+	);
 	
 	
 	/***************************************************************************

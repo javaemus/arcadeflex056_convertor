@@ -309,12 +309,12 @@ public class wiping
 	
 	
 	
-	static struct CustomSound_interface custom_interface =
-	{
+	static CustomSound_interface custom_interface = new CustomSound_interface
+	(
 		wiping_sh_start,
 		wiping_sh_stop,
 		0
-	};
+	);
 	
 	
 	

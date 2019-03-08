@@ -138,12 +138,12 @@ public class cchasm
 		new WriteHandlerPtr[] { 0, 0 }
 	);
 	
-	static struct CustomSound_interface custom_interface =
-	{
+	static CustomSound_interface custom_interface = new CustomSound_interface
+	(
 		cchasm_sh_start,
 	    0,
 		cchasm_sh_update
-	};
+	);
 	
 	static Z80_DaisyChain daisy_chain[] =
 	{

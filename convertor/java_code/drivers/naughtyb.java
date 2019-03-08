@@ -241,19 +241,19 @@ public class naughtyb
 	
 	
 	
-	static struct CustomSound_interface naughtyb_custom_interface =
-	{
+	static CustomSound_interface naughtyb_custom_interface = new CustomSound_interface
+	(
 		naughtyb_sh_start,
 		pleiads_sh_stop,
 		pleiads_sh_update
-	};
+	);
 	
-	static struct CustomSound_interface popflame_custom_interface =
-	{
+	static CustomSound_interface popflame_custom_interface = new CustomSound_interface
+	(
 		popflame_sh_start,
 		pleiads_sh_stop,
 		pleiads_sh_update
-	};
+	);
 	
 	static struct TMS36XXinterface tms3615_interface =
 	{

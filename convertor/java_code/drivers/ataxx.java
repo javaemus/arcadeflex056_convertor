@@ -934,10 +934,10 @@ public class ataxx
 		{ 0 }
 	};
 	
-	static struct CustomSound_interface i186_custom_interface =
-	{
+	static CustomSound_interface i186_custom_interface = new CustomSound_interface
+	(
 	    leland_i186_sh_start
-	};
+	);
 	
 	
 	

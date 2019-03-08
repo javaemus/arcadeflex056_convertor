@@ -498,12 +498,12 @@ public class bzone
 		{ bzone_IN3_r },
 	};
 	
-	static struct CustomSound_interface bzone_custom_interface =
-	{
+	static CustomSound_interface bzone_custom_interface = new CustomSound_interface
+	(
 		bzone_sh_start,
 		bzone_sh_stop,
 		bzone_sh_update
-	};
+	);
 	
 	
 	static MachineDriver machine_driver_bzone = new MachineDriver
@@ -568,12 +568,12 @@ public class bzone
 	};
 	
 	
-	static struct CustomSound_interface redbaron_custom_interface =
-	{
+	static CustomSound_interface redbaron_custom_interface = new CustomSound_interface
+	(
 		redbaron_sh_start,
 		redbaron_sh_stop,
 		redbaron_sh_update
-	};
+	);
 	
 	static MachineDriver machine_driver_redbaron = new MachineDriver
 	(

@@ -433,12 +433,12 @@ public class meadows
 		{ 100 }
 	};
 	
-	static struct CustomSound_interface custom_interface =
-	{
+	static CustomSound_interface custom_interface = new CustomSound_interface
+	(
 		meadows_sh_start,
 		meadows_sh_stop,
 		0
-	};
+	);
 	
 	
 	

@@ -763,12 +763,12 @@ public class sega
 		spacfury_sample_names
 	};
 	
-	static struct CustomSound_interface sega_custom_interface =
-	{
+	static CustomSound_interface sega_custom_interface = new CustomSound_interface
+	(
 		sega_sh_start,
 		0,
 		sega_sh_update
-	};
+	);
 	
 	static MachineDriver machine_driver_spacfury = new MachineDriver
 	(
@@ -959,12 +959,12 @@ public class sega
 		tacscan_sample_names
 	};
 	
-	static struct CustomSound_interface tacscan_custom_interface =
-	{
+	static CustomSound_interface tacscan_custom_interface = new CustomSound_interface
+	(
 		tacscan_sh_start,
 		0,
 		tacscan_sh_update
-	};
+	);
 	
 	
 	

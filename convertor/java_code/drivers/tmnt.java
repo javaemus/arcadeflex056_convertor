@@ -2357,12 +2357,12 @@ public class tmnt
 		25	/* volume */
 	};
 	
-	static struct CustomSound_interface custom_interface =
-	{
+	static CustomSound_interface custom_interface = new CustomSound_interface
+	(
 		tmnt_decode_sample,
 		0,
 		0
-	};
+	);
 	
 	static struct K053260_interface k053260_interface_nmi =
 	{

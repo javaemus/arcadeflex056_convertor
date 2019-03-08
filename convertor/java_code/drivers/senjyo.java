@@ -553,12 +553,12 @@ public class senjyo
 		new int[] { 50, 50, 50 }
 	);
 	
-	static struct CustomSound_interface custom_interface =
-	{
+	static CustomSound_interface custom_interface = new CustomSound_interface
+	(
 		senjyo_sh_start,
 		senjyo_sh_stop,
 		senjyo_sh_update
-	};
+	);
 	
 	
 	

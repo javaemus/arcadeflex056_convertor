@@ -1128,12 +1128,12 @@ public class segar
 	};
 	
 	/* TODO: someday this will become a speech synthesis interface */
-	static struct CustomSound_interface astrob_custom_interface =
-	{
+	static CustomSound_interface astrob_custom_interface = new CustomSound_interface
+	(
 		astrob_speech_sh_start,
 		0,
 		astrob_speech_sh_update
-	};
+	);
 	
 	static MachineDriver machine_driver_astrob = new MachineDriver
 	(
