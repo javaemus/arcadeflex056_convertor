@@ -111,15 +111,15 @@ public class zaxxon
 	
 	
 	
-	void zaxxon_init_machine(void)
+	public static InitMachinePtr zaxxon_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		zaxxon_vid_type = 0;
-	}
+	} };
 	
-	void futspy_init_machine(void)
+	public static InitMachinePtr futspy_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		zaxxon_vid_type = 2;
-	}
+	} };
 	
 	public static WriteHandlerPtr zaxxon_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

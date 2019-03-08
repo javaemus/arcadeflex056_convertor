@@ -64,7 +64,7 @@ public class starwars
 	 *
 	 *************************************/
 	
-	static void init_machine(void)
+	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
 	{
 		/* ESB-specific */
 		if (is_esb)
@@ -80,7 +80,7 @@ public class starwars
 	
 		/* reset the mathbox */
 		swmathbox_reset();
-	}
+	} };
 	
 	
 	

@@ -193,7 +193,7 @@ public class qix
 	 *
 	 *************************************/
 	
-	void qix_init_machine(void)
+	public static InitMachinePtr qix_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		/* set a timer for the first scanline */
 		timer_set(cpu_getscanlinetime(0), 0, qix_scanline_callback);
@@ -207,10 +207,10 @@ public class qix
 		pia_config(4, PIA_STANDARD_ORDERING, &qix_pia_4_intf);
 		pia_config(5, PIA_STANDARD_ORDERING, &qix_pia_5_intf);
 		pia_reset();
-	}
+	} };
 	
 	
-	void qixmcu_init_machine(void)
+	public static InitMachinePtr qixmcu_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		/* set a timer for the first scanline */
 		timer_set(cpu_getscanlinetime(0), 0, qix_scanline_callback);
@@ -227,10 +227,10 @@ public class qix
 	
 		/* reset the coin counter register */
 		qix_coinctrl = 0x00;
-	}
+	} };
 	
 	
-	void slither_init_machine(void)
+	public static InitMachinePtr slither_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		/* set a timer for the first scanline */
 		timer_set(cpu_getscanlinetime(0), 0, qix_scanline_callback);
@@ -242,7 +242,7 @@ public class qix
 		pia_config(2, PIA_STANDARD_ORDERING, &slither_pia_2_intf);
 		pia_config(3, PIA_STANDARD_ORDERING, &slither_pia_3_intf);
 		pia_reset();
-	}
+	} };
 	
 	
 	

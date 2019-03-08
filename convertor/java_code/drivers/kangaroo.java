@@ -98,7 +98,7 @@ public class kangaroo
 	
 	
 	
-	static void kangaroo_init_machine(void)
+	static public static InitMachinePtr kangaroo_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		/* I think there is a bug in the startup checks of the game. At the very */
 		/* beginning, during the RAM check, it goes one byte too far, and ends up */
@@ -112,7 +112,7 @@ public class kangaroo
 		/* Anyway, what I do here is just immediately generate the NMI, so the game */
 		/* properly starts. */
 		cpu_cause_interrupt(0,Z80_NMI_INT);
-	}
+	} };
 	
 	
 	static UINT8 kangaroo_clock=0;

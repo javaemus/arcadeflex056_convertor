@@ -24,11 +24,11 @@ public class galaga
 	
 	
 	
-	void galaga_init_machine(void)
+	public static InitMachinePtr galaga_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		nmi_timer = 0;
 		galaga_halt_w (0, 0);
-	}
+	} };
 	
 	
 	

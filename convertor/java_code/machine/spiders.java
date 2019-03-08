@@ -82,7 +82,7 @@ public class spiders
 	
 	***************************************************************************/
 	
-	void spiders_init_machine(void)
+	public static InitMachinePtr spiders_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		pia_unconfig();
 		pia_config(0, PIA_STANDARD_ORDERING, &pia_0_intf);
@@ -90,7 +90,7 @@ public class spiders
 		pia_config(2, PIA_STANDARD_ORDERING, &pia_2_intf);
 		pia_config(3, PIA_STANDARD_ORDERING, &pia_3_intf);
 		pia_reset();
-	}
+	} };
 	
 	
 	

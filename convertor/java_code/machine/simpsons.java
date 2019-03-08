@@ -203,7 +203,7 @@ public class simpsons
 		cpu_setbank( 1, &RAM[offs] );
 	}
 	
-	void simpsons_init_machine( void )
+	public static InitMachinePtr simpsons_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -221,5 +221,5 @@ public class simpsons
 		cpu_setbank( 2, &RAM[0x10000] );
 	
 		simpsons_video_banking( 0 );
-	}
+	} };
 }

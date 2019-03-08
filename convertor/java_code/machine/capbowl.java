@@ -21,12 +21,12 @@ public class capbowl
 	static int GRMidByte  = 0;
 	static int GRLowByte = 0;
 	
-	void capbowl_init_machine(void)
+	public static InitMachinePtr capbowl_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		/* Initialize the ticket dispenser to 100 milliseconds */
 		/* (I'm not sure what the correct value really is) */
 		ticket_dispenser_init(100, TICKET_MOTOR_ACTIVE_HIGH, TICKET_STATUS_ACTIVE_LOW);
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr capbowl_rom_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)

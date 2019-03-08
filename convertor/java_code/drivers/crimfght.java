@@ -545,7 +545,7 @@ public class crimfght
 		cpu_setbank( 2, &RAM[offs] );
 	}
 	
-	static void crimfght_init_machine( void )
+	static public static InitMachinePtr crimfght_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -553,7 +553,7 @@ public class crimfght
 	
 		/* init the default bank */
 		cpu_setbank( 2, &RAM[0x10000] );
-	}
+	} };
 	
 	static public static InitDriverPtr init_crimfght = new InitDriverPtr() { public void handler() 
 	{

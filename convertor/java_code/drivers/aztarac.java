@@ -145,10 +145,10 @@ public class aztarac
 		return 0xc;
 	}
 	
-	static void aztarac_init_machine(void)
+	static public static InitMachinePtr aztarac_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		cpu_set_irq_callback(0, aztarac_irq_callback);
-	}
+	} };
 	
 	static MachineDriver machine_driver_aztarac = new MachineDriver
 	(

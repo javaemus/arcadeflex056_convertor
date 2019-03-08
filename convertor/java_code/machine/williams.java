@@ -301,7 +301,7 @@ public class williams
 	 *
 	 *************************************/
 	
-	void williams_init_machine(void)
+	public static InitMachinePtr williams_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		/* reset the PIAs */
 		pia_reset();
@@ -314,7 +314,7 @@ public class williams
 	
 		/* also set a timer to go off on scanline 240 */
 		timer_set(cpu_getscanlinetime(240), 0, williams_count240_callback);
-	}
+	} };
 	
 	
 	
@@ -482,7 +482,7 @@ public class williams
 	 *
 	 *************************************/
 	
-	void williams2_init_machine(void)
+	public static InitMachinePtr williams2_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		/* reset the PIAs */
 		pia_reset();
@@ -495,7 +495,7 @@ public class williams
 	
 		/* also set a timer to go off on scanline 254 */
 		timer_set(cpu_getscanlinetime(254), 0, williams2_endscreen_callback);
-	}
+	} };
 	
 	
 	
@@ -611,7 +611,7 @@ public class williams
 	 *
 	 *************************************/
 	
-	void defender_init_machine(void)
+	public static InitMachinePtr defender_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		/* standard init */
 		williams_init_machine();
@@ -619,7 +619,7 @@ public class williams
 		/* make sure the banking is reset to 0 */
 		defender_bank_select_w(0, 0);
 		cpu_setbank(1, williams_videoram);
-	}
+	} };
 	
 	
 	
@@ -879,7 +879,7 @@ public class williams
 	 *
 	 *************************************/
 	
-	void joust2_init_machine(void)
+	public static InitMachinePtr joust2_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		/* standard init */
 		williams2_init_machine();
@@ -887,7 +887,7 @@ public class williams
 		/* make sure sound board starts out in the reset state */
 		williams_cvsd_init(2, 3);
 		pia_reset();
-	}
+	} };
 	
 	
 	static void joust2_deferred_snd_cmd_w(int param)

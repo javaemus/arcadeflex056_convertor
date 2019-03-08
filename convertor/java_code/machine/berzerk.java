@@ -26,7 +26,7 @@ public class berzerk
 	
 	
 	
-	void berzerk_init_machine(void)
+	public static InitMachinePtr berzerk_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		int i;
 	
@@ -38,7 +38,7 @@ public class berzerk
 		nmi_enabled = 0;
 		berzerk_irq_end_of_screen = 0;
 		int_count = 0;
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr berzerk_irq_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)

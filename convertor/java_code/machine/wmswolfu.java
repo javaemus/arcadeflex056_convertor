@@ -494,11 +494,11 @@ public class wmswolfu
 	 *
 	 *************************************/
 	
-	void wms_wolfu_init_machine(void)
+	public static InitMachinePtr wms_wolfu_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		/* reset sound */
 		williams_dcs_init(1);
-	}
+	} };
 	
 	
 	

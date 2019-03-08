@@ -38,10 +38,10 @@ public class missile
 	
 	
 	/********************************************************************************************/
-	void missile_init_machine(void)
+	public static InitMachinePtr missile_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		h_pos = v_pos = 0;
-	}
+	} };
 	
 	
 	/********************************************************************************************/

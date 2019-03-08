@@ -29,10 +29,10 @@ public class mnight
 	
 	static int mnight_bank_latch = 255, main_cpu_num;
 	
-	void mnight_init_machine(void)
+	public static InitMachinePtr mnight_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		main_cpu_num = 0;
-	}
+	} };
 	
 	public static InterruptPtr mnight_interrupt = new InterruptPtr() { public int handler() 
 	{

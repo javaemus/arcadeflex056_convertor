@@ -436,7 +436,7 @@ public class gbusters
 		/* other bits unknown */
 	}
 	
-	static void gbusters_init_machine( void )
+	static public static InitMachinePtr gbusters_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -446,7 +446,7 @@ public class gbusters
 		memcpy(&RAM[0x18000], &RAM[0x10000], 0x08000 );
 	
 		paletteram = &RAM[0x30000];
-	}
+	} };
 	
 	
 	static public static InitDriverPtr init_gbusters = new InitDriverPtr() { public void handler() 

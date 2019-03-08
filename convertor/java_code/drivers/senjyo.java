@@ -101,14 +101,14 @@ public class senjyo
 	
 	static int int_delay_kludge;
 	
-	void senjyo_init_machine(void)
+	public static InitMachinePtr senjyo_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		/* we must avoid generating interrupts for the first few frames otherwise */
 		/* Senjyo locks up. There must be an interrupt enable port somewhere, */
 		/* or maybe interrupts are genenrated by the CTC. */
 		/* Maybe a write to port d002 clears the IRQ line, but I'm not sure. */
 		int_delay_kludge = 10;
-	}
+	} };
 	
 	public static InterruptPtr senjyo_interrupt = new InterruptPtr() { public int handler() 
 	{

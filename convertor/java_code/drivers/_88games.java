@@ -572,11 +572,11 @@ public class _88games
 		k88games_priority = lines & 0x80;
 	}
 	
-	static void k88games_init_machine( void )
+	static public static InitMachinePtr k88games_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		konami_cpu_setlines_callback = k88games_banking;
 		paletteram = &memory_region(REGION_CPU1)[0x20000];
-	}
+	} };
 	
 	
 	

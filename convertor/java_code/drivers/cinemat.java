@@ -201,11 +201,11 @@ public class cinemat
 	
 	
 	
-	void spacewar_init_machine (void)
+	public static InitMachinePtr spacewar_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		ccpu_Config (0, CCPU_MEMSIZE_4K, CCPU_MONITOR_BILEV);
 		cinemat_set_sound_handler (spacewar_sound_w);
-	}
+	} };
 	
 	static MachineDriver machine_driver_spacewar = new MachineDriver
 	(
@@ -302,11 +302,11 @@ public class cinemat
 	INPUT_PORTS_END(); }}; 
 	
 	
-	void barrier_init_machine (void)
+	public static InitMachinePtr barrier_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		ccpu_Config (1, CCPU_MEMSIZE_4K, CCPU_MONITOR_BILEV);
 		cinemat_set_sound_handler (0);
-	}
+	} };
 	
 	public static InitDriverPtr init_barrier = new InitDriverPtr() { public void handler() 
 	{
@@ -369,11 +369,11 @@ public class cinemat
 	
 	
 	
-	void starhawk_init_machine (void)
+	public static InitMachinePtr starhawk_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		ccpu_Config (1, CCPU_MEMSIZE_4K, CCPU_MONITOR_BILEV);
 		cinemat_set_sound_handler (0);
-	}
+	} };
 	
 	public static InitDriverPtr init_starhawk = new InitDriverPtr() { public void handler() 
 	{
@@ -439,11 +439,11 @@ public class cinemat
 	INPUT_PORTS_END(); }}; 
 	
 	
-	void starcas_init_machine (void)
+	public static InitMachinePtr starcas_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		ccpu_Config (1, CCPU_MEMSIZE_8K, CCPU_MONITOR_BILEV);
 		cinemat_set_sound_handler (starcas_sound_w);
-	}
+	} };
 	
 	public static InitDriverPtr init_starcas = new InitDriverPtr() { public void handler() 
 	{
@@ -510,11 +510,11 @@ public class cinemat
 	
 	
 	
-	void tailg_init_machine (void)
+	public static InitMachinePtr tailg_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		ccpu_Config (0, CCPU_MEMSIZE_8K, CCPU_MONITOR_BILEV);
 		cinemat_set_sound_handler (0);
-	}
+	} };
 	
 	public static InitDriverPtr init_tailg = new InitDriverPtr() { public void handler() 
 	{
@@ -578,11 +578,11 @@ public class cinemat
 	INPUT_PORTS_END(); }}; 
 	
 	
-	void ripoff_init_machine (void)
+	public static InitMachinePtr ripoff_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		ccpu_Config (1, CCPU_MEMSIZE_8K, CCPU_MONITOR_BILEV);
 		cinemat_set_sound_handler (ripoff_sound_w);
-	}
+	} };
 	
 	public static InitDriverPtr init_ripoff = new InitDriverPtr() { public void handler() 
 	{
@@ -696,13 +696,13 @@ public class cinemat
 	
 	
 	
-	void speedfrk_init_machine (void)
+	public static InitMachinePtr speedfrk_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		install_port_read16_handler(0, CCPU_PORT_IOINPUTS, CCPU_PORT_IOINPUTS+1, speedfrk_input_port_1_r );
 	
 		ccpu_Config (0, CCPU_MEMSIZE_8K, CCPU_MONITOR_BILEV);
 		cinemat_set_sound_handler (0);
-	}
+	} };
 	
 	public static InitDriverPtr init_speedfrk = new InitDriverPtr() { public void handler() 
 	{
@@ -771,11 +771,11 @@ public class cinemat
 	
 	
 	
-	void sundance_init_machine (void)
+	public static InitMachinePtr sundance_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		ccpu_Config (1, CCPU_MEMSIZE_8K, CCPU_MONITOR_16LEV);
 		cinemat_set_sound_handler (0);
-	}
+	} };
 	
 	public static InitDriverPtr init_sundance = new InitDriverPtr() { public void handler() 
 	{
@@ -843,11 +843,11 @@ public class cinemat
 	
 	
 	
-	void warrior_init_machine (void)
+	public static InitMachinePtr warrior_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		ccpu_Config (1, CCPU_MEMSIZE_8K, CCPU_MONITOR_BILEV);
 		cinemat_set_sound_handler (warrior_sound_w);
-	}
+	} };
 	
 	public static InitDriverPtr init_warrior = new InitDriverPtr() { public void handler() 
 	{
@@ -910,11 +910,11 @@ public class cinemat
 	
 	
 	
-	void armora_init_machine (void)
+	public static InitMachinePtr armora_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		ccpu_Config (1, CCPU_MEMSIZE_16K, CCPU_MONITOR_BILEV);
 		cinemat_set_sound_handler (0);
-	}
+	} };
 	
 	public static InitDriverPtr init_armora = new InitDriverPtr() { public void handler() 
 	{
@@ -980,11 +980,11 @@ public class cinemat
 	INPUT_PORTS_END(); }}; 
 	
 	
-	void solarq_init_machine (void)
+	public static InitMachinePtr solarq_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		ccpu_Config (1, CCPU_MEMSIZE_16K, CCPU_MONITOR_BILEV);
 		cinemat_set_sound_handler (solarq_sound_w);
-	}
+	} };
 	
 	public static InitDriverPtr init_solarq = new InitDriverPtr() { public void handler() 
 	{
@@ -1052,7 +1052,7 @@ public class cinemat
 	
 	
 	
-	void demon_init_machine (void)
+	public static InitMachinePtr demon_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		unsigned char *RAM = memory_region(REGION_CPU2);
 	
@@ -1070,7 +1070,7 @@ public class cinemat
 		RAM[0x0096]=0xc3;	/* jp $00fd */
 		RAM[0x0097]=0xfd;
 		RAM[0x0098]=0x00;
-	}
+	} };
 	
 	public static InitDriverPtr init_demon = new InitDriverPtr() { public void handler() 
 	{
@@ -1188,11 +1188,11 @@ public class cinemat
 	
 	
 	
-	void wotw_init_machine (void)
+	public static InitMachinePtr wotw_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		ccpu_Config (1, CCPU_MEMSIZE_16K, CCPU_MONITOR_WOWCOL);
 		cinemat_set_sound_handler (0);
-	}
+	} };
 	
 	public static InitDriverPtr init_wotw = new InitDriverPtr() { public void handler() 
 	{
@@ -1270,13 +1270,13 @@ public class cinemat
 			return ((input_port_4_r(0) & 0xf0) << 8)  + input_port_1_word_r(0,0);
 	}
 	
-	void boxingb_init_machine (void)
+	public static InitMachinePtr boxingb_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		install_port_read16_handler(0, CCPU_PORT_IOINPUTS, CCPU_PORT_IOINPUTS+1, boxingb_input_port_1_r );
 	
 		ccpu_Config (1, CCPU_MEMSIZE_32K, CCPU_MONITOR_WOWCOL);
 		cinemat_set_sound_handler (0);
-	}
+	} };
 	
 	public static InitDriverPtr init_boxingb = new InitDriverPtr() { public void handler() 
 	{

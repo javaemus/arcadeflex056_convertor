@@ -99,12 +99,12 @@ public class chinagat
 	
 	
 	
-	static void chinagat_init_machine( void )
+	static public static InitMachinePtr chinagat_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		technos_video_hw = 1;
 		sprite_irq = M6809_INT_IRQ;
 		sound_irq = Z80_NMI_INT;
-	}
+	} };
 	
 	public static WriteHandlerPtr chinagat_video_ctrl_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

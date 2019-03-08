@@ -86,10 +86,10 @@ public class starfire
 	}
 	
 	
-	static void init_machine(void)
+	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
 	{
 		timer_set(cpu_getscanlinetime(32 + SCANLINE_UPDATE_CHUNK - 1), 32, update_callback);
-	}
+	} };
 	
 	
 	

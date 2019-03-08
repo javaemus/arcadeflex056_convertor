@@ -28,7 +28,7 @@ public class namcos2
 	/* Perform basic machine initialisation 					 */
 	/*************************************************************/
 	
-	void namcos2_init_machine(void){
+	public static InitMachinePtr namcos2_init_machine = new InitMachinePtr() { public void handler() {
 		int loop;
 	
 		/* Initialise the bank select in the sound CPU */
@@ -55,7 +55,7 @@ public class namcos2
 	
 		/* Initialise the Roadway generator */
 	//	for(loop=0;loop<0x10;loop+=2) namcos2_68k_road_ctrl_w(loop,0);
-	}
+	} };
 	
 	/*************************************************************/
 	/* EEPROM Load/Save and read/write handling 				 */

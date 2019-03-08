@@ -175,7 +175,7 @@ public class jedi
 	} };
 	
 	
-	static void init_machine(void)
+	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
 	{
 		/* init globals */
 		control_num = 0;
@@ -188,7 +188,7 @@ public class jedi
 	
 		/* set a timer to run the interrupts */
 		timer_set(cpu_getscanlinetime(32), 32, generate_interrupt);
-	}
+	} };
 	
 	
 	

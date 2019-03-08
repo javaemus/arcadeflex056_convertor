@@ -223,7 +223,7 @@ public class bagman
 		columnvalue[line+1] = data&1;
 	} };
 	
-	void bagman_machine_init(void)
+	public static InitMachinePtr bagman_machine_init = new InitMachinePtr() { public void handler() 
 	{
 		bagman_pal16r6_w(0,1);
 		bagman_pal16r6_w(1,1);
@@ -234,7 +234,7 @@ public class bagman
 		bagman_pal16r6_w(6,1);
 		bagman_pal16r6_w(7,1);
 		update_pal();
-	}
+	} };
 	
 	public static ReadHandlerPtr bagman_pal16r6_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

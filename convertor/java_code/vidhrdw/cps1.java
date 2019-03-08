@@ -361,7 +361,7 @@ public class cps1
 	}
 	
 	
-	static void cps_init_machine(void)
+	static public static InitMachinePtr cps_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		const char *gamename = Machine->gamedrv->name;
 		struct CPS1config *pCFG=&cps1_config_table[0];
@@ -423,7 +423,7 @@ public class cps1
 			rom[0x61968/2] = 0x0400;
 		}
 	#endif
-	}
+	} };
 	
 	
 	INLINE int cps1_port(int offset)

@@ -151,11 +151,11 @@ public class seta2
 			tmp68301_timer[i] = timer_set(TIME_NEVER, i, tmp68301_timer_callback);
 	}
 	
-	void seta2_init_machine(void)
+	public static InitMachinePtr seta2_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		cpu_set_irq_callback(0, seta2_irq_callback);
 		tmp68301_init();
-	}
+	} };
 	
 	/* Update the IRQ state based on all possible causes */
 	static void update_irq_state(void)

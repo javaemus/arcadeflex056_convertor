@@ -25,7 +25,7 @@ public class system1
 	
 	
 	
-	static void system1_init_machine(void)
+	static public static InitMachinePtr system1_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		/* skip the long IC CHECK in Teddyboy Blues and Choplifter */
 		/* this is not a ROM patch, the game checks a RAM location */
@@ -34,9 +34,9 @@ public class system1
 	//	memory_region(REGION_CPU1)[0xefff] = 0x4b;
 	
 		system1_define_background_memory(system1_BACKGROUND_MEMORY_SINGLE);
-	}
+	} };
 	
-	static void wbml_init_machine(void)
+	static public static InitMachinePtr wbml_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		/* skip the long IC CHECK in Teddyboy Blues and Choplifter */
 		/* this is not a ROM patch, the game checks a RAM location */
@@ -45,7 +45,7 @@ public class system1
 	//	memory_region(REGION_CPU1)[0xefff] = 0x4b;
 	
 		system1_define_background_memory(system1_BACKGROUND_MEMORY_BANKED);
-	}
+	} };
 	
 	
 	

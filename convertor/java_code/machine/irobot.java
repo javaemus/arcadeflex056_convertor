@@ -203,7 +203,7 @@ public class irobot
 	    irscanline_timer = timer_set(cpu_getscanlinetime(scanline), scanline, scanline_callback);
 	}
 	
-	void irobot_init_machine(void)
+	public static InitMachinePtr irobot_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		UINT8 *MB = memory_region(REGION_CPU2);
 	
@@ -225,7 +225,7 @@ public class irobot
 		irobot_combase = comRAM[0];
 		irobot_combase_mb = comRAM[1];
 		irobot_outx = 0;
-	}
+	} };
 	
 	public static WriteHandlerPtr irobot_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

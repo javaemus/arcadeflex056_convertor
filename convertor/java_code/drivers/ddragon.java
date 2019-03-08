@@ -29,7 +29,7 @@ public class ddragon
 	static int adpcm_pos[2],adpcm_end[2],adpcm_idle[2];
 	/* end of private globals */
 	
-	static void ddragon_init_machine( void )
+	static public static InitMachinePtr ddragon_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		sprite_irq = HD63701_INT_NMI;
 		sound_irq = M6809_INT_IRQ;
@@ -37,9 +37,9 @@ public class ddragon
 		technos_video_hw = 0;
 		dd_sub_cpu_busy = 0x10;
 		adpcm_idle[0] = adpcm_idle[1] = 1;
-	}
+	} };
 	
-	static void ddragonb_init_machine( void )
+	static public static InitMachinePtr ddragonb_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		sprite_irq = M6809_INT_NMI;
 		sound_irq = M6809_INT_IRQ;
@@ -47,16 +47,16 @@ public class ddragon
 		technos_video_hw = 0;
 		dd_sub_cpu_busy = 0x10;
 		adpcm_idle[0] = adpcm_idle[1] = 1;
-	}
+	} };
 	
-	static void ddragon2_init_machine( void )
+	static public static InitMachinePtr ddragon2_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		sprite_irq = Z80_NMI_INT;
 		sound_irq = Z80_NMI_INT;
 		ym_irq = 0;
 		technos_video_hw = 2;
 		dd_sub_cpu_busy = 0x10;
-	}
+	} };
 	
 	public static WriteHandlerPtr ddragon_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

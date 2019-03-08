@@ -33,7 +33,7 @@ public class ohmygod
 	static int sndbank;
 	static int nosound_kludge_step;
 	
-	static void ohmygod_init_machine(void)
+	static public static InitMachinePtr ohmygod_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		unsigned char *rom = memory_region(REGION_SOUND1);
 	
@@ -45,7 +45,7 @@ public class ohmygod
 		memcpy(rom + 0x20000,rom + 0x40000 + 0x20000 * sndbank,0x20000);
 	
 		nosound_kludge_step = 0;
-	}
+	} };
 	
 	WRITE16_HANDLER( ohmygod_ctrl_w )
 	{

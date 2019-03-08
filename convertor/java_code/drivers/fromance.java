@@ -60,7 +60,7 @@ public class fromance
 	 *
 	 *************************************/
 	
-	static void fromance_init_machine(void)
+	static public static InitMachinePtr fromance_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		fromance_directionflag = 0;
 		fromance_commanddata = 0;
@@ -69,7 +69,7 @@ public class fromance
 		fromance_adpcm_reset = 0;
 		fromance_adpcm_data = 0;
 		fromance_vclk_left = 0;
-	}
+	} };
 	
 	
 	

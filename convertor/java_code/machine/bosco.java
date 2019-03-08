@@ -105,7 +105,7 @@ public class bosco
 	static void *nmi_timer_1, *nmi_timer_2;
 	
 	
-	void bosco_init_machine(void)
+	public static InitMachinePtr bosco_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		credits = 0;
 		HiScore = 20000;
@@ -114,7 +114,7 @@ public class bosco
 	
 		memory_region(REGION_CPU1)[0x8c00] = 1;
 		memory_region(REGION_CPU1)[0x8c01] = 1;
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr bosco_sharedram_r  = new ReadHandlerPtr() { public int handler(int offset)

@@ -152,10 +152,10 @@ public class rpunch
 	}
 	
 	
-	static void init_machine(void)
+	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
 	{
 		memcpy(memory_region(REGION_SOUND1), memory_region(REGION_SOUND1) + 0x20000, 0x20000);
-	}
+	} };
 	
 	
 	

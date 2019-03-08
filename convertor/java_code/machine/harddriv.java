@@ -142,7 +142,7 @@ public class harddriv
 	}
 	
 	
-	void harddriv_init_machine(void)
+	public static InitMachinePtr harddriv_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		int has_6502 = 0;
 		int i;
@@ -217,7 +217,7 @@ public class harddriv
 		adsp_xflag = 0;
 	
 		pedal_value = 0;
-	}
+	} };
 	
 	
 	

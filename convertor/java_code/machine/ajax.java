@@ -213,10 +213,10 @@ public class ajax
 	} };
 	
 	
-	void ajax_init_machine( void )
+	public static InitMachinePtr ajax_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		firq_enable = 1;
-	}
+	} };
 	
 	public static InterruptPtr ajax_interrupt = new InterruptPtr() { public int handler() 
 	{

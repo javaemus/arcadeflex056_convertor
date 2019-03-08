@@ -156,11 +156,11 @@ public class cclimber
 	} };
 	
 	
-	static void cclimber_init_machine (void)
+	static public static InitMachinePtr cclimber_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		/* Disable interrupts, River Patrol / Silver Land needs this */
 		cpu_interrupt_enable(0,0);
-	}
+	} };
 	
 	
 	

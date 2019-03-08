@@ -35,11 +35,11 @@ public class vball
 	static int adpcm_pos[2],adpcm_end[2],adpcm_idle[2];
 	/* end of private globals */
 	
-	static void vb_init_machine( void ) {
+	static public static InitMachinePtr vb_init_machine = new InitMachinePtr() { public void handler()  {
 		sound_irq = Z80_NMI_INT;
 		ym_irq = 0;//-1000;
 	
-	}
+	} };
 	
 	public static WriteHandlerPtr vb_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

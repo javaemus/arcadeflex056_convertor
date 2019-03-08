@@ -312,7 +312,7 @@ public class itech8
 	 *
 	 *************************************/
 	
-	static void init_machine(void)
+	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
 	{
 		/* make sure bank 0 is selected */
 		if ((Machine->drv->cpu[0].cpu_type & ~CPU_FLAGS_MASK) == CPU_M6809)
@@ -330,7 +330,7 @@ public class itech8
 	
 		/* reset the ticket dispenser */
 		ticket_dispenser_init(200, TICKET_MOTOR_ACTIVE_HIGH, TICKET_STATUS_ACTIVE_LOW);
-	}
+	} };
 	
 	
 	

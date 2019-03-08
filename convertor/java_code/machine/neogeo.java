@@ -34,7 +34,7 @@ public class neogeo
 	static 
 	
 	/* This function is called on every reset */
-	void neogeo_init_machine(void)
+	public static InitMachinePtr neogeo_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		data16_t src, res, *mem16= (data16_t *)memory_region(REGION_USER1);
 		time_t ltime;
@@ -76,7 +76,7 @@ public class neogeo
 		pd4990a.month = (today->tm_mon + 1);
 		pd4990a.year = (((today->tm_year%100)/10)<<4) + (today->tm_year%10);
 		pd4990a.weekday = today->tm_wday;
-	}
+	} };
 	
 	
 	/* This function is only called once per game. */

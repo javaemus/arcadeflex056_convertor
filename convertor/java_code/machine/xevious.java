@@ -46,7 +46,7 @@ public class xevious
 	/*  LDRU,LDR,LDU,LD ,LRU,LR ,LU , L ,DRU,DR ,DU , D ,RU , R , U ,NON  */
 	  {   5 , 5 , 5 , 5 , 7 , 6 , 7 , 6 , 3 , 3 , 4 , 4 , 1 , 2 , 0 , 8 };
 	
-	void xevious_init_machine(void)
+	public static InitMachinePtr xevious_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		rom2a = memory_region(REGION_GFX4);
 		rom2b = memory_region(REGION_GFX4)+0x1000;
@@ -55,7 +55,7 @@ public class xevious
 		nmi_timer = 0;
 	
 		xevious_halt_w (0, 0);
-	}
+	} };
 	
 	/* emulation for schematic 9B */
 	public static WriteHandlerPtr xevious_bs_w = new WriteHandlerPtr() {public void handler(int offset, int data)

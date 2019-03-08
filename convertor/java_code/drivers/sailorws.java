@@ -559,10 +559,10 @@ public class sailorws
 		z80ctc_init(&ctc_intf);
 	}
 	
-	static void sailorws_init_machine(void)
+	static public static InitMachinePtr sailorws_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		//
-	}
+	} };
 	
 	static void initialize_driver(void)
 	{

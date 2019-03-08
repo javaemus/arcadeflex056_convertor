@@ -26,13 +26,13 @@ public class digdug
 	
 	
 	
-	void digdig_init_machine(void)
+	public static InitMachinePtr digdig_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		credits = 0;
 		nmi_timer = 0;
 		interrupt_enable_1 = interrupt_enable_2 = interrupt_enable_3 = 0;
 		digdug_halt_w (0, 0);
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr digdug_sharedram_r  = new ReadHandlerPtr() { public int handler(int offset)

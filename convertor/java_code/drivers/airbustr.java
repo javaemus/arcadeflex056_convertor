@@ -211,13 +211,13 @@ public class airbustr
 	
 	
 	
-	static void airbustr_init_machine (void)
+	static public static InitMachinePtr airbustr_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		soundlatch_status = soundlatch2_status = 0;
 		bankswitch_w(0,2);
 		bankswitch2_w(0,2);
 		sound_bankswitch_w(0,2);
-	}
+	} };
 	
 	
 	/*

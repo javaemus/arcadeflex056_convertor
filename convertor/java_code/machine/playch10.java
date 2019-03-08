@@ -26,7 +26,7 @@ public class playch10
 	 *	Init machine
 	 *
 	 *************************************/
-	void pc10_init_machine( void )
+	public static InitMachinePtr pc10_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		/* initialize latches and flip-flops */
 		pc10_nmi_enable = pc10_dog_di = pc10_dispmask = pc10_sdcs = pc10_int_detect = 0;
@@ -46,7 +46,7 @@ public class playch10
 		ppu2c03b_reset( 0, /* cpu_getscanlineperiod() * */ 2 );
 	
 		ppu2c03b_set_mirroring( 0, mirroring );
-	}
+	} };
 	
 	/*************************************
 	 *

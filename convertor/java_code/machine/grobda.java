@@ -21,12 +21,12 @@ public class grobda
 	static int int_enable_1, int_enable_2;
 	static int credits, coincounter1, coincounter2;
 	
-	void grobda_init_machine( void )
+	public static InitMachinePtr grobda_init_machine = new InitMachinePtr() { public void handler() 
 	{
 	    int_enable_1 = int_enable_2 = 1;
 	    credits = coincounter1 = coincounter2 = 0;
 		cpu_set_halt_line(1, CLEAR_LINE);
-	}
+	} };
 	
 	/* memory handlers */
 	public static ReadHandlerPtr grobda_snd_sharedram_r  = new ReadHandlerPtr() { public int handler(int offset)

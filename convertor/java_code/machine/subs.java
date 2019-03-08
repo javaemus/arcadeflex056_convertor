@@ -23,13 +23,13 @@ public class subs
 	/***************************************************************************
 	subs_init_machine
 	***************************************************************************/
-	void subs_init_machine(void)
+	public static InitMachinePtr subs_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		subs_steering_buf1 = 0;
 		subs_steering_buf2 = 0;
 		subs_steering_val1 = 0x00;
 		subs_steering_val2 = 0x00;
-	}
+	} };
 	
 	/***************************************************************************
 	subs_interrupt

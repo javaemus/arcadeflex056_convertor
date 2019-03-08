@@ -194,7 +194,7 @@ public class atarisy1
 	}
 	
 	
-	static void init_machine(void)
+	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
 	{
 		/* initialize the system */
 		atarigen_eeprom_reset();
@@ -212,7 +212,7 @@ public class atarisy1
 		m6522_ddra = m6522_ddrb = 0xff;
 		m6522_dra = m6522_drb = 0xff;
 		memset(m6522_regs, 0xff, sizeof(m6522_regs));
-	}
+	} };
 	
 	
 	

@@ -823,7 +823,7 @@ public class aburner
 	
 	/***************************************************************************/
 	
-	static void aburner_init_machine( void ){ /* called after vh_start */
+	static public static InitMachinePtr aburner_init_machine = new InitMachinePtr() { public void handler() { /* called after vh_start */
 		sys16_textmode = 2;
 		sys16_spritesystem = sys16_sprite_aburner;
 		sys16_sprxoffset = -0xc0;
@@ -833,7 +833,7 @@ public class aburner
 		sys16_textlayer_lo_max=0;
 		sys16_textlayer_hi_min=0;
 		sys16_textlayer_hi_max=0xff;
-	}
+	} };
 	
 	static public static InitDriverPtr init_thndrbdj = new InitDriverPtr() { public void handler() {
 		sys16_onetime_init_machine();

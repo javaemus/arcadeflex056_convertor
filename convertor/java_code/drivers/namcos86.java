@@ -1208,14 +1208,14 @@ public class namcos86
 	};
 	
 	
-	static void namco86_init_machine( void )
+	static public static InitMachinePtr namco86_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		unsigned char *base = memory_region(REGION_CPU1) + 0x10000;
 	
 		cpu_setbank(1,base);
 	
 		int_enabled[0] = int_enabled[1] = 1;
-	}
+	} };
 	
 	
 	#define MACHINE_DRIVER(NAME,GFX)												\

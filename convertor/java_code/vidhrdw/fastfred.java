@@ -36,10 +36,10 @@ public class fastfred
 	static int color_bank[2];
 	static int canspritesflipx = 0;
 	
-	void jumpcoas_init_machine(void)
+	public static InitMachinePtr jumpcoas_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		canspritesflipx = 1;
-	}
+	} };
 	
 	/***************************************************************************
 	

@@ -24,7 +24,7 @@ public class namcond1
 	static UINT8 coin_state;
 	static UINT8 coin_count[4];
 	
-	void namcond1_init_machine(void)
+	public static InitMachinePtr namcond1_init_machine = new InitMachinePtr() { public void handler() 
 	{
 	#ifdef MAME_DEBUG
 	    /*unsigned char   *ROM = memory_region(REGION_CPU1);*/
@@ -49,7 +49,7 @@ public class namcond1
 	    coin_state = 0;
 	    coin_count[0] = coin_count[1] =
 	    coin_count[2] = coin_count[3] = 0;
-	}
+	} };
 	
 	public static InterruptPtr namcond1_vb_interrupt = new InterruptPtr() { public int handler() 
 	{

@@ -1068,7 +1068,7 @@ public class wmsyunit
 	 *
 	 *************************************/
 	
-	void wms_yunit_init_machine(void)
+	public static InitMachinePtr wms_yunit_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		/* reset sound */
 		switch (sound_type)
@@ -1088,7 +1088,7 @@ public class wmsyunit
 				williams_adpcm_init(1);
 				break;
 		}
-	}
+	} };
 	
 	
 	

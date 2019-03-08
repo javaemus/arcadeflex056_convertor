@@ -19,7 +19,7 @@ public class scramble
 	
 	
 	
-	void scramble_init_machine(void)
+	public static InitMachinePtr scramble_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		/* we must start with NMI interrupts disabled, otherwise some games */
 		/* (e.g. Lost Tomb, Rescue) will not pass the startup test. */
@@ -29,7 +29,7 @@ public class scramble
 		{
 			scramble_sh_init();
 		}
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr scrambls_input_port_2_r  = new ReadHandlerPtr() { public int handler(int offset)

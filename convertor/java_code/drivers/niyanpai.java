@@ -247,10 +247,10 @@ public class niyanpai
 		z80ctc_init(&ctc_intf);
 	}
 	
-	static void niyanpai_init_machine(void)
+	static public static InitMachinePtr niyanpai_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		//
-	}
+	} };
 	
 	static void initialize_driver(void)
 	{

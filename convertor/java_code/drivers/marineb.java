@@ -54,17 +54,17 @@ public class marineb
 	
 	
 	
-	static void marineb_init_machine(void)
+	static public static InitMachinePtr marineb_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		marineb_active_low_flipscreen = 0;
 		espial_init_machine();
-	}
+	} };
 	
-	static void springer_init_machine(void)
+	static public static InitMachinePtr springer_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		marineb_active_low_flipscreen = 1;
 		espial_init_machine();
-	}
+	} };
 	
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

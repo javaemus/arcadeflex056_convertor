@@ -78,13 +78,13 @@ public class nemesis
 	int irq4_on = 0;
 	
 	
-	void nemesis_init_machine(void)
+	public static InitMachinePtr nemesis_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		irq_on = 0;
 		irq1_on = 0;
 		irq2_on = 0;
 		irq4_on = 0;
-	}
+	} };
 	
 	
 	

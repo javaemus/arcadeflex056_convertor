@@ -137,12 +137,12 @@ public class dlair
 	};
 	
 	
-	void dlair_init_machine(void)
+	public static InitMachinePtr dlair_init_machine = new InitMachinePtr() { public void handler() 
 	{
 	   /* initialize the CTC */
 	   ctc_intf.baseclock[0] = Machine->drv->cpu[0].cpu_clock;
 	   z80ctc_init(&ctc_intf);
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress readmem[]={

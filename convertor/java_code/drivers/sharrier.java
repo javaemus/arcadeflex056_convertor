@@ -285,7 +285,7 @@ public class sharrier
 		sys16_bg_scrolly = sys16_textram[0x793] & 0x01ff;
 	}
 	
-	static void hangon_init_machine( void ){
+	static public static InitMachinePtr hangon_init_machine = new InitMachinePtr() { public void handler() {
 		sys16_textmode=1;
 		sys16_spritesystem = sys16_sprite_hangon;
 		sys16_sprxoffset = -0xc0;
@@ -316,7 +316,7 @@ public class sharrier
 		sys16_gr_colorflip[1][1]=0x04 / 2;
 		sys16_gr_colorflip[1][2]=0x02 / 2;
 		sys16_gr_colorflip[1][3]=0x02 / 2;
-	}
+	} };
 	
 	static public static InitDriverPtr init_hangon = new InitDriverPtr() { public void handler() {
 		sys16_onetime_init_machine();
@@ -484,7 +484,7 @@ public class sharrier
 		sys16_extraram[0x492/2] = sh_io_joy_r(0,0);
 	}
 	
-	static void harrier_init_machine( void ){
+	static public static InitMachinePtr harrier_init_machine = new InitMachinePtr() { public void handler() {
 		sys16_textmode=1;
 		sys16_spritesystem = sys16_sprite_sharrier;
 		sys16_sprxoffset = -0xc0;
@@ -524,7 +524,7 @@ public class sharrier
 		sys16_gr_colorflip[1][3]=0x00 / 2;
 	
 		sys16_sh_shadowpal=0;
-	}
+	} };
 	
 	static public static InitDriverPtr init_sharrier = new InitDriverPtr() { public void handler() 
 	{
@@ -761,7 +761,7 @@ public class sharrier
 		sys16_bg_page[2] = data&0xf;
 	}
 	
-	static void enduror_init_machine( void ){
+	static public static InitMachinePtr enduror_init_machine = new InitMachinePtr() { public void handler() {
 		sys16_textmode=1;
 		sys16_spritesystem = sys16_sprite_sharrier;
 		sys16_sprxoffset = -0xc0;
@@ -792,7 +792,7 @@ public class sharrier
 		sys16_gr_colorflip[1][3]=0x00 / 2;
 	
 		sys16_sh_shadowpal=0xff;
-	}
+	} };
 	
 	static void enduror_sprite_decode( void ){
 		data16_t *rom = (data16_t *)memory_region(REGION_CPU1);

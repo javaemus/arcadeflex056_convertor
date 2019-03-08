@@ -220,10 +220,10 @@ public class system18
 		}
 	}
 	
-	static void shdancer_init_machine( void ){
+	static public static InitMachinePtr shdancer_init_machine = new InitMachinePtr() { public void handler() {
 		sys16_spritelist_end=0x8000;
 		sys16_update_proc = shdancer_update_proc;
-	}
+	} };
 	
 	static public static InitDriverPtr init_shdancer = new InitDriverPtr() { public void handler() {
 		unsigned char *RAM = memory_region(REGION_CPU2);
@@ -313,12 +313,12 @@ public class system18
 	}
 	
 	
-	static void shdancbl_init_machine( void ){
+	static public static InitMachinePtr shdancbl_init_machine = new InitMachinePtr() { public void handler() {
 		sys16_spritelist_end=0x8000;
 		sys16_sprxoffset = -0xbc+0x77;
 	
 		sys16_update_proc = shdancbl_update_proc;
-	}
+	} };
 	
 	static public static InitDriverPtr init_shdancbl = new InitDriverPtr() { public void handler() {
 		unsigned char *RAM= memory_region(REGION_CPU2);
@@ -343,11 +343,11 @@ public class system18
 		return sys16_workingram[0xc000/2];
 	}
 	
-	static void shdancrj_init_machine( void ){
+	static public static InitMachinePtr shdancrj_init_machine = new InitMachinePtr() { public void handler() {
 		sys16_spritelist_end=0x8000;
 		sys16_patch_code(0x6821, 0xdf);
 		sys16_update_proc = shdancer_update_proc;
-	}
+	} };
 	
 	static public static InitDriverPtr init_shdancrj = new InitDriverPtr() { public void handler() {
 		unsigned char *RAM= memory_region(REGION_CPU2);
@@ -435,7 +435,7 @@ public class system18
 		}
 	}
 	
-	static void moonwalk_init_machine( void ){
+	static public static InitMachinePtr moonwalk_init_machine = new InitMachinePtr() { public void handler() {
 		sys16_bg_priority_value=0x1000;
 		sys16_sprxoffset = -0x238;
 		sys16_spritelist_end=0x8000;
@@ -480,7 +480,7 @@ public class system18
 		sys16_patch_code( 0x70213, 0x71);
 	
 		sys16_update_proc = moonwalk_update_proc;
-	}
+	} };
 	
 	static public static InitDriverPtr init_moonwalk = new InitDriverPtr() { public void handler() {
 		unsigned char *RAM= memory_region(REGION_CPU2);
@@ -585,7 +585,7 @@ public class system18
 		}
 	}
 	
-	static void astorm_init_machine( void ){
+	static public static InitMachinePtr astorm_init_machine = new InitMachinePtr() { public void handler() {
 		sys16_fgxoffset = sys16_bgxoffset = -9;
 	
 		sys16_patch_code( 0x2D6E, 0x32 );
@@ -649,7 +649,7 @@ public class system18
 		sys16_patch_code( 0x3f9b, 0x36 );
 	
 		sys16_update_proc = astorm_update_proc;
-	}
+	} };
 	
 	static public static InitDriverPtr init_astorm = new InitDriverPtr() { public void handler() {
 		unsigned char *RAM= memory_region(REGION_CPU2);

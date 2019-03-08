@@ -152,10 +152,10 @@ public class megasys1
 	
 	
 	
-	void megasys1_init_machine(void)
+	public static InitMachinePtr megasys1_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		ip_select = 0;	/* reset protection */
-	}
+	} };
 	
 	
 	

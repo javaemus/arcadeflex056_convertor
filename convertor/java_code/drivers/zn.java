@@ -199,7 +199,7 @@ public class zn
 		return interrupt();
 	} };
 	
-	static void znqs_init_machine( void )
+	static public static InitMachinePtr znqs_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		/* stop CPU1 as it doesn't do anything useful yet. */
 		timer_suspendcpu( 0, 1, SUSPEND_REASON_DISABLE );
@@ -223,7 +223,7 @@ public class zn
 		qcode_last = -1;
 		queue_len = 0;
 		qsound_banksw_w( 0, 0 );
-	}
+	} };
 	
 	static MachineDriver machine_driver_znqs = new MachineDriver
 	(
@@ -838,7 +838,7 @@ public class zn
 		{ 0xbfc00000, 0xbfc7ffff, MWA16_ROM },	/* bios */
 	MEMORY_END
 	
-	static void zn_init_machine( void )
+	static public static InitMachinePtr zn_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		cpu_setbank( 1, memory_region( REGION_CPU1 ) );
 		cpu_setbank( 2, memory_region( REGION_USER1 ) );
@@ -847,7 +847,7 @@ public class zn
 		memset( m_p_vram, 0x00, VRAM_SIZE );
 	
 		m_p_bridge_timer = NULL;
-	}
+	} };
 	
 	static MachineDriver machine_driver_zn = new MachineDriver
 	(

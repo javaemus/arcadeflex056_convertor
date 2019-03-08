@@ -50,14 +50,14 @@ public class yunsung8
 	
 	
 	
-	void yunsung8_init_machine( void )
+	public static InitMachinePtr yunsung8_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1) + 0x24000;
 	
 		yunsung8_videoram_0 = RAM + 0x0000;	// Ram is banked
 		yunsung8_videoram_1 = RAM + 0x2000;
 		yunsung8_videobank_w(0,0);
-	}
+	} };
 	
 	
 	/***************************************************************************

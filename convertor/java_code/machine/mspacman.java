@@ -185,7 +185,7 @@ public class mspacman
 	}
 	
 	
-	void mspacman_init_machine(void)
+	public static InitMachinePtr mspacman_init_machine = new InitMachinePtr() { public void handler() 
 	{
 	
 		unsigned char *RAM = memory_region(REGION_CPU1);
@@ -193,7 +193,7 @@ public class mspacman
 		cpu_setbank (1, &RAM[0x00000]);
 	
 		pacman_init_machine();
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr mspacman_activate_rom = new WriteHandlerPtr() {public void handler(int offset, int data)

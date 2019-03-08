@@ -27,10 +27,10 @@ public class arkanoid
 	
 	FILE *thelog;
 	
-	void arkanoid_init_machine(void)
+	public static InitMachinePtr arkanoid_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		portA_in = portA_out = z80write = m68705write = 0;
-	}
+	} };
 	
 	public static ReadHandlerPtr arkanoid_Z80_mcu_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

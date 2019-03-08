@@ -195,11 +195,11 @@ public class turbo
 	
 	*******************************************/
 	
-	void turbo_init_machine(void)
+	public static InitMachinePtr turbo_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		ppi8255_init(&intf);
 		segment_address = segment_increment = 0;
-	}
+	} };
 	
 	
 	/*******************************************

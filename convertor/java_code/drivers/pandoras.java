@@ -391,11 +391,11 @@ public class pandoras
 	
 	***************************************************************************/
 	
-	static void pandoras_init_machine( void )
+	static public static InitMachinePtr pandoras_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		firq_old_data_a = firq_old_data_b = 0;
 		irq_enable_a = irq_enable_b = 0;
-	}
+	} };
 	
 	public static ReadHandlerPtr pandoras_portA_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

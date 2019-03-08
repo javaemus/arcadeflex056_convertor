@@ -154,10 +154,10 @@ public class asteroid
 		set_led_status(offset,~data & 0x01);
 	} };
 	
-	void asteroid_init_machine(void)
+	public static InitMachinePtr asteroid_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		asteroid_bank_switch_w (0,0);
-	}
+	} };
 	
 	/*
 	 * This is Lunar Lander's Inputport 0.

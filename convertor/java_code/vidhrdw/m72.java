@@ -22,23 +22,23 @@ public class m72
 	
 	static int irqbase;
 	
-	void m72_init_machine(void)
+	public static InitMachinePtr m72_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		irqbase = 0x20;
 		m72_init_sound();
-	}
+	} };
 	
-	void xmultipl_init_machine(void)
+	public static InitMachinePtr xmultipl_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		irqbase = 0x08;
 		m72_init_sound();
-	}
+	} };
 	
-	void kengo_init_machine(void)
+	public static InitMachinePtr kengo_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		irqbase = 0x18;
 		m72_init_sound();
-	}
+	} };
 	
 	public static InterruptPtr m72_interrupt = new InterruptPtr() { public int handler() 
 	{

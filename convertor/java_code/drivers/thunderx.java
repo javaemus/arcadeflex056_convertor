@@ -921,14 +921,14 @@ public class thunderx
 		cpu_setbank( 1, &RAM[offs] );
 	}
 	
-	static void scontra_init_machine( void )
+	static public static InitMachinePtr scontra_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
 		paletteram = &RAM[0x30000];
-	}
+	} };
 	
-	static void thunderx_init_machine( void )
+	static public static InitMachinePtr thunderx_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -937,7 +937,7 @@ public class thunderx
 	
 		paletteram = &RAM[0x28000];
 		cdram = &RAM[0x28800];
-	}
+	} };
 	
 	static public static InitDriverPtr init_scontra = new InitDriverPtr() { public void handler() 
 	{

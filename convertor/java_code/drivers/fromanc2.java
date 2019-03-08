@@ -114,15 +114,15 @@ public class fromanc2
 	int fromanc2_portselect;
 	
 	
-	void fromanc2_init_machine(void)
+	public static InitMachinePtr fromanc2_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		//
-	}
+	} };
 	
-	void fromancr_init_machine(void)
+	public static InitMachinePtr fromancr_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		//
-	}
+	} };
 	
 	
 	public static InitDriverPtr init_fromanc2 = new InitDriverPtr() { public void handler() 

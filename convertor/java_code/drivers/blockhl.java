@@ -368,14 +368,14 @@ public class blockhl
 		if ((lines & 0x84) != 0x80) logerror("%04x: setlines %02x\n",cpu_get_pc(),lines);
 	}
 	
-	static void blockhl_init_machine( void )
+	static public static InitMachinePtr blockhl_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
 		konami_cpu_setlines_callback = blockhl_banking;
 	
 		paletteram = &RAM[0x18000];
-	}
+	} };
 	
 	
 	static public static InitDriverPtr init_blockhl = new InitDriverPtr() { public void handler() 

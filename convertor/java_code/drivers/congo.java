@@ -63,10 +63,10 @@ public class congo
 	
 	
 	
-	void congo_init_machine(void)
+	public static InitMachinePtr congo_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		zaxxon_vid_type = 1;
-	}
+	} };
 	
 	public static WriteHandlerPtr congo_daio_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

@@ -787,7 +787,7 @@ public class outrun
 		sys16_bg_scrollx = sys16_textram[0x74d];
 	}
 	
-	static void outrun_init_machine( void ){
+	static public static InitMachinePtr outrun_init_machine = new InitMachinePtr() { public void handler() {
 		static int bank[8] = {
 			7,0,1,2,
 			3,4,5,6
@@ -836,9 +836,9 @@ public class outrun
 		sys16_gr_colorflip[1][3]=0x00 / 2;
 	
 		sys16_gr_second_road = &sys16_extraram[0x8000];
-	}
+	} };
 	
-	static void outruna_init_machine( void ){
+	static public static InitMachinePtr outruna_init_machine = new InitMachinePtr() { public void handler() {
 		static int bank[8] = {
 			7,0,1,2,
 			3,4,5,6
@@ -886,7 +886,7 @@ public class outrun
 		sys16_gr_colorflip[1][3]=0x00 / 2;
 	
 		sys16_gr_second_road = &sys16_extraram[0x10000];
-	}
+	} };
 	
 	static public static InitDriverPtr init_outrun = new InitDriverPtr() { public void handler() 
 	{
@@ -1192,7 +1192,7 @@ public class outrun
 		sys16_bg_scrolly = sys16_textram[0x793] & 0x01ff;
 	}
 	
-	static void shangon_init_machine( void ){
+	static public static InitMachinePtr shangon_init_machine = new InitMachinePtr() { public void handler() {
 		sys16_textmode=1;
 		sys16_spritesystem = sys16_sprite_hangon;
 		sys16_sprxoffset = -0xc0;
@@ -1224,7 +1224,7 @@ public class outrun
 		sys16_gr_colorflip[1][1]=0x04 / 2;
 		sys16_gr_colorflip[1][2]=0x02 / 2;
 		sys16_gr_colorflip[1][3]=0x02 / 2;
-	}
+	} };
 	
 	static public static InitDriverPtr init_shangon = new InitDriverPtr() { public void handler() {
 		sys16_onetime_init_machine();

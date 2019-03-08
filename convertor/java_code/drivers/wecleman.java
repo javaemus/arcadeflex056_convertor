@@ -1250,11 +1250,11 @@ public class wecleman
 	
 	
 	
-	void wecleman_init_machine(void)
+	public static InitMachinePtr wecleman_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		K007232_bankswitch	(0, memory_region(REGION_SOUND1), /* the 2 channels use different ROMs */
 							    memory_region(REGION_SOUND2) );
-	}
+	} };
 	
 	
 	static MachineDriver machine_driver_wecleman = new MachineDriver
@@ -1321,7 +1321,7 @@ public class wecleman
 	
 	
 	
-	void hotchase_init_machine(void)		{						}
+	public static InitMachinePtr hotchase_init_machine = new InitMachinePtr() { public void handler() 		{						} };
 	public static InterruptPtr hotchase_interrupt = new InterruptPtr() { public int handler() 			{return 4;				} };
 	public static InterruptPtr hotchase_sound_interrupt = new InterruptPtr() { public int handler() 		{return M6809_INT_FIRQ;	} };
 	

@@ -52,7 +52,7 @@ public class mhavoc
 		cpu_setbank (2, &RAM[bank[data]]);
 	} };
 	
-	void mhavoc_init_machine (void)
+	public static InitMachinePtr mhavoc_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		/* Set all the banks to the right place */
 		mhavoc_ram_banksel_w (0,0);
@@ -68,7 +68,7 @@ public class mhavoc
 	//	if (gamma_timer)
 	//		timer_remove(gamma_timer);
 		gamma_timer = timer_pulse(TIME_IN_HZ(LS161_CLOCK/16), 0, mhavoc_gamma_irq);
-	}
+	} };
 	
 	/* Read from the gamma processor */
 	public static ReadHandlerPtr mhavoc_gamma_r  = new ReadHandlerPtr() { public int handler(int offset)

@@ -148,15 +148,15 @@ public class srmp2
 	} };
 	
 	
-	static void srmp2_init_machine(void)
+	static public static InitMachinePtr srmp2_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		srmp2_port_select = 0;
-	}
+	} };
 	
-	static void srmp3_init_machine(void)
+	static public static InitMachinePtr srmp3_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		srmp2_port_select = 0;
-	}
+	} };
 	
 	
 	/***************************************************************************

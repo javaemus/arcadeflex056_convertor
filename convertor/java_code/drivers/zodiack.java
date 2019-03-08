@@ -39,17 +39,17 @@ public class zodiack
 	
 	
 	
-	static void zodiack_init_machine(void)
+	static public static InitMachinePtr zodiack_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		percuss_hardware = 0;
 		espial_init_machine();
-	}
+	} };
 	
-	static void percuss_init_machine(void)
+	static public static InitMachinePtr percuss_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		percuss_hardware = 1;
 		espial_init_machine();
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress readmem[]={

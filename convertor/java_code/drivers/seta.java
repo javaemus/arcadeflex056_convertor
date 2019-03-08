@@ -3768,10 +3768,10 @@ public class seta
 		samples are bankswitched
 	*/
 	
-	void blandia_init_machine(void)
+	public static InitMachinePtr blandia_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		seta_samples_bank = -1;	// set the samples bank to an out of range value at start-up
-	}
+	} };
 	
 	static MachineDriver machine_driver_blandia = new MachineDriver
 	(

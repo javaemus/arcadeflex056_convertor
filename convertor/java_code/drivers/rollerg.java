@@ -376,12 +376,12 @@ public class rollerg
 		cpu_setbank(1,&RAM[offs]);
 	}
 	
-	static void rollerg_init_machine( void )
+	static public static InitMachinePtr rollerg_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		konami_cpu_setlines_callback = rollerg_banking;
 	
 		readzoomroms = 0;
-	}
+	} };
 	
 	static public static InitDriverPtr init_rollerg = new InitDriverPtr() { public void handler() 
 	{

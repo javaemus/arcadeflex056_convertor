@@ -73,11 +73,11 @@ public class deniam
 			OKIM6295_set_bank_base(0,(data & 0x01) ? 0x40000 : 0x00000);
 	}
 	
-	static void deniam_init_machine(void)
+	static public static InitMachinePtr deniam_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		/* logicpr2 does not reset the bank base on startup */
 		OKIM6295_set_bank_base(0,0x00000);
-	}
+	} };
 	
 	static WRITE16_HANDLER( YM3812_control_port_0_msb_w )
 	{

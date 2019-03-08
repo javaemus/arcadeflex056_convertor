@@ -320,14 +320,14 @@ public class exidy440
 	} };
 	
 	
-	static void init_machine(void)
+	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
 	{
 		exidy440_bank = 0;
 		cpu_setbank(1, &memory_region(REGION_CPU1)[0x10000]);
 	
 		last_coins = input_port_3_r(0) & 3;
 		coin_state = 3;
-	}
+	} };
 	
 	
 	

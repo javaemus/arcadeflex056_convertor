@@ -31,7 +31,7 @@ public class tail2nos
 	{
 		return rand()&0xffff;
 	} };
-	static void tail2nos_init_machine(void)
+	static public static InitMachinePtr tail2nos_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		/* point to the extra ROMs */
 		cpu_setbank(1,memory_region(REGION_USER1));
@@ -39,7 +39,7 @@ public class tail2nos
 	
 		/* initialize sound bank */
 		cpu_setbank(3,memory_region(REGION_CPU2) + 0x10000);
-	}
+	} };
 	
 	
 	static WRITE16_HANDLER( sound_command_w )

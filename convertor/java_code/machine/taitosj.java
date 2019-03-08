@@ -25,7 +25,7 @@ public class taitosj
 	
 	
 	
-	void taitosj_init_machine(void)
+	public static InitMachinePtr taitosj_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		/* set the default ROM bank (many games only have one bank and */
 		/* never write to the bank selector register) */
@@ -35,7 +35,7 @@ public class taitosj
 		zaccept = 1;
 		zready = 0;
 		cpu_set_irq_line(2,0,CLEAR_LINE);
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr taitosj_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)

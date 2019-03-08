@@ -77,14 +77,14 @@ public class thunderj
 	}
 	
 	
-	static void init_machine(void)
+	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
 	{
 		atarigen_eeprom_reset();
 		atarivc_reset(atarivc_eof_data);
 		atarigen_interrupt_reset(update_interrupts);
 		atarigen_scanline_timer_reset(thunderj_scanline_update, 1024);
 		atarijsa_reset();
-	}
+	} };
 	
 	
 	

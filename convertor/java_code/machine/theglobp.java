@@ -247,7 +247,7 @@ public class theglobp
 	} };
 	
 	
-	void theglobp_init_machine(void)
+	public static InitMachinePtr theglobp_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -264,5 +264,5 @@ public class theglobp
 		cpu_setbank (1, &RAM[0x18000]);
 	
 		pacman_init_machine();
-	}
+	} };
 }

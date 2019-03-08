@@ -1551,17 +1551,17 @@ public class cave
 	
 	***************************************************************************/
 	
-	void cave_init_machine(void)
+	public static InitMachinePtr cave_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		soundbuf.len = 0;
-	}
+	} };
 	
 	/* start with the watchdog armed */
-	void cave_init_machine_watchdog(void)
+	public static InitMachinePtr cave_init_machine_watchdog = new InitMachinePtr() { public void handler() 
 	{
 		cave_init_machine();
 		watchdog_reset16_w(0,0,0);
-	}
+	} };
 	
 	static struct YMZ280Binterface ymz280b_intf =
 	{

@@ -23,13 +23,13 @@ public class toypop
 	static int coinageA[8][2] = {{1,1},{2,1},{1,3},{3,1},{1,2},{2,3},{1,6},{3,2}};
 	static int coinageB[4][2] = {{1,1},{1,7},{1,5},{2,1}};
 	
-	void toypop_init_machine(void)
+	public static InitMachinePtr toypop_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		credits = coinsA = coinsB = 0;
 		interrupt_enable_mainCPU = 0;
 		interrupt_enable_sound = 0;
 		interrupt_enable_68k = 0;
-	}
+	} };
 	
 	public static ReadHandlerPtr toypop_sound_sharedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

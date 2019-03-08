@@ -42,7 +42,7 @@ public class nb1413m3
 	static int nb1413m3_outcoin_flag;
 	
 	
-	void nb1413m3_init_machine(void)
+	public static InitMachinePtr nb1413m3_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		nb1413m3_nmi_clock = 0;
 		nb1413m3_nmi_enable = 0;
@@ -56,7 +56,7 @@ public class nb1413m3
 		nb1413m3_gfxrombank = 0;
 		nb1413m3_inputport = 0xff;
 		nb1413m3_outcoin_flag = 1;
-	}
+	} };
 	
 	void nb1413m3_nmi_clock_w(int data)
 	{

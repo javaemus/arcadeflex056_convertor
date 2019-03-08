@@ -107,10 +107,10 @@ public class centiped
 	
 	static int powerup_counter;
 	
-	void centiped_init_machine(void)
+	public static InitMachinePtr centiped_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		powerup_counter = 10;
-	}
+	} };
 	
 	public static InterruptPtr centiped_interrupt = new InterruptPtr() { public int handler() 
 	{

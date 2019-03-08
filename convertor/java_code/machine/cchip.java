@@ -69,11 +69,11 @@ public class cchip
 		0x4e, 0x75                          /* RTS                    ( Return ) */
 	};
 	
-	void cchip1_init_machine(void)
+	public static InitMachinePtr cchip1_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		state_save_register_int  ("cchip1", 0, "current_bank", &current_bank);
 		state_save_register_UINT8("cchip1", 0, "cc_port",      &cc_port, 1);
-	}
+	} };
 	
 	WRITE16_HANDLER( cchip1_word_w )
 	{

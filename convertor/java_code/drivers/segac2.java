@@ -304,7 +304,7 @@ public class segac2
 	
 	******************************************************************************/
 	
-	static void init_machine(void)
+	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
 	{
 		/* set the first scanline 0 timer to go off */
 		timer_set(cpu_getscanlinetime(0) + cpu_getscanlineperiod() * (320. / 342.), 0, vdp_reload_counter);
@@ -316,7 +316,7 @@ public class segac2
 		/* reset the protection */
 		prot_write_buf = 0;
 		prot_read_buf = 0;
-	}
+	} };
 	
 	
 	

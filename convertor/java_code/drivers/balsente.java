@@ -294,7 +294,7 @@ public class balsente
 	}
 	
 	
-	static void init_machine(void)
+	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
 	{
 		/* create the polynomial tables */
 		poly17_init();
@@ -329,7 +329,7 @@ public class balsente
 	
 		/* start a timer to generate interrupts */
 		timer_set(cpu_getscanlinetime(0), 0, interrupt_timer);
-	}
+	} };
 	
 	
 	

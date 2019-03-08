@@ -25,11 +25,11 @@ public class superpac
 	static int crednum[] = { 1, 2, 3, 6, 7, 1, 3, 1 };
 	static int credden[] = { 1, 1, 1, 1, 1, 2, 2, 3 };
 	
-	void superpac_init_machine(void)
+	public static InitMachinePtr superpac_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		/* Reset all flags */
 		coin1 = coin2 = start1 = start2 = credits = 0;
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr superpac_sharedram_r  = new ReadHandlerPtr() { public int handler(int offset)

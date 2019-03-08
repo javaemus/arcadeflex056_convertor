@@ -76,7 +76,7 @@ public class relief
 	 *
 	 *************************************/
 	
-	static void init_machine(void)
+	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
 	{
 		atarigen_eeprom_reset();
 		atarivc_reset(atarivc_eof_data);
@@ -86,7 +86,7 @@ public class relief
 		ym2413_volume = 15;
 		overall_volume = 127;
 		adpcm_bank_base = 0;
-	}
+	} };
 	
 	
 	

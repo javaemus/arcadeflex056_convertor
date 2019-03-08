@@ -112,7 +112,7 @@ public class jrpacman
 					/* his usual speed. When we start the emulation, we check if the */
 					/* hack can be applied, and set this flag accordingly. */
 	
-	static void jrpacman_init_machine(void)
+	static public static InitMachinePtr jrpacman_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -121,7 +121,7 @@ public class jrpacman
 		if (RAM[0x180b] == 0xbe || RAM[0x180b] == 0x01)
 			speedcheat = 1;
 		else speedcheat = 0;
-	}
+	} };
 	
 	
 	public static InterruptPtr jrpacman_interrupt = new InterruptPtr() { public int handler() 

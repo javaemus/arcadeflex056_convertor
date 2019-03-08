@@ -74,12 +74,12 @@ public class espial
 	void espial_vh_convert_color_prom(unsigned char *obsolete,unsigned short *colortable,const unsigned char *color_prom);
 	
 	
-	void espial_init_machine(void)
+	public static InitMachinePtr espial_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		/* we must start with NMI interrupts disabled */
 		//interrupt_enable = 0;
 		cpu_interrupt_enable(0,0);
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr zodiac_master_interrupt_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)

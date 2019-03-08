@@ -222,7 +222,7 @@ public class ataxx
 	 *
 	 *************************************/
 	
-	static void init_machine(void)
+	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
 	{
 		/* set the odd data banks */
 		battery_ram = memory_region(REGION_USER2);
@@ -259,7 +259,7 @@ public class ataxx
 	
 		/* reset the I186 */
 		leland_i186_sound_init();
-	}
+	} };
 	
 	
 	

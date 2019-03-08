@@ -469,7 +469,7 @@ public class wmstunit
 	 *
 	 *************************************/
 	
-	void wms_tunit_init_machine(void)
+	public static InitMachinePtr wms_tunit_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		/* reset sound */
 		switch (sound_type)
@@ -483,7 +483,7 @@ public class wmstunit
 				williams_dcs_init(1);
 				break;
 		}
-	}
+	} };
 	
 	
 	

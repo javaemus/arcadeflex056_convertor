@@ -20,10 +20,10 @@ public class ddrible
 	unsigned char *ddrible_snd_sharedram;
 	
 	
-	void ddrible_init_machine( void )
+	public static InitMachinePtr ddrible_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		ddrible_int_enable_0 = ddrible_int_enable_1 = 0;
-	}
+	} };
 	
 	public static WriteHandlerPtr ddrible_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

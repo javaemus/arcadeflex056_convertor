@@ -64,7 +64,7 @@ public class crbaloon
 	
 	int val06,val08,val0a;
 	
-	static void crbaloon_machine_init(void)
+	static public static InitMachinePtr crbaloon_machine_init = new InitMachinePtr() { public void handler() 
 	{
 		/* MIXER A = 0, MIXER C = 1 */
 		SN76477_mixer_a_w(0, 0);
@@ -74,7 +74,7 @@ public class crbaloon
 	    /* fake: pulse the enable line to get rid of the constant noise */
 	    SN76477_enable_w(0, 1);
 	    SN76477_enable_w(0, 0);
-	}
+	} };
 	
 	public static WriteHandlerPtr crbaloon_06_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

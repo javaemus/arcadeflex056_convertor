@@ -165,13 +165,13 @@ public class gottlieb
 	
 	static UINT8 *audiobuffer_region;
 	
-	static void init_machine(void)
+	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
 	{
 		UINT8 *ram = memory_region(REGION_CPU1);
 		cpu_setbank(1, &ram[0x8000]);
 		cpu_setbank(2, &ram[0x0000]);
 		audiobuffer_region = memory_region(REGION_SOUND1);
-	}
+	} };
 	
 	
 	static int track[2];

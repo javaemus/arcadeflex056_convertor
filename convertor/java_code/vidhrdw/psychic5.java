@@ -45,10 +45,10 @@ public class psychic5
 		return 1;
 	}
 	
-	void psychic5_init_machine(void)
+	public static InitMachinePtr psychic5_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		bg_clip_mode = -10;
-	}
+	} };
 	
 	public static WriteHandlerPtr psychic5_vram_page_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

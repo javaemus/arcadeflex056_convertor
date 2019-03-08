@@ -29,7 +29,7 @@ public class slapfght
 	
 	/* Perform basic machine initialisation */
 	
-	void slapfight_init_machine(void)
+	public static InitMachinePtr slapfight_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		/* MAIN CPU */
 	
@@ -41,7 +41,7 @@ public class slapfght
 	
 		/* SOUND CPU */
 		cpu_set_reset_line(1,ASSERT_LINE);
-	}
+	} };
 	
 	/* Interrupt handlers cpu & sound */
 	

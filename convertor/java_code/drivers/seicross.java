@@ -73,11 +73,11 @@ public class seicross
 	
 	
 	
-	static void friskyt_init_machine(void)
+	static public static InitMachinePtr friskyt_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		/* start with the protection mcu halted */
 		cpu_set_halt_line(1, ASSERT_LINE);
-	}
+	} };
 	
 	
 	

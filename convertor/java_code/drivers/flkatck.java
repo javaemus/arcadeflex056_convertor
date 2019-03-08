@@ -26,7 +26,7 @@ public class flkatck
 	
 	/***************************************************************************/
 	
-	static void flkatck_init_machine( void )
+	static public static InitMachinePtr flkatck_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		unsigned char *RAM = memory_region(REGION_SOUND1);
 		int bank_A, bank_B;
@@ -34,7 +34,7 @@ public class flkatck
 		bank_A = 0x20000 * 0;
 		bank_B = 0x20000 * 1;
 		K007232_bankswitch(0,RAM + bank_A,RAM + bank_B);
-	}
+	} };
 	
 	public static InterruptPtr flkatck_interrupt = new InterruptPtr() { public int handler() 
 	{

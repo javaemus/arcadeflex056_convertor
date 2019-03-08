@@ -231,11 +231,11 @@ public class omegrace
 	}
 	
 	
-	static void omegrace_init_machine(void)
+	static public static InitMachinePtr omegrace_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		/* Omega Race expects the vector processor to be ready. */
 		avgdvg_reset_w (0, 0);
-	}
+	} };
 	
 	public static ReadHandlerPtr omegrace_vg_go_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

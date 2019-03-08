@@ -219,7 +219,7 @@ public class toaplan1
 		}
 	}
 	
-	void toaplan1_init_machine(void)
+	public static InitMachinePtr toaplan1_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		dsp_addr_w = dsp_execute = 0;
 		main_ram_seg = 0;
@@ -229,7 +229,7 @@ public class toaplan1
 		latch = 0;
 		toaplan1_coin_count = 0;
 		coin_lockout_global_w(0);
-	}
+	} };
 	
 	public static WriteHandlerPtr rallybik_coin_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

@@ -145,7 +145,7 @@ public class pacman
 						/* hack can be applied, and set this flag accordingly. */
 	
 	
-	void pacman_init_machine(void)
+	public static InitMachinePtr pacman_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -156,16 +156,16 @@ public class pacman
 			speedcheat = 1;
 		else
 			speedcheat = 0;
-	}
+	} };
 	
-	void mschamp_init_machine(void)
+	public static InitMachinePtr mschamp_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		data8_t *rom = memory_region(REGION_CPU1) + 0x10000;
 		int bankaddr = ((readinputport(3) & 1) * 0x8000);
 	
 		cpu_setbank(1,&rom[bankaddr]);
 		cpu_setbank(2,&rom[bankaddr+0x4000]);
-	}
+	} };
 	
 	public static InterruptPtr pacman_interrupt = new InterruptPtr() { public int handler() 
 	{

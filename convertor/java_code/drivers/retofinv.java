@@ -35,10 +35,10 @@ public class retofinv
 	
 	static unsigned char cpu2_m6000=0;
 	
-	static void retofinv_init_machine(void)
+	static public static InitMachinePtr retofinv_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		cpu2_m6000 = 0;
-	}
+	} };
 	
 	static unsigned char *sharedram;
 	

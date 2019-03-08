@@ -74,7 +74,7 @@ public class kaneko16
 	
 	***************************************************************************/
 	
-	void kaneko16_init_machine(void)
+	public static InitMachinePtr kaneko16_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		kaneko16_sprite_type  = 0;
 	
@@ -99,16 +99,16 @@ public class kaneko16
 		kaneko16_priority.sprite[1] = 0xfff0;	// above tile[0-1], below the others
 		kaneko16_priority.sprite[2] = 0xff00;	// above tile[0-2], below the others
 		kaneko16_priority.sprite[3] = 0x0000;	// above all
-	}
+	} };
 	
-	static void berlwall_init_machine(void)
+	static public static InitMachinePtr berlwall_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		kaneko16_init_machine();
 	
 		kaneko16_sprite_type = 2;	// like type 0, but using 16 instead of 8 bytes
-	}
+	} };
 	
-	static void blazeon_init_machine(void)
+	static public static InitMachinePtr blazeon_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		kaneko16_init_machine();
 	
@@ -128,18 +128,18 @@ public class kaneko16
 		kaneko16_priority.sprite[1] = 0xfff0;	// above tile[0-1], below the others
 		kaneko16_priority.sprite[2] = 0x0000;	// above all
 		kaneko16_priority.sprite[3] = 0x0000;	// ""
-	}
+	} };
 	
-	static void gtmr_init_machine(void)
+	static public static InitMachinePtr gtmr_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		kaneko16_init_machine();
 	
 		kaneko16_sprite_type = 1;
 	
 		memset(gtmr_mcu_com, 0, 4 * sizeof( data16_t) );
-	}
+	} };
 	
-	static void mgcrystl_init_machine (void)
+	static public static InitMachinePtr mgcrystl_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		kaneko16_init_machine();
 	/*
@@ -167,24 +167,24 @@ public class kaneko16
 		kaneko16_priority.sprite[1] = 0xfffc;	// above tile[0], below the others
 		kaneko16_priority.sprite[2] = 0x0000;	// above all
 		kaneko16_priority.sprite[3] = 0x0000;	// ""
-	}
+	} };
 	
-	static void sandscrp_init_machine(void)
+	static public static InitMachinePtr sandscrp_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		kaneko16_init_machine();
 	
 		kaneko16_sprite_type = 3;	// "different" sprites layout
 	
 		watchdog_reset16_r(0,0);	// start with an armed watchdog
-	}
+	} };
 	
-	static void shogwarr_init_machine(void)
+	static public static InitMachinePtr shogwarr_init_machine = new InitMachinePtr() { public void handler() 
 	{
 		kaneko16_init_machine();
 	
 		shogwarr_mcu_status = 0;
 		shogwarr_mcu_command_offset = 0;
-	}
+	} };
 	
 	
 	/***************************************************************************

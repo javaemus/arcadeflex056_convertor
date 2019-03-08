@@ -131,7 +131,7 @@ public class taito_l
 		}
 	}
 	
-	static void machine_init(void)
+	static public static InitMachinePtr machine_init = new InitMachinePtr() { public void handler() 
 	{
 		int i;
 	
@@ -161,7 +161,7 @@ public class taito_l
 			decodechar(Machine->gfx[2], i+512, taitol_rambanks + 0x4000,
 					   Machine->drv->gfxdecodeinfo[2].gfxlayout);
 		}
-	}
+	} };
 	
 	
 	static void fhawk_init(void)

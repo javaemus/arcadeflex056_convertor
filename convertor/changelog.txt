@@ -1,7 +1,8 @@
 08/03/2019
 ==========
 -Added InitDriverPtr support
--Improved InitDriverPtr not to mess with init_machine
+-Improved InitDriverPtr not to mess with init_machine\
+-MachineInitPtr support
 
 07/03/2019
 ==========
