@@ -461,7 +461,7 @@ public class arabian
 	 *
 	 *************************************/
 	
-	static public static InitDriverPtr init_arabian = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_arabian = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_write_handler(0, 0xd34b, 0xd34b, custom_flip_w);
 		install_mem_write_handler(0, 0xd400, 0xd401, custom_cocktail_w);

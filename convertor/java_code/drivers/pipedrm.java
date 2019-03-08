@@ -124,7 +124,7 @@ public class pipedrm
 	 *
 	 *************************************/
 	
-	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		UINT8 *ram;
 	
@@ -801,7 +801,7 @@ public class pipedrm
 	 *
 	 *************************************/
 	
-	static public static InitDriverPtr init_pipedrm = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_pipedrm = new InitDriverPtr() { public void handler() (void)
 	{
 		/* sprite RAM lives at the end of palette RAM */
 		spriteram = install_mem_read_handler(0, 0xcc00, 0xcfff, MRA_RAM);
@@ -810,7 +810,7 @@ public class pipedrm
 	} };
 	
 	
-	static public static InitDriverPtr init_hatris = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_hatris = new InitDriverPtr() { public void handler() (void)
 	{
 		install_port_write_handler(0, 0x20, 0x20, sound_command_nonmi_w);
 		install_port_write_handler(0, 0x21, 0x21, fromance_gfxreg_w);

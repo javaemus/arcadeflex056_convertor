@@ -542,11 +542,11 @@ public class harddriv
 	 *
 	 *************************************/
 	
-	static void init_draw_state(int param)
+	public static InitDriverPtr init_draw_state = new InitDriverPtr() { public void handler() (int param)
 	{
 		gfx_update_index = 0;
 		init_gfx_update(0);
-	}
+	} };
 	
 	
 	void harddriv_vh_eof(void)

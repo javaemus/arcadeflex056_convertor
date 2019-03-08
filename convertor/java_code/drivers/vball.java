@@ -35,7 +35,7 @@ public class vball
 	static int adpcm_pos[2],adpcm_end[2],adpcm_idle[2];
 	/* end of private globals */
 	
-	static public static InitMachinePtr vb_init_machine = new InitMachinePtr() { public void handler()  {
+	public static InitMachinePtr vb_init_machine = new InitMachinePtr() { public void handler() ( void ) {
 		sound_irq = Z80_NMI_INT;
 		ym_irq = 0;//-1000;
 	

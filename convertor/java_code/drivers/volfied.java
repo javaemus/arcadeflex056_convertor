@@ -226,7 +226,7 @@ public class volfied
 				     MACHINE DRIVERS
 	***********************************************************/
 	
-	static public static InitDriverPtr init_volfied = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_volfied = new InitDriverPtr() { public void handler() (void)
 	{
 		volfied_cchip_init();
 	} };

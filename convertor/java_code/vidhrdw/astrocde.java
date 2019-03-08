@@ -531,7 +531,7 @@ public class astrocde
 	} };
 	
 	
-	static public static InitDriverPtr init_star_field = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_star_field = new InitDriverPtr() { public void handler() (void)
 	{
 		int generator;
 		int count,x,y;

@@ -33,7 +33,7 @@ public class ohmygod
 	static int sndbank;
 	static int nosound_kludge_step;
 	
-	static public static InitMachinePtr ohmygod_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr ohmygod_init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		unsigned char *rom = memory_region(REGION_SOUND1);
 	
@@ -450,12 +450,12 @@ public class ohmygod
 	
 	
 	
-	static public static InitDriverPtr init_ohmygod = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_ohmygod = new InitDriverPtr() { public void handler() (void)
 	{
 		adpcm_bank_shift = 4;
 	} };
 	
-	static public static InitDriverPtr init_naname = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_naname = new InitDriverPtr() { public void handler() (void)
 	{
 		adpcm_bank_shift = 0;
 	} };

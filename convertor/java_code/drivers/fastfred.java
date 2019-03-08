@@ -670,12 +670,12 @@ public class fastfred
 	ROM_END(); }}; 
 	
 	
-	static public static InitDriverPtr init_fastfred = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_fastfred = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read_handler(0, 0xc800, 0xcfff, fastfred_custom_io_r);
 	} };
 	
-	static public static InitDriverPtr init_jumpcoas = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_jumpcoas = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read_handler(0, 0xc800, 0xcfff, jumpcoas_custom_io_r);
 	} };

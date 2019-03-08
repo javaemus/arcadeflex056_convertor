@@ -2329,21 +2329,21 @@ public class taitosj
 	
 	
 	
-	static public static InitDriverPtr init_alpine = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_alpine = new InitDriverPtr() { public void handler() (void)
 	{
 		/* install protection handlers */
 		install_mem_read_handler (0, 0xd40b, 0xd40b, alpine_port_2_r);
 		install_mem_write_handler(0, 0xd50f, 0xd50f, alpine_protection_w);
 	} };
 	
-	static public static InitDriverPtr init_alpinea = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_alpinea = new InitDriverPtr() { public void handler() (void)
 	{
 		/* install protection handlers */
 		install_mem_read_handler (0, 0xd40b, 0xd40b, alpine_port_2_r);
 		install_mem_write_handler(0, 0xd50e, 0xd50e, alpinea_bankswitch_w);
 	} };
 	
-	static public static InitDriverPtr init_junglhbr = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_junglhbr = new InitDriverPtr() { public void handler() (void)
 	{
 		/* inverter on bits 0 and 1 */
 		install_mem_write_handler (0, 0x9000, 0xbfff, junglhbr_characterram_w);

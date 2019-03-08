@@ -667,7 +667,7 @@ public class opwolf
 	ROM_END(); }}; 
 	
 	
-	static public static InitDriverPtr init_opwolf = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_opwolf = new InitDriverPtr() { public void handler() (void)
 	{
 		opwolf_gun_xoffs = 0;
 		opwolf_gun_yoffs = 0;
@@ -679,7 +679,7 @@ public class opwolf
 		state_save_register_func_postload(reset_sound_region);
 	} };
 	
-	static public static InitDriverPtr init_opwolfb = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_opwolfb = new InitDriverPtr() { public void handler() (void)
 	{
 		/* bootleg needs different range of raw gun coords */
 		opwolf_gun_xoffs = -2;

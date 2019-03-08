@@ -881,13 +881,13 @@ public class combatsc
 	
 	
 	
-	static public static InitDriverPtr init_combasc = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_combasc = new InitDriverPtr() { public void handler() ( void )
 	{
 		/* joystick instead of trackball */
 		install_mem_read_handler(0,0x0404,0x0404,input_port_4_r);
 	} };
 	
-	static public static InitDriverPtr init_combascb = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_combascb = new InitDriverPtr() { public void handler() ( void )
 	{
 		unsigned char *gfx;
 		int i;

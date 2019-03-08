@@ -485,7 +485,7 @@ public class toypop
 	 *
 	 *************************************/
 	
-	static public static InitDriverPtr init_liblrabl = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_liblrabl = new InitDriverPtr() { public void handler() (void)
 	{
 		/* install the custom I/O chip */
 		install_mem_read_handler(0, 0x6800, 0x683f, liblrabl_customio_r);
@@ -498,7 +498,7 @@ public class toypop
 	} };
 	
 	
-	static public static InitDriverPtr init_toypop = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_toypop = new InitDriverPtr() { public void handler() (void)
 	{
 		/* install the custom I/O chip */
 		install_mem_read_handler(0, 0x6000, 0x603f, toypop_customio_r);

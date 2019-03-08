@@ -135,7 +135,7 @@ public class m79amb
 		return 0x00cf;  /* RST 08h */
 	} };
 	
-	static public static InitDriverPtr init_m79amb = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_m79amb = new InitDriverPtr() { public void handler() (void)
 	{
 		unsigned char *rom = memory_region(REGION_CPU1);
 		int i;

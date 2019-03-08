@@ -165,7 +165,7 @@ public class gottlieb
 	
 	static UINT8 *audiobuffer_region;
 	
-	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		UINT8 *ram = memory_region(REGION_CPU1);
 		cpu_setbank(1, &ram[0x8000]);
@@ -1872,7 +1872,7 @@ public class gottlieb
 	ROM_END(); }}; 
 	
 	
-	static public static InitDriverPtr init_gottlieb = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_gottlieb = new InitDriverPtr() { public void handler() (void)
 	{
 		gottlieb_sound_init();
 	} };

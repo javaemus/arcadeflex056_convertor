@@ -71,7 +71,7 @@ public class magmax
 		scanline_timer = timer_set( cpu_getscanlinetime( scanline ), scanline, scanline_callback );
 	}
 	
-	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		scanline_timer = timer_set(cpu_getscanlinetime( 64 ), 64, scanline_callback );
 	} };

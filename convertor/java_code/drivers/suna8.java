@@ -84,7 +84,7 @@ public class suna8
 	} };
 	
 	/* Non encrypted bootleg */
-	static public static InitDriverPtr init_hardhedb = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_hardhedb = new InitDriverPtr() { public void handler() ( void )
 	{
 		/* patch ROM checksum (ROM1 fails self test) */
 		memory_region( REGION_CPU1 )[0x1e5b] = 0xAF;

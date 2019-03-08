@@ -86,12 +86,12 @@ public class marvins
 		new WriteHandlerPtr[] { 0 }
 	);
 	
-	static void init_sound( int busy_bit ){
+	public static InitDriverPtr init_sound = new InitDriverPtr() { public void handler() ( int busy_bit ){
 		sound_cpu_busy_bit = busy_bit;
 		sound_cpu_ready = 1;
 		sound_command = 0x00;
 		sound_fetched = 1;
-	}
+	} };
 	
 	public static WriteHandlerPtr sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		if( sound_fetched==0 ){
@@ -831,12 +831,12 @@ public class marvins
 	
 	
 	
-	static public static InitDriverPtr init_marvins = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_marvins = new InitDriverPtr() { public void handler() (void)
 	{
 		init_sound( 0x40 );
 	} };
 	
-	static public static InitDriverPtr init_madcrash = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_madcrash = new InitDriverPtr() { public void handler() ( void )
 	{
 	/*
 		The following lines patch out the ROM test (which fails - probably
@@ -850,7 +850,7 @@ public class marvins
 		madcrash_vreg = 0x00;
 	} };
 	
-	static public static InitDriverPtr init_vangrd2 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_vangrd2 = new InitDriverPtr() { public void handler() ( void )
 	{
 		init_sound( 0x20 );
 		madcrash_vreg = 0xf1;

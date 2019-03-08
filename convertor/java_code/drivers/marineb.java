@@ -54,13 +54,13 @@ public class marineb
 	
 	
 	
-	static public static InitMachinePtr marineb_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr marineb_init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		marineb_active_low_flipscreen = 0;
 		espial_init_machine();
 	} };
 	
-	static public static InitMachinePtr springer_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr springer_init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		marineb_active_low_flipscreen = 1;
 		espial_init_machine();

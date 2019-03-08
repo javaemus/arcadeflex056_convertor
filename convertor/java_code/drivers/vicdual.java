@@ -1621,12 +1621,12 @@ public class vicdual
 	
 	
 	
-	static public static InitDriverPtr init_nosamples = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_nosamples = new InitDriverPtr() { public void handler() (void)
 	{
 		vicdual_decode();
 	} };
 	
-	static public static InitDriverPtr init_depthch = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_depthch = new InitDriverPtr() { public void handler() (void)
 	{
 		install_port_read_handler(0, 0x08, 0x08, depthch_input_port_1_r);
 	
@@ -1636,7 +1636,7 @@ public class vicdual
 		vicdual_decode();
 	} };
 	
-	static public static InitDriverPtr init_samurai = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_samurai = new InitDriverPtr() { public void handler() (void)
 	{
 		/* install protection handlers */
 		install_mem_write_handler(0, 0x7f00, 0x7f00, samurai_protection_w);
@@ -1645,7 +1645,7 @@ public class vicdual
 		vicdual_decode();
 	} };
 	
-	static public static InitDriverPtr init_carnival = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_carnival = new InitDriverPtr() { public void handler() (void)
 	{
 		/* install sample triggers */
 		install_port_write_handler(0, 0x01, 0x01, carnival_sh_port1_w);
@@ -1654,7 +1654,7 @@ public class vicdual
 		vicdual_decode();
 	} };
 	
-	static public static InitDriverPtr init_invinco = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_invinco = new InitDriverPtr() { public void handler() (void)
 	{
 		/* install sample trigger */
 		install_port_write_handler(0, 0x02, 0x02, invinco_sh_port2_w);
@@ -1662,7 +1662,7 @@ public class vicdual
 		vicdual_decode();
 	} };
 	
-	static public static InitDriverPtr init_invho2 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_invho2 = new InitDriverPtr() { public void handler() (void)
 	{
 		/* install sample trigger */
 		install_port_write_handler(0, 0x02, 0x02, invinco_sh_port2_w);
@@ -1670,7 +1670,7 @@ public class vicdual
 		vicdual_decode();
 	} };
 	
-	static public static InitDriverPtr init_invds = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_invds = new InitDriverPtr() { public void handler() (void)
 	{
 		/* install sample trigger */
 		install_port_write_handler(0, 0x01, 0x01, invinco_sh_port2_w);
@@ -1678,7 +1678,7 @@ public class vicdual
 		vicdual_decode();
 	} };
 	
-	static public static InitDriverPtr init_pulsar = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_pulsar = new InitDriverPtr() { public void handler() (void)
 	{
 		/* install sample triggers */
 		install_port_write_handler(0, 0x01, 0x01, pulsar_sh_port1_w);

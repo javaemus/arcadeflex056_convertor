@@ -3374,7 +3374,7 @@ public class megasys1
 	
 	
 	
-	static public static InitDriverPtr init_64street = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_64street = new InitDriverPtr() { public void handler() (void)
 	{
 	//	data16_t *RAM = (data16_t *) memory_region(REGION_CPU1);
 	//	RAM[0x006b8/2] = 0x6004;		// d8001 test
@@ -3387,7 +3387,7 @@ public class megasys1
 		ip_select_values[4] = 0x56;
 	} };
 	
-	static public static InitDriverPtr init_astyanax = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_astyanax = new InitDriverPtr() { public void handler() (void)
 	{
 		data16_t *RAM;
 	
@@ -3397,7 +3397,7 @@ public class megasys1
 		RAM[0x0004e6/2] = 0x6040;	// protection
 	} };
 	
-	static public static InitDriverPtr init_avspirit = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_avspirit = new InitDriverPtr() { public void handler() (void)
 	{
 		ip_select_values[0] = 0x37;
 		ip_select_values[1] = 0x35;
@@ -3411,7 +3411,7 @@ public class megasys1
 		megasys1_ram += 0x10000/2;
 	} };
 	
-	static public static InitDriverPtr init_bigstrik = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_bigstrik = new InitDriverPtr() { public void handler() (void)
 	{
 		ip_select_values[0] = 0x58;
 		ip_select_values[1] = 0x54;
@@ -3420,7 +3420,7 @@ public class megasys1
 		ip_select_values[4] = 0x57;
 	} };
 	
-	static public static InitDriverPtr init_chimerab = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_chimerab = new InitDriverPtr() { public void handler() (void)
 	{
 		/* same as cybattlr */
 		ip_select_values[0] = 0x56;
@@ -3430,7 +3430,7 @@ public class megasys1
 		ip_select_values[4] = 0x55;
 	} };
 	
-	static public static InitDriverPtr init_cybattlr = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_cybattlr = new InitDriverPtr() { public void handler() (void)
 	{
 		ip_select_values[0] = 0x56;
 		ip_select_values[1] = 0x52;
@@ -3439,7 +3439,7 @@ public class megasys1
 		ip_select_values[4] = 0x55;
 	} };
 	
-	static public static InitDriverPtr init_edf = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_edf = new InitDriverPtr() { public void handler() (void)
 	{
 		ip_select_values[0] = 0x20;
 		ip_select_values[1] = 0x21;
@@ -3448,7 +3448,7 @@ public class megasys1
 		ip_select_values[4] = 0x24;
 	} };
 	
-	static public static InitDriverPtr init_hachoo = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_hachoo = new InitDriverPtr() { public void handler() (void)
 	{
 		data16_t *RAM;
 	
@@ -3458,7 +3458,7 @@ public class megasys1
 		RAM[0x0006da/2] = 0x6000;	// protection
 	} };
 	
-	static public static InitDriverPtr init_iganinju = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_iganinju = new InitDriverPtr() { public void handler() (void)
 	{
 		data16_t *RAM;
 	
@@ -3482,7 +3482,7 @@ public class megasys1
 		else				OKIM6295_data_1_w(0, (data >> 8) & 0xff );
 	}
 	
-	static public static InitDriverPtr init_jitsupro = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_jitsupro = new InitDriverPtr() { public void handler() (void)
 	{
 		data16_t *RAM  = (data16_t *) memory_region(REGION_CPU1);
 	
@@ -3499,18 +3499,18 @@ public class megasys1
 		install_mem_write16_handler(1, 0xc0000, 0xc0003, OKIM6295_data_1_both_w);
 	} };
 	
-	static public static InitDriverPtr init_peekaboo = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_peekaboo = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read16_handler (0, 0x100000, 0x100001, protection_peekaboo_r);
 		install_mem_write16_handler(0, 0x100000, 0x100001, protection_peekaboo_w);
 	} };
 	
-	static public static InitDriverPtr init_phantasm = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_phantasm = new InitDriverPtr() { public void handler() (void)
 	{
 		phantasm_rom_decode(0);
 	} };
 	
-	static public static InitDriverPtr init_plusalph = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_plusalph = new InitDriverPtr() { public void handler() (void)
 	{
 		data16_t *RAM;
 	
@@ -3520,12 +3520,12 @@ public class megasys1
 		RAM[0x0012b6/2] = 0x0000;	// protection
 	} };
 	
-	static public static InitDriverPtr init_rodland = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_rodland = new InitDriverPtr() { public void handler() (void)
 	{
 		rodland_rom_decode(0);
 	} };
 	
-	static public static InitDriverPtr init_rodlandj = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_rodlandj = new InitDriverPtr() { public void handler() (void)
 	{
 		rodlandj_gfx_unmangle(0);
 		rodlandj_gfx_unmangle(3);
@@ -3533,7 +3533,7 @@ public class megasys1
 		astyanax_rom_decode(0);
 	} };
 	
-	static public static InitDriverPtr init_soldam = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_soldam = new InitDriverPtr() { public void handler() (void)
 	{
 		astyanax_rom_decode(0);
 	
@@ -3542,7 +3542,7 @@ public class megasys1
 		install_mem_write16_handler(0, 0x8c000, 0x8cfff, soldamj_spriteram16_w);
 	} };
 	
-	static public static InitDriverPtr init_stdragon = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_stdragon = new InitDriverPtr() { public void handler() (void)
 	{
 		data16_t *RAM;
 	

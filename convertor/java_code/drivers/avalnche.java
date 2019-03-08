@@ -171,7 +171,7 @@ public class avalnche
 	
 	
 	
-	static public static InitDriverPtr init_avalnche = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_avalnche = new InitDriverPtr() { public void handler() (void)
 	{
 		unsigned char *rom = memory_region(REGION_CPU1);
 		int i;

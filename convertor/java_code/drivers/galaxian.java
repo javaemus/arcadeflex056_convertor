@@ -3348,19 +3348,19 @@ public class galaxian
 	
 	
 	
-	static public static InitDriverPtr init_pisces = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_pisces = new InitDriverPtr() { public void handler() (void)
 	{
 		/* the coin lockout was replaced */
 		install_mem_write_handler(0, 0x6002, 0x6002, pisces_gfxbank_w);
 	} };
 	
-	static public static InitDriverPtr init_checkmaj = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_checkmaj = new InitDriverPtr() { public void handler() (void)
 	{
 		/* for the title screen */
 		install_mem_read_handler(0, 0x3800, 0x3800, checkmaj_protection_r);
 	} };
 	
-	static public static InitDriverPtr init_kingball = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_kingball = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read_handler(0, 0xa000, 0xa000, kingball_IN0_r);
 		install_mem_read_handler(0, 0xa800, 0xa800, kingball_IN1_r);
@@ -3379,7 +3379,7 @@ public class galaxian
 		return res;
 	}
 	
-	static public static InitDriverPtr init_mooncrst = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_mooncrst = new InitDriverPtr() { public void handler() (void)
 	{
 		int A;
 		unsigned char *rom = memory_region(REGION_CPU1);
@@ -3389,19 +3389,19 @@ public class galaxian
 			rom[A] = decode(rom[A],A);
 	} };
 	
-	static public static InitDriverPtr init_mooncrgx = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_mooncrgx = new InitDriverPtr() { public void handler() (void)
 	{
 		init_mooncrst();
 	
 		install_mem_write_handler(0, 0x6000, 0x6002, mooncrgx_gfxextend_w);
 	} };
 	
-	static public static InitDriverPtr init_moonal2 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_moonal2 = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_write_handler(0, 0xa000, 0xa002, MWA_NOP);
 	} };
 	
-	static public static InitDriverPtr init_moonqsr = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_moonqsr = new InitDriverPtr() { public void handler() (void)
 	{
 		int A;
 		unsigned char *rom = memory_region(REGION_CPU1);
@@ -3414,7 +3414,7 @@ public class galaxian
 			rom[A + diff] = decode(rom[A],A);
 	} };
 	
-	static public static InitDriverPtr init_checkman = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_checkman = new InitDriverPtr() { public void handler() (void)
 	{
 	/*
 	                     Encryption Table
@@ -3473,7 +3473,7 @@ public class galaxian
 		}
 	} };
 	
-	static public static InitDriverPtr init_gteikob2 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_gteikob2 = new InitDriverPtr() { public void handler() (void)
 	{
 		init_pisces();
 	

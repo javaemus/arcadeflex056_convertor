@@ -379,7 +379,7 @@ public class spy
 		konami_rom_deinterleave_2(REGION_GFX2);
 	}
 	
-	static public static InitDriverPtr init_spy = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_spy = new InitDriverPtr() { public void handler() (void)
 	{
 		paletteram = &memory_region(REGION_CPU1)[0x28000];
 		gfx_untangle();

@@ -877,7 +877,7 @@ public class kingobox
 	ROM_END(); }}; 
 	
 	
-	static public static InitDriverPtr init_ringkin3 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_ringkin3 = new InitDriverPtr() { public void handler() (void)
 	{
 		int i;
 		unsigned char *RAM = memory_region(REGION_PROMS);

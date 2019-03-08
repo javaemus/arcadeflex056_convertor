@@ -110,19 +110,19 @@ public class mjsikaku
 	void crystal2_romsel_w(int data);
 	
 	
-	static public static InitDriverPtr init_mjsikaku = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_mjsikaku = new InitDriverPtr() { public void handler() (void)
 	{
 		nb1413m3_type = NB1413M3_MJSIKAKU;
 		nb1413m3_int_count = 144;
 	} };
 	
-	static public static InitDriverPtr init_otonano = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_otonano = new InitDriverPtr() { public void handler() (void)
 	{
 		nb1413m3_type = NB1413M3_OTONANO;
 		nb1413m3_int_count = 144;
 	} };
 	
-	static public static InitDriverPtr init_mjcamera = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_mjcamera = new InitDriverPtr() { public void handler() (void)
 	{
 	#if 1
 		unsigned char *ROM = memory_region(REGION_CPU1);
@@ -136,79 +136,79 @@ public class mjsikaku
 		nb1413m3_int_count = 144;
 	} };
 	
-	static public static InitDriverPtr init_kaguya = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_kaguya = new InitDriverPtr() { public void handler() (void)
 	{
 		nb1413m3_type = NB1413M3_KAGUYA;
 		nb1413m3_int_count = 128;
 	} };
 	
-	static public static InitDriverPtr init_secolove = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_secolove = new InitDriverPtr() { public void handler() (void)
 	{
 		nb1413m3_type = NB1413M3_SECOLOVE;
 		nb1413m3_int_count = 128;
 	} };
 	
-	static public static InitDriverPtr init_citylove = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_citylove = new InitDriverPtr() { public void handler() (void)
 	{
 		nb1413m3_type = NB1413M3_CITYLOVE;
 		nb1413m3_int_count = 128;
 	} };
 	
-	static public static InitDriverPtr init_seiha = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_seiha = new InitDriverPtr() { public void handler() (void)
 	{
 		nb1413m3_type = NB1413M3_SEIHA;
 		nb1413m3_int_count = 128;
 	} };
 	
-	static public static InitDriverPtr init_seiham = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_seiham = new InitDriverPtr() { public void handler() (void)
 	{
 		nb1413m3_type = NB1413M3_SEIHAM;
 		nb1413m3_int_count = 128;
 	} };
 	
-	static public static InitDriverPtr init_iemoto = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_iemoto = new InitDriverPtr() { public void handler() (void)
 	{
 		nb1413m3_type = NB1413M3_IEMOTO;
 		nb1413m3_int_count = 128;
 	} };
 	
-	static public static InitDriverPtr init_ojousan = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_ojousan = new InitDriverPtr() { public void handler() (void)
 	{
 		nb1413m3_type = NB1413M3_OJOUSAN;
 		nb1413m3_int_count = 128;
 	} };
 	
-	static public static InitDriverPtr init_bijokkoy = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_bijokkoy = new InitDriverPtr() { public void handler() (void)
 	{
 		nb1413m3_type = NB1413M3_BIJOKKOY;
 		nb1413m3_int_count = 128;
 	} };
 	
-	static public static InitDriverPtr init_bijokkog = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_bijokkog = new InitDriverPtr() { public void handler() (void)
 	{
 		nb1413m3_type = NB1413M3_BIJOKKOG;
 		nb1413m3_int_count = 128;
 	} };
 	
-	static public static InitDriverPtr init_housemnq = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_housemnq = new InitDriverPtr() { public void handler() (void)
 	{
 		nb1413m3_type = NB1413M3_HOUSEMNQ;
 		nb1413m3_int_count = 128;
 	} };
 	
-	static public static InitDriverPtr init_housemn2 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_housemn2 = new InitDriverPtr() { public void handler() (void)
 	{
 		nb1413m3_type = NB1413M3_HOUSEMN2;
 		nb1413m3_int_count = 128;
 	} };
 	
-	static public static InitDriverPtr init_crystal2 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_crystal2 = new InitDriverPtr() { public void handler() (void)
 	{
 		nb1413m3_type = NB1413M3_CRYSTAL2;
 		nb1413m3_int_count = 96;
 	} };
 	
-	static public static InitDriverPtr init_apparel = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_apparel = new InitDriverPtr() { public void handler() (void)
 	{
 		nb1413m3_type = NB1413M3_APPAREL;
 		nb1413m3_int_count = 128;

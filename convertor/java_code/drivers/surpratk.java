@@ -18,7 +18,8 @@ public class surpratk
 {
 	
 	/* prototypes */
-	static static void surpratk_banking( int lines );
+	public static InitMachinePtr surpratk_init_machine = new InitMachinePtr() { public void handler() ( void );
+	static void surpratk_banking( int lines );
 	
 	
 	static int videobank;
@@ -318,14 +319,14 @@ public class surpratk
 		cpu_setbank(1,&RAM[offs]);
 	}
 	
-	static public static InitMachinePtr surpratk_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr surpratk_init_machine = new InitMachinePtr() { public void handler() ( void )
 	{
 		konami_cpu_setlines_callback = surpratk_banking;
 	
 		paletteram = &memory_region(REGION_CPU1)[0x48000];
 	} };
 	
-	static public static InitDriverPtr init_surpratk = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_surpratk = new InitDriverPtr() { public void handler() (void)
 	{
 		konami_rom_deinterleave_2(REGION_GFX1);
 		konami_rom_deinterleave_2(REGION_GFX2);

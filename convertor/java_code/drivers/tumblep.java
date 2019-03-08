@@ -479,12 +479,12 @@ public class tumblep
 	/******************************************************************************/
 	
 	
-	static public static InitDriverPtr init_tumblep = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_tumblep = new InitDriverPtr() { public void handler() (void)
 	{
 		deco56_decrypt();
 	} };
 	
-	static public static InitDriverPtr init_tumblepb = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_tumblepb = new InitDriverPtr() { public void handler() (void)
 	{
 		data8_t *rom = memory_region(REGION_GFX1);
 		int len = memory_region_length(REGION_GFX1);

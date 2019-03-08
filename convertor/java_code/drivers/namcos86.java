@@ -1208,7 +1208,7 @@ public class namcos86
 	};
 	
 	
-	static public static InitMachinePtr namco86_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr namco86_init_machine = new InitMachinePtr() { public void handler() ( void )
 	{
 		unsigned char *base = memory_region(REGION_CPU1) + 0x10000;
 	
@@ -1658,7 +1658,7 @@ public class namcos86
 	
 	
 	
-	static public static InitDriverPtr init_namco86 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_namco86 = new InitDriverPtr() { public void handler() (void)
 	{
 		int size;
 		unsigned char *gfx;
@@ -1728,7 +1728,7 @@ public class namcos86
 		    cpu_spinuntil_int();
 	} };
 	
-	static public static InitDriverPtr init_roishtar = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_roishtar = new InitDriverPtr() { public void handler() (void)
 	{
 		/* install hook to avoid hang at game over */
 	    install_mem_write_handler(1, 0x7e24, 0x7e24, roishtar_semaphore_w);

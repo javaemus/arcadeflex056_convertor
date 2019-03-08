@@ -605,7 +605,7 @@ public class meadows
 	
 	
 	/* A fake for the missing ball sprites #3 and #4 */
-	static public static InitDriverPtr init_gypsyjug = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_gypsyjug = new InitDriverPtr() { public void handler() (void)
 	{
 	int i;
 	static unsigned char ball[16*2] = {

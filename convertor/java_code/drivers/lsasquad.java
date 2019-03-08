@@ -450,7 +450,7 @@ public class lsasquad
 	
 	
 	
-	static public static InitDriverPtr init_common = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_common = new InitDriverPtr() { public void handler() (void)
 	{
 		unsigned char *ROM = memory_region(REGION_CPU1);
 	
@@ -461,8 +461,8 @@ public class lsasquad
 	} };
 	
 	/* coin inputs are inverted in storming */
-	static public static InitDriverPtr init_lsasquad = new InitDriverPtr() { public void handler()  { lsasquad_invertcoin = 0x00; init_common(); } };
-	static public static InitDriverPtr init_storming = new InitDriverPtr() { public void handler()  { lsasquad_invertcoin = 0x0c; init_common(); } };
+	public static InitDriverPtr init_lsasquad = new InitDriverPtr() { public void handler() (void) { lsasquad_invertcoin = 0x00; init_common(); } };
+	public static InitDriverPtr init_storming = new InitDriverPtr() { public void handler() (void) { lsasquad_invertcoin = 0x0c; init_common(); } };
 	
 	
 	public static GameDriver driver_lsasquad	   = new GameDriver("1986"	,"lsasquad"	,"lsasquad.java"	,rom_lsasquad,null	,machine_driver_lsasquad	,input_ports_lsasquad	,init_lsasquad	,ROT270	,	"Taito", "Land Sea Air Squad / Riku Kai Kuu Saizensen", GAME_IMPERFECT_GRAPHICS )

@@ -98,7 +98,7 @@ public class kangaroo
 	
 	
 	
-	static public static InitMachinePtr kangaroo_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr kangaroo_init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		/* I think there is a bug in the startup checks of the game. At the very */
 		/* beginning, during the RAM check, it goes one byte too far, and ends up */

@@ -192,7 +192,7 @@ public class gauntlet
 	}
 	
 	
-	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		last_speed_check = 0;
 		last_speech_write = 0x80;
@@ -996,7 +996,7 @@ public class gauntlet
 	 *
 	 *************************************/
 	
-	static public static InitDriverPtr init_gauntlet = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_gauntlet = new InitDriverPtr() { public void handler() (void)
 	{
 		atarigen_eeprom_default = NULL;
 		atarigen_slapstic_init(0, 0x038000, 104);
@@ -1016,7 +1016,7 @@ public class gauntlet
 	} };
 	
 	
-	static public static InitDriverPtr init_gaunt2p = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_gaunt2p = new InitDriverPtr() { public void handler() (void)
 	{
 		atarigen_eeprom_default = NULL;
 		atarigen_slapstic_init(0, 0x038000, 107);
@@ -1036,7 +1036,7 @@ public class gauntlet
 	} };
 	
 	
-	static public static InitDriverPtr init_gauntlet2 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_gauntlet2 = new InitDriverPtr() { public void handler() (void)
 	{
 		atarigen_eeprom_default = NULL;
 		atarigen_slapstic_init(0, 0x038000, 106);
@@ -1057,7 +1057,7 @@ public class gauntlet
 	} };
 	
 	
-	static public static InitDriverPtr init_vindctr2 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_vindctr2 = new InitDriverPtr() { public void handler() (void)
 	{
 		UINT8 *gfx2_base = memory_region(REGION_GFX2);
 		UINT8 *data;

@@ -3194,7 +3194,7 @@ public class dec8
 	/******************************************************************************/
 	
 	/* Ghostbusters, Darwin, Oscar use a "Deco 222" custom 6502 for sound. */
-	static public static InitDriverPtr init_deco222 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_deco222 = new InitDriverPtr() { public void handler() (void)
 	{
 		int A,sound_cpu,diff;
 		unsigned char *rom;
@@ -3213,14 +3213,14 @@ public class dec8
 			rom[A + diff] = (rom[A] & 0x9f) | ((rom[A] & 0x20) << 1) | ((rom[A] & 0x40) >> 1);
 	} };
 	
-	static public static InitDriverPtr init_meikyuh = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_meikyuh = new InitDriverPtr() { public void handler() (void)
 	{
 		/* Blank out unused garbage in colour prom to avoid colour overflow */
 		unsigned char *RAM = memory_region(REGION_PROMS);
 		memset(RAM+0x20,0,0xe0);
 	} };
 	
-	static public static InitDriverPtr init_ghostb = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_ghostb = new InitDriverPtr() { public void handler() (void)
 	{
 		init_deco222();
 		init_meikyuh();

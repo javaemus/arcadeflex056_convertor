@@ -1669,13 +1669,13 @@ public class twin16
 		}
 	}
 	
-	static public static InitDriverPtr init_twin16 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_twin16 = new InitDriverPtr() { public void handler() (void)
 	{
 		gfx_untangle();
 		twin16_custom_vidhrdw = 0;
 	} };
 	
-	static public static InitDriverPtr init_fround = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_fround = new InitDriverPtr() { public void handler() (void)
 	{
 		gfx_untangle();
 		twin16_custom_vidhrdw = 1;

@@ -83,7 +83,7 @@ public class klax
 	 *
 	 *************************************/
 	
-	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		atarigen_eeprom_reset();
 		atarigen_interrupt_reset(update_interrupts);
@@ -397,7 +397,7 @@ public class klax
 	 *
 	 *************************************/
 	
-	static public static InitDriverPtr init_klax = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_klax = new InitDriverPtr() { public void handler() (void)
 	{
 		atarigen_eeprom_default = NULL;
 	} };

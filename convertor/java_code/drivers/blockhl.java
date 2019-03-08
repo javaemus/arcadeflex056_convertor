@@ -29,7 +29,8 @@ public class blockhl
 {
 	
 	/* prototypes */
-	static static void blockhl_banking( int lines );
+	public static InitMachinePtr blockhl_init_machine = new InitMachinePtr() { public void handler() ( void );
+	static void blockhl_banking( int lines );
 	
 	
 	
@@ -368,7 +369,7 @@ public class blockhl
 		if ((lines & 0x84) != 0x80) logerror("%04x: setlines %02x\n",cpu_get_pc(),lines);
 	}
 	
-	static public static InitMachinePtr blockhl_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr blockhl_init_machine = new InitMachinePtr() { public void handler() ( void )
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -378,7 +379,7 @@ public class blockhl
 	} };
 	
 	
-	static public static InitDriverPtr init_blockhl = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_blockhl = new InitDriverPtr() { public void handler() (void)
 	{
 		konami_rom_deinterleave_2(REGION_GFX1);
 		konami_rom_deinterleave_2(REGION_GFX2);

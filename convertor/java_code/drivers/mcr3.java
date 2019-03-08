@@ -2091,13 +2091,13 @@ public class mcr3
 	 *
 	 *************************************/
 	
-	static public static InitDriverPtr init_tapper = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_tapper = new InitDriverPtr() { public void handler() (void)
 	{
 		MCR_CONFIGURE_SOUND(MCR_SSIO);
 	} };
 	
 	
-	static public static InitDriverPtr init_timber = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_timber = new InitDriverPtr() { public void handler() (void)
 	{
 		MCR_CONFIGURE_SOUND(MCR_SSIO);
 	
@@ -2107,7 +2107,7 @@ public class mcr3
 	} };
 	
 	
-	static public static InitDriverPtr init_dotron = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_dotron = new InitDriverPtr() { public void handler() (void)
 	{
 		MCR_CONFIGURE_SOUND(MCR_SSIO | MCR_SQUAWK_N_TALK);
 		install_port_read_handler(0, 0x02, 0x02, dotron_port_2_r);
@@ -2115,7 +2115,7 @@ public class mcr3
 	} };
 	
 	
-	static public static InitDriverPtr init_demoderb = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_demoderb = new InitDriverPtr() { public void handler() (void)
 	{
 		MCR_CONFIGURE_SOUND(MCR_TURBO_CHIP_SQUEAK);
 		install_port_read_handler(0, 0x01, 0x02, demoderb_port12_r);
@@ -2123,7 +2123,7 @@ public class mcr3
 	} };
 	
 	
-	static public static InitDriverPtr init_demoderm = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_demoderm = new InitDriverPtr() { public void handler() (void)
 	{
 		MCR_CONFIGURE_SOUND(MCR_TURBO_CHIP_SQUEAK);
 		install_port_read_handler(0, 0x01, 0x02, demoderb_port12_r);
@@ -2131,7 +2131,7 @@ public class mcr3
 	} };
 	
 	
-	static public static InitDriverPtr init_sarge = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_sarge = new InitDriverPtr() { public void handler() (void)
 	{
 		MCR_CONFIGURE_SOUND(MCR_TURBO_CHIP_SQUEAK);
 		install_port_read_handler(0, 0x01, 0x01, sarge_port_1_r);
@@ -2140,7 +2140,7 @@ public class mcr3
 	} };
 	
 	
-	static public static InitDriverPtr init_maxrpm = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_maxrpm = new InitDriverPtr() { public void handler() (void)
 	{
 		MCR_CONFIGURE_SOUND(MCR_TURBO_CHIP_SQUEAK);
 		install_port_read_handler(0, 0x01, 0x01, maxrpm_port_1_r);
@@ -2150,14 +2150,14 @@ public class mcr3
 	} };
 	
 	
-	static public static InitDriverPtr init_rampage = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_rampage = new InitDriverPtr() { public void handler() (void)
 	{
 		MCR_CONFIGURE_SOUND(MCR_SOUNDS_GOOD);
 		install_port_write_handler(0, 0x06, 0x06, soundsgood_data_w);
 	} };
 	
 	
-	static public static InitDriverPtr init_powerdrv = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_powerdrv = new InitDriverPtr() { public void handler() (void)
 	{
 		MCR_CONFIGURE_SOUND(MCR_SOUNDS_GOOD);
 		install_port_read_handler(0, 0x02, 0x02, powerdrv_port_2_r);
@@ -2167,7 +2167,7 @@ public class mcr3
 	} };
 	
 	
-	static public static InitDriverPtr init_stargrds = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_stargrds = new InitDriverPtr() { public void handler() (void)
 	{
 		MCR_CONFIGURE_SOUND(MCR_SOUNDS_GOOD);
 		install_port_read_handler(0, 0x00, 0x00, stargrds_port_0_r);
@@ -2176,7 +2176,7 @@ public class mcr3
 	} };
 	
 	
-	static public static InitDriverPtr init_spyhunt = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_spyhunt = new InitDriverPtr() { public void handler() (void)
 	{
 		MCR_CONFIGURE_SOUND(MCR_SSIO | MCR_CHIP_SQUEAK_DELUXE);
 		install_port_read_handler(0, 0x02, 0x02, spyhunt_port_2_r);
@@ -2188,7 +2188,7 @@ public class mcr3
 	} };
 	
 	
-	static public static InitDriverPtr init_crater = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_crater = new InitDriverPtr() { public void handler() (void)
 	{
 		MCR_CONFIGURE_SOUND(MCR_SSIO);
 	
@@ -2198,7 +2198,7 @@ public class mcr3
 	} };
 	
 	
-	static public static InitDriverPtr init_turbotag = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_turbotag = new InitDriverPtr() { public void handler() (void)
 	{
 		MCR_CONFIGURE_SOUND(MCR_CHIP_SQUEAK_DELUXE);
 		install_port_read_handler(0, 0x02, 0x02, spyhunt_port_2_r);

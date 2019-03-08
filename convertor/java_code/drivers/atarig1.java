@@ -81,7 +81,7 @@ public class atarig1
 	}
 	
 	
-	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		atarigen_eeprom_reset();
 		atarigen_slapstic_reset();
@@ -411,7 +411,7 @@ public class atarig1
 	 *
 	 *************************************/
 	
-	static public static InitDriverPtr init_hydra = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_hydra = new InitDriverPtr() { public void handler() (void)
 	{
 		atarigen_eeprom_default = NULL;
 		atarigen_slapstic_init(0, 0x078000, 116);
@@ -422,7 +422,7 @@ public class atarig1
 	} };
 	
 	
-	static public static InitDriverPtr init_hydrap = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_hydrap = new InitDriverPtr() { public void handler() (void)
 	{
 		atarigen_eeprom_default = NULL;
 		atarijsa_init(1, 4, 0, 0x8000);
@@ -432,7 +432,7 @@ public class atarig1
 	} };
 	
 	
-	static public static InitDriverPtr init_pitfight = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_pitfight = new InitDriverPtr() { public void handler() (void)
 	{
 		atarigen_eeprom_default = NULL;
 		atarigen_slapstic_init(0, 0x038000, 111);
@@ -443,7 +443,7 @@ public class atarig1
 	} };
 	
 	
-	static public static InitDriverPtr init_pitfighb = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_pitfighb = new InitDriverPtr() { public void handler() (void)
 	{
 		atarigen_eeprom_default = NULL;
 		pitfighb_cheap_slapstic_init();

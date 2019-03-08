@@ -76,7 +76,7 @@ public class relief
 	 *
 	 *************************************/
 	
-	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		atarigen_eeprom_reset();
 		atarivc_reset(atarivc_eof_data);
@@ -395,7 +395,7 @@ public class relief
 	 *
 	 *************************************/
 	
-	static void init_common(const data16_t *def_eeprom)
+	public static InitDriverPtr init_common = new InitDriverPtr() { public void handler() (const data16_t *def_eeprom)
 	{
 		UINT8 *sound_base = memory_region(REGION_SOUND1);
 	
@@ -422,10 +422,10 @@ public class relief
 		memcpy(&sound_base[0x160000], &sound_base[0x120000], 0x20000);
 		memcpy(&sound_base[0x1a0000], &sound_base[0x120000], 0x20000);
 		memcpy(&sound_base[0x1e0000], &sound_base[0x120000], 0x20000);
-	}
+	} };
 	
 	
-	static public static InitDriverPtr init_relief = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_relief = new InitDriverPtr() { public void handler() (void)
 	{
 		static const data16_t default_eeprom[] =
 		{
@@ -441,7 +441,7 @@ public class relief
 	} };
 	
 	
-	static public static InitDriverPtr init_relief2 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_relief2 = new InitDriverPtr() { public void handler() (void)
 	{
 		static const data16_t default_eeprom[] =
 		{

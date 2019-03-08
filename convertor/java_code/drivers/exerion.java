@@ -443,7 +443,7 @@ public class exerion
 	 * Initialization routines
 	 *********************************************************************/
 	
-	static public static InitDriverPtr init_exerion = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_exerion = new InitDriverPtr() { public void handler() (void)
 	{
 		UINT32 oldaddr, newaddr, length;
 		UINT8 *src, *dst, *temp;
@@ -494,7 +494,7 @@ public class exerion
 	} };
 	
 	
-	static public static InitDriverPtr init_exerionb = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_exerionb = new InitDriverPtr() { public void handler() (void)
 	{
 		UINT8 *ram = memory_region(REGION_CPU1);
 		int addr;

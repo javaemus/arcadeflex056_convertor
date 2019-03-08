@@ -108,7 +108,7 @@ public class cyberbal
 	}
 	
 	
-	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		atarigen_eeprom_reset();
 		atarigen_slapstic_reset();
@@ -142,7 +142,7 @@ public class cyberbal
 	}
 	
 	
-	static public static InitMachinePtr cyberb2p_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr cyberb2p_init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		atarigen_eeprom_reset();
 		atarigen_interrupt_reset(cyberb2p_update_interrupts);
@@ -899,7 +899,7 @@ public class cyberbal
 	};
 	
 	
-	static public static InitDriverPtr init_cyberbal = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_cyberbal = new InitDriverPtr() { public void handler() (void)
 	{
 		atarigen_eeprom_default = default_eeprom;
 		atarigen_slapstic_init(0, 0x018000, 0);
@@ -911,7 +911,7 @@ public class cyberbal
 	} };
 	
 	
-	static public static InitDriverPtr init_cyberbt = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_cyberbt = new InitDriverPtr() { public void handler() (void)
 	{
 		atarigen_eeprom_default = default_eeprom;
 		atarigen_slapstic_init(0, 0x018000, 116);
@@ -923,7 +923,7 @@ public class cyberbal
 	} };
 	
 	
-	static public static InitDriverPtr init_cyberb2p = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_cyberb2p = new InitDriverPtr() { public void handler() (void)
 	{
 		atarigen_eeprom_default = default_eeprom;
 		atarijsa_init(1, 3, 2, 0x8000);

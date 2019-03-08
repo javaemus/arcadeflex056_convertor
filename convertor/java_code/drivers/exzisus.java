@@ -132,7 +132,7 @@ public class exzisus
 	
 	**************************************************************************/
 	
-	static public static InitDriverPtr init_exzisus = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_exzisus = new InitDriverPtr() { public void handler() (void)
 	{
 		data8_t *RAM = memory_region(REGION_CPU4);
 	

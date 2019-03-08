@@ -789,7 +789,7 @@ public class gsword
 	
 	
 	
-	static public static InitDriverPtr init_gsword = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_gsword = new InitDriverPtr() { public void handler() (void)
 	{
 		unsigned char *ROM2 = memory_region(REGION_CPU2);
 	

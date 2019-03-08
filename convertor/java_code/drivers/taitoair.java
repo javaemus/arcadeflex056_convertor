@@ -684,7 +684,7 @@ public class taitoair
 	ROM_END(); }}; 
 	
 	
-	static public static InitDriverPtr init_ainferno = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_ainferno = new InitDriverPtr() { public void handler() (void)
 	{
 	#if 1
 		data16_t *ROM = (data16_t *)memory_region(REGION_CPU1);
@@ -701,7 +701,7 @@ public class taitoair
 	} };
 	
 	
-	static public static InitDriverPtr init_topland = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_topland = new InitDriverPtr() { public void handler() (void)
 	{
 	#if 1
 		data16_t *ROM = (data16_t *)memory_region(REGION_CPU1);

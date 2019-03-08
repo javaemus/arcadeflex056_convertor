@@ -293,7 +293,7 @@ public class wmstunit
 	 *
 	 *************************************/
 	
-	static void init_tunit_generic(int sound)
+	public static InitDriverPtr init_tunit_generic = new InitDriverPtr() { public void handler() (int sound)
 	{
 		offs_t gfx_chunk = wms_gfx_rom_size / 4;
 		UINT8 *base;
@@ -348,7 +348,7 @@ public class wmstunit
 	
 		/* default graphics functionality */
 		wms_gfx_rom_large = 0;
-	}
+	} };
 	
 	
 	
@@ -377,7 +377,7 @@ public class wmstunit
 		INSTALL_SPEEDUP_3(0x01053360, 0xffce2100, 0x104f9d0, 0x104fa10, 0x104fa30);
 	} };
 	
-	static void init_nbajam_common(int te_protection)
+	public static InitDriverPtr init_nbajam_common = new InitDriverPtr() { public void handler() (int te_protection)
 	{
 		/* common init */
 		init_tunit_generic(SOUND_ADPCM_LARGE);
@@ -403,7 +403,7 @@ public class wmstunit
 			install_mem_write_handler(1, 0xfbaa, 0xfbd4, MWA_RAM);
 		else
 			install_mem_write_handler(1, 0xfbec, 0xfc16, MWA_RAM);
-	}
+	} };
 	
 	public static InitDriverPtr init_nbajam = new InitDriverPtr() { public void handler() 
 	{
@@ -433,7 +433,7 @@ public class wmstunit
 	 *
 	 *************************************/
 	
-	static public static InitDriverPtr init_mk2_common = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_mk2_common = new InitDriverPtr() { public void handler() (void)
 	{
 		/* common init */
 		init_tunit_generic(SOUND_DCS);

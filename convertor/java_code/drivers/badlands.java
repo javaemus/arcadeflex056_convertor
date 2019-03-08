@@ -159,7 +159,7 @@ public class badlands
 	}
 	
 	
-	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		pedal_value[0] = pedal_value[1] = 0x80;
 	
@@ -575,7 +575,7 @@ public class badlands
 	 *
 	 *************************************/
 	
-	static public static InitDriverPtr init_badlands = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_badlands = new InitDriverPtr() { public void handler() (void)
 	{
 		atarigen_eeprom_default = NULL;
 		atarigen_init_6502_speedup(1, 0x4155, 0x416d);

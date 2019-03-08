@@ -73,7 +73,7 @@ public class seicross
 	
 	
 	
-	static public static InitMachinePtr friskyt_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr friskyt_init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		/* start with the protection mcu halted */
 		cpu_set_halt_line(1, ASSERT_LINE);
@@ -614,7 +614,7 @@ public class seicross
 	
 	
 	
-	static public static InitDriverPtr init_friskyt = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_friskyt = new InitDriverPtr() { public void handler() (void)
 	{
 		int A;
 		unsigned char *src,*dest;

@@ -387,12 +387,12 @@ public class pengo
 	
 	
 	
-	static public static InitDriverPtr init_pengo = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_pengo = new InitDriverPtr() { public void handler() (void)
 	{
 		pengo_decode();
 	} };
 	
-	static public static InitDriverPtr init_penta = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_penta = new InitDriverPtr() { public void handler() (void)
 	{
 	/*
 		the values vary, but the translation mask is always laid out like this:

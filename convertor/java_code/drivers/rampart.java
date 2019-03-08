@@ -76,7 +76,7 @@ public class rampart
 	 *
 	 *************************************/
 	
-	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		atarigen_eeprom_reset();
 		atarigen_slapstic_reset();
@@ -494,7 +494,7 @@ public class rampart
 	 *
 	 *************************************/
 	
-	static public static InitDriverPtr init_rampart = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_rampart = new InitDriverPtr() { public void handler() (void)
 	{
 		static const UINT16 compressed_default_eeprom[] =
 		{

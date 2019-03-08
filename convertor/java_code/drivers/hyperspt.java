@@ -728,7 +728,7 @@ public class hyperspt
 	ROM_END(); }}; 
 	
 	
-	static public static InitDriverPtr init_hyperspt = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_hyperspt = new InitDriverPtr() { public void handler() (void)
 	{
 		konami1_decode();
 	} };

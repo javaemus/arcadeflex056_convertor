@@ -125,7 +125,7 @@ public class arcadecl
 	 *
 	 *************************************/
 	
-	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		atarigen_eeprom_reset();
 		atarigen_interrupt_reset(update_interrupts);
@@ -464,14 +464,14 @@ public class arcadecl
 	 *
 	 *************************************/
 	
-	static public static InitDriverPtr init_arcadecl = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_arcadecl = new InitDriverPtr() { public void handler() (void)
 	{
 		atarigen_eeprom_default = NULL;
 		atarigen_invert_region(REGION_GFX1);
 	} };
 	
 	
-	static public static InitDriverPtr init_sparkz = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_sparkz = new InitDriverPtr() { public void handler() (void)
 	{
 		atarigen_eeprom_default = NULL;
 		memset(memory_region(REGION_GFX1), 0, memory_region_length(REGION_GFX1));

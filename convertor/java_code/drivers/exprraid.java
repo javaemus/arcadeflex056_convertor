@@ -550,7 +550,7 @@ public class exprraid
 	}
 	
 	
-	static public static InitDriverPtr init_wexpress = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_wexpress = new InitDriverPtr() { public void handler() (void)
 	{
 		unsigned char *rom = memory_region(REGION_CPU1);
 		int i;
@@ -572,7 +572,7 @@ public class exprraid
 		}
 	} };
 	
-	static public static InitDriverPtr init_exprraid = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_exprraid = new InitDriverPtr() { public void handler() (void)
 	{
 		unsigned char *rom = memory_region(REGION_CPU1);
 	
@@ -591,13 +591,13 @@ public class exprraid
 		init_wexpress();
 	} };
 	
-	static public static InitDriverPtr init_wexpresb = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_wexpresb = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read_handler(0, 0x3800, 0x3800, vblank_r);
 		exprraid_gfx_expand();
 	} };
 	
-	static public static InitDriverPtr init_wexpresc = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_wexpresc = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read_handler(0, 0xFFC0, 0xFFC0, vblank_r);
 		exprraid_gfx_expand();

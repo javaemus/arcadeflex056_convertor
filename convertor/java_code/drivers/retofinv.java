@@ -35,7 +35,7 @@ public class retofinv
 	
 	static unsigned char cpu2_m6000=0;
 	
-	static public static InitMachinePtr retofinv_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr retofinv_init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		cpu2_m6000 = 0;
 	} };

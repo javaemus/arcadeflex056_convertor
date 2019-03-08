@@ -1052,7 +1052,7 @@ public class harddriv
 	 *************************************/
 	
 	/* COMMON INIT: initialize the original "driver" main board */
-	static public static InitDriverPtr init_driver = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_driver = new InitDriverPtr() { public void handler() (void)
 	{
 		static const UINT16 default_eeprom[] =
 		{
@@ -1075,7 +1075,7 @@ public class harddriv
 	
 	
 	/* COMMON INIT: initialize the later "multisync" main board */
-	static public static InitDriverPtr init_multisync = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_multisync = new InitDriverPtr() { public void handler() (void)
 	{
 		hdgsp_multisync = 1;
 		atarigen_eeprom_default = NULL;
@@ -1089,7 +1089,7 @@ public class harddriv
 	
 	
 	/* COMMON INIT: initialize the ADSP/ADSP2 board */
-	static public static InitDriverPtr init_adsp = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_adsp = new InitDriverPtr() { public void handler() (void)
 	{
 		/* install ADSP program RAM */
 		install_mem_read16_handler(0, 0x800000, 0x807fff, hd68k_adsp_program_r);
@@ -1111,7 +1111,7 @@ public class harddriv
 	
 	
 	/* COMMON INIT: initialize the DS3 board */
-	static public static InitDriverPtr init_ds3 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_ds3 = new InitDriverPtr() { public void handler() (void)
 	{
 		/* install ADSP program RAM */
 		install_mem_read16_handler(0, 0x800000, 0x807fff, hd68k_ds3_program_r);
@@ -1178,7 +1178,7 @@ public class harddriv
 	
 	
 	/* COMMON INIT: initialize the DSK add-on board */
-	static public static InitDriverPtr init_dsk = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_dsk = new InitDriverPtr() { public void handler() (void)
 	{
 		/* install extra ROM */
 		install_mem_read16_handler(0, 0x940000, 0x95ffff, hddsk_rom_r);
@@ -1206,7 +1206,7 @@ public class harddriv
 	
 	
 	/* COMMON INIT: initialize the original "driver" sound board */
-	static public static InitDriverPtr init_driver_sound = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_driver_sound = new InitDriverPtr() { public void handler() (void)
 	{
 		data16_t *base = (data16_t *)memory_region(REGION_SOUND1);
 		int length = memory_region_length(REGION_SOUND1) / 2;
@@ -1226,7 +1226,7 @@ public class harddriv
 	 *
 	 *************************************/
 	
-	static public static InitDriverPtr init_harddriv = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_harddriv = new InitDriverPtr() { public void handler() (void)
 	{
 		/* initialize the boards */
 		init_driver();
@@ -1252,7 +1252,7 @@ public class harddriv
 	} };
 	
 	
-	static public static InitDriverPtr init_harddrvc = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_harddrvc = new InitDriverPtr() { public void handler() (void)
 	{
 		/* initialize the boards */
 		init_multisync();
@@ -1261,7 +1261,7 @@ public class harddriv
 	} };
 	
 	
-	static public static InitDriverPtr init_stunrun = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_stunrun = new InitDriverPtr() { public void handler() (void)
 	{
 		/* initialize the boards */
 		init_multisync();
@@ -1291,7 +1291,7 @@ public class harddriv
 		/* this is required so that INT 4 is recongized as a sound INT */
 		return ~0;
 	}
-	static public static InitDriverPtr init_steeltal = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_steeltal = new InitDriverPtr() { public void handler() (void)
 	{
 		/* initialize the boards */
 		init_multisync();
@@ -1311,7 +1311,7 @@ public class harddriv
 	} };
 	
 	
-	static public static InitDriverPtr init_racedriv = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_racedriv = new InitDriverPtr() { public void handler() (void)
 	{
 		/* initialize the boards */
 		init_driver();
@@ -1326,7 +1326,7 @@ public class harddriv
 	} };
 	
 	
-	static public static InitDriverPtr init_racedrvc = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_racedrvc = new InitDriverPtr() { public void handler() (void)
 	{
 		/* initialize the boards */
 		init_multisync();
@@ -1341,7 +1341,7 @@ public class harddriv
 	} };
 	
 	
-	static public static InitDriverPtr init_hdrivair = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_hdrivair = new InitDriverPtr() { public void handler() (void)
 	{
 		init_multisync();
 		init_adsp();

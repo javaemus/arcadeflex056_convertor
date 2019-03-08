@@ -762,7 +762,7 @@ public class kchamp
 	
 	
 	
-	static public static InitDriverPtr init_kchampvs = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_kchampvs = new InitDriverPtr() { public void handler() ( void )
 	{
 		unsigned char *rom = memory_region(REGION_CPU1);
 		int diff = memory_region_length(REGION_CPU1) / 2;

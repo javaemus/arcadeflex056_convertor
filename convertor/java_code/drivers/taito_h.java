@@ -819,7 +819,7 @@ public class taito_h
 	ROM_END(); }}; 
 	
 	
-	static public static InitDriverPtr init_taitoh = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_taitoh = new InitDriverPtr() { public void handler() (void)
 	{
 		state_save_register_int("sound1", 0, "sound region", &banknum);
 		state_save_register_func_postload(reset_sound_region);

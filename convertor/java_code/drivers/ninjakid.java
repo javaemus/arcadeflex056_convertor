@@ -341,7 +341,7 @@ public class ninjakid
 	 Init
 	*******************************************************************************/
 	
-	static public static InitDriverPtr init_ninjakid = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_ninjakid = new InitDriverPtr() { public void handler() (void)
 	{
 		/* Save State Stuff */
 		state_save_register_UINT8 ("NK_Main", 0, "ninjakun_io_a002_ctrl", &ninjakun_io_a002_ctrl, 1);

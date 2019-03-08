@@ -616,10 +616,10 @@ public class video
 		}
 	}
 	
-	static void init_dirty(char dirty)
+	public static InitDriverPtr init_dirty = new InitDriverPtr() { public void handler() (char dirty)
 	{
 		memset(dirty_new, dirty, MAX_GFX_WIDTH/16 * MAX_GFX_HEIGHT/16);
-	}
+	} };
 	
 	
 	

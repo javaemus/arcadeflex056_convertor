@@ -56,7 +56,7 @@ public class cabal
 	
 	static int cabal_sound_command1, cabal_sound_command2;
 	
-	static public static InitMachinePtr cabalbl_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr cabalbl_init_machine = new InitMachinePtr() { public void handler() ( void )
 	{
 		cabal_sound_command1 = cabal_sound_command2 = 0xff;
 	} };
@@ -769,7 +769,7 @@ public class cabal
 	
 	
 	
-	static public static InitDriverPtr init_cabal = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_cabal = new InitDriverPtr() { public void handler() (void)
 	{
 		seibu_sound_decrypt(REGION_CPU2,0x2000);
 	} };

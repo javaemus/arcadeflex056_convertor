@@ -211,7 +211,7 @@ public class airbustr
 	
 	
 	
-	static public static InitMachinePtr airbustr_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr airbustr_init_machine = new InitMachinePtr() { public void handler()  (void)
 	{
 		soundlatch_status = soundlatch2_status = 0;
 		bankswitch_w(0,2);

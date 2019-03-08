@@ -1147,7 +1147,7 @@ public class zaxxon
 		ROM_LOAD( "1944a.u51",      0x0800, 0x0800, 0x88215098 );
 	ROM_END(); }}; 
 	
-	static public static InitDriverPtr init_zaxxonb = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_zaxxonb = new InitDriverPtr() { public void handler() (void)
 	{
 	/*
 		the values vary, but the translation mask is always laid out like this:
@@ -1222,22 +1222,22 @@ public class zaxxon
 		}
 	} };
 	
-	static public static InitDriverPtr init_szaxxon = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_szaxxon = new InitDriverPtr() { public void handler() (void)
 	{
 		szaxxon_decode();
 	} };
 	
-	static public static InitDriverPtr init_futspy = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_futspy = new InitDriverPtr() { public void handler() (void)
 	{
 		futspy_decode();
 	} };
 	
-	static public static InitDriverPtr init_razmataz = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_razmataz = new InitDriverPtr() { public void handler() (void)
 	{
 		nprinces_decode();
 	} };
 	
-	static public static InitDriverPtr init_ixion = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_ixion = new InitDriverPtr() { public void handler() (void)
 	{
 		szaxxon_decode();
 	} };

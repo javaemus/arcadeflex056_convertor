@@ -130,7 +130,7 @@ public class system32
 		new IO_WritePort(MEMPORT_MARKER, 0)
 	};
 	
-	static public static InitMachinePtr system32_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr system32_init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		cpu_setbank(1, memory_region(REGION_CPU1));
 		irq_init();

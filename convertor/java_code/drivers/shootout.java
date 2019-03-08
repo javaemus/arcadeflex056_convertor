@@ -466,7 +466,7 @@ public class shootout
 		ROM_LOAD( "gb09.k6",        0x0100, 0x0100, 0xaa090565 );   /* unknown */
 	ROM_END(); }}; 
 	
-	static public static InitDriverPtr init_shootout = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_shootout = new InitDriverPtr() { public void handler() (void)
 	{
 		unsigned char *rom = memory_region(REGION_CPU1);
 		int diff = memory_region_length(REGION_CPU1) / 2;

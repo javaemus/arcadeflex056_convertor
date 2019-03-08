@@ -226,7 +226,7 @@ public class kopunch
 	ROM_END(); }}; 
 	
 	
-	static public static InitDriverPtr init_kopunch = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_kopunch = new InitDriverPtr() { public void handler() (void)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	

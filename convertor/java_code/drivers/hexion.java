@@ -302,7 +302,7 @@ public class hexion
 	ROM_END(); }}; 
 	
 	
-	static public static InitDriverPtr init_hexion = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_hexion = new InitDriverPtr() { public void handler() (void)
 	{
 		int col,i;
 		UINT8 *prom = memory_region(REGION_PROMS);

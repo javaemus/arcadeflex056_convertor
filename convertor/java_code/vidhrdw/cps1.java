@@ -361,7 +361,7 @@ public class cps1
 	}
 	
 	
-	static public static InitMachinePtr cps_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr cps_init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		const char *gamename = Machine->gamedrv->name;
 		struct CPS1config *pCFG=&cps1_config_table[0];

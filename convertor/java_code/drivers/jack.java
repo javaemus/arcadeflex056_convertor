@@ -667,18 +667,18 @@ public class jack
 		}
 	}
 	
-	static public static InitDriverPtr init_jack = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_jack = new InitDriverPtr() { public void handler() (void)
 	{
 		timer_rate = 128;
 	} };
 	
-	static public static InitDriverPtr init_treahunt = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_treahunt = new InitDriverPtr() { public void handler() (void)
 	{
 		timer_rate = 128;
 		treahunt_decode();
 	} };
 	
-	static public static InitDriverPtr init_zzyzzyxx = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_zzyzzyxx = new InitDriverPtr() { public void handler() (void)
 	{
 		timer_rate = 16;
 	} };

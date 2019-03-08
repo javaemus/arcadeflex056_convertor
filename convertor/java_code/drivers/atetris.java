@@ -107,7 +107,7 @@ public class atetris
 	 *
 	 *************************************/
 	
-	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		/* reset the slapstic */
 		slapstic_reset();
@@ -457,7 +457,7 @@ public class atetris
 	 *
 	 *************************************/
 	
-	static public static InitDriverPtr init_atetris = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_atetris = new InitDriverPtr() { public void handler() (void)
 	{
 		slapstic_init(101);
 		slapstic_source = &memory_region(REGION_CPU1)[0x10000];

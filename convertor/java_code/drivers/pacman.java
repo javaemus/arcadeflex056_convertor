@@ -2651,7 +2651,7 @@ public class pacman
 		rom[0x3aef + diff] = 0xb0;
 	}
 	
-	static public static InitDriverPtr init_maketrax = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_maketrax = new InitDriverPtr() { public void handler() (void)
 	{
 		/* set up protection handlers */
 		install_mem_read_handler(0, 0x5080, 0x50bf, maketrax_special_port2_r);
@@ -2660,7 +2660,7 @@ public class pacman
 		maketrax_rom_decode();
 	} };
 	
-	static public static InitDriverPtr init_ponpoko = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_ponpoko = new InitDriverPtr() { public void handler() (void)
 	{
 		int i, j;
 		unsigned char *RAM, temp;
@@ -2714,7 +2714,7 @@ public class pacman
 		}
 	}
 	
-	static public static InitDriverPtr init_eyes = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_eyes = new InitDriverPtr() { public void handler() (void)
 	{
 		int i;
 		unsigned char *RAM;
@@ -2742,17 +2742,17 @@ public class pacman
 	} };
 	
 	
-	static public static InitDriverPtr init_pacplus = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_pacplus = new InitDriverPtr() { public void handler() (void)
 	{
 		pacplus_decode();
 	} };
 	
-	static public static InitDriverPtr init_jumpshot = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_jumpshot = new InitDriverPtr() { public void handler() (void)
 	{
 		jumpshot_decode();
 	} };
 	
-	static public static InitDriverPtr init_shootbul = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_shootbul = new InitDriverPtr() { public void handler() (void)
 	{
 		shootbul_decode();
 	} };

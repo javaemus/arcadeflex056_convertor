@@ -121,43 +121,43 @@ public class pstadium
 		return data;
 	} };
 	
-	static public static InitDriverPtr init_pstadium = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_pstadium = new InitDriverPtr() { public void handler() (void)
 	{
 		nb1413m3_type = NB1413M3_PSTADIUM;
 		nb1413m3_int_count = 0;
 	} };
 	
-	static public static InitDriverPtr init_triplew1 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_triplew1 = new InitDriverPtr() { public void handler() (void)
 	{
 		nb1413m3_type = NB1413M3_TRIPLEW1;
 		nb1413m3_int_count = 0;
 	} };
 	
-	static public static InitDriverPtr init_triplew2 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_triplew2 = new InitDriverPtr() { public void handler() (void)
 	{
 		nb1413m3_type = NB1413M3_TRIPLEW2;
 		nb1413m3_int_count = 0;
 	} };
 	
-	static public static InitDriverPtr init_ntopstar = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_ntopstar = new InitDriverPtr() { public void handler() (void)
 	{
 		nb1413m3_type = NB1413M3_NTOPSTAR;
 		nb1413m3_int_count = 0;
 	} };
 	
-	static public static InitDriverPtr init_mjlstory = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_mjlstory = new InitDriverPtr() { public void handler() (void)
 	{
 		nb1413m3_type = NB1413M3_MJLSTORY;
 		nb1413m3_int_count = 0;
 	} };
 	
-	static public static InitDriverPtr init_vanilla = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_vanilla = new InitDriverPtr() { public void handler() (void)
 	{
 		nb1413m3_type = NB1413M3_VANILLA;
 		nb1413m3_int_count = 0;
 	} };
 	
-	static public static InitDriverPtr init_finalbny = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_finalbny = new InitDriverPtr() { public void handler() (void)
 	{
 		unsigned char *ROM = memory_region(REGION_CPU1);
 		int i;
@@ -168,25 +168,25 @@ public class pstadium
 		nb1413m3_int_count = 0;
 	} };
 	
-	static public static InitDriverPtr init_qmhayaku = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_qmhayaku = new InitDriverPtr() { public void handler() (void)
 	{
 		nb1413m3_type = NB1413M3_QMHAYAKU;
 		nb1413m3_int_count = 0;
 	} };
 	
-	static public static InitDriverPtr init_galkoku = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_galkoku = new InitDriverPtr() { public void handler() (void)
 	{
 		nb1413m3_type = NB1413M3_GALKOKU;
 		nb1413m3_int_count = 128;
 	} };
 	
-	static public static InitDriverPtr init_hyouban = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_hyouban = new InitDriverPtr() { public void handler() (void)
 	{
 		nb1413m3_type = NB1413M3_HYOUBAN;
 		nb1413m3_int_count = 128;
 	} };
 	
-	static public static InitDriverPtr init_galkaika = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_galkaika = new InitDriverPtr() { public void handler() (void)
 	{
 	#if 1
 		unsigned char *ROM = memory_region(REGION_CPU1);
@@ -198,7 +198,7 @@ public class pstadium
 		nb1413m3_int_count = 128;
 	} };
 	
-	static public static InitDriverPtr init_tokyogal = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_tokyogal = new InitDriverPtr() { public void handler() (void)
 	{
 	#if 1
 		unsigned char *ROM = memory_region(REGION_CPU1);
@@ -210,7 +210,7 @@ public class pstadium
 		nb1413m3_int_count = 128;
 	} };
 	
-	static public static InitDriverPtr init_tokimbsj = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_tokimbsj = new InitDriverPtr() { public void handler() (void)
 	{
 	#if 1
 		unsigned char *ROM = memory_region(REGION_CPU1);
@@ -222,13 +222,13 @@ public class pstadium
 		nb1413m3_int_count = 128;
 	} };
 	
-	static public static InitDriverPtr init_mcontest = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_mcontest = new InitDriverPtr() { public void handler() (void)
 	{
 		nb1413m3_type = NB1413M3_MCONTEST;
 		nb1413m3_int_count = 128;
 	} };
 	
-	static public static InitDriverPtr init_av2mj1 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_av2mj1 = new InitDriverPtr() { public void handler() (void)
 	{
 		nb1413m3_type = NB1413M3_AV2MJ1;
 		nb1413m3_int_count = 0;

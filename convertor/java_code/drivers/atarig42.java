@@ -75,7 +75,7 @@ public class atarig42
 	}
 	
 	
-	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		atarigen_eeprom_reset();
 		atarigen_interrupt_reset(update_interrupts);
@@ -694,7 +694,7 @@ public class atarig42
 	 *
 	 *************************************/
 	
-	static public static InitDriverPtr init_roadriot = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_roadriot = new InitDriverPtr() { public void handler() (void)
 	{
 		static const UINT16 default_eeprom[] =
 		{
@@ -717,7 +717,7 @@ public class atarig42
 	} };
 	
 	
-	static public static InitDriverPtr init_guardian = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_guardian = new InitDriverPtr() { public void handler() (void)
 	{
 		static const UINT16 default_eeprom[] =
 		{

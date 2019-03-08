@@ -520,7 +520,7 @@ public class gunbustr
 		return gunbustr_ram[0x3acc/4];
 	}
 	
-	static public static InitDriverPtr init_gunbustr = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_gunbustr = new InitDriverPtr() { public void handler() (void)
 	{
 		/* Speedup handler */
 		install_mem_read32_handler(0, 0x203acc, 0x203acf, main_cycle_r);

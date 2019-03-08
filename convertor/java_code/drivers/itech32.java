@@ -189,7 +189,7 @@ public class itech32
 	 *
 	 *************************************/
 	
-	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		vint_state = xint_state = qint_state = 0;
 		sound_data = 0;
@@ -1667,20 +1667,20 @@ public class itech32
 	 *
 	 *************************************/
 	
-	static public static InitDriverPtr init_program_rom = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_program_rom = new InitDriverPtr() { public void handler() (void)
 	{
 		memcpy(main_rom, memory_region(REGION_USER1), memory_region_length(REGION_USER1));
 		memcpy(memory_region(REGION_CPU1), memory_region(REGION_USER1), 0x80);
 	} };
 	
-	static void init_sound_speedup(offs_t offset, offs_t pc)
+	public static InitDriverPtr init_sound_speedup = new InitDriverPtr() { public void handler() (offs_t offset, offs_t pc)
 	{
 		sound_speedup_data = install_mem_read_handler(1, offset, offset, sound_speedup_r);
 		sound_speedup_pc = pc;
-	}
+	} };
 	
 	
-	static public static InitDriverPtr init_timekill = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_timekill = new InitDriverPtr() { public void handler() (void)
 	{
 		init_program_rom();
 		init_sound_speedup(0x2010, 0x8c54);
@@ -1688,7 +1688,7 @@ public class itech32
 		itech32_planes = 2;
 	} };
 	
-	static public static InitDriverPtr init_hardyard = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_hardyard = new InitDriverPtr() { public void handler() (void)
 	{
 		init_program_rom();
 		init_sound_speedup(0x2010, 0x8e16);
@@ -1696,7 +1696,7 @@ public class itech32
 		itech32_planes = 1;
 	} };
 	
-	static public static InitDriverPtr init_bloodstm = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_bloodstm = new InitDriverPtr() { public void handler() (void)
 	{
 		init_program_rom();
 		init_sound_speedup(0x2011, 0x8ebf);
@@ -1704,7 +1704,7 @@ public class itech32
 		itech32_planes = 1;
 	} };
 	
-	static void init_sftm_common(int prot_addr, int sound_pc)
+	public static InitDriverPtr init_sftm_common = new InitDriverPtr() { public void handler() (int prot_addr, int sound_pc)
 	{
 		init_program_rom();
 		init_sound_speedup(0x2011, sound_pc);
@@ -1715,19 +1715,19 @@ public class itech32
 	
 		install_mem_write32_handler(0, 0x300000, 0x300003, itech020_color2_w);
 		install_mem_write32_handler(0, 0x380000, 0x380003, itech020_color1_w);
-	}
+	} };
 	
-	static public static InitDriverPtr init_sftm = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_sftm = new InitDriverPtr() { public void handler() (void)
 	{
 		init_sftm_common(0x7a6a, 0x905f);
 	} };
 	
-	static public static InitDriverPtr init_sftm110 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_sftm110 = new InitDriverPtr() { public void handler() (void)
 	{
 		init_sftm_common(0x7a66, 0x9059);
 	} };
 	
-	static public static InitDriverPtr init_shufshot = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_shufshot = new InitDriverPtr() { public void handler() (void)
 	{
 		init_program_rom();
 		init_sound_speedup(0x2011, 0x906c);

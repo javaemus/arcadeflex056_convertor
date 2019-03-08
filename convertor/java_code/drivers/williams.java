@@ -1596,7 +1596,7 @@ public class williams
 	 *
 	 *************************************/
 	
-	static public static InitDriverPtr init_defender = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_defender = new InitDriverPtr() { public void handler() (void)
 	{
 		static const UINT32 bank[8] = { 0x0c000, 0x10000, 0x11000, 0x12000, 0x0c000, 0x0c000, 0x0c000, 0x13000 };
 		defender_bank_list = bank;
@@ -1609,7 +1609,7 @@ public class williams
 	} };
 	
 	
-	static public static InitDriverPtr init_defndjeu = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_defndjeu = new InitDriverPtr() { public void handler() (void)
 	{
 	/*
 		Note: Please do not remove these comments in BETA versions. They are
@@ -1655,7 +1655,7 @@ public class williams
 	} };
 	
 	#if 0
-	static public static InitDriverPtr init_defcmnd = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_defcmnd = new InitDriverPtr() { public void handler() (void)
 	{
 		static const UINT32 bank[8] = { 0x0c000, 0x10000, 0x11000, 0x12000, 0x13000, 0x0c000, 0x0c000, 0x14000 };
 		defender_bank_list = bank;
@@ -1668,7 +1668,7 @@ public class williams
 	} };
 	#endif
 	
-	static public static InitDriverPtr init_mayday = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_mayday = new InitDriverPtr() { public void handler() (void)
 	{
 		static const UINT32 bank[8] = { 0x0c000, 0x10000, 0x11000, 0x12000, 0x0c000, 0x0c000, 0x0c000, 0x13000 };
 		defender_bank_list = bank;
@@ -1684,7 +1684,7 @@ public class williams
 	} };
 	
 	
-	static public static InitDriverPtr init_colony7 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_colony7 = new InitDriverPtr() { public void handler() (void)
 	{
 		static const UINT32 bank[8] = { 0x0c000, 0x10000, 0x11000, 0x12000, 0x0c000, 0x0c000, 0x0c000, 0x0c000 };
 		defender_bank_list = bank;
@@ -1697,7 +1697,7 @@ public class williams
 	} };
 	
 	
-	static public static InitDriverPtr init_stargate = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_stargate = new InitDriverPtr() { public void handler() (void)
 	{
 		/* CMOS configuration */
 		CONFIGURE_CMOS(0xcc00, 0x400);
@@ -1707,7 +1707,7 @@ public class williams
 	} };
 	
 	
-	static public static InitDriverPtr init_joust = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_joust = new InitDriverPtr() { public void handler() (void)
 	{
 		/* CMOS configuration */
 		CONFIGURE_CMOS(0xcc00, 0x400);
@@ -1720,7 +1720,7 @@ public class williams
 	} };
 	
 	
-	static public static InitDriverPtr init_robotron = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_robotron = new InitDriverPtr() { public void handler() (void)
 	{
 		/* CMOS configuration */
 		CONFIGURE_CMOS(0xcc00, 0x400);
@@ -1733,7 +1733,7 @@ public class williams
 	} };
 	
 	
-	static public static InitDriverPtr init_bubbles = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_bubbles = new InitDriverPtr() { public void handler() (void)
 	{
 		/* CMOS configuration */
 		CONFIGURE_CMOS(0xcc00, 0x400);
@@ -1746,7 +1746,7 @@ public class williams
 	} };
 	
 	
-	static public static InitDriverPtr init_splat = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_splat = new InitDriverPtr() { public void handler() (void)
 	{
 		/* CMOS configuration */
 		CONFIGURE_CMOS(0xcc00, 0x400);
@@ -1759,7 +1759,7 @@ public class williams
 	} };
 	
 	
-	static public static InitDriverPtr init_sinistar = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_sinistar = new InitDriverPtr() { public void handler() (void)
 	{
 		/* CMOS configuration */
 		CONFIGURE_CMOS(0xcc00, 0x400);
@@ -1776,7 +1776,7 @@ public class williams
 	} };
 	
 	
-	static public static InitDriverPtr init_lottofun = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_lottofun = new InitDriverPtr() { public void handler() (void)
 	{
 		/* CMOS configuration */
 		CONFIGURE_CMOS(0xcc00, 0x400);
@@ -1789,7 +1789,7 @@ public class williams
 	} };
 	
 	
-	static public static InitDriverPtr init_blaster = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_blaster = new InitDriverPtr() { public void handler() (void)
 	{
 		/* CMOS configuration */
 		CONFIGURE_CMOS(0xcc00, 0x400);
@@ -1802,7 +1802,7 @@ public class williams
 	} };
 	
 	
-	static public static InitDriverPtr init_tshoot = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_tshoot = new InitDriverPtr() { public void handler() (void)
 	{
 		static const UINT8 tilemap_colors[] = { 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7 };
 	
@@ -1818,7 +1818,7 @@ public class williams
 	} };
 	
 	
-	static public static InitDriverPtr init_joust2 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_joust2 = new InitDriverPtr() { public void handler() (void)
 	{
 		static const UINT8 tilemap_colors[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 	
@@ -1842,7 +1842,7 @@ public class williams
 	} };
 	
 	
-	static public static InitDriverPtr init_mysticm = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_mysticm = new InitDriverPtr() { public void handler() (void)
 	{
 		static const UINT8 tilemap_colors[] = { 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 	
@@ -1862,7 +1862,7 @@ public class williams
 	} };
 	
 	
-	static public static InitDriverPtr init_inferno = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_inferno = new InitDriverPtr() { public void handler() (void)
 	{
 		static const UINT8 tilemap_colors[] = { 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7 };
 	

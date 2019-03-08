@@ -792,7 +792,7 @@ public class wardner
 	ROM_END(); }}; 
 	
 	
-	static public static InitDriverPtr init_wardner = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_wardner = new InitDriverPtr() { public void handler() (void)
 	{
 		data8_t *source = memory_region(REGION_USER1);
 		data16_t *dest = (data16_t *)&memory_region(REGION_CPU3)[TMS320C10_PGM_OFFSET];

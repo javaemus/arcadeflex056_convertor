@@ -26,7 +26,7 @@ public class flkatck
 	
 	/***************************************************************************/
 	
-	static public static InitMachinePtr flkatck_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr flkatck_init_machine = new InitMachinePtr() { public void handler() ( void )
 	{
 		unsigned char *RAM = memory_region(REGION_SOUND1);
 		int bank_A, bank_B;

@@ -77,7 +77,7 @@ public class thunderj
 	}
 	
 	
-	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		atarigen_eeprom_reset();
 		atarivc_reset(atarivc_eof_data);
@@ -441,7 +441,7 @@ public class thunderj
 	 *
 	 *************************************/
 	
-	static public static InitDriverPtr init_thunderj = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_thunderj = new InitDriverPtr() { public void handler() (void)
 	{
 		atarigen_eeprom_default = NULL;
 		atarijsa_init(2, 3, 2, 0x0002);

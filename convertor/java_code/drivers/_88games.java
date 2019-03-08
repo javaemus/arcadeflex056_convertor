@@ -14,7 +14,8 @@ public class _88games
 {
 	
 	
-	static static void k88games_banking( int lines );
+	public static InitMachinePtr k88games_init_machine = new InitMachinePtr() { public void handler() ( void );
+	static void k88games_banking( int lines );
 	
 	static unsigned char *ram;
 	static int videobank;
@@ -35,7 +36,7 @@ public class _88games
 			else
 				memset(nvram,0,nvram_size);
 		}
-	}
+	} };
 	
 	
 	public static InterruptPtr k88games_interrupt = new InterruptPtr() { public int handler() 
@@ -572,7 +573,7 @@ public class _88games
 		k88games_priority = lines & 0x80;
 	}
 	
-	static public static InitMachinePtr k88games_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr k88games_init_machine = new InitMachinePtr() { public void handler() ( void )
 	{
 		konami_cpu_setlines_callback = k88games_banking;
 		paletteram = &memory_region(REGION_CPU1)[0x20000];
@@ -580,7 +581,7 @@ public class _88games
 	
 	
 	
-	static public static InitDriverPtr init_88games = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_88games = new InitDriverPtr() { public void handler() (void)
 	{
 		konami_rom_deinterleave_2(REGION_GFX1);
 		konami_rom_deinterleave_2(REGION_GFX2);

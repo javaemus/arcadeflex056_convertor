@@ -1502,13 +1502,13 @@ public class cninja
 	
 	/**********************************************************************************/
 	
-	static public static InitDriverPtr init_cninja = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_cninja = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_write16_handler(0, 0x1bc0a8, 0x1bc0a9, cninja_sound_w);
 		cninja_patch();
 	} };
 	
-	static public static InitDriverPtr init_stoneage = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_stoneage = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_write16_handler(0, 0x1bc0a8, 0x1bc0a9, stoneage_sound_w);
 	} };

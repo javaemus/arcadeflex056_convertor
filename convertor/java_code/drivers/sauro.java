@@ -358,7 +358,7 @@ public class sauro
 	
 	
 	
-	static public static InitDriverPtr init_sauro = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_sauro = new InitDriverPtr() { public void handler() (void)
 	{
 		/* This game doesn't like all memory to be initialized to zero, it won't
 		   initialize the high scores */

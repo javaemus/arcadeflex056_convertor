@@ -2138,43 +2138,43 @@ public class m92
 		m92_sprite_buffer_busy=0x80;
 	}
 	
-	static void init_m92(unsigned char *decryption_table)
+	public static InitDriverPtr init_m92 = new InitDriverPtr() { public void handler() (unsigned char *decryption_table)
 	{
 		m92_startup();
 		setvector_callback(VECTOR_INIT);
 		irem_cpu_decrypt(1,decryption_table);
-	}
+	} };
 	
-	static public static InitDriverPtr init_bmaster = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_bmaster = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read_handler(0, 0xe6fde, 0xe6fdf, bmaster_cycle_r);
 		init_m92(bomberman_decryption_table);
 	} };
 	
-	static public static InitDriverPtr init_gunforce = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_gunforce = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read_handler(0, 0xe61d0, 0xe61d1, gunforce_cycle_r);
 		init_m92(gunforce_decryption_table);
 	} };
 	
-	static public static InitDriverPtr init_hook = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_hook = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read_handler(0, 0xe0012, 0xe0013, hook_cycle_r);
 		init_m92(hook_decryption_table);
 	} };
 	
-	static public static InitDriverPtr init_mysticri = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_mysticri = new InitDriverPtr() { public void handler() (void)
 	{
 		init_m92(mysticri_decryption_table);
 	} };
 	
-	static public static InitDriverPtr init_uccops = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_uccops = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read_handler(0, 0xe3a02, 0xe3a03, uccops_cycle_r);
 		init_m92(dynablaster_decryption_table);
 	} };
 	
-	static public static InitDriverPtr init_rtypeleo = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_rtypeleo = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read_handler(0, 0xe0032, 0xe0033, rtypeleo_cycle_r);
 		init_m92(rtypeleo_decryption_table);
@@ -2182,7 +2182,7 @@ public class m92
 		m92_game_kludge=1;
 	} };
 	
-	static public static InitDriverPtr init_majtitl2 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_majtitl2 = new InitDriverPtr() { public void handler() (void)
 	{
 		init_m92(majtitl2_decryption_table);
 	
@@ -2193,13 +2193,13 @@ public class m92
 		m92_game_kludge=2;
 	} };
 	
-	static public static InitDriverPtr init_inthunt = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_inthunt = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read_handler(0, 0xe025e, 0xe025f, inthunt_cycle_r);
 		init_m92(inthunt_decryption_table);
 	} };
 	
-	static public static InitDriverPtr init_lethalth = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_lethalth = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read_handler(0, 0xe001e, 0xe001f, lethalth_cycle_r);
 		init_m92(lethalth_decryption_table);
@@ -2211,7 +2211,7 @@ public class m92
 		m92_game_kludge=3; /* No upper palette bank? It could be a different motherboard */
 	} };
 	
-	static public static InitDriverPtr init_nbbatman = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_nbbatman = new InitDriverPtr() { public void handler() (void)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -2220,7 +2220,7 @@ public class m92
 		memcpy(RAM+0x80000,RAM+0x100000,0x20000);
 	} };
 	
-	static public static InitDriverPtr init_psoldier = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_psoldier = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read_handler(0, 0xe1aec, 0xe1aed, psoldier_cycle_r);
 		init_m92(psoldier_decryption_table);
@@ -2229,7 +2229,7 @@ public class m92
 		sound_status = 0x80;
 	} };
 	
-	static public static InitDriverPtr init_dsccr94j = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_dsccr94j = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read_handler(0, 0xe8636, 0xe8637, dsccr94j_cycle_r);
 		init_m92(dsoccr94_decryption_table);

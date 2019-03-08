@@ -183,7 +183,7 @@ public class beathead
 	}
 	
 	
-	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		/* reset the common subsystems */
 		atarigen_eeprom_reset();
@@ -581,7 +581,7 @@ public class beathead
 	 *
 	 *************************************/
 	
-	static public static InitDriverPtr init_beathead = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_beathead = new InitDriverPtr() { public void handler() (void)
 	{
 		/* initialize the common systems */
 		atarigen_eeprom_default = NULL;

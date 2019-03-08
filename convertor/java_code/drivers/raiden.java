@@ -498,7 +498,7 @@ public class raiden
 		return ret;
 	} };
 	
-	static public static InitDriverPtr init_raiden = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_raiden = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read_handler(1, 0x4008, 0x4009, sub_cpu_spin_r);
 	} };
@@ -568,13 +568,13 @@ public class raiden
 		}
 	}
 	
-	static public static InitDriverPtr init_raidenk = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_raidenk = new InitDriverPtr() { public void handler() (void)
 	{
 		memory_patcha();
 		common_decrypt();
 	} };
 	
-	static public static InitDriverPtr init_raidena = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_raidena = new InitDriverPtr() { public void handler() (void)
 	{
 		memory_patcha();
 		common_decrypt();

@@ -312,7 +312,7 @@ public class itech8
 	 *
 	 *************************************/
 	
-	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		/* make sure bank 0 is selected */
 		if ((Machine->drv->cpu[0].cpu_type & ~CPU_FLAGS_MASK) == CPU_M6809)
@@ -2067,7 +2067,7 @@ public class itech8
 	 *
 	 *************************************/
 	
-	static public static InitDriverPtr init_viasound = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_viasound = new InitDriverPtr() { public void handler() (void)
 	{
 		/* some games with a YM3812 use a VIA(6522) for timing and communication */
 		install_mem_read_handler (1, 0x5000, 0x500f, via6522_r);
@@ -2075,7 +2075,7 @@ public class itech8
 	} };
 	
 	
-	static public static InitDriverPtr init_slikshot = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_slikshot = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read_handler (0, 0x0180, 0x0180, slikshot_z80_r);
 		install_mem_read_handler (0, 0x01cf, 0x01cf, slikshot_z80_control_r);
@@ -2083,7 +2083,7 @@ public class itech8
 	} };
 	
 	
-	static public static InitDriverPtr init_sstrike = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_sstrike = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read_handler (0, 0x1180, 0x1180, slikshot_z80_r);
 		install_mem_read_handler (0, 0x11cf, 0x11cf, slikshot_z80_control_r);
@@ -2091,7 +2091,7 @@ public class itech8
 	} };
 	
 	
-	static public static InitDriverPtr init_rimrockn = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_rimrockn = new InitDriverPtr() { public void handler() (void)
 	{
 		/* additional input ports */
 		install_mem_read_handler (0, 0x0161, 0x0161, input_port_3_r);

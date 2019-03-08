@@ -356,7 +356,7 @@ public class jailbrek
 	ROM_END(); }}; 
 	
 	
-	static public static InitDriverPtr init_jailbrek = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_jailbrek = new InitDriverPtr() { public void handler() (void)
 	{
 		konami1_decode();
 	} };

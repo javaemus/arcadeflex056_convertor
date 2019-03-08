@@ -886,7 +886,7 @@ public class xevious
 	
 	
 	
-	static public static InitDriverPtr init_xevios = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_xevios = new InitDriverPtr() { public void handler() (void)
 	{
 		int A,i;
 	

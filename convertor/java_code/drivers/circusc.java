@@ -430,7 +430,7 @@ public class circusc
 	ROM_END(); }}; 
 	
 	
-	static public static InitDriverPtr init_circusc = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_circusc = new InitDriverPtr() { public void handler() (void)
 	{
 		konami1_decode();
 	} };

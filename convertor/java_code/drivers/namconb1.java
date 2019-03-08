@@ -228,27 +228,27 @@ public class namconb1
 		}
 	}
 	
-	static public static InitDriverPtr init_nebulray = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_nebulray = new InitDriverPtr() { public void handler() ( void )
 	{
 		namconb1_type = key_nebulray;
 	} };
 	
-	static public static InitDriverPtr init_gslgr94u = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_gslgr94u = new InitDriverPtr() { public void handler() ( void )
 	{
 		namconb1_type = key_gslgr94u;
 	} };
 	
-	static public static InitDriverPtr init_sws96 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_sws96 = new InitDriverPtr() { public void handler() ( void )
 	{
 		namconb1_type = key_sws96;
 	} };
 	
-	static public static InitDriverPtr init_sws97 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_sws97 = new InitDriverPtr() { public void handler() ( void )
 	{
 		namconb1_type = key_sws97;
 	} };
 	
-	static public static InitDriverPtr init_gunbulet = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_gunbulet = new InitDriverPtr() { public void handler() ( void )
 	{
 	//	data32_t *pMem = (data32_t *)memory_region(REGION_CPU1);
 		namconb1_type = key_gunbulet;

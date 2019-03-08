@@ -403,7 +403,7 @@ public class dynduke
 	/***************************************************************************/
 	
 	
-	static public static InitDriverPtr init_dynduke = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_dynduke = new InitDriverPtr() { public void handler() (void)
 	{
 		seibu_sound_decrypt(REGION_CPU3,0x20000);
 	} };

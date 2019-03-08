@@ -639,7 +639,7 @@ public class trackfld
 	ROM_END(); }}; 
 	
 	
-	static public static InitDriverPtr init_trackfld = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_trackfld = new InitDriverPtr() { public void handler() (void)
 	{
 		konami1_decode();
 	} };

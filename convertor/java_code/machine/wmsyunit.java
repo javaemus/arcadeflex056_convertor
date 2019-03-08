@@ -682,7 +682,7 @@ public class wmsyunit
 	} };
 	
 	
-	static void init_generic(int bpp, int sound, int prot_start, int prot_end, int max_x, int max_y)
+	public static InitDriverPtr init_generic = new InitDriverPtr() { public void handler() (int bpp, int sound, int prot_start, int prot_end, int max_x, int max_y)
 	{
 		offs_t gfx_chunk = wms_gfx_rom_size / 4;
 		UINT8 d1, d2, d3, d4, d5, d6;
@@ -768,7 +768,7 @@ public class wmsyunit
 	
 		/* default update offset */
 		wms_partial_update_offset = 0;
-	}
+	} };
 	
 	
 	
@@ -819,7 +819,7 @@ public class wmsyunit
 	
 	/********************** Trog **************************/
 	
-	static public static InitDriverPtr init_trog_common = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_trog_common = new InitDriverPtr() { public void handler() (void)
 	{
 		/* protection */
 		static const struct protection_data trog_protection_data =
@@ -857,7 +857,7 @@ public class wmsyunit
 	
 	/********************** Smash TV **********************/
 	
-	static public static InitDriverPtr init_smashtv_common = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_smashtv_common = new InitDriverPtr() { public void handler() (void)
 	{
 		/* common init */
 		init_generic(6, SOUND_CVSD_SMALL, 0x9cf6, 0x9d21, 394, 274);
@@ -878,7 +878,7 @@ public class wmsyunit
 	
 	/********************** High Impact Football **********************/
 	
-	static public static InitDriverPtr init_hiimpact_common = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_hiimpact_common = new InitDriverPtr() { public void handler() (void)
 	{
 		/* protection */
 		static const struct protection_data hiimpact_protection_data =
@@ -902,7 +902,7 @@ public class wmsyunit
 	
 	/********************** Super High Impact Football **********************/
 	
-	static public static InitDriverPtr init_shimpact_common = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_shimpact_common = new InitDriverPtr() { public void handler() (void)
 	{
 		/* protection */
 		static const struct protection_data shimpact_protection_data =
@@ -926,7 +926,7 @@ public class wmsyunit
 	
 	/********************** Strike Force **********************/
 	
-	static public static InitDriverPtr init_strkforc_common = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_strkforc_common = new InitDriverPtr() { public void handler() (void)
 	{
 		/* protection */
 		static const struct protection_data strkforc_protection_data =
@@ -958,7 +958,7 @@ public class wmsyunit
 	
 	/********************** Mortal Kombat **********************/
 	
-	static public static InitDriverPtr init_mk_common = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_mk_common = new InitDriverPtr() { public void handler() (void)
 	{
 		/* protection */
 		static const struct protection_data mk_protection_data =
@@ -1001,7 +1001,7 @@ public class wmsyunit
 	
 	/********************** Terminator 2 **********************/
 	
-	static public static InitDriverPtr init_term2_common = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_term2_common = new InitDriverPtr() { public void handler() (void)
 	{
 		/* protection */
 		static const struct protection_data term2_protection_data =
@@ -1032,7 +1032,7 @@ public class wmsyunit
 	
 	/********************** Total Carnage **********************/
 	
-	static public static InitDriverPtr init_totcarn_common = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_totcarn_common = new InitDriverPtr() { public void handler() (void)
 	{
 		/* protection */
 		static const struct protection_data totcarn_protection_data =

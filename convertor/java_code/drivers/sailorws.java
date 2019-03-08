@@ -559,7 +559,7 @@ public class sailorws
 		z80ctc_init(&ctc_intf);
 	}
 	
-	static public static InitMachinePtr sailorws_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr sailorws_init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		//
 	} };
@@ -579,28 +579,28 @@ public class sailorws
 	}
 	
 	
-	static public static InitDriverPtr init_mjuraden = new InitDriverPtr() { public void handler()  { initialize_driver(); } };
-	static public static InitDriverPtr init_koinomp = new InitDriverPtr() { public void handler()  { initialize_driver(); } };
-	static public static InitDriverPtr init_patimono = new InitDriverPtr() { public void handler()  { initialize_driver(); } };
-	static public static InitDriverPtr init_mmehyou = new InitDriverPtr() { public void handler()  { initialize_driver(); } };
-	static public static InitDriverPtr init_gal10ren = new InitDriverPtr() { public void handler()  { initialize_driver(); } };
-	static public static InitDriverPtr init_mjlaman = new InitDriverPtr() { public void handler()  { initialize_driver(); } };
-	static public static InitDriverPtr init_mkeibaou = new InitDriverPtr() { public void handler()  { initialize_driver(); } };
-	static public static InitDriverPtr init_pachiten = new InitDriverPtr() { public void handler()  { initialize_driver(); } };
-	static public static InitDriverPtr init_mjanbari = new InitDriverPtr() { public void handler()  { initialize_driver(); } };
-	static public static InitDriverPtr init_sailorws = new InitDriverPtr() { public void handler()  { initialize_driver(); } };
-	static public static InitDriverPtr init_sailorwr = new InitDriverPtr() { public void handler()  { initialize_driver(); } };
-	static public static InitDriverPtr init_psailor1 = new InitDriverPtr() { public void handler()  { initialize_driver(); } };
-	static public static InitDriverPtr init_psailor2 = new InitDriverPtr() { public void handler()  { initialize_driver(); } };
-	static public static InitDriverPtr init_otatidai = new InitDriverPtr() { public void handler()  { initialize_driver(); } };
-	static public static InitDriverPtr init_ngpgal = new InitDriverPtr() { public void handler()  { initialize_driver(); } };
-	static public static InitDriverPtr init_mjgottsu = new InitDriverPtr() { public void handler()  { initialize_driver(); } };
-	static public static InitDriverPtr init_bakuhatu = new InitDriverPtr() { public void handler()  { initialize_driver(); } };
-	static public static InitDriverPtr init_cmehyou = new InitDriverPtr() { public void handler()  { initialize_driver(); } };
-	static public static InitDriverPtr init_mjkoiura = new InitDriverPtr() { public void handler()  { initialize_driver(); } };
-	static public static InitDriverPtr init_mscoutm = new InitDriverPtr() { public void handler()  { initialize_driver(); } };
-	static public static InitDriverPtr init_imekura = new InitDriverPtr() { public void handler()  { initialize_driver(); } };
-	static public static InitDriverPtr init_mjegolf = new InitDriverPtr() { public void handler()  { initialize_driver(); } };
+	public static InitDriverPtr init_mjuraden = new InitDriverPtr() { public void handler() (void) { initialize_driver(); } };
+	public static InitDriverPtr init_koinomp = new InitDriverPtr() { public void handler() (void) { initialize_driver(); } };
+	public static InitDriverPtr init_patimono = new InitDriverPtr() { public void handler() (void) { initialize_driver(); } };
+	public static InitDriverPtr init_mmehyou = new InitDriverPtr() { public void handler() (void) { initialize_driver(); } };
+	public static InitDriverPtr init_gal10ren = new InitDriverPtr() { public void handler() (void) { initialize_driver(); } };
+	public static InitDriverPtr init_mjlaman = new InitDriverPtr() { public void handler() (void) { initialize_driver(); } };
+	public static InitDriverPtr init_mkeibaou = new InitDriverPtr() { public void handler() (void) { initialize_driver(); } };
+	public static InitDriverPtr init_pachiten = new InitDriverPtr() { public void handler() (void) { initialize_driver(); } };
+	public static InitDriverPtr init_mjanbari = new InitDriverPtr() { public void handler() (void) { initialize_driver(); } };
+	public static InitDriverPtr init_sailorws = new InitDriverPtr() { public void handler() (void) { initialize_driver(); } };
+	public static InitDriverPtr init_sailorwr = new InitDriverPtr() { public void handler() (void) { initialize_driver(); } };
+	public static InitDriverPtr init_psailor1 = new InitDriverPtr() { public void handler() (void) { initialize_driver(); } };
+	public static InitDriverPtr init_psailor2 = new InitDriverPtr() { public void handler() (void) { initialize_driver(); } };
+	public static InitDriverPtr init_otatidai = new InitDriverPtr() { public void handler() (void) { initialize_driver(); } };
+	public static InitDriverPtr init_ngpgal = new InitDriverPtr() { public void handler() (void) { initialize_driver(); } };
+	public static InitDriverPtr init_mjgottsu = new InitDriverPtr() { public void handler() (void) { initialize_driver(); } };
+	public static InitDriverPtr init_bakuhatu = new InitDriverPtr() { public void handler() (void) { initialize_driver(); } };
+	public static InitDriverPtr init_cmehyou = new InitDriverPtr() { public void handler() (void) { initialize_driver(); } };
+	public static InitDriverPtr init_mjkoiura = new InitDriverPtr() { public void handler() (void) { initialize_driver(); } };
+	public static InitDriverPtr init_mscoutm = new InitDriverPtr() { public void handler() (void) { initialize_driver(); } };
+	public static InitDriverPtr init_imekura = new InitDriverPtr() { public void handler() (void) { initialize_driver(); } };
+	public static InitDriverPtr init_mjegolf = new InitDriverPtr() { public void handler() (void) { initialize_driver(); } };
 	
 	
 	public static Memory_ReadAddress readmem_sailorws[]={

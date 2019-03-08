@@ -59,7 +59,7 @@ public class xybots
 	}
 	
 	
-	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		atarigen_eeprom_reset();
 		atarigen_slapstic_reset();
@@ -286,7 +286,7 @@ public class xybots
 	 *
 	 *************************************/
 	
-	static public static InitDriverPtr init_xybots = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_xybots = new InitDriverPtr() { public void handler() (void)
 	{
 		atarigen_eeprom_default = NULL;
 		atarigen_slapstic_init(0, 0x008000, 107);

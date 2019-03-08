@@ -407,7 +407,7 @@ public class mcr1
 	 *
 	 *************************************/
 	
-	static public static InitDriverPtr init_solarfox = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_solarfox = new InitDriverPtr() { public void handler() (void)
 	{
 		static const UINT8 hiscore_init[] = { 0,0,1,1,1,1,1,3,3,3,7 };
 		nvram_init = hiscore_init;
@@ -422,7 +422,7 @@ public class mcr1
 	} };
 	
 	
-	static public static InitDriverPtr init_kick = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_kick = new InitDriverPtr() { public void handler() (void)
 	{
 		nvram_init = NULL;
 	

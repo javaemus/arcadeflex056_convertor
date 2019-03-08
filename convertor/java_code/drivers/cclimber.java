@@ -156,7 +156,7 @@ public class cclimber
 	} };
 	
 	
-	static public static InitMachinePtr cclimber_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr cclimber_init_machine = new InitMachinePtr() { public void handler()  (void)
 	{
 		/* Disable interrupts, River Patrol / Silver Land needs this */
 		cpu_interrupt_enable(0,0);
@@ -522,7 +522,7 @@ public class cclimber
 		ROM_LOAD( "cc12",         0x1000, 0x1000, 0x5da13aaa );
 	ROM_END(); }}; 
 	
-	static public static InitDriverPtr init_cclimber = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_cclimber = new InitDriverPtr() { public void handler() (void)
 	{
 	/*
 		translation mask is layed out like this:
@@ -695,7 +695,7 @@ public class cclimber
 		ROM_LOAD( "cc12j.bin",    0x1000, 0x1000, 0x9003ffbd );
 	ROM_END(); }}; 
 	
-	static public static InitDriverPtr init_cclimbrj = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_cclimbrj = new InitDriverPtr() { public void handler() (void)
 	{
 	/*
 		translation mask is layed out like this:

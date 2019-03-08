@@ -784,7 +784,7 @@ public class segasyse
 	 for Save State support
 	*******************************************************************************/
 	
-	static public static InitDriverPtr init_segasyse = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_segasyse = new InitDriverPtr() { public void handler() (void)
 	{
 		state_save_register_UINT8 ( "SEGASYSE-MAIN", 0, "8000 Write Bank",		&segae_8000bank, 1);
 		state_save_register_UINT8 ( "SEGASYSE-MAIN", 0, "Vertical Int Pending",	&vintpending, 1);
@@ -800,7 +800,7 @@ public class segasyse
 	 we need for the controls
 	*******************************************************************************/
 	
-	static public static InitDriverPtr init_hangonjr = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_hangonjr = new InitDriverPtr() { public void handler() (void)
 	{
 		install_port_read_handler (0, 0xf8, 0xf8, segae_hangonjr_port_f8_r);
 		install_port_write_handler(0, 0xfa, 0xfa, segae_hangonjr_port_fa_w);
@@ -810,7 +810,7 @@ public class segasyse
 		init_segasyse();
 	} };
 	
-	static public static InitDriverPtr init_ridleofp = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_ridleofp = new InitDriverPtr() { public void handler() (void)
 	{
 		install_port_read_handler (0, 0xf8, 0xf8, segae_ridleofp_port_f8_r);
 		install_port_write_handler(0, 0xfa, 0xfa, segae_ridleofp_port_fa_w);
@@ -818,7 +818,7 @@ public class segasyse
 		init_segasyse();
 	} };
 	
-	static public static InitDriverPtr init_astrofl = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_astrofl = new InitDriverPtr() { public void handler() (void)
 	{
 		astrofl_decode();
 	

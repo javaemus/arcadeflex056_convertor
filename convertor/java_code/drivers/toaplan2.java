@@ -183,7 +183,7 @@ public class toaplan2
 	  Initialisation handlers
 	***************************************************************************/
 	
-	static public static InitDriverPtr init_toaplan2 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_toaplan2 = new InitDriverPtr() { public void handler() (void)
 	{
 		old_p1_paddle_h = 0;
 		old_p1_paddle_v = 0;
@@ -193,13 +193,13 @@ public class toaplan2
 		mcu_data = 0;
 	} };
 	
-	static public static InitDriverPtr init_toaplan3 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_toaplan3 = new InitDriverPtr() { public void handler() (void)
 	{
 		toaplan2_sub_cpu = CPU_2_Zx80;
 		mcu_data = 0;
 	} };
 	
-	static public static InitDriverPtr init_fixeight = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_fixeight = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read16_handler(0, 0x28f002, 0x28fbff, MRA16_RAM );
 		install_mem_write16_handler(0, 0x28f002, 0x28fbff, MWA16_RAM );
@@ -208,19 +208,19 @@ public class toaplan2
 		mcu_data = 0;
 	} };
 	
-	static public static InitDriverPtr init_snowbro2 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_snowbro2 = new InitDriverPtr() { public void handler() (void)
 	{
 		toaplan2_sub_cpu = CPU_2_NONE;
 		mcu_data = 0;	/* not used here actually */
 	} };
 	
-	static public static InitDriverPtr init_pipibibs = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_pipibibs = new InitDriverPtr() { public void handler() (void)
 	{
 		toaplan2_sub_cpu = CPU_2_Z80;
 		mcu_data = 0;	/* not used here actually */
 	} };
 	
-	static public static InitDriverPtr init_pipibibi = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_pipibibi = new InitDriverPtr() { public void handler() (void)
 	{
 		int A;
 		int oldword, newword;
@@ -302,7 +302,7 @@ public class toaplan2
 		mcu_data = 0;	/* not used here actually */
 	} };
 	
-	static public static InitDriverPtr init_truxton2 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_truxton2 = new InitDriverPtr() { public void handler() (void)
 	{
 		data16_t *truxton2_ROM = (data16_t *)memory_region(REGION_CPU1);
 	
@@ -323,13 +323,13 @@ public class toaplan2
 		mcu_data = 0;	/* not used here actually */
 	} };
 	
-	static public static InitDriverPtr init_raizing = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_raizing = new InitDriverPtr() { public void handler() (void)
 	{
 		toaplan2_sub_cpu = CPU_2_Z80;
 		mcu_data = 0;	/* not used here actually */
 	} };
 	
-	static public static InitDriverPtr init_battleg = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_battleg = new InitDriverPtr() { public void handler() (void)
 	{
 		data8_t *Z80 = (data8_t *)memory_region(REGION_CPU2);
 	

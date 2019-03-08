@@ -175,7 +175,7 @@ public class jedi
 	} };
 	
 	
-	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		/* init globals */
 		control_num = 0;

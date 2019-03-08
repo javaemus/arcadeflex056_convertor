@@ -407,7 +407,7 @@ public class madmotor
 	
 	/******************************************************************************/
 	
-	static public static InitDriverPtr init_madmotor = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_madmotor = new InitDriverPtr() { public void handler() (void)
 	{
 		unsigned char *rom = memory_region(REGION_CPU1);
 		int i;

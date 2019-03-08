@@ -787,7 +787,7 @@ public class outrun
 		sys16_bg_scrollx = sys16_textram[0x74d];
 	}
 	
-	static public static InitMachinePtr outrun_init_machine = new InitMachinePtr() { public void handler() {
+	public static InitMachinePtr outrun_init_machine = new InitMachinePtr() { public void handler() ( void ){
 		static int bank[8] = {
 			7,0,1,2,
 			3,4,5,6
@@ -838,7 +838,7 @@ public class outrun
 		sys16_gr_second_road = &sys16_extraram[0x8000];
 	} };
 	
-	static public static InitMachinePtr outruna_init_machine = new InitMachinePtr() { public void handler() {
+	public static InitMachinePtr outruna_init_machine = new InitMachinePtr() { public void handler() ( void ){
 		static int bank[8] = {
 			7,0,1,2,
 			3,4,5,6
@@ -888,14 +888,14 @@ public class outrun
 		sys16_gr_second_road = &sys16_extraram[0x10000];
 	} };
 	
-	static public static InitDriverPtr init_outrun = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_outrun = new InitDriverPtr() { public void handler() ( void )
 	{
 		sys16_onetime_init_machine();
 		sys16_interleave_sprite_data( 0x100000 );
 		generate_gr_screen(512,2048,0,0,3,0x8000);
 	} };
 	
-	static public static InitDriverPtr init_outrunb = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_outrunb = new InitDriverPtr() { public void handler() ( void )
 	{
 		data16_t *RAM = (data16_t *)memory_region(REGION_CPU1);
 		int i;
@@ -1192,7 +1192,7 @@ public class outrun
 		sys16_bg_scrolly = sys16_textram[0x793] & 0x01ff;
 	}
 	
-	static public static InitMachinePtr shangon_init_machine = new InitMachinePtr() { public void handler() {
+	public static InitMachinePtr shangon_init_machine = new InitMachinePtr() { public void handler() ( void ){
 		sys16_textmode=1;
 		sys16_spritesystem = sys16_sprite_hangon;
 		sys16_sprxoffset = -0xc0;
@@ -1226,7 +1226,7 @@ public class outrun
 		sys16_gr_colorflip[1][3]=0x02 / 2;
 	} };
 	
-	static public static InitDriverPtr init_shangon = new InitDriverPtr() { public void handler() {
+	public static InitDriverPtr init_shangon = new InitDriverPtr() { public void handler() ( void ){
 		sys16_onetime_init_machine();
 		generate_gr_screen(512,1024,0,0,4,0x8000);
 	
@@ -1234,7 +1234,7 @@ public class outrun
 		sys16_patch_z80code( 0x1088, 0x01);
 	} };
 	
-	static public static InitDriverPtr init_shangonb = new InitDriverPtr() { public void handler() {
+	public static InitDriverPtr init_shangonb = new InitDriverPtr() { public void handler() ( void ){
 		sys16_onetime_init_machine();
 		generate_gr_screen(512,1024,8,0,4,0x8000);
 	} };

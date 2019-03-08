@@ -101,14 +101,14 @@ public class kaneko16
 		kaneko16_priority.sprite[3] = 0x0000;	// above all
 	} };
 	
-	static public static InitMachinePtr berlwall_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr berlwall_init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		kaneko16_init_machine();
 	
 		kaneko16_sprite_type = 2;	// like type 0, but using 16 instead of 8 bytes
 	} };
 	
-	static public static InitMachinePtr blazeon_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr blazeon_init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		kaneko16_init_machine();
 	
@@ -130,7 +130,7 @@ public class kaneko16
 		kaneko16_priority.sprite[3] = 0x0000;	// ""
 	} };
 	
-	static public static InitMachinePtr gtmr_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr gtmr_init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		kaneko16_init_machine();
 	
@@ -139,7 +139,7 @@ public class kaneko16
 		memset(gtmr_mcu_com, 0, 4 * sizeof( data16_t) );
 	} };
 	
-	static public static InitMachinePtr mgcrystl_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr mgcrystl_init_machine = new InitMachinePtr() { public void handler()  (void)
 	{
 		kaneko16_init_machine();
 	/*
@@ -169,7 +169,7 @@ public class kaneko16
 		kaneko16_priority.sprite[3] = 0x0000;	// ""
 	} };
 	
-	static public static InitMachinePtr sandscrp_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr sandscrp_init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		kaneko16_init_machine();
 	
@@ -178,7 +178,7 @@ public class kaneko16
 		watchdog_reset16_r(0,0);	// start with an armed watchdog
 	} };
 	
-	static public static InitMachinePtr shogwarr_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr shogwarr_init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		kaneko16_init_machine();
 	

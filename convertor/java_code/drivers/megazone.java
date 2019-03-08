@@ -478,7 +478,7 @@ public class megazone
 	ROM_END(); }}; 
 	
 	
-	static public static InitDriverPtr init_megazone = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_megazone = new InitDriverPtr() { public void handler() (void)
 	{
 		konami1_decode();
 	} };

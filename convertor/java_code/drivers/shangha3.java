@@ -722,11 +722,11 @@ public class shangha3
 	
 	
 	
-	static public static InitDriverPtr init_shangha3 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_shangha3 = new InitDriverPtr() { public void handler() (void)
 	{
 		shangha3_do_shadows = 1;
 	} };
-	static public static InitDriverPtr init_heberpop = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_heberpop = new InitDriverPtr() { public void handler() (void)
 	{
 		shangha3_do_shadows = 0;
 	} };

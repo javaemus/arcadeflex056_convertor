@@ -247,8 +247,7 @@ public class convertMame {
                             type = VH_STOP;
                             i3 = -1;
                             continue;
-                        }
-                        else if (Convertor.token[0].contains("init_machine")) {
+                        } else if (Convertor.token[0].contains("init_machine")) {
                             sUtil.putString((new StringBuilder()).append("public static InitMachinePtr ").append(Convertor.token[0]).append(" = new InitMachinePtr() { public void handler() ").toString());
                             type = MACHINE_INIT;
                             i3 = -1;
@@ -258,7 +257,7 @@ public class convertMame {
                             type = MACHINE_INIT;
                             i3 = -1;
                             continue;
-                        } else if (Convertor.token[0].startsWith("init_") && !Convertor.token[0].contains("table") && !Convertor.token[0].contains("machine")) {
+                        } else if (Convertor.token[0].startsWith("init_") && !Convertor.token[0].contains("table")&& !Convertor.token[0].contains("machine")&& !Convertor.token[0].contains("palette")) {
                             sUtil.putString((new StringBuilder()).append("public static InitDriverPtr ").append(Convertor.token[0]).append(" = new InitDriverPtr() { public void handler() ").toString());
                             type = DRIVER_INIT;
                             i3 = -1;
@@ -358,6 +357,24 @@ public class convertMame {
                         if (sUtil.getToken("void")) {
                             sUtil.skipSpace();
                             Convertor.token[0] = sUtil.parseToken();
+                            if (Convertor.token[0].contains("init_machine")) {
+                                sUtil.putString((new StringBuilder()).append("public static InitMachinePtr ").append(Convertor.token[0]).append(" = new InitMachinePtr() { public void handler() ").toString());
+                                type = MACHINE_INIT;
+                                i3 = -1;
+                                continue;
+                            }
+                            if (Convertor.token[0].contains("machine_init")) {
+                                sUtil.putString((new StringBuilder()).append("public static InitMachinePtr ").append(Convertor.token[0]).append(" = new InitMachinePtr() { public void handler() ").toString());
+                                type = MACHINE_INIT;
+                                i3 = -1;
+                                continue;
+                            }
+                            if (Convertor.token[0].startsWith("init_") && !Convertor.token[0].contains("table")&& !Convertor.token[0].contains("machine")&& !Convertor.token[0].contains("palette")) {
+                                sUtil.putString((new StringBuilder()).append("public static InitDriverPtr ").append(Convertor.token[0]).append(" = new InitDriverPtr() { public void handler() ").toString());
+                                type = DRIVER_INIT;
+                                i3 = -1;
+                                continue;
+                            }
                             sUtil.skipSpace();
                             if (sUtil.parseChar() != '(') {
                                 Convertor.inpos = i;
@@ -804,7 +821,7 @@ public class convertMame {
 
                     if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL
                             || type == READ_HANDLER8 || type == WRITE_HANDLER8 || type == MACHINE_INTERRUPT
-                            || type == VH_START || type == VH_STOP || type == VH_SCREENREFRESH || type == DRIVER_INIT|| type == MACHINE_INIT) {
+                            || type == VH_START || type == VH_STOP || type == VH_SCREENREFRESH || type == DRIVER_INIT || type == MACHINE_INIT) {
                         i3++;
                     }
                 }
@@ -903,7 +920,7 @@ public class convertMame {
                     }
                     if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL
                             || type == READ_HANDLER8 || type == WRITE_HANDLER8 || type == MACHINE_INTERRUPT
-                            || type == VH_START || type == VH_STOP || type == VH_SCREENREFRESH || type == DRIVER_INIT|| type == MACHINE_INIT) {
+                            || type == VH_START || type == VH_STOP || type == VH_SCREENREFRESH || type == DRIVER_INIT || type == MACHINE_INIT) {
                         i3--;
                         if (i3 == -1) {
                             sUtil.putString("} };");

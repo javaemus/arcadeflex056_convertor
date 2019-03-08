@@ -162,7 +162,7 @@ public class foodf
 	}
 	
 	
-	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		atarigen_interrupt_reset(update_interrupts);
 		atarigen_scanline_timer_reset(scanline_update, 32);

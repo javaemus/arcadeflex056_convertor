@@ -419,7 +419,7 @@ public class battlane
 	
 	
 	
-	static public static InitDriverPtr init_battlane = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_battlane = new InitDriverPtr() { public void handler() (void)
 	{
 		unsigned char *src,*dest;
 		int A;

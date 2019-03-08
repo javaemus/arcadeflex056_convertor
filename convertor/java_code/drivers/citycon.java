@@ -368,7 +368,7 @@ public class citycon
 	
 	
 	
-	static public static InitDriverPtr init_citycon = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_citycon = new InitDriverPtr() { public void handler() (void)
 	{
 		UINT8 *rom = memory_region(REGION_GFX1);
 		int i;

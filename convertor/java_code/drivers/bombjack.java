@@ -431,7 +431,7 @@ public class bombjack
 		ROM_LOAD( "02_p04t.bin",  0x0000, 0x1000, 0x398d4a02 );
 	ROM_END(); }}; 
 	
-	static public static InitDriverPtr init_bombjack = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_bombjack = new InitDriverPtr() { public void handler() (void)
 	{
 		state_save_register_int ("main", 0, "sound latch", &latch);
 	} };

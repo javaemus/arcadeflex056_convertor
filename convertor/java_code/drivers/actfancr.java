@@ -685,12 +685,12 @@ public class actfancr
 		return ret;
 	} };
 	
-	static public static InitDriverPtr init_actfancr = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_actfancr = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read_handler(0, 0x1f0026, 0x1f0027, cycle_r);
 	} };
 	
-	static public static InitDriverPtr init_actfancj = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_actfancj = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read_handler(0, 0x1f0026, 0x1f0027, cyclej_r);
 	} };

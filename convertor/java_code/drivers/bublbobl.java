@@ -1125,7 +1125,7 @@ public class bublbobl
 	
 	
 	
-	static public static InitDriverPtr init_bublbobl = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_bublbobl = new InitDriverPtr() { public void handler() (void)
 	{
 		unsigned char *ROM = memory_region(REGION_CPU1);
 	
@@ -1135,7 +1135,7 @@ public class bublbobl
 	} };
 	
 	
-	static public static InitDriverPtr init_boblbobl = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_boblbobl = new InitDriverPtr() { public void handler() (void)
 	{
 	#define MOD_PAGE(page,addr,data) memory_region(REGION_CPU1)[addr-0x8000+0x10000+0x4000*page] = data;
 	    /* these shouldn't be necessary, surely - this is a bootleg ROM
@@ -1152,7 +1152,7 @@ public class bublbobl
 	} };
 	
 	
-	static public static InitDriverPtr init_tokio = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_tokio = new InitDriverPtr() { public void handler() (void)
 	{
 		
 		/* preemptively enable video, the bit is not mapped for this game and */

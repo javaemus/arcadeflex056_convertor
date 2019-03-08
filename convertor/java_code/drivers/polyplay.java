@@ -104,7 +104,8 @@ public class polyplay
 	static int channel1_const;
 	static int channel2_active;
 	static int channel2_const;
-	static void play_channel1(int data);
+	public static InitDriverPtr init_polyplay_sound = new InitDriverPtr() { public void handler() (void);
+	void play_channel1(int data);
 	void play_channel2(int data);
 	int  polyplay_sh_start(const struct MachineSound *msound);
 	
@@ -119,7 +120,7 @@ public class polyplay
 		polyplay_sh_start,
 		polyplay_sh_stop,
 		polyplay_sh_update
-	};
+	} };;
 	
 	
 	void polyplay_reset(void)
@@ -418,7 +419,7 @@ public class polyplay
 	}
 	
 	/* initialization */
-	static public static InitDriverPtr init_polyplay_sound = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_polyplay_sound = new InitDriverPtr() { public void handler() (void)
 	{
 		timer_init();
 		timer_pulse(TIME_IN_HZ(75), 0, polyplay_timer);

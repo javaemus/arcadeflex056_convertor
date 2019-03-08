@@ -494,7 +494,7 @@ public class slapshot
 	//	ROM_LOAD( "d71-13.8",   0x00000, 0x00???, 0x00000000 );
 	ROM_END(); }}; 
 	
-	static public static InitDriverPtr init_slapshot = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_slapshot = new InitDriverPtr() { public void handler() (void)
 	{
 		unsigned int offset,i;
 		UINT8 *gfx = memory_region(REGION_GFX2);

@@ -285,7 +285,7 @@ public class sharrier
 		sys16_bg_scrolly = sys16_textram[0x793] & 0x01ff;
 	}
 	
-	static public static InitMachinePtr hangon_init_machine = new InitMachinePtr() { public void handler() {
+	public static InitMachinePtr hangon_init_machine = new InitMachinePtr() { public void handler() ( void ){
 		sys16_textmode=1;
 		sys16_spritesystem = sys16_sprite_hangon;
 		sys16_sprxoffset = -0xc0;
@@ -318,7 +318,7 @@ public class sharrier
 		sys16_gr_colorflip[1][3]=0x02 / 2;
 	} };
 	
-	static public static InitDriverPtr init_hangon = new InitDriverPtr() { public void handler() {
+	public static InitDriverPtr init_hangon = new InitDriverPtr() { public void handler() ( void ){
 		sys16_onetime_init_machine();
 		generate_gr_screen(512,1024,8,0,4,0x8000);
 	} };
@@ -484,7 +484,7 @@ public class sharrier
 		sys16_extraram[0x492/2] = sh_io_joy_r(0,0);
 	}
 	
-	static public static InitMachinePtr harrier_init_machine = new InitMachinePtr() { public void handler() {
+	public static InitMachinePtr harrier_init_machine = new InitMachinePtr() { public void handler() ( void ){
 		sys16_textmode=1;
 		sys16_spritesystem = sys16_sprite_sharrier;
 		sys16_sprxoffset = -0xc0;
@@ -526,7 +526,7 @@ public class sharrier
 		sys16_sh_shadowpal=0;
 	} };
 	
-	static public static InitDriverPtr init_sharrier = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_sharrier = new InitDriverPtr() { public void handler() ( void )
 	{
 		sys16_onetime_init_machine();
 		sys16_MaxShadowColors=NumOfShadowColors / 2;
@@ -761,7 +761,7 @@ public class sharrier
 		sys16_bg_page[2] = data&0xf;
 	}
 	
-	static public static InitMachinePtr enduror_init_machine = new InitMachinePtr() { public void handler() {
+	public static InitMachinePtr enduror_init_machine = new InitMachinePtr() { public void handler() ( void ){
 		sys16_textmode=1;
 		sys16_spritesystem = sys16_sprite_sharrier;
 		sys16_sprxoffset = -0xc0;
@@ -847,7 +847,7 @@ public class sharrier
 		rom[(0x186a + diff)/2] = 0x0000;
 	}
 	
-	static public static InitDriverPtr init_enduror = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_enduror = new InitDriverPtr() { public void handler() ( void )
 	{
 		sys16_onetime_init_machine();
 		sys16_MaxShadowColors=NumOfShadowColors / 2;
@@ -856,7 +856,7 @@ public class sharrier
 		enduror_sprite_decode();
 	} };
 	
-	static public static InitDriverPtr init_endurobl = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_endurobl = new InitDriverPtr() { public void handler() ( void )
 	{
 		sys16_onetime_init_machine();
 		sys16_MaxShadowColors=NumOfShadowColors / 2;
@@ -866,7 +866,7 @@ public class sharrier
 		endurora_opcode_decode();
 	} };
 	
-	static public static InitDriverPtr init_endurob2 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_endurob2 = new InitDriverPtr() { public void handler() ( void )
 	{
 		sys16_onetime_init_machine();
 		sys16_MaxShadowColors=NumOfShadowColors / 2;

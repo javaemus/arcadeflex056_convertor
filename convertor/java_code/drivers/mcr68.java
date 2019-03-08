@@ -1293,7 +1293,7 @@ public class mcr68
 	 *
 	 *************************************/
 	
-	static public static InitDriverPtr init_zwackery = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_zwackery = new InitDriverPtr() { public void handler() (void)
 	{
 		MCR_CONFIGURE_SOUND(MCR_CHIP_SQUEAK_DELUXE);
 	
@@ -1304,7 +1304,7 @@ public class mcr68
 	} };
 	
 	
-	static public static InitDriverPtr init_xenophob = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_xenophob = new InitDriverPtr() { public void handler() (void)
 	{
 		MCR_CONFIGURE_SOUND(MCR_SOUNDS_GOOD);
 	
@@ -1321,7 +1321,7 @@ public class mcr68
 	} };
 	
 	
-	static public static InitDriverPtr init_spyhunt2 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_spyhunt2 = new InitDriverPtr() { public void handler() (void)
 	{
 		MCR_CONFIGURE_SOUND(MCR_TURBO_CHIP_SQUEAK | MCR_SOUNDS_GOOD);
 	
@@ -1340,7 +1340,7 @@ public class mcr68
 	} };
 	
 	
-	static public static InitDriverPtr init_blasted = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_blasted = new InitDriverPtr() { public void handler() (void)
 	{
 		MCR_CONFIGURE_SOUND(MCR_SOUNDS_GOOD);
 	
@@ -1363,7 +1363,7 @@ public class mcr68
 	} };
 	
 	
-	static public static InitDriverPtr init_archrivl = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_archrivl = new InitDriverPtr() { public void handler() (void)
 	{
 		MCR_CONFIGURE_SOUND(MCR_WILLIAMS_SOUND);
 	
@@ -1395,7 +1395,7 @@ public class mcr68
 	} };
 	
 	
-	static public static InitDriverPtr init_pigskin = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_pigskin = new InitDriverPtr() { public void handler() (void)
 	{
 		MCR_CONFIGURE_SOUND(MCR_WILLIAMS_SOUND);
 	
@@ -1414,7 +1414,7 @@ public class mcr68
 	} };
 	
 	
-	static public static InitDriverPtr init_trisport = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_trisport = new InitDriverPtr() { public void handler() (void)
 	{
 		MCR_CONFIGURE_SOUND(MCR_WILLIAMS_SOUND);
 	

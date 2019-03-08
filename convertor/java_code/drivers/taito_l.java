@@ -131,7 +131,7 @@ public class taito_l
 		}
 	}
 	
-	static public static InitMachinePtr machine_init = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr machine_init = new InitMachinePtr() { public void handler() (void)
 	{
 		int i;
 	
@@ -2630,7 +2630,7 @@ public class taito_l
 	
 	
 	// bits 7..0 => bits 0..7
-	static public static InitDriverPtr init_plotting = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_plotting = new InitDriverPtr() { public void handler() (void)
 	{
 		unsigned char tab[256];
 		unsigned char *p;

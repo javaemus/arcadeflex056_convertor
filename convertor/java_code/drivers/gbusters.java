@@ -17,7 +17,8 @@ public class gbusters
 {
 	
 	/* prototypes */
-	static static void gbusters_banking( int lines );
+	public static InitMachinePtr gbusters_init_machine = new InitMachinePtr() { public void handler() ( void );
+	static void gbusters_banking( int lines );
 	
 	
 	
@@ -436,7 +437,7 @@ public class gbusters
 		/* other bits unknown */
 	}
 	
-	static public static InitMachinePtr gbusters_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr gbusters_init_machine = new InitMachinePtr() { public void handler() ( void )
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -449,7 +450,7 @@ public class gbusters
 	} };
 	
 	
-	static public static InitDriverPtr init_gbusters = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_gbusters = new InitDriverPtr() { public void handler() (void)
 	{
 		konami_rom_deinterleave_2(REGION_GFX1);
 		konami_rom_deinterleave_2(REGION_GFX2);

@@ -725,7 +725,7 @@ public class bloodbro
 	
 	/***************************************************************************/
 	
-	static public static InitDriverPtr init_weststry = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_weststry = new InitDriverPtr() { public void handler() (void)
 	{
 		UINT8 *gfx = memory_region(REGION_GFX3);
 		int i;

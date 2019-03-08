@@ -29,7 +29,7 @@ public class ddragon
 	static int adpcm_pos[2],adpcm_end[2],adpcm_idle[2];
 	/* end of private globals */
 	
-	static public static InitMachinePtr ddragon_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr ddragon_init_machine = new InitMachinePtr() { public void handler() ( void )
 	{
 		sprite_irq = HD63701_INT_NMI;
 		sound_irq = M6809_INT_IRQ;
@@ -39,7 +39,7 @@ public class ddragon
 		adpcm_idle[0] = adpcm_idle[1] = 1;
 	} };
 	
-	static public static InitMachinePtr ddragonb_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr ddragonb_init_machine = new InitMachinePtr() { public void handler() ( void )
 	{
 		sprite_irq = M6809_INT_NMI;
 		sound_irq = M6809_INT_IRQ;
@@ -49,7 +49,7 @@ public class ddragon
 		adpcm_idle[0] = adpcm_idle[1] = 1;
 	} };
 	
-	static public static InitMachinePtr ddragon2_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr ddragon2_init_machine = new InitMachinePtr() { public void handler() ( void )
 	{
 		sprite_irq = Z80_NMI_INT;
 		sound_irq = Z80_NMI_INT;

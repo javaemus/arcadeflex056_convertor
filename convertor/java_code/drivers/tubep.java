@@ -506,7 +506,7 @@ public class tubep
 		scanline_timer = timer_set( cpu_getscanlinetime( scanline ), scanline, scanline_callback );
 	}
 	
-	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		scanline_timer = timer_set(cpu_getscanlinetime( 64 ), 64, scanline_callback );
 	} };
@@ -520,7 +520,7 @@ public class tubep
 	
 		scanline_timer = timer_set( cpu_getscanlinetime( scanline ), scanline, scanline_callback_rjammer );
 	}
-	static public static InitMachinePtr init_machine_rjammer = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr init_machine_rjammer = new InitMachinePtr() { public void handler() (void)
 	{
 		scanline_timer = timer_set(cpu_getscanlinetime( 8 ), 8, scanline_callback_rjammer );
 	} };

@@ -501,7 +501,7 @@ public class battlnts
 	}
 	
 	
-	static public static InitDriverPtr init_rackemup = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_rackemup = new InitDriverPtr() { public void handler() (void)
 	{
 		/* rearrange char ROM */
 		shuffle(memory_region(REGION_GFX1),memory_region_length(REGION_GFX1));

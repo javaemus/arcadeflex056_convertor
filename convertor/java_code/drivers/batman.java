@@ -71,7 +71,7 @@ public class batman
 	}
 	
 	
-	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		atarigen_eeprom_reset();
 		atarivc_reset(atarivc_eof_data);
@@ -329,7 +329,7 @@ public class batman
 	 *
 	 *************************************/
 	
-	static public static InitDriverPtr init_batman = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_batman = new InitDriverPtr() { public void handler() (void)
 	{
 		static const data16_t default_eeprom[] =
 		{

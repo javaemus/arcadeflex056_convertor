@@ -159,7 +159,7 @@ public class gridlee
 	}
 	
 	
-	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		/* start timers to generate interrupts */
 		timer_set(cpu_getscanlinetime(0), 0, irq_timer);

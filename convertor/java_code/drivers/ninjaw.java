@@ -953,7 +953,7 @@ public class ninjaw
 	ROM_END(); }}; 
 	
 	
-	static public static InitDriverPtr init_ninjaw = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_ninjaw = new InitDriverPtr() { public void handler() (void)
 	{
 		cpua_ctrl = 0xff;
 		state_save_register_UINT16("main1", 0, "control", &cpua_ctrl, 1);

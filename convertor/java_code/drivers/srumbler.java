@@ -47,7 +47,7 @@ public class srumbler
 		}
 	} };
 	
-	static public static InitMachinePtr srumbler_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr srumbler_init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		/* initialize banked ROM pointers */
 		srumbler_bankswitch_w(0,0);

@@ -194,7 +194,7 @@ public class atarisy1
 	}
 	
 	
-	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		/* initialize the system */
 		atarigen_eeprom_reset();
@@ -1495,7 +1495,7 @@ public class atarisy1
 	 *
 	 *************************************/
 	
-	static public static InitDriverPtr init_marble = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_marble = new InitDriverPtr() { public void handler() (void)
 	{
 		atarigen_eeprom_default = NULL;
 		atarigen_slapstic_init(0, 0x080000, 103);
@@ -1506,7 +1506,7 @@ public class atarisy1
 	} };
 	
 	
-	static public static InitDriverPtr init_peterpak = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_peterpak = new InitDriverPtr() { public void handler() (void)
 	{
 		atarigen_eeprom_default = NULL;
 		atarigen_slapstic_init(0, 0x080000, 107);
@@ -1517,7 +1517,7 @@ public class atarisy1
 	} };
 	
 	
-	static public static InitDriverPtr init_indytemp = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_indytemp = new InitDriverPtr() { public void handler() (void)
 	{
 		atarigen_eeprom_default = NULL;
 		atarigen_slapstic_init(0, 0x080000, 105);
@@ -1531,7 +1531,7 @@ public class atarisy1
 	} };
 	
 	
-	static public static InitDriverPtr init_roadrunn = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_roadrunn = new InitDriverPtr() { public void handler() (void)
 	{
 		atarigen_eeprom_default = NULL;
 		atarigen_slapstic_init(0, 0x080000, 108);
@@ -1542,7 +1542,7 @@ public class atarisy1
 	} };
 	
 	
-	static public static InitDriverPtr init_roadblst = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_roadblst = new InitDriverPtr() { public void handler() (void)
 	{
 		atarigen_eeprom_default = NULL;
 		atarigen_slapstic_init(0, 0x080000, 110);

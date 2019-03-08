@@ -518,7 +518,7 @@ public class overdriv
 	
 	
 	
-	static public static InitDriverPtr init_overdriv = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_overdriv = new InitDriverPtr() { public void handler() (void)
 	{
 		konami_rom_deinterleave_4(REGION_GFX1);
 	} };

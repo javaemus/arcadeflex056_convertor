@@ -89,17 +89,17 @@ public class shangkid
 	
 	/***************************************************************************************/
 	
-	static public static InitDriverPtr init_chinhero = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_chinhero = new InitDriverPtr() { public void handler() ( void )
 	{
 		shangkid_gfx_type = 0;
 	} };
 	
-	static public static InitDriverPtr init_shangkid = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_shangkid = new InitDriverPtr() { public void handler() ( void )
 	{
 		shangkid_gfx_type = 1;
 	} };
 	
-	static public static InitDriverPtr init_dynamski = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_dynamski = new InitDriverPtr() { public void handler() ( void )
 	{
 	/*
 		unsigned char *pMem;

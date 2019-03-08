@@ -16,7 +16,8 @@ public class rollerg
 {
 	
 	/* prototypes */
-	static static void rollerg_banking( int lines );
+	public static InitMachinePtr rollerg_init_machine = new InitMachinePtr() { public void handler() ( void );
+	static void rollerg_banking( int lines );
 	
 	
 	
@@ -376,14 +377,14 @@ public class rollerg
 		cpu_setbank(1,&RAM[offs]);
 	}
 	
-	static public static InitMachinePtr rollerg_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr rollerg_init_machine = new InitMachinePtr() { public void handler() ( void )
 	{
 		konami_cpu_setlines_callback = rollerg_banking;
 	
 		readzoomroms = 0;
 	} };
 	
-	static public static InitDriverPtr init_rollerg = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_rollerg = new InitDriverPtr() { public void handler() (void)
 	{
 		konami_rom_deinterleave_2(REGION_GFX1);
 	} };

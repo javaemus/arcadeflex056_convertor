@@ -643,7 +643,7 @@ public class m107
 	
 	/***************************************************************************/
 	
-	static public static InitDriverPtr init_m107 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_m107 = new InitDriverPtr() { public void handler() (void)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -661,7 +661,7 @@ public class m107
 		raster_enable=1;
 	} };
 	
-	static public static InitDriverPtr init_dsoccr94 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_dsoccr94 = new InitDriverPtr() { public void handler() (void)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	

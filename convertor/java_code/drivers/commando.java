@@ -526,7 +526,7 @@ public class commando
 	
 	
 	
-	static public static InitDriverPtr init_commando = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_commando = new InitDriverPtr() { public void handler() (void)
 	{
 		int A;
 		unsigned char *rom = memory_region(REGION_CPU1);
@@ -546,7 +546,7 @@ public class commando
 		}
 	} };
 	
-	static public static InitDriverPtr init_spaceinv = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_spaceinv = new InitDriverPtr() { public void handler() (void)
 	{
 		int A;
 		unsigned char *rom = memory_region(REGION_CPU1);

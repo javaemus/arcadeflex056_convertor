@@ -685,7 +685,7 @@ public class thief
 	ROM_END(); }}; 
 	
 	
-	static public static InitDriverPtr init_thief = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_thief = new InitDriverPtr() { public void handler() (void)
 	{
 		UINT8 *dest = memory_region( REGION_CPU1 );
 		const UINT8 *source = memory_region( REGION_CPU2 );

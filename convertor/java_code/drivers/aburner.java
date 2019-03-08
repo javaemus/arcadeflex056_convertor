@@ -823,7 +823,7 @@ public class aburner
 	
 	/***************************************************************************/
 	
-	static public static InitMachinePtr aburner_init_machine = new InitMachinePtr() { public void handler() { /* called after vh_start */
+	public static InitMachinePtr aburner_init_machine = new InitMachinePtr() { public void handler() ( void ){ /* called after vh_start */
 		sys16_textmode = 2;
 		sys16_spritesystem = sys16_sprite_aburner;
 		sys16_sprxoffset = -0xc0;
@@ -835,13 +835,13 @@ public class aburner
 		sys16_textlayer_hi_max=0xff;
 	} };
 	
-	static public static InitDriverPtr init_thndrbdj = new InitDriverPtr() { public void handler() {
+	public static InitDriverPtr init_thndrbdj = new InitDriverPtr() { public void handler() ( void ){
 		sys16_onetime_init_machine();
 		sys16_bg1_trans = 1;
 		sys16_interleave_sprite_data( 0x200000 );
 	} };
 	
-	static public static InitDriverPtr init_aburner = new InitDriverPtr() { public void handler() {
+	public static InitDriverPtr init_aburner = new InitDriverPtr() { public void handler() ( void ){
 		/* reset hack for AfterBurner */
 		sys16_patch_code(0xe76c,0x4a);
 		sys16_patch_code(0xe76d,0x79);
@@ -855,7 +855,7 @@ public class aburner
 		sys16_interleave_sprite_data( 0x200000 );
 	} };
 	
-	static public static InitDriverPtr init_aburner2 = new InitDriverPtr() { public void handler() {
+	public static InitDriverPtr init_aburner2 = new InitDriverPtr() { public void handler() ( void ){
 		/* reset hack for AfterBurner2 */
 		sys16_patch_code(0x1483c,0x4a);
 		sys16_patch_code(0x1483d,0x79);

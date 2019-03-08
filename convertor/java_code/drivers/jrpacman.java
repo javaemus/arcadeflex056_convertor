@@ -112,7 +112,7 @@ public class jrpacman
 					/* his usual speed. When we start the emulation, we check if the */
 					/* hack can be applied, and set this flag accordingly. */
 	
-	static public static InitMachinePtr jrpacman_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr jrpacman_init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -363,7 +363,7 @@ public class jrpacman
 	
 	
 	
-	static public static InitDriverPtr init_jrpacman = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_jrpacman = new InitDriverPtr() { public void handler() (void)
 	{
 		/* The encryption PALs garble bits 0, 2 and 7 of the ROMs. The encryption */
 		/* scheme is complex (basically it's a state machine) and can only be */

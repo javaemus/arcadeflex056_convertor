@@ -505,7 +505,7 @@ public class finalizr
 	ROM_END(); }}; 
 	
 	
-	static public static InitDriverPtr init_finalizr = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_finalizr = new InitDriverPtr() { public void handler() (void)
 	{
 		konami1_decode();
 	} };

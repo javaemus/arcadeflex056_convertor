@@ -428,7 +428,7 @@ public class redclash
 		ROM_LOAD( "6331-3.11e",   0x0040, 0x0020, 0x27fa3a50 );/* 6331.6w */
 	ROM_END(); }}; 
 	
-	static public static InitDriverPtr init_redclash = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_redclash = new InitDriverPtr() { public void handler() (void)
 	{
 		int i,j;
 	

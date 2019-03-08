@@ -481,7 +481,7 @@ public class junofrst
 	
 	
 	
-	static public static InitDriverPtr init_junofrst = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_junofrst = new InitDriverPtr() { public void handler() (void)
 	{
 		konami1_decode();
 	} };

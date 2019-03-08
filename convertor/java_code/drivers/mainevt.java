@@ -923,7 +923,7 @@ public class mainevt
 	
 	
 	
-	static public static InitDriverPtr init_mainevt = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_mainevt = new InitDriverPtr() { public void handler() (void)
 	{
 		konami_rom_deinterleave_2(REGION_GFX1);
 		konami_rom_deinterleave_2(REGION_GFX2);

@@ -175,7 +175,7 @@ public class williams
 		PROTOTYPES
 	****************************************************************************/
 	
-	static void init_audio_state(int first_time);
+	public static InitDriverPtr init_audio_state = new InitDriverPtr() { public void handler() (int first_time);
 	static void locate_audio_hotspot(UINT8 *base, UINT16 start);
 	
 	static int williams_custom_start(const struct MachineSound *msound);
@@ -219,7 +219,7 @@ public class williams
 	
 	/* CVSD readmem/writemem structures */
 	MEMORY_READ_START( williams_cvsd_readmem )
-		{ 0x0000, 0x07ff, MRA_RAM },
+		{ 0x0000, 0x07ff, MRA_RAM } };,
 		{ 0x2000, 0x2001, williams_ym2151_r },
 		{ 0x4000, 0x4003, williams_cvsd_pia_r },
 		{ 0x8000, 0xffff, MRA_BANK6 },
@@ -777,7 +777,7 @@ public class williams
 		williams_dcs_boot();
 	}
 	
-	static void init_audio_state(int first_time)
+	public static InitDriverPtr init_audio_state = new InitDriverPtr() { public void handler() (int first_time)
 	{
 		/* reset the YM2151 state */
 		ym2151.timer_base = 1.0 / (3579580.0 / 64.0);
@@ -830,7 +830,7 @@ public class williams
 			cpu_set_irq_line(williams_cpunum + 1, M6809_IRQ_LINE, CLEAR_LINE);
 			cpu_set_nmi_line(williams_cpunum + 1, CLEAR_LINE);
 		}
-	}
+	} };
 	
 	static void locate_audio_hotspot(UINT8 *base, UINT16 start)
 	{

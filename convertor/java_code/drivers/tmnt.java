@@ -3754,13 +3754,13 @@ public class tmnt
 	
 	
 	
-	static public static InitDriverPtr init_gfx = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_gfx = new InitDriverPtr() { public void handler() (void)
 	{
 		konami_rom_deinterleave_2(REGION_GFX1);
 		konami_rom_deinterleave_2(REGION_GFX2);
 	} };
 	
-	static public static InitDriverPtr init_mia = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_mia = new InitDriverPtr() { public void handler() (void)
 	{
 		unsigned char *gfxdata;
 		int len;
@@ -3856,7 +3856,7 @@ public class tmnt
 	} };
 	
 	
-	static public static InitDriverPtr init_tmnt = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_tmnt = new InitDriverPtr() { public void handler() (void)
 	{
 		unsigned char *gfxdata;
 		int len;
@@ -3987,7 +3987,7 @@ public class tmnt
 		shuffle(buf + len,len);
 	}
 	
-	static public static InitDriverPtr init_glfgreat = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_glfgreat = new InitDriverPtr() { public void handler() (void)
 	{
 		/* ROMs are interleaved at byte level */
 		shuffle(memory_region(REGION_GFX1),memory_region_length(REGION_GFX1));

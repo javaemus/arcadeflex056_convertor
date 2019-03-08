@@ -22,7 +22,8 @@ public class vendetta
 {
 	
 	/* prototypes */
-	static static void vendetta_banking( int lines );
+	public static InitMachinePtr vendetta_init_machine = new InitMachinePtr() { public void handler() ( void );
+	static void vendetta_banking( int lines );
 	static void vendetta_video_banking( int select );
 	
 	
@@ -45,7 +46,7 @@ public class vendetta
 		0,				/* erase command */
 		"0100000000000",/* lock command */
 		"0100110000000" /* unlock command */
-	};
+	} };;
 	
 	static void nvram_handler(void *file,int read_or_write)
 	{
@@ -592,7 +593,7 @@ public class vendetta
 			cpu_setbank( 1, &RAM[ 0x10000 + ( lines * 0x2000 ) ] );
 	}
 	
-	static public static InitMachinePtr vendetta_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr vendetta_init_machine = new InitMachinePtr() { public void handler() ( void )
 	{
 		konami_cpu_setlines_callback = vendetta_banking;
 	
@@ -604,7 +605,7 @@ public class vendetta
 		vendetta_video_banking( 0 );
 	} };
 	
-	static public static InitDriverPtr init_vendetta = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_vendetta = new InitDriverPtr() { public void handler() (void)
 	{
 		konami_rom_deinterleave_2(REGION_GFX1);
 		konami_rom_deinterleave_4(REGION_GFX2);

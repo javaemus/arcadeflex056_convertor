@@ -247,7 +247,7 @@ public class niyanpai
 		z80ctc_init(&ctc_intf);
 	}
 	
-	static public static InitMachinePtr niyanpai_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr niyanpai_init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		//
 	} };
@@ -274,7 +274,7 @@ public class niyanpai
 	}
 	
 	
-	static public static InitDriverPtr init_niyanpai = new InitDriverPtr() { public void handler()  { initialize_driver(); } };
+	public static InitDriverPtr init_niyanpai = new InitDriverPtr() { public void handler() (void) { initialize_driver(); } };
 	
 	
 	static READ16_HANDLER( niyanpai_dipsw_r )

@@ -391,7 +391,7 @@ public class pandoras
 	
 	***************************************************************************/
 	
-	static public static InitMachinePtr pandoras_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr pandoras_init_machine = new InitMachinePtr() { public void handler() ( void )
 	{
 		firq_old_data_a = firq_old_data_b = 0;
 		irq_enable_a = irq_enable_b = 0;

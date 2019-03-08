@@ -784,12 +784,12 @@ public class namcos21
 		}
 	}
 	
-	static public static InitDriverPtr init_winrun = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_winrun = new InitDriverPtr() { public void handler() ( void )
 	{
 		namcos21_init( NAMCOS21_WINRUN91 );
 	} };
 	
-	static public static InitDriverPtr init_aircombt = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_aircombt = new InitDriverPtr() { public void handler() ( void )
 	{
 	#if 0 /* Patch test mode: replace first four tests with hidden tests */
 		data16_t *pMem = (data16_t *)memory_region( REGION_CPU1 );

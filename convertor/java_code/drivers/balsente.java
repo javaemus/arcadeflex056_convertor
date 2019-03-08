@@ -294,7 +294,7 @@ public class balsente
 	}
 	
 	
-	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		/* create the polynomial tables */
 		poly17_init();
@@ -2710,40 +2710,40 @@ public class balsente
 		}
 	}
 	
-	static public static InitDriverPtr init_sentetst = new InitDriverPtr() { public void handler()  { expand_roms(EXPAND_ALL);  balsente_shooter = 0; /* noanalog */ } };
-	static public static InitDriverPtr init_cshift = new InitDriverPtr() { public void handler()    { expand_roms(EXPAND_ALL);  balsente_shooter = 0; /* noanalog */ } };
-	static public static InitDriverPtr init_gghost = new InitDriverPtr() { public void handler()    { expand_roms(EXPAND_ALL);  balsente_shooter = 0; adc_shift = 1; } };
-	static public static InitDriverPtr init_hattrick = new InitDriverPtr() { public void handler()  { expand_roms(EXPAND_ALL);  balsente_shooter = 0; /* noanalog */ } };
-	static public static InitDriverPtr init_otwalls = new InitDriverPtr() { public void handler()   { expand_roms(EXPAND_ALL);  balsente_shooter = 0; adc_shift = 0; } };
-	static public static InitDriverPtr init_snakepit = new InitDriverPtr() { public void handler()  { expand_roms(EXPAND_ALL);  balsente_shooter = 0; adc_shift = 1; } };
-	static public static InitDriverPtr init_snakjack = new InitDriverPtr() { public void handler()  { expand_roms(EXPAND_ALL);  balsente_shooter = 0; adc_shift = 1; } };
-	static public static InitDriverPtr init_stocker = new InitDriverPtr() { public void handler()   { expand_roms(EXPAND_ALL);  balsente_shooter = 0; adc_shift = 0; } };
-	static public static InitDriverPtr init_triviag1 = new InitDriverPtr() { public void handler()  { expand_roms(EXPAND_ALL);  balsente_shooter = 0; /* noanalog */ } };
-	static public static InitDriverPtr init_triviag2 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_sentetst = new InitDriverPtr() { public void handler() (void) { expand_roms(EXPAND_ALL);  balsente_shooter = 0; /* noanalog */ } };
+	public static InitDriverPtr init_cshift = new InitDriverPtr() { public void handler() (void)   { expand_roms(EXPAND_ALL);  balsente_shooter = 0; /* noanalog */ } };
+	public static InitDriverPtr init_gghost = new InitDriverPtr() { public void handler() (void)   { expand_roms(EXPAND_ALL);  balsente_shooter = 0; adc_shift = 1; } };
+	public static InitDriverPtr init_hattrick = new InitDriverPtr() { public void handler() (void) { expand_roms(EXPAND_ALL);  balsente_shooter = 0; /* noanalog */ } };
+	public static InitDriverPtr init_otwalls = new InitDriverPtr() { public void handler() (void)  { expand_roms(EXPAND_ALL);  balsente_shooter = 0; adc_shift = 0; } };
+	public static InitDriverPtr init_snakepit = new InitDriverPtr() { public void handler() (void) { expand_roms(EXPAND_ALL);  balsente_shooter = 0; adc_shift = 1; } };
+	public static InitDriverPtr init_snakjack = new InitDriverPtr() { public void handler() (void) { expand_roms(EXPAND_ALL);  balsente_shooter = 0; adc_shift = 1; } };
+	public static InitDriverPtr init_stocker = new InitDriverPtr() { public void handler() (void)  { expand_roms(EXPAND_ALL);  balsente_shooter = 0; adc_shift = 0; } };
+	public static InitDriverPtr init_triviag1 = new InitDriverPtr() { public void handler() (void) { expand_roms(EXPAND_ALL);  balsente_shooter = 0; /* noanalog */ } };
+	public static InitDriverPtr init_triviag2 = new InitDriverPtr() { public void handler() (void)
 	{
 		memcpy(&memory_region(REGION_CPU1)[0x20000], &memory_region(REGION_CPU1)[0x28000], 0x4000);
 		memcpy(&memory_region(REGION_CPU1)[0x24000], &memory_region(REGION_CPU1)[0x28000], 0x4000);
 		expand_roms(EXPAND_NONE); balsente_shooter = 0; /* noanalog */
 	} };
-	static public static InitDriverPtr init_gimeabrk = new InitDriverPtr() { public void handler()  { expand_roms(EXPAND_ALL);  balsente_shooter = 0; adc_shift = 1; } };
-	static public static InitDriverPtr init_minigolf = new InitDriverPtr() { public void handler()  { expand_roms(EXPAND_NONE); balsente_shooter = 0; adc_shift = 2; } };
-	static public static InitDriverPtr init_minigol2 = new InitDriverPtr() { public void handler()  { expand_roms(0x0c);        balsente_shooter = 0; adc_shift = 2; } };
-	static public static InitDriverPtr init_toggle = new InitDriverPtr() { public void handler()    { expand_roms(EXPAND_ALL);  balsente_shooter = 0; /* noanalog */ } };
-	static public static InitDriverPtr init_nametune = new InitDriverPtr() { public void handler()  { expand_roms(EXPAND_NONE | SWAP_HALVES); balsente_shooter = 0; /* noanalog */ } };
-	static public static InitDriverPtr init_nstocker = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_gimeabrk = new InitDriverPtr() { public void handler() (void) { expand_roms(EXPAND_ALL);  balsente_shooter = 0; adc_shift = 1; } };
+	public static InitDriverPtr init_minigolf = new InitDriverPtr() { public void handler() (void) { expand_roms(EXPAND_NONE); balsente_shooter = 0; adc_shift = 2; } };
+	public static InitDriverPtr init_minigol2 = new InitDriverPtr() { public void handler() (void) { expand_roms(0x0c);        balsente_shooter = 0; adc_shift = 2; } };
+	public static InitDriverPtr init_toggle = new InitDriverPtr() { public void handler() (void)   { expand_roms(EXPAND_ALL);  balsente_shooter = 0; /* noanalog */ } };
+	public static InitDriverPtr init_nametune = new InitDriverPtr() { public void handler() (void) { expand_roms(EXPAND_NONE | SWAP_HALVES); balsente_shooter = 0; /* noanalog */ } };
+	public static InitDriverPtr init_nstocker = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read_handler(0, 0x9902, 0x9902, nstocker_port2_r);
 		expand_roms(EXPAND_NONE | SWAP_HALVES); balsente_shooter = 1; adc_shift = 1;
 	} };
-	static public static InitDriverPtr init_sfootbal = new InitDriverPtr() { public void handler()  { expand_roms(EXPAND_ALL  | SWAP_HALVES); balsente_shooter = 0; adc_shift = 0; } };
-	static public static InitDriverPtr init_spiker = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_sfootbal = new InitDriverPtr() { public void handler() (void) { expand_roms(EXPAND_ALL  | SWAP_HALVES); balsente_shooter = 0; adc_shift = 0; } };
+	public static InitDriverPtr init_spiker = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_write_handler(0, 0x9f80, 0x9f8f, spiker_expand_w);
 		install_mem_read_handler(0, 0x9f80, 0x9f8f, spiker_expand_r);
 		expand_roms(EXPAND_ALL  | SWAP_HALVES); balsente_shooter = 0; adc_shift = 1;
 	} };
-	static public static InitDriverPtr init_stompin = new InitDriverPtr() { public void handler()   { expand_roms(0x0c | SWAP_HALVES); balsente_shooter = 0; adc_shift = 32; } };
-	static public static InitDriverPtr init_rescraid = new InitDriverPtr() { public void handler()  { expand_roms(EXPAND_NONE); balsente_shooter = 0; /* noanalog */ } };
+	public static InitDriverPtr init_stompin = new InitDriverPtr() { public void handler() (void)  { expand_roms(0x0c | SWAP_HALVES); balsente_shooter = 0; adc_shift = 32; } };
+	public static InitDriverPtr init_rescraid = new InitDriverPtr() { public void handler() (void) { expand_roms(EXPAND_NONE); balsente_shooter = 0; /* noanalog */ } };
 	
 	
 	

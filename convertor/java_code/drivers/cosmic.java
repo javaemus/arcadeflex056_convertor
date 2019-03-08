@@ -1366,7 +1366,7 @@ public class cosmic
 	);
 	
 	
-	static public static InitDriverPtr init_cosmicg = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_cosmicg = new InitDriverPtr() { public void handler() (void)
 	{
 		/* Roms have data pins connected different from normal */
 	

@@ -314,7 +314,7 @@ public class wmswolfu
 	 *
 	 *************************************/
 	
-	static public static InitDriverPtr init_wolfu_generic = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_wolfu_generic = new InitDriverPtr() { public void handler() (void)
 	{
 		UINT8 *base;
 		int i, j;
@@ -350,7 +350,7 @@ public class wmswolfu
 	
 	/********************** Mortal Kombat 3 **********************/
 	
-	static public static InitDriverPtr init_mk3_common = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_mk3_common = new InitDriverPtr() { public void handler() (void)
 	{
 		/* common init */
 		init_wolfu_generic();

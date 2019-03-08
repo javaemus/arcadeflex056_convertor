@@ -135,7 +135,9 @@ public class input
 	//	PROTOTYPES
 	//============================================================
 	
-	static static static 
+	static public static InitDriverPtr init_keylist = new InitDriverPtr() { public void handler() (void);
+	public static InitDriverPtr init_joylist = new InitDriverPtr() { public void handler() (void);
+	
 	
 	
 	//============================================================
@@ -267,7 +269,7 @@ public class input
 		{ KEYCODE_LWIN, 		DIK_LWIN,			VK_LWIN, 		0 },
 		{ KEYCODE_RWIN, 		DIK_RWIN,			VK_RWIN, 		0 },
 		{ KEYCODE_MENU, 		DIK_APPS,			VK_APPS, 		0 }
-	};
+	} };;
 	
 	
 	
@@ -892,7 +894,7 @@ public class input
 	//	init_joylist
 	//============================================================
 	
-	static public static InitDriverPtr init_keylist = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_keylist = new InitDriverPtr() { public void handler() (void)
 	{
 		int keycount = 0, key;
 	
@@ -978,7 +980,7 @@ public class input
 	//	init_joylist
 	//============================================================
 	
-	static public static InitDriverPtr init_joylist = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_joylist = new InitDriverPtr() { public void handler() (void)
 	{
 		int mouse, stick, axis, button, pov;
 		char tempname[MAX_PATH];

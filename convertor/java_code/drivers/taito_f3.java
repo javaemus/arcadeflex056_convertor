@@ -2546,20 +2546,20 @@ public class taito_f3
 	F3_IRQ_SPEEDUP_3_R(eaction2, 0x133c,   0x07a0/4, 0x00001048 )
 	F3_IRQ_SPEEDUP_1_R(twinqix,  0xe9a52,  0x0134/4, 0x000000ff )
 	
-	static public static InitDriverPtr init_ringrage = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_ringrage = new InitDriverPtr() { public void handler() (void)
 	{
 		f3_game=RINGRAGE;
 		tile_decode(0);
 	} };
 	
-	static public static InitDriverPtr init_arabianm = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_arabianm = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read32_handler(0, 0x408124, 0x408127, irq_speedup_r_arabianm );
 		f3_game=ARABIANM;
 		tile_decode(1);
 	} };
 	
-	static public static InitDriverPtr init_ridingf = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_ridingf = new InitDriverPtr() { public void handler() (void)
 	{
 		data16_t *RAM = (UINT16 *)memory_region(REGION_CPU2);
 	
@@ -2570,41 +2570,41 @@ public class taito_f3
 		tile_decode(1);
 	} };
 	
-	static public static InitDriverPtr init_gseeker = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_gseeker = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read32_handler(0, 0x40ad94, 0x40ad97, irq_speedup_r_gseeker );
 		f3_game=GSEEKER;
 		tile_decode(0);
 	} };
 	
-	static public static InitDriverPtr init_gunlock = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_gunlock = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read32_handler(0, 0x400004, 0x400007, irq_speedup_r_gunlock );
 		f3_game=GUNLOCK;
 		tile_decode(1);
 	} };
 	
-	static public static InitDriverPtr init_elvactr = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_elvactr = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read32_handler(0, 0x4007a0, 0x4007a3, irq_speedup_r_eaction2 );
 		f3_game=EACTION2;
 		tile_decode(1);
 	} };
 	
-	static public static InitDriverPtr init_cupfinal = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_cupfinal = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read32_handler(0, 0x408114, 0x408117, irq_speedup_r_cupfinal );
 		f3_game=SCFINALS;
 		tile_decode(1);
 	} };
 	
-	static public static InitDriverPtr init_trstaroj = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_trstaroj = new InitDriverPtr() { public void handler() (void)
 	{
 		f3_game=TRSTAR;
 		tile_decode(1);
 	} };
 	
-	static public static InitDriverPtr init_scfinals = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_scfinals = new InitDriverPtr() { public void handler() (void)
 	{
 		data32_t *RAM = (UINT32 *)memory_region(REGION_CPU1);
 	
@@ -2619,41 +2619,41 @@ public class taito_f3
 		tile_decode(1);
 	} };
 	
-	static public static InitDriverPtr init_lightbr = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_lightbr = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read32_handler(0, 0x400130, 0x400133, irq_speedup_r_lightbr );
 		f3_game=LIGHTBR;
 		tile_decode(1);
 	} };
 	
-	static public static InitDriverPtr init_kaiserkn = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_kaiserkn = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read32_handler(0, 0x408110, 0x408113, irq_speedup_r_kaiserkn );
 		f3_game=KAISERKN;
 		tile_decode(1);
 	} };
 	
-	static public static InitDriverPtr init_dariusg = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_dariusg = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read32_handler(0, 0x406ba8, 0x406bab, irq_speedup_r_dariusg );
 		f3_game=DARIUSG;
 		tile_decode(0);
 	} };
 	
-	static public static InitDriverPtr init_spcinvdj = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_spcinvdj = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read32_handler(0, 0x400230, 0x400233, irq_speedup_r_spcinvdj );
 		f3_game=SPCINVDX;
 		tile_decode(0);
 	} };
 	
-	static public static InitDriverPtr init_qtheater = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_qtheater = new InitDriverPtr() { public void handler() (void)
 	{
 		f3_game=QTHEATER;
 		tile_decode(0);
 	} };
 	
-	static public static InitDriverPtr init_spcinv95 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_spcinv95 = new InitDriverPtr() { public void handler() (void)
 	{
 		data32_t *RAM = (UINT32 *)memory_region(REGION_CPU1);
 	
@@ -2670,35 +2670,35 @@ public class taito_f3
 		tile_decode(1);
 	} };
 	
-	static public static InitDriverPtr init_gekirido = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_gekirido = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read32_handler(0, 0x406bb0, 0x406bb3, irq_speedup_r_gekirido );
 		f3_game=GEKIRIDO;
 		tile_decode(1);
 	} };
 	
-	static public static InitDriverPtr init_ktiger2 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_ktiger2 = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read32_handler(0, 0x400570, 0x400573, irq_speedup_r_ktiger2 );
 		f3_game=KTIGER2;
 		tile_decode(0);
 	} };
 	
-	static public static InitDriverPtr init_bubsymph = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_bubsymph = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read32_handler(0, 0x400134, 0x400137, irq_speedup_r_bubsymph );
 		f3_game=BUBSYMPH;
 		tile_decode(1);
 	} };
 	
-	static public static InitDriverPtr init_bubblem = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_bubblem = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read32_handler(0, 0x400134, 0x400137, irq_speedup_r_bubblem );
 		f3_game=BUBBLEM;
 		tile_decode(1);
 	} };
 	
-	static public static InitDriverPtr init_cleopatr = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_cleopatr = new InitDriverPtr() { public void handler() (void)
 	{
 		data32_t *RAM = (UINT32 *)memory_region(REGION_CPU1);
 	
@@ -2711,62 +2711,62 @@ public class taito_f3
 		tile_decode(0);
 	} };
 	
-	static public static InitDriverPtr init_popnpop = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_popnpop = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read32_handler(0, 0x401cf8, 0x401cfb, irq_speedup_r_popnpop );
 		f3_game=POPNPOP;
 		tile_decode(0);
 	} };
 	
-	static public static InitDriverPtr init_landmakr = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_landmakr = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read32_handler(0, 0x400824, 0x400827, irq_speedup_r_landmakr );
 		f3_game=LANDMAKR;
 		tile_decode(0);
 	} };
 	
-	static public static InitDriverPtr init_pbobble3 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_pbobble3 = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read32_handler(0, 0x405af4, 0x405af7, irq_speedup_r_pbobble3 );
 		f3_game=PBOBBLE3;
 		tile_decode(0);
 	} };
 	
-	static public static InitDriverPtr init_pbobble4 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_pbobble4 = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read32_handler(0, 0x4058f4, 0x4058f7, irq_speedup_r_pbobble4 );
 		f3_game=PBOBBLE4;
 		tile_decode(0);
 	} };
 	
-	static public static InitDriverPtr init_quizhuhu = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_quizhuhu = new InitDriverPtr() { public void handler() (void)
 	{
 		f3_game=QUIZHUHU;
 		tile_decode(0);
 	} };
 	
-	static public static InitDriverPtr init_pbobble2 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_pbobble2 = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read32_handler(0, 0x404a50, 0x404a53, irq_speedup_r_pbobble2 );
 		f3_game=PBOBBLE2;
 		tile_decode(0);
 	} };
 	
-	static public static InitDriverPtr init_pbobbl2x = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_pbobbl2x = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read32_handler(0, 0x405c58, 0x405c5b, irq_speedup_r_pbobbl2x );
 		f3_game=PBOBBLE2;
 		tile_decode(0);
 	} };
 	
-	static public static InitDriverPtr init_hthero95 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_hthero95 = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read32_handler(0, 0x408114, 0x408117, irq_speedup_r_pwrgoal );
 		f3_game=HTHERO95;
 		tile_decode(0);
 	} };
 	
-	static public static InitDriverPtr init_kirameki = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_kirameki = new InitDriverPtr() { public void handler() (void)
 	{
 		data32_t *RAM = (UINT32 *)memory_region(REGION_CPU1);
 	
@@ -2779,21 +2779,21 @@ public class taito_f3
 		tile_decode(0);
 	} };
 	
-	static public static InitDriverPtr init_puchicar = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_puchicar = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read32_handler(0, 0x4024d8, 0x4024db, irq_speedup_r_puchicar );
 		f3_game=PUCHICAR;
 		tile_decode(0);
 	} };
 	
-	static public static InitDriverPtr init_twinqix = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_twinqix = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read32_handler(0, 0x400134, 0x400137, irq_speedup_r_twinqix );
 		f3_game=TWINQIX;
 		tile_decode(0);
 	} };
 	
-	static public static InitDriverPtr init_arkretrn = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_arkretrn = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read32_handler(0, 0x402154, 0x402157, irq_speedup_r_arkretrn );
 		f3_game=ARKRETRN;

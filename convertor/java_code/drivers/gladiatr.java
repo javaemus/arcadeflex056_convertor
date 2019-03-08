@@ -186,7 +186,7 @@ public class gladiatr
 		{gladiator_dsw1_r,gladiator_dsw2_r,gladiator_button3_r,gladiator_controll_r}	/* port handler */
 	};
 	
-	static public static InitMachinePtr gladiator_machine_init = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr gladiator_machine_init = new InitMachinePtr() { public void handler() (void)
 	{
 		TAITO8741_start(&gsword_8741interface);
 		/* 6809 bank memory set */

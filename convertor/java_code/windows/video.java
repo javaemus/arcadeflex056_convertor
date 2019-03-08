@@ -318,10 +318,10 @@ public class video
 	//	init_dirty
 	//============================================================
 	
-	static void init_dirty(char dirty)
+	public static InitDriverPtr init_dirty = new InitDriverPtr() { public void handler() (char dirty)
 	{
 		memset(dirty_grid, dirty, sizeof(dirty_grid));
-	}
+	} };
 	
 	
 	

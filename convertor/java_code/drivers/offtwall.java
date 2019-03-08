@@ -66,7 +66,7 @@ public class offtwall
 	 *
 	 *************************************/
 	
-	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		atarigen_eeprom_reset();
 		atarivc_reset(atarivc_eof_data);
@@ -513,7 +513,7 @@ public class offtwall
 	};
 	
 	
-	static public static InitDriverPtr init_offtwall = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_offtwall = new InitDriverPtr() { public void handler() (void)
 	{
 		atarigen_eeprom_default = default_eeprom;
 		atarijsa_init(1, 2, 3, 0x0040);
@@ -527,7 +527,7 @@ public class offtwall
 	} };
 	
 	
-	static public static InitDriverPtr init_offtwalc = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_offtwalc = new InitDriverPtr() { public void handler() (void)
 	{
 		atarigen_eeprom_default = default_eeprom;
 		atarijsa_init(1, 2, 3, 0x0040);

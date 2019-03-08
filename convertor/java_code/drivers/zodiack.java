@@ -39,13 +39,13 @@ public class zodiack
 	
 	
 	
-	static public static InitMachinePtr zodiack_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr zodiack_init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		percuss_hardware = 0;
 		espial_init_machine();
 	} };
 	
-	static public static InitMachinePtr percuss_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr percuss_init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		percuss_hardware = 1;
 		espial_init_machine();

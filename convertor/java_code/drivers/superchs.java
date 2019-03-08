@@ -567,7 +567,7 @@ public class superchs
 		return superchs_ram[2]&0xffff;
 	}
 	
-	static public static InitDriverPtr init_superchs = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_superchs = new InitDriverPtr() { public void handler() (void)
 	{
 		/* Speedup handlers */
 		install_mem_read32_handler(0, 0x100000, 0x100003, main_cycle_r);

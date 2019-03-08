@@ -86,7 +86,7 @@ public class starfire
 	}
 	
 	
-	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		timer_set(cpu_getscanlinetime(32 + SCANLINE_UPDATE_CHUNK - 1), 32, update_callback);
 	} };
@@ -404,12 +404,12 @@ public class starfire
 	 *
 	 *************************************/
 	
-	static public static InitDriverPtr init_starfire = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_starfire = new InitDriverPtr() { public void handler() (void)
 	{
 		input_read = starfire_input_r;
 	} };
 	
-	static public static InitDriverPtr init_fireone = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_fireone = new InitDriverPtr() { public void handler() (void)
 	{
 		input_read = fireone_input_r;
 	} };

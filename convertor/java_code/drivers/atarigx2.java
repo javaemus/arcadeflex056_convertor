@@ -76,7 +76,7 @@ public class atarigx2
 	}
 	
 	
-	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		atarigen_eeprom_reset();
 		atarigen_interrupt_reset(update_interrupts);
@@ -1318,7 +1318,7 @@ public class atarigx2
 	 *
 	 *************************************/
 	
-	static public static InitDriverPtr init_spclords = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_spclords = new InitDriverPtr() { public void handler() (void)
 	{
 		atarigen_eeprom_default = NULL;
 		atarijsa_init(1, 4, 2, 0x0040);
@@ -1329,7 +1329,7 @@ public class atarigx2
 	} };
 	
 	
-	static public static InitDriverPtr init_motofren = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_motofren = new InitDriverPtr() { public void handler() (void)
 	{
 		atarigen_eeprom_default = NULL;
 		atarijsa_init(1, 4, 2, 0x0040);
@@ -1340,7 +1340,7 @@ public class atarigx2
 	} };
 	
 	
-	static public static InitDriverPtr init_revrally = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_revrally = new InitDriverPtr() { public void handler() (void)
 	{
 		atarigen_eeprom_default = NULL;
 		atarijsa_init(1, 4, 2, 0x0040);

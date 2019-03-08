@@ -597,7 +597,7 @@ public class cbuster
 	
 	/******************************************************************************/
 	
-	static public static InitDriverPtr init_twocrude = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_twocrude = new InitDriverPtr() { public void handler() (void)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 		unsigned char *PTR;

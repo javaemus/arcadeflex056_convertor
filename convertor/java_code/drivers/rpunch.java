@@ -152,7 +152,7 @@ public class rpunch
 	}
 	
 	
-	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		memcpy(memory_region(REGION_SOUND1), memory_region(REGION_SOUND1) + 0x20000, 0x20000);
 	} };
@@ -846,13 +846,13 @@ public class rpunch
 	 *
 	 *************************************/
 	
-	static public static InitDriverPtr init_rabiolep = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_rabiolep = new InitDriverPtr() { public void handler() (void)
 	{
 		rpunch_sprite_palette = 0x300;
 	} };
 	
 	
-	static public static InitDriverPtr init_svolley = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_svolley = new InitDriverPtr() { public void handler() (void)
 	{
 		/* the main differences between Super Volleyball and Rabbit Punch are */
 		/* the lack of direct-mapped bitmap and a different palette base for sprites */

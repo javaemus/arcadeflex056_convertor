@@ -1128,7 +1128,7 @@ public class darius
 	ROM_END(); }}; 
 	
 	
-	static public static InitDriverPtr init_darius = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_darius = new InitDriverPtr() { public void handler() (void)
 	{
 	//	taitosnd_setz80_soundcpu( 2 );
 	

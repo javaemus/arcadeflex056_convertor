@@ -739,14 +739,14 @@ public class rainbow
 	
 	
 	
-	static public static InitDriverPtr init_rainbow = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_rainbow = new InitDriverPtr() { public void handler() (void)
 	{
 		state_save_register_int("rainbow", 0, "sound region", &banknum);
 		state_save_register_func_postload(reset_sound_region);
 		rainbow_cchip_init();
 	} };
 	
-	static public static InitDriverPtr init_jumping = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_jumping = new InitDriverPtr() { public void handler() (void)
 	{
 		/* sprite roms need all bits reversing, as colours are    */
 		/* mapped back to front from the pattern used by Rainbow! */

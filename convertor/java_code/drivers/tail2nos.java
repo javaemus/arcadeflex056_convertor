@@ -31,7 +31,7 @@ public class tail2nos
 	{
 		return rand()&0xffff;
 	} };
-	static public static InitMachinePtr tail2nos_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr tail2nos_init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		/* point to the extra ROMs */
 		cpu_setbank(1,memory_region(REGION_USER1));

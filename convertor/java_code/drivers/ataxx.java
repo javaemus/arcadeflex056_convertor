@@ -222,7 +222,7 @@ public class ataxx
 	 *
 	 *************************************/
 	
-	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		/* set the odd data banks */
 		battery_ram = memory_region(REGION_USER2);
@@ -327,7 +327,7 @@ public class ataxx
 	 *
 	 *************************************/
 	
-	static void init_eeprom(UINT8 default_val, const UINT16 *data, UINT8 serial_offset)
+	public static InitDriverPtr init_eeprom = new InitDriverPtr() { public void handler() (UINT8 default_val, const UINT16 *data, UINT8 serial_offset)
 	{
 		UINT32 serial;
 	
@@ -384,7 +384,7 @@ public class ataxx
 	
 			EEPROM_init(&eeprom_interface);
 		}
-	}
+	} };
 	
 	
 	
@@ -1302,7 +1302,7 @@ public class ataxx
 	 *************************************/
 	
 	
-	static public static InitDriverPtr init_ataxx = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_ataxx = new InitDriverPtr() { public void handler() (void)
 	{
 		/* initialize the default EEPROM state */
 		static const UINT16 ataxx_eeprom_data[] =
@@ -1328,7 +1328,7 @@ public class ataxx
 		leland_i86_optimize_address(0x612);
 	} };
 	
-	static public static InitDriverPtr init_ataxxj = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_ataxxj = new InitDriverPtr() { public void handler() (void)
 	{
 		/* initialize the default EEPROM state */
 		static const UINT16 ataxxj_eeprom_data[] =
@@ -1353,7 +1353,7 @@ public class ataxx
 		leland_i86_optimize_address(0x612);
 	} };
 	
-	static public static InitDriverPtr init_wsf = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_wsf = new InitDriverPtr() { public void handler() (void)
 	{
 		/* initialize the default EEPROM state */
 		static const UINT16 wsf_eeprom_data[] =
@@ -1380,7 +1380,7 @@ public class ataxx
 		leland_i86_optimize_address(0x612);
 	} };
 	
-	static public static InitDriverPtr init_indyheat = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_indyheat = new InitDriverPtr() { public void handler() (void)
 	{
 		/* initialize the default EEPROM state */
 		static const UINT16 indyheat_eeprom_data[] =
@@ -1412,7 +1412,7 @@ public class ataxx
 		leland_i86_optimize_address(0x613);
 	} };
 	
-	static public static InitDriverPtr init_brutforc = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_brutforc = new InitDriverPtr() { public void handler() (void)
 	{
 		/* initialize the default EEPROM state */
 		static const UINT16 brutforc_eeprom_data[] =

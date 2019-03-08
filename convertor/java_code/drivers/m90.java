@@ -875,12 +875,12 @@ public class m90
 	
 	
 	
-	static public static InitDriverPtr init_hasamu = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_hasamu = new InitDriverPtr() { public void handler() (void)
 	{
 		irem_cpu_decrypt(0,gunforce_decryption_table);
 	} };
 	
-	static public static InitDriverPtr init_bombrman = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_bombrman = new InitDriverPtr() { public void handler() (void)
 	{
 		irem_cpu_decrypt(0,bomberman_decryption_table);
 	} };
@@ -893,24 +893,24 @@ public class m90
 		RAM[0x1a0c00+offset]=dynablaster_decryption_table[data];
 	}
 	
-	static public static InitDriverPtr init_bbmanw = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_bbmanw = new InitDriverPtr() { public void handler() (void)
 	{
 		irem_cpu_decrypt(0,dynablaster_decryption_table);
 	
 		install_mem_write_handler(0, 0xa0c00, 0xa0cff, bbmanw_ram_write);
 	} };
 	
-	static public static InitDriverPtr init_quizf1 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_quizf1 = new InitDriverPtr() { public void handler() (void)
 	{
 		irem_cpu_decrypt(0,lethalth_decryption_table);
 	} };
 	
-	static public static InitDriverPtr init_riskchal = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_riskchal = new InitDriverPtr() { public void handler() (void)
 	{
 		irem_cpu_decrypt(0,gussun_decryption_table);
 	} };
 	
-	static public static InitDriverPtr init_shisen2 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_shisen2 = new InitDriverPtr() { public void handler() (void)
 	{
 		irem_cpu_decrypt(0,shisen2_decryption_table);
 	} };

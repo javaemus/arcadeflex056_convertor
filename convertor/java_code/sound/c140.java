@@ -83,7 +83,7 @@ public class c140
 	
 	VOICE voi[MAX_VOICE];
 	
-	static void init_voice( VOICE *v )
+	public static InitDriverPtr init_voice = new InitDriverPtr() { public void handler() ( VOICE *v )
 	{
 		v->key=0;
 		v->ptoffset=0;
@@ -95,7 +95,7 @@ public class c140
 		v->sample_start=0;
 		v->sample_end=0;
 		v->sample_loop=0;
-	}
+	} };
 	
 	public static ReadHandlerPtr C140_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

@@ -1709,7 +1709,7 @@ public class btime
 		return RAM[0xc15f];
 	} };
 	
-	static public static InitDriverPtr init_btime = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_btime = new InitDriverPtr() { public void handler() (void)
 	{
 		unsigned char *rom = memory_region(REGION_CPU1);
 		int diff = memory_region_length(REGION_CPU1) / 2;
@@ -1722,7 +1722,7 @@ public class btime
 		memcpy(rom+diff,rom,0x10000);
 	} };
 	
-	static public static InitDriverPtr init_zoar = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_zoar = new InitDriverPtr() { public void handler() (void)
 	{
 		unsigned char *rom = memory_region(REGION_CPU1);
 	
@@ -1736,7 +1736,7 @@ public class btime
 	    init_btime();
 	} };
 	
-	static public static InitDriverPtr init_lnc = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_lnc = new InitDriverPtr() { public void handler() (void)
 	{
 		int A;
 		unsigned char *rom = memory_region(REGION_CPU1);
@@ -1749,7 +1749,7 @@ public class btime
 			rom[A+diff] = swap_bits_5_6(rom[A]);
 	} };
 	
-	static public static InitDriverPtr init_wtennis = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_wtennis = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read_handler(0, 0xc15f, 0xc15f, wtennis_reset_hack_r);
 		init_lnc();

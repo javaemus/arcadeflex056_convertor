@@ -239,7 +239,7 @@ public class zaccaria
 	};
 	
 	
-	static public static InitMachinePtr zaccaria_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr zaccaria_init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		ppi8255_init(&ppi8255_intf);
 	

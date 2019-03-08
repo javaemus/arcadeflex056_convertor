@@ -532,7 +532,7 @@ public class legionna
 	
 	
 	
-	static public static InitDriverPtr init_legionna = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_legionna = new InitDriverPtr() { public void handler() (void)
 	{
 		data8_t *gfx = memory_region(REGION_GFX1);
 		int len = memory_region_length(REGION_GFX1)/2;

@@ -2555,7 +2555,7 @@ public class taito_b
 	};
 	
 	
-	static public static InitDriverPtr init_mb87078 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_mb87078 = new InitDriverPtr() { public void handler() (void)
 	{
 		if (Machine->sample_rate != 0)
 			MB87078_start(0, &mb87078_interface); /*chip #0*/

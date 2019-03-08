@@ -305,7 +305,7 @@ public class input
 	};
 	
 	
-	static public static InitDriverPtr init_joy_list = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_joy_list = new InitDriverPtr() { public void handler() (void)
 	{
 		int tot,i,j,k;
 		char buf[256];

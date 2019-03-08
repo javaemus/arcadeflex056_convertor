@@ -1534,86 +1534,86 @@ public class mitchell
 	
 	
 	
-	static public static InitDriverPtr init_dokaben = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_dokaben = new InitDriverPtr() { public void handler() (void)
 	{
 		input_type = 0;
 		nvram_size = 0;
 		mgakuen2_decode();
 	} };
-	static public static InitDriverPtr init_pang = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_pang = new InitDriverPtr() { public void handler() (void)
 	{
 		input_type = 0;
 		nvram_size = 0;
 		pang_decode();
 	} };
-	static public static InitDriverPtr init_pangb = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_pangb = new InitDriverPtr() { public void handler() (void)
 	{
 		input_type = 0;
 		nvram_size = 0;
 		bootleg_decode();
 	} };
-	static public static InitDriverPtr init_cworld = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_cworld = new InitDriverPtr() { public void handler() (void)
 	{
 		input_type = 0;
 		nvram_size = 0;
 		cworld_decode();
 	} };
-	static public static InitDriverPtr init_hatena = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_hatena = new InitDriverPtr() { public void handler() (void)
 	{
 		input_type = 0;
 		nvram_size = 0;
 		hatena_decode();
 	} };
-	static public static InitDriverPtr init_spang = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_spang = new InitDriverPtr() { public void handler() (void)
 	{
 		input_type = 3;
 		nvram_size = 0x80;
 		nvram = &memory_region(REGION_CPU1)[0xe000];	/* NVRAM */
 		spang_decode();
 	} };
-	static public static InitDriverPtr init_sbbros = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_sbbros = new InitDriverPtr() { public void handler() (void)
 	{
 		input_type = 3;
 		nvram_size = 0x80;
 		nvram = &memory_region(REGION_CPU1)[0xe000];	/* NVRAM */
 		sbbros_decode();
 	} };
-	static public static InitDriverPtr init_qtono1 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_qtono1 = new InitDriverPtr() { public void handler() (void)
 	{
 		input_type = 0;
 		nvram_size = 0;
 		qtono1_decode();
 	} };
-	static public static InitDriverPtr init_qsangoku = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_qsangoku = new InitDriverPtr() { public void handler() (void)
 	{
 		input_type = 0;
 		nvram_size = 0;
 		qsangoku_decode();
 	} };
-	static public static InitDriverPtr init_mgakuen = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_mgakuen = new InitDriverPtr() { public void handler() (void)
 	{
 		input_type = 1;
 	} };
-	static public static InitDriverPtr init_mgakuen2 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_mgakuen2 = new InitDriverPtr() { public void handler() (void)
 	{
 		input_type = 1;
 		nvram_size = 0;
 		mgakuen2_decode();
 	} };
-	static public static InitDriverPtr init_marukin = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_marukin = new InitDriverPtr() { public void handler() (void)
 	{
 		input_type = 1;
 		nvram_size = 0;
 		marukin_decode();
 	} };
-	static public static InitDriverPtr init_block = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_block = new InitDriverPtr() { public void handler() (void)
 	{
 		input_type = 2;
 		nvram_size = 0x80;
 		nvram = &memory_region(REGION_CPU1)[0xff80];	/* NVRAM */
 		block_decode();
 	} };
-	static public static InitDriverPtr init_blockbl = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_blockbl = new InitDriverPtr() { public void handler() (void)
 	{
 		input_type = 2;
 		nvram_size = 0x80;

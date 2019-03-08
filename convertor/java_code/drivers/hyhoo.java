@@ -47,13 +47,13 @@ public class hyhoo
 	void hyhoo_romsel_w(int data);
 	
 	
-	static public static InitDriverPtr init_hyhoo = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_hyhoo = new InitDriverPtr() { public void handler() (void)
 	{
 		nb1413m3_type = NB1413M3_HYHOO;
 		nb1413m3_int_count = 128;
 	} };
 	
-	static public static InitDriverPtr init_hyhoo2 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_hyhoo2 = new InitDriverPtr() { public void handler() (void)
 	{
 		nb1413m3_type = NB1413M3_HYHOO2;
 		nb1413m3_int_count = 128;

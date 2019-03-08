@@ -17,7 +17,8 @@ public class aliens
 {
 	
 	/* prototypes */
-	static static void aliens_banking( int lines );
+	public static InitMachinePtr aliens_init_machine = new InitMachinePtr() { public void handler() ( void );
+	static void aliens_banking( int lines );
 	
 	
 	
@@ -472,7 +473,7 @@ public class aliens
 		cpu_setbank( 1, &RAM[offs] );
 	}
 	
-	static public static InitMachinePtr aliens_init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr aliens_init_machine = new InitMachinePtr() { public void handler() ( void )
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -484,7 +485,7 @@ public class aliens
 	
 	
 	
-	static public static InitDriverPtr init_aliens = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_aliens = new InitDriverPtr() { public void handler() (void)
 	{
 		konami_rom_deinterleave_2(REGION_GFX1);
 		konami_rom_deinterleave_2(REGION_GFX2);

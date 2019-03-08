@@ -3452,7 +3452,7 @@ public class taito_z
 	ROM_END(); }}; 
 	
 	
-	static public static InitDriverPtr init_taitoz = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_taitoz = new InitDriverPtr() { public void handler() (void)
 	{
 	//	taitosnd_setz80_soundcpu( 2 );
 	
@@ -3469,7 +3469,7 @@ public class taito_z
 		state_save_register_func_postload(reset_sound_region);
 	} };
 	
-	static public static InitDriverPtr init_bshark = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_bshark = new InitDriverPtr() { public void handler() (void)
 	{
 		cpua_ctrl = 0xff;
 		state_save_register_UINT16("main1", 0, "control", &cpua_ctrl, 1);

@@ -269,7 +269,7 @@ public class circus
 	  Machine drivers
 	***************************************************************************/
 	
-	static public static InitDriverPtr init_robotbwl = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_robotbwl = new InitDriverPtr() { public void handler() (void)
 	{
 		int i;
 	

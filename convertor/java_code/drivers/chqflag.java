@@ -477,7 +477,7 @@ public class chqflag
 	
 	
 	
-	static public static InitDriverPtr init_chqflag = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_chqflag = new InitDriverPtr() { public void handler() (void)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	

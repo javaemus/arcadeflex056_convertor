@@ -3643,7 +3643,7 @@ public class metro
 	
 	***************************************************************************/
 	
-	static public static InitDriverPtr init_metro = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_metro = new InitDriverPtr() { public void handler() (void)
 	{
 		int i;
 	
@@ -3687,7 +3687,7 @@ public class metro
 	} };
 	
 	/* Unscramble the GFX ROMs */
-	static public static InitDriverPtr init_balcube = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_balcube = new InitDriverPtr() { public void handler() (void)
 	{
 		const int region	=	REGION_GFX1;
 	
@@ -3712,20 +3712,20 @@ public class metro
 	} };
 	
 	
-	static public static InitDriverPtr init_blzntrnd = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_blzntrnd = new InitDriverPtr() { public void handler() (void)
 	{
 		init_metro();
 		irq_line = 1;
 	} };
 	
 	
-	static public static InitDriverPtr init_mouja = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_mouja = new InitDriverPtr() { public void handler() (void)
 	{
 		init_metro();
 		irq_line = -1;	/* split interrupt handlers */
 	} };
 	
-	static public static InitDriverPtr init_gakusai = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_gakusai = new InitDriverPtr() { public void handler() (void)
 	{
 		init_metro();
 		irq_line = -1;

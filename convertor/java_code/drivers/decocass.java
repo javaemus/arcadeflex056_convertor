@@ -928,7 +928,7 @@ public class decocass
 	ROM_END(); }}; 
 	
 	
-	static public static InitDriverPtr init_decocass = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_decocass = new InitDriverPtr() { public void handler() (void)
 	{
 		int A;
 		unsigned char *rom = memory_region(REGION_CPU1);

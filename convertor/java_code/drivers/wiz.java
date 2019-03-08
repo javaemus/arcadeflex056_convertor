@@ -776,7 +776,7 @@ public class wiz
 	
 	
 	
-	static public static InitDriverPtr init_stinger = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_stinger = new InitDriverPtr() { public void handler() (void)
 	{
 		static const unsigned char xortable[4][4] =
 		{
@@ -822,7 +822,7 @@ public class wiz
 	} };
 	
 	
-	static public static InitDriverPtr init_wiz = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_wiz = new InitDriverPtr() { public void handler() (void)
 	{
 		install_mem_read_handler(0, 0xd400, 0xd400, wiz_protection_r);
 	} };

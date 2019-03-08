@@ -555,7 +555,7 @@ public class cvs
 	CVS_ROM(heartatk,ha,0xe8297c23,ha,0xf7632afc,ha,0xa9ce3c6a,ha,0x090f30a9,ha,0x163b3d2d,ha,0x2d0f6d13,ha,0x7f5671bd,ha,0x35b05ab4,ha,0xb9c466a0,0x1000,ha,0xfa21422a,0x1000)
 	CVS_ROM(spacefrt,sf,0x1158fc3a,sf,0x8b4e1582,sf,0x48f05102,sf,0xc5b14631,sf,0xd7eca1b6,sf,0xda194a68,sf,0xb96977c7,sf,0xf5d67b9a,sf,0x339a327f,0x0800,sf,0xc5628d30,0x1000)
 	
-	static public static InitDriverPtr init_spacefrt = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_spacefrt = new InitDriverPtr() { public void handler() (void)
 	{
 		/* Patch out 2nd Character Mode Change */
 	
@@ -563,7 +563,7 @@ public class cvs
 	    memory_region(REGION_CPU1)[0x0261] = 0xc0;
 	} };
 	
-	static public static InitDriverPtr init_cosmos = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_cosmos = new InitDriverPtr() { public void handler() (void)
 	{
 		/* Patch out 2nd Character Mode Change */
 	
@@ -571,7 +571,7 @@ public class cvs
 	    memory_region(REGION_CPU1)[0x0358] = 0xc0;
 	} };
 	
-	static public static InitDriverPtr init_goldbug = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_goldbug = new InitDriverPtr() { public void handler() (void)
 	{
 		/* Redirect calls to real memory bank */
 	
@@ -579,7 +579,7 @@ public class cvs
 	    memory_region(REGION_CPU1)[0x436a] = 0x1e;
 	} };
 	
-	static public static InitDriverPtr init_huncholy = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_huncholy = new InitDriverPtr() { public void handler() (void)
 	{
 	    /* Patch out protection */
 	
@@ -597,7 +597,7 @@ public class cvs
 	    memory_region(REGION_CPU1)[0x4458] = 0xc0;
 	} };
 	
-	static public static InitDriverPtr init_superbik = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_superbik = new InitDriverPtr() { public void handler() (void)
 	{
 	    /* Patch out protection */
 	
@@ -624,7 +624,7 @@ public class cvs
 	    memory_region(REGION_CPU1)[0x00bd] = 0xc0;
 	} };
 	
-	static public static InitDriverPtr init_hero = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_hero = new InitDriverPtr() { public void handler() (void)
 	{
 	    /* Patch out protection */
 	

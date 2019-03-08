@@ -849,7 +849,7 @@ public class phoenix
 	ROM_END(); }}; 
 	
 	
-	static public static InitDriverPtr init_survival = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_survival = new InitDriverPtr() { public void handler() (void)
 	{
 		unsigned char *rom = memory_region(REGION_CPU1);
 	

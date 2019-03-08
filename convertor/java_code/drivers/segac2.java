@@ -304,7 +304,7 @@ public class segac2
 	
 	******************************************************************************/
 	
-	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		/* set the first scanline 0 timer to go off */
 		timer_set(cpu_getscanlinetime(0) + cpu_getscanlineperiod() * (320. / 342.), 0, vdp_reload_counter);
@@ -1788,7 +1788,7 @@ public class segac2
 	
 	******************************************************************************/
 	
-	static public static InitDriverPtr init_saves = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_saves = new InitDriverPtr() { public void handler() (void)
 	{
 		/* Do we need the int states ? */
 		state_save_register_UINT8 ("C2_main", 0, "Int 2 Status", &ym3438_int, 1);
@@ -1801,19 +1801,19 @@ public class segac2
 		state_save_register_UINT16 ("C2 Protection", 0, "Read Buffer", &prot_read_buf, 1);
 	} };
 	
-	static public static InitDriverPtr init_segac2 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_segac2 = new InitDriverPtr() { public void handler() (void)
 	{
 		bloxeed_sound = 0;
 		init_saves();
 	} };
 	
-	static public static InitDriverPtr init_bloxeedc = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_bloxeedc = new InitDriverPtr() { public void handler() (void)
 	{
 		init_saves();
 		bloxeed_sound = 1;
 	} };
 	
-	static public static InitDriverPtr init_columns = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_columns = new InitDriverPtr() { public void handler() (void)
 	{
 		static const UINT32 columns_table[256/8] =
 		{
@@ -1831,7 +1831,7 @@ public class segac2
 		init_saves();
 	} };
 	
-	static public static InitDriverPtr init_columns2 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_columns2 = new InitDriverPtr() { public void handler() (void)
 	{
 		static const UINT32 columns2_table[256/8] =
 		{
@@ -1849,7 +1849,7 @@ public class segac2
 		init_saves();
 	} };
 	
-	static public static InitDriverPtr init_borench = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_borench = new InitDriverPtr() { public void handler() (void)
 	{
 		static const UINT32 borench_table[256/8] =
 		{
@@ -1867,7 +1867,7 @@ public class segac2
 		init_saves();
 	} };
 	
-	static public static InitDriverPtr init_tfrceac = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_tfrceac = new InitDriverPtr() { public void handler() (void)
 	{
 		static const UINT32 tfrceac_table[256/8] =
 		{
@@ -1885,13 +1885,13 @@ public class segac2
 		init_saves();
 	} };
 	
-	static public static InitDriverPtr init_tfrceacb = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_tfrceacb = new InitDriverPtr() { public void handler() (void)
 	{
 		/* disable the palette bank switching from the protecton chip */
 		install_mem_write16_handler(0, 0x800000, 0x800001, MWA16_NOP);
 	} };
 	
-	static public static InitDriverPtr init_tantr = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_tantr = new InitDriverPtr() { public void handler() (void)
 	{
 		static const UINT32 tantr_table[256/8] =
 		{
@@ -1909,7 +1909,7 @@ public class segac2
 		init_saves();
 	} };
 	
-	static public static InitDriverPtr init_ichidant = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_ichidant = new InitDriverPtr() { public void handler() (void)
 	{
 		static const UINT32 ichidant_table[256/8] =
 		{
@@ -1927,7 +1927,7 @@ public class segac2
 		init_saves();
 	} };
 	
-	static public static InitDriverPtr init_ichidnte = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_ichidnte = new InitDriverPtr() { public void handler() (void)
 	{
 		static const UINT32 ichidnte_table[256/8] =
 		{
@@ -1946,7 +1946,7 @@ public class segac2
 	} };
 	
 	
-	static public static InitDriverPtr init_potopoto = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_potopoto = new InitDriverPtr() { public void handler() (void)
 	{
 		/* note: this is not the real table; Poto Poto only tests one  */
 		/* very specific case, so we don't have enough data to provide */
@@ -1967,7 +1967,7 @@ public class segac2
 		init_saves();
 	} };
 	
-	static public static InitDriverPtr init_puyopuyo = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_puyopuyo = new InitDriverPtr() { public void handler() (void)
 	{
 		static const UINT32 puyopuyo_table[256/8] =
 		{
@@ -1985,7 +1985,7 @@ public class segac2
 		init_saves();
 	} };
 	
-	static public static InitDriverPtr init_puyopuy2 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_puyopuy2 = new InitDriverPtr() { public void handler() (void)
 	{
 		/* note: this is not the real table; Puyo Puyo 2 doesn't  */
 		/* store the original table; instead it loops through all */
@@ -2009,7 +2009,7 @@ public class segac2
 		init_saves();
 	} };
 	
-	static public static InitDriverPtr init_stkclmns = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_stkclmns = new InitDriverPtr() { public void handler() (void)
 	{
 		static const UINT32 stkclmns_table[256/8] =
 		{
@@ -2036,7 +2036,7 @@ public class segac2
 		init_saves();
 	} };
 	
-	static public static InitDriverPtr init_zunkyou = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_zunkyou = new InitDriverPtr() { public void handler() (void)
 	{
 		static const UINT32 zunkyou_table[256/8] =
 		{

@@ -205,7 +205,7 @@ public class hexa
 	
 	
 	
-	static public static InitDriverPtr init_hexa = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_hexa = new InitDriverPtr() { public void handler() (void)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	

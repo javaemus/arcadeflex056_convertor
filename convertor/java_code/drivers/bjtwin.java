@@ -3431,19 +3431,19 @@ public class bjtwin
 		}
 	}
 	
-	static public static InitDriverPtr init_nmk = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_nmk = new InitDriverPtr() { public void handler() (void)
 	{
 		decode_gfx();
 	} };
 	
-	static public static InitDriverPtr init_hachamf = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_hachamf = new InitDriverPtr() { public void handler() (void)
 	{
 		data16_t *rom = (data16_t *)memory_region(REGION_CPU1);
 	
 		rom[0x0006/2] = 0x7dc2;	/* replace reset vector with the "real" one */
 	} };
 	
-	static public static InitDriverPtr init_acrobatm = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_acrobatm = new InitDriverPtr() { public void handler() (void)
 	{
 		data16_t *RAM = (data16_t *)memory_region(REGION_CPU1);
 	
@@ -3452,7 +3452,7 @@ public class bjtwin
 		RAM[0x728/2] = 0x4e71;
 	} };
 	
-	static public static InitDriverPtr init_tdragonb = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_tdragonb = new InitDriverPtr() { public void handler() (void)
 	{
 		data16_t *ROM = (data16_t *)memory_region(REGION_CPU1);
 	
@@ -3463,7 +3463,7 @@ public class bjtwin
 		ROM[0x00308/2] = 0x4e71; /* Sprite Problem */
 	} };
 	
-	static public static InitDriverPtr init_tdragon = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_tdragon = new InitDriverPtr() { public void handler() (void)
 	{
 		data16_t *RAM = (data16_t *)memory_region(REGION_CPU1);
 	
@@ -3471,7 +3471,7 @@ public class bjtwin
 		RAM[0x94b2/2] = 0x92f4;
 	} };
 	
-	static public static InitDriverPtr init_strahl = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_strahl = new InitDriverPtr() { public void handler() (void)
 	{
 		data16_t *RAM = (data16_t *)memory_region(REGION_CPU1);
 	
@@ -3485,7 +3485,7 @@ public class bjtwin
 		RAM[0x8e2/2] = 0x4e71;
 	} };
 	
-	static public static InitDriverPtr init_bioship = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_bioship = new InitDriverPtr() { public void handler() (void)
 	{
 		data16_t *RAM = (data16_t *)memory_region(REGION_CPU1);
 	
@@ -3496,7 +3496,7 @@ public class bjtwin
 		RAM[0xe79a/2] = 0x4e71;
 	} };
 	
-	static public static InitDriverPtr init_bjtwin = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_bjtwin = new InitDriverPtr() { public void handler() (void)
 	{
 		init_nmk();
 	

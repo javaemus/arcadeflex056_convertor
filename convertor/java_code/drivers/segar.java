@@ -1733,37 +1733,37 @@ public class segar
 	  Security Decode "chips"
 	***************************************************************************/
 	
-	static public static InitDriverPtr init_astrob = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_astrob = new InitDriverPtr() { public void handler() (void)
 	{
 		/* This game uses the 315-0062 security chip */
 		sega_security(62);
 	} };
 	
-	static public static InitDriverPtr init_005 = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_005 = new InitDriverPtr() { public void handler() (void)
 	{
 		/* This game uses the 315-0070 security chip */
 		sega_security(70);
 	} };
 	
-	static public static InitDriverPtr init_monsterb = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_monsterb = new InitDriverPtr() { public void handler() (void)
 	{
 		/* This game uses the 315-0082 security chip */
 		sega_security(82);
 	} };
 	
-	static public static InitDriverPtr init_spaceod = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_spaceod = new InitDriverPtr() { public void handler() (void)
 	{
 		/* This game uses the 315-0063 security chip */
 		sega_security(63);
 	} };
 	
-	static public static InitDriverPtr init_pignewt = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_pignewt = new InitDriverPtr() { public void handler() (void)
 	{
 		/* This game uses the 315-0063? security chip */
 		sega_security(63);
 	} };
 	
-	static public static InitDriverPtr init_sindbadm = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_sindbadm = new InitDriverPtr() { public void handler() (void)
 	{
 		/* This game uses an encrypted CPU */
 		sindbadm_decode();

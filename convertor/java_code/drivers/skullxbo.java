@@ -89,7 +89,7 @@ public class skullxbo
 	}
 	
 	
-	static public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() 
+	public static InitMachinePtr init_machine = new InitMachinePtr() { public void handler() (void)
 	{
 		atarigen_eeprom_reset();
 		atarigen_interrupt_reset(update_interrupts);
@@ -458,7 +458,7 @@ public class skullxbo
 	 *
 	 *************************************/
 	
-	static public static InitDriverPtr init_skullxbo = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_skullxbo = new InitDriverPtr() { public void handler() (void)
 	{
 		atarigen_eeprom_default = NULL;
 		atarijsa_init(1, 2, 1, 0x0080);

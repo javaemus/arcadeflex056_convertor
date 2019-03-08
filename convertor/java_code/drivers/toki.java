@@ -716,7 +716,7 @@ public class toki
 	ROM_END(); }}; 
 	
 	
-	static public static InitDriverPtr init_toki = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_toki = new InitDriverPtr() { public void handler() (void)
 	{
 		seibu_sound_decrypt(REGION_CPU2,0x2000);
 	} };

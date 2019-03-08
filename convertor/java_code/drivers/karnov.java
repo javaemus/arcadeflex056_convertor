@@ -997,25 +997,25 @@ public class karnov
 	
 	/******************************************************************************/
 	
-	static public static InitDriverPtr init_karnov = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_karnov = new InitDriverPtr() { public void handler() (void)
 	{
 		microcontroller_id=KARNOV;
 		coin_mask=0;
 	} };
 	
-	static public static InitDriverPtr init_karnovj = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_karnovj = new InitDriverPtr() { public void handler() (void)
 	{
 		microcontroller_id=KARNOVJ;
 		coin_mask=0;
 	} };
 	
-	static public static InitDriverPtr init_wndrplnt = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_wndrplnt = new InitDriverPtr() { public void handler() (void)
 	{
 		microcontroller_id=WNDRPLNT;
 		coin_mask=0;
 	} };
 	
-	static public static InitDriverPtr init_chelnov = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_chelnov = new InitDriverPtr() { public void handler() (void)
 	{
 		data16_t *RAM = (UINT16 *)memory_region(REGION_CPU1);
 	
@@ -1025,7 +1025,7 @@ public class karnov
 		RAM[0x062a/2]=0x4E71;  /* hangs waiting on i8751 int */
 	} };
 	
-	static public static InitDriverPtr init_chelnovw = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_chelnovw = new InitDriverPtr() { public void handler() (void)
 	{
 		data16_t *RAM = (UINT16 *)memory_region(REGION_CPU1);
 	
@@ -1035,7 +1035,7 @@ public class karnov
 		RAM[0x062a/2]=0x4E71;  /* hangs waiting on i8751 int */
 	} };
 	
-	static public static InitDriverPtr init_chelnovj = new InitDriverPtr() { public void handler() 
+	public static InitDriverPtr init_chelnovj = new InitDriverPtr() { public void handler() (void)
 	{
 		data16_t *RAM = (UINT16 *)memory_region(REGION_CPU1);
 	
