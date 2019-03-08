@@ -305,7 +305,7 @@ public class input
 	};
 	
 	
-	static void init_joy_list(void)
+	static public static InitDriverPtr init_joy_list = new InitDriverPtr() { public void handler() 
 	{
 		int tot,i,j,k;
 		char buf[256];
@@ -379,7 +379,7 @@ public class input
 				j++;
 			}
 		}
-	}
+	} };
 	
 	
 	/* return a list of all available joys */

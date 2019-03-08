@@ -529,10 +529,10 @@ public class funkyjet
 	ROM_END(); }}; 
 	
 	
-	static void init_funkyjet(void)
+	static public static InitDriverPtr init_funkyjet = new InitDriverPtr() { public void handler() 
 	{
 		deco74_decrypt();
-	}
+	} };
 	
 	/******************************************************************************/
 	

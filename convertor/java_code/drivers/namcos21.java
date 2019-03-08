@@ -784,12 +784,12 @@ public class namcos21
 		}
 	}
 	
-	static void init_winrun( void )
+	static public static InitDriverPtr init_winrun = new InitDriverPtr() { public void handler() 
 	{
 		namcos21_init( NAMCOS21_WINRUN91 );
-	}
+	} };
 	
-	static void init_aircombt( void )
+	static public static InitDriverPtr init_aircombt = new InitDriverPtr() { public void handler() 
 	{
 	#if 0 /* Patch test mode: replace first four tests with hidden tests */
 		data16_t *pMem = (data16_t *)memory_region( REGION_CPU1 );
@@ -800,18 +800,18 @@ public class namcos21
 	#endif
 	
 		namcos21_init( NAMCOS21_AIRCOMBAT );
-	}
+	} };
 	
-	void init_starblad( void )
+	public static InitDriverPtr init_starblad = new InitDriverPtr() { public void handler() 
 	{
 		namcos21_init( NAMCOS21_STARBLADE );
-	}
+	} };
 	
 	
-	void init_cybsled( void )
+	public static InitDriverPtr init_cybsled = new InitDriverPtr() { public void handler() 
 	{
 		namcos21_init( NAMCOS21_CYBERSLED );
-	}
+	} };
 	
 	/*************************************************************/
 	/*															 */

@@ -1061,11 +1061,11 @@ public class psikyo
 	
 	
 	
-	void init_gunbird(void)
+	public static InitDriverPtr init_gunbird = new InitDriverPtr() { public void handler() 
 	{
 		/* The input ports are different */
 		install_mem_read32_handler(0, 0xc00000, 0xc0000b, gunbird_input_r);
-	}
+	} };
 	
 	
 	
@@ -1115,7 +1115,7 @@ public class psikyo
 	ROM_END(); }}; 
 	
 	
-	void init_sngkace(void)
+	public static InitDriverPtr init_sngkace = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *RAM	=	memory_region(REGION_SOUND1);
 		int len				=	memory_region_length(REGION_SOUND1);
@@ -1127,7 +1127,7 @@ public class psikyo
 			int x = RAM[i];
 			RAM[i] = ((x & 0x40) << 1) | ((x & 0x80) >> 1) | (x & 0x3f);
 		}
-	}
+	} };
 	
 	
 	/***************************************************************************
@@ -1186,7 +1186,7 @@ public class psikyo
 	
 	ROM_END(); }}; 
 	
-	void init_sngkblad(void)
+	public static InitDriverPtr init_sngkblad = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *RAM	= (data16_t *) memory_region(REGION_CPU1);
 	
@@ -1198,7 +1198,7 @@ public class psikyo
 		/* protection */
 		install_mem_write32_handler(0, 0xc00004, 0xc0000b, MWA32_NOP);
 	
-	}
+	} };
 	
 	
 	
@@ -1261,7 +1261,7 @@ public class psikyo
 	ROM_END(); }}; 
 	
 	
-	void init_s1945(void)
+	public static InitDriverPtr init_s1945 = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *RAM	= (data16_t *) memory_region(REGION_CPU1);
 	
@@ -1274,7 +1274,7 @@ public class psikyo
 		/* protection */
 		install_mem_write32_handler(0, 0xc00004, 0xc0000b, MWA32_NOP);
 	
-	}
+	} };
 	
 	
 	

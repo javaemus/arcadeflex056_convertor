@@ -526,7 +526,7 @@ public class darkseal
 	
 	/******************************************************************************/
 	
-	static void init_darkseal(void)
+	static public static InitDriverPtr init_darkseal = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 		int i;
@@ -534,7 +534,7 @@ public class darkseal
 		for (i=0x00000; i<0x80000; i++)
 			RAM[i]=(RAM[i] & 0xbd) | ((RAM[i] & 0x02) << 5) | ((RAM[i] & 0x40) >> 5);
 	
-	}
+	} };
 	
 	/******************************************************************************/
 	

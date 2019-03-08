@@ -357,10 +357,10 @@ public class config
 	
 	
 	/* for playback of .inp files */
-	void init_inpdir(void)
+	public static InitDriverPtr init_inpdir = new InitDriverPtr() { public void handler() 
 	{
 		inpdir = get_string ("directory", "inp",     NULL, "INP");
-	}
+	} };
 	
 	void parse_cmdline (int argc, char **argv, int game_index, char *override_default_rompath)
 	{

@@ -75,13 +75,13 @@ public class atarig42
 	}
 	
 	
-	static void init_machine(void)
+	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_reset();
 		atarigen_interrupt_reset(update_interrupts);
 		atarigen_scanline_timer_reset(atarig42_scanline_update, 8);
 		atarijsa_reset();
-	}
+	} };
 	
 	
 	
@@ -694,7 +694,7 @@ public class atarig42
 	 *
 	 *************************************/
 	
-	static void init_roadriot(void)
+	static public static InitDriverPtr init_roadriot = new InitDriverPtr() { public void handler() 
 	{
 		static const UINT16 default_eeprom[] =
 		{
@@ -714,10 +714,10 @@ public class atarig42
 		atarigen_init_6502_speedup(1, 0x4168, 0x4180);
 	
 		atarig42_guardian = 0;
-	}
+	} };
 	
 	
-	static void init_guardian(void)
+	static public static InitDriverPtr init_guardian = new InitDriverPtr() { public void handler() 
 	{
 		static const UINT16 default_eeprom[] =
 		{
@@ -742,7 +742,7 @@ public class atarig42
 		/* it looks like they jsr to $80000 as some kind of protection */
 		/* put an RTS there so we don't die */
 		*(data16_t *)&memory_region(REGION_CPU1)[0x80000] = 0x4E75;
-	}
+	} };
 	
 	
 	

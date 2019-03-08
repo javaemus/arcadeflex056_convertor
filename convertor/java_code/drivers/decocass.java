@@ -928,7 +928,7 @@ public class decocass
 	ROM_END(); }}; 
 	
 	
-	static void init_decocass(void)
+	static public static InitDriverPtr init_decocass = new InitDriverPtr() { public void handler() 
 	{
 		int A;
 		unsigned char *rom = memory_region(REGION_CPU1);
@@ -939,7 +939,7 @@ public class decocass
 		/* Swap bits 5 & 6 for opcodes */
 		for (A = 0;A < diff;A++)
 			rom[A+diff] = swap_bits_5_6(rom[A]);
-	}
+	} };
 	
 	public static GameDriver driver_decocass	   = new GameDriver("1981"	,"decocass"	,"decocass.java"	,rom_decocass,null	,machine_driver_decocass	,input_ports_decocass	,init_decocass	,ROT270	,	"DECO", "Cassette System", NOT_A_DRIVER )
 	public static GameDriver driver_ctsttape	   = new GameDriver("1981"	,"ctsttape"	,"decocass.java"	,rom_ctsttape,driver_decocass	,machine_driver_ctsttape	,input_ports_decocass	,init_decocass	,ROT270	,	"DECO", "Cassette: Test Tape" )

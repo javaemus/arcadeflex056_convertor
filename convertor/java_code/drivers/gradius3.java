@@ -538,10 +538,10 @@ public class gradius3
 	
 	
 	
-	static void init_gradius3(void)
+	static public static InitDriverPtr init_gradius3 = new InitDriverPtr() { public void handler() 
 	{
 		konami_rom_deinterleave_2(REGION_GFX2);
-	}
+	} };
 	
 	
 	

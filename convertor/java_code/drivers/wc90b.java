@@ -464,14 +464,14 @@ public class wc90b
 	ROM_END(); }}; 
 	
 	
-	void init_wc90b(void)
+	public static InitDriverPtr init_wc90b = new InitDriverPtr() { public void handler() 
 	{
 		int i;
 	
 		/* sprite graphics are inverted */
 		for (i = 0; i < memory_region_length(REGION_GFX3); i++)
 			memory_region(REGION_GFX3)[i] ^= 0xff;
-	}
+	} };
 	
 	
 	public static GameDriver driver_wc90b	   = new GameDriver("1989"	,"wc90b"	,"wc90b.java"	,rom_wc90b,driver_wc90	,machine_driver_wc90b	,input_ports_wc90b	,init_wc90b	,ROT0	,	"bootleg", "Euro League", GAME_NO_COCKTAIL )

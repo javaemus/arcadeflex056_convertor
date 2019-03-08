@@ -604,11 +604,11 @@ public class vendetta
 		vendetta_video_banking( 0 );
 	}
 	
-	static void init_vendetta(void)
+	static public static InitDriverPtr init_vendetta = new InitDriverPtr() { public void handler() 
 	{
 		konami_rom_deinterleave_2(REGION_GFX1);
 		konami_rom_deinterleave_4(REGION_GFX2);
-	}
+	} };
 	
 	
 	

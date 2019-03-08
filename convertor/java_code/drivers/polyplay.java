@@ -418,12 +418,12 @@ public class polyplay
 	}
 	
 	/* initialization */
-	static void init_polyplay_sound(void)
+	static public static InitDriverPtr init_polyplay_sound = new InitDriverPtr() { public void handler() 
 	{
 		timer_init();
 		timer_pulse(TIME_IN_HZ(75), 0, polyplay_timer);
 		timer2_active = 0;
-	}
+	} };
 	
 	/* game driver */
 	public static GameDriver driver_polyplay	   = new GameDriver("1985"	,"polyplay"	,"polyplay.java"	,rom_polyplay,null	,machine_driver_polyplay	,input_ports_polyplay	,init_polyplay_sound	,ROT0	,	"VEB Polytechnik Karl-Marx-Stadt", "Poly-Play" )

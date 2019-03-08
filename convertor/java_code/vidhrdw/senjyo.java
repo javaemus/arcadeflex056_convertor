@@ -37,24 +37,24 @@ public class senjyo
 	static struct mame_bitmap *bgbitmap;
 	
 	
-	void init_starforc(void)
+	public static InitDriverPtr init_starforc = new InitDriverPtr() { public void handler() 
 	{
 		senjyo = 0;
 		scrollhack = 1;
-	}
-	void init_starfore(void)
+	} };
+	public static InitDriverPtr init_starfore = new InitDriverPtr() { public void handler() 
 	{
 		/* encrypted CPU */
 		suprloco_decode();
 	
 		senjyo = 0;
 		scrollhack = 0;
-	}
-	void init_senjyo(void)
+	} };
+	public static InitDriverPtr init_senjyo = new InitDriverPtr() { public void handler() 
 	{
 		senjyo = 1;
 		scrollhack = 0;
-	}
+	} };
 	
 	
 	/***************************************************************************

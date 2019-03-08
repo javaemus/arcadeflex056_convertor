@@ -183,7 +183,7 @@ public class beathead
 	}
 	
 	
-	static void init_machine(void)
+	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
 	{
 		/* reset the common subsystems */
 		atarigen_eeprom_reset();
@@ -202,7 +202,7 @@ public class beathead
 		irq_line_state = CLEAR_LINE;
 		irq_state[0] = irq_state[1] = irq_state[2] = 0;
 		irq_enable[0] = irq_enable[1] = irq_enable[2] = 0;
-	}
+	} };
 	
 	
 	
@@ -581,7 +581,7 @@ public class beathead
 	 *
 	 *************************************/
 	
-	static void init_beathead(void)
+	static public static InitDriverPtr init_beathead = new InitDriverPtr() { public void handler() 
 	{
 		/* initialize the common systems */
 		atarigen_eeprom_default = NULL;
@@ -595,7 +595,7 @@ public class beathead
 		/* prepare the speedups */
 		speedup_data = install_mem_read32_handler(0, 0x00000ae8, 0x00000aeb, speedup_r);
 		movie_speedup_data = install_mem_read32_handler(0, 0x00000804, 0x00000807, movie_speedup_r);
-	}
+	} };
 	
 	
 	

@@ -124,7 +124,7 @@ public class pipedrm
 	 *
 	 *************************************/
 	
-	static void init_machine(void)
+	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
 	{
 		UINT8 *ram;
 	
@@ -135,7 +135,7 @@ public class pipedrm
 		/* initialize sound bank */
 		ram = memory_region(REGION_CPU2);
 		cpu_setbank(2, &ram[0x10000]);
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr pipedrm_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
@@ -801,20 +801,20 @@ public class pipedrm
 	 *
 	 *************************************/
 	
-	static void init_pipedrm(void)
+	static public static InitDriverPtr init_pipedrm = new InitDriverPtr() { public void handler() 
 	{
 		/* sprite RAM lives at the end of palette RAM */
 		spriteram = install_mem_read_handler(0, 0xcc00, 0xcfff, MRA_RAM);
 		spriteram = install_mem_write_handler(0, 0xcc00, 0xcfff, MWA_RAM);
 		spriteram_size = 0x400;
-	}
+	} };
 	
 	
-	static void init_hatris(void)
+	static public static InitDriverPtr init_hatris = new InitDriverPtr() { public void handler() 
 	{
 		install_port_write_handler(0, 0x20, 0x20, sound_command_nonmi_w);
 		install_port_write_handler(0, 0x21, 0x21, fromance_gfxreg_w);
-	}
+	} };
 	
 	
 	

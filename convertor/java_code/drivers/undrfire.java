@@ -703,7 +703,7 @@ public class undrfire
 		return undrfire_ram[0x4f8/4];
 	}
 	
-	void init_undrfire(void)
+	public static InitDriverPtr init_undrfire = new InitDriverPtr() { public void handler() 
 	{
 		unsigned int offset,i;
 		UINT8 *gfx = memory_region(REGION_GFX3);
@@ -736,7 +736,7 @@ public class undrfire
 	
 		/* Game hangs in the end sequence polling an unknown input (that usually freezes the game?!) */
 		rom[0x4a5d8/4]=(rom[0x4a5d8/4]&0xffff0000)|0x4e71;
-	}
+	} };
 	
 	
 	public static GameDriver driver_undrfire	   = new GameDriver("1993"	,"undrfire"	,"undrfire.java"	,rom_undrfire,null	,machine_driver_undrfire	,input_ports_undrfire	,init_undrfire	,ROT0	,	"Taito Corporation Japan", "Under Fire (World)", GAME_IMPERFECT_COLORS )

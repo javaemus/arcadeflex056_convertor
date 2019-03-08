@@ -493,7 +493,7 @@ public class pcktgal
 	
 	/***************************************************************************/
 	
-	static void init_deco222(void)
+	static public static InitDriverPtr init_deco222 = new InitDriverPtr() { public void handler() 
 	{
 		int A;
 		unsigned char *rom = memory_region(REGION_CPU2);
@@ -505,9 +505,9 @@ public class pcktgal
 		/* bits 5 and 6 of the opcodes are swapped */
 		for (A = 0;A < diff;A++)
 			rom[A + diff] = (rom[A] & 0x9f) | ((rom[A] & 0x20) << 1) | ((rom[A] & 0x40) >> 1);
-	}
+	} };
 	
-	static void init_graphics(void)
+	static public static InitDriverPtr init_graphics = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *rom = memory_region(REGION_GFX1);
 		int len = memory_region_length(REGION_GFX1);
@@ -523,13 +523,13 @@ public class pcktgal
 				rom[i+j] = temp[j];
 			}
 		}
-	}
+	} };
 	
-	static void init_pcktgal(void)
+	static public static InitDriverPtr init_pcktgal = new InitDriverPtr() { public void handler() 
 	{
 		init_deco222();
 		init_graphics();
-	}
+	} };
 	
 	/***************************************************************************/
 	

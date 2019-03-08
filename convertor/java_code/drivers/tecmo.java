@@ -851,9 +851,9 @@ public class tecmo
 	   video_type is used to distinguish Rygar, Silkworm and Gemini Wing.
 	   This is needed because there is a difference in the tile and sprite indexing.
 	*/
-	void init_rygar(void)    { tecmo_video_type = 0; }
-	void init_silkworm(void) { tecmo_video_type = 1; }
-	void init_gemini(void)   { tecmo_video_type = 2; }
+	public static InitDriverPtr init_rygar = new InitDriverPtr() { public void handler()     { tecmo_video_type = 0; } };
+	public static InitDriverPtr init_silkworm = new InitDriverPtr() { public void handler()  { tecmo_video_type = 1; } };
+	public static InitDriverPtr init_gemini = new InitDriverPtr() { public void handler()    { tecmo_video_type = 2; } };
 	
 	
 	

@@ -3348,23 +3348,23 @@ public class galaxian
 	
 	
 	
-	static void init_pisces(void)
+	static public static InitDriverPtr init_pisces = new InitDriverPtr() { public void handler() 
 	{
 		/* the coin lockout was replaced */
 		install_mem_write_handler(0, 0x6002, 0x6002, pisces_gfxbank_w);
-	}
+	} };
 	
-	static void init_checkmaj(void)
+	static public static InitDriverPtr init_checkmaj = new InitDriverPtr() { public void handler() 
 	{
 		/* for the title screen */
 		install_mem_read_handler(0, 0x3800, 0x3800, checkmaj_protection_r);
-	}
+	} };
 	
-	static void init_kingball(void)
+	static public static InitDriverPtr init_kingball = new InitDriverPtr() { public void handler() 
 	{
 		install_mem_read_handler(0, 0xa000, 0xa000, kingball_IN0_r);
 		install_mem_read_handler(0, 0xa800, 0xa800, kingball_IN1_r);
-	}
+	} };
 	
 	
 	static unsigned char decode(int data,int addr)
@@ -3379,7 +3379,7 @@ public class galaxian
 		return res;
 	}
 	
-	static void init_mooncrst(void)
+	static public static InitDriverPtr init_mooncrst = new InitDriverPtr() { public void handler() 
 	{
 		int A;
 		unsigned char *rom = memory_region(REGION_CPU1);
@@ -3387,21 +3387,21 @@ public class galaxian
 	
 		for (A = 0;A < 0x10000;A++)
 			rom[A] = decode(rom[A],A);
-	}
+	} };
 	
-	static void init_mooncrgx(void)
+	static public static InitDriverPtr init_mooncrgx = new InitDriverPtr() { public void handler() 
 	{
 		init_mooncrst();
 	
 		install_mem_write_handler(0, 0x6000, 0x6002, mooncrgx_gfxextend_w);
-	}
+	} };
 	
-	static void init_moonal2(void)
+	static public static InitDriverPtr init_moonal2 = new InitDriverPtr() { public void handler() 
 	{
 		install_mem_write_handler(0, 0xa000, 0xa002, MWA_NOP);
-	}
+	} };
 	
-	static void init_moonqsr(void)
+	static public static InitDriverPtr init_moonqsr = new InitDriverPtr() { public void handler() 
 	{
 		int A;
 		unsigned char *rom = memory_region(REGION_CPU1);
@@ -3412,9 +3412,9 @@ public class galaxian
 	
 		for (A = 0;A < 0x10000;A++)
 			rom[A + diff] = decode(rom[A],A);
-	}
+	} };
 	
-	static void init_checkman(void)
+	static public static InitDriverPtr init_checkman = new InitDriverPtr() { public void handler() 
 	{
 	/*
 	                     Encryption Table
@@ -3471,15 +3471,15 @@ public class galaxian
 			}
 			rom[A] ^= data_xor;
 		}
-	}
+	} };
 	
-	static void init_gteikob2(void)
+	static public static InitDriverPtr init_gteikob2 = new InitDriverPtr() { public void handler() 
 	{
 		init_pisces();
 	
 		install_mem_write_handler(0, 0x7006, 0x7006, gteikob2_flip_screen_x_w);
 		install_mem_write_handler(0, 0x7007, 0x7007, gteikob2_flip_screen_y_w);
-	}
+	} };
 	
 	
 	public static GameDriver driver_galaxian	   = new GameDriver("1979"	,"galaxian"	,"galaxian.java"	,rom_galaxian,null	,machine_driver_galaxian	,input_ports_galaxian	,null	,ROT90	,	"Namco", "Galaxian (Namco set 1)" )

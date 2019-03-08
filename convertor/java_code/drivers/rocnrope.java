@@ -330,7 +330,7 @@ public class rocnrope
 	
 	
 	
-	static void init_rocnrope(void)
+	static public static InitDriverPtr init_rocnrope = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *rom = memory_region(REGION_CPU1);
 		int diff = memory_region_length(REGION_CPU1) / 2;
@@ -338,12 +338,12 @@ public class rocnrope
 	
 		konami1_decode();
 		rom[0x703d + diff] = 0x98;	/* fix one instruction */
-	}
+	} };
 	
-	static void init_rocnropk(void)
+	static public static InitDriverPtr init_rocnropk = new InitDriverPtr() { public void handler() 
 	{
 		konami1_decode();
-	}
+	} };
 	
 	
 	

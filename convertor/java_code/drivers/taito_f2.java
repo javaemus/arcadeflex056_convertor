@@ -4757,11 +4757,11 @@ public class taito_f2
 	                      MACHINE DRIVERS
 	***********************************************************/
 	
-	static void init_machine_qcrayon(void)
+	static public static InitDriverPtr init_machine_qcrayon = new InitDriverPtr() { public void handler() 
 	{
 		/* point to the extra ROM */
 		cpu_setbank(1,memory_region(REGION_USER1));
-	}
+	} };
 	
 	#define init_machine_0 0
 	
@@ -6259,13 +6259,13 @@ public class taito_f2
 	ROM_END(); }}; 
 	
 	
-	void init_f2( void)
+	public static InitDriverPtr init_f2 = new InitDriverPtr() { public void handler() 
 	{
 		state_save_register_int("taitof2", 0, "sound region", &banknum);
 		state_save_register_func_postload(reset_sound_region);
-	}
+	} };
 	
-	void init_finalb(void)
+	public static InitDriverPtr init_finalb = new InitDriverPtr() { public void handler() 
 	{
 		int i;
 		unsigned char data;
@@ -6292,9 +6292,9 @@ public class taito_f2
 		}
 	
 		init_f2();
-	}
+	} };
 	
-	void init_mjnquest(void)
+	public static InitDriverPtr init_mjnquest = new InitDriverPtr() { public void handler() 
 	{
 		int i;
 		UINT8 *gfx = memory_region(REGION_GFX2);
@@ -6311,22 +6311,22 @@ public class taito_f2
 		}
 	
 		init_f2();
-	}
+	} };
 	
-	void init_yesnoj( void)
+	public static InitDriverPtr init_yesnoj = new InitDriverPtr() { public void handler() 
 	{
 		yesnoj_dsw = 0;
 		state_save_register_int("yesnoj_dsw", 0, "control", &yesnoj_dsw);
 		init_f2();
-	}
+	} };
 	
-	void init_driveout( void)
+	public static InitDriverPtr init_driveout = new InitDriverPtr() { public void handler() 
 	{
 		state_save_register_int("driveout_sound1", 0, "sound", &driveout_sound_latch);
 		state_save_register_int("driveout_sound2", 0, "sound region", &oki_bank);
 		state_save_register_func_postload(reset_driveout_sound_region);
 		init_f2();
-	}
+	} };
 	
 	
 	public static GameDriver driver_finalb	   = new GameDriver("1988"	,"finalb"	,"taito_f2.java"	,rom_finalb,null	,machine_driver_finalb	,input_ports_finalb	,init_finalb	,ROT0	,	"Taito Corporation Japan", "Final Blow (World)" )

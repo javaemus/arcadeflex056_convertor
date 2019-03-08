@@ -318,7 +318,7 @@ public class leland
 	 *
 	 *************************************/
 	
-	static void init_machine(void)
+	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
 	{
 		/* set the odd data bank */
 		battery_ram = memory_region(REGION_USER2);
@@ -360,7 +360,7 @@ public class leland
 		/* if we have an I86 CPU, reset it */
 		if ((Machine->drv->cpu[2].cpu_type & ~CPU_FLAGS_MASK) == CPU_I186)
 			leland_i186_sound_init();
-	}
+	} };
 	
 	
 	
@@ -3075,7 +3075,7 @@ public class leland
 	}
 	
 	
-	static void init_cerberus(void)
+	static public static InitDriverPtr init_cerberus = new InitDriverPtr() { public void handler() 
 	{
 		/* initialize the default EEPROM state */
 		static const UINT16 cerberus_eeprom_data[] =
@@ -3105,9 +3105,9 @@ public class leland
 		/* set up additional input ports */
 		install_port_read_handler(0, 0x80, 0x80, cerberus_dial_1_r);
 		install_port_read_handler(0, 0x90, 0x90, cerberus_dial_2_r);
-	}
+	} };
 	
-	static void init_mayhem(void)
+	static public static InitDriverPtr init_mayhem = new InitDriverPtr() { public void handler() 
 	{
 		/* initialize the default EEPROM state */
 		static const UINT16 mayhem_eeprom_data[] =
@@ -3145,9 +3145,9 @@ public class leland
 	
 		/* set up the master CPU I/O ports */
 		init_master_ports(0x00, 0xc0);
-	}
+	} };
 	
-	static void init_powrplay(void)
+	static public static InitDriverPtr init_powrplay = new InitDriverPtr() { public void handler() 
 	{
 		/* initialize the default EEPROM state */
 		static const UINT16 powrplay_eeprom_data[] =
@@ -3173,9 +3173,9 @@ public class leland
 	
 		/* set up the master CPU I/O ports */
 		init_master_ports(0x40, 0x80);
-	}
+	} };
 	
-	static void init_wseries(void)
+	static public static InitDriverPtr init_wseries = new InitDriverPtr() { public void handler() 
 	{
 		/* initialize the default EEPROM state */
 		static const UINT16 wseries_eeprom_data[] =
@@ -3193,9 +3193,9 @@ public class leland
 	
 		/* set up the master CPU I/O ports */
 		init_master_ports(0x40, 0x80);
-	}
+	} };
 	
-	static void init_alleymas(void)
+	static public static InitDriverPtr init_alleymas = new InitDriverPtr() { public void handler() 
 	{
 		/* initialize the default EEPROM state */
 		static const UINT16 alleymas_eeprom_data[] =
@@ -3220,9 +3220,9 @@ public class leland
 		/* it gets cleared by the code, but there is no obvious way for the value to be set to a */
 		/* non-zero value. If the value is zero, the joystick is never read. */
 		alleymas_kludge_mem = install_mem_write_handler(0, 0xe0ca, 0xe0ca, alleymas_joystick_kludge);
-	}
+	} };
 	
-	static void init_dangerz(void)
+	static public static InitDriverPtr init_dangerz = new InitDriverPtr() { public void handler() 
 	{
 		/* initialize the default EEPROM state */
 		static const UINT16 dangerz_eeprom_data[] =
@@ -3249,9 +3249,9 @@ public class leland
 		install_port_read_handler(0, 0xf4, 0xf4, dangerz_input_upper_r);
 		install_port_read_handler(0, 0xf8, 0xf8, dangerz_input_y_r);
 		install_port_read_handler(0, 0xfc, 0xfc, dangerz_input_x_r);
-	}
+	} };
 	
-	static void init_basebal2(void)
+	static public static InitDriverPtr init_basebal2 = new InitDriverPtr() { public void handler() 
 	{
 		/* initialize the default EEPROM state */
 		static const UINT16 basebal2_eeprom_data[] =
@@ -3269,9 +3269,9 @@ public class leland
 	
 		/* set up the master CPU I/O ports */
 		init_master_ports(0x00, 0xc0);
-	}
+	} };
 	
-	static void init_dblplay(void)
+	static public static InitDriverPtr init_dblplay = new InitDriverPtr() { public void handler() 
 	{
 		/* initialize the default EEPROM state */
 		static const UINT16 dblplay_eeprom_data[] =
@@ -3290,9 +3290,9 @@ public class leland
 	
 		/* set up the master CPU I/O ports */
 		init_master_ports(0x80, 0x40);
-	}
+	} };
 	
-	static void init_strkzone(void)
+	static public static InitDriverPtr init_strkzone = new InitDriverPtr() { public void handler() 
 	{
 		/* initialize the default EEPROM state */
 		static const UINT16 strkzone_eeprom_data[] =
@@ -3311,9 +3311,9 @@ public class leland
 	
 		/* set up the master CPU I/O ports */
 		init_master_ports(0x00, 0x40);
-	}
+	} };
 	
-	static void init_redlin2p(void)
+	static public static InitDriverPtr init_redlin2p = new InitDriverPtr() { public void handler() 
 	{
 		/* initialize the default EEPROM state */
 		static const UINT16 redlin2p_eeprom_data[] =
@@ -3342,9 +3342,9 @@ public class leland
 	
 		/* optimize the sound */
 		leland_i86_optimize_address(0x828);
-	}
+	} };
 	
-	static void init_quarterb(void)
+	static public static InitDriverPtr init_quarterb = new InitDriverPtr() { public void handler() 
 	{
 		/* initialize the default EEPROM state */
 		static const UINT16 quarterb_eeprom_data[] =
@@ -3369,9 +3369,9 @@ public class leland
 	
 		/* optimize the sound */
 		leland_i86_optimize_address(0x9bc);
-	}
+	} };
 	
-	static void init_viper(void)
+	static public static InitDriverPtr init_viper = new InitDriverPtr() { public void handler() 
 	{
 		/* initialize the default EEPROM state */
 		static const UINT16 viper_eeprom_data[] =
@@ -3403,9 +3403,9 @@ public class leland
 	
 		/* optimize the sound */
 		leland_i86_optimize_address(0x788);
-	}
+	} };
 	
-	static void init_teamqb(void)
+	static public static InitDriverPtr init_teamqb = new InitDriverPtr() { public void handler() 
 	{
 		/* initialize the default EEPROM state */
 		static const UINT16 teamqb_eeprom_data[] =
@@ -3435,9 +3435,9 @@ public class leland
 	
 		/* optimize the sound */
 		leland_i86_optimize_address(0x788);
-	}
+	} };
 	
-	static void init_aafb(void)
+	static public static InitDriverPtr init_aafb = new InitDriverPtr() { public void handler() 
 	{
 		/* initialize the default EEPROM state */
 		static const UINT16 aafb_eeprom_data[] =
@@ -3467,9 +3467,9 @@ public class leland
 	
 		/* optimize the sound */
 		leland_i86_optimize_address(0x788);
-	}
+	} };
 	
-	static void init_aafbb(void)
+	static public static InitDriverPtr init_aafbb = new InitDriverPtr() { public void handler() 
 	{
 		/* initialize the default EEPROM state */
 		static const UINT16 aafb_eeprom_data[] =
@@ -3499,9 +3499,9 @@ public class leland
 	
 		/* optimize the sound */
 		leland_i86_optimize_address(0x788);
-	}
+	} };
 	
-	static void init_aafbd2p(void)
+	static public static InitDriverPtr init_aafbd2p = new InitDriverPtr() { public void handler() 
 	{
 		/* initialize the default EEPROM state */
 		static const UINT16 aafb_eeprom_data[] =
@@ -3531,9 +3531,9 @@ public class leland
 	
 		/* optimize the sound */
 		leland_i86_optimize_address(0x788);
-	}
+	} };
 	
-	static void init_offroad(void)
+	static public static InitDriverPtr init_offroad = new InitDriverPtr() { public void handler() 
 	{
 		/* initialize the default EEPROM state */
 		static const UINT16 offroad_eeprom_data[] =
@@ -3570,9 +3570,9 @@ public class leland
 	
 		/* optimize the sound */
 		leland_i86_optimize_address(0x788);
-	}
+	} };
 	
-	static void init_offroadt(void)
+	static public static InitDriverPtr init_offroadt = new InitDriverPtr() { public void handler() 
 	{
 		/* initialize the default EEPROM state */
 		static const UINT16 offroadt_eeprom_data[] =
@@ -3608,9 +3608,9 @@ public class leland
 	
 		/* optimize the sound */
 		leland_i86_optimize_address(0x788);
-	}
+	} };
 	
-	static void init_pigout(void)
+	static public static InitDriverPtr init_pigout = new InitDriverPtr() { public void handler() 
 	{
 		/* initialize the default EEPROM state */
 		static const UINT16 pigout_eeprom_data[] =
@@ -3642,7 +3642,7 @@ public class leland
 	
 		/* optimize the sound */
 		leland_i86_optimize_address(0x788);
-	}
+	} };
 	
 	
 	

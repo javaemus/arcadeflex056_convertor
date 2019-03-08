@@ -368,7 +368,7 @@ public class citycon
 	
 	
 	
-	static void init_citycon(void)
+	static public static InitDriverPtr init_citycon = new InitDriverPtr() { public void handler() 
 	{
 		UINT8 *rom = memory_region(REGION_GFX1);
 		int i;
@@ -392,7 +392,7 @@ public class citycon
 			if (i & 0x02) rom[3*i+1] |= mask & 0x0f;
 			if (i & 0x04) rom[3*i+2] |= mask & 0xf0;
 		}
-	}
+	} };
 	
 	
 	

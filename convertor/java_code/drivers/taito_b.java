@@ -2555,7 +2555,7 @@ public class taito_b
 	};
 	
 	
-	static void init_mb87078(void)
+	static public static InitDriverPtr init_mb87078 = new InitDriverPtr() { public void handler() 
 	{
 		if (Machine->sample_rate != 0)
 			MB87078_start(0, &mb87078_interface); /*chip #0*/
@@ -2566,7 +2566,7 @@ public class taito_b
 				logerror("SOUND Chan#%i name=%s\n", i, mixer_get_name(i) );
 		}
 	*/
-	}
+	} };
 	
 	
 	static MachineDriver machine_driver_rastsag2 = new MachineDriver

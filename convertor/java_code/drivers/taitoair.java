@@ -684,7 +684,7 @@ public class taitoair
 	ROM_END(); }}; 
 	
 	
-	static void init_ainferno(void)
+	static public static InitDriverPtr init_ainferno = new InitDriverPtr() { public void handler() 
 	{
 	#if 1
 		data16_t *ROM = (data16_t *)memory_region(REGION_CPU1);
@@ -698,10 +698,10 @@ public class taitoair
 	
 		state_save_register_int("sound1", 0, "sound region", &banknum);
 		state_save_register_func_postload(reset_sound_region);
-	}
+	} };
 	
 	
-	static void init_topland(void)
+	static public static InitDriverPtr init_topland = new InitDriverPtr() { public void handler() 
 	{
 	#if 1
 		data16_t *ROM = (data16_t *)memory_region(REGION_CPU1);
@@ -721,7 +721,7 @@ public class taitoair
 	
 		state_save_register_int("sound1", 0, "sound region", &banknum);
 		state_save_register_func_postload(reset_sound_region);
-	}
+	} };
 	
 	
 	/*  ( YEAR  NAME      PARENT    MACHINE   INPUT     INIT      MONITOR  COMPANY  FULLNAME */

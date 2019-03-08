@@ -567,12 +567,12 @@ public class superchs
 		return superchs_ram[2]&0xffff;
 	}
 	
-	static void init_superchs(void)
+	static public static InitDriverPtr init_superchs = new InitDriverPtr() { public void handler() 
 	{
 		/* Speedup handlers */
 		install_mem_read32_handler(0, 0x100000, 0x100003, main_cycle_r);
 		install_mem_read16_handler(2, 0x80000a, 0x80000b, sub_cycle_r);
-	}
+	} };
 	
 	public static GameDriver driver_superchs	   = new GameDriver("1992"	,"superchs"	,"superchs.java"	,rom_superchs,null	,machine_driver_superchs	,input_ports_superchs	,init_superchs	,ROT0	,	"Taito America Corporation", "Super Chase - Criminal Termination (US)" )
 }

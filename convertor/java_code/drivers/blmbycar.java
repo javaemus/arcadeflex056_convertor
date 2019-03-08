@@ -374,7 +374,7 @@ public class blmbycar
 	ROM_END(); }}; 
 	
 	
-	void init_blmbycar(void)
+	public static InitDriverPtr init_blmbycar = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *RAM  = (data16_t *) memory_region(REGION_CPU1);
 		size_t    size = memory_region_length(REGION_CPU1) / 2;
@@ -386,7 +386,7 @@ public class blmbycar
 			x = (x & ~0x0606) | ((x & 0x0202) << 1) | ((x & 0x0404) >> 1);
 			RAM[i] = x;
 		}
-	}
+	} };
 	
 	/***************************************************************************
 	

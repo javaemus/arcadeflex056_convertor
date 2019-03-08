@@ -183,7 +183,7 @@ public class toaplan2
 	  Initialisation handlers
 	***************************************************************************/
 	
-	static void init_toaplan2(void)
+	static public static InitDriverPtr init_toaplan2 = new InitDriverPtr() { public void handler() 
 	{
 		old_p1_paddle_h = 0;
 		old_p1_paddle_v = 0;
@@ -191,36 +191,36 @@ public class toaplan2
 		old_p2_paddle_v = 0;
 		toaplan2_sub_cpu = CPU_2_HD647180;
 		mcu_data = 0;
-	}
+	} };
 	
-	static void init_toaplan3(void)
+	static public static InitDriverPtr init_toaplan3 = new InitDriverPtr() { public void handler() 
 	{
 		toaplan2_sub_cpu = CPU_2_Zx80;
 		mcu_data = 0;
-	}
+	} };
 	
-	static void init_fixeight(void)
+	static public static InitDriverPtr init_fixeight = new InitDriverPtr() { public void handler() 
 	{
 		install_mem_read16_handler(0, 0x28f002, 0x28fbff, MRA16_RAM );
 		install_mem_write16_handler(0, 0x28f002, 0x28fbff, MWA16_RAM );
 	
 		toaplan2_sub_cpu = CPU_2_Zx80;
 		mcu_data = 0;
-	}
+	} };
 	
-	static void init_snowbro2(void)
+	static public static InitDriverPtr init_snowbro2 = new InitDriverPtr() { public void handler() 
 	{
 		toaplan2_sub_cpu = CPU_2_NONE;
 		mcu_data = 0;	/* not used here actually */
-	}
+	} };
 	
-	static void init_pipibibs(void)
+	static public static InitDriverPtr init_pipibibs = new InitDriverPtr() { public void handler() 
 	{
 		toaplan2_sub_cpu = CPU_2_Z80;
 		mcu_data = 0;	/* not used here actually */
-	}
+	} };
 	
-	static void init_pipibibi(void)
+	static public static InitDriverPtr init_pipibibi = new InitDriverPtr() { public void handler() 
 	{
 		int A;
 		int oldword, newword;
@@ -300,9 +300,9 @@ public class toaplan2
 	
 		toaplan2_sub_cpu = CPU_2_Z80;
 		mcu_data = 0;	/* not used here actually */
-	}
+	} };
 	
-	static void init_truxton2(void)
+	static public static InitDriverPtr init_truxton2 = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *truxton2_ROM = (data16_t *)memory_region(REGION_CPU1);
 	
@@ -321,15 +321,15 @@ public class toaplan2
 	
 		toaplan2_sub_cpu = CPU_2_NONE;
 		mcu_data = 0;	/* not used here actually */
-	}
+	} };
 	
-	static void init_raizing(void)
+	static public static InitDriverPtr init_raizing = new InitDriverPtr() { public void handler() 
 	{
 		toaplan2_sub_cpu = CPU_2_Z80;
 		mcu_data = 0;	/* not used here actually */
-	}
+	} };
 	
-	static void init_battleg(void)
+	static public static InitDriverPtr init_battleg = new InitDriverPtr() { public void handler() 
 	{
 		data8_t *Z80 = (data8_t *)memory_region(REGION_CPU2);
 	
@@ -338,7 +338,7 @@ public class toaplan2
 	
 		toaplan2_sub_cpu = CPU_2_Z80;
 		mcu_data = 0;	/* not used here actually */
-	}
+	} };
 	
 	
 	

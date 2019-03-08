@@ -546,7 +546,7 @@ public class xain
 	
 	
 	
-	void init_xsleena(void)
+	public static InitDriverPtr init_xsleena = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -557,9 +557,9 @@ public class xain
 		RAM[0xd48b] = 0x12;
 		RAM[0xd48c] = 0x12;
 		RAM[0xd48d] = 0x12;
-	}
+	} };
 	
-	void init_solarwar(void)
+	public static InitDriverPtr init_solarwar = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -570,7 +570,7 @@ public class xain
 		RAM[0xd481] = 0x12;
 		RAM[0xd482] = 0x12;
 		RAM[0xd483] = 0x12;
-	}
+	} };
 	
 	
 	

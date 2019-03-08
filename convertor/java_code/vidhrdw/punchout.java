@@ -186,7 +186,7 @@ public class punchout
 		memset(memory_region(REGION_GFX3) + 0x2c000,0xff,0x4000);
 	}
 	
-	void init_punchout(void)
+	public static InitDriverPtr init_punchout = new InitDriverPtr() { public void handler() 
 	{
 		gfx_fix();
 	
@@ -194,9 +194,9 @@ public class punchout
 		gfx1inv = 0xfc;
 		gfx2inv = 0xff;
 		gfx3inv = 0xfc;
-	}
+	} };
 	
-	void init_spnchout(void)
+	public static InitDriverPtr init_spnchout = new InitDriverPtr() { public void handler() 
 	{
 		gfx_fix();
 	
@@ -204,9 +204,9 @@ public class punchout
 		gfx1inv = 0xff;
 		gfx2inv = 0xff;
 		gfx3inv = 0xff;
-	}
+	} };
 	
-	void init_spnchotj(void)
+	public static InitDriverPtr init_spnchotj = new InitDriverPtr() { public void handler() 
 	{
 		gfx_fix();
 	
@@ -214,16 +214,16 @@ public class punchout
 		gfx1inv = 0xff;
 		gfx2inv = 0xff;
 		gfx3inv = 0xff;
-	}
+	} };
 	
-	void init_armwrest(void)
+	public static InitDriverPtr init_armwrest = new InitDriverPtr() { public void handler() 
 	{
 		gfx_fix();
 	
 		/* also, ROM 2k is enabled only when its top half is accessed. The other half must */
 		/* be seen as a 0xff fill for colors to come out properly */
 		memset(memory_region(REGION_GFX2) + 0x08000,0xff,0x2000);
-	}
+	} };
 	
 	
 	

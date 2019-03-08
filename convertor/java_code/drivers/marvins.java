@@ -831,12 +831,12 @@ public class marvins
 	
 	
 	
-	static void init_marvins(void)
+	static public static InitDriverPtr init_marvins = new InitDriverPtr() { public void handler() 
 	{
 		init_sound( 0x40 );
-	}
+	} };
 	
-	static void init_madcrash( void )
+	static public static InitDriverPtr init_madcrash = new InitDriverPtr() { public void handler() 
 	{
 	/*
 		The following lines patch out the ROM test (which fails - probably
@@ -848,13 +848,13 @@ public class marvins
 	*/
 		init_sound( 0x20 );
 		madcrash_vreg = 0x00;
-	}
+	} };
 	
-	static void init_vangrd2( void )
+	static public static InitDriverPtr init_vangrd2 = new InitDriverPtr() { public void handler() 
 	{
 		init_sound( 0x20 );
 		madcrash_vreg = 0xf1;
-	}
+	} };
 	
 	
 	

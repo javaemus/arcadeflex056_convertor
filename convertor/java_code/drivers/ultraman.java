@@ -372,10 +372,10 @@ public class ultraman
 	
 	
 	
-	static void init_ultraman(void)
+	static public static InitDriverPtr init_ultraman = new InitDriverPtr() { public void handler() 
 	{
 		konami_rom_deinterleave_2(REGION_GFX1);
-	}
+	} };
 	
 	
 	public static GameDriver driver_ultraman	   = new GameDriver("1991"	,"ultraman"	,"ultraman.java"	,rom_ultraman,null	,machine_driver_ultraman	,input_ports_ultraman	,init_ultraman	,ROT0	,	"Banpresto/Bandai", "Ultraman (Japan)" )

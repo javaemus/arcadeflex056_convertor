@@ -194,7 +194,7 @@ public class atarisy1
 	}
 	
 	
-	static void init_machine(void)
+	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
 	{
 		/* initialize the system */
 		atarigen_eeprom_reset();
@@ -212,7 +212,7 @@ public class atarisy1
 		m6522_ddra = m6522_ddrb = 0xff;
 		m6522_dra = m6522_drb = 0xff;
 		memset(m6522_regs, 0xff, sizeof(m6522_regs));
-	}
+	} };
 	
 	
 	
@@ -1495,7 +1495,7 @@ public class atarisy1
 	 *
 	 *************************************/
 	
-	static void init_marble(void)
+	static public static InitDriverPtr init_marble = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_default = NULL;
 		atarigen_slapstic_init(0, 0x080000, 103);
@@ -1503,10 +1503,10 @@ public class atarisy1
 	
 		joystick_type = 0;	/* none */
 		trackball_type = 1;	/* rotated */
-	}
+	} };
 	
 	
-	static void init_peterpak(void)
+	static public static InitDriverPtr init_peterpak = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_default = NULL;
 		atarigen_slapstic_init(0, 0x080000, 107);
@@ -1514,10 +1514,10 @@ public class atarisy1
 	
 		joystick_type = 1;	/* digital */
 		trackball_type = 0;	/* none */
-	}
+	} };
 	
 	
-	static void init_indytemp(void)
+	static public static InitDriverPtr init_indytemp = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_default = NULL;
 		atarigen_slapstic_init(0, 0x080000, 105);
@@ -1528,10 +1528,10 @@ public class atarisy1
 	
 		joystick_type = 1;	/* digital */
 		trackball_type = 0;	/* none */
-	}
+	} };
 	
 	
-	static void init_roadrunn(void)
+	static public static InitDriverPtr init_roadrunn = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_default = NULL;
 		atarigen_slapstic_init(0, 0x080000, 108);
@@ -1539,10 +1539,10 @@ public class atarisy1
 	
 		joystick_type = 2;	/* analog */
 		trackball_type = 0;	/* none */
-	}
+	} };
 	
 	
-	static void init_roadblst(void)
+	static public static InitDriverPtr init_roadblst = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_default = NULL;
 		atarigen_slapstic_init(0, 0x080000, 110);
@@ -1550,7 +1550,7 @@ public class atarisy1
 	
 		joystick_type = 3;	/* pedal */
 		trackball_type = 2;	/* steering wheel */
-	}
+	} };
 	
 	
 	

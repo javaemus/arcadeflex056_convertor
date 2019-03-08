@@ -205,7 +205,7 @@ public class hexa
 	
 	
 	
-	static void init_hexa(void)
+	static public static InitDriverPtr init_hexa = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -217,7 +217,7 @@ public class hexa
 		RAM[0x0124] = 0x00;
 		RAM[0x0125] = 0x00;
 		RAM[0x0126] = 0x00;
-	}
+	} };
 	
 	
 	public static GameDriver driver_hexa	   = new GameDriver("1986?"	,"hexa"	,"hexa.java"	,rom_hexa,null	,machine_driver_hexa	,input_ports_hexa	,init_hexa	,ROT0	,	"D. R. Korea", "Hexa" )

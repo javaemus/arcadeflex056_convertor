@@ -1293,7 +1293,7 @@ public class mcr68
 	 *
 	 *************************************/
 	
-	static void init_zwackery(void)
+	static public static InitDriverPtr init_zwackery = new InitDriverPtr() { public void handler() 
 	{
 		MCR_CONFIGURE_SOUND(MCR_CHIP_SQUEAK_DELUXE);
 	
@@ -1301,10 +1301,10 @@ public class mcr68
 		mcr68_timing_factor = (256.0 + 16.0) / (double)(Machine->drv->cpu[0].cpu_clock / 10);
 	
 		rom_decode();
-	}
+	} };
 	
 	
-	static void init_xenophob(void)
+	static public static InitDriverPtr init_xenophob = new InitDriverPtr() { public void handler() 
 	{
 		MCR_CONFIGURE_SOUND(MCR_SOUNDS_GOOD);
 	
@@ -1318,10 +1318,10 @@ public class mcr68
 		install_mem_write16_handler(0, 0x0c0000, 0x0cffff, xenophobe_control_w);
 	
 		rom_decode();
-	}
+	} };
 	
 	
-	static void init_spyhunt2(void)
+	static public static InitDriverPtr init_spyhunt2 = new InitDriverPtr() { public void handler() 
 	{
 		MCR_CONFIGURE_SOUND(MCR_TURBO_CHIP_SQUEAK | MCR_SOUNDS_GOOD);
 	
@@ -1337,10 +1337,10 @@ public class mcr68
 		install_mem_read16_handler(0, 0x0e0000, 0x0effff, spyhunt2_port_1_r);
 	
 		rom_decode();
-	}
+	} };
 	
 	
-	static void init_blasted(void)
+	static public static InitDriverPtr init_blasted = new InitDriverPtr() { public void handler() 
 	{
 		MCR_CONFIGURE_SOUND(MCR_SOUNDS_GOOD);
 	
@@ -1360,10 +1360,10 @@ public class mcr68
 		install_mem_read16_handler(0, 0x0a0000, 0x0a000f, mcr68_6840_lower_r);
 	
 		rom_decode();
-	}
+	} };
 	
 	
-	static void init_archrivl(void)
+	static public static InitDriverPtr init_archrivl = new InitDriverPtr() { public void handler() 
 	{
 		MCR_CONFIGURE_SOUND(MCR_WILLIAMS_SOUND);
 	
@@ -1392,10 +1392,10 @@ public class mcr68
 		memcpy(&memory_region(REGION_CPU2)[0x60000], &memory_region(REGION_CPU2)[0x50000], 0x10000);
 	
 		rom_decode();
-	}
+	} };
 	
 	
-	static void init_pigskin(void)
+	static public static InitDriverPtr init_pigskin = new InitDriverPtr() { public void handler() 
 	{
 		MCR_CONFIGURE_SOUND(MCR_WILLIAMS_SOUND);
 	
@@ -1411,10 +1411,10 @@ public class mcr68
 		memcpy(&memory_region(REGION_CPU2)[0x60000], &memory_region(REGION_CPU2)[0x50000], 0x10000);
 	
 		rom_decode();
-	}
+	} };
 	
 	
-	static void init_trisport(void)
+	static public static InitDriverPtr init_trisport = new InitDriverPtr() { public void handler() 
 	{
 		MCR_CONFIGURE_SOUND(MCR_WILLIAMS_SOUND);
 	
@@ -1433,7 +1433,7 @@ public class mcr68
 		memcpy(&memory_region(REGION_CPU2)[0x60000], &memory_region(REGION_CPU2)[0x50000], 0x10000);
 	
 		rom_decode();
-	}
+	} };
 	
 	
 	

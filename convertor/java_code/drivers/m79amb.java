@@ -135,7 +135,7 @@ public class m79amb
 		return 0x00cf;  /* RST 08h */
 	} };
 	
-	static void init_m79amb(void)
+	static public static InitDriverPtr init_m79amb = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *rom = memory_region(REGION_CPU1);
 		int i;
@@ -143,7 +143,7 @@ public class m79amb
 		/* PROM data is active low */
 	 	for (i = 0;i < 0x2000;i++)
 			rom[i] = ~rom[i];
-	}
+	} };
 	
 	static MachineDriver machine_driver_m79amb = new MachineDriver
 	(

@@ -579,14 +579,14 @@ public class baraduke
 	
 	
 	
-	static void init_metrocrs( void )
+	static public static InitDriverPtr init_metrocrs = new InitDriverPtr() { public void handler() 
 	{
 		int i;
 		unsigned char *rom = memory_region(REGION_GFX2);
 	
 		for(i = 0x8000;i < memory_region_length(REGION_GFX2);i++)
 			rom[i] = 0xff;
-	}
+	} };
 	
 	
 	

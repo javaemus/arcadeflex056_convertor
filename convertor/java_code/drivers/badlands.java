@@ -159,7 +159,7 @@ public class badlands
 	}
 	
 	
-	static void init_machine(void)
+	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
 	{
 		pedal_value[0] = pedal_value[1] = 0x80;
 	
@@ -169,7 +169,7 @@ public class badlands
 	
 		atarigen_sound_io_reset(1);
 		memcpy(bank_base, &bank_source_data[0x0000], 0x1000);
-	}
+	} };
 	
 	
 	
@@ -575,7 +575,7 @@ public class badlands
 	 *
 	 *************************************/
 	
-	static void init_badlands(void)
+	static public static InitDriverPtr init_badlands = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_default = NULL;
 		atarigen_init_6502_speedup(1, 0x4155, 0x416d);
@@ -585,7 +585,7 @@ public class badlands
 		/* initialize the audio system */
 		bank_base = &memory_region(REGION_CPU2)[0x03000];
 		bank_source_data = &memory_region(REGION_CPU2)[0x10000];
-	}
+	} };
 	
 	
 	

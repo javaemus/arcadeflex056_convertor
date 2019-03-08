@@ -308,10 +308,10 @@ public class cinemat
 		cinemat_set_sound_handler (0);
 	}
 	
-	void init_barrier(void)
+	public static InitDriverPtr init_barrier = new InitDriverPtr() { public void handler() 
 	{
 		cinemat_select_artwork (CCPU_MONITOR_BILEV, 0, 0, 0);
-	}
+	} };
 	
 	
 	CINEMA_MACHINE (barrier, 0, 0, 1024, 768, 0, 0)
@@ -375,10 +375,10 @@ public class cinemat
 		cinemat_set_sound_handler (0);
 	}
 	
-	void init_starhawk(void)
+	public static InitDriverPtr init_starhawk = new InitDriverPtr() { public void handler() 
 	{
 		cinemat_select_artwork (CCPU_MONITOR_BILEV, 0, 0, 0);
-	}
+	} };
 	
 	
 	CINEMA_MACHINE (starhawk, 0, 0, 1024, 768, 0, 0)
@@ -445,10 +445,10 @@ public class cinemat
 		cinemat_set_sound_handler (starcas_sound_w);
 	}
 	
-	void init_starcas(void)
+	public static InitDriverPtr init_starcas = new InitDriverPtr() { public void handler() 
 	{
 		cinemat_select_artwork (CCPU_MONITOR_BILEV, 1, 0, starcas_overlay);
-	}
+	} };
 	
 	CINEMA_MACHINE (starcas, 0, 0, 1024, 768, SOUND_SAMPLES, &starcas_samples_interface)
 	
@@ -516,10 +516,10 @@ public class cinemat
 		cinemat_set_sound_handler (0);
 	}
 	
-	void init_tailg(void)
+	public static InitDriverPtr init_tailg = new InitDriverPtr() { public void handler() 
 	{
 		cinemat_select_artwork (CCPU_MONITOR_BILEV, 1, 0, tailg_overlay);
-	}
+	} };
 	
 	CINEMA_MACHINE (tailg, 0, 0, 1024, 768, 0, 0)
 	
@@ -584,10 +584,10 @@ public class cinemat
 		cinemat_set_sound_handler (ripoff_sound_w);
 	}
 	
-	void init_ripoff(void)
+	public static InitDriverPtr init_ripoff = new InitDriverPtr() { public void handler() 
 	{
 		cinemat_select_artwork (CCPU_MONITOR_BILEV, 0, 0, 0);
-	}
+	} };
 	
 	
 	CINEMA_MACHINE (ripoff, 0, 0, 1024, 768, SOUND_SAMPLES, &ripoff_samples_interface)
@@ -704,10 +704,10 @@ public class cinemat
 		cinemat_set_sound_handler (0);
 	}
 	
-	void init_speedfrk(void)
+	public static InitDriverPtr init_speedfrk = new InitDriverPtr() { public void handler() 
 	{
 		cinemat_select_artwork (CCPU_MONITOR_BILEV, 0, 0, 0);
-	}
+	} };
 	
 	CINEMA_MACHINE (speedfrk, 0, 0, 1024, 768, 0, 0)
 	
@@ -777,10 +777,10 @@ public class cinemat
 		cinemat_set_sound_handler (0);
 	}
 	
-	void init_sundance(void)
+	public static InitDriverPtr init_sundance = new InitDriverPtr() { public void handler() 
 	{
 		cinemat_select_artwork (CCPU_MONITOR_16LEV, 1, 0, sundance_overlay);
-	}
+	} };
 	
 	CINEMA_MACHINE (sundance, 0, 0, 1024, 768, 0, 0)
 	
@@ -849,10 +849,10 @@ public class cinemat
 		cinemat_set_sound_handler (warrior_sound_w);
 	}
 	
-	void init_warrior(void)
+	public static InitDriverPtr init_warrior = new InitDriverPtr() { public void handler() 
 	{
 		cinemat_select_artwork (CCPU_MONITOR_BILEV, 0, 1, 0);
-	}
+	} };
 	
 	CINEMA_MACHINE (warrior, 0, 0, 1024, 780, SOUND_SAMPLES, &warrior_samples_interface)
 	
@@ -916,10 +916,10 @@ public class cinemat
 		cinemat_set_sound_handler (0);
 	}
 	
-	void init_armora(void)
+	public static InitDriverPtr init_armora = new InitDriverPtr() { public void handler() 
 	{
 		cinemat_select_artwork (CCPU_MONITOR_BILEV, 1, 0, 0);
-	}
+	} };
 	
 	CINEMA_MACHINE (armora, 0, 0, 1024, 772, 0, 0)
 	
@@ -986,10 +986,10 @@ public class cinemat
 		cinemat_set_sound_handler (solarq_sound_w);
 	}
 	
-	void init_solarq(void)
+	public static InitDriverPtr init_solarq = new InitDriverPtr() { public void handler() 
 	{
 		cinemat_select_artwork (CCPU_MONITOR_BILEV, 1, 1, solarq_overlay);
-	}
+	} };
 	
 	
 	CINEMA_MACHINE (solarq, 0, 0, 1024, 768, SOUND_SAMPLES, &solarq_samples_interface)
@@ -1072,10 +1072,10 @@ public class cinemat
 		RAM[0x0098]=0x00;
 	}
 	
-	void init_demon(void)
+	public static InitDriverPtr init_demon = new InitDriverPtr() { public void handler() 
 	{
 		cinemat_select_artwork (CCPU_MONITOR_BILEV, 1, 0, 0);
-	}
+	} };
 	
 	static Z80_DaisyChain daisy_chain[] =
 	{
@@ -1194,10 +1194,10 @@ public class cinemat
 		cinemat_set_sound_handler (0);
 	}
 	
-	void init_wotw(void)
+	public static InitDriverPtr init_wotw = new InitDriverPtr() { public void handler() 
 	{
 		cinemat_select_artwork (CCPU_MONITOR_WOWCOL, 0, 0, 0);
-	}
+	} };
 	
 	
 	CINEMA_MACHINE (wotw, 0, 0, 1024, 768, 0, 0)
@@ -1278,10 +1278,10 @@ public class cinemat
 		cinemat_set_sound_handler (0);
 	}
 	
-	void init_boxingb(void)
+	public static InitDriverPtr init_boxingb = new InitDriverPtr() { public void handler() 
 	{
 		cinemat_select_artwork (CCPU_MONITOR_WOWCOL, 0, 0, 0);
-	}
+	} };
 	
 	
 	CINEMA_MACHINE (boxingb, 0, 0, 1024, 768, 0, 0)

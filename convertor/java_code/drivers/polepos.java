@@ -1053,11 +1053,11 @@ public class polepos
 	 * Initialization routines
 	 *********************************************************************/
 	
-	static void init_polepos2(void)
+	static public static InitDriverPtr init_polepos2 = new InitDriverPtr() { public void handler() 
 	{
 		/* note that the bootleg versions don't need this custom IC; they have a hacked ROM in its place */
 		install_mem_read16_handler(1, 0x4000, 0x5fff, polepos2_ic25_r);
-	}
+	} };
 	
 	
 	/*********************************************************************

@@ -597,7 +597,7 @@ public class cbuster
 	
 	/******************************************************************************/
 	
-	static void init_twocrude(void)
+	static public static InitDriverPtr init_twocrude = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 		unsigned char *PTR;
@@ -638,7 +638,7 @@ public class cbuster
 				RAM[i+0xa0021+j*2]=PTR[i/2+0x30010+j];
 			}
 		}
-	}
+	} };
 	
 	/******************************************************************************/
 	

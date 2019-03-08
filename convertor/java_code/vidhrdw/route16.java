@@ -51,12 +51,12 @@ public class route16
 	  Set hardware dependent flag.
 	
 	***************************************************************************/
-	void init_route16b(void)
+	public static InitDriverPtr init_route16b = new InitDriverPtr() { public void handler() 
 	{
 	    route16_hardware = 1;
-	}
+	} };
 	
-	void init_route16(void)
+	public static InitDriverPtr init_route16 = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *rom = memory_region(REGION_CPU1);
 	
@@ -69,12 +69,12 @@ public class route16
 		rom[0x0756] = 0x07;
 	
 		init_route16b();
-	}
+	} };
 	
-	void init_stratvox(void)
+	public static InitDriverPtr init_stratvox = new InitDriverPtr() { public void handler() 
 	{
 	    route16_hardware = 0;
-	}
+	} };
 	
 	
 	/***************************************************************************

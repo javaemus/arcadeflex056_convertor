@@ -64,7 +64,7 @@ public class starwars
 	 *
 	 *************************************/
 	
-	static void init_machine(void)
+	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
 	{
 		/* ESB-specific */
 		if (is_esb)
@@ -80,7 +80,7 @@ public class starwars
 	
 		/* reset the mathbox */
 		swmathbox_reset();
-	}
+	} };
 	
 	
 	
@@ -602,15 +602,15 @@ public class starwars
 	 *
 	 *************************************/
 	
-	static void init_starwars(void)
+	static public static InitDriverPtr init_starwars = new InitDriverPtr() { public void handler() 
 	{
 		/* prepare the mathbox */
 		is_esb = 0;
 		swmathbox_init();
-	}
+	} };
 	
 	
-	static void init_esb(void)
+	static public static InitDriverPtr init_esb = new InitDriverPtr() { public void handler() 
 	{
 		/* init the slapstic */
 		slapstic_init(101);
@@ -630,7 +630,7 @@ public class starwars
 		/* prepare the mathbox */
 		is_esb = 1;
 		swmathbox_init();
-	}
+	} };
 	
 	
 	

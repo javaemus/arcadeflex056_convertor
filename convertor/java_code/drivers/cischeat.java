@@ -1728,14 +1728,14 @@ public class cischeat
 		ROM_LOAD( "br8951b.23",  0x000000, 0x010000, 0xb9474fec );// 000xxxxxxxxxxxxx
 	ROM_END(); }}; 
 	
-	void init_bigrun(void)
+	public static InitDriverPtr init_bigrun = new InitDriverPtr() { public void handler() 
 	{
 		/* Split ROMs */
 		rom_1 = (data16_t *) memory_region(REGION_USER1);
 	
 		cischeat_untangle_sprites(REGION_GFX4);	// Untangle sprites
 		phantasm_rom_decode(3);					// Decrypt sound cpu code
-	}
+	} };
 	
 	
 	/***************************************************************************
@@ -1850,7 +1850,7 @@ public class cischeat
 		ROM_LOAD( "ch9072.03",  0x000000, 0x040000, 0x7e79151a );
 	ROM_END(); }}; 
 	
-	void init_cischeat(void)
+	public static InitDriverPtr init_cischeat = new InitDriverPtr() { public void handler() 
 	{
 		/* Split ROMs */
 		rom_1 = (data16_t *) (memory_region(REGION_USER1) + 0x00000);
@@ -1867,7 +1867,7 @@ public class cischeat
 	
 		cischeat_untangle_sprites(REGION_GFX4);	// Untangle sprites
 		astyanax_rom_decode(3);					// Decrypt sound cpu code
-	}
+	} };
 	
 	
 	/***************************************************************************
@@ -2077,13 +2077,13 @@ public class cischeat
 		ROM_LOAD( "pr90015b",  0x000000, 0x000100, 0xbe240dac );// FIXED BITS (000xxxxx000xxxx1)
 	ROM_END(); }}; 
 	
-	void init_f1gpstar(void)
+	public static InitDriverPtr init_f1gpstar = new InitDriverPtr() { public void handler() 
 	{
 		/* Split ROMs */
 		rom_1 = (data16_t *) memory_region(REGION_USER1);
 	
 		cischeat_untangle_sprites(REGION_GFX4);
-	}
+	} };
 	
 	
 	/***************************************************************************

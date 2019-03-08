@@ -320,14 +320,14 @@ public class exidy440
 	} };
 	
 	
-	static void init_machine(void)
+	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
 	{
 		exidy440_bank = 0;
 		cpu_setbank(1, &memory_region(REGION_CPU1)[0x10000]);
 	
 		last_coins = input_port_3_r(0) & 3;
 		coin_state = 3;
-	}
+	} };
 	
 	
 	
@@ -1144,16 +1144,16 @@ public class exidy440
 		mirror_trigger_bit 		= mt;\
 		copy_protection_read 	= cpr
 	
-	static void init_crossbow(void) { SET_PARAMS(0, 0x00, 0x00, 0x00, 0, 0, 0x00); }
-	static void init_cheyenne(void) { SET_PARAMS(0, 0xff, 0x00, 0x00, 0, 0, 0x00); }
-	static void init_combat  (void)   { SET_PARAMS(0, 0xff, 0xff, 0x00, 0, 0, 0x00); }
-	static void init_cracksht(void) { SET_PARAMS(0, 0xff, 0xff, 0x04, 0, 0, 0x00); }
-	static void init_claypign(void) { SET_PARAMS(0, 0xff, 0xff, 0x04, 0, 0, 0x76); }
-	static void init_chiller (void)  { SET_PARAMS(0, 0xff, 0xff, 0x04, 0, 0, 0x00); }
-	static void init_topsecex(void) { SET_PARAMS(1, 0xff, 0xff, 0x04, 0, 0, 0x00); }
-	static void init_hitnmiss(void) { SET_PARAMS(0, 0xff, 0xff, 0x04, 0, 1, 0x00); }
-	static void init_whodunit(void) { SET_PARAMS(0, 0xff, 0xff, 0x04, 1, 0, 0x00); }
-	static void init_showdown(void)
+	static public static InitDriverPtr init_crossbow = new InitDriverPtr() { public void handler()  { SET_PARAMS(0, 0x00, 0x00, 0x00, 0, 0, 0x00); } };
+	static public static InitDriverPtr init_cheyenne = new InitDriverPtr() { public void handler()  { SET_PARAMS(0, 0xff, 0x00, 0x00, 0, 0, 0x00); } };
+	static public static InitDriverPtr init_combat = new InitDriverPtr() { public void handler()    { SET_PARAMS(0, 0xff, 0xff, 0x00, 0, 0, 0x00); } };
+	static public static InitDriverPtr init_cracksht = new InitDriverPtr() { public void handler()  { SET_PARAMS(0, 0xff, 0xff, 0x04, 0, 0, 0x00); } };
+	static public static InitDriverPtr init_claypign = new InitDriverPtr() { public void handler()  { SET_PARAMS(0, 0xff, 0xff, 0x04, 0, 0, 0x76); } };
+	static public static InitDriverPtr init_chiller = new InitDriverPtr() { public void handler()   { SET_PARAMS(0, 0xff, 0xff, 0x04, 0, 0, 0x00); } };
+	static public static InitDriverPtr init_topsecex = new InitDriverPtr() { public void handler()  { SET_PARAMS(1, 0xff, 0xff, 0x04, 0, 0, 0x00); } };
+	static public static InitDriverPtr init_hitnmiss = new InitDriverPtr() { public void handler()  { SET_PARAMS(0, 0xff, 0xff, 0x04, 0, 1, 0x00); } };
+	static public static InitDriverPtr init_whodunit = new InitDriverPtr() { public void handler()  { SET_PARAMS(0, 0xff, 0xff, 0x04, 1, 0, 0x00); } };
+	static public static InitDriverPtr init_showdown = new InitDriverPtr() { public void handler() 
 	{
 		SET_PARAMS(0, 0xff, 0xff, 0x04, 0, 0, 0x00);
 	
@@ -1167,7 +1167,7 @@ public class exidy440
 		exidy440_bank = 0;
 		showdown_pld_trigger_r(0);
 		showdown_pld_select1_r(0);
-	}
+	} };
 	
 	
 	

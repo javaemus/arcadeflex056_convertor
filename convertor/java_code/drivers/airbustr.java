@@ -803,7 +803,7 @@ public class airbustr
 	
 	
 	
-	void init_airbustr(void)
+	public static InitDriverPtr init_airbustr = new InitDriverPtr() { public void handler() 
 	{
 	int i;
 	unsigned char *RAM;
@@ -823,7 +823,7 @@ public class airbustr
 		RAM = memory_region(REGION_CPU2);
 		RAM[0x0258] = 0x53; // include EI in the busy loop.
 							// It's an hack to repair nested nmi troubles
-	}
+	} };
 	
 	
 	

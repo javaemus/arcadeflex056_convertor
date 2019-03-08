@@ -302,7 +302,7 @@ public class hexion
 	ROM_END(); }}; 
 	
 	
-	static void init_hexion(void)
+	static public static InitDriverPtr init_hexion = new InitDriverPtr() { public void handler() 
 	{
 		int col,i;
 		UINT8 *prom = memory_region(REGION_PROMS);
@@ -404,7 +404,7 @@ public class hexion
 			prom[col*16+0x100] = 0;
 			prom[col*16+0x200] = 0;
 		}
-	}
+	} };
 	
 	
 	public static GameDriver driver_hexion	   = new GameDriver("1992"	,"hexion"	,"hexion.java"	,rom_hexion,null	,machine_driver_hexion	,input_ports_hexion	,init_hexion	,ROT0	,	"Konami", "Hexion (Japan)", GAME_WRONG_COLORS )

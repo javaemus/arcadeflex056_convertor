@@ -968,7 +968,7 @@ public class topspeed
 	ROM_END(); }}; 
 	
 	
-	void init_topspeed(void)
+	public static InitDriverPtr init_topspeed = new InitDriverPtr() { public void handler() 
 	{
 	//	taitosnd_setz80_soundcpu( 2 );
 	
@@ -980,7 +980,7 @@ public class topspeed
 	
 		state_save_register_int   ("sound1", 0, "sound region", &banknum);
 		state_save_register_func_postload(reset_sound_region);
-	}
+	} };
 	
 	
 	public static GameDriver driver_topspeed	   = new GameDriver("1987"	,"topspeed"	,"topspeed.java"	,rom_topspeed,null	,machine_driver_topspeed	,input_ports_topspeed	,init_topspeed	,ROT0	,	"Taito Corporation Japan", "Top Speed (World)" )

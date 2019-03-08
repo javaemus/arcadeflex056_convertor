@@ -378,11 +378,11 @@ public class blockhl
 	}
 	
 	
-	static void init_blockhl(void)
+	static public static InitDriverPtr init_blockhl = new InitDriverPtr() { public void handler() 
 	{
 		konami_rom_deinterleave_2(REGION_GFX1);
 		konami_rom_deinterleave_2(REGION_GFX2);
-	}
+	} };
 	
 	
 	

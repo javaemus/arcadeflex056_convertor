@@ -743,7 +743,7 @@ public class firetrk
 		}
 	);
 	
-	void init_firetruck( void )
+	public static InitDriverPtr init_firetruck = new InitDriverPtr() { public void handler() 
 	{
 		/* combine the 4 bit program ROMs */
 		UINT8 *pMem = memory_region( REGION_CPU1 );
@@ -756,7 +756,7 @@ public class firetrk
 			pMem[i+0x3000] = data;
 			pMem[i+0xf000] = data;
 		}
-	}
+	} };
 	
 	static RomLoadPtr rom_firetrk = new RomLoadPtr(){ public void handler(){ 
 		ROM_REGION( 0x12000, REGION_CPU1, 0 );

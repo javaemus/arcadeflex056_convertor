@@ -189,7 +189,7 @@ public class itech32
 	 *
 	 *************************************/
 	
-	static void init_machine(void)
+	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
 	{
 		vint_state = xint_state = qint_state = 0;
 		sound_data = 0;
@@ -202,7 +202,7 @@ public class itech32
 	
 		/* reset the ticket dispenser */
 		ticket_dispenser_init(200, TICKET_MOTOR_ACTIVE_HIGH, TICKET_STATUS_ACTIVE_HIGH);
-	}
+	} };
 	
 	
 	
@@ -1667,11 +1667,11 @@ public class itech32
 	 *
 	 *************************************/
 	
-	static void init_program_rom(void)
+	static public static InitDriverPtr init_program_rom = new InitDriverPtr() { public void handler() 
 	{
 		memcpy(main_rom, memory_region(REGION_USER1), memory_region_length(REGION_USER1));
 		memcpy(memory_region(REGION_CPU1), memory_region(REGION_USER1), 0x80);
-	}
+	} };
 	
 	static void init_sound_speedup(offs_t offset, offs_t pc)
 	{
@@ -1680,29 +1680,29 @@ public class itech32
 	}
 	
 	
-	static void init_timekill(void)
+	static public static InitDriverPtr init_timekill = new InitDriverPtr() { public void handler() 
 	{
 		init_program_rom();
 		init_sound_speedup(0x2010, 0x8c54);
 		itech32_vram_height = 512;
 		itech32_planes = 2;
-	}
+	} };
 	
-	static void init_hardyard(void)
+	static public static InitDriverPtr init_hardyard = new InitDriverPtr() { public void handler() 
 	{
 		init_program_rom();
 		init_sound_speedup(0x2010, 0x8e16);
 		itech32_vram_height = 1024;
 		itech32_planes = 1;
-	}
+	} };
 	
-	static void init_bloodstm(void)
+	static public static InitDriverPtr init_bloodstm = new InitDriverPtr() { public void handler() 
 	{
 		init_program_rom();
 		init_sound_speedup(0x2011, 0x8ebf);
 		itech32_vram_height = 1024;
 		itech32_planes = 1;
-	}
+	} };
 	
 	static void init_sftm_common(int prot_addr, int sound_pc)
 	{
@@ -1717,17 +1717,17 @@ public class itech32
 		install_mem_write32_handler(0, 0x380000, 0x380003, itech020_color1_w);
 	}
 	
-	static void init_sftm(void)
+	static public static InitDriverPtr init_sftm = new InitDriverPtr() { public void handler() 
 	{
 		init_sftm_common(0x7a6a, 0x905f);
-	}
+	} };
 	
-	static void init_sftm110(void)
+	static public static InitDriverPtr init_sftm110 = new InitDriverPtr() { public void handler() 
 	{
 		init_sftm_common(0x7a66, 0x9059);
-	}
+	} };
 	
-	static void init_shufshot(void)
+	static public static InitDriverPtr init_shufshot = new InitDriverPtr() { public void handler() 
 	{
 		init_program_rom();
 		init_sound_speedup(0x2011, 0x906c);
@@ -1740,7 +1740,7 @@ public class itech32
 		install_mem_write32_handler(0, 0x380000, 0x380003, itech020_color1_w);
 		install_mem_read32_handler(0, 0x180800, 0x180803, trackball32_4bit_r);
 		install_mem_read32_handler(0, 0x181000, 0x181003, trackball32_4bit_p2_r);
-	}
+	} };
 	
 	
 	/*************************************

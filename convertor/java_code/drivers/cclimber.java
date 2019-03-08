@@ -522,7 +522,7 @@ public class cclimber
 		ROM_LOAD( "cc12",         0x1000, 0x1000, 0x5da13aaa );
 	ROM_END(); }}; 
 	
-	static void init_cclimber(void)
+	static public static InitDriverPtr init_cclimber = new InitDriverPtr() { public void handler() 
 	{
 	/*
 		translation mask is layed out like this:
@@ -597,7 +597,7 @@ public class cclimber
 			/* decode the opcodes */
 			rom[A + diff] = src ^ xortable[i][j];
 		}
-	}
+	} };
 	
 	static RomLoadPtr rom_cclimbrj = new RomLoadPtr(){ public void handler(){ 
 		ROM_REGION( 2*0x10000, REGION_CPU1, 0 );/* 64k for code + 64k for decrypted opcodes */
@@ -695,7 +695,7 @@ public class cclimber
 		ROM_LOAD( "cc12j.bin",    0x1000, 0x1000, 0x9003ffbd );
 	ROM_END(); }}; 
 	
-	static void init_cclimbrj(void)
+	static public static InitDriverPtr init_cclimbrj = new InitDriverPtr() { public void handler() 
 	{
 	/*
 		translation mask is layed out like this:
@@ -769,7 +769,7 @@ public class cclimber
 			/* decode the opcodes */
 			rom[A + diff] = src ^ xortable[i][j];
 		}
-	}
+	} };
 	
 	static RomLoadPtr rom_ckong = new RomLoadPtr(){ public void handler(){ 
 		ROM_REGION( 0x10000, REGION_CPU1, 0 );    /* 64k for code */

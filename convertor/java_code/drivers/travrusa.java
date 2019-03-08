@@ -365,7 +365,7 @@ public class travrusa
 	
 	
 	
-	void init_motorace(void)
+	public static InitDriverPtr init_motorace = new InitDriverPtr() { public void handler() 
 	{
 		int A,j;
 		unsigned char *rom = memory_region(REGION_CPU1);
@@ -384,7 +384,7 @@ public class travrusa
 	
 			free(buffer);
 		}
-	}
+	} };
 	
 	
 	

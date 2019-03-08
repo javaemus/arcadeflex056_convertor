@@ -881,13 +881,13 @@ public class combatsc
 	
 	
 	
-	static void init_combasc( void )
+	static public static InitDriverPtr init_combasc = new InitDriverPtr() { public void handler() 
 	{
 		/* joystick instead of trackball */
 		install_mem_read_handler(0,0x0404,0x0404,input_port_4_r);
-	}
+	} };
 	
-	static void init_combascb( void )
+	static public static InitDriverPtr init_combascb = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *gfx;
 		int i;
@@ -899,7 +899,7 @@ public class combatsc
 		gfx = memory_region(REGION_GFX2);
 		for (i = 0;i < memory_region_length(REGION_GFX2);i++)
 			gfx[i] = ~gfx[i];
-	}
+	} };
 	
 	
 	

@@ -2581,16 +2581,16 @@ public class kaneko16
 		}
 	}
 	
-	void init_kaneko16(void)
+	public static InitDriverPtr init_kaneko16 = new InitDriverPtr() { public void handler() 
 	{
 		kaneko16_unscramble_tiles(REGION_GFX2);
 		kaneko16_unscramble_tiles(REGION_GFX3);
-	}
+	} };
 	
-	void init_berlwall(void)
+	public static InitDriverPtr init_berlwall = new InitDriverPtr() { public void handler() 
 	{
 		kaneko16_unscramble_tiles(REGION_GFX2);
-	}
+	} };
 	
 	
 	/***************************************************************************
@@ -3196,7 +3196,7 @@ public class kaneko16
 	ROM_END(); }}; 
 	
 	
-	void init_shogwarr(void)
+	public static InitDriverPtr init_shogwarr = new InitDriverPtr() { public void handler() 
 	{
 		/* Code patches */
 	#if 0
@@ -3219,7 +3219,7 @@ public class kaneko16
 		So, there's probably the MCU's code in there, though
 		I can't id what kind of CPU should run it :-(
 	*/
-	}
+	} };
 	
 	
 	/***************************************************************************

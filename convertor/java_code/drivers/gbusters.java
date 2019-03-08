@@ -449,11 +449,11 @@ public class gbusters
 	}
 	
 	
-	static void init_gbusters(void)
+	static public static InitDriverPtr init_gbusters = new InitDriverPtr() { public void handler() 
 	{
 		konami_rom_deinterleave_2(REGION_GFX1);
 		konami_rom_deinterleave_2(REGION_GFX2);
-	}
+	} };
 	
 	
 	

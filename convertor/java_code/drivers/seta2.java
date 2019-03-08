@@ -904,13 +904,13 @@ public class seta2
 		ROM_LOAD( "kus-u18.i00", 0x100000, 0x400000, 0xe2b1dfcf );
 	ROM_END(); }}; 
 	
-	void init_pzlbowl(void)
+	public static InitDriverPtr init_pzlbowl = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *ROM = (data16_t *)memory_region( REGION_CPU1 );
 	
 		/* Patch out the protection check */
 		ROM[0x01d6/2] = 0x4e73;		// trap #0 routine becomes rte
-	}
+	} };
 	
 	
 	/***************************************************************************

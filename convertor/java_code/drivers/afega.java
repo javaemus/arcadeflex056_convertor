@@ -537,7 +537,7 @@ public class afega
 		ROM_CONTINUE(      0x00000, 0x40000             );
 	ROM_END(); }}; 
 	
-	void init_stagger1(void)
+	public static InitDriverPtr init_stagger1 = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *RAM = (data16_t*)memory_region( REGION_CPU1 );
 	
@@ -553,7 +553,7 @@ public class afega
 		RAM[0x1b6d8/2] = 0x4cdf;
 		RAM[0x1d176/2] = 0x4cdf;
 		RAM[0x1d196/2] = 0x4cdf;
-	}
+	} };
 	
 	
 	/***************************************************************************
@@ -609,7 +609,7 @@ public class afega
 	ROM_END(); }}; 
 	
 	/* Address lines scrambling + Protection */
-	void init_grdnstrm(void)
+	public static InitDriverPtr init_grdnstrm = new InitDriverPtr() { public void handler() 
 	{
 		data8_t *RAM = memory_region       ( REGION_CPU1 );
 		size_t  size = memory_region_length( REGION_CPU1 );
@@ -641,7 +641,7 @@ public class afega
 		((data16_t*)RAM)[0x24062/2] = 0x4cdf;
 		((data16_t*)RAM)[0x248aa/2] = 0x4cdf;
 		((data16_t*)RAM)[0x248ca/2] = 0x4cdf;
-	}
+	} };
 	
 	
 	/***************************************************************************

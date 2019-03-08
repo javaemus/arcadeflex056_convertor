@@ -1366,7 +1366,7 @@ public class cosmic
 	);
 	
 	
-	static void init_cosmicg(void)
+	static public static InitDriverPtr init_cosmicg = new InitDriverPtr() { public void handler() 
 	{
 		/* Roms have data pins connected different from normal */
 	
@@ -1395,7 +1395,7 @@ public class cosmic
 	#else
 		((data16_t *)memory_region(REGION_CPU1))[0x1e9e/2] = 0x04c0;
 	#endif
-	}
+	} };
 	
 	
 	static RomLoadPtr rom_panic = new RomLoadPtr(){ public void handler(){ 

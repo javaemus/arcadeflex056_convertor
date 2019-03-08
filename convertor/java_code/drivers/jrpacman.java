@@ -363,7 +363,7 @@ public class jrpacman
 	
 	
 	
-	static void init_jrpacman(void)
+	static public static InitDriverPtr init_jrpacman = new InitDriverPtr() { public void handler() 
 	{
 		/* The encryption PALs garble bits 0, 2 and 7 of the ROMs. The encryption */
 		/* scheme is complex (basically it's a state machine) and can only be */
@@ -414,7 +414,7 @@ public class jrpacman
 			}
 			i++;
 		}
-	}
+	} };
 	
 	
 	

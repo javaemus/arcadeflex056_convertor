@@ -125,15 +125,15 @@ public class fromanc2
 	}
 	
 	
-	void init_fromanc2(void)
+	public static InitDriverPtr init_fromanc2 = new InitDriverPtr() { public void handler() 
 	{
 	//	unsigned char *ROM = memory_region(REGION_CPU1);
-	}
+	} };
 	
-	void init_fromancr(void)
+	public static InitDriverPtr init_fromancr = new InitDriverPtr() { public void handler() 
 	{
 	//	unsigned char *ROM = memory_region(REGION_CPU1);
-	}
+	} };
 	
 	
 	WRITE16_HANDLER( fromanc2_sndcmd_w )

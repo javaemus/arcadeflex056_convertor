@@ -1733,41 +1733,41 @@ public class segar
 	  Security Decode "chips"
 	***************************************************************************/
 	
-	static void init_astrob(void)
+	static public static InitDriverPtr init_astrob = new InitDriverPtr() { public void handler() 
 	{
 		/* This game uses the 315-0062 security chip */
 		sega_security(62);
-	}
+	} };
 	
-	static void init_005(void)
+	static public static InitDriverPtr init_005 = new InitDriverPtr() { public void handler() 
 	{
 		/* This game uses the 315-0070 security chip */
 		sega_security(70);
-	}
+	} };
 	
-	static void init_monsterb(void)
+	static public static InitDriverPtr init_monsterb = new InitDriverPtr() { public void handler() 
 	{
 		/* This game uses the 315-0082 security chip */
 		sega_security(82);
-	}
+	} };
 	
-	static void init_spaceod(void)
+	static public static InitDriverPtr init_spaceod = new InitDriverPtr() { public void handler() 
 	{
 		/* This game uses the 315-0063 security chip */
 		sega_security(63);
-	}
+	} };
 	
-	static void init_pignewt(void)
+	static public static InitDriverPtr init_pignewt = new InitDriverPtr() { public void handler() 
 	{
 		/* This game uses the 315-0063? security chip */
 		sega_security(63);
-	}
+	} };
 	
-	static void init_sindbadm(void)
+	static public static InitDriverPtr init_sindbadm = new InitDriverPtr() { public void handler() 
 	{
 		/* This game uses an encrypted CPU */
 		sindbadm_decode();
-	}
+	} };
 	
 	
 	public static GameDriver driver_astrob	   = new GameDriver("1981"	,"astrob"	,"segar.java"	,rom_astrob,null	,machine_driver_astrob	,input_ports_astrob	,init_astrob	,ROT270	,	"Sega", "Astro Blaster (version 3)" )

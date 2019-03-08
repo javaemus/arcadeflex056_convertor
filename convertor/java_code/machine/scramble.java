@@ -359,50 +359,50 @@ public class scramble
 	};
 	
 	
-	void init_scramble_ppi(void)
+	public static InitDriverPtr init_scramble_ppi = new InitDriverPtr() { public void handler() 
 	{
 		ppi8255_init(&ppi8255_intf);
-	}
+	} };
 	
-	void init_scobra(void)
+	public static InitDriverPtr init_scobra = new InitDriverPtr() { public void handler() 
 	{
 		init_scramble_ppi();
 	
 		install_mem_write_handler(0, 0xa803, 0xa803, scramble_background_enable_w);
-	}
+	} };
 	
-	void init_atlantis(void)
+	public static InitDriverPtr init_atlantis = new InitDriverPtr() { public void handler() 
 	{
 		init_scramble_ppi();
 	
 		install_mem_write_handler(0, 0x6803, 0x6803, scramble_background_enable_w);
-	}
+	} };
 	
-	void init_scramble(void)
+	public static InitDriverPtr init_scramble = new InitDriverPtr() { public void handler() 
 	{
 		init_atlantis();
 	
 		ppi8255_set_portCread (1, scramble_protection_r);
 		ppi8255_set_portCwrite(1, scramble_protection_w);
-	}
+	} };
 	
-	void init_scrambls(void)
+	public static InitDriverPtr init_scrambls = new InitDriverPtr() { public void handler() 
 	{
 		init_atlantis();
 	
 		ppi8255_set_portCread(0, scrambls_input_port_2_r);
 		ppi8255_set_portCread(1, scrambls_protection_r);
 		ppi8255_set_portCwrite(1, scramble_protection_w);
-	}
+	} };
 	
-	void init_theend(void)
+	public static InitDriverPtr init_theend = new InitDriverPtr() { public void handler() 
 	{
 		init_scramble_ppi();
 	
 		ppi8255_set_portCwrite(0, theend_coin_counter_w);
-	}
+	} };
 	
-	void init_stratgyx(void)
+	public static InitDriverPtr init_stratgyx = new InitDriverPtr() { public void handler() 
 	{
 		init_scramble_ppi();
 	
@@ -412,32 +412,32 @@ public class scramble
 	
 		ppi8255_set_portCread(0, stratgyx_input_port_2_r);
 		ppi8255_set_portCread(1, stratgyx_input_port_3_r);
-	}
+	} };
 	
-	void init_tazmani2(void)
+	public static InitDriverPtr init_tazmani2 = new InitDriverPtr() { public void handler() 
 	{
 		init_scramble_ppi();
 	
 		install_mem_write_handler(0, 0xb002, 0xb002, scramble_background_enable_w);
-	}
+	} };
 	
-	void init_amidar(void)
+	public static InitDriverPtr init_amidar = new InitDriverPtr() { public void handler() 
 	{
 		init_scramble_ppi();
 	
 		/* Amidar has a the DIP switches connected to port C of the 2nd 8255 */
 		ppi8255_set_portCread(1, input_port_3_r);
-	}
+	} };
 	
-	void init_ckongs(void)
+	public static InitDriverPtr init_ckongs = new InitDriverPtr() { public void handler() 
 	{
 		init_scramble_ppi();
 	
 		ppi8255_set_portBread(0, ckongs_input_port_1_r);
 		ppi8255_set_portCread(0, ckongs_input_port_2_r);
-	}
+	} };
 	
-	void init_mariner(void)
+	public static InitDriverPtr init_mariner = new InitDriverPtr() { public void handler() 
 	{
 		init_scramble_ppi();
 	
@@ -450,9 +450,9 @@ public class scramble
 	
 		/* ??? (it's NOT a background enable) */
 		/*install_mem_write_handler(0, 0x6803, 0x6803, MWA_NOP);*/
-	}
+	} };
 	
-	void init_frogger(void)
+	public static InitDriverPtr init_frogger = new InitDriverPtr() { public void handler() 
 	{
 		int A;
 		unsigned char *rom;
@@ -470,9 +470,9 @@ public class scramble
 		rom = memory_region(REGION_GFX1);
 		for (A = 0x0800;A < 0x1000;A++)
 			rom[A] = BITSWAP8(rom[A],7,6,5,4,3,2,0,1);
-	}
+	} };
 	
-	void init_froggers(void)
+	public static InitDriverPtr init_froggers = new InitDriverPtr() { public void handler() 
 	{
 		int A;
 		unsigned char *rom;
@@ -484,9 +484,9 @@ public class scramble
 		rom = memory_region(REGION_CPU2);
 		for (A = 0;A < 0x0800;A++)
 			rom[A] = BITSWAP8(rom[A],7,6,5,4,3,2,0,1);
-	}
+	} };
 	
-	void init_mars(void)
+	public static InitDriverPtr init_mars = new InitDriverPtr() { public void handler() 
 	{
 		int i;
 		unsigned char *RAM;
@@ -518,16 +518,16 @@ public class scramble
 	
 			memcpy(&RAM[i], swapbuffer, 16);
 		}
-	}
+	} };
 	
-	void init_hotshock(void)
+	public static InitDriverPtr init_hotshock = new InitDriverPtr() { public void handler() 
 	{
 		/* protection??? The game jumps into never-neverland here. I think
 		   it just expects a RET there */
 		memory_region(REGION_CPU1)[0x2ef9] = 0xc9;
-	}
+	} };
 	
-	void init_cavelon(void)
+	public static InitDriverPtr init_cavelon = new InitDriverPtr() { public void handler() 
 	{
 		init_scramble_ppi();
 	
@@ -541,18 +541,18 @@ public class scramble
 		install_mem_write_handler(0, 0x2000, 0x2000, MWA_NOP);	/* ??? */
 		install_mem_write_handler(0, 0x3800, 0x3801, MWA_NOP);  /* looks suspicously like
 																   an AY8910, but not sure */
-	}
+	} };
 	
-	void init_moonwar(void)
+	public static InitDriverPtr init_moonwar = new InitDriverPtr() { public void handler() 
 	{
 		init_scramble_ppi();
 	
 		/* special handler for the spinner */
 		ppi8255_set_portAread (0, moonwar_input_port_0_r);
 		ppi8255_set_portCwrite(0, moonwar_port_select_w);
-	}
+	} };
 	
-	void init_darkplnt(void)
+	public static InitDriverPtr init_darkplnt = new InitDriverPtr() { public void handler() 
 	{
 		init_scramble_ppi();
 	
@@ -560,7 +560,7 @@ public class scramble
 		ppi8255_set_portBread(0, darkplnt_input_port_1_r);
 	
 		install_mem_write_handler(0, 0xb00a, 0xb00a, darkplnt_bullet_color_w);
-	}
+	} };
 	
 	
 	static int bit(int i,int n)
@@ -569,7 +569,7 @@ public class scramble
 	}
 	
 	
-	void init_anteater(void)
+	public static InitDriverPtr init_anteater = new InitDriverPtr() { public void handler() 
 	{
 		int i;
 		unsigned char *RAM;
@@ -606,9 +606,9 @@ public class scramble
 	
 			free(scratch);
 		}
-	}
+	} };
 	
-	void init_rescue(void)
+	public static InitDriverPtr init_rescue = new InitDriverPtr() { public void handler() 
 	{
 		int i;
 		unsigned char *RAM;
@@ -645,9 +645,9 @@ public class scramble
 	
 			free(scratch);
 		}
-	}
+	} };
 	
-	void init_minefld(void)
+	public static InitDriverPtr init_minefld = new InitDriverPtr() { public void handler() 
 	{
 		int i;
 		unsigned char *RAM;
@@ -684,9 +684,9 @@ public class scramble
 	
 			free(scratch);
 		}
-	}
+	} };
 	
-	void init_losttomb(void)
+	public static InitDriverPtr init_losttomb = new InitDriverPtr() { public void handler() 
 	{
 		int i;
 		unsigned char *RAM;
@@ -723,9 +723,9 @@ public class scramble
 	
 			free(scratch);
 		}
-	}
+	} };
 	
-	void init_superbon(void)
+	public static InitDriverPtr init_superbon = new InitDriverPtr() { public void handler() 
 	{
 		int i;
 		unsigned char *RAM;
@@ -758,10 +758,10 @@ public class scramble
 				break;
 			}
 		}
-	}
+	} };
 	
 	
-	void init_hustler(void)
+	public static InitDriverPtr init_hustler = new InitDriverPtr() { public void handler() 
 	{
 		int A;
 	
@@ -801,9 +801,9 @@ public class scramble
 			for (A = 0;A < 0x0800;A++)
 				RAM[A] = (RAM[A] & 0xfc) | ((RAM[A] & 1) << 1) | ((RAM[A] & 2) >> 1);
 		}
-	}
+	} };
 	
-	void init_billiard(void)
+	public static InitDriverPtr init_billiard = new InitDriverPtr() { public void handler() 
 	{
 		int A;
 	
@@ -856,5 +856,5 @@ public class scramble
 			for (A = 0;A < 0x0800;A++)
 				RAM[A] = (RAM[A] & 0xfc) | ((RAM[A] & 1) << 1) | ((RAM[A] & 2) >> 1);
 		}
-	}
+	} };
 }

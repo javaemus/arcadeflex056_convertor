@@ -664,7 +664,7 @@ public class turbo
 	 * Driver init
 	 *********************************************************************/
 	
-	static void init_turbo(void)
+	static public static InitDriverPtr init_turbo = new InitDriverPtr() { public void handler() 
 	{
 		static const UINT8 led_number_data[] =
 		{
@@ -688,13 +688,13 @@ public class turbo
 		memset(memory_region(REGION_GFX4), 0, memory_region_length(REGION_GFX4));
 		memcpy(memory_region(REGION_GFX4), led_number_data, sizeof(led_number_data));
 		memcpy(memory_region(REGION_GFX4)+0x100, led_tach_data, sizeof(led_tach_data));
-	}
+	} };
 	
-	static void init_decode_turbo(void)
+	static public static InitDriverPtr init_decode_turbo = new InitDriverPtr() { public void handler() 
 	{
 		init_turbo();
 		rom_decode();
-	}
+	} };
 	
 	
 	/*********************************************************************

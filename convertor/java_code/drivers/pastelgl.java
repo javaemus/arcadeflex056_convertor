@@ -66,11 +66,11 @@ public class pastelgl
 		return ROM[(((0x0100 * voiradr_h) + voiradr_l) & 0x7fff)];
 	}
 	
-	static void init_pastelgl(void)
+	static public static InitDriverPtr init_pastelgl = new InitDriverPtr() { public void handler() 
 	{
 		nb1413m3_type = NB1413M3_PASTELGL;
 		nb1413m3_int_count = 96;
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress readmem_pastelgl[]={

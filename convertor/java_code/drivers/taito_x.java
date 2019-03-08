@@ -1271,11 +1271,11 @@ public class taito_x
 	ROM_END(); }}; 
 	
 	
-	void init_taitox( void)
+	public static InitDriverPtr init_taitox = new InitDriverPtr() { public void handler() 
 	{
 		state_save_register_int("taitof2", 0, "sound region", &banknum);
 		state_save_register_func_postload(reset_sound_region);
-	}
+	} };
 	
 	
 	public static GameDriver driver_superman	   = new GameDriver("1988"	,"superman"	,"taito_x.java"	,rom_superman,null	,machine_driver_superman	,input_ports_superman	,init_taitox	,ROT0	,	"Taito Corporation", "Superman" )

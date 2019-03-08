@@ -226,14 +226,14 @@ public class kopunch
 	ROM_END(); }}; 
 	
 	
-	static void init_kopunch(void)
+	static public static InitDriverPtr init_kopunch = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
 		/* patch out bad instruction, either the ROM is bad, or there is */
 		/* a security chip */
 		RAM[0x119] = 0;
-	}
+	} };
 	
 	
 	public static GameDriver driver_kopunch	   = new GameDriver("1981"	,"kopunch"	,"kopunch.java"	,rom_kopunch,null	,machine_driver_kopunch	,input_ports_kopunch	,init_kopunch	,ROT270	,	"Sega", "KO Punch" )

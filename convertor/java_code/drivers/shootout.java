@@ -466,7 +466,7 @@ public class shootout
 		ROM_LOAD( "gb09.k6",        0x0100, 0x0100, 0xaa090565 );   /* unknown */
 	ROM_END(); }}; 
 	
-	static void init_shootout(void)
+	static public static InitDriverPtr init_shootout = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *rom = memory_region(REGION_CPU1);
 		int diff = memory_region_length(REGION_CPU1) / 2;
@@ -476,7 +476,7 @@ public class shootout
 	
 		for (A = 0;A < diff;A++)
 			rom[A+diff] = (rom[A] & 0x9f) | ((rom[A] & 0x40) >> 1) | ((rom[A] & 0x20) << 1);
-	}
+	} };
 	
 	public static GameDriver driver_shootout	   = new GameDriver("1985"	,"shootout"	,"shootout.java"	,rom_shootout,null	,machine_driver_shootout	,input_ports_shootout	,init_shootout	,ROT0	,	"Data East USA", "Shoot Out (US)", GAME_NO_COCKTAIL )
 	public static GameDriver driver_shootouj	   = new GameDriver("1985"	,"shootouj"	,"shootout.java"	,rom_shootouj,driver_shootout	,machine_driver_shootouj	,input_ports_shootout	,null	,ROT0	,	"Data East USA", "Shoot Out (Japan)", GAME_NO_COCKTAIL )

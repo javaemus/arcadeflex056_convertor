@@ -265,14 +265,14 @@ public class vsnes
 	 *	Common init for all games
 	 *
 	 *************************************/
-	void init_vsnes( void )
+	public static InitDriverPtr init_vsnes = new InitDriverPtr() { public void handler() 
 	{
 		/* set the controller to default */
 		vsnes_gun_controller = 0;
 	
 		/* no color remapping */
 		remapped_colortable = 0;
-	}
+	} };
 	
 	/**********************************************************************************
 	 *
@@ -293,17 +293,17 @@ public class vsnes
 	
 	/* Most games switch VROM Banks in controller 0 write */
 	/* they dont do any other trickery */
-	void init_vsnormal( void )
+	public static InitDriverPtr init_vsnormal = new InitDriverPtr() { public void handler() 
 	{
 		/* vrom switching is enabled with bit 2 of $4016 */
 		install_mem_write_handler( 0, 0x4016, 0x4016, vsnormal_vrom_banking );
-	}
+	} };
 	
 	/**********************************************************************************/
 	
 	/* Super Mario Bros. Extra ram at $6000 (NV?) and remapped colors */
 	
-	void init_suprmrio( void )
+	public static InitDriverPtr init_suprmrio = new InitDriverPtr() { public void handler() 
 	{
 		/* common init */
 		init_vsnes();
@@ -319,7 +319,7 @@ public class vsnes
 		/* we need to remap color tables */
 		/* this *is* the VS games protection, I guess */
 		remapped_colortable = rp2c05004_colortable;
-	}
+	} };
 	
 	/**********************************************************************************/
 	
@@ -377,7 +377,7 @@ public class vsnes
 	
 	} };
 	
-	void init_duckhunt( void )
+	public static InitDriverPtr init_duckhunt = new InitDriverPtr() { public void handler() 
 	{
 		install_mem_read_handler ( 0, 0x4016, 0x4016, gun_in0_r);
 		/* vrom switching is enabled with bit 2 of $4016 */
@@ -388,7 +388,7 @@ public class vsnes
 	
 		/* enable gun controller */
 		vsnes_gun_controller = 1;
-	}
+	} };
 	
 	/**********************************************************************************/
 	
@@ -423,7 +423,7 @@ public class vsnes
 		}
 	} };
 	
-	void init_goonies( void )
+	public static InitDriverPtr init_goonies = new InitDriverPtr() { public void handler() 
 	{
 		/* We do manual banking, in case the code falls through */
 		/* Copy the initial banks */
@@ -437,9 +437,9 @@ public class vsnes
 	
 		/* now override the vidaccess callback */
 		remapped_colortable = rp2c04003_colortable;
-	}
+	} };
 	
-	void init_vsgradus( void )
+	public static InitDriverPtr init_vsgradus = new InitDriverPtr() { public void handler() 
 	{
 		/* We do manual banking, in case the code falls through */
 		/* Copy the initial banks */
@@ -453,9 +453,9 @@ public class vsnes
 	
 		/* now override the vidaccess callback */
 		remapped_colortable = rp2c04001_colortable;
-	}
+	} };
 	
-	void init_vspinbal( void )
+	public static InitDriverPtr init_vspinbal = new InitDriverPtr() { public void handler() 
 	{
 		/* common init */
 		init_vsnes();
@@ -467,9 +467,9 @@ public class vsnes
 		remapped_colortable = rp2c04001_colortable;
 	
 	
-	}
+	} };
 	
-	void init_hogalley( void )
+	public static InitDriverPtr init_hogalley = new InitDriverPtr() { public void handler() 
 	{
 	
 		install_mem_read_handler ( 0, 0x4016, 0x4016, gun_in0_r);
@@ -484,7 +484,7 @@ public class vsnes
 	
 		/* now override the vidaccess callback */
 		remapped_colortable = rp2c04001_colortable;
-	}
+	} };
 	
 	/**********************************************************************************/
 	
@@ -602,7 +602,7 @@ public class vsnes
 		}
 	} };
 	
-	void init_drmario( void )
+	public static InitDriverPtr init_drmario = new InitDriverPtr() { public void handler() 
 	{
 		/* We do manual banking, in case the code falls through */
 		/* Copy the initial banks */
@@ -620,13 +620,13 @@ public class vsnes
 	
 		/* now override the vidaccess callback */
 		remapped_colortable = rp2c04003_colortable;
-	}
+	} };
 	
 	/**********************************************************************************/
 	
 	/* Excite Bike */
 	
-	void init_excitebk( void )
+	public static InitDriverPtr init_excitebk = new InitDriverPtr() { public void handler() 
 	{
 		/* common init */
 		init_vsnes();
@@ -638,10 +638,10 @@ public class vsnes
 		/* we need to remap color tables */
 		/* this *is* the VS games protection, I guess */
 		remapped_colortable = rp2c04003_colortable;
-	}
+	} };
 	
 	
-	void init_excitbkj( void )
+	public static InitDriverPtr init_excitbkj = new InitDriverPtr() { public void handler() 
 	{
 		/* common init */
 		init_vsnes();
@@ -653,13 +653,13 @@ public class vsnes
 		/* we need to remap color tables */
 		/* this *is* the VS games protection, I guess */
 		remapped_colortable = rp2c05004_colortable;
-	}
+	} };
 	
 	/**********************************************************************************/
 	
 	/* Mach Rider */
 	
-	void init_machridr( void )
+	public static InitDriverPtr init_machridr = new InitDriverPtr() { public void handler() 
 	{
 		/* common init */
 		init_vsnes();
@@ -671,13 +671,13 @@ public class vsnes
 		/* we need to remap color tables */
 		/* this *is* the VS games protection, I guess */
 		remapped_colortable = rp2c04002_colortable;
-	}
+	} };
 	
 	/**********************************************************************************/
 	
 	/* VS Slalom */
 	
-	void init_vsslalom( void )
+	public static InitDriverPtr init_vsslalom = new InitDriverPtr() { public void handler() 
 	{
 		/* common init */
 		init_vsnes();
@@ -686,7 +686,7 @@ public class vsnes
 		/* we need to remap color tables */
 		/* this *is* the VS games protection, I guess */
 		remapped_colortable = rp2c04002_colortable;
-	}
+	} };
 	
 	/**********************************************************************************/
 	
@@ -699,7 +699,7 @@ public class vsnes
 		memcpy( &memory_region( REGION_CPU1 )[0x08000], &memory_region( REGION_CPU1 )[rombank], 0x4000 );
 	} };
 	
-	void init_cstlevna( void )
+	public static InitDriverPtr init_cstlevna = new InitDriverPtr() { public void handler() 
 	{
 		/* when starting the game , the 1st 16k and the last 16k are loaded into the 2 banks */
 		memcpy( &memory_region( REGION_CPU1 )[0x08000], &memory_region( REGION_CPU1 )[0x28000], 0x8000 );
@@ -714,7 +714,7 @@ public class vsnes
 		/* we need to remap color tables */
 		/* this *is* the VS games protection, I guess */
 		remapped_colortable = rp2c04002_colortable;
-	}
+	} };
 	
 	/**********************************************************************************/
 	
@@ -744,7 +744,7 @@ public class vsnes
 		ppu2c03b_0_w( 1, data );
 	} };
 	
-	void init_vstopgun( void )
+	public static InitDriverPtr init_vstopgun = new InitDriverPtr() { public void handler() 
 	{
 		/* when starting a mmc1 game , the 1st 16k and the last 16k are loaded into the 2 banks */
 		memcpy( &memory_region( REGION_CPU1 )[0x08000], &memory_region( REGION_CPU1 )[0x28000], 0x8000 );
@@ -763,7 +763,7 @@ public class vsnes
 		/* we need to remap color tables */
 		/* this *is* the VS games protection, I guess */
 		remapped_colortable = rp2c04003_colortable;
-	}
+	} };
 	
 	/**********************************************************************************/
 	
@@ -924,7 +924,7 @@ public class vsnes
 		}
 	} };
 	
-	void init_rbibb( void )
+	public static InitDriverPtr init_rbibb = new InitDriverPtr() { public void handler() 
 	{
 		/* We do manual banking, in case the code falls through */
 		/* Copy the initial banks */
@@ -944,7 +944,7 @@ public class vsnes
 		/* common init */
 		init_vsnes();
 	
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr xevious_hack_r  = new ReadHandlerPtr() { public int handler(int offset)
@@ -985,7 +985,7 @@ public class vsnes
 	} };
 	
 	
-	void init_xevious( void )
+	public static InitDriverPtr init_xevious = new InitDriverPtr() { public void handler() 
 	{
 		/* We do manual banking, in case the code falls through */
 		/* Copy the initial banks */
@@ -1010,7 +1010,7 @@ public class vsnes
 		/* common init */
 		init_vsnes();
 		//remapped_colortable = rp2c04001_colortable;
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr tko_security_r  = new ReadHandlerPtr() { public int handler(int offset)
@@ -1033,7 +1033,7 @@ public class vsnes
 	
 	} };
 	
-	void init_tkoboxng( void )
+	public static InitDriverPtr init_tkoboxng = new InitDriverPtr() { public void handler() 
 	{
 		/* We do manual banking, in case the code falls through */
 		/* Copy the initial banks */
@@ -1058,7 +1058,7 @@ public class vsnes
 		/* we need to remap color tables */
 		/* this *is* the VS games protection, I guess */
 		remapped_colortable = rp2c04003_colortable;
-	}
+	} };
 	
 	/**********************************************************************************/
 	
@@ -1116,7 +1116,7 @@ public class vsnes
 	
 	} };
 	
-	void init_vsskykid( void )
+	public static InitDriverPtr init_vsskykid = new InitDriverPtr() { public void handler() 
 	{
 		/* ??? mapper at writes to $8000-$ffff */
 		install_mem_write_handler( 0, 0x8000, 0xffff, vsskykid_rom_switch_w );
@@ -1128,7 +1128,7 @@ public class vsnes
 	
 	
 	
-	}
+	} };
 	
 	
 	
@@ -1167,7 +1167,7 @@ public class vsnes
 	
 	
 	
-	void init_platoon( void )
+	public static InitDriverPtr init_platoon = new InitDriverPtr() { public void handler() 
 	{
 	
 	/* when starting a mapper 68 game  the first 16K ROM bank in the cart is loaded into $8000
@@ -1184,7 +1184,7 @@ public class vsnes
 	
 	
 	
-	}
+	} };
 	
 	
 	/**********************************************************************************/
@@ -1209,7 +1209,7 @@ public class vsnes
 			vsnes_in0_1_w( offset, data );
 	} };
 	
-	void init_vstennis( void )
+	public static InitDriverPtr init_vstennis = new InitDriverPtr() { public void handler() 
 	{
 		/* vrom switching is enabled with bit 2 of $4016 */
 		install_mem_write_handler( 0, 0x4016, 0x4016, vstennis_vrom_banking );
@@ -1224,37 +1224,37 @@ public class vsnes
 	
 	
 	
-	}
+	} };
 	
 	
 	/**********************************************************************/
 	/* Wrecking Crew Init*/
 	
-	void init_wrecking(void)
+	public static InitDriverPtr init_wrecking = new InitDriverPtr() { public void handler() 
 	{
 	/* only differance between this and vstennis is the colors */
 	
 		init_vstennis();
 		remapped_colortable = rp2c04002_colortable;
-	}
+	} };
 	
 	/**********************************************************************/
 	/* VS Balloon Fight */
 	
-	void init_balonfgt(void)
+	public static InitDriverPtr init_balonfgt = new InitDriverPtr() { public void handler() 
 	{
 	/* only differance between this and vstennis is the colors */
 	
 		init_vstennis();
 	
 		remapped_colortable = rp2c04003_colortable;
-	}
+	} };
 	
 	
 	/**********************************************************************/
 	/* VS Baseball */
 	
-	void init_vsbball(void)
+	public static InitDriverPtr init_vsbball = new InitDriverPtr() { public void handler() 
 	{
 	/* only differance between this and vstennis is the colors */
 	
@@ -1262,13 +1262,13 @@ public class vsnes
 	
 	remapped_colortable = rp2c04001_colortable;
 	
-	}
+	} };
 	
 	
 	/**********************************************************************/
 	/* Dual Ice climr Jpn */
 	
-	void init_iceclmrj(void)
+	public static InitDriverPtr init_iceclmrj = new InitDriverPtr() { public void handler() 
 	{
 	/* only differance between this and vstennis is the colors */
 	
@@ -1276,7 +1276,7 @@ public class vsnes
 	
 	remapped_colortable = rp2c05004_colortable;
 	
-	}
+	} };
 	
 	//remapped_colortable = rp2c04002_colortable;
 	//remapped_colortable = rp2c04003_colortable;

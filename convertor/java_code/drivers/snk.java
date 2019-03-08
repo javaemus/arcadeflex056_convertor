@@ -3394,7 +3394,7 @@ public class snk
 		/* c600 */ SNK_INP10	/* DSW2 */
 	};
 	
-	static void init_ikari(void){
+	static public static InitDriverPtr init_ikari = new InitDriverPtr() { public void handler() {
 		unsigned char *RAM = memory_region(REGION_CPU1);
 		/*  Hack ROM test */
 		RAM[0x11a6] = 0x00;
@@ -3411,9 +3411,9 @@ public class snk
 		hard_flags = 1;
 		gwar_sprite_placement=0;
 		snk_bg_tilemap_baseaddr = 0xd800;
-	}
+	} };
 	
-	static void init_ikarijp(void){
+	static public static InitDriverPtr init_ikarijp = new InitDriverPtr() { public void handler() {
 		unsigned char *RAM = memory_region(REGION_CPU1);
 		RAM[0x190b] = 0xc9; /* faster test */
 	
@@ -3422,9 +3422,9 @@ public class snk
 		hard_flags = 1;
 		gwar_sprite_placement=0;
 		snk_bg_tilemap_baseaddr = 0xd000;
-	}
+	} };
 	
-	static void init_ikarijpb(void){
+	static public static InitDriverPtr init_ikarijpb = new InitDriverPtr() { public void handler() {
 		unsigned char *RAM = memory_region(REGION_CPU1);
 		RAM[0x190b] = 0xc9; /* faster test */
 	
@@ -3433,9 +3433,9 @@ public class snk
 		hard_flags = 1;
 		gwar_sprite_placement=0;
 		snk_bg_tilemap_baseaddr = 0xd000;
-	}
+	} };
 	
-	static void init_victroad(void){
+	static public static InitDriverPtr init_victroad = new InitDriverPtr() { public void handler() {
 		unsigned char *RAM = memory_region(REGION_CPU1);
 		/* Hack ROM test */
 		RAM[0x17bd] = 0x00;
@@ -3452,9 +3452,9 @@ public class snk
 		hard_flags = 1;
 		gwar_sprite_placement=0;
 		snk_bg_tilemap_baseaddr = 0xd800;
-	}
+	} };
 	
-	static void init_dogosoke(void){
+	static public static InitDriverPtr init_dogosoke = new InitDriverPtr() { public void handler() {
 		unsigned char *RAM = memory_region(REGION_CPU1);
 		/* Hack ROM test */
 		RAM[0x179f] = 0x00;
@@ -3471,33 +3471,33 @@ public class snk
 		hard_flags = 1;
 		gwar_sprite_placement=0;
 		snk_bg_tilemap_baseaddr = 0xd800;
-	}
+	} };
 	
-	static void init_gwar(void){
+	static public static InitDriverPtr init_gwar = new InitDriverPtr() { public void handler() {
 		snk_sound_busy_bit = 0x01;
 		snk_io = ikari_io;
 		hard_flags = 0;
 		gwar_sprite_placement=1;
 		snk_bg_tilemap_baseaddr = 0xd800;
-	}
+	} };
 	
-	static void init_gwara(void){
+	static public static InitDriverPtr init_gwara = new InitDriverPtr() { public void handler() {
 		snk_sound_busy_bit = 0x01;
 		snk_io = ikari_io;
 		hard_flags = 0;
 		gwar_sprite_placement=2;
 		snk_bg_tilemap_baseaddr = 0xd800;
-	}
+	} };
 	
-	static void init_chopper(void){
+	static public static InitDriverPtr init_chopper = new InitDriverPtr() { public void handler() {
 		snk_sound_busy_bit = 0x01;
 		snk_io = athena_io;
 		hard_flags = 0;
 		gwar_sprite_placement=0;
 		snk_bg_tilemap_baseaddr = 0xd800;
-	}
+	} };
 	
-	static void init_bermudat(void){
+	static public static InitDriverPtr init_bermudat = new InitDriverPtr() { public void handler() {
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
 		// Patch "Turbo Error"
@@ -3510,63 +3510,63 @@ public class snk
 		hard_flags = 0;
 		gwar_sprite_placement=0;
 		snk_bg_tilemap_baseaddr = 0xd800;
-	}
+	} };
 	
-	static void init_worldwar(void){
+	static public static InitDriverPtr init_worldwar = new InitDriverPtr() { public void handler() {
 		snk_sound_busy_bit = 0x01;
 		snk_io = ikari_io;
 		hard_flags = 0;
 		gwar_sprite_placement=0;
 		snk_bg_tilemap_baseaddr = 0xd800;
-	}
+	} };
 	
-	static void init_tdfever( void ){
+	static public static InitDriverPtr init_tdfever = new InitDriverPtr() { public void handler() {
 		snk_sound_busy_bit = 0x08;
 		snk_io = tdfever_io;
 		hard_flags = 0;
 		gwar_sprite_placement=0;
 		snk_bg_tilemap_baseaddr = 0xd800;
-	}
+	} };
 	
-	static void init_ftsoccer( void ){
+	static public static InitDriverPtr init_ftsoccer = new InitDriverPtr() { public void handler() {
 		snk_sound_busy_bit = 0x08;
 		snk_io = tdfever_io;
 		hard_flags = 0;
 		gwar_sprite_placement=0;
 		snk_bg_tilemap_baseaddr = 0xd800;
-	}
+	} };
 	
-	static void init_tnk3( void ){
+	static public static InitDriverPtr init_tnk3 = new InitDriverPtr() { public void handler() {
 		snk_sound_busy_bit = 0x20;
 		snk_io = ikari_io;
 		hard_flags = 0;
 		gwar_sprite_placement=0;
 		snk_bg_tilemap_baseaddr = 0xd800;
-	}
+	} };
 	
-	static void init_athena( void ){
+	static public static InitDriverPtr init_athena = new InitDriverPtr() { public void handler() {
 		snk_sound_busy_bit = 0x01;
 		snk_io = athena_io;
 		hard_flags = 0;
 		gwar_sprite_placement=0;
 		snk_bg_tilemap_baseaddr = 0xd800;
-	}
+	} };
 	
-	static void init_fitegolf( void ){
+	static public static InitDriverPtr init_fitegolf = new InitDriverPtr() { public void handler() {
 		snk_sound_busy_bit = 0x01;
 		snk_io = athena_io;
 		hard_flags = 0;
 		gwar_sprite_placement=0;
 		snk_bg_tilemap_baseaddr = 0xd800;
-	}
+	} };
 	
-	static void init_psychos( void ){
+	static public static InitDriverPtr init_psychos = new InitDriverPtr() { public void handler() {
 		snk_sound_busy_bit = 0x01;
 		snk_io = athena_io;
 		hard_flags = 0;
 		gwar_sprite_placement=0;
 		snk_bg_tilemap_baseaddr = 0xd800;
-	}
+	} };
 	
 	/*          rom       parent    machine   inp       init */
 	public static GameDriver driver_tnk3	   = new GameDriver("1985"	,"tnk3"	,"snk.java"	,rom_tnk3,null	,machine_driver_tnk3	,input_ports_tnk3	,init_tnk3	,ROT270	,	"SNK", "TNK III (US?)", GAME_NO_COCKTAIL )

@@ -80,13 +80,13 @@ public class vindictr
 	}
 	
 	
-	static void init_machine(void)
+	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_reset();
 		atarigen_interrupt_reset(update_interrupts);
 		atarigen_scanline_timer_reset(vindictr_scanline_update, 8);
 		atarijsa_reset();
-	}
+	} };
 	
 	
 	
@@ -409,13 +409,13 @@ public class vindictr
 	 *
 	 *************************************/
 	
-	static void init_vindictr(void)
+	static public static InitDriverPtr init_vindictr = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_default = NULL;
 		atarijsa_init(1, 5, 1, 0x0002);
 		atarigen_init_6502_speedup(1, 0x4150, 0x4168);
 		atarigen_invert_region(REGION_GFX1);
-	}
+	} };
 	
 	
 	

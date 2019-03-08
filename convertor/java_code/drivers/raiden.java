@@ -498,10 +498,10 @@ public class raiden
 		return ret;
 	} };
 	
-	static void init_raiden(void)
+	static public static InitDriverPtr init_raiden = new InitDriverPtr() { public void handler() 
 	{
 		install_mem_read_handler(1, 0x4008, 0x4009, sub_cpu_spin_r);
-	}
+	} };
 	
 	static void memory_patcha(void)
 	{
@@ -568,18 +568,18 @@ public class raiden
 		}
 	}
 	
-	static void init_raidenk(void)
+	static public static InitDriverPtr init_raidenk = new InitDriverPtr() { public void handler() 
 	{
 		memory_patcha();
 		common_decrypt();
-	}
+	} };
 	
-	static void init_raidena(void)
+	static public static InitDriverPtr init_raidena = new InitDriverPtr() { public void handler() 
 	{
 		memory_patcha();
 		common_decrypt();
 		seibu_sound_decrypt(REGION_CPU3,0x20000);
-	}
+	} };
 	
 	/***************************************************************************/
 	

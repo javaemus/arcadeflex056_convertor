@@ -781,16 +781,16 @@ public class wmsyunit
 	 *
 	 *************************************/
 	
-	void init_narc(void)
+	public static InitDriverPtr init_narc = new InitDriverPtr() { public void handler() 
 	{
 		/* common init */
 		init_generic(8, SOUND_NARC, 0xcdff, 0xce29, 511, 426);
 	
 		/* speedups */
 		INSTALL_SPEEDUP_1_32BIT(0x0101b310, 0xffde33e0, 0x1000040, 0xc0, 0xa0);
-	}
+	} };
 	
-	void init_narc3(void)
+	public static InitDriverPtr init_narc3 = new InitDriverPtr() { public void handler() 
 	{
 		UINT32 bank, offset;
 	
@@ -804,7 +804,7 @@ public class wmsyunit
 	
 		/* speedups */
 		INSTALL_SPEEDUP_1_32BIT(0x0101b310, 0xffae30c0, 0x1000040, 0xc0, 0xa0);
-	}
+	} };
 	
 	
 	
@@ -819,7 +819,7 @@ public class wmsyunit
 	
 	/********************** Trog **************************/
 	
-	static void init_trog_common(void)
+	static public static InitDriverPtr init_trog_common = new InitDriverPtr() { public void handler() 
 	{
 		/* protection */
 		static const struct protection_data trog_protection_data =
@@ -834,51 +834,51 @@ public class wmsyunit
 	
 		/* common init */
 		init_generic(4, SOUND_CVSD_SMALL, 0x9eaf, 0x9ed9, 394, 274);
-	}
+	} };
 	
-	void init_trog(void)
+	public static InitDriverPtr init_trog = new InitDriverPtr() { public void handler() 
 	{
 		init_trog_common();
 		INSTALL_SPEEDUP_1_32BIT(0x010a20a0, 0xffe20630, 0x1000040, 0xc0, 0xa0);
-	}
+	} };
 	
-	void init_trog3(void)
+	public static InitDriverPtr init_trog3 = new InitDriverPtr() { public void handler() 
 	{
 		init_trog_common();
 		INSTALL_SPEEDUP_1_32BIT(0x010a2090, 0xffe20660, 0x1000040, 0xc0, 0xa0);
-	}
+	} };
 	
-	void init_trogp(void)
+	public static InitDriverPtr init_trogp = new InitDriverPtr() { public void handler() 
 	{
 		init_trog_common();
 		INSTALL_SPEEDUP_1_32BIT(0x010a1ee0, 0xffe210d0, 0x1000040, 0xc0, 0xa0);
-	}
+	} };
 	
 	
 	/********************** Smash TV **********************/
 	
-	static void init_smashtv_common(void)
+	static public static InitDriverPtr init_smashtv_common = new InitDriverPtr() { public void handler() 
 	{
 		/* common init */
 		init_generic(6, SOUND_CVSD_SMALL, 0x9cf6, 0x9d21, 394, 274);
-	}
+	} };
 	
-	void init_smashtv(void)
+	public static InitDriverPtr init_smashtv = new InitDriverPtr() { public void handler() 
 	{
 		init_smashtv_common();
 		INSTALL_SPEEDUP_1_MIXEDBITS(0x01086760, 0xffe0a340, 0x1000040, 0xa0, 0x80);
-	}
+	} };
 	
-	void init_smashtv4(void)
+	public static InitDriverPtr init_smashtv4 = new InitDriverPtr() { public void handler() 
 	{
 		init_smashtv_common();
 		INSTALL_SPEEDUP_1_MIXEDBITS(0x01086790, 0xffe0a320, 0x1000040, 0xa0, 0x80);
-	}
+	} };
 	
 	
 	/********************** High Impact Football **********************/
 	
-	static void init_hiimpact_common(void)
+	static public static InitDriverPtr init_hiimpact_common = new InitDriverPtr() { public void handler() 
 	{
 		/* protection */
 		static const struct protection_data hiimpact_protection_data =
@@ -891,18 +891,18 @@ public class wmsyunit
 	
 		/* common init */
 		init_generic(6, SOUND_CVSD, 0x9b79, 0x9ba3, 394, 274);
-	}
+	} };
 	
-	void init_hiimpact(void)
+	public static InitDriverPtr init_hiimpact = new InitDriverPtr() { public void handler() 
 	{
 		init_hiimpact_common();
 		INSTALL_SPEEDUP_3(0x01053150, 0xffe28bb0, 0x1000080, 0x10000a0, 0x10000c0);
-	}
+	} };
 	
 	
 	/********************** Super High Impact Football **********************/
 	
-	static void init_shimpact_common(void)
+	static public static InitDriverPtr init_shimpact_common = new InitDriverPtr() { public void handler() 
 	{
 		/* protection */
 		static const struct protection_data shimpact_protection_data =
@@ -915,18 +915,18 @@ public class wmsyunit
 	
 		/* common init */
 		init_generic(6, SOUND_CVSD, 0x9c06, 0x9c15, 394, 274);
-	}
+	} };
 	
-	void init_shimpact(void)
+	public static InitDriverPtr init_shimpact = new InitDriverPtr() { public void handler() 
 	{
 		init_shimpact_common();
 		INSTALL_SPEEDUP_3(0x01052070, 0xffe27f00, 0x1000000, 0x1000020, 0x1000040);
-	}
+	} };
 	
 	
 	/********************** Strike Force **********************/
 	
-	static void init_strkforc_common(void)
+	static public static InitDriverPtr init_strkforc_common = new InitDriverPtr() { public void handler() 
 	{
 		/* protection */
 		static const struct protection_data strkforc_protection_data =
@@ -937,13 +937,13 @@ public class wmsyunit
 	
 		/* common init */
 		init_generic(4, SOUND_CVSD_SMALL, 0x9f7d, 0x9fa7, 399, 274);
-	}
+	} };
 	
-	void init_strkforc(void)
+	public static InitDriverPtr init_strkforc = new InitDriverPtr() { public void handler() 
 	{
 		init_strkforc_common();
 		INSTALL_SPEEDUP_1_32BIT(0x01071dd0, 0xffe0a290, 0x1000060, 0xc0, 0xa0);
-	}
+	} };
 	
 	
 	
@@ -958,7 +958,7 @@ public class wmsyunit
 	
 	/********************** Mortal Kombat **********************/
 	
-	static void init_mk_common(void)
+	static public static InitDriverPtr init_mk_common = new InitDriverPtr() { public void handler() 
 	{
 		/* protection */
 		static const struct protection_data mk_protection_data =
@@ -972,36 +972,36 @@ public class wmsyunit
 	
 		/* common init */
 		init_generic(6, SOUND_ADPCM, 0xfb9c, 0xfbc6, 398, 281);
-	}
+	} };
 	
-	void init_mkla1(void)
+	public static InitDriverPtr init_mkla1 = new InitDriverPtr() { public void handler() 
 	{
 		init_mk_common();
 		INSTALL_SPEEDUP_3(0x0104f000, 0xffcddc00, 0x104b6b0, 0x104b6f0, 0x104b710);
-	}
+	} };
 	
-	void init_mkla2(void)
+	public static InitDriverPtr init_mkla2 = new InitDriverPtr() { public void handler() 
 	{
 		init_mk_common();
 		INSTALL_SPEEDUP_3(0x0104f020, 0xffcde000, 0x104b6b0, 0x104b6f0, 0x104b710);
-	}
+	} };
 	
-	void init_mkla3(void)
+	public static InitDriverPtr init_mkla3 = new InitDriverPtr() { public void handler() 
 	{
 		init_mk_common();
 		INSTALL_SPEEDUP_3(0x0104f040, 0xffce1ec0, 0x104b6b0, 0x104b6f0, 0x104b710);
-	}
+	} };
 	
-	void init_mkla4(void)
+	public static InitDriverPtr init_mkla4 = new InitDriverPtr() { public void handler() 
 	{
 		init_mk_common();
 		INSTALL_SPEEDUP_3(0x0104f050, 0xffce21d0, 0x104b6b0, 0x104b6f0, 0x104b710);
-	}
+	} };
 	
 	
 	/********************** Terminator 2 **********************/
 	
-	static void init_term2_common(void)
+	static public static InitDriverPtr init_term2_common = new InitDriverPtr() { public void handler() 
 	{
 		/* protection */
 		static const struct protection_data term2_protection_data =
@@ -1021,18 +1021,18 @@ public class wmsyunit
 		/* HACK: this prevents the freeze on the movies */
 		/* until we figure whats causing it, this is better than nothing */
 		t2_hack_mem = install_mem_write16_handler(0, TOBYTE(0x010aa0e0), TOBYTE(0x010aa0ff), term2_hack_w);
-	}
+	} };
 	
-	void init_term2(void)
+	public static InitDriverPtr init_term2 = new InitDriverPtr() { public void handler() 
 	{
 		init_term2_common();
 		install_mem_read16_handler(0, TOBYTE(0x010aa040), TOBYTE(0x010aa05f), term2_speedup_r);
-	}
+	} };
 	
 	
 	/********************** Total Carnage **********************/
 	
-	static void init_totcarn_common(void)
+	static public static InitDriverPtr init_totcarn_common = new InitDriverPtr() { public void handler() 
 	{
 		/* protection */
 		static const struct protection_data totcarn_protection_data =
@@ -1046,19 +1046,19 @@ public class wmsyunit
 		/* common init */
 		init_generic(6, SOUND_ADPCM, 0xfc04, 0xfc2e, 394, 281);
 		wms_partial_update_offset = 8;
-	}
+	} };
 	
-	void init_totcarn(void)
+	public static InitDriverPtr init_totcarn = new InitDriverPtr() { public void handler() 
 	{
 		init_totcarn_common();
 		INSTALL_SPEEDUP_1_16BIT(0x0107dde0, 0xffc0c970, 0x1000040, 0xa0, 0x90);
-	}
+	} };
 	
-	void init_totcarnp(void)
+	public static InitDriverPtr init_totcarnp = new InitDriverPtr() { public void handler() 
 	{
 		init_totcarn_common();
 		INSTALL_SPEEDUP_1_16BIT(0x0107dde0, 0xffc0c970, 0x1000040, 0xa0, 0x90);
-	}
+	} };
 	
 	
 	

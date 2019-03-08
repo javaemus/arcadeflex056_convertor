@@ -89,13 +89,13 @@ public class skullxbo
 	}
 	
 	
-	static void init_machine(void)
+	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_reset();
 		atarigen_interrupt_reset(update_interrupts);
 		atarigen_scanline_timer_reset(alpha_row_update, 8);
 		atarijsa_reset();
-	}
+	} };
 	
 	
 	
@@ -458,14 +458,14 @@ public class skullxbo
 	 *
 	 *************************************/
 	
-	static void init_skullxbo(void)
+	static public static InitDriverPtr init_skullxbo = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_default = NULL;
 		atarijsa_init(1, 2, 1, 0x0080);
 		atarigen_init_6502_speedup(1, 0x4159, 0x4171);
 		memset(memory_region(REGION_GFX1) + 0x170000, 0, 0x20000);
 		atarigen_invert_region(REGION_GFX2);
-	}
+	} };
 	
 	
 	

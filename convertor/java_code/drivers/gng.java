@@ -709,10 +709,10 @@ public class gng
 		return 0;
 	} };
 	
-	static void init_diamond(void)
+	static public static InitDriverPtr init_diamond = new InitDriverPtr() { public void handler() 
 	{
 		install_mem_read_handler(0,0x6000,0x6000,diamond_hack_r);
-	}
+	} };
 	
 	
 	

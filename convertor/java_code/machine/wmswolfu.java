@@ -314,7 +314,7 @@ public class wmswolfu
 	 *
 	 *************************************/
 	
-	static void init_wolfu_generic(void)
+	static public static InitDriverPtr init_wolfu_generic = new InitDriverPtr() { public void handler() 
 	{
 		UINT8 *base;
 		int i, j;
@@ -335,7 +335,7 @@ public class wmswolfu
 				*base++ = wms_wolfu_decode_memory[0x300000 + j];
 			}
 		}
-	}
+	} };
 	
 	
 	
@@ -350,61 +350,61 @@ public class wmswolfu
 	
 	/********************** Mortal Kombat 3 **********************/
 	
-	static void init_mk3_common(void)
+	static public static InitDriverPtr init_mk3_common = new InitDriverPtr() { public void handler() 
 	{
 		/* common init */
 		init_wolfu_generic();
 	
 		/* serial prefixes 439, 528 */
 		generate_serial(528);
-	}
+	} };
 	
-	void init_mk3(void)
+	public static InitDriverPtr init_mk3 = new InitDriverPtr() { public void handler() 
 	{
 		init_mk3_common();
 		INSTALL_SPEEDUP_3(0x1069bd0, 0xff926810, 0x105dc10, 0x105dc30, 0x105dc50);
-	}
+	} };
 	
-	void init_mk3r20(void)
+	public static InitDriverPtr init_mk3r20 = new InitDriverPtr() { public void handler() 
 	{
 		init_mk3_common();
 		INSTALL_SPEEDUP_3(0x1069bd0, 0xff926790, 0x105dc10, 0x105dc30, 0x105dc50);
-	}
+	} };
 	
-	void init_mk3r10(void)
+	public static InitDriverPtr init_mk3r10 = new InitDriverPtr() { public void handler() 
 	{
 		init_mk3_common();
 		INSTALL_SPEEDUP_3(0x1078e50, 0xff923e30, 0x105d490, 0x105d4b0, 0x105d4d0);
-	}
+	} };
 	
-	void init_umk3(void)
+	public static InitDriverPtr init_umk3 = new InitDriverPtr() { public void handler() 
 	{
 		init_mk3_common();
 		INSTALL_SPEEDUP_3(0x106a0e0, 0xff9696a0, 0x105dc10, 0x105dc30, 0x105dc50);
-	}
+	} };
 	
-	void init_umk3r11(void)
+	public static InitDriverPtr init_umk3r11 = new InitDriverPtr() { public void handler() 
 	{
 		init_mk3_common();
 		INSTALL_SPEEDUP_3(0x106a0e0, 0xff969680, 0x105dc10, 0x105dc30, 0x105dc50);
-	}
+	} };
 	
 	
 	/********************** 2 On 2 Open Ice Challenge **********************/
 	
-	void init_openice(void)
+	public static InitDriverPtr init_openice = new InitDriverPtr() { public void handler() 
 	{
 		/* common init */
 		init_wolfu_generic();
 	
 		/* serial prefixes 438, 528 */
 		generate_serial(528);
-	}
+	} };
 	
 	
 	/********************** NBA Hangtime & NBA Maximum Hangtime **********************/
 	
-	void init_nbahangt(void)
+	public static InitDriverPtr init_nbahangt = new InitDriverPtr() { public void handler() 
 	{
 		/* common init */
 		init_wolfu_generic();
@@ -413,7 +413,7 @@ public class wmswolfu
 		generate_serial(528);
 	
 		INSTALL_SPEEDUP_1_16BIT(0x10731f0, 0xff8a5510, 0x1002040, 0xd0, 0xb0);
-	}
+	} };
 	
 	
 	/********************** WWF Wrestlemania **********************/
@@ -433,7 +433,7 @@ public class wmswolfu
 		return value;
 	}
 	
-	void init_wwfmania(void)
+	public static InitDriverPtr init_wwfmania = new InitDriverPtr() { public void handler() 
 	{
 		/* common init */
 		init_wolfu_generic();
@@ -442,24 +442,24 @@ public class wmswolfu
 		generate_serial(528);
 	
 		INSTALL_SPEEDUP_1_ADDRESS(0x105c250, 0xff8189d0);
-	}
+	} };
 	
 	
 	/********************** Rampage World Tour **********************/
 	
-	void init_rmpgwt(void)
+	public static InitDriverPtr init_rmpgwt = new InitDriverPtr() { public void handler() 
 	{
 		/* common init */
 		init_wolfu_generic();
 	
 		/* serial prefixes 465, 528 */
 		generate_serial(528);
-	}
+	} };
 	
 	
 	/********************** Revolution X **********************/
 	
-	void init_revx(void)
+	public static InitDriverPtr init_revx = new InitDriverPtr() { public void handler() 
 	{
 		UINT8 *base;
 		int i, j;
@@ -484,7 +484,7 @@ public class wmswolfu
 	
 		/* serial prefixes 419, 420 */
 		generate_serial(419);
-	}
+	} };
 	
 	
 	

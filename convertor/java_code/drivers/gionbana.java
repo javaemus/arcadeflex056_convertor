@@ -110,7 +110,7 @@ public class gionbana
 	void gionbana_paltblnum_w(int data);
 	
 	
-	static void init_gionbana(void)
+	static public static InitDriverPtr init_gionbana = new InitDriverPtr() { public void handler() 
 	{
 	#if 1
 		unsigned char *ROM = memory_region(REGION_CPU1);
@@ -126,21 +126,21 @@ public class gionbana
 	#endif
 		nb1413m3_type = NB1413M3_GIONBANA;
 		nb1413m3_int_count = 132;
-	}
+	} };
 	
-	static void init_hanamomo(void)
+	static public static InitDriverPtr init_hanamomo = new InitDriverPtr() { public void handler() 
 	{
 		nb1413m3_type = NB1413M3_HANAMOMO;
 		nb1413m3_int_count = 132;
-	}
+	} };
 	
-	static void init_msjiken(void)
+	static public static InitDriverPtr init_msjiken = new InitDriverPtr() { public void handler() 
 	{
 		nb1413m3_type = NB1413M3_MSJIKEN;
 		nb1413m3_int_count = 144;
-	}
+	} };
 	
-	static void init_telmahjn(void)
+	static public static InitDriverPtr init_telmahjn = new InitDriverPtr() { public void handler() 
 	{
 	#if 1
 		unsigned char *ROM = memory_region(REGION_CPU1);
@@ -152,9 +152,9 @@ public class gionbana
 	#endif
 		nb1413m3_type = NB1413M3_TELMAHJN;
 		nb1413m3_int_count = 144;
-	}
+	} };
 	
-	static void init_mgmen89(void)
+	static public static InitDriverPtr init_mgmen89 = new InitDriverPtr() { public void handler() 
 	{
 	#if 1
 		unsigned char *ROM = memory_region(REGION_CPU1);
@@ -166,9 +166,9 @@ public class gionbana
 	#endif
 		nb1413m3_type = NB1413M3_MGMEN89;
 		nb1413m3_int_count = 132;
-	}
+	} };
 	
-	static void init_mjfocus(void)
+	static public static InitDriverPtr init_mjfocus = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *ROM = memory_region(REGION_CPU1);
 		int i;
@@ -182,9 +182,9 @@ public class gionbana
 	#endif
 		nb1413m3_type = NB1413M3_MJFOCUS;
 		nb1413m3_int_count = 132;
-	}
+	} };
 	
-	static void init_mjfocusm(void)
+	static public static InitDriverPtr init_mjfocusm = new InitDriverPtr() { public void handler() 
 	{
 	#if 1
 		unsigned char *ROM = memory_region(REGION_CPU1);
@@ -196,9 +196,9 @@ public class gionbana
 	#endif
 		nb1413m3_type = NB1413M3_MJFOCUSM;
 		nb1413m3_int_count = 128;
-	}
+	} };
 	
-	static void init_peepshow(void)
+	static public static InitDriverPtr init_peepshow = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *ROM = memory_region(REGION_CPU1);
 		int i;
@@ -212,9 +212,9 @@ public class gionbana
 	#endif
 		nb1413m3_type = NB1413M3_PEEPSHOW;
 		nb1413m3_int_count = 132;
-	}
+	} };
 	
-	static void init_scandal(void)
+	static public static InitDriverPtr init_scandal = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *ROM = memory_region(REGION_CPU1);
 		int i;
@@ -223,15 +223,15 @@ public class gionbana
 	
 		nb1413m3_type = NB1413M3_SCANDAL;
 		nb1413m3_int_count = 132;
-	}
+	} };
 	
-	static void init_scandalm(void)
+	static public static InitDriverPtr init_scandalm = new InitDriverPtr() { public void handler() 
 	{
 		nb1413m3_type = NB1413M3_SCANDALM;
 		nb1413m3_int_count = 128;
-	}
+	} };
 	
-	static void init_mjnanpas(void)
+	static public static InitDriverPtr init_mjnanpas = new InitDriverPtr() { public void handler() 
 	{
 	#if 0
 		unsigned char *ROM = memory_region(REGION_CPU1);
@@ -243,43 +243,43 @@ public class gionbana
 	#endif
 		nb1413m3_type = NB1413M3_MJNANPAS;
 		nb1413m3_int_count = 132;
-	}
+	} };
 	
-	static void init_bananadr(void)
+	static public static InitDriverPtr init_bananadr = new InitDriverPtr() { public void handler() 
 	{
 		nb1413m3_type = NB1413M3_BANANADR;
 		nb1413m3_int_count = 132;
-	}
+	} };
 	
-	static void init_club90s(void)
+	static public static InitDriverPtr init_club90s = new InitDriverPtr() { public void handler() 
 	{
 		nb1413m3_type = NB1413M3_CLUB90S;
 		nb1413m3_int_count = 132;
-	}
+	} };
 	
-	static void init_mladyhtr(void)
+	static public static InitDriverPtr init_mladyhtr = new InitDriverPtr() { public void handler() 
 	{
 		nb1413m3_type = NB1413M3_MLADYHTR;
 		nb1413m3_int_count = 132;
-	}
+	} };
 	
-	static void init_chinmoku(void)
+	static public static InitDriverPtr init_chinmoku = new InitDriverPtr() { public void handler() 
 	{
 		nb1413m3_type = NB1413M3_CHINMOKU;
 		nb1413m3_int_count = 132;
-	}
+	} };
 	
-	static void init_maiko(void)
+	static public static InitDriverPtr init_maiko = new InitDriverPtr() { public void handler() 
 	{
 		nb1413m3_type = NB1413M3_MAIKO;
 		nb1413m3_int_count = 132;
-	}
+	} };
 	
-	static void init_hanaoji(void)
+	static public static InitDriverPtr init_hanaoji = new InitDriverPtr() { public void handler() 
 	{
 		nb1413m3_type = NB1413M3_HANAOJI;
 		nb1413m3_int_count = 132;
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress readmem_gionbana[]={

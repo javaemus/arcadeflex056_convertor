@@ -939,11 +939,11 @@ public class thunderx
 		cdram = &RAM[0x28800];
 	}
 	
-	static void init_scontra(void)
+	static public static InitDriverPtr init_scontra = new InitDriverPtr() { public void handler() 
 	{
 		konami_rom_deinterleave_2(REGION_GFX1);
 		konami_rom_deinterleave_2(REGION_GFX2);
-	}
+	} };
 	
 	
 	

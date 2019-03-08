@@ -577,7 +577,7 @@ public class exterm
 	 *
 	 *************************************/
 	
-	void init_exterm(void)
+	public static InitDriverPtr init_exterm = new InitDriverPtr() { public void handler() 
 	{
 		memcpy(exterm_code_rom, memory_region(REGION_USER1), code_rom_size);
 	
@@ -590,7 +590,7 @@ public class exterm
 		/* set up mirrored ROM access */
 		cpu_setbank(1, exterm_code_rom);
 		cpu_setbank(2, exterm_code_rom);
-	}
+	} };
 	
 	
 	

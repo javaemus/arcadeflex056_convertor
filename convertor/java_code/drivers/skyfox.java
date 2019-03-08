@@ -446,7 +446,7 @@ public class skyfox
 	
 	
 	/* Untangle the graphics: cut each 32x32x8 tile in 16 8x8x8 tiles */
-	void init_skyfox(void)
+	public static InitDriverPtr init_skyfox = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *RAM = memory_region(REGION_GFX1);
 		unsigned char *end = RAM + memory_region_length(REGION_GFX1);
@@ -461,7 +461,7 @@ public class skyfox
 			memcpy(RAM,buf,32*32);
 			RAM += 32*32;
 		}
-	}
+	} };
 	
 	
 	

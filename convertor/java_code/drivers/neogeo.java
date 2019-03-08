@@ -4798,7 +4798,7 @@ public class neogeo
 	
 	
 	
-	void init_kof99(void)
+	public static InitDriverPtr init_kof99 = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *rom;
 		int i,j;
@@ -4834,42 +4834,42 @@ public class neogeo
 		neogeo_gfx_decrypt(0x00);
 	
 		init_neogeo();
-	}
+	} };
 	
-	void init_preisle2(void)
+	public static InitDriverPtr init_preisle2 = new InitDriverPtr() { public void handler() 
 	{
 		neogeo_gfx_decrypt(0x9f);
 	
 		init_neogeo();
-	}
+	} };
 	
-	void init_mslug3(void)
+	public static InitDriverPtr init_mslug3 = new InitDriverPtr() { public void handler() 
 	{
 		neogeo_gfx_decrypt(0xad);
 	
 		init_neogeo();
-	}
+	} };
 	
-	void init_nitd(void)
+	public static InitDriverPtr init_nitd = new InitDriverPtr() { public void handler() 
 	{
 		neogeo_gfx_decrypt(0xff);
 	
 		init_neogeo();
-	}
+	} };
 	
-	void init_ganryu(void)
+	public static InitDriverPtr init_ganryu = new InitDriverPtr() { public void handler() 
 	{
 		neogeo_gfx_decrypt(0x07);
 	
 		init_neogeo();
-	}
+	} };
 	
-	void init_gfxdec(void)
+	public static InitDriverPtr init_gfxdec = new InitDriverPtr() { public void handler() 
 	{
 		neogeo_gfx_decrypt(0x00);
 	
 		init_neogeo();
-	}
+	} };
 	
 	
 	/******************************************************************************/

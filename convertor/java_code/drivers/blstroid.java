@@ -65,13 +65,13 @@ public class blstroid
 	}
 	
 	
-	static void init_machine(void)
+	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_reset();
 		atarigen_interrupt_reset(update_interrupts);
 		atarigen_scanline_timer_reset(blstroid_scanline_update, 8);
 		atarijsa_reset();
-	}
+	} };
 	
 	
 	
@@ -374,12 +374,12 @@ public class blstroid
 	 *
 	 *************************************/
 	
-	static void init_blstroid(void)
+	static public static InitDriverPtr init_blstroid = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_default = NULL;
 		atarijsa_init(1, 4, 2, 0x80);
 		atarigen_init_6502_speedup(1, 0x4157, 0x416f);
-	}
+	} };
 	
 	
 	

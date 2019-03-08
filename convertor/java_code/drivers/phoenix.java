@@ -849,13 +849,13 @@ public class phoenix
 	ROM_END(); }}; 
 	
 	
-	static void init_survival(void)
+	static public static InitDriverPtr init_survival = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *rom = memory_region(REGION_CPU1);
 	
 		rom[0x0157] = 0x21;	/* ROM check */
 		rom[0x02e8] = 0x21; /* crash due to protection, it still locks up somewhere else */
-	}
+	} };
 	
 	
 	

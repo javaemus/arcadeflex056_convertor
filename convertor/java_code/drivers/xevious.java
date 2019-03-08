@@ -886,7 +886,7 @@ public class xevious
 	
 	
 	
-	static void init_xevios(void)
+	static public static InitDriverPtr init_xevios = new InitDriverPtr() { public void handler() 
 	{
 		int A,i;
 	
@@ -932,7 +932,7 @@ public class xevious
 				(bit[7] << 6) +
 				(bit[3] << 7);
 		}
-	}
+	} };
 	
 	
 	

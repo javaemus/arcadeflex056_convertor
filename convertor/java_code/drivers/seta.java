@@ -4861,10 +4861,10 @@ public class seta
 		return 0;
 	}
 	
-	void init_arbalest(void)
+	public static InitDriverPtr init_arbalest = new InitDriverPtr() { public void handler() 
 	{
 		install_mem_read16_handler(0, 0x80000, 0x8000f, arbalest_protection_r);
-	}
+	} };
 	
 	
 	
@@ -5131,13 +5131,13 @@ public class seta
 		COMBINE_DATA(&downtown_protection[offset]);
 	}
 	
-	void init_downtown(void)
+	public static InitDriverPtr init_downtown = new InitDriverPtr() { public void handler() 
 	{
 		install_mem_read16_handler (0, 0x200000, 0x2001ff, downtown_protection_r);
 		install_mem_write16_handler(0, 0x200000, 0x2001ff, downtown_protection_w);
 	
 		install_mem_write16_handler(0, 0x300000, 0x300001, MWA16_NOP);	// IRQ ACK?
-	}
+	} };
 	
 	
 	
@@ -5255,10 +5255,10 @@ public class seta
 		ROM_LOAD( "u69.bin",  0x140000, 0x100000, 0x82ec08f1 );
 	ROM_END(); }}; 
 	
-	void init_eightfrc(void)
+	public static InitDriverPtr init_eightfrc = new InitDriverPtr() { public void handler() 
 	{
 		install_mem_read16_handler(0, 0x500004, 0x500005, MRA16_NOP);	// watchdog??
-	}
+	} };
 	
 	
 	
@@ -5560,7 +5560,7 @@ public class seta
 	ROM_END(); }}; 
 	
 	
-	void init_metafox(void)
+	public static InitDriverPtr init_metafox = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *RAM = (data16_t *) memory_region(REGION_CPU1);
 	
@@ -5571,7 +5571,7 @@ public class seta
 		RAM[0x8ab1c/2] = 0x0000;	// patch protection test: "cp error"
 		RAM[0x8ab1e/2] = 0x0000;
 		RAM[0x8ab20/2] = 0x0000;
-	}
+	} };
 	
 	
 	
@@ -5729,7 +5729,7 @@ public class seta
 		ROM_LOAD( "fp001005.bin", 0x080000, 0x080000, 0x65b5fe9a );
 	ROM_END(); }}; 
 	
-	void init_kiwame(void)
+	public static InitDriverPtr init_kiwame = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *RAM = (data16_t *) memory_region(REGION_CPU1);
 	
@@ -5738,7 +5738,7 @@ public class seta
 	
 		RAM[0x64/2] = 0x0000;
 		RAM[0x66/2] = 0x0dca;
-	}
+	} };
 	
 	
 	/***************************************************************************
@@ -5820,10 +5820,10 @@ public class seta
 		ROM_LOAD16_WORD_SWAP( "us001009.u70",  0x000000, 0x100000, 0x0d7d2e2b )
 	ROM_END(); }}; 
 	
-	void init_rezon(void)
+	public static InitDriverPtr init_rezon = new InitDriverPtr() { public void handler() 
 	{
 		install_mem_read16_handler(0, 0x500006, 0x500007, MRA16_NOP);	// irq ack?
-	}
+	} };
 	
 	
 	/***************************************************************************
@@ -6075,7 +6075,7 @@ public class seta
 		return 0;
 	}
 	
-	void init_twineagl(void)
+	public static InitDriverPtr init_twineagl = new InitDriverPtr() { public void handler() 
 	{
 		int i;
 		unsigned char *RAM = memory_region(REGION_GFX2);	// Layer
@@ -6100,7 +6100,7 @@ public class seta
 		}
 	
 	#endif
-	}
+	} };
 	
 	
 	

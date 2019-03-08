@@ -1658,7 +1658,7 @@ public class namcos86
 	
 	
 	
-	static void init_namco86(void)
+	static public static InitDriverPtr init_namco86 = new InitDriverPtr() { public void handler() 
 	{
 		int size;
 		unsigned char *gfx;
@@ -1716,7 +1716,7 @@ public class namcos86
 	
 			free( buffer );
 		}
-	}
+	} };
 	
 	
 	
@@ -1728,13 +1728,13 @@ public class namcos86
 		    cpu_spinuntil_int();
 	} };
 	
-	static void init_roishtar(void)
+	static public static InitDriverPtr init_roishtar = new InitDriverPtr() { public void handler() 
 	{
 		/* install hook to avoid hang at game over */
 	    install_mem_write_handler(1, 0x7e24, 0x7e24, roishtar_semaphore_w);
 	
 		init_namco86();
-	}
+	} };
 	
 	
 	

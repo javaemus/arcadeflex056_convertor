@@ -79,12 +79,12 @@ public class atarigt
 	}
 	
 	
-	static void init_machine(void)
+	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_reset();
 		atarigen_interrupt_reset(update_interrupts);
 		atarigen_scanline_timer_reset(atarigx2_scanline_update, 8);
-	}
+	} };
 	
 	
 	
@@ -506,7 +506,7 @@ public class atarigt
 	 *
 	 *************************************/
 	
-	static void init_tmek(void)
+	static public static InitDriverPtr init_tmek = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_default = NULL;
 	
@@ -517,10 +517,10 @@ public class atarigt
 		install_mem_write32_handler(0, 0xdb8000, 0xdb87ff, tmek_protection_w);
 	
 		protection_base = malloc(0x800);
-	}
+	} };
 	
 	
-	static void init_primrage(void)
+	static public static InitDriverPtr init_primrage = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_default = NULL;
 	
@@ -531,7 +531,7 @@ public class atarigt
 		install_mem_write32_handler(0, 0xdc4000, 0xdcffff, primrage_protection_w);
 	
 		protection_base = malloc(0xc000);
-	}
+	} };
 	
 	
 	

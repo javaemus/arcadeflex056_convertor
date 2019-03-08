@@ -76,7 +76,7 @@ public class relief
 	 *
 	 *************************************/
 	
-	static void init_machine(void)
+	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_reset();
 		atarivc_reset(atarivc_eof_data);
@@ -86,7 +86,7 @@ public class relief
 		ym2413_volume = 15;
 		overall_volume = 127;
 		adpcm_bank_base = 0;
-	}
+	} };
 	
 	
 	
@@ -425,7 +425,7 @@ public class relief
 	}
 	
 	
-	static void init_relief(void)
+	static public static InitDriverPtr init_relief = new InitDriverPtr() { public void handler() 
 	{
 		static const data16_t default_eeprom[] =
 		{
@@ -438,10 +438,10 @@ public class relief
 			0x9500,0x0000
 		};
 		init_common(default_eeprom);
-	}
+	} };
 	
 	
-	static void init_relief2(void)
+	static public static InitDriverPtr init_relief2 = new InitDriverPtr() { public void handler() 
 	{
 		static const data16_t default_eeprom[] =
 		{
@@ -461,7 +461,7 @@ public class relief
 			0x01AA,0x0149,0x60FF,0x3300,0x0000
 		};
 		init_common(default_eeprom);
-	}
+	} };
 	
 	
 	

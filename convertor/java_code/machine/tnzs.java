@@ -505,7 +505,7 @@ public class tnzs
 	
 	
 	
-	void init_extrmatn(void)
+	public static InitDriverPtr init_extrmatn = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -514,9 +514,9 @@ public class tnzs
 		/* there's code which falls through from the fixed ROM to bank #7, I have to */
 		/* copy it there otherwise the CPU bank switching support will not catch it. */
 		memcpy(&RAM[0x08000],&RAM[0x2c000],0x4000);
-	}
+	} };
 	
-	void init_arknoid2(void)
+	public static InitDriverPtr init_arknoid2 = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -525,9 +525,9 @@ public class tnzs
 		/* there's code which falls through from the fixed ROM to bank #2, I have to */
 		/* copy it there otherwise the CPU bank switching support will not catch it. */
 		memcpy(&RAM[0x08000],&RAM[0x18000],0x4000);
-	}
+	} };
 	
-	void init_drtoppel(void)
+	public static InitDriverPtr init_drtoppel = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -539,9 +539,9 @@ public class tnzs
 	
 		/* drtoppel writes to the palette RAM area even if it has PROMs! We have to patch it out. */
 		install_mem_write_handler(0, 0xf800, 0xfbff, MWA_NOP);
-	}
+	} };
 	
-	void init_chukatai(void)
+	public static InitDriverPtr init_chukatai = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -550,9 +550,9 @@ public class tnzs
 		/* there's code which falls through from the fixed ROM to bank #0, I have to */
 		/* copy it there otherwise the CPU bank switching support will not catch it. */
 		memcpy(&RAM[0x08000],&RAM[0x18000],0x4000);
-	}
+	} };
 	
-	void init_tnzs(void)
+	public static InitDriverPtr init_tnzs = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 		mcu_type = MCU_TNZS;
@@ -560,9 +560,9 @@ public class tnzs
 		/* there's code which falls through from the fixed ROM to bank #0, I have to */
 		/* copy it there otherwise the CPU bank switching support will not catch it. */
 		memcpy(&RAM[0x08000],&RAM[0x18000],0x4000);
-	}
+	} };
 	
-	void init_insectx(void)
+	public static InitDriverPtr init_insectx = new InitDriverPtr() { public void handler() 
 	{
 		mcu_type = MCU_NONE;
 	
@@ -570,13 +570,13 @@ public class tnzs
 		install_mem_read_handler(1, 0xc000, 0xc000, input_port_2_r );
 		install_mem_read_handler(1, 0xc001, 0xc001, input_port_3_r );
 		install_mem_read_handler(1, 0xc002, 0xc002, input_port_4_r );
-	}
+	} };
 	
-	void init_kageki(void)
+	public static InitDriverPtr init_kageki = new InitDriverPtr() { public void handler() 
 	{
 		/* this game has no mcu */
 		mcu_type = MCU_NONE;
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr tnzs_mcu_r  = new ReadHandlerPtr() { public int handler(int offset)

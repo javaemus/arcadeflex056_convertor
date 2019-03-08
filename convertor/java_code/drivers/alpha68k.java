@@ -2286,39 +2286,39 @@ public class alpha68k
 		return ret;
 	}
 	
-	static void init_timesold(void)
+	static public static InitDriverPtr init_timesold = new InitDriverPtr() { public void handler() 
 	{
 		install_mem_read16_handler(0, 0x40008, 0x40009, timesold_cycle_r);
 		invert_controls=0;
-	}
+	} };
 	
-	static void init_skysoldr(void)
+	static public static InitDriverPtr init_skysoldr = new InitDriverPtr() { public void handler() 
 	{
 		install_mem_read16_handler(0, 0x40008, 0x40009, skysoldr_cycle_r);
 		cpu_setbank(8, (memory_region(REGION_USER1))+0x40000);
 		invert_controls=0;
-	}
+	} };
 	
-	static void init_goldmedb(void)
+	static public static InitDriverPtr init_goldmedb = new InitDriverPtr() { public void handler() 
 	{
 		cpu_setbank(8, memory_region(REGION_USER1));
 		invert_controls=0;
-	}
+	} };
 	
-	static void init_gangwars(void)
+	static public static InitDriverPtr init_gangwars = new InitDriverPtr() { public void handler() 
 	{
 		install_mem_read16_handler(0, 0x40206, 0x40207, gangwars_cycle_r);
 		cpu_setbank(8, memory_region(REGION_USER1));
 		invert_controls=0;
 		microcontroller_id=0x8512;
-	}
+	} };
 	
-	static void init_btlfield(void)
+	static public static InitDriverPtr init_btlfield = new InitDriverPtr() { public void handler() 
 	{
 		invert_controls=1;
-	}
+	} };
 	
-	static void init_sbasebal(void)
+	static public static InitDriverPtr init_sbasebal = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *rom = (data16_t *)memory_region(REGION_CPU1);
 	
@@ -2334,36 +2334,36 @@ public class alpha68k
 		microcontroller_id=0x8512;
 		invert_controls=0;
 		coin_id=0x23|(0x24<<8);
-	}
+	} };
 	
-	static void init_skyadvnt(void)
+	static public static InitDriverPtr init_skyadvnt = new InitDriverPtr() { public void handler() 
 	{
 		microcontroller_id=0x8814;
 		invert_controls=0;
 		coin_id=0x22|(0x22<<8);
-	}
+	} };
 	
-	static void init_skyadvnu(void)
+	static public static InitDriverPtr init_skyadvnu = new InitDriverPtr() { public void handler() 
 	{
 		microcontroller_id=0x8814;
 		invert_controls=0;
 		coin_id=0x23|(0x24<<8);
-	}
+	} };
 	
-	static void init_kyros(void)
+	static public static InitDriverPtr init_kyros = new InitDriverPtr() { public void handler() 
 	{
 		microcontroller_id=0x12;
-	}
+	} };
 	
-	static void init_sstingry(void)
+	static public static InitDriverPtr init_sstingry = new InitDriverPtr() { public void handler() 
 	{
 		microcontroller_id=0xff;
-	}
+	} };
 	
-	static void init_goldmedl(void)
+	static public static InitDriverPtr init_goldmedl = new InitDriverPtr() { public void handler() 
 	{
 		invert_controls=0;
-	}
+	} };
 	
 	/******************************************************************************/
 	

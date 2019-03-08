@@ -557,7 +557,7 @@ public class popeye
 	
 	
 	
-	void init_popeye(void)
+	public static InitDriverPtr init_popeye = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *buffer;
 		data8_t *rom = memory_region(REGION_CPU1);
@@ -572,7 +572,7 @@ public class popeye
 			memcpy(rom,buffer,len);
 			free(buffer);
 		}
-	}
+	} };
 	
 	
 	public static GameDriver driver_popeye	   = new GameDriver("1982"	,"popeye"	,"popeye.java"	,rom_popeye,null	,machine_driver_popeye	,input_ports_popeye	,init_popeye	,ROT0	,	"Nintendo", "Popeye (revision D)", GAME_NO_COCKTAIL )

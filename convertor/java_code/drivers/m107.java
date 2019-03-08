@@ -643,7 +643,7 @@ public class m107
 	
 	/***************************************************************************/
 	
-	static void init_m107(void)
+	static public static InitDriverPtr init_m107 = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -659,9 +659,9 @@ public class m107
 		m107_spritesystem = 1;
 	
 		raster_enable=1;
-	}
+	} };
 	
-	static void init_dsoccr94(void)
+	static public static InitDriverPtr init_dsoccr94 = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -678,7 +678,7 @@ public class m107
 	
 		/* This game doesn't use raster IRQ's */
 		raster_enable=0;
-	}
+	} };
 	
 	/***************************************************************************/
 	

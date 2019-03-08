@@ -462,16 +462,16 @@ public class xmen
 	
 	
 	
-	static void init_xmen(void)
+	static public static InitDriverPtr init_xmen = new InitDriverPtr() { public void handler() 
 	{
 		konami_rom_deinterleave_2(REGION_GFX1);
 		konami_rom_deinterleave_4(REGION_GFX2);
 	
 		state_save_register_UINT8("main", 0, "sound bank", &sound_curbank, 1);
 		state_save_register_func_postload(sound_reset_bank);
-	}
+	} };
 	
-	static void init_xmen6p(void)
+	static public static InitDriverPtr init_xmen6p = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *rom = (data16_t *)memory_region(REGION_CPU1);
 	
@@ -480,7 +480,7 @@ public class xmen
 		rom[0x21aa/2] = 0x4e71;
 	
 		init_xmen();
-	}
+	} };
 	
 	
 	

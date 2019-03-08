@@ -59,7 +59,7 @@ public class suna8
 									Hard Head
 	***************************************************************************/
 	
-	void init_hardhead(void)
+	public static InitDriverPtr init_hardhead = new InitDriverPtr() { public void handler() 
 	{
 		data8_t *RAM = memory_region(REGION_CPU1);
 		int i;
@@ -81,14 +81,14 @@ public class suna8
 			}
 			RAM[i] = x;
 		}
-	}
+	} };
 	
 	/* Non encrypted bootleg */
-	static void init_hardhedb( void )
+	static public static InitDriverPtr init_hardhedb = new InitDriverPtr() { public void handler() 
 	{
 		/* patch ROM checksum (ROM1 fails self test) */
 		memory_region( REGION_CPU1 )[0x1e5b] = 0xAF;
-	}
+	} };
 	
 	/***************************************************************************
 									Brick Zone
@@ -120,7 +120,7 @@ public class suna8
 		}
 	}
 	
-	void init_brickzn3(void)
+	public static InitDriverPtr init_brickzn3 = new InitDriverPtr() { public void handler() 
 	{
 		data8_t	*RAM	=	memory_region(REGION_CPU1);
 		size_t	size	=	memory_region_length(REGION_CPU1)/2;
@@ -362,7 +362,7 @@ public class suna8
 	RAM[0x1406+size] = 0x00;	// HALT -> NOP (NMI source??)
 	RAM[0x2487+size] = 0x00;	// HALT -> NOP
 	RAM[0x256c+size] = 0x00;	// HALT -> NOP
-	}
+	} };
 	
 	
 	
@@ -410,7 +410,7 @@ public class suna8
 			}
 	}
 	
-	void init_hardhea2(void)
+	public static InitDriverPtr init_hardhea2 = new InitDriverPtr() { public void handler() 
 	{
 		data8_t	*RAM	=	memory_region(REGION_CPU1);
 		size_t	size	=	memory_region_length(REGION_CPU1)/2;
@@ -557,7 +557,7 @@ public class suna8
 				}
 			}
 		}
-	}
+	} };
 	
 	
 	/***************************************************************************
@@ -605,7 +605,7 @@ public class suna8
 			}
 	}
 	
-	void init_starfigh(void)
+	public static InitDriverPtr init_starfigh = new InitDriverPtr() { public void handler() 
 	{
 		data8_t	*RAM	=	memory_region(REGION_CPU1);
 		size_t	size	=	memory_region_length(REGION_CPU1)/2;
@@ -692,7 +692,7 @@ public class suna8
 	
 			RAM[i] = starfigh_decrypt(x,encry,mask);
 		}
-	}
+	} };
 	
 	
 	/***************************************************************************

@@ -2630,7 +2630,7 @@ public class taito_l
 	
 	
 	// bits 7..0 => bits 0..7
-	static void init_plotting(void)
+	static public static InitDriverPtr init_plotting = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char tab[256];
 		unsigned char *p;
@@ -2650,7 +2650,7 @@ public class taito_l
 			*p = tab[*p];
 			p++;
 		}
-	}
+	} };
 	
 	
 	public static GameDriver driver_raimais	   = new GameDriver("1988"	,"raimais"	,"taito_l.java"	,rom_raimais,null	,machine_driver_raimais	,input_ports_raimais	,null	,ROT0	,	"Taito Corporation", "Raimais (Japan)" )

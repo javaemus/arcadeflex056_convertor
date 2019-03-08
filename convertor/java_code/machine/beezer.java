@@ -105,13 +105,13 @@ public class beezer
 	{
 	} };
 	
-	void init_beezer(void)
+	public static InitDriverPtr init_beezer = new InitDriverPtr() { public void handler() 
 	{
 		via_config(0, &b_via_0_interface);
 		via_config(1, &b_via_1_interface);
 		via_reset();
 		pbus = 0;
-	}
+	} };
 	
 	public static WriteHandlerPtr beezer_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

@@ -1708,7 +1708,7 @@ public class dkong
 	ROM_END(); }}; 
 	
 	
-	static void init_herocast(void)
+	static public static InitDriverPtr init_herocast = new InitDriverPtr() { public void handler() 
 	{
 		int A;
 		unsigned char *RAM = memory_region(REGION_CPU1);
@@ -1722,11 +1722,11 @@ public class dkong
 			v = RAM[A];
 			RAM[A] = (v & 0xe7) | ((v & 0x10) >> 1) | ((v & 0x08) << 1);
 		}
-	}
+	} };
 	
 	
 	
-	static void init_radarscp(void)
+	static public static InitDriverPtr init_radarscp = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -1736,7 +1736,7 @@ public class dkong
 		/* For now, we comment it out. */
 		RAM[0x1e9c] = 0xc3;
 		RAM[0x1e9d] = 0xbd;
-	}
+	} };
 	
 	
 	

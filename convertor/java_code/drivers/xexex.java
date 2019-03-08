@@ -465,7 +465,7 @@ public class xexex
 	ROM_END(); }}; 
 	
 	
-	static void init_xexex(void)
+	static public static InitDriverPtr init_xexex = new InitDriverPtr() { public void handler() 
 	{
 		konami_rom_deinterleave_2(REGION_GFX1);
 		konami_rom_deinterleave_4(REGION_GFX2);
@@ -482,7 +482,7 @@ public class xexex
 		state_save_register_func_postload(parse_control2);
 		state_save_register_int("main", 0, "sound region", &cur_sound_region);
 		state_save_register_func_postload(reset_sound_region);
-	}
+	} };
 	
 	public static GameDriver driver_xexex	   = new GameDriver("1991"	,"xexex"	,"xexex.java"	,rom_xexex,null	,machine_driver_xexex	,input_ports_xexex	,init_xexex	,ROT0	,	"Konami", "Xexex (World)" )
 	public static GameDriver driver_xexexj	   = new GameDriver("1991"	,"xexexj"	,"xexex.java"	,rom_xexexj,driver_xexex	,machine_driver_xexex	,input_ports_xexex	,init_xexex	,ROT0	,	"Konami", "Xexex (Japan)" )

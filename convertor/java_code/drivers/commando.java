@@ -526,7 +526,7 @@ public class commando
 	
 	
 	
-	static void init_commando(void)
+	static public static InitDriverPtr init_commando = new InitDriverPtr() { public void handler() 
 	{
 		int A;
 		unsigned char *rom = memory_region(REGION_CPU1);
@@ -544,9 +544,9 @@ public class commando
 			src = rom[A];
 			rom[A+diff] = (src & 0x11) | ((src & 0xe0) >> 4) | ((src & 0x0e) << 4);
 		}
-	}
+	} };
 	
-	static void init_spaceinv(void)
+	static public static InitDriverPtr init_spaceinv = new InitDriverPtr() { public void handler() 
 	{
 		int A;
 		unsigned char *rom = memory_region(REGION_CPU1);
@@ -563,7 +563,7 @@ public class commando
 			src = rom[A];
 			rom[A+diff] = (src & 0x11) | ((src & 0xe0) >> 4) | ((src & 0x0e) << 4);
 		}
-	}
+	} };
 	
 	
 	

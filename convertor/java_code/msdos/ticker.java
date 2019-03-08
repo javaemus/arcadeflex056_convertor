@@ -52,7 +52,7 @@ public class ticker
 		return result;
 	}
 	
-	void init_ticker(void)
+	public static InitDriverPtr init_ticker = new InitDriverPtr() { public void handler() 
 	{
 		/* if the RDTSC instruction is available use it because */
 		/* it is more precise and has less overhead than uclock() */
@@ -89,5 +89,5 @@ public class ticker
 	
 	logerror("using uclock() for timing\n");
 		}
-	}
+	} };
 }

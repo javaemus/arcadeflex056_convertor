@@ -6429,31 +6429,31 @@ public class cps1
 	
 	
 	
-	static void init_wof(void)
+	static public static InitDriverPtr init_wof = new InitDriverPtr() { public void handler() 
 	{
 		wof_decode();
 		init_cps1();
-	}
+	} };
 	
-	static void init_dino(void)
+	static public static InitDriverPtr init_dino = new InitDriverPtr() { public void handler() 
 	{
 		dino_decode();
 		init_cps1();
-	}
+	} };
 	
-	static void init_punisher(void)
+	static public static InitDriverPtr init_punisher = new InitDriverPtr() { public void handler() 
 	{
 		punisher_decode();
 		init_cps1();
-	}
+	} };
 	
-	static void init_slammast(void)
+	static public static InitDriverPtr init_slammast = new InitDriverPtr() { public void handler() 
 	{
 		slammast_decode();
 		init_cps1();
-	}
+	} };
 	
-	static void init_pang3(void)
+	static public static InitDriverPtr init_pang3 = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *rom = (data16_t *)memory_region(REGION_CPU1);
 		int A,src,dst;
@@ -6475,7 +6475,7 @@ public class cps1
 		}
 	
 		init_cps1();
-	}
+	} };
 	
 	
 	

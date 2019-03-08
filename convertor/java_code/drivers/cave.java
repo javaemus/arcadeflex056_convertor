@@ -2653,23 +2653,23 @@ public class cave
 	
 	***************************************************************************/
 	
-	void init_dfeveron(void)
+	public static InitDriverPtr init_dfeveron = new InitDriverPtr() { public void handler() 
 	{
 		cave_default_eeprom = cave_default_eeprom_type1;
 		cave_default_eeprom_length = sizeof(cave_default_eeprom_type1);
 		unpack_sprites();
 		cave_spritetype = 0;	// "normal" sprites
-	}
+	} };
 	
-	void init_ddonpach(void)
+	public static InitDriverPtr init_ddonpach = new InitDriverPtr() { public void handler() 
 	{
 		cave_default_eeprom = cave_default_eeprom_type2;
 		cave_default_eeprom_length = sizeof(cave_default_eeprom_type2);
 		ddonpach_unpack_sprites();
 		cave_spritetype = 1;	// "different" sprites (no zooming?)
-	}
+	} };
 	
-	void init_esprade(void)
+	public static InitDriverPtr init_esprade = new InitDriverPtr() { public void handler() 
 	{
 		cave_default_eeprom = cave_default_eeprom_type2;
 		cave_default_eeprom_length = sizeof(cave_default_eeprom_type2);
@@ -2684,25 +2684,25 @@ public class cave
 		}
 	#endif
 	//ks end
-	}
+	} };
 	
-	void init_guwange(void)
+	public static InitDriverPtr init_guwange = new InitDriverPtr() { public void handler() 
 	{
 		cave_default_eeprom = cave_default_eeprom_type1;
 		cave_default_eeprom_length = sizeof(cave_default_eeprom_type1);
 		esprade_unpack_sprites();
 		cave_spritetype = 0;	// "normal" sprites
-	}
+	} };
 	
-	void init_hotdogst(void)
+	public static InitDriverPtr init_hotdogst = new InitDriverPtr() { public void handler() 
 	{
 		cave_default_eeprom = cave_default_eeprom_type4;
 		cave_default_eeprom_length = sizeof(cave_default_eeprom_type4);
 		unpack_sprites();
 		cave_spritetype = 2;	// "normal" sprites with different position handling
-	}
+	} };
 	
-	void init_mazinger(void)
+	public static InitDriverPtr init_mazinger = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *buffer;
 		data8_t *src = memory_region(REGION_GFX4);
@@ -2725,16 +2725,16 @@ public class cave
 	
 		/* setup extra ROM */
 		cpu_setbank(1,memory_region(REGION_USER1));
-	}
+	} };
 	
 	
-	void init_metmqstr(void)
+	public static InitDriverPtr init_metmqstr = new InitDriverPtr() { public void handler() 
 	{
 		cave_default_eeprom = 0;
 		cave_default_eeprom_length = 0;
 		unpack_sprites();
 		cave_spritetype = 2;	// "normal" sprites with different position handling
-	}
+	} };
 	
 	/* Tiles are 6 bit, 4 bits stored in one rom, 2 bits in the other.
 	   Expand the 2 bit part into a 4 bit layout, so we can decode it */
@@ -2755,7 +2755,7 @@ public class cave
 		}
 	}
 	
-	void init_sailormn(void)
+	public static InitDriverPtr init_sailormn = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *buffer;
 		data8_t *src = memory_region(REGION_GFX4);
@@ -2777,15 +2777,15 @@ public class cave
 		cave_default_eeprom_length = sizeof(cave_default_eeprom_type6);
 		unpack_sprites();
 		cave_spritetype = 2;	// "normal" sprites with different position handling
-	}
+	} };
 	
-	void init_uopoko(void)
+	public static InitDriverPtr init_uopoko = new InitDriverPtr() { public void handler() 
 	{
 		cave_default_eeprom = cave_default_eeprom_type3;
 		cave_default_eeprom_length = sizeof(cave_default_eeprom_type4);
 		unpack_sprites();
 		cave_spritetype = 0;	// "normal" sprites
-	}
+	} };
 	
 	
 	/***************************************************************************

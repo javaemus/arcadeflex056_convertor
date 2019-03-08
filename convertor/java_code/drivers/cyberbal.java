@@ -108,7 +108,7 @@ public class cyberbal
 	}
 	
 	
-	static void init_machine(void)
+	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_reset();
 		atarigen_slapstic_reset();
@@ -123,7 +123,7 @@ public class cyberbal
 	
 		/* make sure we're pointing to the right screen by default */
 		cyberbal_set_screen(0);
-	}
+	} };
 	
 	
 	static void cyberb2p_update_interrupts(void)
@@ -899,7 +899,7 @@ public class cyberbal
 	};
 	
 	
-	static void init_cyberbal(void)
+	static public static InitDriverPtr init_cyberbal = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_default = default_eeprom;
 		atarigen_slapstic_init(0, 0x018000, 0);
@@ -908,10 +908,10 @@ public class cyberbal
 		/* make sure the banks are pointing to the correct location */
 		cpu_setbank(1, ataripf_1_base);
 		cpu_setbank(3, ataripf_0_base);
-	}
+	} };
 	
 	
-	static void init_cyberbt(void)
+	static public static InitDriverPtr init_cyberbt = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_default = default_eeprom;
 		atarigen_slapstic_init(0, 0x018000, 116);
@@ -920,15 +920,15 @@ public class cyberbal
 		/* make sure the banks are pointing to the correct location */
 		cpu_setbank(1, ataripf_1_base);
 		cpu_setbank(3, ataripf_0_base);
-	}
+	} };
 	
 	
-	static void init_cyberb2p(void)
+	static public static InitDriverPtr init_cyberb2p = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_default = default_eeprom;
 		atarijsa_init(1, 3, 2, 0x8000);
 		atarigen_init_6502_speedup(1, 0x4159, 0x4171);
-	}
+	} };
 	
 	
 	

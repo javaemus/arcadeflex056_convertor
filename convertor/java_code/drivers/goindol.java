@@ -376,7 +376,7 @@ public class goindol
 	
 	
 	
-	void init_goindol(void)
+	public static InitDriverPtr init_goindol = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *rom = memory_region(REGION_CPU1);
 	
@@ -400,9 +400,9 @@ public class goindol
 		rom[0x218e] = 0x00;
 		rom[0x333d] = 0xc9;
 		rom[0x3365] = 0x00;
-	}
+	} };
 	
-	void init_homo(void)
+	public static InitDriverPtr init_homo = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *rom = memory_region(REGION_CPU1);
 	
@@ -410,7 +410,7 @@ public class goindol
 		rom[0x218c] = 0x00;
 		rom[0x218d] = 0x00;
 		rom[0x218e] = 0x00;
-	}
+	} };
 	
 	
 	

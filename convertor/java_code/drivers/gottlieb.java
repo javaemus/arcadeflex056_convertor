@@ -165,13 +165,13 @@ public class gottlieb
 	
 	static UINT8 *audiobuffer_region;
 	
-	static void init_machine(void)
+	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
 	{
 		UINT8 *ram = memory_region(REGION_CPU1);
 		cpu_setbank(1, &ram[0x8000]);
 		cpu_setbank(2, &ram[0x0000]);
 		audiobuffer_region = memory_region(REGION_SOUND1);
-	}
+	} };
 	
 	
 	static int track[2];
@@ -1872,10 +1872,10 @@ public class gottlieb
 	ROM_END(); }}; 
 	
 	
-	static void init_gottlieb(void)
+	static public static InitDriverPtr init_gottlieb = new InitDriverPtr() { public void handler() 
 	{
 		gottlieb_sound_init();
-	}
+	} };
 	
 	
 	public static GameDriver driver_reactor	   = new GameDriver("1982"	,"reactor"	,"gottlieb.java"	,rom_reactor,null	,machine_driver_reactor	,input_ports_reactor	,null	,ROT0	,	"Gottlieb", "Reactor" )

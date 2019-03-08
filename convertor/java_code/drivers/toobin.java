@@ -74,12 +74,12 @@ public class toobin
 	}
 	
 	
-	static void init_machine(void)
+	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_reset();
 		atarigen_interrupt_reset(update_interrupts);
 		atarijsa_reset();
-	}
+	} };
 	
 	
 	
@@ -473,12 +473,12 @@ public class toobin
 	 *
 	 *************************************/
 	
-	static void init_toobin(void)
+	static public static InitDriverPtr init_toobin = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_default = NULL;
 		atarijsa_init(1, 2, 1, 0x1000);
 		atarigen_init_6502_speedup(1, 0x414e, 0x4166);
-	}
+	} };
 	
 	
 	

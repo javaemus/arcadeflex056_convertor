@@ -331,10 +331,10 @@ public class blit
 		}
 	}
 	
-	void init_unchained_blit(void)
+	public static InitDriverPtr init_unchained_blit = new InitDriverPtr() { public void handler() 
 	{
 	    xpage=-1;
-	}
+	} };
 	
 	/* Macros for non dirty unchained blits */
 	#define UNCHAIN_BLIT_START \

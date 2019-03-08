@@ -71,14 +71,14 @@ public class batman
 	}
 	
 	
-	static void init_machine(void)
+	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_reset();
 		atarivc_reset(atarivc_eof_data);
 		atarigen_interrupt_reset(update_interrupts);
 		atarigen_scanline_timer_reset(batman_scanline_update, 8);
 		atarijsa_reset();
-	}
+	} };
 	
 	
 	
@@ -329,7 +329,7 @@ public class batman
 	 *
 	 *************************************/
 	
-	static void init_batman(void)
+	static public static InitDriverPtr init_batman = new InitDriverPtr() { public void handler() 
 	{
 		static const data16_t default_eeprom[] =
 		{
@@ -350,7 +350,7 @@ public class batman
 		atarijsa_init(1, 3, 2, 0x0040);
 		atarijsa3_init_adpcm(REGION_SOUND1);
 		atarigen_init_6502_speedup(1, 0x4163, 0x417b);
-	}
+	} };
 	
 	
 	

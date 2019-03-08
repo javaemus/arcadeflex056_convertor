@@ -81,14 +81,14 @@ public class atarig1
 	}
 	
 	
-	static void init_machine(void)
+	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_reset();
 		atarigen_slapstic_reset();
 		atarigen_interrupt_reset(update_interrupts);
 		atarigen_scanline_timer_reset(atarig1_scanline_update, 8);
 		atarijsa_reset();
-	}
+	} };
 	
 	
 	
@@ -411,7 +411,7 @@ public class atarig1
 	 *
 	 *************************************/
 	
-	static void init_hydra(void)
+	static public static InitDriverPtr init_hydra = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_default = NULL;
 		atarigen_slapstic_init(0, 0x078000, 116);
@@ -419,20 +419,20 @@ public class atarig1
 		atarigen_init_6502_speedup(1, 0x4159, 0x4171);
 	
 		atarig1_pitfight = 0;
-	}
+	} };
 	
 	
-	static void init_hydrap(void)
+	static public static InitDriverPtr init_hydrap = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_default = NULL;
 		atarijsa_init(1, 4, 0, 0x8000);
 		atarigen_init_6502_speedup(1, 0x4159, 0x4171);
 	
 		atarig1_pitfight = 0;
-	}
+	} };
 	
 	
-	static void init_pitfight(void)
+	static public static InitDriverPtr init_pitfight = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_default = NULL;
 		atarigen_slapstic_init(0, 0x038000, 111);
@@ -440,10 +440,10 @@ public class atarig1
 		atarigen_init_6502_speedup(1, 0x4159, 0x4171);
 	
 		atarig1_pitfight = 1;
-	}
+	} };
 	
 	
-	static void init_pitfighb(void)
+	static public static InitDriverPtr init_pitfighb = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_default = NULL;
 		pitfighb_cheap_slapstic_init();
@@ -451,7 +451,7 @@ public class atarig1
 		atarigen_init_6502_speedup(1, 0x4159, 0x4171);
 	
 		atarig1_pitfight = 1;
-	}
+	} };
 	
 	
 	

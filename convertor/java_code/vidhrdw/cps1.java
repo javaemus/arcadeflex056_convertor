@@ -676,12 +676,12 @@ public class cps1
 	}
 	
 	
-	void init_cps1(void)
+	public static InitDriverPtr init_cps1 = new InitDriverPtr() { public void handler() 
 	{
 		cps1_gfx_decode();
-	}
+	} };
 	
-	void init_cps2(void)
+	public static InitDriverPtr init_cps2 = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *rom = (data16_t *)memory_region(REGION_CPU1);
 		data16_t *xor = (data16_t *)memory_region(REGION_USER1);
@@ -695,7 +695,7 @@ public class cps1
 		memory_set_encrypted_opcode_range(0,0,memory_region_length(REGION_CPU1));
 	
 		cps2_gfx_decode();
-	}
+	} };
 	
 	
 	

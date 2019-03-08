@@ -892,7 +892,7 @@ public class input
 	//	init_joylist
 	//============================================================
 	
-	static void init_keylist(void)
+	static public static InitDriverPtr init_keylist = new InitDriverPtr() { public void handler() 
 	{
 		int keycount = 0, key;
 	
@@ -941,7 +941,7 @@ public class input
 	
 		// terminate the list
 		memset(&keylist[keycount], 0, sizeof(keylist[keycount]));
-	}
+	} };
 	
 	
 	
@@ -978,7 +978,7 @@ public class input
 	//	init_joylist
 	//============================================================
 	
-	static void init_joylist(void)
+	static public static InitDriverPtr init_joylist = new InitDriverPtr() { public void handler() 
 	{
 		int mouse, stick, axis, button, pov;
 		char tempname[MAX_PATH];
@@ -1085,7 +1085,7 @@ public class input
 	
 		// terminate array
 		memset(&joylist[joycount], 0, sizeof(joylist[joycount]));
-	}
+	} };
 	
 	
 	

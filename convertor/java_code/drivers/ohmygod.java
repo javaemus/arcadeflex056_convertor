@@ -450,15 +450,15 @@ public class ohmygod
 	
 	
 	
-	static void init_ohmygod(void)
+	static public static InitDriverPtr init_ohmygod = new InitDriverPtr() { public void handler() 
 	{
 		adpcm_bank_shift = 4;
-	}
+	} };
 	
-	static void init_naname(void)
+	static public static InitDriverPtr init_naname = new InitDriverPtr() { public void handler() 
 	{
 		adpcm_bank_shift = 0;
-	}
+	} };
 	
 	
 	public static GameDriver driver_ohmygod	   = new GameDriver("1993"	,"ohmygod"	,"ohmygod.java"	,rom_ohmygod,null	,machine_driver_ohmygod	,input_ports_ohmygod	,init_ohmygod	,ROT0	,	"Atlus", "Oh My God! (Japan)", GAME_NO_COCKTAIL )

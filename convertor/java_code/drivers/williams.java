@@ -1596,7 +1596,7 @@ public class williams
 	 *
 	 *************************************/
 	
-	static void init_defender(void)
+	static public static InitDriverPtr init_defender = new InitDriverPtr() { public void handler() 
 	{
 		static const UINT32 bank[8] = { 0x0c000, 0x10000, 0x11000, 0x12000, 0x0c000, 0x0c000, 0x0c000, 0x13000 };
 		defender_bank_list = bank;
@@ -1606,10 +1606,10 @@ public class williams
 	
 		/* PIA configuration */
 		CONFIGURE_PIAS(defender_pia_0_intf, williams_pia_1_intf, williams_snd_pia_intf);
-	}
+	} };
 	
 	
-	static void init_defndjeu(void)
+	static public static InitDriverPtr init_defndjeu = new InitDriverPtr() { public void handler() 
 	{
 	/*
 		Note: Please do not remove these comments in BETA versions. They are
@@ -1652,10 +1652,10 @@ public class williams
 			UINT8 src = rom[x];
 			rom[x] = (src & 0x7e) | (src >> 7) | (src << 7);
 		}
-	}
+	} };
 	
 	#if 0
-	static void init_defcmnd(void)
+	static public static InitDriverPtr init_defcmnd = new InitDriverPtr() { public void handler() 
 	{
 		static const UINT32 bank[8] = { 0x0c000, 0x10000, 0x11000, 0x12000, 0x13000, 0x0c000, 0x0c000, 0x14000 };
 		defender_bank_list = bank;
@@ -1665,10 +1665,10 @@ public class williams
 	
 		/* PIA configuration */
 		CONFIGURE_PIAS(williams_pia_0_intf, williams_pia_1_intf, williams_snd_pia_intf);
-	}
+	} };
 	#endif
 	
-	static void init_mayday(void)
+	static public static InitDriverPtr init_mayday = new InitDriverPtr() { public void handler() 
 	{
 		static const UINT32 bank[8] = { 0x0c000, 0x10000, 0x11000, 0x12000, 0x0c000, 0x0c000, 0x0c000, 0x13000 };
 		defender_bank_list = bank;
@@ -1681,10 +1681,10 @@ public class williams
 	
 		/* install a handler to catch protection checks */
 		mayday_protection = install_mem_read_handler(0, 0xa190, 0xa191, mayday_protection_r);
-	}
+	} };
 	
 	
-	static void init_colony7(void)
+	static public static InitDriverPtr init_colony7 = new InitDriverPtr() { public void handler() 
 	{
 		static const UINT32 bank[8] = { 0x0c000, 0x10000, 0x11000, 0x12000, 0x0c000, 0x0c000, 0x0c000, 0x0c000 };
 		defender_bank_list = bank;
@@ -1694,20 +1694,20 @@ public class williams
 	
 		/* PIA configuration */
 		CONFIGURE_PIAS(williams_pia_0_intf, williams_pia_1_intf, williams_snd_pia_intf);
-	}
+	} };
 	
 	
-	static void init_stargate(void)
+	static public static InitDriverPtr init_stargate = new InitDriverPtr() { public void handler() 
 	{
 		/* CMOS configuration */
 		CONFIGURE_CMOS(0xcc00, 0x400);
 	
 		/* PIA configuration */
 		CONFIGURE_PIAS(stargate_pia_0_intf, williams_pia_1_intf, williams_snd_pia_intf);
-	}
+	} };
 	
 	
-	static void init_joust(void)
+	static public static InitDriverPtr init_joust = new InitDriverPtr() { public void handler() 
 	{
 		/* CMOS configuration */
 		CONFIGURE_CMOS(0xcc00, 0x400);
@@ -1717,10 +1717,10 @@ public class williams
 	
 		/* PIA configuration */
 		CONFIGURE_PIAS(williams_muxed_pia_0_intf, williams_pia_1_intf, williams_snd_pia_intf);
-	}
+	} };
 	
 	
-	static void init_robotron(void)
+	static public static InitDriverPtr init_robotron = new InitDriverPtr() { public void handler() 
 	{
 		/* CMOS configuration */
 		CONFIGURE_CMOS(0xcc00, 0x400);
@@ -1730,10 +1730,10 @@ public class williams
 	
 		/* PIA configuration */
 		CONFIGURE_PIAS(williams_pia_0_intf, williams_pia_1_intf, williams_snd_pia_intf);
-	}
+	} };
 	
 	
-	static void init_bubbles(void)
+	static public static InitDriverPtr init_bubbles = new InitDriverPtr() { public void handler() 
 	{
 		/* CMOS configuration */
 		CONFIGURE_CMOS(0xcc00, 0x400);
@@ -1743,10 +1743,10 @@ public class williams
 	
 		/* PIA configuration */
 		CONFIGURE_PIAS(williams_pia_0_intf, williams_pia_1_intf, williams_snd_pia_intf);
-	}
+	} };
 	
 	
-	static void init_splat(void)
+	static public static InitDriverPtr init_splat = new InitDriverPtr() { public void handler() 
 	{
 		/* CMOS configuration */
 		CONFIGURE_CMOS(0xcc00, 0x400);
@@ -1756,10 +1756,10 @@ public class williams
 	
 		/* PIA configuration */
 		CONFIGURE_PIAS(williams_dual_muxed_pia_0_intf, williams_pia_1_intf, williams_snd_pia_intf);
-	}
+	} };
 	
 	
-	static void init_sinistar(void)
+	static public static InitDriverPtr init_sinistar = new InitDriverPtr() { public void handler() 
 	{
 		/* CMOS configuration */
 		CONFIGURE_CMOS(0xcc00, 0x400);
@@ -1773,10 +1773,10 @@ public class williams
 		/* install RAM instead of ROM in the Dxxx slot */
 		install_mem_read_handler (0, 0xd000, 0xdfff, MRA_RAM);
 		install_mem_write_handler(0, 0xd000, 0xdfff, MWA_RAM);
-	}
+	} };
 	
 	
-	static void init_lottofun(void)
+	static public static InitDriverPtr init_lottofun = new InitDriverPtr() { public void handler() 
 	{
 		/* CMOS configuration */
 		CONFIGURE_CMOS(0xcc00, 0x400);
@@ -1786,10 +1786,10 @@ public class williams
 	
 		/* PIA configuration */
 		CONFIGURE_PIAS(lottofun_pia_0_intf, williams_pia_1_intf, williams_snd_pia_intf);
-	}
+	} };
 	
 	
-	static void init_blaster(void)
+	static public static InitDriverPtr init_blaster = new InitDriverPtr() { public void handler() 
 	{
 		/* CMOS configuration */
 		CONFIGURE_CMOS(0xcc00, 0x400);
@@ -1799,10 +1799,10 @@ public class williams
 	
 		/* PIA configuration */
 		CONFIGURE_PIAS(williams_49way_pia_0_intf, williams_pia_1_intf, williams_snd_pia_intf);
-	}
+	} };
 	
 	
-	static void init_tshoot(void)
+	static public static InitDriverPtr init_tshoot = new InitDriverPtr() { public void handler() 
 	{
 		static const UINT8 tilemap_colors[] = { 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7 };
 	
@@ -1815,10 +1815,10 @@ public class williams
 	
 		/* PIA configuration */
 		CONFIGURE_PIAS(tshoot_pia_0_intf, williams2_pia_1_intf, tshoot_snd_pia_intf);
-	}
+	} };
 	
 	
-	static void init_joust2(void)
+	static public static InitDriverPtr init_joust2 = new InitDriverPtr() { public void handler() 
 	{
 		static const UINT8 tilemap_colors[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 	
@@ -1839,10 +1839,10 @@ public class williams
 		memcpy(&memory_region(REGION_CPU3)[0x40000], &memory_region(REGION_CPU3)[0x30000], 0x10000);
 		memcpy(&memory_region(REGION_CPU3)[0x58000], &memory_region(REGION_CPU3)[0x50000], 0x08000);
 		memcpy(&memory_region(REGION_CPU3)[0x60000], &memory_region(REGION_CPU3)[0x50000], 0x10000);
-	}
+	} };
 	
 	
-	static void init_mysticm(void)
+	static public static InitDriverPtr init_mysticm = new InitDriverPtr() { public void handler() 
 	{
 		static const UINT8 tilemap_colors[] = { 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 	
@@ -1859,10 +1859,10 @@ public class williams
 		/* install RAM instead of ROM in the Dxxx slot */
 		install_mem_read_handler (0, 0xd000, 0xdfff, MRA_RAM);
 		install_mem_write_handler(0, 0xd000, 0xdfff, MWA_RAM);
-	}
+	} };
 	
 	
-	static void init_inferno(void)
+	static public static InitDriverPtr init_inferno = new InitDriverPtr() { public void handler() 
 	{
 		static const UINT8 tilemap_colors[] = { 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7 };
 	
@@ -1879,7 +1879,7 @@ public class williams
 		/* install RAM instead of ROM in the Dxxx slot */
 		install_mem_read_handler (0, 0xd000, 0xdfff, MRA_RAM);
 		install_mem_write_handler(0, 0xd000, 0xdfff, MWA_RAM);
-	}
+	} };
 	
 	
 	

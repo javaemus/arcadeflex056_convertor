@@ -3663,7 +3663,7 @@ public class usrintrf
 	}
 	
 	
-	void init_user_interface(void)
+	public static InitDriverPtr init_user_interface = new InitDriverPtr() { public void handler() 
 	{
 		
 		snapno = 0; /* reset snapshot counter */
@@ -3679,7 +3679,7 @@ public class usrintrf
 		single_step = 0;
 	
 		orientation_count = 0;
-	}
+	} };
 	
 	int onscrd_active(void)
 	{

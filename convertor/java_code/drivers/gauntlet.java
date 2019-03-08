@@ -192,7 +192,7 @@ public class gauntlet
 	}
 	
 	
-	static void init_machine(void)
+	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
 	{
 		last_speed_check = 0;
 		last_speech_write = 0x80;
@@ -204,7 +204,7 @@ public class gauntlet
 		atarigen_interrupt_reset(update_interrupts);
 		atarigen_scanline_timer_reset(scanline_update, 32);
 		atarigen_sound_io_reset(1);
-	}
+	} };
 	
 	
 	
@@ -996,7 +996,7 @@ public class gauntlet
 	 *
 	 *************************************/
 	
-	static void init_gauntlet(void)
+	static public static InitDriverPtr init_gauntlet = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_default = NULL;
 		atarigen_slapstic_init(0, 0x038000, 104);
@@ -1013,10 +1013,10 @@ public class gauntlet
 		/* speed up the 68010 */
 		speed_check = install_mem_write16_handler(0, 0x904002, 0x904003, speedup_68010_w);
 		install_mem_read16_handler(0, 0x904002, 0x904003, speedup_68010_r);
-	}
+	} };
 	
 	
-	static void init_gaunt2p(void)
+	static public static InitDriverPtr init_gaunt2p = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_default = NULL;
 		atarigen_slapstic_init(0, 0x038000, 107);
@@ -1033,10 +1033,10 @@ public class gauntlet
 		/* speed up the 68010 */
 		speed_check = install_mem_write16_handler(0, 0x904002, 0x904003, speedup_68010_w);
 		install_mem_read16_handler(0, 0x904002, 0x904003, speedup_68010_r);
-	}
+	} };
 	
 	
-	static void init_gauntlet2(void)
+	static public static InitDriverPtr init_gauntlet2 = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_default = NULL;
 		atarigen_slapstic_init(0, 0x038000, 106);
@@ -1054,10 +1054,10 @@ public class gauntlet
 		/* speed up the 68010 */
 		speed_check = install_mem_write16_handler(0, 0x904002, 0x904003, speedup_68010_w);
 		install_mem_read16_handler(0, 0x904002, 0x904003, speedup_68010_r);
-	}
+	} };
 	
 	
-	static void init_vindctr2(void)
+	static public static InitDriverPtr init_vindctr2 = new InitDriverPtr() { public void handler() 
 	{
 		UINT8 *gfx2_base = memory_region(REGION_GFX2);
 		UINT8 *data;
@@ -1091,7 +1091,7 @@ public class gauntlet
 	
 		/* indicate that we are vindicators 2 */
 		vindctr2_screen_refresh = 1;
-	}
+	} };
 	
 	
 	

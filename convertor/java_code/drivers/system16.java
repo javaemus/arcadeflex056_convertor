@@ -614,10 +614,10 @@ public class system16
 		sys16_update_proc = alexkidd_update_proc;
 	}
 	
-	static void init_alexkidd( void )
+	static public static InitDriverPtr init_alexkidd = new InitDriverPtr() { public void handler() 
 	{
 		sys16_onetime_init_machine();
-	}
+	} };
 	/***************************************************************************/
 	
 	static InputPortPtr input_ports_alexkidd = new InputPortPtr(){ public void handler() { 
@@ -838,11 +838,11 @@ public class system16
 		sys16_update_proc = aliensyn_update_proc;
 	}
 	
-	static void init_aliensyn( void )
+	static public static InitDriverPtr init_aliensyn = new InitDriverPtr() { public void handler() 
 	{
 		sys16_onetime_init_machine();
 		sys16_bg1_trans=1;
-	}
+	} };
 	
 	/***************************************************************************/
 	
@@ -1036,10 +1036,10 @@ public class system16
 		sys16_update_proc = altbeast_update_proc;
 	}
 	
-	static void init_altbeast( void )
+	static public static InitDriverPtr init_altbeast = new InitDriverPtr() { public void handler() 
 	{
 		sys16_onetime_init_machine();
-	}
+	} };
 	
 	/***************************************************************************/
 	
@@ -1157,10 +1157,10 @@ public class system16
 		sys16_update_proc = atomicp_update_proc;
 	}
 	
-	static void init_atomicp( void )
+	static public static InitDriverPtr init_atomicp = new InitDriverPtr() { public void handler() 
 	{
 		sys16_onetime_init_machine();
-	}
+	} };
 	
 	/***************************************************************************/
 	
@@ -1426,12 +1426,12 @@ public class system16
 		sys16_update_proc = aurail_update_proc;
 	}
 	
-	static void init_aurail (void)
+	static public static InitDriverPtr init_aurail = new InitDriverPtr() { public void handler() 
 	{
 		sys16_onetime_init_machine();
-	}
+	} };
 	
-	static void init_auraila(void)
+	static public static InitDriverPtr init_auraila = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *rom = (data16_t *)memory_region(REGION_CPU1);
 		int diff = 0x40000;	/* place decrypted opcodes in a empty hole */
@@ -1445,7 +1445,7 @@ public class system16
 		aurail_decode_data(rom,rom,0x10000);
 		aurail_decode_opcode1(rom+diff/2,rom+diff/2,0x10000);
 		aurail_decode_opcode2(rom+(diff+0x10000)/2,rom+(diff+0x10000)/2,0x10000);
-	}
+	} };
 	
 	/***************************************************************************/
 	
@@ -1655,21 +1655,21 @@ public class system16
 		sys16_spritelist_end=0xc000;
 	}
 	
-	static void init_bayroute( void ){
+	static public static InitDriverPtr init_bayroute = new InitDriverPtr() { public void handler() {
 		sys16_onetime_init_machine();
-	}
+	} };
 	
-	static void init_bayrouta( void ){
+	static public static InitDriverPtr init_bayrouta = new InitDriverPtr() { public void handler() {
 		sys16_onetime_init_machine();
-	}
+	} };
 	
-	static void init_bayrtbl1( void ){
+	static public static InitDriverPtr init_bayrtbl1 = new InitDriverPtr() { public void handler() {
 		int i;
 		sys16_onetime_init_machine();
 		/* invert the graphics bits on the tiles */
 		for (i = 0; i < 0x30000; i++)
 			memory_region(REGION_GFX1)[i] ^= 0xff;
-	}
+	} };
 	/***************************************************************************/
 	
 	static InputPortPtr input_ports_bayroute = new InputPortPtr(){ public void handler() { 
@@ -1895,11 +1895,11 @@ public class system16
 		sys16_workingram[0x202/2] = (sec<<8)+min;
 	}
 	
-	static void init_bodyslam( void ){
+	static public static InitDriverPtr init_bodyslam = new InitDriverPtr() { public void handler() {
 		sys16_onetime_init_machine();
 		sys16_bg1_trans=1;
 		sys16_custom_irq=bodyslam_irq_timer;
-	}
+	} };
 	
 	/***************************************************************************/
 	
@@ -2070,7 +2070,7 @@ public class system16
 		sys16_sprxoffset = -0x48;
 	}
 	
-	static void init_dduxbl(void)
+	static public static InitDriverPtr init_dduxbl = new InitDriverPtr() { public void handler() 
 	{
 		int i;
 	
@@ -2079,7 +2079,7 @@ public class system16
 		/* invert the graphics bits on the tiles */
 		for (i = 0; i < 0x30000; i++)
 			memory_region(REGION_GFX1)[i] ^= 0xff;
-	}
+	} };
 	/***************************************************************************/
 	
 	static InputPortPtr input_ports_dduxbl = new InputPortPtr(){ public void handler() { 
@@ -2242,11 +2242,11 @@ public class system16
 		sys16_update_proc = eswat_update_proc;
 	}
 	
-	static void init_eswat( void ){
+	static public static InitDriverPtr init_eswat = new InitDriverPtr() { public void handler() {
 		sys16_onetime_init_machine();
 		sys16_rowscroll_scroll=0x8000;
 		sys18_splittab_fg_x=&sys16_textram[0x0f80];
-	}
+	} };
 	
 	/***************************************************************************/
 	
@@ -2464,10 +2464,10 @@ public class system16
 		sys16_update_proc = fantzone_update_proc;
 	}
 	
-	static void init_fantzone( void )
+	static public static InitDriverPtr init_fantzone = new InitDriverPtr() { public void handler() 
 	{
 		sys16_onetime_init_machine();
-	}
+	} };
 	/***************************************************************************/
 	
 	static InputPortPtr input_ports_fantzone = new InputPortPtr(){ public void handler() { 
@@ -2619,11 +2619,11 @@ public class system16
 		sys16_update_proc = fpoint_update_proc;
 	}
 	
-	static void init_fpoint(void){
+	static public static InitDriverPtr init_fpoint = new InitDriverPtr() { public void handler() {
 		sys16_onetime_init_machine();
-	}
+	} };
 	
-	static void init_fpointbl(void){
+	static public static InitDriverPtr init_fpointbl = new InitDriverPtr() { public void handler() {
 		int i;
 	
 		sys16_onetime_init_machine();
@@ -2631,7 +2631,7 @@ public class system16
 		/* invert the graphics bits on the tiles */
 		for (i = 0; i < 0x30000; i++)
 			memory_region(REGION_GFX1)[i] ^= 0xff;
-	}
+	} };
 	/***************************************************************************/
 	
 	static InputPortPtr input_ports_fpoint = new InputPortPtr(){ public void handler() { 
@@ -2880,11 +2880,11 @@ public class system16
 		sys16_update_proc = goldnaxe_update_proc;
 	}
 	
-	static void init_goldnaxe( void ){
+	static public static InitDriverPtr init_goldnaxe = new InitDriverPtr() { public void handler() {
 		sys16_onetime_init_machine();
-	}
+	} };
 	
-	static void init_goldnabl( void ){
+	static public static InitDriverPtr init_goldnabl = new InitDriverPtr() { public void handler() {
 		int i;
 	
 		sys16_onetime_init_machine();
@@ -2892,7 +2892,7 @@ public class system16
 		/* invert the graphics bits on the tiles */
 		for (i = 0; i < 0x60000; i++)
 			memory_region(REGION_GFX1)[i] ^= 0xff;
-	}
+	} };
 	
 	/***************************************************************************/
 	
@@ -3259,10 +3259,10 @@ public class system16
 		sys16_update_proc = hwchamp_update_proc;
 	}
 	
-	static void init_hwchamp( void )
+	static public static InitDriverPtr init_hwchamp = new InitDriverPtr() { public void handler() 
 	{
 		sys16_onetime_init_machine();
-	}
+	} };
 	/***************************************************************************/
 	
 	static InputPortPtr input_ports_hwchamp = new InputPortPtr(){ public void handler() { 
@@ -3468,10 +3468,10 @@ public class system16
 		sys16_update_proc = mjleague_update_proc;
 	}
 	
-	static void init_mjleague( void )
+	static public static InitDriverPtr init_mjleague = new InitDriverPtr() { public void handler() 
 	{
 		sys16_onetime_init_machine();
-	}
+	} };
 	
 	/***************************************************************************/
 	
@@ -3763,12 +3763,12 @@ public class system16
 		sys16_update_proc = passht4b_update_proc;
 	}
 	
-	static void init_passsht( void )
+	static public static InitDriverPtr init_passsht = new InitDriverPtr() { public void handler() 
 	{
 		sys16_onetime_init_machine();
-	}
+	} };
 	
-	static void init_passht4b( void ){
+	static public static InitDriverPtr init_passht4b = new InitDriverPtr() { public void handler() {
 		int i;
 	
 		sys16_onetime_init_machine();
@@ -3776,7 +3776,7 @@ public class system16
 		/* invert the graphics bits on the tiles */
 		for (i = 0; i < 0x30000; i++)
 			memory_region(REGION_GFX1)[i] ^= 0xff;
-	}
+	} };
 	
 	/***************************************************************************/
 	
@@ -4058,10 +4058,10 @@ public class system16
 		sys16_update_proc = quartet_update_proc;
 	}
 	
-	static void init_quartet( void )
+	static public static InitDriverPtr init_quartet = new InitDriverPtr() { public void handler() 
 	{
 		sys16_onetime_init_machine();
-	}
+	} };
 	/***************************************************************************/
 	
 	static InputPortPtr input_ports_quartet = new InputPortPtr(){ public void handler() { 
@@ -4242,9 +4242,9 @@ public class system16
 		sys16_update_proc = quartet2_update_proc;
 	}
 	
-	static void init_quartet2( void ){
+	static public static InitDriverPtr init_quartet2 = new InitDriverPtr() { public void handler() {
 		sys16_onetime_init_machine();
-	}
+	} };
 	/***************************************************************************/
 	
 	static InputPortPtr input_ports_quartet2 = new InputPortPtr(){ public void handler() { 
@@ -4387,10 +4387,10 @@ public class system16
 		sys16_update_proc = riotcity_update_proc;
 	}
 	
-	static void init_riotcity(void)
+	static public static InitDriverPtr init_riotcity = new InitDriverPtr() { public void handler() 
 	{
 		sys16_onetime_init_machine();
-	}
+	} };
 	
 	/***************************************************************************/
 	
@@ -4559,11 +4559,11 @@ public class system16
 		sys16_update_proc = sdi_update_proc;
 	}
 	
-	static void init_sdi( void ){
+	static public static InitDriverPtr init_sdi = new InitDriverPtr() { public void handler() {
 		sys16_onetime_init_machine();
 		sys18_splittab_bg_x=&sys16_textram[0x0fc0];
 		sys16_rowscroll_scroll=0xff00;
-	}
+	} };
 	
 	/***************************************************************************/
 	
@@ -4755,10 +4755,10 @@ public class system16
 		sys16_update_proc = shinobi_update_proc;
 	}
 	
-	static void init_shinobi( void )
+	static public static InitDriverPtr init_shinobi = new InitDriverPtr() { public void handler() 
 	{
 		sys16_onetime_init_machine();
-	}
+	} };
 	
 	/***************************************************************************/
 	
@@ -5048,15 +5048,15 @@ public class system16
 		sys16_update_proc = tetris_update_proc;
 	}
 	
-	static void init_tetris( void )
+	static public static InitDriverPtr init_tetris = new InitDriverPtr() { public void handler() 
 	{
 		sys16_onetime_init_machine();
-	}
+	} };
 	
-	static void init_tetrisbl( void )
+	static public static InitDriverPtr init_tetrisbl = new InitDriverPtr() { public void handler() 
 	{
 		sys16_onetime_init_machine();
-	}
+	} };
 	/***************************************************************************/
 	
 	static InputPortPtr input_ports_tetris = new InputPortPtr(){ public void handler() { 
@@ -5184,9 +5184,9 @@ public class system16
 		sys16_update_proc = timscanr_update_proc;
 	}
 	
-	static void init_timscanr( void ){
+	static public static InitDriverPtr init_timscanr = new InitDriverPtr() { public void handler() {
 		sys16_onetime_init_machine();
-	}
+	} };
 	/***************************************************************************/
 	
 	static InputPortPtr input_ports_timscanr = new InputPortPtr(){ public void handler() { 
@@ -5336,10 +5336,10 @@ public class system16
 		sys16_update_proc = toryumon_update_proc;
 	}
 	
-	static void init_toryumon(void)
+	static public static InitDriverPtr init_toryumon = new InitDriverPtr() { public void handler() 
 	{
 		sys16_onetime_init_machine();
-	}
+	} };
 	/***************************************************************************/
 	
 	static InputPortPtr input_ports_toryumon = new InputPortPtr(){ public void handler() { 
@@ -5502,9 +5502,9 @@ public class system16
 		sys16_update_proc = tturf_update_proc;
 	}
 	
-	static void init_tturf(void){
+	static public static InitDriverPtr init_tturf = new InitDriverPtr() { public void handler() {
 		sys16_onetime_init_machine();
-	}
+	} };
 	/***************************************************************************/
 	
 	static InputPortPtr input_ports_tturf = new InputPortPtr(){ public void handler() { 
@@ -5651,7 +5651,7 @@ public class system16
 		sys16_update_proc = tturfbl_update_proc;
 	}
 	
-	static void init_tturfbl(void)
+	static public static InitDriverPtr init_tturfbl = new InitDriverPtr() { public void handler() 
 	{
 		int i;
 	
@@ -5660,7 +5660,7 @@ public class system16
 		/* invert the graphics bits on the tiles */
 		for (i = 0; i < 0x30000; i++)
 			memory_region(REGION_GFX1)[i] ^= 0xff;
-	}
+	} };
 	/***************************************************************************/
 	// sound ??
 	MACHINE_DRIVER_7759( machine_driver_tturfbl, \
@@ -5775,9 +5775,9 @@ public class system16
 		sys16_update_proc = wb3_update_proc;
 	}
 	
-	static void init_wb3(void){
+	static public static InitDriverPtr init_wb3 = new InitDriverPtr() { public void handler() {
 		sys16_onetime_init_machine();
-	}
+	} };
 	
 	/***************************************************************************/
 	
@@ -5927,7 +5927,7 @@ public class system16
 		sys16_update_proc = wb3bl_update_proc;
 	}
 	
-	static void init_wb3bl(void)
+	static public static InitDriverPtr init_wb3bl = new InitDriverPtr() { public void handler() 
 	{
 		int i;
 	
@@ -5936,7 +5936,7 @@ public class system16
 		/* invert the graphics bits on the tiles */
 		for (i = 0; i < 0x30000; i++)
 			memory_region(REGION_GFX1)[i] ^= 0xff;
-	}
+	} };
 	
 	/***************************************************************************/
 	
@@ -6031,14 +6031,14 @@ public class system16
 		sys16_update_proc = wrestwar_update_proc;
 	}
 	
-	static void init_wrestwar( void ){
+	static public static InitDriverPtr init_wrestwar = new InitDriverPtr() { public void handler() {
 		sys16_onetime_init_machine();
 		sys16_bg1_trans=1;
 		sys16_MaxShadowColors=16;
 		sys18_splittab_bg_y=&sys16_textram[0x0f40];
 		sys18_splittab_fg_y=&sys16_textram[0x0f00];
 		sys16_rowscroll_scroll=0x8000;
-	}
+	} };
 	/***************************************************************************/
 	
 	static InputPortPtr input_ports_wrestwar = new InputPortPtr(){ public void handler() { 
@@ -6095,10 +6095,10 @@ public class system16
 	static void sys16_dummy_init_machine( void ){
 	}
 	
-	static void init_s16dummy( void )
+	static public static InitDriverPtr init_s16dummy = new InitDriverPtr() { public void handler() 
 	{
 		sys16_onetime_init_machine();
-	}
+	} };
 	
 	static InputPortPtr input_ports_s16dummy = new InputPortPtr(){ public void handler() { 
 	INPUT_PORTS_END(); }}; 

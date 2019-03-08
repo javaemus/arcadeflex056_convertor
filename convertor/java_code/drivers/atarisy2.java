@@ -238,7 +238,7 @@ public class atarisy2
 	 *
 	 *************************************/
 	
-	static void init_machine(void)
+	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_reset();
 		slapstic_reset();
@@ -252,7 +252,7 @@ public class atarisy2
 		p2portrd_state = 0;
 	
 		which_adc = 0;
-	}
+	} };
 	
 	
 	
@@ -1750,7 +1750,7 @@ public class atarisy2
 	 *
 	 *************************************/
 	
-	static void init_paperboy(void)
+	static public static InitDriverPtr init_paperboy = new InitDriverPtr() { public void handler() 
 	{
 		static const data16_t compressed_default_eeprom[] =
 		{
@@ -1798,10 +1798,10 @@ public class atarisy2
 	
 		pedal_count = 0;
 		has_tms5220 = 1;
-	}
+	} };
 	
 	
-	static void init_a720(void)
+	static public static InitDriverPtr init_a720 = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_default = NULL;
 		atarigen_init_6502_speedup(1, 0x410f, 0x4127);
@@ -1810,10 +1810,10 @@ public class atarisy2
 	
 		pedal_count = -1;
 		has_tms5220 = 1;
-	}
+	} };
 	
 	
-	static void init_ssprint(void)
+	static public static InitDriverPtr init_ssprint = new InitDriverPtr() { public void handler() 
 	{
 		static const data16_t compressed_default_eeprom[] =
 		{
@@ -1855,10 +1855,10 @@ public class atarisy2
 	
 		pedal_count = 3;
 		has_tms5220 = 0;
-	}
+	} };
 	
 	
-	static void init_csprint(void)
+	static public static InitDriverPtr init_csprint = new InitDriverPtr() { public void handler() 
 	{
 		static const data16_t compressed_default_eeprom[] =
 		{
@@ -1903,10 +1903,10 @@ public class atarisy2
 	
 		pedal_count = 2;
 		has_tms5220 = 0;
-	}
+	} };
 	
 	
-	static void init_apb(void)
+	static public static InitDriverPtr init_apb = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_default = NULL;
 		atarigen_init_6502_speedup(1, 0x410f, 0x4127);
@@ -1915,7 +1915,7 @@ public class atarisy2
 	
 		pedal_count = 2;
 		has_tms5220 = 1;
-	}
+	} };
 	
 	
 	

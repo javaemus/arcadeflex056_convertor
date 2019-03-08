@@ -72,7 +72,7 @@ public class omegaf
 	  Initializers
 	**************************************************************************/
 	
-	static void init_omegaf(void)
+	static public static InitDriverPtr init_omegaf = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -99,7 +99,7 @@ public class omegaf
 		RAM[0x0b8d] = 0x00;
 		RAM[0x0b8e] = 0x00;
 		RAM[0x0b8f] = 0x00;
-	}
+	} };
 	
 	
 	/**************************************************************************

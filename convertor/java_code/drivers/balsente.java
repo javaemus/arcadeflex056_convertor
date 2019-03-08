@@ -294,7 +294,7 @@ public class balsente
 	}
 	
 	
-	static void init_machine(void)
+	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
 	{
 		/* create the polynomial tables */
 		poly17_init();
@@ -329,7 +329,7 @@ public class balsente
 	
 		/* start a timer to generate interrupts */
 		timer_set(cpu_getscanlinetime(0), 0, interrupt_timer);
-	}
+	} };
 	
 	
 	
@@ -2710,40 +2710,40 @@ public class balsente
 		}
 	}
 	
-	static void init_sentetst(void) { expand_roms(EXPAND_ALL);  balsente_shooter = 0; /* noanalog */ }
-	static void init_cshift(void)   { expand_roms(EXPAND_ALL);  balsente_shooter = 0; /* noanalog */ }
-	static void init_gghost(void)   { expand_roms(EXPAND_ALL);  balsente_shooter = 0; adc_shift = 1; }
-	static void init_hattrick(void) { expand_roms(EXPAND_ALL);  balsente_shooter = 0; /* noanalog */ }
-	static void init_otwalls(void)  { expand_roms(EXPAND_ALL);  balsente_shooter = 0; adc_shift = 0; }
-	static void init_snakepit(void) { expand_roms(EXPAND_ALL);  balsente_shooter = 0; adc_shift = 1; }
-	static void init_snakjack(void) { expand_roms(EXPAND_ALL);  balsente_shooter = 0; adc_shift = 1; }
-	static void init_stocker(void)  { expand_roms(EXPAND_ALL);  balsente_shooter = 0; adc_shift = 0; }
-	static void init_triviag1(void) { expand_roms(EXPAND_ALL);  balsente_shooter = 0; /* noanalog */ }
-	static void init_triviag2(void)
+	static public static InitDriverPtr init_sentetst = new InitDriverPtr() { public void handler()  { expand_roms(EXPAND_ALL);  balsente_shooter = 0; /* noanalog */ } };
+	static public static InitDriverPtr init_cshift = new InitDriverPtr() { public void handler()    { expand_roms(EXPAND_ALL);  balsente_shooter = 0; /* noanalog */ } };
+	static public static InitDriverPtr init_gghost = new InitDriverPtr() { public void handler()    { expand_roms(EXPAND_ALL);  balsente_shooter = 0; adc_shift = 1; } };
+	static public static InitDriverPtr init_hattrick = new InitDriverPtr() { public void handler()  { expand_roms(EXPAND_ALL);  balsente_shooter = 0; /* noanalog */ } };
+	static public static InitDriverPtr init_otwalls = new InitDriverPtr() { public void handler()   { expand_roms(EXPAND_ALL);  balsente_shooter = 0; adc_shift = 0; } };
+	static public static InitDriverPtr init_snakepit = new InitDriverPtr() { public void handler()  { expand_roms(EXPAND_ALL);  balsente_shooter = 0; adc_shift = 1; } };
+	static public static InitDriverPtr init_snakjack = new InitDriverPtr() { public void handler()  { expand_roms(EXPAND_ALL);  balsente_shooter = 0; adc_shift = 1; } };
+	static public static InitDriverPtr init_stocker = new InitDriverPtr() { public void handler()   { expand_roms(EXPAND_ALL);  balsente_shooter = 0; adc_shift = 0; } };
+	static public static InitDriverPtr init_triviag1 = new InitDriverPtr() { public void handler()  { expand_roms(EXPAND_ALL);  balsente_shooter = 0; /* noanalog */ } };
+	static public static InitDriverPtr init_triviag2 = new InitDriverPtr() { public void handler() 
 	{
 		memcpy(&memory_region(REGION_CPU1)[0x20000], &memory_region(REGION_CPU1)[0x28000], 0x4000);
 		memcpy(&memory_region(REGION_CPU1)[0x24000], &memory_region(REGION_CPU1)[0x28000], 0x4000);
 		expand_roms(EXPAND_NONE); balsente_shooter = 0; /* noanalog */
-	}
-	static void init_gimeabrk(void) { expand_roms(EXPAND_ALL);  balsente_shooter = 0; adc_shift = 1; }
-	static void init_minigolf(void) { expand_roms(EXPAND_NONE); balsente_shooter = 0; adc_shift = 2; }
-	static void init_minigol2(void) { expand_roms(0x0c);        balsente_shooter = 0; adc_shift = 2; }
-	static void init_toggle(void)   { expand_roms(EXPAND_ALL);  balsente_shooter = 0; /* noanalog */ }
-	static void init_nametune(void) { expand_roms(EXPAND_NONE | SWAP_HALVES); balsente_shooter = 0; /* noanalog */ }
-	static void init_nstocker(void)
+	} };
+	static public static InitDriverPtr init_gimeabrk = new InitDriverPtr() { public void handler()  { expand_roms(EXPAND_ALL);  balsente_shooter = 0; adc_shift = 1; } };
+	static public static InitDriverPtr init_minigolf = new InitDriverPtr() { public void handler()  { expand_roms(EXPAND_NONE); balsente_shooter = 0; adc_shift = 2; } };
+	static public static InitDriverPtr init_minigol2 = new InitDriverPtr() { public void handler()  { expand_roms(0x0c);        balsente_shooter = 0; adc_shift = 2; } };
+	static public static InitDriverPtr init_toggle = new InitDriverPtr() { public void handler()    { expand_roms(EXPAND_ALL);  balsente_shooter = 0; /* noanalog */ } };
+	static public static InitDriverPtr init_nametune = new InitDriverPtr() { public void handler()  { expand_roms(EXPAND_NONE | SWAP_HALVES); balsente_shooter = 0; /* noanalog */ } };
+	static public static InitDriverPtr init_nstocker = new InitDriverPtr() { public void handler() 
 	{
 		install_mem_read_handler(0, 0x9902, 0x9902, nstocker_port2_r);
 		expand_roms(EXPAND_NONE | SWAP_HALVES); balsente_shooter = 1; adc_shift = 1;
-	}
-	static void init_sfootbal(void) { expand_roms(EXPAND_ALL  | SWAP_HALVES); balsente_shooter = 0; adc_shift = 0; }
-	static void init_spiker(void)
+	} };
+	static public static InitDriverPtr init_sfootbal = new InitDriverPtr() { public void handler()  { expand_roms(EXPAND_ALL  | SWAP_HALVES); balsente_shooter = 0; adc_shift = 0; } };
+	static public static InitDriverPtr init_spiker = new InitDriverPtr() { public void handler() 
 	{
 		install_mem_write_handler(0, 0x9f80, 0x9f8f, spiker_expand_w);
 		install_mem_read_handler(0, 0x9f80, 0x9f8f, spiker_expand_r);
 		expand_roms(EXPAND_ALL  | SWAP_HALVES); balsente_shooter = 0; adc_shift = 1;
-	}
-	static void init_stompin(void)  { expand_roms(0x0c | SWAP_HALVES); balsente_shooter = 0; adc_shift = 32; }
-	static void init_rescraid(void) { expand_roms(EXPAND_NONE); balsente_shooter = 0; /* noanalog */ }
+	} };
+	static public static InitDriverPtr init_stompin = new InitDriverPtr() { public void handler()   { expand_roms(0x0c | SWAP_HALVES); balsente_shooter = 0; adc_shift = 32; } };
+	static public static InitDriverPtr init_rescraid = new InitDriverPtr() { public void handler()  { expand_roms(EXPAND_NONE); balsente_shooter = 0; /* noanalog */ } };
 	
 	
 	

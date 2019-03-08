@@ -762,7 +762,7 @@ public class kchamp
 	
 	
 	
-	static void init_kchampvs( void )
+	static public static InitDriverPtr init_kchampvs = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *rom = memory_region(REGION_CPU1);
 		int diff = memory_region_length(REGION_CPU1) / 2;
@@ -792,7 +792,7 @@ public class kchamp
 		A += 2;
 		rom[A+diff] = rom[A];	/* fix fourth opcode (ld ($xxxx),a */
 		/* and from here on, opcodes are encrypted */
-	}
+	} };
 	
 	
 	

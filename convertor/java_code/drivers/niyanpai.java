@@ -274,7 +274,7 @@ public class niyanpai
 	}
 	
 	
-	static void init_niyanpai(void) { initialize_driver(); }
+	static public static InitDriverPtr init_niyanpai = new InitDriverPtr() { public void handler()  { initialize_driver(); } };
 	
 	
 	static READ16_HANDLER( niyanpai_dipsw_r )

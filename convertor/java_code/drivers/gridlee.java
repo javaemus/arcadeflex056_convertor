@@ -159,7 +159,7 @@ public class gridlee
 	}
 	
 	
-	static void init_machine(void)
+	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
 	{
 		/* start timers to generate interrupts */
 		timer_set(cpu_getscanlinetime(0), 0, irq_timer);
@@ -167,7 +167,7 @@ public class gridlee
 	
 		/* create the polynomial tables */
 		poly17_init();
-	}
+	} };
 	
 	
 	

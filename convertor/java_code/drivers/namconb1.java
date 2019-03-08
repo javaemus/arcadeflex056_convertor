@@ -228,27 +228,27 @@ public class namconb1
 		}
 	}
 	
-	static void init_nebulray( void )
+	static public static InitDriverPtr init_nebulray = new InitDriverPtr() { public void handler() 
 	{
 		namconb1_type = key_nebulray;
-	}
+	} };
 	
-	static void init_gslgr94u( void )
+	static public static InitDriverPtr init_gslgr94u = new InitDriverPtr() { public void handler() 
 	{
 		namconb1_type = key_gslgr94u;
-	}
+	} };
 	
-	static void init_sws96( void )
+	static public static InitDriverPtr init_sws96 = new InitDriverPtr() { public void handler() 
 	{
 		namconb1_type = key_sws96;
-	}
+	} };
 	
-	static void init_sws97( void )
+	static public static InitDriverPtr init_sws97 = new InitDriverPtr() { public void handler() 
 	{
 		namconb1_type = key_sws97;
-	}
+	} };
 	
-	static void init_gunbulet( void )
+	static public static InitDriverPtr init_gunbulet = new InitDriverPtr() { public void handler() 
 	{
 	//	data32_t *pMem = (data32_t *)memory_region(REGION_CPU1);
 		namconb1_type = key_gunbulet;
@@ -260,7 +260,7 @@ public class namconb1
 		//p2 gun patch; without it you cannot shoot in the left 24 pixels
 	//	pMem[0xA87C/4] = 0x4E714E71;
 	//	pMem[0xA898/4] = 0x4E714E71;
-	}
+	} };
 	
 	static READ32_HANDLER( custom_key_r )
 	{

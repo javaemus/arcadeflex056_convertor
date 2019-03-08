@@ -494,7 +494,7 @@ public class slapshot
 	//	ROM_LOAD( "d71-13.8",   0x00000, 0x00???, 0x00000000 );
 	ROM_END(); }}; 
 	
-	static void init_slapshot(void)
+	static public static InitDriverPtr init_slapshot = new InitDriverPtr() { public void handler() 
 	{
 		unsigned int offset,i;
 		UINT8 *gfx = memory_region(REGION_GFX2);
@@ -522,7 +522,7 @@ public class slapshot
 	
 		state_save_register_int("sound1", 0, "sound region", &banknum);
 		state_save_register_func_postload(reset_sound_region);
-	}
+	} };
 	
 	public static GameDriver driver_slapshot	   = new GameDriver("1994"	,"slapshot"	,"slapshot.java"	,rom_slapshot,null	,machine_driver_slapshot	,input_ports_slapshot	,init_slapshot	,ROT0	,	"Taito Corporation", "Slap Shot (Japan)" )
 }

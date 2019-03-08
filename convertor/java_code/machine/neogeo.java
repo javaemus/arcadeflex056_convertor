@@ -80,7 +80,7 @@ public class neogeo
 	
 	
 	/* This function is only called once per game. */
-	void init_neogeo(void)
+	public static InitDriverPtr init_neogeo = new InitDriverPtr() { public void handler() 
 	{
 		extern struct YM2610interface neogeo_ym2610_interface;
 		data16_t *mem16 = (data16_t *)memory_region(REGION_CPU1);
@@ -227,7 +227,7 @@ public class neogeo
 	
 		/* Install custom memory handlers */
 		neogeo_custom_memory();
-	}
+	} };
 	
 	/******************************************************************************/
 	

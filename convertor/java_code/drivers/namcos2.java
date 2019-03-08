@@ -3384,56 +3384,56 @@ public class namcos2
 	/*															 */
 	/*************************************************************/
 	
-	void init_assault(void)
+	public static InitDriverPtr init_assault = new InitDriverPtr() { public void handler() 
 	{
 		namcos2_gametype=NAMCOS2_ASSAULT;
-	}
+	} };
 	
-	void init_assaultj(void)
+	public static InitDriverPtr init_assaultj = new InitDriverPtr() { public void handler() 
 	{
 		namcos2_gametype=NAMCOS2_ASSAULT_JP;
-	}
+	} };
 	
-	void init_assaultp(void)
+	public static InitDriverPtr init_assaultp = new InitDriverPtr() { public void handler() 
 	{
 		namcos2_gametype=NAMCOS2_ASSAULT_PLUS;
-	}
+	} };
 	
-	void init_burnforc(void)
+	public static InitDriverPtr init_burnforc = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *rom = (data16_t *)memory_region(REGION_CPU1);
 		namcos2_gametype=NAMCOS2_BURNING_FORCE;
 		rom[0x001e18/2] = 0x4e75;	// Patch $d00000 checks
 		rom[0x003a9c/2] = 0x4e75;	// Patch $d00000 checks
-	}
+	} };
 	
-	void init_cosmogng(void)
+	public static InitDriverPtr init_cosmogng = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *rom = (data16_t *)memory_region(REGION_CPU1);
 		namcos2_gametype=NAMCOS2_COSMO_GANG;
 		rom[0x0034d2/2] = 0x4e75;	// Patch $d00000 checks
-	}
+	} };
 	
 	
-	void init_dsaber(void)
+	public static InitDriverPtr init_dsaber = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *rom = (data16_t *)memory_region(REGION_CPU1);
 		namcos2_gametype=NAMCOS2_DRAGON_SABER;
 		rom[0x001172/2] = 0x4e75;	// Patch $d00000 checks
 		rom[0x00119c/2] = 0x4e75;	// Patch $d00000 checks
 		rom[0x002160/2] = 0x4e75;	// Patch $d00000 checks
-	}
+	} };
 	
-	void init_dsaberj(void)
+	public static InitDriverPtr init_dsaberj = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *rom = (data16_t *)memory_region(REGION_CPU1);
 		namcos2_gametype=NAMCOS2_DRAGON_SABER_JP;
 		rom[0x001172/2] = 0x4e75;	// Patch $d00000 checks
 		rom[0x0011a4/2] = 0x4e75;	// Patch $d00000 checks
 		rom[0x002160/2] = 0x4e75;	// Patch $d00000 checks
-	}
+	} };
 	
-	void init_dirtfoxj(void)
+	public static InitDriverPtr init_dirtfoxj = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *rom = (data16_t *)memory_region(REGION_CPU1);
 		namcos2_gametype=NAMCOS2_DIRT_FOX_JP;
@@ -3441,14 +3441,14 @@ public class namcos2
 	
 		/* HACK TO MAKE STEERING WORK */
 		rom[0x00cd0a/2] = 0x007f;
-	}
+	} };
 	
-	void init_finallap(void)
+	public static InitDriverPtr init_finallap = new InitDriverPtr() { public void handler() 
 	{
 		namcos2_gametype=NAMCOS2_FINAL_LAP;
-	}
+	} };
 	
-	void init_finalap2(void)
+	public static InitDriverPtr init_finalap2 = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *rom = (data16_t *)memory_region(REGION_CPU1);
 		namcos2_gametype=NAMCOS2_FINAL_LAP_2;
@@ -3456,9 +3456,9 @@ public class namcos2
 		rom[0x00402a/2] = 0x4e71;
 		rom[0x00403e/2] = 0x4e71;
 		rom[0x004040/2] = 0x4e71;
-	}
+	} };
 	
-	void init_finalp2j(void)
+	public static InitDriverPtr init_finalp2j = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *rom = (data16_t *)memory_region(REGION_CPU1);
 		namcos2_gametype=NAMCOS2_FINAL_LAP_2;
@@ -3470,9 +3470,9 @@ public class namcos2
 		rom[0x00402a/2] = 0x4e71;
 		rom[0x00403e/2] = 0x4e71;
 		rom[0x004040/2] = 0x4e71;
-	}
+	} };
 	
-	void init_finalap3(void)
+	public static InitDriverPtr init_finalap3 = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *rom = (data16_t *)memory_region(REGION_CPU1);
 		namcos2_gametype=NAMCOS2_FINAL_LAP_3;
@@ -3484,31 +3484,31 @@ public class namcos2
 		rom[0x003f68/2] = 0x4e71;
 		rom[0x003f7c/2] = 0x4e71;
 		rom[0x003f7e/2] = 0x4e71;
-	}
+	} };
 	
-	void init_finehour(void)
+	public static InitDriverPtr init_finehour = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *rom = (data16_t *)memory_region(REGION_CPU1);
 		namcos2_gametype=NAMCOS2_FINEST_HOUR;
 		rom[0x001892/2] = 0x4e75;	// Patch $d00000 checks
 		rom[0x003ac0/2] = 0x4e71;	// Patch $d00000 checks
 		rom[0x00467c/2] = 0x4e71;	// Patch $d00000 checks
-	}
+	} };
 	
-	void init_fourtrax(void)
+	public static InitDriverPtr init_fourtrax = new InitDriverPtr() { public void handler() 
 	{
 		namcos2_gametype=NAMCOS2_FOUR_TRAX;
-	}
+	} };
 	
-	void init_kyukaidk(void)
+	public static InitDriverPtr init_kyukaidk = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *rom = (data16_t *)memory_region(REGION_CPU1);
 		namcos2_gametype=NAMCOS2_KYUUKAI_DOUCHUUKI;
 		rom[0x0004ae/2] = 0x4e71;	// Patch $d00000 checks (seems to make no difference)
 		rom[0x01e7ea/2] = 0x4e75;	// Patch $d00000 checks (seems to make no difference)
-	}
+	} };
 	
-	void init_marvlanj(void)
+	public static InitDriverPtr init_marvlanj = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *rom = (data16_t *)memory_region(REGION_CPU1);
 		namcos2_gametype=NAMCOS2_MARVEL_LAND;
@@ -3516,9 +3516,9 @@ public class namcos2
 		rom[0x001fb2/2] = 0x4e75;	// Patch $d00000 checks
 		rom[0x0048b6/2] = 0x4e75;	// Patch $d00000 checks
 		rom[0x0048d2/2] = 0x4e75;	// Patch $d00000 checks
-	}
+	} };
 	
-	void init_marvland(void)
+	public static InitDriverPtr init_marvland = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *rom = (data16_t *)memory_region(REGION_CPU1);
 		namcos2_gametype=NAMCOS2_MARVEL_LAND;
@@ -3526,30 +3526,30 @@ public class namcos2
 		rom[0x00223a/2] = 0x4e75;	// Patch $d00000 checks
 		rom[0x004cf4/2] = 0x4e75;	// Patch $d00000 checks
 		rom[0x004d10/2] = 0x4e75;	// Patch $d00000 checks
-	}
+	} };
 	
-	void init_metlhawk(void)
+	public static InitDriverPtr init_metlhawk = new InitDriverPtr() { public void handler() 
 	{
 		namcos2_gametype=NAMCOS2_METAL_HAWK;
-	}
+	} };
 	
-	void init_mirninja(void)
+	public static InitDriverPtr init_mirninja = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *rom = (data16_t *)memory_region(REGION_CPU1);
 		namcos2_gametype=NAMCOS2_MIRAI_NINJA;
 		rom[0x00052a/2] = 0x4e71;	// Patch $d00000 checks
 		rom[0x01de68/2] = 0x4e75;	// Patch $d00000 checks
-	}
+	} };
 	
-	void init_ordyne(void)
+	public static InitDriverPtr init_ordyne = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *rom = (data16_t *)memory_region(REGION_CPU1);
 		namcos2_gametype=NAMCOS2_ORDYNE;
 		rom[0x0025a4/2] = 0x4e75;	// Patch $d00000 checks
 		rom[0x0025c2/2] = 0x4e75;	// Patch $d00000 checks
-	}
+	} };
 	
-	void init_phelios(void)
+	public static InitDriverPtr init_phelios = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *rom = (data16_t *)memory_region(REGION_CPU1);
 		namcos2_gametype=NAMCOS2_PHELIOS;
@@ -3566,9 +3566,9 @@ public class namcos2
 		rom[0x00122e/2] = 0x4e71;	// Patch $d00000 checks
 		rom[0x001230/2] = 0x4e71;	// Patch $d00000 checks
 		rom[0x02607a/2] = 0x4e75;	// Patch $d00000 checks
-	}
+	} };
 	
-	void init_rthun2(void)
+	public static InitDriverPtr init_rthun2 = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *rom = (data16_t *)memory_region(REGION_CPU1);
 		namcos2_gametype=NAMCOS2_ROLLING_THUNDER_2;
@@ -3579,9 +3579,9 @@ public class namcos2
 		rom[0x004264/2] = 0x0010;	// move.w $d00004,$100002
 		rom[0x004266/2] = 0x0002;	//		   with
 		rom[0x004268/2] = 0x4e71;	// move.w #$0001,$100002
-	}
+	} };
 	
-	void init_rthun2j(void)
+	public static InitDriverPtr init_rthun2j = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *rom = (data16_t *)memory_region(REGION_CPU1);
 		namcos2_gametype=NAMCOS2_ROLLING_THUNDER_2;
@@ -3593,45 +3593,45 @@ public class namcos2
 		rom[0x004086/2] = 0x0010;	// move.w $d00004,$100002
 		rom[0x004088/2] = 0x0002;	//		   with
 		rom[0x00408a/2] = 0x4e71;	// move.w #$0001,$100002
-	}
+	} };
 	
-	void init_sgunner2(void)
+	public static InitDriverPtr init_sgunner2 = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *rom = (data16_t *)memory_region(REGION_CPU1);
 		namcos2_gametype=NAMCOS2_STEEL_GUNNER_2;
 		rom[0x001162/2] = 0x4e71;	// Patch $a00000 checks
-	}
+	} };
 	
-	void init_sws92(void)
+	public static InitDriverPtr init_sws92 = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *rom = (data16_t *)memory_region(REGION_CPU1);
 		namcos2_gametype=NAMCOS2_SUPER_WSTADIUM_92;
 		rom[0x0011fc/2] = 0x4e71;	// Patch $d00000 checks
 		rom[0x0011fe/2] = 0x4e71;	// Patch $d00000 checks
-	}
+	} };
 	
-	void init_sws92g(void)
+	public static InitDriverPtr init_sws92g = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *rom = (data16_t *)memory_region(REGION_CPU1);
 		namcos2_gametype=NAMCOS2_SUPER_WSTADIUM_92T;
 		rom[0x001206/2] = 0x4e71;	// Patch $d00000 checks
 		rom[0x001208/2] = 0x4e71;	// Patch $d00000 checks
-	}
+	} };
 	
-	void init_sws93(void)
+	public static InitDriverPtr init_sws93 = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *rom = (data16_t *)memory_region(REGION_CPU1);
 		namcos2_gametype=NAMCOS2_SUPER_WSTADIUM_93;
 		rom[0x0013ae/2] = 0x4e71;	// Patch $d00000 checks
 		rom[0x0013b0/2] = 0x4e71;	// Patch $d00000 checks
-	}
+	} };
 	
-	void init_suzuka8h(void)
+	public static InitDriverPtr init_suzuka8h = new InitDriverPtr() { public void handler() 
 	{
 		namcos2_gametype=NAMCOS2_SUZUKA_8_HOURS;
-	}
+	} };
 	
-	void init_suzuk8h2(void)
+	public static InitDriverPtr init_suzuk8h2 = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *rom = (data16_t *)memory_region(REGION_CPU1);
 		namcos2_gametype=NAMCOS2_SUZUKA_8_HOURS_2;
@@ -3639,12 +3639,12 @@ public class namcos2
 		rom[0x003ede/2] = 0x4e71;
 		rom[0x003ee0/2] = 0x4e71;
 		rom[0x003eee/2] = 0x4e71;
-	}
+	} };
 	
-	void init_valkyrie(void)
+	public static InitDriverPtr init_valkyrie = new InitDriverPtr() { public void handler() 
 	{
 		namcos2_gametype=NAMCOS2_VALKYRIE;
-	}
+	} };
 	
 	/* Missing ROM sets/games */
 	

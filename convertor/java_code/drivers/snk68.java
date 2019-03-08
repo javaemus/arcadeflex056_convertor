@@ -1263,10 +1263,10 @@ public class snk68
 	
 	/******************************************************************************/
 	
-	static void init_searchar(void)
+	static public static InitDriverPtr init_searchar = new InitDriverPtr() { public void handler() 
 	{
 		cpu_setbank(1, memory_region(REGION_USER1));
-	}
+	} };
 	
 	/******************************************************************************/
 	

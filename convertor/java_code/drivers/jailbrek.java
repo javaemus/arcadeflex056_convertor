@@ -356,10 +356,10 @@ public class jailbrek
 	ROM_END(); }}; 
 	
 	
-	static void init_jailbrek(void)
+	static public static InitDriverPtr init_jailbrek = new InitDriverPtr() { public void handler() 
 	{
 		konami1_decode();
-	}
+	} };
 	
 	
 	public static GameDriver driver_jailbrek	   = new GameDriver("1986"	,"jailbrek"	,"jailbrek.java"	,rom_jailbrek,null	,machine_driver_jailbrek	,input_ports_jailbrek	,init_jailbrek	,ROT0	,	"Konami", "Jail Break" )

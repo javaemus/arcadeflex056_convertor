@@ -732,11 +732,11 @@ public class warriorb
 	ROM_END(); }}; 
 	
 	
-	static void init_warriorb(void)
+	static public static InitDriverPtr init_warriorb = new InitDriverPtr() { public void handler() 
 	{
 		state_save_register_int("sound1", 0, "sound region", &banknum);
 		state_save_register_func_postload(reset_sound_region);
-	}
+	} };
 	
 	
 	/* Working Games */

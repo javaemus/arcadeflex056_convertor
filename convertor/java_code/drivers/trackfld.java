@@ -639,10 +639,10 @@ public class trackfld
 	ROM_END(); }}; 
 	
 	
-	static void init_trackfld(void)
+	static public static InitDriverPtr init_trackfld = new InitDriverPtr() { public void handler() 
 	{
 		konami1_decode();
-	}
+	} };
 	
 	
 	public static GameDriver driver_trackfld	   = new GameDriver("1983"	,"trackfld"	,"trackfld.java"	,rom_trackfld,null	,machine_driver_tracklfd	,input_ports_trackfld	,init_trackfld	,ROT0	,	"Konami", "Track & Field" )

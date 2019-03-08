@@ -225,7 +225,7 @@ public class system18
 		sys16_update_proc = shdancer_update_proc;
 	}
 	
-	static void init_shdancer( void ){
+	static public static InitDriverPtr init_shdancer = new InitDriverPtr() { public void handler() {
 		unsigned char *RAM = memory_region(REGION_CPU2);
 		sys16_onetime_init_machine();
 		sys18_splittab_fg_x=&sys16_textram[0x0f80/2];
@@ -234,7 +234,7 @@ public class system18
 		sys16_MaxShadowColors=0; // doesn't seem to use transparent shadows
 	
 		memcpy(RAM,&RAM[0x10000],0xa000);
-	}
+	} };
 	
 	/***************************************************************************/
 	
@@ -320,7 +320,7 @@ public class system18
 		sys16_update_proc = shdancbl_update_proc;
 	}
 	
-	static void init_shdancbl( void ){
+	static public static InitDriverPtr init_shdancbl = new InitDriverPtr() { public void handler() {
 		unsigned char *RAM= memory_region(REGION_CPU2);
 		int i;
 	
@@ -335,7 +335,7 @@ public class system18
 		/* invert the graphics bits on the tiles */
 		for (i = 0; i < 0xc0000; i++)
 			memory_region(REGION_GFX1)[i] ^= 0xff;
-	}
+	} };
 	
 	/***************************************************************************/
 	static READ16_HANDLER( shdancrj_skip_r ){
@@ -349,7 +349,7 @@ public class system18
 		sys16_update_proc = shdancer_update_proc;
 	}
 	
-	static void init_shdancrj( void ){
+	static public static InitDriverPtr init_shdancrj = new InitDriverPtr() { public void handler() {
 		unsigned char *RAM= memory_region(REGION_CPU2);
 		sys16_onetime_init_machine();
 		sys18_splittab_fg_x=&sys16_textram[0x0f80/2];
@@ -357,7 +357,7 @@ public class system18
 	//	install_mem_read_handler(0, 0xffc000, 0xffc001, shdancrj_skip_r );
 	
 		memcpy(RAM,&RAM[0x10000],0xa000);
-	}
+	} };
 	
 	/***************************************************************************/
 	
@@ -482,14 +482,14 @@ public class system18
 		sys16_update_proc = moonwalk_update_proc;
 	}
 	
-	static void init_moonwalk( void ){
+	static public static InitDriverPtr init_moonwalk = new InitDriverPtr() { public void handler() {
 		unsigned char *RAM= memory_region(REGION_CPU2);
 		sys16_onetime_init_machine();
 		sys18_splittab_fg_x=&sys16_textram[0x0f80/2];
 		sys18_splittab_bg_x=&sys16_textram[0x0fc0/2];
 	
 		memcpy(RAM,&RAM[0x10000],0xa000);
-	}
+	} };
 	
 	/***************************************************************************/
 	
@@ -651,7 +651,7 @@ public class system18
 		sys16_update_proc = astorm_update_proc;
 	}
 	
-	static void init_astorm( void ){
+	static public static InitDriverPtr init_astorm = new InitDriverPtr() { public void handler() {
 		unsigned char *RAM= memory_region(REGION_CPU2);
 		sys16_onetime_init_machine();
 		sys18_splittab_fg_x=&sys16_textram[0x0f80/2];
@@ -659,7 +659,7 @@ public class system18
 	
 		memcpy(RAM,&RAM[0x10000],0xa000);
 		sys16_MaxShadowColors = 0; // doesn't seem to use transparent shadows
-	}
+	} };
 	
 	/*****************************************************************************/
 	

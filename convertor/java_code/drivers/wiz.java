@@ -776,7 +776,7 @@ public class wiz
 	
 	
 	
-	static void init_stinger(void)
+	static public static InitDriverPtr init_stinger = new InitDriverPtr() { public void handler() 
 	{
 		static const unsigned char xortable[4][4] =
 		{
@@ -819,13 +819,13 @@ public class wiz
 				rom[A+diff] = src ^ xortable[row][col];
 			}
 		}
-	}
+	} };
 	
 	
-	static void init_wiz(void)
+	static public static InitDriverPtr init_wiz = new InitDriverPtr() { public void handler() 
 	{
 		install_mem_read_handler(0, 0xd400, 0xd400, wiz_protection_r);
-	}
+	} };
 	
 	
 	public static GameDriver driver_stinger	   = new GameDriver("1983"	,"stinger"	,"wiz.java"	,rom_stinger,null	,machine_driver_stinger	,input_ports_stinger	,init_stinger	,ROT90	,	"Seibu Denshi", "Stinger" )

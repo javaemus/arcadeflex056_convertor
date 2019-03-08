@@ -217,7 +217,7 @@ public class subs
 	ROM_END(); }}; 
 	
 	
-	static void init_subs(void)
+	static public static InitDriverPtr init_subs = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *rom = memory_region(REGION_CPU1);
 		int i;
@@ -229,7 +229,7 @@ public class subs
 		{
 			rom[0x2000+i] = (rom[0x8000+i]<<4)+rom[0x9000+i];
 		}
-	}
+	} };
 	
 	
 	public static GameDriver driver_subs	   = new GameDriver("1977"	,"subs"	,"subs.java"	,rom_subs,null	,machine_driver_subs	,input_ports_subs	,init_subs	,ROT0	,	"Atari", "Subs", GAME_NO_SOUND )

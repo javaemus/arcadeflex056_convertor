@@ -605,7 +605,7 @@ public class meadows
 	
 	
 	/* A fake for the missing ball sprites #3 and #4 */
-	static void init_gypsyjug(void)
+	static public static InitDriverPtr init_gypsyjug = new InitDriverPtr() { public void handler() 
 	{
 	int i;
 	static unsigned char ball[16*2] = {
@@ -621,7 +621,7 @@ public class meadows
 			memcpy(memory_region(REGION_GFX4) + i, ball, sizeof(ball));
 			memcpy(memory_region(REGION_GFX5) + i, ball, sizeof(ball));
 		}
-	}
+	} };
 	
 	
 	

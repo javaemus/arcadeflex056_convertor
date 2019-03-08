@@ -478,10 +478,10 @@ public class megazone
 	ROM_END(); }}; 
 	
 	
-	static void init_megazone(void)
+	static public static InitDriverPtr init_megazone = new InitDriverPtr() { public void handler() 
 	{
 		konami1_decode();
-	}
+	} };
 	
 	
 	public static GameDriver driver_megazone	   = new GameDriver("1983"	,"megazone"	,"megazone.java"	,rom_megazone,null	,machine_driver_megazone	,input_ports_megazone	,init_megazone	,ROT90	,	"Konami", "Mega Zone" )

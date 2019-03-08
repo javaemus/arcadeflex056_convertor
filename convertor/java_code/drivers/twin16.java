@@ -1669,17 +1669,17 @@ public class twin16
 		}
 	}
 	
-	static void init_twin16(void)
+	static public static InitDriverPtr init_twin16 = new InitDriverPtr() { public void handler() 
 	{
 		gfx_untangle();
 		twin16_custom_vidhrdw = 0;
-	}
+	} };
 	
-	static void init_fround(void)
+	static public static InitDriverPtr init_fround = new InitDriverPtr() { public void handler() 
 	{
 		gfx_untangle();
 		twin16_custom_vidhrdw = 1;
-	}
+	} };
 	
 	
 	public static GameDriver driver_devilw	   = new GameDriver("1987"	,"devilw"	,"twin16.java"	,rom_devilw,null	,machine_driver_heavysync	,input_ports_devilw	,init_twin16	,ROT0	,	"Konami", "Devil World" )

@@ -88,7 +88,7 @@ public class _8080bw
 	
 	enum { NO_ARTWORK = 0, SIMPLE_OVERLAY, FILE_OVERLAY, SIMPLE_BACKDROP, FILE_BACKDROP };
 	
-	void init_8080bw(void)
+	public static InitDriverPtr init_8080bw = new InitDriverPtr() { public void handler() 
 	{
 		videoram_w_p = bw_videoram_w;
 		vh_screenrefresh_p = vh_screenrefresh;
@@ -98,141 +98,141 @@ public class _8080bw
 		artwork_type = NO_ARTWORK;
 		color_map_select = 0;
 		flip_screen_set(0);
-	}
+	} };
 	
-	void init_invaders(void)
+	public static InitDriverPtr init_invaders = new InitDriverPtr() { public void handler() 
 	{
 		init_8080bw();
 		init_artwork = invaders_overlay;
 		artwork_type = SIMPLE_OVERLAY;
-	}
+	} };
 	
-	void init_invaddlx(void)
+	public static InitDriverPtr init_invaddlx = new InitDriverPtr() { public void handler() 
 	{
 		init_8080bw();
 		/*init_overlay = invdpt2m_overlay; */
 		/*overlay_type = 1; */
-	}
+	} };
 	
-	void init_invrvnge(void)
+	public static InitDriverPtr init_invrvnge = new InitDriverPtr() { public void handler() 
 	{
 		init_8080bw();
 		init_artwork = invrvnge_overlay;
 		artwork_type = SIMPLE_OVERLAY;
-	}
+	} };
 	
-	void init_invad2ct(void)
+	public static InitDriverPtr init_invad2ct = new InitDriverPtr() { public void handler() 
 	{
 		init_8080bw();
 		init_artwork = invad2ct_overlay;
 		artwork_type = SIMPLE_OVERLAY;
-	}
+	} };
 	
-	void init_sstrngr2(void)
+	public static InitDriverPtr init_sstrngr2 = new InitDriverPtr() { public void handler() 
 	{
 		init_8080bw();
 		videoram_w_p = sstrngr2_videoram_w;
 		screen_red_enabled = 1;
-	}
+	} };
 	
-	void init_schaser(void)
+	public static InitDriverPtr init_schaser = new InitDriverPtr() { public void handler() 
 	{
 		init_8080bw();
 		videoram_w_p = schaser_videoram_w;
 		background_color = 2;	/* blue */
-	}
+	} };
 	
-	void init_rollingc(void)
+	public static InitDriverPtr init_rollingc = new InitDriverPtr() { public void handler() 
 	{
 		init_8080bw();
 		videoram_w_p = schaser_videoram_w;
 		background_color = 0;	/* black */
-	}
+	} };
 	
-	void init_helifire(void)
+	public static InitDriverPtr init_helifire = new InitDriverPtr() { public void handler() 
 	{
 		init_8080bw();
 		videoram_w_p = helifire_videoram_w;
-	}
+	} };
 	
-	void init_polaris(void)
+	public static InitDriverPtr init_polaris = new InitDriverPtr() { public void handler() 
 	{
 		init_8080bw();
 		videoram_w_p = polaris_videoram_w;
-	}
+	} };
 	
-	void init_lupin3(void)
+	public static InitDriverPtr init_lupin3 = new InitDriverPtr() { public void handler() 
 	{
 		init_8080bw();
 		videoram_w_p = lupin3_videoram_w;
 		background_color = 0;	/* black */
-	}
+	} };
 	
-	void init_invadpt2(void)
+	public static InitDriverPtr init_invadpt2 = new InitDriverPtr() { public void handler() 
 	{
 		init_8080bw();
 		videoram_w_p = invadpt2_videoram_w;
 		screen_red_enabled = 1;
-	}
+	} };
 	
-	void init_seawolf(void)
+	public static InitDriverPtr init_seawolf = new InitDriverPtr() { public void handler() 
 	{
 		init_8080bw();
 		vh_screenrefresh_p = seawolf_vh_screenrefresh;
 		use_tmpbitmap = 1;
-	}
+	} };
 	
-	void init_blueshrk(void)
+	public static InitDriverPtr init_blueshrk = new InitDriverPtr() { public void handler() 
 	{
 		init_8080bw();
 		vh_screenrefresh_p = blueshrk_vh_screenrefresh;
 		use_tmpbitmap = 1;
-	}
+	} };
 	
-	void init_desertgu(void)
+	public static InitDriverPtr init_desertgu = new InitDriverPtr() { public void handler() 
 	{
 		init_8080bw();
 		vh_screenrefresh_p = desertgu_vh_screenrefresh;
 		use_tmpbitmap = 1;
-	}
+	} };
 	
-	void init_astinvad(void)
+	public static InitDriverPtr init_astinvad = new InitDriverPtr() { public void handler() 
 	{
 		init_8080bw();
 		videoram_w_p = astinvad_videoram_w;
 		screen_red_enabled = 1;
-	}
+	} };
 	
-	void init_spaceint(void)
+	public static InitDriverPtr init_spaceint = new InitDriverPtr() { public void handler() 
 	{
 		init_8080bw();
 		videoram_w_p = spaceint_videoram_w;
-	}
+	} };
 	
-	void init_spcenctr(void)
+	public static InitDriverPtr init_spcenctr = new InitDriverPtr() { public void handler() 
 	{
 		extern struct GameDriver driver_spcenctr;
 	
 		init_8080bw();
 		init_artwork = driver_spcenctr.name;
 		artwork_type = FILE_OVERLAY;
-	}
+	} };
 	
-	void init_phantom2(void)
+	public static InitDriverPtr init_phantom2 = new InitDriverPtr() { public void handler() 
 	{
 		init_8080bw();
 		vh_screenrefresh_p = phantom2_vh_screenrefresh;
 		use_tmpbitmap = 1;
-	}
+	} };
 	
-	void init_boothill(void)
+	public static InitDriverPtr init_boothill = new InitDriverPtr() { public void handler() 
 	{
 	/*	extern struct GameDriver driver_boothill; */
 	
 		init_8080bw();
 	/*	init_artwork = driver_boothill.name; */
 	/*	artwork_type = FILE_BACKDROP; */
-	}
+	} };
 	
 	public static VhStartPtr invaders_vh_start = new VhStartPtr() { public int handler() 
 	{

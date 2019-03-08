@@ -261,7 +261,7 @@ public class playch10
 	 *	Common init for all games
 	 *
 	 *************************************/
-	void init_playch10( void )
+	public static InitDriverPtr init_playch10 = new InitDriverPtr() { public void handler() 
 	{
 		/* initialize the security chip */
 		if ( RP5H01_init( &rp5h01_interface ) )
@@ -274,7 +274,7 @@ public class playch10
 	
 		/* default mirroring */
 		mirroring = PPU_MIRROR_NONE;
-	}
+	} };
 	
 	/**********************************************************************************
 	 *
@@ -284,26 +284,26 @@ public class playch10
 	
 	/* Gun games */
 	
-	void init_pc_gun( void )
+	public static InitDriverPtr init_pc_gun = new InitDriverPtr() { public void handler() 
 	{
 		/* common init */
 		init_playch10();
 	
 		/* set the control type */
 		pc10_gun_controller = 1;
-	}
+	} };
 	
 	
 	/* Horizontal mirroring */
 	
-	void init_pc_hrz( void )
+	public static InitDriverPtr init_pc_hrz = new InitDriverPtr() { public void handler() 
 	{
 		/* common init */
 		init_playch10();
 	
 		/* setup mirroring */
 		mirroring = PPU_MIRROR_HORZ;
-	}
+	} };
 	
 	/* MMC1 mapper, used by D and F boards */
 	
@@ -427,14 +427,14 @@ public class playch10
 		ppu2c03b_set_videorom_bank( 0, 0, 8, ( data & 3 ), 512 );
 	} };
 	
-	void init_pcaboard( void )
+	public static InitDriverPtr init_pcaboard = new InitDriverPtr() { public void handler() 
 	{
 		/* switches vrom with writes to the $803e-$8041 area */
 		install_mem_write_handler( 1, 0x8000, 0x8fff, aboard_vrom_switch_w );
 	
 		/* common init */
 		init_playch10();
-	}
+	} };
 	
 	/**********************************************************************************/
 	
@@ -447,7 +447,7 @@ public class playch10
 		memcpy( &memory_region( REGION_CPU2 )[0x08000], &memory_region( REGION_CPU2 )[bankoffset], 0x4000 );
 	} };
 	
-	void init_pcbboard( void )
+	public static InitDriverPtr init_pcbboard = new InitDriverPtr() { public void handler() 
 	{
 		/* We do manual banking, in case the code falls through */
 		/* Copy the initial banks */
@@ -461,7 +461,7 @@ public class playch10
 	
 		/* set the mirroring here */
 		mirroring = PPU_MIRROR_VERT;
-	}
+	} };
 	
 	/**********************************************************************************/
 	
@@ -472,20 +472,20 @@ public class playch10
 		ppu2c03b_set_videorom_bank( 0, 0, 8, ( ( data >> 1 ) & 1 ), 512 );
 	} };
 	
-	void init_pccboard( void )
+	public static InitDriverPtr init_pccboard = new InitDriverPtr() { public void handler() 
 	{
 		/* switches vrom with writes to $6000 */
 		install_mem_write_handler( 1, 0x6000, 0x6000, cboard_vrom_switch_w );
 	
 		/* common init */
 		init_playch10();
-	}
+	} };
 	
 	/**********************************************************************************/
 	
 	/* D Board games (Rad Racer) */
 	
-	void init_pcdboard( void )
+	public static InitDriverPtr init_pcdboard = new InitDriverPtr() { public void handler() 
 	{
 		/* We do manual banking, in case the code falls through */
 		/* Copy the initial banks */
@@ -498,7 +498,7 @@ public class playch10
 	
 		/* common init */
 		init_playch10();
-	}
+	} };
 	
 	/**********************************************************************************/
 	
@@ -539,7 +539,7 @@ public class playch10
 		}
 	} };
 	
-	void init_pceboard( void )
+	public static InitDriverPtr init_pceboard = new InitDriverPtr() { public void handler() 
 	{
 		/* We do manual banking, in case the code falls through */
 		/* Copy the initial banks */
@@ -554,13 +554,13 @@ public class playch10
 	
 		/* common init */
 		init_playch10();
-	}
+	} };
 	
 	/**********************************************************************************/
 	
 	/* F Board games (Ninja Gaiden, Double Dragon) */
 	
-	void init_pcfboard( void )
+	public static InitDriverPtr init_pcfboard = new InitDriverPtr() { public void handler() 
 	{
 		/* We do manual banking, in case the code falls through */
 		/* Copy the initial banks */
@@ -573,7 +573,7 @@ public class playch10
 	
 		/* common init */
 		init_playch10();
-	}
+	} };
 	
 	/**********************************************************************************/
 	
@@ -723,7 +723,7 @@ public class playch10
 		}
 	} };
 	
-	void init_pcgboard( void )
+	public static InitDriverPtr init_pcgboard = new InitDriverPtr() { public void handler() 
 	{
 		/* We do manual banking, in case the code falls through */
 		/* Copy the initial banks */
@@ -744,7 +744,7 @@ public class playch10
 	
 		/* common init */
 		init_playch10();
-	}
+	} };
 	
 	/**********************************************************************************/
 	
@@ -762,7 +762,7 @@ public class playch10
 		memcpy( &memory_region( REGION_CPU2 )[0x08000], &memory_region( REGION_CPU2 )[bank * 0x8000 + 0x10000], 0x8000 );
 	} };
 	
-	void init_pciboard( void )
+	public static InitDriverPtr init_pciboard = new InitDriverPtr() { public void handler() 
 	{
 		/* We do manual banking, in case the code falls through */
 		/* Copy the initial banks */
@@ -773,13 +773,13 @@ public class playch10
 	
 		/* common init */
 		init_playch10();
-	}
+	} };
 	
 	/**********************************************************************************/
 	
 	/* H Board games (PinBot) */
 	
-	void init_pchboard( void )
+	public static InitDriverPtr init_pchboard = new InitDriverPtr() { public void handler() 
 	{
 		memcpy( &memory_region( REGION_CPU2 )[0x08000], &memory_region( REGION_CPU2 )[0x4c000], 0x4000 );
 		memcpy( &memory_region( REGION_CPU2 )[0x0c000], &memory_region( REGION_CPU2 )[0x4c000], 0x4000 );
@@ -798,13 +798,13 @@ public class playch10
 	
 		/* common init */
 		init_playch10();
-	}
+	} };
 	
 	/**********************************************************************************/
 	
 	/* K Board games (Mario Open Golf) */
 	
-	void init_pckboard( void )
+	public static InitDriverPtr init_pckboard = new InitDriverPtr() { public void handler() 
 	{
 		/* We do manual banking, in case the code falls through */
 		/* Copy the initial banks */
@@ -817,5 +817,5 @@ public class playch10
 	
 		/* common init */
 		init_playch10();
-	}
+	} };
 }

@@ -690,27 +690,27 @@ public class mcr2
 	 *
 	 *************************************/
 	
-	static void init_mcr2(void)
+	static public static InitDriverPtr init_mcr2 = new InitDriverPtr() { public void handler() 
 	{
 		MCR_CONFIGURE_SOUND(MCR_SSIO);
 		install_port_write_handler(0, 0x00, 0x00, mcr_control_port_w);
 	
 		mcr12_sprite_xoffs = 0;
 		mcr12_sprite_xoffs_flip = 0;
-	}
+	} };
 	
 	
-	static void init_domino(void)
+	static public static InitDriverPtr init_domino = new InitDriverPtr() { public void handler() 
 	{
 		MCR_CONFIGURE_SOUND(MCR_SSIO);
 		install_port_write_handler(0, 0x01, 0x01, mcr_control_port_w);
 	
 		mcr12_sprite_xoffs = 0;
 		mcr12_sprite_xoffs_flip = 0;
-	}
+	} };
 	
 	
-	static void init_wacko(void)
+	static public static InitDriverPtr init_wacko = new InitDriverPtr() { public void handler() 
 	{
 		MCR_CONFIGURE_SOUND(MCR_SSIO);
 		install_port_write_handler(0, 0x04, 0x04, wacko_mux_select_w);
@@ -718,10 +718,10 @@ public class mcr2
 	
 		mcr12_sprite_xoffs = 0;
 		mcr12_sprite_xoffs_flip = 0;
-	}
+	} };
 	
 	
-	static void init_kroozr(void)
+	static public static InitDriverPtr init_kroozr = new InitDriverPtr() { public void handler() 
 	{
 		MCR_CONFIGURE_SOUND(MCR_SSIO);
 		install_port_read_handler(0, 0x01, 0x01, kroozr_dial_r);
@@ -730,9 +730,9 @@ public class mcr2
 	
 		mcr12_sprite_xoffs = 0;
 		mcr12_sprite_xoffs_flip = 0;
-	}
+	} };
 	
-	static void init_twotigra(void)
+	static public static InitDriverPtr init_twotigra = new InitDriverPtr() { public void handler() 
 	{
 		MCR_CONFIGURE_SOUND(MCR_SSIO);
 		install_port_write_handler(0, 0x00, 0x00, mcr_control_port_w);
@@ -742,7 +742,7 @@ public class mcr2
 		install_mem_write_handler(0, 0xf800, 0xffff, twotigra_videoram_w);
 		mcr12_sprite_xoffs = 0;
 		mcr12_sprite_xoffs_flip = 0;
-	}
+	} };
 	
 	
 	/*************************************

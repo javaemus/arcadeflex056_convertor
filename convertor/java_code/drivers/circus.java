@@ -269,7 +269,7 @@ public class circus
 	  Machine drivers
 	***************************************************************************/
 	
-	static void init_robotbwl(void)
+	static public static InitDriverPtr init_robotbwl = new InitDriverPtr() { public void handler() 
 	{
 		int i;
 	
@@ -277,7 +277,7 @@ public class circus
 	
 		for (i = 0;i < memory_region_length(REGION_GFX2);i++)
 			memory_region(REGION_GFX2)[i] ^= 0xFF;
-	}
+	} };
 	
 	public static InterruptPtr ripcord_interrupt = new InterruptPtr() { public int handler() 
 	{

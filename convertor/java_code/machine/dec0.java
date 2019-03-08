@@ -517,7 +517,7 @@ public class dec0
 			RAM[i]=(RAM[i] & 0x7e) | ((RAM[i] & 0x1) << 7) | ((RAM[i] & 0x80) >> 7);
 	}
 	
-	void init_hippodrm(void)
+	public static InitDriverPtr init_hippodrm = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *RAM = memory_region(REGION_CPU3);
 	
@@ -532,9 +532,9 @@ public class dec0
 		RAM[0x1af]=0x60; /* RTS prot area */
 		RAM[0x1db]=0x60; /* RTS prot area */
 		RAM[0x21a]=0x60; /* RTS prot area */
-	}
+	} };
 	
-	void init_slyspy(void)
+	public static InitDriverPtr init_slyspy = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *RAM = memory_region(REGION_CPU2);
 	
@@ -543,39 +543,39 @@ public class dec0
 		/* Slyspy sound cpu has some protection */
 		RAM[0xf2d]=0xea;
 		RAM[0xf2e]=0xea;
-	}
+	} };
 	
-	void init_robocop(void)
+	public static InitDriverPtr init_robocop = new InitDriverPtr() { public void handler() 
 	{
 		install_mem_read16_handler( 0, 0x180000, 0x180fff, robocop_68000_share_r);
 		install_mem_write16_handler(0, 0x180000, 0x180fff, robocop_68000_share_w);
-	}
+	} };
 	
-	void init_baddudes(void)
+	public static InitDriverPtr init_baddudes = new InitDriverPtr() { public void handler() 
 	{
 		GAME=2;
-	}
+	} };
 	
-	void init_hbarrel(void)
+	public static InitDriverPtr init_hbarrel = new InitDriverPtr() { public void handler() 
 	{
 		GAME=1;
 	{ /* Remove this patch once processing time of i8751 is simulated */
 	data16_t *rom = (data16_t *)memory_region(REGION_CPU1);
 	rom[0xb68/2] = 0x8008;
 	}
-	}
+	} };
 	
-	void init_hbarrelw(void)
+	public static InitDriverPtr init_hbarrelw = new InitDriverPtr() { public void handler() 
 	{
 		GAME=1;
 	{ /* Remove this patch once processing time of i8751 is simulated */
 	data16_t *rom = (data16_t *)memory_region(REGION_CPU1);
 	rom[0xb3e/2] = 0x8008;
 	}
-	}
+	} };
 	
-	void init_birdtry(void)
+	public static InitDriverPtr init_birdtry = new InitDriverPtr() { public void handler() 
 	{
 		GAME=3;
-	}
+	} };
 }

@@ -66,12 +66,12 @@ public class shuuz
 	 *
 	 *************************************/
 	
-	static void init_machine(void)
+	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_reset();
 		atarivc_reset(atarivc_eof_data);
 		atarigen_interrupt_reset(update_interrupts);
-	}
+	} };
 	
 	
 	static WRITE16_HANDLER( latch_w )
@@ -411,12 +411,12 @@ public class shuuz
 	 *
 	 *************************************/
 	
-	static void init_shuuz(void)
+	static public static InitDriverPtr init_shuuz = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_default = NULL;
 		atarigen_invert_region(REGION_GFX1);
 		atarigen_invert_region(REGION_GFX2);
-	}
+	} };
 	
 	
 	

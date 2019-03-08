@@ -3431,28 +3431,28 @@ public class bjtwin
 		}
 	}
 	
-	static void init_nmk(void)
+	static public static InitDriverPtr init_nmk = new InitDriverPtr() { public void handler() 
 	{
 		decode_gfx();
-	}
+	} };
 	
-	static void init_hachamf(void)
+	static public static InitDriverPtr init_hachamf = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *rom = (data16_t *)memory_region(REGION_CPU1);
 	
 		rom[0x0006/2] = 0x7dc2;	/* replace reset vector with the "real" one */
-	}
+	} };
 	
-	static void init_acrobatm(void)
+	static public static InitDriverPtr init_acrobatm = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *RAM = (data16_t *)memory_region(REGION_CPU1);
 	
 		RAM[0x724/2] = 0x4e71; /* Protection */
 		RAM[0x726/2] = 0x4e71;
 		RAM[0x728/2] = 0x4e71;
-	}
+	} };
 	
-	static void init_tdragonb(void)
+	static public static InitDriverPtr init_tdragonb = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *ROM = (data16_t *)memory_region(REGION_CPU1);
 	
@@ -3461,17 +3461,17 @@ public class bjtwin
 		/* The Following Patch is taken from Raine, Otherwise the game has no Sprites in Attract Mode or After Level 1
 		   which is rather odd considering its a bootleg.. */
 		ROM[0x00308/2] = 0x4e71; /* Sprite Problem */
-	}
+	} };
 	
-	static void init_tdragon(void)
+	static public static InitDriverPtr init_tdragon = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *RAM = (data16_t *)memory_region(REGION_CPU1);
 	
 		RAM[0x94b0/2] = 0; /* Patch out JMP to shared memory (protection) */
 		RAM[0x94b2/2] = 0x92f4;
-	}
+	} };
 	
-	static void init_strahl(void)
+	static public static InitDriverPtr init_strahl = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *RAM = (data16_t *)memory_region(REGION_CPU1);
 	
@@ -3483,9 +3483,9 @@ public class bjtwin
 		RAM[0x96a/2] = 0x4e71;
 		RAM[0x8e0/2] = 0x4e71; /* Checksum error */
 		RAM[0x8e2/2] = 0x4e71;
-	}
+	} };
 	
-	static void init_bioship(void)
+	static public static InitDriverPtr init_bioship = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *RAM = (data16_t *)memory_region(REGION_CPU1);
 	
@@ -3494,9 +3494,9 @@ public class bjtwin
 	
 		RAM[0xe798/2] = 0x4e71; /* Checksum */
 		RAM[0xe79a/2] = 0x4e71;
-	}
+	} };
 	
-	static void init_bjtwin(void)
+	static public static InitDriverPtr init_bjtwin = new InitDriverPtr() { public void handler() 
 	{
 		init_nmk();
 	
@@ -3519,7 +3519,7 @@ public class bjtwin
 	//	data 16_t *rom = (data16_t *)memory_region(REGION_CPU1);
 	//	rom[0x09172/2] = 0x6006;	/* patch checksum error */
 	//	rom[0x08f74/2] = 0x4e71);
-	}
+	} };
 	
 	
 	

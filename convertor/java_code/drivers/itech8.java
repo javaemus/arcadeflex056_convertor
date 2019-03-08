@@ -312,7 +312,7 @@ public class itech8
 	 *
 	 *************************************/
 	
-	static void init_machine(void)
+	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
 	{
 		/* make sure bank 0 is selected */
 		if ((Machine->drv->cpu[0].cpu_type & ~CPU_FLAGS_MASK) == CPU_M6809)
@@ -330,7 +330,7 @@ public class itech8
 	
 		/* reset the ticket dispenser */
 		ticket_dispenser_init(200, TICKET_MOTOR_ACTIVE_HIGH, TICKET_STATUS_ACTIVE_LOW);
-	}
+	} };
 	
 	
 	
@@ -2067,31 +2067,31 @@ public class itech8
 	 *
 	 *************************************/
 	
-	static void init_viasound(void)
+	static public static InitDriverPtr init_viasound = new InitDriverPtr() { public void handler() 
 	{
 		/* some games with a YM3812 use a VIA(6522) for timing and communication */
 		install_mem_read_handler (1, 0x5000, 0x500f, via6522_r);
 		via6522 = install_mem_write_handler(1, 0x5000, 0x500f, via6522_w);
-	}
+	} };
 	
 	
-	static void init_slikshot(void)
+	static public static InitDriverPtr init_slikshot = new InitDriverPtr() { public void handler() 
 	{
 		install_mem_read_handler (0, 0x0180, 0x0180, slikshot_z80_r);
 		install_mem_read_handler (0, 0x01cf, 0x01cf, slikshot_z80_control_r);
 		install_mem_write_handler(0, 0x01cf, 0x01cf, slikshot_z80_control_w);
-	}
+	} };
 	
 	
-	static void init_sstrike(void)
+	static public static InitDriverPtr init_sstrike = new InitDriverPtr() { public void handler() 
 	{
 		install_mem_read_handler (0, 0x1180, 0x1180, slikshot_z80_r);
 		install_mem_read_handler (0, 0x11cf, 0x11cf, slikshot_z80_control_r);
 		install_mem_write_handler(0, 0x11cf, 0x11cf, slikshot_z80_control_w);
-	}
+	} };
 	
 	
-	static void init_rimrockn(void)
+	static public static InitDriverPtr init_rimrockn = new InitDriverPtr() { public void handler() 
 	{
 		/* additional input ports */
 		install_mem_read_handler (0, 0x0161, 0x0161, input_port_3_r);
@@ -2106,7 +2106,7 @@ public class itech8
 	
 		/* VIA-based sound timing */
 		init_viasound();
-	}
+	} };
 	
 	
 	

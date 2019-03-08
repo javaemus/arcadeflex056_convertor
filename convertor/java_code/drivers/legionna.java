@@ -532,7 +532,7 @@ public class legionna
 	
 	
 	
-	static void init_legionna(void)
+	static public static InitDriverPtr init_legionna = new InitDriverPtr() { public void handler() 
 	{
 		data8_t *gfx = memory_region(REGION_GFX1);
 		int len = memory_region_length(REGION_GFX1)/2;
@@ -548,7 +548,7 @@ public class legionna
 			gfx[i+len] = gfx[i + len/2 + len];
 			gfx[i + len/2 +len] = a;
 		}
-	}
+	} };
 	
 	
 	

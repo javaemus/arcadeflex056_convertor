@@ -769,10 +769,10 @@ public class cabal
 	
 	
 	
-	static void init_cabal(void)
+	static public static InitDriverPtr init_cabal = new InitDriverPtr() { public void handler() 
 	{
 		seibu_sound_decrypt(REGION_CPU2,0x2000);
-	}
+	} };
 	
 	
 	public static GameDriver driver_cabal	   = new GameDriver("1988"	,"cabal"	,"cabal.java"	,rom_cabal,null	,machine_driver_cabal	,input_ports_cabal	,init_cabal	,ROT0	,	"Tad (Fabtek license)", "Cabal (US set 1)", GAME_IMPERFECT_SOUND )

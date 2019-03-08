@@ -325,11 +325,11 @@ public class surpratk
 		paletteram = &memory_region(REGION_CPU1)[0x48000];
 	}
 	
-	static void init_surpratk(void)
+	static public static InitDriverPtr init_surpratk = new InitDriverPtr() { public void handler() 
 	{
 		konami_rom_deinterleave_2(REGION_GFX1);
 		konami_rom_deinterleave_2(REGION_GFX2);
-	}
+	} };
 	
 	
 	

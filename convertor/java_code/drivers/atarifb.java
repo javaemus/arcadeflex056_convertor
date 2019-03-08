@@ -902,29 +902,29 @@ public class atarifb
 	ROM_END(); }}; 
 	
 	
-	void init_atarifb (void)
+	public static InitDriverPtr init_atarifb = new InitDriverPtr() { public void handler() 
 	{
 		/* Tell the video code to draw the plays for this version */
 		atarifb_game = 1;
-	}
+	} };
 	
-	void init_atarifb4(void)
+	public static InitDriverPtr init_atarifb4 = new InitDriverPtr() { public void handler() 
 	{
 		/* Tell the video code to draw the plays for this version */
 		atarifb_game = 2;
-	}
+	} };
 	
-	void init_abaseb(void)
+	public static InitDriverPtr init_abaseb = new InitDriverPtr() { public void handler() 
 	{
 		/* Tell the video code to draw the plays for this version */
 		atarifb_game = 3;
-	}
+	} };
 	
-	void init_soccer(void)
+	public static InitDriverPtr init_soccer = new InitDriverPtr() { public void handler() 
 	{
 		/* Tell the video code to draw the plays for this version */
 		atarifb_game = 4;
-	}
+	} };
 	
 	
 	

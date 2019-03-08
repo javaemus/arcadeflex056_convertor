@@ -358,7 +358,7 @@ public class sauro
 	
 	
 	
-	static void init_sauro(void)
+	static public static InitDriverPtr init_sauro = new InitDriverPtr() { public void handler() 
 	{
 		/* This game doesn't like all memory to be initialized to zero, it won't
 		   initialize the high scores */
@@ -367,7 +367,7 @@ public class sauro
 	
 		memset(&RAM[0xe000], 0, 0x100);
 		RAM[0xe000] = 1;
-	}
+	} };
 	
 	
 	public static GameDriver driver_sauro	   = new GameDriver("1987"	,"sauro"	,"sauro.java"	,rom_sauro,null	,machine_driver_sauro	,input_ports_sauro	,init_sauro	,ROT0	,	"Tecfri", "Sauro", GAME_IMPERFECT_COLORS | GAME_IMPERFECT_SOUND )

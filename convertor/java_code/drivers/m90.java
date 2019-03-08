@@ -875,15 +875,15 @@ public class m90
 	
 	
 	
-	static void init_hasamu(void)
+	static public static InitDriverPtr init_hasamu = new InitDriverPtr() { public void handler() 
 	{
 		irem_cpu_decrypt(0,gunforce_decryption_table);
-	}
+	} };
 	
-	static void init_bombrman(void)
+	static public static InitDriverPtr init_bombrman = new InitDriverPtr() { public void handler() 
 	{
 		irem_cpu_decrypt(0,bomberman_decryption_table);
-	}
+	} };
 	
 	/* Bomberman World executes encrypted code from RAM! */
 	static WRITE_HANDLER (bbmanw_ram_write)
@@ -893,27 +893,27 @@ public class m90
 		RAM[0x1a0c00+offset]=dynablaster_decryption_table[data];
 	}
 	
-	static void init_bbmanw(void)
+	static public static InitDriverPtr init_bbmanw = new InitDriverPtr() { public void handler() 
 	{
 		irem_cpu_decrypt(0,dynablaster_decryption_table);
 	
 		install_mem_write_handler(0, 0xa0c00, 0xa0cff, bbmanw_ram_write);
-	}
+	} };
 	
-	static void init_quizf1(void)
+	static public static InitDriverPtr init_quizf1 = new InitDriverPtr() { public void handler() 
 	{
 		irem_cpu_decrypt(0,lethalth_decryption_table);
-	}
+	} };
 	
-	static void init_riskchal(void)
+	static public static InitDriverPtr init_riskchal = new InitDriverPtr() { public void handler() 
 	{
 		irem_cpu_decrypt(0,gussun_decryption_table);
-	}
+	} };
 	
-	static void init_shisen2(void)
+	static public static InitDriverPtr init_shisen2 = new InitDriverPtr() { public void handler() 
 	{
 		irem_cpu_decrypt(0,shisen2_decryption_table);
-	}
+	} };
 	
 	
 	

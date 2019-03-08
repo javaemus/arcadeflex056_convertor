@@ -481,10 +481,10 @@ public class junofrst
 	
 	
 	
-	static void init_junofrst(void)
+	static public static InitDriverPtr init_junofrst = new InitDriverPtr() { public void handler() 
 	{
 		konami1_decode();
-	}
+	} };
 	
 	
 	public static GameDriver driver_junofrst	   = new GameDriver("1983"	,"junofrst"	,"junofrst.java"	,rom_junofrst,null	,machine_driver_junofrst	,input_ports_junofrst	,init_junofrst	,ROT90	,	"Konami", "Juno First" )

@@ -108,15 +108,15 @@ public class srmp2
 	} };
 	
 	
-	static void init_srmp2(void)
+	static public static InitDriverPtr init_srmp2 = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *RAM = (data16_t *) memory_region(REGION_CPU1);
 	
 		/* Fix "ERROR BACK UP" and "ERROR IOX" */
 		RAM[0x20c80 / 2] = 0x4e75;								// RTS
-	}
+	} };
 	
-	static void init_srmp3(void)
+	static public static InitDriverPtr init_srmp3 = new InitDriverPtr() { public void handler() 
 	{
 		data8_t *RAM = memory_region(REGION_CPU1);
 	
@@ -137,15 +137,15 @@ public class srmp2
 		RAM[0x00000 + 0x784e] = 0x00;							// NOP
 		RAM[0x00000 + 0x784f] = 0x00;							// NOP
 		RAM[0x00000 + 0x7850] = 0x00;							// NOP
-	}
+	} };
 	
-	static void init_mjyuugi(void)
+	static public static InitDriverPtr init_mjyuugi = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *RAM = (data16_t *) memory_region(REGION_CPU1);
 	
 		/* Sprite RAM check skip */
 		RAM[0x0276e / 2] = 0x4e75;								// RTS
-	}
+	} };
 	
 	
 	static void srmp2_init_machine(void)

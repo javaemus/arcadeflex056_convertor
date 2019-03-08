@@ -132,7 +132,7 @@ public class exzisus
 	
 	**************************************************************************/
 	
-	static void init_exzisus(void)
+	static public static InitDriverPtr init_exzisus = new InitDriverPtr() { public void handler() 
 	{
 		data8_t *RAM = memory_region(REGION_CPU4);
 	
@@ -141,7 +141,7 @@ public class exzisus
 	
 		/* Fix WORK RAM error */
 		RAM[0x67fd] = 0x18;
-	}
+	} };
 	
 	static void irqhandler(int irq)
 	{

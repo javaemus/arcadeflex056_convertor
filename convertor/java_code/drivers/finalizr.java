@@ -505,10 +505,10 @@ public class finalizr
 	ROM_END(); }}; 
 	
 	
-	static void init_finalizr(void)
+	static public static InitDriverPtr init_finalizr = new InitDriverPtr() { public void handler() 
 	{
 		konami1_decode();
-	}
+	} };
 	
 	
 	public static GameDriver driver_finalizr	   = new GameDriver("1985"	,"finalizr"	,"finalizr.java"	,rom_finalizr,null	,machine_driver_finalizr	,input_ports_finalizr	,init_finalizr	,ROT90	,	"Konami", "Finalizer - Super Transformation", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )

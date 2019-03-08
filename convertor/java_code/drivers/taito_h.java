@@ -819,11 +819,11 @@ public class taito_h
 	ROM_END(); }}; 
 	
 	
-	static void init_taitoh(void)
+	static public static InitDriverPtr init_taitoh = new InitDriverPtr() { public void handler() 
 	{
 		state_save_register_int("sound1", 0, "sound region", &banknum);
 		state_save_register_func_postload(reset_sound_region);
-	}
+	} };
 	
 	
 	/*  ( YEAR  NAME      PARENT    MACHINE   INPUT     INIT     MONITOR  COMPANY  FULLNAME */

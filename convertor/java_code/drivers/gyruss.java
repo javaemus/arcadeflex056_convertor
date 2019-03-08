@@ -621,10 +621,10 @@ public class gyruss
 	ROM_END(); }}; 
 	
 	
-	static void init_gyruss(void)
+	static public static InitDriverPtr init_gyruss = new InitDriverPtr() { public void handler() 
 	{
 		konami1_decode_cpu2();
-	}
+	} };
 	
 	
 	public static GameDriver driver_gyruss	   = new GameDriver("1983"	,"gyruss"	,"gyruss.java"	,rom_gyruss,null	,machine_driver_gyruss	,input_ports_gyruss	,init_gyruss	,ROT90	,	"Konami", "Gyruss (Konami)" )

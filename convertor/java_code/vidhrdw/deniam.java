@@ -19,7 +19,7 @@ public class deniam
 	
 	
 	
-	void init_logicpro(void)
+	public static InitDriverPtr init_logicpro = new InitDriverPtr() { public void handler() 
 	{
 		bg_scrollx_reg = 0x00a4/2;
 		bg_scrolly_reg = 0x00a8/2;
@@ -32,8 +32,8 @@ public class deniam
 		bg_scrolly_offs = 0x000;
 		fg_scrollx_offs = 0x009;
 		fg_scrolly_offs = 0x000;
-	}
-	void init_karianx(void)
+	} };
+	public static InitDriverPtr init_karianx = new InitDriverPtr() { public void handler() 
 	{
 		bg_scrollx_reg = 0x00a4/2;
 		bg_scrolly_reg = 0x00a8/2;
@@ -46,7 +46,7 @@ public class deniam
 		bg_scrolly_offs = 0x080;
 		fg_scrollx_offs = 0x109;
 		fg_scrolly_offs = 0x080;
-	}
+	} };
 	
 	
 	

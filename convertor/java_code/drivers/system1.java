@@ -3698,26 +3698,26 @@ public class system1
 	ROM_END(); }}; 
 	
 	
-	static void init_regulus(void)	{ regulus_decode(); }
-	static void init_mrviking(void)	{ mrviking_decode(); }
-	static void init_swat(void)		{ swat_decode(); }
-	static void init_flicky(void)	{ flicky_decode(); }
-	static void init_wmatch(void)	{ wmatch_decode(); }
-	static void init_bullfgtj(void)	{ bullfgtj_decode(); }
-	static void init_spatter(void)	{ spatter_decode(); }
-	static void init_pitfall2(void)	{ pitfall2_decode(); }
-	static void init_nprinces(void)	{ nprinces_decode(); }
-	static void init_seganinj(void)	{ seganinj_decode(); }
-	static void init_imsorry(void)	{ imsorry_decode(); }
-	static void init_teddybb(void)	{ teddybb_decode(); }
-	static void init_hvymetal(void)	{ hvymetal_decode(); }
-	static void init_myheroj(void)	{ myheroj_decode(); }
-	static void init_4dwarrio(void)	{ fdwarrio_decode(); }
-	static void init_wboy(void)		{ astrofl_decode(); }
-	static void init_wboy2(void)	{ wboy2_decode(); }
-	static void init_gardia(void)	{ gardia_decode(); }
+	static public static InitDriverPtr init_regulus = new InitDriverPtr() { public void handler() 	{ regulus_decode(); } };
+	static public static InitDriverPtr init_mrviking = new InitDriverPtr() { public void handler() 	{ mrviking_decode(); } };
+	static public static InitDriverPtr init_swat = new InitDriverPtr() { public void handler() 		{ swat_decode(); } };
+	static public static InitDriverPtr init_flicky = new InitDriverPtr() { public void handler() 	{ flicky_decode(); } };
+	static public static InitDriverPtr init_wmatch = new InitDriverPtr() { public void handler() 	{ wmatch_decode(); } };
+	static public static InitDriverPtr init_bullfgtj = new InitDriverPtr() { public void handler() 	{ bullfgtj_decode(); } };
+	static public static InitDriverPtr init_spatter = new InitDriverPtr() { public void handler() 	{ spatter_decode(); } };
+	static public static InitDriverPtr init_pitfall2 = new InitDriverPtr() { public void handler() 	{ pitfall2_decode(); } };
+	static public static InitDriverPtr init_nprinces = new InitDriverPtr() { public void handler() 	{ nprinces_decode(); } };
+	static public static InitDriverPtr init_seganinj = new InitDriverPtr() { public void handler() 	{ seganinj_decode(); } };
+	static public static InitDriverPtr init_imsorry = new InitDriverPtr() { public void handler() 	{ imsorry_decode(); } };
+	static public static InitDriverPtr init_teddybb = new InitDriverPtr() { public void handler() 	{ teddybb_decode(); } };
+	static public static InitDriverPtr init_hvymetal = new InitDriverPtr() { public void handler() 	{ hvymetal_decode(); } };
+	static public static InitDriverPtr init_myheroj = new InitDriverPtr() { public void handler() 	{ myheroj_decode(); } };
+	static public static InitDriverPtr init_4dwarrio = new InitDriverPtr() { public void handler() 	{ fdwarrio_decode(); } };
+	static public static InitDriverPtr init_wboy = new InitDriverPtr() { public void handler() 		{ astrofl_decode(); } };
+	static public static InitDriverPtr init_wboy2 = new InitDriverPtr() { public void handler() 	{ wboy2_decode(); } };
+	static public static InitDriverPtr init_gardia = new InitDriverPtr() { public void handler() 	{ gardia_decode(); } };
 	
-	void init_myherok(void)
+	public static InitDriverPtr init_myherok = new InitDriverPtr() { public void handler() 
 	{
 		int A;
 		unsigned char *rom;
@@ -3759,15 +3759,15 @@ public class system1
 		}
 	
 		myheroj_decode();
-	}
+	} };
 	
-	static void init_bootleg(void)
+	static public static InitDriverPtr init_bootleg = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *rom = memory_region(REGION_CPU1);
 		int diff = memory_region_length(REGION_CPU1) / 2;
 	
 		memory_set_opcode_base(0,rom+diff);
-	}
+	} };
 	
 	
 	

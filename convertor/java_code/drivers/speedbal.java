@@ -341,14 +341,14 @@ public class speedbal
 	ROM_END(); }}; 
 	
 	
-	static void init_speedbal(void)
+	static public static InitDriverPtr init_speedbal = new InitDriverPtr() { public void handler() 
 	{
 		int i;
 	
 		/* invert the graphics bits on the sprites */
 		for (i = 0; i < memory_region_length(REGION_GFX3); i++)
 			memory_region(REGION_GFX3)[i] ^= 0xff;
-	}
+	} };
 	
 	
 	

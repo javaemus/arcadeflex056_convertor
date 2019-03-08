@@ -953,7 +953,7 @@ public class ninjaw
 	ROM_END(); }}; 
 	
 	
-	static void init_ninjaw(void)
+	static public static InitDriverPtr init_ninjaw = new InitDriverPtr() { public void handler() 
 	{
 		cpua_ctrl = 0xff;
 		state_save_register_UINT16("main1", 0, "control", &cpua_ctrl, 1);
@@ -961,7 +961,7 @@ public class ninjaw
 	
 		state_save_register_int("sound1", 0, "sound region", &banknum);
 		state_save_register_func_postload(reset_sound_region);
-	}
+	} };
 	
 	
 	/* Working Games */

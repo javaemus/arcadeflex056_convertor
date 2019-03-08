@@ -1052,7 +1052,7 @@ public class harddriv
 	 *************************************/
 	
 	/* COMMON INIT: initialize the original "driver" main board */
-	static void init_driver(void)
+	static public static InitDriverPtr init_driver = new InitDriverPtr() { public void handler() 
 	{
 		static const UINT16 default_eeprom[] =
 		{
@@ -1071,11 +1071,11 @@ public class harddriv
 		install_mem_read16_handler(0, 0x600000, 0x600001, hd68k_port0_r);
 	//	install_mem_read16_handler(0, 0x840000, 0x84ffff, hdsnd_68k_r);
 	//	install_mem_write16_handler(0, 0x840000, 0x84ffff, hdsnd_68k_w);
-	}
+	} };
 	
 	
 	/* COMMON INIT: initialize the later "multisync" main board */
-	static void init_multisync(void)
+	static public static InitDriverPtr init_multisync = new InitDriverPtr() { public void handler() 
 	{
 		hdgsp_multisync = 1;
 		atarigen_eeprom_default = NULL;
@@ -1085,11 +1085,11 @@ public class harddriv
 		install_mem_write16_handler(0, 0x600000, 0x600001, atarigen_sound_upper_w);
 		install_mem_read16_handler(0, 0x60c000, 0x60c001, hd68k_port0_r);
 		install_mem_read16_handler(0, 0x604000, 0x607fff, hd68k_sound_reset_r);
-	}
+	} };
 	
 	
 	/* COMMON INIT: initialize the ADSP/ADSP2 board */
-	static void init_adsp(void)
+	static public static InitDriverPtr init_adsp = new InitDriverPtr() { public void handler() 
 	{
 		/* install ADSP program RAM */
 		install_mem_read16_handler(0, 0x800000, 0x807fff, hd68k_adsp_program_r);
@@ -1107,11 +1107,11 @@ public class harddriv
 		install_mem_read16_handler(0, 0x838000, 0x83ffff, hd68k_adsp_irq_state_r);
 		install_mem_write16_handler(0, 0x818000, 0x81801f, hd68k_adsp_control_w);
 		install_mem_write16_handler(0, 0x818060, 0x81807f, hd68k_adsp_irq_clear_w);
-	}
+	} };
 	
 	
 	/* COMMON INIT: initialize the DS3 board */
-	static void init_ds3(void)
+	static public static InitDriverPtr init_ds3 = new InitDriverPtr() { public void handler() 
 	{
 		/* install ADSP program RAM */
 		install_mem_read16_handler(0, 0x800000, 0x807fff, hd68k_ds3_program_r);
@@ -1174,11 +1174,11 @@ public class harddriv
 	
 		/IRQ2 = /GIRQ2 = (!/G68FLAG || !G68IRQS) && (!GFLAG || !GFIRQS)
 	*/
-	}
+	} };
 	
 	
 	/* COMMON INIT: initialize the DSK add-on board */
-	static void init_dsk(void)
+	static public static InitDriverPtr init_dsk = new InitDriverPtr() { public void handler() 
 	{
 		/* install extra ROM */
 		install_mem_read16_handler(0, 0x940000, 0x95ffff, hddsk_rom_r);
@@ -1202,11 +1202,11 @@ public class harddriv
 		/* install ASIC61 */
 		install_mem_write16_handler(0, 0x85c000, 0x85c7ff, racedriv_asic61_w);
 		install_mem_read16_handler(0, 0x85c000, 0x85c7ff, racedriv_asic61_r);
-	}
+	} };
 	
 	
 	/* COMMON INIT: initialize the original "driver" sound board */
-	static void init_driver_sound(void)
+	static public static InitDriverPtr init_driver_sound = new InitDriverPtr() { public void handler() 
 	{
 		data16_t *base = (data16_t *)memory_region(REGION_SOUND1);
 		int length = memory_region_length(REGION_SOUND1) / 2;
@@ -1215,7 +1215,7 @@ public class harddriv
 		/* adjust the sound ROMs */
 		for (i = 0; i < length; i++)
 			base[i] >>= 1;
-	}
+	} };
 	
 	
 	
@@ -1226,7 +1226,7 @@ public class harddriv
 	 *
 	 *************************************/
 	
-	static void init_harddriv(void)
+	static public static InitDriverPtr init_harddriv = new InitDriverPtr() { public void handler() 
 	{
 		/* initialize the boards */
 		init_driver();
@@ -1249,19 +1249,19 @@ public class harddriv
 		install_mem_read16_handler(3, ADSP_DATA_ADDR_RANGE(0x0958, 0x0958), hdadsp_speedup2_r);
 		install_mem_write16_handler(3, ADSP_DATA_ADDR_RANGE(0x0033, 0x0033), hdadsp_speedup2_w);
 		hdadsp_speedup_pc = 0x139;
-	}
+	} };
 	
 	
-	static void init_harddrvc(void)
+	static public static InitDriverPtr init_harddrvc = new InitDriverPtr() { public void handler() 
 	{
 		/* initialize the boards */
 		init_multisync();
 		init_adsp();
 		init_driver_sound();
-	}
+	} };
 	
 	
-	static void init_stunrun(void)
+	static public static InitDriverPtr init_stunrun = new InitDriverPtr() { public void handler() 
 	{
 		/* initialize the boards */
 		init_multisync();
@@ -1283,7 +1283,7 @@ public class harddriv
 	
 		/* speed up the 6502 */
 		atarigen_init_6502_speedup(3, 0x4159, 0x4171);
-	}
+	} };
 	
 	
 	static READ16_HANDLER( steeltal_dummy_r )
@@ -1291,7 +1291,7 @@ public class harddriv
 		/* this is required so that INT 4 is recongized as a sound INT */
 		return ~0;
 	}
-	static void init_steeltal(void)
+	static public static InitDriverPtr init_steeltal = new InitDriverPtr() { public void handler() 
 	{
 		/* initialize the boards */
 		init_multisync();
@@ -1308,10 +1308,10 @@ public class harddriv
 	
 		/* speed up the 6502 */
 	/*	atarigen_init_6502_speedup(4, 0x4159, 0x4171);*/
-	}
+	} };
 	
 	
-	static void init_racedriv(void)
+	static public static InitDriverPtr init_racedriv = new InitDriverPtr() { public void handler() 
 	{
 		/* initialize the boards */
 		init_driver();
@@ -1323,10 +1323,10 @@ public class harddriv
 		slapstic_init(117);
 		hd68k_slapstic_base = install_mem_read16_handler(0, 0xe0000, 0xfffff, racedriv_68k_slapstic_r);
 		hd68k_slapstic_base = install_mem_write16_handler(0, 0xe0000, 0xfffff, racedriv_68k_slapstic_w);
-	}
+	} };
 	
 	
-	static void init_racedrvc(void)
+	static public static InitDriverPtr init_racedrvc = new InitDriverPtr() { public void handler() 
 	{
 		/* initialize the boards */
 		init_multisync();
@@ -1338,14 +1338,14 @@ public class harddriv
 		slapstic_init(117);
 		hd68k_slapstic_base = install_mem_read16_handler(0, 0xe0000, 0xfffff, racedriv_68k_slapstic_r);
 		hd68k_slapstic_base = install_mem_write16_handler(0, 0xe0000, 0xfffff, racedriv_68k_slapstic_w);
-	}
+	} };
 	
 	
-	static void init_hdrivair(void)
+	static public static InitDriverPtr init_hdrivair = new InitDriverPtr() { public void handler() 
 	{
 		init_multisync();
 		init_adsp();
-	}
+	} };
 	
 	
 	

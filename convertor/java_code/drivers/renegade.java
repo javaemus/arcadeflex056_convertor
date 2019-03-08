@@ -149,18 +149,18 @@ public class renegade
 		0xca,0xd0,0xed,0x68,0x85,0x01,0x68,0xaa,0x68,0x60
 	};
 	
-	void init_kuniokun( void )
+	public static InitDriverPtr init_kuniokun = new InitDriverPtr() { public void handler() 
 	{
 		mcu_type = 0x85;
 		mcu_encrypt_table = kuniokun_xor_table;
 		mcu_encrypt_table_len = 0x2a;
-	}
-	void init_renegade( void )
+	} };
+	public static InitDriverPtr init_renegade = new InitDriverPtr() { public void handler() 
 	{
 		mcu_type = 0xda;
 		mcu_encrypt_table = renegade_xor_table;
 		mcu_encrypt_table_len = 0x37;
-	}
+	} };
 	
 	#define MCU_BUFFER_MAX 6
 	static unsigned char mcu_buffer[MCU_BUFFER_MAX];

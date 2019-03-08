@@ -78,13 +78,13 @@ public class eprom
 	}
 	
 	
-	static void init_machine(void)
+	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_reset();
 		atarigen_interrupt_reset(update_interrupts);
 		atarigen_scanline_timer_reset(eprom_scanline_update, 8);
 		atarijsa_reset();
-	}
+	} };
 	
 	
 	
@@ -586,7 +586,7 @@ public class eprom
 	 *
 	 *************************************/
 	
-	static void init_eprom(void)
+	static public static InitDriverPtr init_eprom = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_default = NULL;
 		atarijsa_init(2, 6, 1, 0x0002);
@@ -597,15 +597,15 @@ public class eprom
 		sync_data = install_mem_read16_handler(1, 0x16cc00, 0x16cc01, sync_r);
 		sync_data = install_mem_write16_handler(0, 0x16cc00, 0x16cc01, sync_w);
 		sync_data = install_mem_write16_handler(1, 0x16cc00, 0x16cc01, sync_w);
-	}
+	} };
 	
 	
-	static void init_klaxp(void)
+	static public static InitDriverPtr init_klaxp = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_default = NULL;
 		atarijsa_init(1, 2, 1, 0x0002);
 		atarigen_init_6502_speedup(1, 0x4159, 0x4171);
-	}
+	} };
 	
 	
 	

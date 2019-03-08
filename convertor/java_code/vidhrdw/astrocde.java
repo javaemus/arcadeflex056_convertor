@@ -531,7 +531,7 @@ public class astrocde
 	} };
 	
 	
-	static void init_star_field(void)
+	static public static InitDriverPtr init_star_field = new InitDriverPtr() { public void handler() 
 	{
 		int generator;
 		int count,x,y;
@@ -586,7 +586,7 @@ public class astrocde
 						 (((r >>  4) & 1) << 1) +
 						 (((r >>  0) & 1) << 0);
 		}
-	}
+	} };
 	
 	
 	/* GORF Special Registers

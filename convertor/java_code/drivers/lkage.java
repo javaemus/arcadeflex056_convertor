@@ -552,11 +552,11 @@ public class lkage
 		return 3;
 	} };
 	
-	void init_lkageb(void)
+	public static InitDriverPtr init_lkageb = new InitDriverPtr() { public void handler() 
 	{
 		install_mem_read_handler(0,0xf062,0xf062,fake_mcu_r);
 		install_mem_read_handler(0,0xf087,0xf087,fake_status_r);
-	}
+	} };
 	
 	
 	public static GameDriver driver_lkage	   = new GameDriver("1984"	,"lkage"	,"lkage.java"	,rom_lkage,null	,machine_driver_lkage	,input_ports_lkage	,null	,ROT0	,	"Taito Corporation", "The Legend of Kage" )

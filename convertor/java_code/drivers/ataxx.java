@@ -222,7 +222,7 @@ public class ataxx
 	 *
 	 *************************************/
 	
-	static void init_machine(void)
+	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
 	{
 		/* set the odd data banks */
 		battery_ram = memory_region(REGION_USER2);
@@ -259,7 +259,7 @@ public class ataxx
 	
 		/* reset the I186 */
 		leland_i186_sound_init();
-	}
+	} };
 	
 	
 	
@@ -1302,7 +1302,7 @@ public class ataxx
 	 *************************************/
 	
 	
-	static void init_ataxx(void)
+	static public static InitDriverPtr init_ataxx = new InitDriverPtr() { public void handler() 
 	{
 		/* initialize the default EEPROM state */
 		static const UINT16 ataxx_eeprom_data[] =
@@ -1326,9 +1326,9 @@ public class ataxx
 	
 		/* optimize the sound */
 		leland_i86_optimize_address(0x612);
-	}
+	} };
 	
-	static void init_ataxxj(void)
+	static public static InitDriverPtr init_ataxxj = new InitDriverPtr() { public void handler() 
 	{
 		/* initialize the default EEPROM state */
 		static const UINT16 ataxxj_eeprom_data[] =
@@ -1351,9 +1351,9 @@ public class ataxx
 	
 		/* optimize the sound */
 		leland_i86_optimize_address(0x612);
-	}
+	} };
 	
-	static void init_wsf(void)
+	static public static InitDriverPtr init_wsf = new InitDriverPtr() { public void handler() 
 	{
 		/* initialize the default EEPROM state */
 		static const UINT16 wsf_eeprom_data[] =
@@ -1378,9 +1378,9 @@ public class ataxx
 	
 		/* optimize the sound */
 		leland_i86_optimize_address(0x612);
-	}
+	} };
 	
-	static void init_indyheat(void)
+	static public static InitDriverPtr init_indyheat = new InitDriverPtr() { public void handler() 
 	{
 		/* initialize the default EEPROM state */
 		static const UINT16 indyheat_eeprom_data[] =
@@ -1410,9 +1410,9 @@ public class ataxx
 	
 		/* optimize the sound */
 		leland_i86_optimize_address(0x613);
-	}
+	} };
 	
-	static void init_brutforc(void)
+	static public static InitDriverPtr init_brutforc = new InitDriverPtr() { public void handler() 
 	{
 		/* initialize the default EEPROM state */
 		static const UINT16 brutforc_eeprom_data[] =
@@ -1437,7 +1437,7 @@ public class ataxx
 	
 		/* optimize the sound */
 		leland_i86_optimize_address(0x613);
-	}
+	} };
 	
 	
 	

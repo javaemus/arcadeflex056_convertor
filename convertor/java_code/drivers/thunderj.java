@@ -77,14 +77,14 @@ public class thunderj
 	}
 	
 	
-	static void init_machine(void)
+	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_reset();
 		atarivc_reset(atarivc_eof_data);
 		atarigen_interrupt_reset(update_interrupts);
 		atarigen_scanline_timer_reset(thunderj_scanline_update, 1024);
 		atarijsa_reset();
-	}
+	} };
 	
 	
 	
@@ -441,7 +441,7 @@ public class thunderj
 	 *
 	 *************************************/
 	
-	static void init_thunderj(void)
+	static public static InitDriverPtr init_thunderj = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_default = NULL;
 		atarijsa_init(2, 3, 2, 0x0002);
@@ -450,7 +450,7 @@ public class thunderj
 		/* it looks like they jsr to $800000 as some kind of protection */
 		/* put an RTS there so we don't die */
 		*rts_address = 0x4e75;
-	}
+	} };
 	
 	
 	

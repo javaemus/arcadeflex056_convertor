@@ -520,11 +520,11 @@ public class gunbustr
 		return gunbustr_ram[0x3acc/4];
 	}
 	
-	static void init_gunbustr(void)
+	static public static InitDriverPtr init_gunbustr = new InitDriverPtr() { public void handler() 
 	{
 		/* Speedup handler */
 		install_mem_read32_handler(0, 0x203acc, 0x203acf, main_cycle_r);
-	}
+	} };
 	
 	public static GameDriver driver_gunbustr	   = new GameDriver("1992"	,"gunbustr"	,"gunbustr.java"	,rom_gunbustr,null	,machine_driver_gunbustr	,input_ports_gunbustr	,init_gunbustr	,ORIENTATION_FLIP_X	,	"Taito Corporation", "Gunbuster (Japan)" )
 }

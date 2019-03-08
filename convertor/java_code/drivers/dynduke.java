@@ -403,10 +403,10 @@ public class dynduke
 	/***************************************************************************/
 	
 	
-	static void init_dynduke(void)
+	static public static InitDriverPtr init_dynduke = new InitDriverPtr() { public void handler() 
 	{
 		seibu_sound_decrypt(REGION_CPU3,0x20000);
-	}
+	} };
 	
 	
 	public static GameDriver driver_dynduke	   = new GameDriver("1989"	,"dynduke"	,"dynduke.java"	,rom_dynduke,null	,machine_driver_dynduke	,input_ports_dynduke	,init_dynduke	,ROT0	,	"Seibu Kaihatsu (Fabtek license)", "Dynamite Duke" )

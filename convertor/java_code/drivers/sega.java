@@ -671,43 +671,43 @@ public class sega
 	
 	***************************************************************************/
 	
-	void init_spacfury(void)
+	public static InitDriverPtr init_spacfury = new InitDriverPtr() { public void handler() 
 	{
 		/* This game uses the 315-0064 security chip */
 		sega_security(64);
 	
 		install_port_read_handler(0, 0xfc, 0xfc, input_port_8_r);
-	}
+	} };
 	
-	void init_zektor(void)
+	public static InitDriverPtr init_zektor = new InitDriverPtr() { public void handler() 
 	{
 		/* This game uses the 315-0082 security chip */
 		sega_security(82);
-	}
+	} };
 	
-	void init_elim2(void)
+	public static InitDriverPtr init_elim2 = new InitDriverPtr() { public void handler() 
 	{
 		/* This game uses the 315-0070 security chip */
 		sega_security(70);
-	}
+	} };
 	
-	void init_elim4(void)
+	public static InitDriverPtr init_elim4 = new InitDriverPtr() { public void handler() 
 	{
 		/* This game uses the 315-0076 security chip */
 		sega_security(76);
-	}
+	} };
 	
-	void init_startrek(void)
+	public static InitDriverPtr init_startrek = new InitDriverPtr() { public void handler() 
 	{
 		/* This game uses the 315-0064 security chip */
 		sega_security(64);
-	}
+	} };
 	
-	void init_tacscan(void)
+	public static InitDriverPtr init_tacscan = new InitDriverPtr() { public void handler() 
 	{
 		/* This game uses the 315-0076 security chip */
 		sega_security(76);
-	}
+	} };
 	
 	
 	

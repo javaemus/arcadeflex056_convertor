@@ -76,13 +76,13 @@ public class rampart
 	 *
 	 *************************************/
 	
-	static void init_machine(void)
+	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
 	{
 		atarigen_eeprom_reset();
 		atarigen_slapstic_reset();
 		atarigen_interrupt_reset(update_interrupts);
 		atarigen_scanline_timer_reset(scanline_update, 32);
-	}
+	} };
 	
 	
 	
@@ -494,7 +494,7 @@ public class rampart
 	 *
 	 *************************************/
 	
-	static void init_rampart(void)
+	static public static InitDriverPtr init_rampart = new InitDriverPtr() { public void handler() 
 	{
 		static const UINT16 compressed_default_eeprom[] =
 		{
@@ -525,7 +525,7 @@ public class rampart
 		memcpy(&memory_region(REGION_CPU1)[0x140000], &memory_region(REGION_CPU1)[0x40000], 0x8000);
 		atarigen_invert_region(REGION_GFX1);
 		atarigen_slapstic_init(0, 0x140000, 118);
-	}
+	} };
 	
 	
 	

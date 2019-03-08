@@ -226,10 +226,10 @@ public class volfied
 				     MACHINE DRIVERS
 	***********************************************************/
 	
-	static void init_volfied(void)
+	static public static InitDriverPtr init_volfied = new InitDriverPtr() { public void handler() 
 	{
 		volfied_cchip_init();
-	}
+	} };
 	
 	static struct MachineDriver machine_driver_volfied =
 	{

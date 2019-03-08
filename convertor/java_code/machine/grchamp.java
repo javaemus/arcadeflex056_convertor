@@ -20,14 +20,14 @@ public class grchamp
 	
 	***************************************************************************/
 	
-	void init_grchamp( void ) {
+	public static InitDriverPtr init_grchamp = new InitDriverPtr() { public void handler()  {
 		/* clear the irq latches */
 		grchamp_cpu_irq_enable[0] = grchamp_cpu_irq_enable[1] = 0;
 	
 		/* if the coin system is 1 way, lock Coin B (Page 40) */
 		if ( readinputport( 1 ) & 0x10 )
 			coin_lockout_w( 1, 1 );
-	}
+	} };
 	
 	/*
 		A note about port signals (note the preceding asterisk):

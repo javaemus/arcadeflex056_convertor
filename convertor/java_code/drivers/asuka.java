@@ -1138,11 +1138,11 @@ public class asuka
 	ROM_END(); }}; 
 	
 	
-	static void init_asuka(void)
+	static public static InitDriverPtr init_asuka = new InitDriverPtr() { public void handler() 
 	{
 		state_save_register_int("sound1", 0, "sound region", &banknum);
 		state_save_register_func_postload(reset_sound_region);
-	}
+	} };
 	
 	
 	public static GameDriver driver_bonzeadv	   = new GameDriver("1988"	,"bonzeadv"	,"asuka.java"	,rom_bonzeadv,null	,machine_driver_bonzeadv	,input_ports_bonzeadv	,init_asuka	,ROT0	,	"Taito Corporation Japan", "Bonze Adventure (World)" )

@@ -468,10 +468,10 @@ public class yamato
 	ROM_END(); }}; 
 	
 	
-	static void init_yamato(void)
+	static public static InitDriverPtr init_yamato = new InitDriverPtr() { public void handler() 
 	{
 		yamato_decode();
-	}
+	} };
 	
 	
 	public static GameDriver driver_yamato	   = new GameDriver("1983"	,"yamato"	,"yamato.java"	,rom_yamato,null	,machine_driver_yamato	,input_ports_yamato	,init_yamato	,ROT90	,	"Sega", "Yamato (set 1)" )

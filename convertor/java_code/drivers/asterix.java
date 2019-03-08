@@ -394,7 +394,7 @@ public class asterix
 	ROM_END(); }}; 
 	
 	
-	static void init_asterix(void)
+	static public static InitDriverPtr init_asterix = new InitDriverPtr() { public void handler() 
 	{
 		konami_rom_deinterleave_2(REGION_GFX1);
 		konami_rom_deinterleave_2(REGION_GFX2);
@@ -403,7 +403,7 @@ public class asterix
 		*(data16_t *)(memory_region(REGION_CPU1) + 0x07f34) = 0x602a;
 		*(data16_t *)(memory_region(REGION_CPU1) + 0x00008) = 0x0400;
 	#endif
-	}
+	} };
 	
 	
 	public static GameDriver driver_asterix	   = new GameDriver("1992"	,"asterix"	,"asterix.java"	,rom_asterix,null	,machine_driver_asterix	,input_ports_asterix	,init_asterix	,ROT0	,	"Konami", "Asterix (World ver. EAD)" )

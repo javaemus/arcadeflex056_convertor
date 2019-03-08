@@ -725,7 +725,7 @@ public class bloodbro
 	
 	/***************************************************************************/
 	
-	static void init_weststry(void)
+	static public static InitDriverPtr init_weststry = new InitDriverPtr() { public void handler() 
 	{
 		UINT8 *gfx = memory_region(REGION_GFX3);
 		int i;
@@ -733,7 +733,7 @@ public class bloodbro
 		/* invert sprite data */
 		for (i = 0;i < memory_region_length(REGION_GFX3);i++)
 			gfx[i] = ~gfx[i];
-	}
+	} };
 	
 	/***************************************************************************/
 	

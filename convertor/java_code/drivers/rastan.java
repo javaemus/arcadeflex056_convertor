@@ -502,11 +502,11 @@ public class rastan
 	ROM_END(); }}; 
 	
 	
-	static void init_rastan(void)
+	static public static InitDriverPtr init_rastan = new InitDriverPtr() { public void handler() 
 	{
 		state_save_register_int("sound", 0, "sound region", &banknum);
 		state_save_register_func_postload(reset_sound_region);
-	}
+	} };
 	
 	
 	public static GameDriver driver_rastan	   = new GameDriver("1987"	,"rastan"	,"rastan.java"	,rom_rastan,null	,machine_driver_rastan	,input_ports_rastan	,init_rastan	,ROT0	,	"Taito Corporation Japan", "Rastan (World)")

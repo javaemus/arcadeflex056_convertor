@@ -48,6 +48,7 @@ public class convertMame {
     static final int VH_START = 20;
     static final int VH_STOP = 21;
     static final int VH_SCREENREFRESH = 22;
+    static final int DRIVER_INIT = 23;
 
     public static void Convert() {
         Convertor.inpos = 0;//position of pointer inside the buffers
@@ -243,6 +244,11 @@ public class convertMame {
                         if (Convertor.token[0].contains("vh_stop")) {
                             sUtil.putString((new StringBuilder()).append("public static VhStopPtr ").append(Convertor.token[0]).append(" = new VhStopPtr() { public void handler() ").toString());
                             type = VH_STOP;
+                            i3 = -1;
+                            continue;
+                        } else if (Convertor.token[0].startsWith("init_") && !Convertor.token[0].contains("table")) {
+                            sUtil.putString((new StringBuilder()).append("public static InitDriverPtr ").append(Convertor.token[0]).append(" = new InitDriverPtr() { public void handler() ").toString());
+                            type = DRIVER_INIT;
                             i3 = -1;
                             continue;
                         }
@@ -786,7 +792,7 @@ public class convertMame {
 
                     if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL
                             || type == READ_HANDLER8 || type == WRITE_HANDLER8 || type == MACHINE_INTERRUPT
-                            || type == VH_START || type == VH_STOP || type == VH_SCREENREFRESH) {
+                            || type == VH_START || type == VH_STOP || type == VH_SCREENREFRESH || type == DRIVER_INIT) {
                         i3++;
                     }
                 }
@@ -885,7 +891,7 @@ public class convertMame {
                     }
                     if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL
                             || type == READ_HANDLER8 || type == WRITE_HANDLER8 || type == MACHINE_INTERRUPT
-                            || type == VH_START || type == VH_STOP || type == VH_SCREENREFRESH) {
+                            || type == VH_START || type == VH_STOP || type == VH_SCREENREFRESH || type == DRIVER_INIT) {
                         i3--;
                         if (i3 == -1) {
                             sUtil.putString("} };");

@@ -844,16 +844,16 @@ public class namcona1
 	}
 	
 	/* "custom key" mappings (protection) */
-	void init_cgangpzl( void ){ init_namcona1( 0x100000 ); custom_key = key_cgangpzl; }
-	void init_knckhead( void ){ init_namcona1( 0x200000 ); custom_key = key_knckhead; }
-	void init_emeralda( void ){ init_namcona1( 0x200000 ); custom_key = key_emeralda; }
-	void init_bkrtmaq(  void ){ init_namcona1( 0x200000 ); custom_key = key_bkrtmaq; }
-	void init_exbania(  void ){ init_namcona1( 0x100000 ); custom_key = key_exbania; }
-	void init_quiztou(  void ){ init_namcona1( 0x200000 ); custom_key = key_quiztou; }
-	void init_swcourt(  void ){ init_namcona1( 0x200000 ); custom_key = key_swcourt; }
-	void init_tinklpit( void ){ init_namcona1( 0x200000 ); custom_key = key_tinklpit; }
-	void init_numanath( void ){ init_namcona1( 0x200000 ); custom_key = key_numanath; }
-	void init_fa(       void ){ init_namcona1( 0x200000 ); custom_key = key_fa; }
+	public static InitDriverPtr init_cgangpzl = new InitDriverPtr() { public void handler() { init_namcona1( 0x100000 ); custom_key = key_cgangpzl; } };
+	public static InitDriverPtr init_knckhead = new InitDriverPtr() { public void handler() { init_namcona1( 0x200000 ); custom_key = key_knckhead; } };
+	public static InitDriverPtr init_emeralda = new InitDriverPtr() { public void handler() { init_namcona1( 0x200000 ); custom_key = key_emeralda; } };
+	public static InitDriverPtr init_bkrtmaq = new InitDriverPtr() { public void handler() { init_namcona1( 0x200000 ); custom_key = key_bkrtmaq; } };
+	public static InitDriverPtr init_exbania = new InitDriverPtr() { public void handler() { init_namcona1( 0x100000 ); custom_key = key_exbania; } };
+	public static InitDriverPtr init_quiztou = new InitDriverPtr() { public void handler() { init_namcona1( 0x200000 ); custom_key = key_quiztou; } };
+	public static InitDriverPtr init_swcourt = new InitDriverPtr() { public void handler() { init_namcona1( 0x200000 ); custom_key = key_swcourt; } };
+	public static InitDriverPtr init_tinklpit = new InitDriverPtr() { public void handler() { init_namcona1( 0x200000 ); custom_key = key_tinklpit; } };
+	public static InitDriverPtr init_numanath = new InitDriverPtr() { public void handler() { init_namcona1( 0x200000 ); custom_key = key_numanath; } };
+	public static InitDriverPtr init_fa = new InitDriverPtr() { public void handler() { init_namcona1( 0x200000 ); custom_key = key_fa; } };
 	
 	static RomLoadPtr rom_bkrtmaq = new RomLoadPtr(){ public void handler(){ 
 		ROM_REGION( 0x680000, REGION_CPU1, 0 );

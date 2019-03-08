@@ -722,14 +722,14 @@ public class shangha3
 	
 	
 	
-	static void init_shangha3(void)
+	static public static InitDriverPtr init_shangha3 = new InitDriverPtr() { public void handler() 
 	{
 		shangha3_do_shadows = 1;
-	}
-	static void init_heberpop(void)
+	} };
+	static public static InitDriverPtr init_heberpop = new InitDriverPtr() { public void handler() 
 	{
 		shangha3_do_shadows = 0;
-	}
+	} };
 	
 	public static GameDriver driver_shangha3	   = new GameDriver("1993"	,"shangha3"	,"shangha3.java"	,rom_shangha3,null	,machine_driver_shangha3	,input_ports_shangha3	,init_shangha3	,ROT0	,	"Sunsoft", "Shanghai III (Japan)" )
 	public static GameDriver driver_heberpop	   = new GameDriver("1994"	,"heberpop"	,"shangha3.java"	,rom_heberpop,null	,machine_driver_heberpop	,input_ports_heberpop	,init_heberpop	,ROT0	,	"Sunsoft / Atlus", "Hebereke no Popoon (Japan)" )

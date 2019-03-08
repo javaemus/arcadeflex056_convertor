@@ -71,10 +71,10 @@ public class magmax
 		scanline_timer = timer_set( cpu_getscanlinetime( scanline ), scanline, scanline_callback );
 	}
 	
-	static void init_machine(void)
+	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
 	{
 		scanline_timer = timer_set(cpu_getscanlinetime( 64 ), 64, scanline_callback );
-	}
+	} };
 	
 	
 	

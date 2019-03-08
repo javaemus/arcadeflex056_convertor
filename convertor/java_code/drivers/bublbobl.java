@@ -1125,17 +1125,17 @@ public class bublbobl
 	
 	
 	
-	static void init_bublbobl(void)
+	static public static InitDriverPtr init_bublbobl = new InitDriverPtr() { public void handler() 
 	{
 		unsigned char *ROM = memory_region(REGION_CPU1);
 	
 		/* in Bubble Bobble, bank 0 has code falling from 7fff to 8000, */
 		/* so I have to copy it there because bank switching wouldn't catch it */
 		memcpy(ROM+0x08000,ROM+0x10000,0x4000);
-	}
+	} };
 	
 	
-	static void init_boblbobl(void)
+	static public static InitDriverPtr init_boblbobl = new InitDriverPtr() { public void handler() 
 	{
 	#define MOD_PAGE(page,addr,data) memory_region(REGION_CPU1)[addr-0x8000+0x10000+0x4000*page] = data;
 	    /* these shouldn't be necessary, surely - this is a bootleg ROM
@@ -1149,16 +1149,16 @@ public class bublbobl
 		MOD_PAGE(3,0xb561,0x00); MOD_PAGE(3,0xb562,0x00); MOD_PAGE(3,0xb563,0x00);
 	
 		init_bublbobl();
-	}
+	} };
 	
 	
-	static void init_tokio(void)
+	static public static InitDriverPtr init_tokio = new InitDriverPtr() { public void handler() 
 	{
 		
 		/* preemptively enable video, the bit is not mapped for this game and */
 		/* I don't know if it even has it. */
 		bublbobl_video_enable = 1;
-	}
+	} };
 	
 	
 	public static GameDriver driver_bublbobl	   = new GameDriver("1986"	,"bublbobl"	,"bublbobl.java"	,rom_bublbobl,null	,machine_driver_bublbobl	,input_ports_bublbobl	,init_bublbobl	,ROT0	,	"Taito Corporation", "Bubble Bobble" )

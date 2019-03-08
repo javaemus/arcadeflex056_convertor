@@ -792,7 +792,7 @@ public class wardner
 	ROM_END(); }}; 
 	
 	
-	static void init_wardner(void)
+	static public static InitDriverPtr init_wardner = new InitDriverPtr() { public void handler() 
 	{
 		data8_t *source = memory_region(REGION_USER1);
 		data16_t *dest = (data16_t *)&memory_region(REGION_CPU3)[TMS320C10_PGM_OFFSET];
@@ -801,7 +801,7 @@ public class wardner
 		/* The ROM loader fixes the nibble images. Here we fix the byte ordering. */
 		for (A = 0;A < 0x0600;A++)
 			dest[A] = (source[A] << 8) | source[A + 0x800];
-	}
+	} };
 	
 	
 	

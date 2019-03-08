@@ -1147,7 +1147,7 @@ public class zaxxon
 		ROM_LOAD( "1944a.u51",      0x0800, 0x0800, 0x88215098 );
 	ROM_END(); }}; 
 	
-	static void init_zaxxonb(void)
+	static public static InitDriverPtr init_zaxxonb = new InitDriverPtr() { public void handler() 
 	{
 	/*
 		the values vary, but the translation mask is always laid out like this:
@@ -1220,27 +1220,27 @@ public class zaxxon
 			i = ((A >> 0) & 1) + (((A >> 4) & 1) << 1) + (((A >> 8) & 1) << 2);
 			rom[A + diff] = src ^ opcode_xortable[i][j];
 		}
-	}
+	} };
 	
-	static void init_szaxxon(void)
+	static public static InitDriverPtr init_szaxxon = new InitDriverPtr() { public void handler() 
 	{
 		szaxxon_decode();
-	}
+	} };
 	
-	static void init_futspy(void)
+	static public static InitDriverPtr init_futspy = new InitDriverPtr() { public void handler() 
 	{
 		futspy_decode();
-	}
+	} };
 	
-	static void init_razmataz(void)
+	static public static InitDriverPtr init_razmataz = new InitDriverPtr() { public void handler() 
 	{
 		nprinces_decode();
-	}
+	} };
 	
-	static void init_ixion(void)
+	static public static InitDriverPtr init_ixion = new InitDriverPtr() { public void handler() 
 	{
 		szaxxon_decode();
-	}
+	} };
 	
 	
 	public static GameDriver driver_zaxxon	   = new GameDriver("1982"	,"zaxxon"	,"zaxxon.java"	,rom_zaxxon,null	,machine_driver_zaxxon	,input_ports_zaxxon	,null	,ROT90	,	"Sega",    "Zaxxon (set 1)" )

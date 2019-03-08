@@ -360,7 +360,7 @@ public class wmstunit
 	 *
 	 *************************************/
 	
-	void init_mk(void)
+	public static InitDriverPtr init_mk = new InitDriverPtr() { public void handler() 
 	{
 		/* common init */
 		init_tunit_generic(SOUND_ADPCM);
@@ -375,7 +375,7 @@ public class wmstunit
 	
 		/* speedups */
 		INSTALL_SPEEDUP_3(0x01053360, 0xffce2100, 0x104f9d0, 0x104fa10, 0x104fa30);
-	}
+	} };
 	
 	static void init_nbajam_common(int te_protection)
 	{
@@ -405,23 +405,23 @@ public class wmstunit
 			install_mem_write_handler(1, 0xfbec, 0xfc16, MWA_RAM);
 	}
 	
-	void init_nbajam(void)
+	public static InitDriverPtr init_nbajam = new InitDriverPtr() { public void handler() 
 	{
 		init_nbajam_common(0);
 		INSTALL_SPEEDUP_1_16BIT(0x010754c0, 0xff833480, 0x1008040, 0xd0, 0xb0);
-	}
+	} };
 	
-	void init_nbajam20(void)
+	public static InitDriverPtr init_nbajam20 = new InitDriverPtr() { public void handler() 
 	{
 		init_nbajam_common(0);
 		INSTALL_SPEEDUP_1_16BIT(0x010754c0, 0xff833520, 0x1008040, 0xd0, 0xb0);
-	}
+	} };
 	
-	void init_nbajamte(void)
+	public static InitDriverPtr init_nbajamte = new InitDriverPtr() { public void handler() 
 	{
 		init_nbajam_common(1);
 		INSTALL_SPEEDUP_1_16BIT(0x0106d480, 0xff84e480, 0x1000040, 0xd0, 0xb0);
-	}
+	} };
 	
 	
 	
@@ -433,7 +433,7 @@ public class wmstunit
 	 *
 	 *************************************/
 	
-	static void init_mk2_common(void)
+	static public static InitDriverPtr init_mk2_common = new InitDriverPtr() { public void handler() 
 	{
 		/* common init */
 		init_tunit_generic(SOUND_DCS);
@@ -447,19 +447,19 @@ public class wmstunit
 		install_mem_read16_handler (0, TOBYTE(0x01a3d0c0), TOBYTE(0x01a3d0ff), mk2_prot_r);
 		install_mem_read16_handler (0, TOBYTE(0x01d9d1e0), TOBYTE(0x01d9d1ff), mk2_prot_const_r);
 		install_mem_read16_handler (0, TOBYTE(0x01def920), TOBYTE(0x01def93f), mk2_prot_const_r);
-	}
+	} };
 	
-	void init_mk2(void)
+	public static InitDriverPtr init_mk2 = new InitDriverPtr() { public void handler() 
 	{
 		init_mk2_common();
 		INSTALL_SPEEDUP_3(0x01068e70, 0xff80db70, 0x105d480, 0x105d4a0, 0x105d4c0);
-	}
+	} };
 	
-	void init_mk2r14(void)
+	public static InitDriverPtr init_mk2r14 = new InitDriverPtr() { public void handler() 
 	{
 		init_mk2_common();
 		INSTALL_SPEEDUP_3(0x01068de0, 0xff80d960, 0x105d480, 0x105d4a0, 0x105d4c0);
-	}
+	} };
 	
 	
 	

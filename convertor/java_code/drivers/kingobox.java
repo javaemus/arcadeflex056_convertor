@@ -877,7 +877,7 @@ public class kingobox
 	ROM_END(); }}; 
 	
 	
-	static void init_ringkin3(void)
+	static public static InitDriverPtr init_ringkin3 = new InitDriverPtr() { public void handler() 
 	{
 		int i;
 		unsigned char *RAM = memory_region(REGION_PROMS);
@@ -885,7 +885,7 @@ public class kingobox
 		/* expand the first color PROM to look like the kingobox ones... */
 		for (i = 0;i < 0x100;i++)
 			RAM[i] = RAM[i + 0x100] >> 4;
-	}
+	} };
 	
 	
 	
