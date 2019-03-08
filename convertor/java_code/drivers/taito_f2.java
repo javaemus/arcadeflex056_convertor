@@ -4757,11 +4757,11 @@ public class taito_f2
 	                      MACHINE DRIVERS
 	***********************************************************/
 	
-	static public static InitDriverPtr init_machine_qcrayon = new InitDriverPtr() { public void handler() 
+	static void init_machine_qcrayon(void)
 	{
 		/* point to the extra ROM */
 		cpu_setbank(1,memory_region(REGION_USER1));
-	} };
+	}
 	
 	#define init_machine_0 0
 	

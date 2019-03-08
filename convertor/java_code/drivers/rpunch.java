@@ -152,10 +152,10 @@ public class rpunch
 	}
 	
 	
-	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
+	static void init_machine(void)
 	{
 		memcpy(memory_region(REGION_SOUND1), memory_region(REGION_SOUND1) + 0x20000, 0x20000);
-	} };
+	}
 	
 	
 	

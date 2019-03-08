@@ -192,7 +192,7 @@ public class gauntlet
 	}
 	
 	
-	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
+	static void init_machine(void)
 	{
 		last_speed_check = 0;
 		last_speech_write = 0x80;
@@ -204,7 +204,7 @@ public class gauntlet
 		atarigen_interrupt_reset(update_interrupts);
 		atarigen_scanline_timer_reset(scanline_update, 32);
 		atarigen_sound_io_reset(1);
-	} };
+	}
 	
 	
 	

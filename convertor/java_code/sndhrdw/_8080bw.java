@@ -151,7 +151,7 @@ public class _8080bw
 	};
 	
 	
-	public static InitDriverPtr init_machine_invaders = new InitDriverPtr() { public void handler() 
+	void init_machine_invaders(void)
 	{
 		install_port_write_handler(0, 0x03, 0x03, invaders_sh_port3_w);
 		install_port_write_handler(0, 0x05, 0x05, invaders_sh_port5_w);
@@ -162,9 +162,9 @@ public class _8080bw
 		SN76477_mixer_b_w(0, 0);
 		SN76477_mixer_c_w(0, 0);
 		SN76477_vco_w(0, 1);
-	} };
+	}
 	
-	public static InitDriverPtr init_machine_sstrngr2 = new InitDriverPtr() { public void handler() 
+	void init_machine_sstrngr2(void)
 	{
 		install_port_write_handler(0, 0x42, 0x42, invaders_sh_port3_w);
 		install_port_write_handler(0, 0x44, 0x44, invaders_sh_port5_w);
@@ -181,9 +181,9 @@ public class _8080bw
 		   are bit inverters enabled by the ROM test DSW */
 	
 	//	memory_region(REGION_CPU1)[0x0010] = 0xf5;	/* push af */
-	} };
+	}
 	
-	public static InitDriverPtr init_machine_invad2ct = new InitDriverPtr() { public void handler() 
+	void init_machine_invad2ct(void)
 	{
 		init_machine_invaders();
 	
@@ -196,7 +196,7 @@ public class _8080bw
 		SN76477_mixer_b_w(1, 0);
 		SN76477_mixer_c_w(1, 0);
 		SN76477_vco_w(1, 1);
-	} };
+	}
 	
 	
 	/*
@@ -298,11 +298,11 @@ public class _8080bw
 	/*                                                     */
 	/*******************************************************/
 	
-	public static InitDriverPtr init_machine_gunfight = new InitDriverPtr() { public void handler() 
+	void init_machine_gunfight(void)
 	{
 		install_port_read_handler(0, 0x00, 0x00, gunfight_port_0_r);
 		install_port_read_handler(0, 0x01, 0x01, gunfight_port_1_r);
-	} };
+	}
 	
 	
 	/*******************************************************/
@@ -332,14 +332,14 @@ public class _8080bw
 	/* HC 4/14/98 NOTE: *I* THINK there are sounds missing...
 	i dont know for sure... but that is my guess....... */
 	
-	public static InitDriverPtr init_machine_boothill = new InitDriverPtr() { public void handler() 
+	void init_machine_boothill(void)
 	{
 		install_port_read_handler (0, 0x00, 0x00, boothill_port_0_r);
 		install_port_read_handler (0, 0x01, 0x01, boothill_port_1_r);
 	
 		install_port_write_handler(0, 0x03, 0x03, boothill_sh_port3_w);
 		install_port_write_handler(0, 0x05, 0x05, boothill_sh_port5_w);
-	} };
+	}
 	
 	public static WriteHandlerPtr boothill_sh_port3_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
@@ -382,11 +382,11 @@ public class _8080bw
 	/* This only does the color swap for the explosion */
 	/* We do not have correct samples so sound not done */
 	
-	public static InitDriverPtr init_machine_ballbomb = new InitDriverPtr() { public void handler() 
+	void init_machine_ballbomb(void)
 	{
 		install_port_write_handler(0, 0x03, 0x03, ballbomb_sh_port3_w);
 		install_port_write_handler(0, 0x05, 0x05, ballbomb_sh_port5_w);
-	} };
+	}
 	
 	public static WriteHandlerPtr ballbomb_sh_port3_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
@@ -405,10 +405,10 @@ public class _8080bw
 	/*                                                     */
 	/*******************************************************/
 	
-	public static InitDriverPtr init_machine_polaris = new InitDriverPtr() { public void handler() 
+	void init_machine_polaris(void)
 	{
 		install_port_write_handler(0, 0x06, 0x06, polaris_sh_port6_w);
-	} };
+	}
 	
 	public static WriteHandlerPtr polaris_sh_port6_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
@@ -483,7 +483,7 @@ public class _8080bw
 	};
 	
 	
-	public static InitDriverPtr init_machine_sheriff = new InitDriverPtr() { public void handler() 
+	void init_machine_sheriff(void)
 	{
 		install_port_write_handler(0, 0x04, 0x04, sheriff_sh_port4_w);
 		install_port_write_handler(0, 0x05, 0x05, sheriff_sh_port5_w);
@@ -503,7 +503,7 @@ public class _8080bw
 		SN76477_noise_clock_w(0, 0);
 		SN76477_mixer_a_w(0, 0);
 		SN76477_mixer_c_w(0, 0);
-	} };
+	}
 	
 	
 	static int sheriff_t0,sheriff_t1,sheriff_p1,sheriff_p2;
@@ -584,10 +584,10 @@ public class _8080bw
 	/*                                                     */
 	/*******************************************************/
 	
-	public static InitDriverPtr init_machine_helifire = new InitDriverPtr() { public void handler() 
+	void init_machine_helifire(void)
 	{
 		install_port_write_handler(0, 0x06, 0x06, helifire_sh_port6_w);
-	} };
+	}
 	
 	public static WriteHandlerPtr helifire_sh_port6_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
@@ -601,10 +601,10 @@ public class _8080bw
 	/*                                                     */
 	/*******************************************************/
 	
-	public static InitDriverPtr init_machine_seawolf = new InitDriverPtr() { public void handler() 
+	void init_machine_seawolf(void)
 	{
 		install_port_read_handler (0, 0x01, 0x01, seawolf_port_1_r);
-	} };
+	}
 	
 	
 	/*******************************************************/
@@ -613,12 +613,12 @@ public class _8080bw
 	/*                                                     */
 	/*******************************************************/
 	
-	public static InitDriverPtr init_machine_desertgu = new InitDriverPtr() { public void handler() 
+	void init_machine_desertgu(void)
 	{
 		install_port_read_handler (0, 0x01, 0x01, desertgu_port_1_r);
 	
 		install_port_write_handler(0, 0x07, 0x07, desertgu_controller_select_w);
-	} };
+	}
 	
 	
 	/*******************************************************/
@@ -687,7 +687,7 @@ public class _8080bw
 	   -0x8000,-0x8000,-0x8000,-0x8000,-0x8000,-0x8000,-0x8000,-0x8000,
 	};
 	
-	public static InitDriverPtr init_machine_schaser = new InitDriverPtr() { public void handler() 
+	void init_machine_schaser(void)
 	{
 		install_port_write_handler(0, 0x03, 0x03, schaser_sh_port3_w);
 		install_port_write_handler(0, 0x05, 0x05, schaser_sh_port5_w);
@@ -697,7 +697,7 @@ public class _8080bw
 	
 		SN76477_envelope_1_w(0, 1);
 		SN76477_envelope_2_w(0, 0);
-	} };
+	}
 	
 	public static WriteHandlerPtr schaser_sh_port3_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

@@ -318,7 +318,7 @@ public class leland
 	 *
 	 *************************************/
 	
-	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
+	static void init_machine(void)
 	{
 		/* set the odd data bank */
 		battery_ram = memory_region(REGION_USER2);
@@ -360,7 +360,7 @@ public class leland
 		/* if we have an I86 CPU, reset it */
 		if ((Machine->drv->cpu[2].cpu_type & ~CPU_FLAGS_MASK) == CPU_I186)
 			leland_i186_sound_init();
-	} };
+	}
 	
 	
 	

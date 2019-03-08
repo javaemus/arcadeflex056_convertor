@@ -238,7 +238,7 @@ public class atarisy2
 	 *
 	 *************************************/
 	
-	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
+	static void init_machine(void)
 	{
 		atarigen_eeprom_reset();
 		slapstic_reset();
@@ -252,7 +252,7 @@ public class atarisy2
 		p2portrd_state = 0;
 	
 		which_adc = 0;
-	} };
+	}
 	
 	
 	

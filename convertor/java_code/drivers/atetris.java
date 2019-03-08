@@ -107,7 +107,7 @@ public class atetris
 	 *
 	 *************************************/
 	
-	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
+	static void init_machine(void)
 	{
 		/* reset the slapstic */
 		slapstic_reset();
@@ -116,7 +116,7 @@ public class atetris
 	
 		/* start interrupts going (32V clocked by 16V) */
 		timer_set(cpu_getscanlinetime(48), 48, interrupt_gen);
-	} };
+	}
 	
 	
 	

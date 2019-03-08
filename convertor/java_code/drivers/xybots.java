@@ -59,13 +59,13 @@ public class xybots
 	}
 	
 	
-	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
+	static void init_machine(void)
 	{
 		atarigen_eeprom_reset();
 		atarigen_slapstic_reset();
 		atarigen_interrupt_reset(update_interrupts);
 		atarijsa_reset();
-	} };
+	}
 	
 	
 	

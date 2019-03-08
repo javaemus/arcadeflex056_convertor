@@ -86,10 +86,10 @@ public class starfire
 	}
 	
 	
-	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
+	static void init_machine(void)
 	{
 		timer_set(cpu_getscanlinetime(32 + SCANLINE_UPDATE_CHUNK - 1), 32, update_callback);
-	} };
+	}
 	
 	
 	

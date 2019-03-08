@@ -108,7 +108,7 @@ public class cyberbal
 	}
 	
 	
-	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
+	static void init_machine(void)
 	{
 		atarigen_eeprom_reset();
 		atarigen_slapstic_reset();
@@ -123,7 +123,7 @@ public class cyberbal
 	
 		/* make sure we're pointing to the right screen by default */
 		cyberbal_set_screen(0);
-	} };
+	}
 	
 	
 	static void cyberb2p_update_interrupts(void)

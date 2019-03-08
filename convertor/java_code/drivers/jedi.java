@@ -175,7 +175,7 @@ public class jedi
 	} };
 	
 	
-	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
+	static void init_machine(void)
 	{
 		/* init globals */
 		control_num = 0;
@@ -188,7 +188,7 @@ public class jedi
 	
 		/* set a timer to run the interrupts */
 		timer_set(cpu_getscanlinetime(32), 32, generate_interrupt);
-	} };
+	}
 	
 	
 	

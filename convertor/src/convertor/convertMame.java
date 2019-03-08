@@ -49,6 +49,7 @@ public class convertMame {
     static final int VH_STOP = 21;
     static final int VH_SCREENREFRESH = 22;
     static final int DRIVER_INIT = 23;
+    static final int MACHINE_INIT=24; 
 
     public static void Convert() {
         Convertor.inpos = 0;//position of pointer inside the buffers
@@ -246,7 +247,7 @@ public class convertMame {
                             type = VH_STOP;
                             i3 = -1;
                             continue;
-                        } else if (Convertor.token[0].startsWith("init_") && !Convertor.token[0].contains("table")) {
+                        } else if (Convertor.token[0].startsWith("init_") && !Convertor.token[0].contains("table")&& !Convertor.token[0].contains("machine")) {
                             sUtil.putString((new StringBuilder()).append("public static InitDriverPtr ").append(Convertor.token[0]).append(" = new InitDriverPtr() { public void handler() ").toString());
                             type = DRIVER_INIT;
                             i3 = -1;

@@ -77,14 +77,14 @@ public class thunderj
 	}
 	
 	
-	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
+	static void init_machine(void)
 	{
 		atarigen_eeprom_reset();
 		atarivc_reset(atarivc_eof_data);
 		atarigen_interrupt_reset(update_interrupts);
 		atarigen_scanline_timer_reset(thunderj_scanline_update, 1024);
 		atarijsa_reset();
-	} };
+	}
 	
 	
 	

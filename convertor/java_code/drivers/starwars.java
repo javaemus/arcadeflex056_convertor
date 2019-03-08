@@ -64,7 +64,7 @@ public class starwars
 	 *
 	 *************************************/
 	
-	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
+	static void init_machine(void)
 	{
 		/* ESB-specific */
 		if (is_esb)
@@ -80,7 +80,7 @@ public class starwars
 	
 		/* reset the mathbox */
 		swmathbox_reset();
-	} };
+	}
 	
 	
 	

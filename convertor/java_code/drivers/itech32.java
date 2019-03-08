@@ -189,7 +189,7 @@ public class itech32
 	 *
 	 *************************************/
 	
-	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
+	static void init_machine(void)
 	{
 		vint_state = xint_state = qint_state = 0;
 		sound_data = 0;
@@ -202,7 +202,7 @@ public class itech32
 	
 		/* reset the ticket dispenser */
 		ticket_dispenser_init(200, TICKET_MOTOR_ACTIVE_HIGH, TICKET_STATUS_ACTIVE_HIGH);
-	} };
+	}
 	
 	
 	

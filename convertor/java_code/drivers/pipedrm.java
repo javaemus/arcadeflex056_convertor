@@ -124,7 +124,7 @@ public class pipedrm
 	 *
 	 *************************************/
 	
-	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
+	static void init_machine(void)
 	{
 		UINT8 *ram;
 	
@@ -135,7 +135,7 @@ public class pipedrm
 		/* initialize sound bank */
 		ram = memory_region(REGION_CPU2);
 		cpu_setbank(2, &ram[0x10000]);
-	} };
+	}
 	
 	
 	public static WriteHandlerPtr pipedrm_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)

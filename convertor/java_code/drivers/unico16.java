@@ -425,10 +425,10 @@ public class unico16
 	
 	***************************************************************************/
 	
-	public static InitDriverPtr init_machine_unico16 = new InitDriverPtr() { public void handler() 
+	void init_machine_unico16(void)
 	{
 		unico16_has_lightgun = 0;
-	} };
+	}
 	
 	static struct YM3812interface unico16_ym3812_intf =
 	{
@@ -490,11 +490,11 @@ public class unico16
 									Zero Point
 	***************************************************************************/
 	
-	public static InitDriverPtr init_machine_zeropt = new InitDriverPtr() { public void handler() 
+	void init_machine_zeropt(void)
 	{
 		init_machine_unico16();
 		unico16_has_lightgun = 1;
-	} };
+	}
 	
 	static MachineDriver machine_driver_zeropnt = new MachineDriver
 	(

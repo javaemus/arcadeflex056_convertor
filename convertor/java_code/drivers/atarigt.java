@@ -79,12 +79,12 @@ public class atarigt
 	}
 	
 	
-	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
+	static void init_machine(void)
 	{
 		atarigen_eeprom_reset();
 		atarigen_interrupt_reset(update_interrupts);
 		atarigen_scanline_timer_reset(atarigx2_scanline_update, 8);
-	} };
+	}
 	
 	
 	

@@ -1145,7 +1145,7 @@ public class darius
 	} };
 	
 	
-	public static InitDriverPtr init_darius_machine = new InitDriverPtr() { public void handler() 
+	void init_darius_machine( void )
 	{
 		int  i;
 	
@@ -1169,7 +1169,7 @@ public class darius
 			//logerror( "calc %d = %d\n", i, (int)(100.0f / (float)pow(10.0f, (32.0f - (i * (32.0f / (float)(0xf)))) / 20.0f)) );
 			darius_def_vol[i] = (int)(100.0f / (float)pow(10.0f, (32.0f - (i * (32.0f / (float)(0xf)))) / 20.0f));
 		}
-	} };
+	}
 	
 	
 	public static GameDriver driver_darius	   = new GameDriver("1986"	,"darius"	,"darius.java"	,rom_darius,null	,machine_driver_darius	,input_ports_darius	,init_darius	,ROT0	,	"Taito Corporation Japan", "Darius (World)" )

@@ -506,10 +506,10 @@ public class tubep
 		scanline_timer = timer_set( cpu_getscanlinetime( scanline ), scanline, scanline_callback );
 	}
 	
-	static public static InitDriverPtr init_machine = new InitDriverPtr() { public void handler() 
+	static void init_machine(void)
 	{
 		scanline_timer = timer_set(cpu_getscanlinetime( 64 ), 64, scanline_callback );
-	} };
+	}
 	
 	static void scanline_callback_rjammer (int scanline)
 	{
@@ -520,10 +520,10 @@ public class tubep
 	
 		scanline_timer = timer_set( cpu_getscanlinetime( scanline ), scanline, scanline_callback_rjammer );
 	}
-	static public static InitDriverPtr init_machine_rjammer = new InitDriverPtr() { public void handler() 
+	static void init_machine_rjammer(void)
 	{
 		scanline_timer = timer_set(cpu_getscanlinetime( 8 ), 8, scanline_callback_rjammer );
-	} };
+	}
 	
 	
 	static InputPortPtr input_ports_tubep = new InputPortPtr(){ public void handler() { 
