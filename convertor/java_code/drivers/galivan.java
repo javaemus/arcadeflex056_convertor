@@ -569,11 +569,11 @@ public class galivan
 		{ 60 }
 	};
 	
-	static struct DACinterface dac_interface =
-	{
+	static DACinterface dac_interface = new DACinterface
+	(
 		2,
-		{ 60, 60 }
-	};
+		new int[] { 60, 60 }
+	);
 	
 	
 	static MachineDriver machine_driver_galivan = new MachineDriver

@@ -1645,11 +1645,11 @@ public class taitosj
 		new WriteHandlerPtr[] { 0, 0, 0, taitosj_sndnmi_msk_w }       /* port Bwrite */
 	);
 	
-	static struct DACinterface dac_interface =
-	{
+	static DACinterface dac_interface = new DACinterface
+	(
 		1,
-		{ 15 }
-	};
+		new int[] { 15 }
+	);
 	
 	
 	

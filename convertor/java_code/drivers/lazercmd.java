@@ -666,11 +666,11 @@ public class lazercmd
 		memcpy(game_colortable,colortable,sizeof(colortable));
 	}
 	
-	static struct DACinterface lazercmd_DAC_interface =
-	{
+	static DACinterface lazercmd_DAC_interface = new DACinterface
+	(
 		1,
-		{ 100 }
-	};
+		new int[] { 100 }
+	);
 	
 	static MachineDriver machine_driver_lazercmd = new MachineDriver
 	(

@@ -324,11 +324,11 @@ public class exctsccr
 		{ 0, 0, 0, 0 }
 	);
 	
-	static struct DACinterface dac_interface =
-	{
+	static DACinterface dac_interface = new DACinterface
+	(
 		2,
-		{ 50, 50 }
-	};
+		new int[] { 50, 50 }
+	);
 	
 	/* Bootleg */
 	static AY8910interface bl_ay8910_interface = new AY8910interface
@@ -342,11 +342,11 @@ public class exctsccr
 		new WriteHandlerPtr[] { 0 }
 	);
 	
-	static struct DACinterface bl_dac_interface =
-	{
+	static DACinterface bl_dac_interface = new DACinterface
+	(
 		1,
-		{ 100 }
-	};
+		new int[] { 100 }
+	);
 	
 	/***************************************************************************
 	

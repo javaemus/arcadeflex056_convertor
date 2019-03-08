@@ -316,17 +316,17 @@ public class mcr
 	
 	
 	/********* sound interfaces ***********/
-	struct DACinterface mcr_dac_interface =
-	{
+	static DACinterface mcr_dac_interface = new DACinterface
+	(
 		1,
-		{ 100 }
-	};
+		new int[] { 100 }
+	);
 	
-	struct DACinterface mcr_dual_dac_interface =
-	{
+	static DACinterface mcr_dual_dac_interface = new DACinterface
+	(
 		2,
-		{ 75, 75 }
-	};
+		new int[] { 75, 75 }
+	);
 	
 	
 	/********* memory interfaces ***********/
@@ -405,11 +405,11 @@ public class mcr
 	
 	
 	/********* sound interfaces ***********/
-	struct DACinterface turbocs_plus_soundsgood_dac_interface =
-	{
+	static DACinterface turbocs_plus_soundsgood_dac_interface = new DACinterface
+	(
 		2,
-		{ 80, 80 }
-	};
+		new int[] { 80, 80 }
+	);
 	
 	
 	/********* memory interfaces ***********/

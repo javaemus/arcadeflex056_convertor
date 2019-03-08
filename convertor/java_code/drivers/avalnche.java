@@ -102,11 +102,11 @@ public class avalnche
 	
 	
 	
-	static struct DACinterface dac_interface =
-	{
+	static DACinterface dac_interface = new DACinterface
+	(
 		2,
-		{ 100, 100 },
-	};
+		new int[] { 100, 100 },
+	);
 	
 	
 	static MachineDriver machine_driver_avalnche = new MachineDriver

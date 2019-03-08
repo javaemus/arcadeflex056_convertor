@@ -662,11 +662,11 @@ public class zaccaria
 		new WriteHandlerPtr[] { 0, 0 }
 	);
 	
-	static struct DACinterface dac_interface =
-	{
+	static DACinterface dac_interface = new DACinterface
+	(
 		2,
-		{ 0,80 }	/* I'm leaving the first DAC(?) off because it sounds awful */
-	};
+		new int[] { 0,80 }	/* I'm leaving the first DAC(?) off because it sounds awful */
+	);
 	
 	static struct TMS5220interface tms5220_interface =
 	{

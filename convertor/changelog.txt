@@ -5,6 +5,7 @@
 -MachineInitPtr support
 -Improved InitDriverPtr ,MachineDriverPtr if they start with static
 -Added custom sound support interface
+-Added DAC sound support
 
 07/03/2019
 ==========

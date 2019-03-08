@@ -66,17 +66,17 @@ public class tsamurai
 		new WriteHandlerPtr[] { 0 }
 	);
 	
-	static struct DACinterface dac_interface =
-	{
+	static DACinterface dac_interface = new DACinterface
+	(
 		2,			/* number of chips */
-		{ 20, 20 }
-	};
+		new int[] { 20, 20 }
+	);
 	
-	static struct DACinterface vsgongf_dac_interface =
-	{
+	static DACinterface vsgongf_dac_interface = new DACinterface
+	(
 		1,			/* number of chips */
-		{ 20 }
-	};
+		new int[] { 20 }
+	);
 	
 	static int nmi_enabled;
 	static int sound_command1, sound_command2, sound_command3;

@@ -72,10 +72,10 @@ public class shangkid
 	
 	/***************************************************************************************/
 	
-	static struct DACinterface dac_interface = {
+	static DACinterface dac_interface = new DACinterface(
 		1,
-		{ MIXER(50,50) }
-	};
+		new int[] { MIXER(50,50) }
+	);
 	
 	static AY8910interface ay8910_interface = new AY8910interface(
 		1,	/* number of chips */

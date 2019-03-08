@@ -1761,11 +1761,11 @@ public class gionbana
 		new WriteHandlerPtr[] { 0 }
 	);
 	
-	static struct DACinterface dac_interface =
-	{
+	static DACinterface dac_interface = new DACinterface
+	(
 		1,				/* 1 channels */
-		{ 50 }
-	};
+		new int[] { 50 }
+	);
 	
 	
 	#define NBMJDRV1( _name_, _intcnt_, _mrmem_, _mwmem_, _mrport_, _mwport_, _nvram_ ) \

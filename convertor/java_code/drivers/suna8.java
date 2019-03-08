@@ -1807,12 +1807,12 @@ public class suna8
 		{ soundirq },	/* IRQ Line */
 	};
 	
-	static struct DACinterface brickzn_dac_interface =
-	{
+	static DACinterface brickzn_dac_interface = new DACinterface
+	(
 		4,
-		{	MIXER(17,MIXER_PAN_LEFT), MIXER(17,MIXER_PAN_RIGHT),
+		new int[] {	MIXER(17,MIXER_PAN_LEFT), MIXER(17,MIXER_PAN_RIGHT),
 			MIXER(17,MIXER_PAN_LEFT), MIXER(17,MIXER_PAN_RIGHT)	}
-	};
+	);
 	
 	public static InterruptPtr brickzn_interrupt = new InterruptPtr() { public int handler() 
 	{

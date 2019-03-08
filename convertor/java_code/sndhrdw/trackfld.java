@@ -26,11 +26,11 @@ public class trackfld
 	    new int[] { 0x2064 }
 	);
 	
-	struct DACinterface konami_dac_interface =
-	{
+	static DACinterface konami_dac_interface = new DACinterface
+	(
 	    1,
-	    { 80 }
-	};
+	    new int[] { 80 }
+	);
 	
 	struct ADPCMinterface hyprolyb_adpcm_interface =
 	{

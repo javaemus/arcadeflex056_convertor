@@ -231,11 +231,11 @@ public class tagteam
 		new WriteHandlerPtr[] { 0 }
 	);
 	
-	static struct DACinterface dac_interface =
-	{
+	static DACinterface dac_interface = new DACinterface
+	(
 		1,
-		{ 255 }
-	};
+		new int[] { 255 }
+	);
 	
 	static MachineDriver machine_driver_tagteam = new MachineDriver
 	(

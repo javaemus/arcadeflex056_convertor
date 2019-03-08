@@ -637,11 +637,11 @@ public class atarifb
 	}
 	
 	
-	static struct DACinterface dac_interface =
-	{
+	static DACinterface dac_interface = new DACinterface
+	(
 		3,
-		{ 50, 50, 50 }
-	};
+		new int[] { 50, 50, 50 }
+	);
 	
 	static MachineDriver machine_driver_atarifb = new MachineDriver
 	(

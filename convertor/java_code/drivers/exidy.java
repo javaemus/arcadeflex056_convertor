@@ -815,11 +815,11 @@ public class exidy
 		targ_sh_stop
 	);
 	
-	static struct DACinterface targ_DAC_interface =
-	{
+	static DACinterface targ_DAC_interface = new DACinterface
+	(
 		1,
-		{ 100 }
-	};
+		new int[] { 100 }
+	);
 	
 	static struct hc55516_interface cvsd_interface =
 	{

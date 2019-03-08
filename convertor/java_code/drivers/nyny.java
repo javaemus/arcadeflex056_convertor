@@ -352,11 +352,11 @@ public class nyny
 		new WriteHandlerPtr[] { ay8910_portb_w, 0 }
 	);
 	
-	static struct DACinterface dac_interface =
-	{
+	static DACinterface dac_interface = new DACinterface
+	(
 		2,
-		{ 25, 25 }
-	};
+		new int[] { 25, 25 }
+	);
 	
 	
 	

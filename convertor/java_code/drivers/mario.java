@@ -352,11 +352,11 @@ public class mario
 	
 	
 	
-	static struct DACinterface dac_interface =
-	{
+	static DACinterface dac_interface = new DACinterface
+	(
 		1,
-		{ 100 }
-	};
+		new int[] { 100 }
+	);
 	
 	static const char *mario_sample_names[] =
 	{

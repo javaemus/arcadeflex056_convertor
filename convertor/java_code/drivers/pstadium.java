@@ -1480,17 +1480,17 @@ public class pstadium
 		new WriteHandlerPtr[] { 0 }
 	);
 	
-	static struct DACinterface pstadium_dac_interface =
-	{
+	static DACinterface pstadium_dac_interface = new DACinterface
+	(
 		2,				/* 2 channels */
-		{ 50, 50 },
-	};
+		new int[] { 50, 50 },
+	);
 	
-	static struct DACinterface galkoku_dac_interface =
-	{
+	static DACinterface galkoku_dac_interface = new DACinterface
+	(
 		1,				/* 1 channel */
-		{ 50 },
-	};
+		new int[] { 50 },
+	);
 	
 	
 	#define NBMJDRV1( _name_, _mrmem_, _mwmem_, _mrport_, _mwport_, _nvram_ ) \

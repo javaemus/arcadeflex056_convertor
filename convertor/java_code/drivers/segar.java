@@ -1277,11 +1277,11 @@ public class segar
 		monsterb_sample_names
 	};
 	
-	static struct DACinterface monsterb_dac_interface =
-	{
+	static DACinterface monsterb_dac_interface = new DACinterface
+	(
 		1,
-		{ 100 }
-	};
+		new int[] { 100 }
+	);
 	
 	static struct TMS36XXinterface monsterb_tms3617_interface =
 	{

@@ -357,25 +357,25 @@ public class williams
 	};
 	
 	/* DAC structure (CVSD variant) */
-	struct DACinterface williams_cvsd_dac_interface =
-	{
+	static DACinterface williams_cvsd_dac_interface = new DACinterface
+	(
 		1,
-		{ 50 }
-	};
+		new int[] { 50 }
+	);
 	
 	/* DAC structure (ADPCM variant) */
-	struct DACinterface williams_adpcm_dac_interface =
-	{
+	static DACinterface williams_adpcm_dac_interface = new DACinterface
+	(
 		1,
-		{ 50 }
-	};
+		new int[] { 50 }
+	);
 	
 	/* DAC structure (NARC variant) */
-	struct DACinterface williams_narc_dac_interface =
-	{
+	static DACinterface williams_narc_dac_interface = new DACinterface
+	(
 		2,
-		{ 50, 50 }
-	};
+		new int[] { 50, 50 }
+	);
 	
 	/* CVSD structure */
 	struct hc55516_interface williams_cvsd_interface =

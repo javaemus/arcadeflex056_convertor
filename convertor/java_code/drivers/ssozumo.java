@@ -246,11 +246,11 @@ public class ssozumo
 	);
 	
 	
-	static struct DACinterface dac_interface =
-	{
+	static DACinterface dac_interface = new DACinterface
+	(
 		1,
-		{ 30 }
-	};
+		new int[] { 30 }
+	);
 	
 	
 	static MachineDriver machine_driver_ssozumo = new MachineDriver

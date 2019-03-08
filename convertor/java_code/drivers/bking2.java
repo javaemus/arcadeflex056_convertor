@@ -309,11 +309,11 @@ public class bking2
 		new WriteHandlerPtr[] { 0, portb_w }
 	);
 	
-	static struct DACinterface dac_interface =
-	{
+	static DACinterface dac_interface = new DACinterface
+	(
 		1,
-		{ 25 }
-	};
+		new int[] { 25 }
+	);
 	
 	
 	

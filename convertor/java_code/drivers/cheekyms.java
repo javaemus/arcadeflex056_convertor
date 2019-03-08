@@ -140,11 +140,11 @@ public class cheekyms
 	};
 	
 	
-	static struct DACinterface dac_interface =
-	{
+	static DACinterface dac_interface = new DACinterface
+	(
 		1,
-		{ 100 }
-	};
+		new int[] { 100 }
+	);
 	
 	
 	static MachineDriver machine_driver_cheekyms = new MachineDriver

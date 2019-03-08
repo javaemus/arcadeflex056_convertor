@@ -542,15 +542,15 @@ public class cyberbal
 	};
 	
 	
-	static struct DACinterface dac_interface =
-	{
+	static DACinterface dac_interface = new DACinterface
+	(
 		2,
 	#if USE_MONO_SOUND
-		{ MIXER(50,MIXER_PAN_CENTER), MIXER(50,MIXER_PAN_CENTER) }
+		new int[] { MIXER(50,MIXER_PAN_CENTER), MIXER(50,MIXER_PAN_CENTER) }
 	#else
-		{ MIXER(100,MIXER_PAN_LEFT), MIXER(100,MIXER_PAN_RIGHT) }
+		new int[] { MIXER(100,MIXER_PAN_LEFT), MIXER(100,MIXER_PAN_RIGHT) }
 	#endif
-	};
+	);
 	
 	
 	

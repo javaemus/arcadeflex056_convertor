@@ -418,11 +418,11 @@ public class pandoras
 		new WriteHandlerPtr[] { 0 }
 	);
 	
-	static struct DACinterface dac_interface =
-	{
+	static DACinterface dac_interface = new DACinterface
+	(
 		1,
-		{ 25 }
-	};
+		new int[] { 25 }
+	);
 	
 	static MachineDriver machine_driver_pandoras = new MachineDriver
 	(

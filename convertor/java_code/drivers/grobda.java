@@ -204,11 +204,11 @@ public class grobda
 		REGION_SOUND1	/* memory region */
 	};
 	
-	static struct DACinterface dac_interface =
-	{
+	static DACinterface dac_interface = new DACinterface
+	(
 		1,
-		{ 55 }
-	};
+		new int[] { 55 }
+	);
 	
 	static MachineDriver machine_driver_grobda = new MachineDriver
 	(

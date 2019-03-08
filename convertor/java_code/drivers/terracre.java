@@ -280,11 +280,11 @@ public class terracre
 		{ 0 }
 	};
 	
-	static struct DACinterface dac_interface =
-	{
+	static DACinterface dac_interface = new DACinterface
+	(
 		2,	/* 2 channels */
-		{ 50, 50 }
-	};
+		new int[] { 50, 50 }
+	);
 	
 	
 	static MachineDriver machine_driver_ym3526 = new MachineDriver

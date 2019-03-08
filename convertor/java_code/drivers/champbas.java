@@ -216,11 +216,11 @@ public class champbas
 		new WriteHandlerPtr[] { 0 }
 	);
 	
-	static struct DACinterface dac_interface =
-	{
+	static DACinterface dac_interface = new DACinterface
+	(
 		1,
-		{ 70 }
-	};
+		new int[] { 70 }
+	);
 	
 	
 	

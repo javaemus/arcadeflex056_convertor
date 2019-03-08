@@ -446,11 +446,11 @@ public class gyruss
 		new WriteHandlerPtr[] { gyruss_filter0_w, gyruss_filter1_w }
 	);
 	
-	static struct DACinterface dac_interface =
-	{
+	static DACinterface dac_interface = new DACinterface
+	(
 		1,
-		{ MIXER(50,MIXER_PAN_LEFT) }
-	};
+		new int[] { MIXER(50,MIXER_PAN_LEFT) }
+	);
 	
 	
 	

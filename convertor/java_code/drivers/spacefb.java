@@ -368,11 +368,11 @@ public class spacefb
 	};
 	
 	
-	static struct DACinterface dac_interface =
-	{
+	static DACinterface dac_interface = new DACinterface
+	(
 		1,
-		{ 100 }
-	};
+		new int[] { 100 }
+	);
 	
 	static MachineDriver machine_driver_spacefb = new MachineDriver
 	(

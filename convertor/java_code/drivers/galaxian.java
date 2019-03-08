@@ -2036,11 +2036,11 @@ public class galaxian
 		new WriteHandlerPtr[] { 0 }
 	);
 	
-	static struct DACinterface kingball_dac_interface =
-	{
+	static DACinterface kingball_dac_interface = new DACinterface
+	(
 		1,
-		{ 100 }
-	};
+		new int[] { 100 }
+	);
 	
 	
 	#define MACHINE_DRIVER(NAME, MEM, INT, GFX, VHSTART)							\

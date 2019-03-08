@@ -163,11 +163,11 @@ public class videopin
 	}
 	
 	/*
-	static struct DACinterface dac_interface =
-	{
+	static DACinterface dac_interface = new DACinterface
+	(
 		3,
-		{ 100, 100, 100 } // ???
-	};
+		new int[] { 100, 100, 100 } // ???
+	);
 	*/
 	
 	

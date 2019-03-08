@@ -1293,17 +1293,17 @@ public class gottlieb
 	
 	
 	
-	static struct DACinterface dac1_interface =
-	{
+	static DACinterface dac1_interface = new DACinterface
+	(
 		1,
-		{ 50 }
-	};
+		new int[] { 50 }
+	);
 	
-	static struct DACinterface dac2_interface =
-	{
+	static DACinterface dac2_interface = new DACinterface
+	(
 		2,
-		{ 25, 25 }
-	};
+		new int[] { 25, 25 }
+	);
 	
 	static const char *reactor_sample_names[] =
 	{

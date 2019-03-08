@@ -231,11 +231,11 @@ public class cvs
 		cvs_speech_rom_read_bit	/*M0 callback function. Called whenever chip requests a single bit of data*/
 	};
 	
-	static struct DACinterface dac_interface =
-	{
+	static DACinterface dac_interface = new DACinterface
+	(
 		2,
-		{ 100 }
-	};
+		new int[] { 100 }
+	);
 	
 	public static Memory_ReadAddress cvs_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

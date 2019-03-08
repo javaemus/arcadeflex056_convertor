@@ -597,17 +597,17 @@ public class armedf
 		return (2);
 	} };
 	
-	static struct DACinterface dac_interface =
-	{
+	static DACinterface dac_interface = new DACinterface
+	(
 		2,	/* 2 channels */
-		{ 100,100 },
-	};
+		new int[] { 100,100 },
+	);
 	
-	static struct DACinterface cclimbr2_dac_interface =
-	{
+	static DACinterface cclimbr2_dac_interface = new DACinterface
+	(
 		2,	/* 2 channels */
-		{ 40, 40 },
-	};
+		new int[] { 40, 40 },
+	);
 	
 	
 	

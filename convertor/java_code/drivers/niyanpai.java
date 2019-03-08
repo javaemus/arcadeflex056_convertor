@@ -529,11 +529,11 @@ public class niyanpai
 		{ 35 }
 	};
 	
-	static struct DACinterface dac_interface =
-	{
+	static DACinterface dac_interface = new DACinterface
+	(
 		2,				/* 2 channels */
-		{ 50, 75 },
-	};
+		new int[] { 50, 75 },
+	);
 	
 	
 	static struct MachineDriver machine_driver_niyanpai =

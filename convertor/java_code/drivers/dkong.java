@@ -891,11 +891,11 @@ public class dkong
 	};
 	
 	
-	static struct DACinterface dkong_dac_interface =
-	{
+	static DACinterface dkong_dac_interface = new DACinterface
+	(
 		1,
-		{ 55 }
-	};
+		new int[] { 55 }
+	);
 	
 	static const char *dkong_sample_names[] =
 	{

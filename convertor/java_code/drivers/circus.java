@@ -288,11 +288,11 @@ public class circus
 			return interrupt();
 	} };
 	
-	static struct DACinterface dac_interface =
-	{
+	static DACinterface dac_interface = new DACinterface
+	(
 		1,
-		{ 255, 255 }
-	};
+		new int[] { 255, 255 }
+	);
 	
 	static MachineDriver machine_driver_circus = new MachineDriver
 	(

@@ -1296,11 +1296,11 @@ public class vsnes
 		{ 50 },
 	};
 	
-	static struct DACinterface nes_dac_interface =
-	{
+	static DACinterface nes_dac_interface = new DACinterface
+	(
 		1,
-		{ 50 },
-	};
+		new int[] { 50 },
+	);
 	
 	static struct NESinterface nes_dual_interface =
 	{
@@ -1309,11 +1309,11 @@ public class vsnes
 		{ 25, 25 },
 	};
 	
-	static struct DACinterface nes_dual_dac_interface =
-	{
+	static DACinterface nes_dual_dac_interface = new DACinterface
+	(
 		2,
-		{ 25, 25 },
-	};
+		new int[] { 25, 25 },
+	);
 	
 	static struct MachineDriver machine_driver_vsnes =
 	{

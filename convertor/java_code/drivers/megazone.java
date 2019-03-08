@@ -344,11 +344,11 @@ public class megazone
 		new WriteHandlerPtr[] { megazone_portB_w }
 	);
 	
-	static struct DACinterface dac_interface =
-	{
+	static DACinterface dac_interface = new DACinterface
+	(
 		1,
-		{ 50 }
-	};
+		new int[] { 50 }
+	);
 	
 	
 	

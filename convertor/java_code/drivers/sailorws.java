@@ -3687,11 +3687,11 @@ public class sailorws
 		{ 35 }
 	};
 	
-	static struct DACinterface dac_interface =
-	{
+	static DACinterface dac_interface = new DACinterface
+	(
 		2,				/* 2 channels */
-		{ 50, 75 },
-	};
+		new int[] { 50, 75 },
+	);
 	
 	
 	#define NBMJDRV1( _name_, _mrmem_, _mwmem_, _mrport_, _mwport_, _nvram_ ) \

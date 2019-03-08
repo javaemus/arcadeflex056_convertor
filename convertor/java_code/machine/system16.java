@@ -2199,11 +2199,11 @@ public class system16
 		{ 0 }
 	};
 	
-	struct DACinterface sys16_7751_dac_interface =
-	{
+	static DACinterface sys16_7751_dac_interface = new DACinterface
+	(
 		1,
-		{ 100 }
-	};
+		new int[] { 100 }
+	);
 	
 	struct UPD7759_interface sys16_upd7759_interface =
 	{
