@@ -13,11 +13,11 @@ public class pacland
 	static int palette_bank;
 	static const unsigned char *pacland_color_prom;
 	
-	static struct rectangle spritevisiblearea =
-	{
+	static rectangle spritevisiblearea = new rectangle
+	(
 		3*8, 39*8-1,
 		5*8, 29*8-1
-	};
+	);
 	
 	
 	/***************************************************************************

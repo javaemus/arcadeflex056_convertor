@@ -53,6 +53,7 @@ public class convertMame {
     static final int CUSTOM_SOUND = 25;
     static final int DAC_SOUND = 26;
     static final int VH_CONVERT=27;
+    static final int RECTANGLE=28;
 
     public static void Convert() {
         Convertor.inpos = 0;//position of pointer inside the buffers
@@ -378,8 +379,10 @@ public class convertMame {
                 }
                 case 's': {
                     i = Convertor.inpos;
+                    boolean isstatic=false;
                     if (sUtil.getToken("static")) {
                         sUtil.skipSpace();
+                        isstatic=true;
                     }
                     if (!sUtil.getToken("struct")) //static but not static struct
                     {
@@ -623,6 +626,20 @@ public class convertMame {
                         break;
                     } else {
                         sUtil.skipSpace();
+                        if (isstatic && sUtil.getToken("rectangle")) {//only static struct rectangle conversion
+                            sUtil.skipSpace();
+                            Convertor.token[0] = sUtil.parseToken();
+                            sUtil.skipSpace();
+                            if (sUtil.parseChar() != '=') {
+                                Convertor.inpos = i;
+                            } else {
+                                sUtil.skipSpace();
+                                sUtil.putString("static rectangle " + Convertor.token[0] + " = new rectangle");
+                                type = RECTANGLE;
+                                i3 = -1;
+                                continue;
+                            }
+                        }
                         if (sUtil.getToken("GfxLayout")) {
                             sUtil.skipSpace();
                             Convertor.token[0] = sUtil.parseToken();
@@ -902,6 +919,15 @@ public class convertMame {
                             continue;
                         }
                     }
+                    if (type == RECTANGLE) {
+                        i3++;
+                        insideagk[i3] = 0;
+                        if (i3 == 0) {
+                            Convertor.outbuf[(Convertor.outpos++)] = '(';
+                            Convertor.inpos += 1;
+                            continue;
+                        }
+                    }
                     if (type == DAC_SOUND) {
                         i3++;
                         insideagk[i3] = 0;
@@ -1012,6 +1038,15 @@ public class convertMame {
                         }
                     }
                     if (type == CUSTOM_SOUND) {
+                        i3--;
+                        if (i3 == -1) {
+                            Convertor.outbuf[(Convertor.outpos++)] = 41;
+                            Convertor.inpos += 1;
+                            type = -1;
+                            continue;
+                        }
+                    }
+                    if (type == RECTANGLE) {
                         i3--;
                         if (i3 == -1) {
                             Convertor.outbuf[(Convertor.outpos++)] = 41;

@@ -229,16 +229,16 @@ public class travrusa
 	static void draw_sprites(struct mame_bitmap *bitmap)
 	{
 		int offs;
-		static struct rectangle spritevisiblearea =
-		{
+		static rectangle spritevisiblearea = new rectangle
+		(
 			1*8, 31*8-1,
 			0*8, 24*8-1
-		};
-		static struct rectangle spritevisibleareaflip =
-		{
+		);
+		static rectangle spritevisibleareaflip = new rectangle
+		(
 			1*8, 31*8-1,
 			8*8, 32*8-1
-		};
+		);
 	
 	
 		for (offs = spriteram_size - 4;offs >= 0;offs -= 4)

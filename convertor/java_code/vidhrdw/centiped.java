@@ -17,17 +17,17 @@ public class centiped
 	
 	
 	
-	static struct rectangle spritevisiblearea =
-	{
+	static rectangle spritevisiblearea = new rectangle
+	(
 		1*8, 31*8-1,
 		0*8, 30*8-1
-	};
+	);
 	
-	static struct rectangle spritevisiblearea_flip =
-	{
+	static rectangle spritevisiblearea_flip = new rectangle
+	(
 		1*8, 31*8-1,
 		2*8, 32*8-1
-	};
+	);
 	
 	
 	/***************************************************************************

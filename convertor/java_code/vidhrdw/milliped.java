@@ -17,11 +17,11 @@ public class milliped
 	
 	
 	
-	static struct rectangle spritevisiblearea =
-	{
+	static rectangle spritevisiblearea = new rectangle
+	(
 		1*8, 31*8-1,
 		0*8, 30*8-1
-	};
+	);
 	
 	
 	

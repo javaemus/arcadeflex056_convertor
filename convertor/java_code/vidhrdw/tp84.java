@@ -36,16 +36,16 @@ public class tp84
 	
 	
 	
-	static struct rectangle topvisiblearea =
-	{
+	static rectangle topvisiblearea = new rectangle
+	(
 		0*8, 2*8-1,
 		2*8, 30*8-1
-	};
-	static struct rectangle bottomvisiblearea =
-	{
+	);
+	static rectangle bottomvisiblearea = new rectangle
+	(
 		30*8, 32*8-1,
 		2*8, 30*8-1
-	};
+	);
 	
 	
 	

@@ -24,11 +24,11 @@ public class vigilant
 {
 	
 	
-	static struct rectangle bottomvisiblearea =
-	{
+	static rectangle bottomvisiblearea = new rectangle
+	(
 		16*8, 48*8-1,
 		6*8, 32*8-1
-	};
+	);
 	
 	unsigned char *vigilant_paletteram;
 	unsigned char *vigilant_sprite_paletteram;

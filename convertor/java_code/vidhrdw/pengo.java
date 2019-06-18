@@ -26,11 +26,11 @@ public class pengo
 	static int flipscreen;
 	static int xoffsethack;
 	
-	static struct rectangle spritevisiblearea =
-	{
+	static rectangle spritevisiblearea = new rectangle
+	(
 		2*8, 34*8-1,
 		0*8, 28*8-1
-	};
+	);
 	
 	
 	

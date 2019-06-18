@@ -39,21 +39,21 @@ public class punchout
 	
 	static int top_palette_bank,bottom_palette_bank;
 	
-	static struct rectangle topvisiblearea =
-	{
+	static rectangle topvisiblearea = new rectangle
+	(
 		0*8, 32*8-1,
 		0*8, TOP_MONITOR_ROWS*8-1
-	};
-	static struct rectangle bottomvisiblearea =
-	{
+	);
+	static rectangle bottomvisiblearea = new rectangle
+	(
 		0*8, 32*8-1,
 		TOP_MONITOR_ROWS*8, (TOP_MONITOR_ROWS+BOTTOM_MONITOR_ROWS)*8-1
-	};
-	static struct rectangle backgroundvisiblearea =
-	{
+	);
+	static rectangle backgroundvisiblearea = new rectangle
+	(
 		0*8, 64*8-1,
 		TOP_MONITOR_ROWS*8, (TOP_MONITOR_ROWS+BOTTOM_MONITOR_ROWS)*8-1
-	};
+	);
 	
 	
 	

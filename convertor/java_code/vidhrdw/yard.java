@@ -31,17 +31,17 @@ public class yard
 	
 	#define RADAR_PALETTE_BASE (256+16)
 	
-	static struct rectangle panelvisiblearea =
-	{
+	static rectangle panelvisiblearea = new rectangle
+	(
 		26*8, 32*8-1,
 		1*8, 31*8-1
-	};
+	);
 	
-	static struct rectangle panelvisibleareaflip =
-	{
+	static rectangle panelvisibleareaflip = new rectangle
+	(
 		0*8, 6*8-1,
 		1*8, 31*8-1
-	};
+	);
 	
 	
 	/***************************************************************************

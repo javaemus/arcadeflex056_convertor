@@ -20,16 +20,16 @@ public class thepit
 	
 	static int graphics_bank = 0;
 	
-	static struct rectangle spritevisiblearea =
-	{
+	static rectangle spritevisiblearea = new rectangle
+	(
 		2*8+1, 32*8-1,
 		2*8, 30*8-1
-	};
-	static struct rectangle spritevisibleareaflipx =
-	{
+	);
+	static rectangle spritevisibleareaflipx = new rectangle
+	(
 		0*8, 30*8-2,
 		2*8, 30*8-1
-	};
+	);
 	
 	
 	/***************************************************************************

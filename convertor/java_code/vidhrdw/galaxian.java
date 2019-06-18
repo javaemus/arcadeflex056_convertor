@@ -25,16 +25,16 @@ public class galaxian
 {
 	
 	
-	static struct rectangle _spritevisiblearea =
-	{
+	static rectangle _spritevisiblearea = new rectangle
+	(
 		2*8+1, 32*8-1,
 		2*8,   30*8-1
-	};
-	static struct rectangle _spritevisibleareaflipx =
-	{
+	);
+	static rectangle _spritevisibleareaflipx = new rectangle
+	(
 		0*8, 30*8-2,
 		2*8, 30*8-1
-	};
+	);
 	
 	static struct rectangle* spritevisiblearea;
 	static struct rectangle* spritevisibleareaflipx;

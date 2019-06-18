@@ -48,30 +48,30 @@ public class bosco
 	
 	
 	
-	static struct rectangle spritevisiblearea =
-	{
+	static rectangle spritevisiblearea = new rectangle
+	(
 		0*8+3, 28*8-1,
 		0*8, 28*8-1
-	};
+	);
 	
-	static struct rectangle spritevisibleareaflip =
-	{
+	static rectangle spritevisibleareaflip = new rectangle
+	(
 		8*8, 36*8-1-3,
 		0*8, 28*8-1
-	};
+	);
 	
 	
-	static struct rectangle radarvisiblearea =
-	{
+	static rectangle radarvisiblearea = new rectangle
+	(
 		28*8, 36*8-1,
 		0*8, 28*8-1
-	};
+	);
 	
-	static struct rectangle radarvisibleareaflip =
-	{
+	static rectangle radarvisibleareaflip = new rectangle
+	(
 		0*8, 8*8-1,
 		0*8, 28*8-1
-	};
+	);
 	
 	
 	

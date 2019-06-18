@@ -21,16 +21,16 @@ public class zaccaria
 	
 	static struct tilemap *bg_tilemap;
 	
-	static struct rectangle spritevisiblearea =
-	{
+	static rectangle spritevisiblearea = new rectangle
+	(
 		2*8+1, 29*8-1,
 		2*8, 30*8-1
-	};
-	static struct rectangle spritevisiblearea_flipx =
-	{
+	);
+	static rectangle spritevisiblearea_flipx = new rectangle
+	(
 		3*8+1, 30*8-1,
 		2*8, 30*8-1
-	};
+	);
 	
 	
 	

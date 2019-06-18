@@ -32,23 +32,23 @@ public class naughtyb
 	static int bankreg;
 	
 	
-	static struct rectangle scrollvisiblearea =
-	{
+	static rectangle scrollvisiblearea = new rectangle
+	(
 		2*8, 34*8-1,
 		0*8, 28*8-1
-	};
+	);
 	
-	static struct rectangle leftvisiblearea =
-	{
+	static rectangle leftvisiblearea = new rectangle
+	(
 		0*8, 2*8-1,
 		0*8, 28*8-1
-	};
+	);
 	
-	static struct rectangle rightvisiblearea =
-	{
+	static rectangle rightvisiblearea = new rectangle
+	(
 		34*8, 36*8-1,
 		0*8, 28*8-1
-	};
+	);
 	
 	
 	

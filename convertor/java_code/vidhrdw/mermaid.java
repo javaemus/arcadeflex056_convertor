@@ -24,11 +24,11 @@ public class mermaid
 	unsigned char* mermaid_foreground_scrollram;
 	
 	
-	static struct rectangle spritevisiblearea =
-	{
+	static rectangle spritevisiblearea = new rectangle
+	(
 		0*8, 26*8-1,
 		2*8, 30*8-1
-	};
+	);
 	
 	/***************************************************************************
 	
