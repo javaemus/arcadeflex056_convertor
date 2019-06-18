@@ -385,8 +385,8 @@ public class airbustr
 		/*	xGGG GGRR 	RRRB BBBB	*/
 		/*	x432 1043 	2104 3210	*/
 	
-		paletteram[offset] = data;
-		val = (paletteram[offset | 1] << 8) | paletteram[offset & ~1];
+		paletteram.write(offset,data);
+		val = (paletteram.read(offset | 1)<< 8) | paletteram.read(offset & ~1);
 	
 		g = (val >> 10) & 0x1f;
 		r = (val >>  5) & 0x1f;

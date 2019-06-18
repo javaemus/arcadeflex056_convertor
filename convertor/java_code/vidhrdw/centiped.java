@@ -95,7 +95,7 @@ public class centiped
 	
 	public static WriteHandlerPtr centiped_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-		paletteram[offset] = data;
+		paletteram.write(offset,data);
 	
 		/* the char palette will be effectively updated by the next interrupt handler */
 	
@@ -121,7 +121,7 @@ public class centiped
 		/* set the palette for the previous screen slice to properly support */
 		/* midframe palette changes in test mode */
 		for (offset = 4;offset < 8;offset++)
-			setcolor(4 * slice + (offset - 4),paletteram[offset]);
+			setcolor(4 * slice + (offset - 4),paletteram.read(offset));
 	
 		/* Centipede doesn't like to receive interrupts just after a reset. */
 		/* The only workaround I've found is to wait a little before starting */

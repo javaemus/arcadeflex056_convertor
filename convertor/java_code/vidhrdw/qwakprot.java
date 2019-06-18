@@ -35,7 +35,7 @@ public class qwakprot
 		int r,g,b;
 	
 	
-		paletteram[offset] = data;
+		paletteram.write(offset,data);
 	
 		/* red component */
 		bit0 = (~data >> 2) & 0x01;

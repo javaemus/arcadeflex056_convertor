@@ -227,9 +227,9 @@ public class atarigt
 	/*
 	public static WriteHandlerPtr atarigen_888_paletteram_lo_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-		int oldword = READ_WORD(&paletteram[offset]);
+		int oldword = READ_WORD(&paletteram.read(offset));
 		int newword = COMBINE_WORD(oldword, data);
-		WRITE_WORD(&paletteram[offset], newword);
+		WRITE_WORD(&paletteram.read(offset), newword);
 	
 	logerror("%06X:Palette lo W=%04X\n", cpu_getpreviouspc(), data);
 		{
@@ -254,8 +254,8 @@ public class atarigt
 		{
 			int r, g, b;
 	
-			r = READ_WORD(&paletteram[offset]) >> 8;
-			g = READ_WORD(&paletteram[offset]) & 0xff;
+			r = READ_WORD(&paletteram.read(offset)) >> 8;
+			g = READ_WORD(&paletteram.read(offset)) & 0xff;
 			b = newword & 0xff;
 	
 			palette_set_color(offset / 2, r, g, b);

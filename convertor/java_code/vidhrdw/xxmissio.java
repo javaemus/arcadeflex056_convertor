@@ -72,7 +72,7 @@ public class xxmissio
 	
 	public static WriteHandlerPtr xxmissio_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-		if (paletteram[offset] != data)
+		if (paletteram.read(offset)!= data)
 		{
 			paletteram_BBGGRRII_w(offset,data);
 	

@@ -21,8 +21,8 @@ public class dynduke
 		int r,g,b;
 		int color;
 	
-		paletteram[offset]=data;
-		color=paletteram[offset&0xffe]|(paletteram[offset|1]<<8);
+		paletteram.write(offset,data);
+		color=paletteram.read(offset&0xffe)|(paletteram.read(offset|1)<<8);
 	
 		r = (color >> 0) & 0x0f;
 		g = (color >> 4) & 0x0f;

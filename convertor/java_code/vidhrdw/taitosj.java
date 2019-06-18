@@ -157,25 +157,25 @@ public class taitosj
 		int r,g,b,val;
 	
 	
-		paletteram[offset] = data;
+		paletteram.write(offset,data);
 	
 		/* red component */
-		val = paletteram[offset | 1];
+		val = paletteram.read(offset | 1);
 		bit0 = (~val >> 6) & 0x01;
 		bit1 = (~val >> 7) & 0x01;
-		val = paletteram[offset & ~1];
+		val = paletteram.read(offset & ~1);
 		bit2 = (~val >> 0) & 0x01;
 		r = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
 	
 		/* green component */
-		val = paletteram[offset | 1];
+		val = paletteram.read(offset | 1);
 		bit0 = (~val >> 3) & 0x01;
 		bit1 = (~val >> 4) & 0x01;
 		bit2 = (~val >> 5) & 0x01;
 		g = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
 	
 		/* blue component */
-		val = paletteram[offset | 1];
+		val = paletteram.read(offset | 1);
 		bit0 = (~val >> 0) & 0x01;
 		bit1 = (~val >> 1) & 0x01;
 		bit2 = (~val >> 2) & 0x01;

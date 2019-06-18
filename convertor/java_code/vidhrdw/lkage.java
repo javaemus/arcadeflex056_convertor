@@ -170,7 +170,7 @@ public class lkage
 	
 	void lkage_set_palette_row( int virtual_row, int logical_row, int len )
 	{
-		unsigned char *source = &paletteram[logical_row*32];
+		unsigned char *source = &paletteram.read(logical_row*32);
 		int indx = virtual_row*16;
 		while( len-- )
 		{

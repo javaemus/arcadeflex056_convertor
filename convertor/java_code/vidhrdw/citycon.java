@@ -162,7 +162,7 @@ public class citycon
 	INLINE void changecolor_RRRRGGGGBBBBxxxx(int color,int indx)
 	{
 		int r,g,b;
-		int data = paletteram[2*indx | 1] | (paletteram[2*indx] << 8);
+		int data = paletteram.read(2*indx | 1)| (paletteram.read(2*indx)<< 8);
 	
 		r = (data >> 12) & 0x0f;
 		g = (data >>  8) & 0x0f;

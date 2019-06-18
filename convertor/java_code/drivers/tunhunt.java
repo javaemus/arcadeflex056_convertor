@@ -208,7 +208,7 @@ public class tunhunt
 	
 		for( i=0; i<16; i++ )
 		{
-			color = paletteram[i];
+			color = paletteram.read(i);
 			shade = 0xf^(color>>4);
 	
 			color &= 0xf; /* hue select */

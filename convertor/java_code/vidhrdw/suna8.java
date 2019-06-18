@@ -108,7 +108,7 @@ public class suna8
 	public static ReadHandlerPtr suna8_banked_paletteram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		offset += suna8_palettebank * 0x200;
-		return paletteram[offset];
+		return paletteram.read(offset);
 	} };
 	
 	public static ReadHandlerPtr suna8_banked_spriteram_r  = new ReadHandlerPtr() { public int handler(int offset)
@@ -144,8 +144,8 @@ public class suna8
 		int r,g,b;
 		UINT16 rgb;
 		offset += suna8_palettebank * 0x200;
-		paletteram[offset] = data;
-		rgb = (paletteram[offset&~1] << 8) + paletteram[offset|1];
+		paletteram.write(offset,data);
+		rgb = (paletteram.read(offset&~1)<< 8) + paletteram.read(offset|1);
 		r	=	(((rgb & (1<<0xc))?1:0)<<0) |
 				(((rgb & (1<<0xb))?1:0)<<1) |
 				(((rgb & (1<<0xe))?1:0)<<2) |

@@ -265,7 +265,7 @@ public class qix
 		int bits, intensity, red, green, blue;
 	
 		/* set the palette RAM value */
-		paletteram[offset] = data;
+		paletteram.write(offset,data);
 	
 		/* compute R, G, B from the table */
 		intensity = (data >> 0) & 0x03;

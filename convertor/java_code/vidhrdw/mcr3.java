@@ -68,7 +68,7 @@ public class mcr3
 	{
 		int r, g, b;
 	
-		paletteram[offset] = data;
+		paletteram.write(offset,data);
 		offset &= 0x7f;
 	
 		/* high bit of red comes from low bit of address */

@@ -60,10 +60,10 @@ public class gottlieb
 		int r,g,b,val;
 	
 	
-		paletteram[offset] = data;
+		paletteram.write(offset,data);
 	
 		/* red component */
-		val = paletteram[offset | 1];
+		val = paletteram.read(offset | 1);
 		bit0 = (val >> 0) & 0x01;
 		bit1 = (val >> 1) & 0x01;
 		bit2 = (val >> 2) & 0x01;
@@ -71,7 +71,7 @@ public class gottlieb
 		r = 0x10 * bit0 + 0x21 * bit1 + 0x46 * bit2 + 0x88 * bit3;
 	
 		/* green component */
-		val = paletteram[offset & ~1];
+		val = paletteram.read(offset & ~1);
 		bit0 = (val >> 4) & 0x01;
 		bit1 = (val >> 5) & 0x01;
 		bit2 = (val >> 6) & 0x01;
@@ -79,7 +79,7 @@ public class gottlieb
 		g = 0x10 * bit0 + 0x21 * bit1 + 0x46 * bit2 + 0x88 * bit3;
 	
 		/* blue component */
-		val = paletteram[offset & ~1];
+		val = paletteram.read(offset & ~1);
 		bit0 = (val >> 0) & 0x01;
 		bit1 = (val >> 1) & 0x01;
 		bit2 = (val >> 2) & 0x01;

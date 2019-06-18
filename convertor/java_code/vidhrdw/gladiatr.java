@@ -27,8 +27,8 @@ public class gladiatr
 		int r,g,b;
 	
 	
-		r = (paletteram[offset] >> 0) & 0x0f;
-		g = (paletteram[offset] >> 4) & 0x0f;
+		r = (paletteram.read(offset)>> 0) & 0x0f;
+		g = (paletteram.read(offset)>> 4) & 0x0f;
 		b = (paletteram_2[offset] >> 0) & 0x0f;
 	
 		r = (r << 1) + ((paletteram_2[offset] >> 4) & 0x01);
@@ -50,7 +50,7 @@ public class gladiatr
 	
 	public static WriteHandlerPtr gladiatr_paletteram_rg_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-		paletteram[offset] = data;
+		paletteram.write(offset,data);
 		update_color(offset);
 	} };
 	

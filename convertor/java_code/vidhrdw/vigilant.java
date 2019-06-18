@@ -121,14 +121,14 @@ public class vigilant
 		int bank,r,g,b;
 	
 	
-		paletteram[offset] = data;
+		paletteram.write(offset,data);
 	
 		bank = offset & 0x400;
 		offset &= 0xff;
 	
-		r = (paletteram[bank + offset + 0x000] << 3) & 0xFF;
-		g = (paletteram[bank + offset + 0x100] << 3) & 0xFF;
-		b = (paletteram[bank + offset + 0x200] << 3) & 0xFF;
+		r = (paletteram.read(bank + offset + 0x000)<< 3) & 0xFF;
+		g = (paletteram.read(bank + offset + 0x100)<< 3) & 0xFF;
+		b = (paletteram.read(bank + offset + 0x200)<< 3) & 0xFF;
 	
 		palette_set_color((bank >> 2) + offset,r,g,b);
 	} };
@@ -309,15 +309,15 @@ public class vigilant
 			int r,g,b;
 	
 	
-			r = (paletteram[0x400 + 16 * rear_color + i] << 3) & 0xFF;
-			g = (paletteram[0x500 + 16 * rear_color + i] << 3) & 0xFF;
-			b = (paletteram[0x600 + 16 * rear_color + i] << 3) & 0xFF;
+			r = (paletteram.read(0x400 + 16 * rear_color + i)<< 3) & 0xFF;
+			g = (paletteram.read(0x500 + 16 * rear_color + i)<< 3) & 0xFF;
+			b = (paletteram.read(0x600 + 16 * rear_color + i)<< 3) & 0xFF;
 	
 			palette_set_color(512 + i,r,g,b);
 	
-			r = (paletteram[0x400 + 16 * rear_color + 32 + i] << 3) & 0xFF;
-			g = (paletteram[0x500 + 16 * rear_color + 32 + i] << 3) & 0xFF;
-			b = (paletteram[0x600 + 16 * rear_color + 32 + i] << 3) & 0xFF;
+			r = (paletteram.read(0x400 + 16 * rear_color + 32 + i)<< 3) & 0xFF;
+			g = (paletteram.read(0x500 + 16 * rear_color + 32 + i)<< 3) & 0xFF;
+			b = (paletteram.read(0x600 + 16 * rear_color + 32 + i)<< 3) & 0xFF;
 	
 			palette_set_color(512 + 16 + i,r,g,b);
 		}

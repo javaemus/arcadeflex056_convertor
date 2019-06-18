@@ -372,6 +372,40 @@ public class convertMame {
                     Convertor.inpos = j;
                 }
                 break;
+                case 'p': {
+                    int sd = Convertor.inpos;
+                    if (sUtil.getToken("paletteram")) {
+                        if (sUtil.parseChar() != '[') {
+                            Convertor.inpos = sd;
+                            break;
+                        }
+                        Convertor.token[0] = sUtil.parseToken(']');
+                        sUtil.skipSpace();
+                        if (sUtil.parseChar() != ']') {
+                            Convertor.inpos = sd;
+                            break;
+                        } else {
+                            sUtil.skipSpace();
+                            if (sUtil.parseChar() == '=') {
+                                int g = Convertor.inpos;
+                                if (sUtil.parseChar() == '=') {
+                                    Convertor.inpos = sd;
+                                    break;
+                                }
+                                Convertor.inpos = g;
+                                sUtil.skipSpace();
+                                Convertor.token[1] = sUtil.parseToken(';');
+                                sUtil.putString((new StringBuilder()).append("paletteram.write(").append(Convertor.token[0]).append(",").append(Convertor.token[1]).append(");").toString());
+                                Convertor.inpos += 1;
+                                break;
+                            }
+                            sUtil.putString((new StringBuilder()).append("paletteram.read(").append(Convertor.token[0]).append(")").toString());
+                            Convertor.inpos -= 1;
+                            continue;
+                        }
+                    }
+                }
+                break;
                 case 'c':
                     int sd = Convertor.inpos;
                     if (sUtil.getToken("color_prom")) {

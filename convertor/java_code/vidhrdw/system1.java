@@ -73,7 +73,7 @@ public class system1
 		int val,r,g,b;
 	
 	
-		paletteram[offset] = data;
+		paletteram.write(offset,data);
 	
 		if (system1_color_prom)
 		{

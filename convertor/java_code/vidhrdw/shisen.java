@@ -37,13 +37,13 @@ public class shisen
 	{
 		int r,g,b;
 	
-		paletteram[offset] = data;
+		paletteram.write(offset,data);
 	
 		offset &= 0xff;
 	
-		r = paletteram[offset+0x000] & 0x1f;
-		g = paletteram[offset+0x100] & 0x1f;
-		b = paletteram[offset+0x200] & 0x1f;
+		r = paletteram.read(offset+0x000)& 0x1f;
+		g = paletteram.read(offset+0x100)& 0x1f;
+		b = paletteram.read(offset+0x200)& 0x1f;
 		r = (r << 3) | (r >> 2);
 		g = (g << 3) | (g >> 2);
 		b = (b << 3) | (b >> 2);
