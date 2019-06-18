@@ -45,7 +45,7 @@ public class dynax
 	} };
 	
 	/* 0 B01234 G01234 R01234 */
-	void sprtmtch_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr sprtmtch_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -66,7 +66,7 @@ public class dynax
 			palette[i * 3 + 1] =  (g << 3) | (g >> 2);
 			palette[i * 3 + 2] =  (b << 3) | (b >> 2);
 		}
-	}
+	} };
 	
 	/***************************************************************************
 	

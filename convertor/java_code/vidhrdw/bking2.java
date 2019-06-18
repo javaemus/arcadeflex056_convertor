@@ -46,7 +46,7 @@ public class bking2
 	  bit 0 -- 220 ohm resistor  -- RED
 	
 	***************************************************************************/
-	void bking2_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr bking2_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
@@ -97,7 +97,7 @@ public class bking2
 			COLOR(2,i) = ((i << 6) & 0x180) | ((i & 0x01) << 3);
 			COLOR(3,i) = ((i << 6) & 0x180) | ((i & 0x01) << 4);
 		}
-	}
+	} };
 	
 	public static WriteHandlerPtr bking2_xld1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

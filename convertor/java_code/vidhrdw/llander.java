@@ -40,7 +40,7 @@ public class llander
 	
 	***************************************************************************/
 	
-	void llander_init_colors (unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr llander_init_colors = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int width, height, i, nextcol;
 	
@@ -67,7 +67,7 @@ public class llander
 	
 		for (i = 0; i < 16; i++)
 			palette[3*(i+8)]=palette[3*(i+8)+1]=palette[3*(i+8)+2]= (255*i)/15;
-	}
+	} };
 	
 	int llander_start(void)
 	{

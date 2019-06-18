@@ -26,7 +26,6 @@ public class mystston
 	extern unsigned char *mystston_bgvideoram;
 	extern unsigned char *mystston_scroll;
 	
-	void mystston_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	

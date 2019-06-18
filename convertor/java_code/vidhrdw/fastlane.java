@@ -11,7 +11,7 @@ public class fastlane
 	static struct tilemap *layer0, *layer1;
 	
 	
-	void fastlane_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr fastlane_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int pal,col;
 	
@@ -22,7 +22,7 @@ public class fastlane
 				*(colortable++) = (col & ~0x0f) | color_prom[16 * pal + (col & 0x0f)];
 			}
 		}
-	}
+	} };
 	
 	/***************************************************************************
 	

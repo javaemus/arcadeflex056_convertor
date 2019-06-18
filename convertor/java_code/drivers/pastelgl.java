@@ -33,7 +33,6 @@ public class pastelgl
 	#define	SIGNED_DAC	0		// 0:unsigned DAC, 1:signed DAC
 	
 	
-	void pastelgl_init_palette(unsigned char *palette, unsigned short *colortable, const unsigned char *color_prom);
 	
 	void pastelgl_paltbl_w(int offset, int data);
 	void pastelgl_radrx_w(int data);

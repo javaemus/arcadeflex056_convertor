@@ -21,7 +21,6 @@ public class finalizr
 	extern unsigned char *finalizr_videoram2,*finalizr_colorram2;
 	static unsigned char *finalizr_interrupt_enable;
 	
-	void finalizr_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	

@@ -94,7 +94,6 @@ public class buggychl
 	extern unsigned char buggychl_sprite_lookup[0x2000];
 	extern unsigned char *buggychl_character_ram;
 	
-	void buggychl_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	

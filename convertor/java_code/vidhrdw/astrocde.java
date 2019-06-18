@@ -53,7 +53,7 @@ public class astrocde
 	
 	
 	
-	void astrocde_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr astrocde_init_palette = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		/* This routine builds a palette using a transformation from */
 		/* the YUV (Y, B-Y, R-Y) to the RGB color space */
@@ -121,7 +121,7 @@ public class astrocde
 				palette++;
 			}
 		}
-	}
+	} };
 	
 	
 	

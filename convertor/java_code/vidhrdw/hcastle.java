@@ -20,7 +20,7 @@ public class hcastle
 	static int pf2_bankbase,pf1_bankbase;
 	
 	
-	void hcastle_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr hcastle_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i,chip,pal,clut;
 	
@@ -43,7 +43,7 @@ public class hcastle
 				}
 			}
 		}
-	}
+	} };
 	
 	
 	

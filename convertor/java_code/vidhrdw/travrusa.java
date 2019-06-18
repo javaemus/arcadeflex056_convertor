@@ -51,7 +51,7 @@ public class travrusa
 	  bit 0 -- 1  kohm resistor  -- BLUE
 	
 	***************************************************************************/
-	void travrusa_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr travrusa_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
@@ -120,7 +120,7 @@ public class travrusa
 		/* sprite lookup table */
 		for (i = 0;i < TOTAL_COLORS(1);i++)
 			COLOR(1,i) = *(color_prom++) + 128;
-	}
+	} };
 	
 	
 	

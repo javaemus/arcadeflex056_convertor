@@ -47,7 +47,7 @@ public class thepit
 	
 	
 	***************************************************************************/
-	void thepit_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr thepit_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -85,7 +85,7 @@ public class thepit
 		{
 			colortable[i] = i + 8;
 		}
-	}
+	} };
 	
 	
 	/***************************************************************************
@@ -94,7 +94,7 @@ public class thepit
 	 unknown.
 	
 	***************************************************************************/
-	void suprmous_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr suprmous_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -138,7 +138,7 @@ public class thepit
 		{
 			colortable[i] = i + 8;
 		}
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr thepit_attributes_w = new WriteHandlerPtr() {public void handler(int offset, int data)

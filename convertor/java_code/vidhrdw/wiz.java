@@ -69,7 +69,7 @@ public class wiz
 	  bit 0 -- 1  kohm resistor  -- RED/GREEN/BLUE
 	
 	***************************************************************************/
-	void wiz_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr wiz_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -97,7 +97,7 @@ public class wiz
 	
 			color_prom++;
 		}
-	}
+	} };
 	
 	public static WriteHandlerPtr wiz_attributes_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

@@ -162,8 +162,6 @@ public class galaxian
 	extern size_t galaxian_spriteram_size;
 	extern size_t galaxian_bulletsram_size;
 	
-	void galaxian_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void scramble_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	int  galaxian_sh_start(const struct MachineSound *msound);
 	

@@ -17,7 +17,6 @@ public class rockrage
 	
 	
 	/* from vidhrdw */
-	void rockrage_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	public static InterruptPtr rockrage_interrupt = new InterruptPtr() { public int handler() 
 	{

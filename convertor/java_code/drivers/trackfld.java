@@ -31,7 +31,6 @@ public class trackfld
 	
 	extern unsigned char *trackfld_scroll;
 	extern unsigned char *trackfld_scroll2;
-	void trackfld_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	

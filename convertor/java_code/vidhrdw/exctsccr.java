@@ -47,7 +47,7 @@ public class exctsccr
 	  Convert the color PROMs into a more useable format.
 	
 	***************************************************************************/
-	void exctsccr_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr exctsccr_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i,idx;
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
@@ -122,7 +122,7 @@ public class exctsccr
 		/* Patch for goalkeeper */
 		COLOR(2,29*8+7) = 16;
 	
-	}
+	} };
 	
 	static void exctsccr_drawsprites( struct mame_bitmap *bitmap ) {
 		int offs;

@@ -44,8 +44,6 @@ public class phoenix
 	
 	
 	
-	void phoenix_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void pleiads_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	int phoenix_sh_start(const struct MachineSound *msound);
 	

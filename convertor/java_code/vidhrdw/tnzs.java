@@ -42,7 +42,7 @@ public class tnzs
 	  form 512 xRRRRRGGGGGBBBBB color values.
 	
 	***************************************************************************/
-	void arknoid2_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr arknoid2_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i,col;
 	
@@ -53,7 +53,7 @@ public class tnzs
 			*(palette++) =  (col & 0x03e0)>>2;	/* Green */
 			*(palette++) =  (col & 0x001f)<<3;	/* Blue */
 		}
-	}
+	} };
 	
 	
 	

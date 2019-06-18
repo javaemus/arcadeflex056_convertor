@@ -24,7 +24,7 @@ public class srmp2
 	int mjyuugi_gfx_bank;
 	
 	
-	void srmp2_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable, const unsigned char *color_prom)
+	public static VhConvertColorPromPtr srmp2_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -47,10 +47,10 @@ public class srmp2
 		{
 			colortable[i] = i ^ 0x0f;
 		}
-	}
+	} };
 	
 	
-	void srmp3_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable, const unsigned char *color_prom)
+	public static VhConvertColorPromPtr srmp3_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -68,7 +68,7 @@ public class srmp2
 			*(palette++) = (g << 3) | (g >> 2);
 			*(palette++) = (b << 3) | (b >> 2);
 		}
-	}
+	} };
 	
 	
 	static void srmp2_draw_sprites(struct mame_bitmap *bitmap)

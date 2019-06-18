@@ -44,7 +44,7 @@ public class stfight
 	
 	 */
 	
-	void stfight_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr stfight_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
@@ -88,7 +88,7 @@ public class stfight
 			color_prom++;
 		}
 		color_prom += 256;
-	}
+	} };
 	
 	/***************************************************************************
 	

@@ -101,7 +101,6 @@ public class wiz
 	extern unsigned char *wiz_attributesram2;
 	extern unsigned char *wiz_sprite_bank;
 	
-	void wiz_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	public static ReadHandlerPtr wiz_protection_r  = new ReadHandlerPtr() { public int handler(int offset)

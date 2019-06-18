@@ -54,7 +54,7 @@ public class pengo
 	  bit 0 -- 1  kohm resistor  -- RED
 	
 	***************************************************************************/
-	void pacman_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr pacman_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
@@ -92,9 +92,9 @@ public class pengo
 		/* sprites use the same color lookup table as characters */
 		for (i = 0;i < TOTAL_COLORS(0);i++)
 			COLOR(0,i) = *(color_prom++) & 0x0f;
-	}
+	} };
 	
-	void pengo_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr pengo_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
@@ -143,7 +143,7 @@ public class pengo
 	
 			color_prom++;
 		}
-	}
+	} };
 	
 	
 	

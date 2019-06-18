@@ -51,7 +51,7 @@ public class m62
 	  bit 0 -- 2.2kohm resistor  -- RED/GREEN/BLUE
 	
 	***************************************************************************/
-	void irem_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr irem_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -86,9 +86,9 @@ public class m62
 		/* color_prom now points to the beginning of the sprite height table */
 	
 		sprite_height_prom = color_prom;	/* we'll need this at run time */
-	}
+	} };
 	
-	void battroad_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr battroad_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -146,9 +146,9 @@ public class m62
 		/* color_prom now points to the beginning of the sprite height table */
 	
 		sprite_height_prom = color_prom;	/* we'll need this at run time */
-	}
+	} };
 	
-	void spelunk2_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr spelunk2_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -214,7 +214,7 @@ public class m62
 	
 		/* color_prom now points to the beginning of the sprite height table */
 		sprite_height_prom = color_prom;	/* we'll need this at run time */
-	}
+	} };
 	
 	
 	

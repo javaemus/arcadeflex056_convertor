@@ -122,7 +122,6 @@ package drivers;
 public class tubep
 {
 	
-	void tubep_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable, const unsigned char *color_prom);
 	
 	extern data8_t *tubep_textram;
 	extern 

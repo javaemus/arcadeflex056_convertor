@@ -15,7 +15,6 @@ public class troangel
 {
 	
 	extern unsigned char *troangel_scroll;
-	void troangel_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	

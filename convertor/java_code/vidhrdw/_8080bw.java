@@ -676,7 +676,7 @@ public class _8080bw
 	} };
 	
 	
-	void invadpt2_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr invadpt2_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -689,9 +689,9 @@ public class _8080bw
 			*(palette++) = 0xff * ((i >> 2) & 1);
 			*(palette++) = 0xff * ((i >> 1) & 1);
 		}
-	}
+	} };
 	
-	void helifire_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr helifire_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -702,7 +702,7 @@ public class _8080bw
 			*(palette++) = 0xff * ((i >> 1) & 1);
 			*(palette++) = 0xff * ((i >> 2) & 1);
 		}
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr invadpt2_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)

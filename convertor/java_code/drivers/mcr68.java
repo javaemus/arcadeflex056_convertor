@@ -73,7 +73,6 @@ public class mcr68
 	WRITE16_HANDLER( zwackery_videoram_w );
 	WRITE16_HANDLER( zwackery_paletteram_w );
 	WRITE16_HANDLER( zwackery_spriteram_w );
-	void zwackery_convert_color_prom(unsigned char *palette, unsigned short *colortable, const unsigned char *color_prom);
 	
 	
 	

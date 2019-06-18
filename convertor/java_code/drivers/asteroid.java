@@ -150,7 +150,6 @@ public class asteroid
 	extern struct discrete_sound_block *llander_sound_interface;
 	
 	
-	void llander_init_colors (unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	public static WriteHandlerPtr astdelux_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)

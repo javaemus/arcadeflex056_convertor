@@ -73,7 +73,6 @@ public class gberet
 	extern unsigned char *gberet_videoram,*gberet_colorram;
 	extern unsigned char *gberet_spritebank;
 	extern unsigned char *gberet_scrollram;
-	void gberet_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	

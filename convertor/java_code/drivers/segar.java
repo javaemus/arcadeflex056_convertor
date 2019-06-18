@@ -71,7 +71,6 @@ public class segar
 	extern unsigned char *segar_mem_colortable;
 	extern unsigned char *segar_mem_bcolortable;
 	
-	void segar_init_colors(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	

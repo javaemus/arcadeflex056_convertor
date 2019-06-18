@@ -70,7 +70,6 @@ public class rallyx
 	extern unsigned char *rallyx_radarx,*rallyx_radary,*rallyx_radarattr;
 	extern size_t rallyx_radarram_size;
 	extern unsigned char *rallyx_scrollx,*rallyx_scrolly;
-	void rallyx_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	public static WriteHandlerPtr rallyx_coin_lockout_w = new WriteHandlerPtr() {public void handler(int offset, int data)

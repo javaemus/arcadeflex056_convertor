@@ -57,7 +57,6 @@ public class fuuki16
 	WRITE16_HANDLER( fuuki16_vram_2_w );
 	WRITE16_HANDLER( fuuki16_vram_3_w );
 	
-	void fuuki16_vh_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	/***************************************************************************
 	

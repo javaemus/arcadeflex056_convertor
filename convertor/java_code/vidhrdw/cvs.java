@@ -81,7 +81,7 @@ public class cvs
 	 * colours are taken from SRAM and are programmable   *
 	 ******************************************************/
 	
-	void cvs_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr cvs_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int attr,col,map;
 	
@@ -136,7 +136,7 @@ public class cvs
 	    scroll[0]=0;
 	    scroll[6]=0;
 	    scroll[7]=0;
-	}
+	} };
 	
 	public static WriteHandlerPtr cvs_video_fx_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

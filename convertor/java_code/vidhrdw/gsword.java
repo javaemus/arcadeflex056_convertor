@@ -29,7 +29,7 @@ public class gsword
 	static int flipscreen;
 	
 	
-	void josvolly_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr josvolly_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		/* sprite lookup table is not original but it is almost 98% correct */
 	
@@ -77,10 +77,10 @@ public class gsword
 		/* sprites */
 		for (i = 0;i < TOTAL_COLORS(1);i++)
 			COLOR(1,i) = sprite_lookup_table[*(color_prom++)];
-	}
+	} };
 	
 	
-	void gsword_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr gsword_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		/* sprite lookup table is not original but it is almost 98% correct */
 	
@@ -124,7 +124,7 @@ public class gsword
 		/* sprites */
 		for (i = 0;i < TOTAL_COLORS(1);i++)
 			COLOR(1,i) = sprite_lookup_table[*(color_prom++)];
-	}
+	} };
 	
 	
 	public static VhStartPtr gsword_vh_start = new VhStartPtr() { public int handler() 

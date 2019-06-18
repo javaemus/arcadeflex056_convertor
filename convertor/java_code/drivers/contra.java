@@ -26,7 +26,6 @@ public class contra
 	extern unsigned char *contra_bg_vram,*contra_bg_cram;
 	extern unsigned char *contra_text_vram,*contra_text_cram;
 	
-	void contra_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	

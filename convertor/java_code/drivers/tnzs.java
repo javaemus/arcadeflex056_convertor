@@ -190,7 +190,6 @@ public class tnzs
 	
 	
 	/* prototypes for functions in ../vidhrdw/tnzs.c */
-	void arknoid2_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	

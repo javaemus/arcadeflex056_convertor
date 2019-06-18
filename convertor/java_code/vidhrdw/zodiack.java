@@ -24,7 +24,7 @@ public class zodiack
 	
 	static int flipscreen;
 	
-	void zodiack_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr zodiack_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
@@ -75,7 +75,7 @@ public class zodiack
 		/* bullet */
 		COLOR(2, 0) = 0;
 		COLOR(2, 1) = 48;
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr zodiack_attributes_w = new WriteHandlerPtr() {public void handler(int offset, int data)

@@ -34,7 +34,6 @@ public class hyhoo
 	#define	SIGNED_DAC	0		// 0:unsigned DAC, 1:signed DAC
 	
 	
-	void hyhoo_init_palette(unsigned char *palette, unsigned short *colortable, const unsigned char *color_prom);
 	
 	void hyhoo_radrx_w(int data);
 	void hyhoo_radry_w(int data);

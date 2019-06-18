@@ -37,7 +37,7 @@ public class mermaid
 	  I'm not sure about the resistor value, I'm using the Galaxian ones.
 	
 	***************************************************************************/
-	void mermaid_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr mermaid_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
 		#define COLOR(gfxn,offs) (colortable[Machine->drv->gfxdecodeinfo[gfxn].color_codes_start + offs])
@@ -79,7 +79,7 @@ public class mermaid
 	
 	    COLOR(2,2) = 64;
 	    COLOR(2,3) = 33;
-	}
+	} };
 	
 	
 	/***************************************************************************

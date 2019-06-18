@@ -36,7 +36,6 @@ public class bladestl
 	
 	/* from vidhrdw */
 	int bladestl_spritebank;
-	void bladestl_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	public static InterruptPtr bladestl_interrupt = new InterruptPtr() { public int handler() 
 	{

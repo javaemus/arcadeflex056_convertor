@@ -114,8 +114,6 @@ public class punchout
 	extern unsigned char *punchout_bigsprite1;
 	extern unsigned char *punchout_bigsprite2;
 	extern unsigned char *punchout_palettebank;
-	void punchout_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void armwrest_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	

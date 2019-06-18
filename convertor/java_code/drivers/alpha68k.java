@@ -56,7 +56,6 @@ package drivers;
 public class alpha68k
 {
 	
-	void kyros_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	WRITE16_HANDLER( alpha68k_II_video_bank_w );
 	void alpha68k_V_video_bank_w(int bank);
 	void alpha68k_flipscreen_w(int flip);

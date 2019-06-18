@@ -34,7 +34,7 @@ public class grobda
 	  bit 0 -- 1  kohm resistor  -- RED
 	
 	***************************************************************************/
-	void grobda_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr grobda_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -61,7 +61,7 @@ public class grobda
 		/* sprites */
 		for (i = 256; i < 512; i++)
 			colortable[i] = (color_prom[i + 32] & 0x0f);
-	}
+	} };
 	
 	
 	

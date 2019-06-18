@@ -20,7 +20,6 @@ public class mrjong
 {
 	
 	
-	void mrjong_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	public static Memory_ReadAddress readmem[]={

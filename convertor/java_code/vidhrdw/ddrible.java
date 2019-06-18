@@ -27,7 +27,7 @@ public class ddrible
 	static struct tilemap *fg_tilemap,*bg_tilemap;
 	
 	
-	void ddrible_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr ddrible_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
@@ -37,7 +37,7 @@ public class ddrible
 		/* build the lookup table for sprites. Palette is dynamic. */
 		for (i = 0;i < TOTAL_COLORS(3);i++)
 			COLOR(3,i) = (*(color_prom++) & 0x0f);
-	}
+	} };
 	
 	public static WriteHandlerPtr K005885_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

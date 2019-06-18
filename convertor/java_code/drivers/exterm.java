@@ -76,7 +76,6 @@ public class exterm
 	static int aimpos1, aimpos2;
 	
 	/* Functions in vidhrdw/exterm.c */
-	void exterm_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	void exterm_to_shiftreg_master(unsigned int address, unsigned short* shiftreg);
 	void exterm_from_shiftreg_master(unsigned int address, unsigned short* shiftreg);

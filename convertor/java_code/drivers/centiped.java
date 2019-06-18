@@ -151,7 +151,6 @@ public class centiped
 {
 	
 	
-	void centiped_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	

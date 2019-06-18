@@ -41,7 +41,7 @@ public class milliped
 	
 	***************************************************************************/
 	
-	void milliped_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr milliped_init_palette = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
@@ -66,7 +66,7 @@ public class milliped
 			COLOR(1,i+2) = 16 + 4*((i >> 8) & 3) + ((i >> 4) & 3);
 			COLOR(1,i+3) = 16 + 4*((i >> 8) & 3) + ((i >> 6) & 3);
 		}
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr milliped_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)

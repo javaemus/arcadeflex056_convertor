@@ -40,7 +40,6 @@ public class nova2001
 	extern unsigned char *nova2001_videoram,*nova2001_colorram;
 	extern size_t nova2001_videoram_size;
 	
-	void nova2001_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	

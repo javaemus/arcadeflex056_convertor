@@ -117,7 +117,6 @@ public class naughtyb
 	extern unsigned char *naughtyb_videoram2;
 	extern unsigned char *naughtyb_scrollreg;
 	
-	void naughtyb_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	int naughtyb_sh_start(const struct MachineSound *msound);
 	int popflame_sh_start(const struct MachineSound *msound);

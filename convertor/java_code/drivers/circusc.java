@@ -22,7 +22,6 @@ public class circusc
 	extern unsigned char *circusc_videoram,*circusc_colorram;
 	
 	
-	void circusc_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	

@@ -10,16 +10,16 @@ public class vsnes
 	/* from machine */
 	
 	
-	void vsnes_vh_convert_color_prom( unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom )
+	public static VhConvertColorPromPtr vsnes_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		ppu2c03b_init_palette( palette );
-	}
+	} };
 	
-	void vsdual_vh_convert_color_prom( unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom )
+	public static VhConvertColorPromPtr vsdual_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		ppu2c03b_init_palette( palette );
 		ppu2c03b_init_palette( &palette[3*64] );
-	}
+	} };
 	
 	static void ppu_irq( int num )
 	{

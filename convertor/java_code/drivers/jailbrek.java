@@ -19,7 +19,6 @@ public class jailbrek
 	
 	/* from vidhrdw */
 	extern unsigned char *jailbrek_scroll_x;
-	void jailbrek_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	static int irq_enable,nmi_enable;
 	

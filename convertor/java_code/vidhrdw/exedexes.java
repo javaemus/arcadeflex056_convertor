@@ -44,7 +44,7 @@ public class exedexes
 	  bit 0 -- 2.2kohm resistor  -- RED/GREEN/BLUE
 	
 	***************************************************************************/
-	void exedexes_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr exedexes_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
@@ -96,7 +96,7 @@ public class exedexes
 			COLOR(3,i) = color_prom[0] + 128 + 16 * color_prom[256];
 			color_prom++;
 		}
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr exedexes_c804_w = new WriteHandlerPtr() {public void handler(int offset, int data)

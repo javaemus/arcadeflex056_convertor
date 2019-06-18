@@ -95,7 +95,6 @@ public class tp84
 	extern unsigned char *tp84_colorram2;
 	extern unsigned char *tp84_scrollx;
 	extern unsigned char *tp84_scrolly;
-	void tp84_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	static unsigned char *sharedram;

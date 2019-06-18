@@ -36,7 +36,6 @@ public class matmania
 	extern unsigned char *matmania_scroll;
 	extern unsigned char *matmania_pageselect;
 	
-	void matmania_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	

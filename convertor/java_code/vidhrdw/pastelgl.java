@@ -38,7 +38,7 @@ public class pastelgl
 	
 	
 	******************************************************************************/
-	void pastelgl_init_palette(unsigned char *palette, unsigned short *colortable, const unsigned char *color_prom)
+	public static VhConvertColorPromPtr pastelgl_init_palette = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -64,7 +64,7 @@ public class pastelgl
 	
 			color_prom++;
 		}
-	}
+	} };
 	
 	void pastelgl_paltbl_w(int offset, int data)
 	{

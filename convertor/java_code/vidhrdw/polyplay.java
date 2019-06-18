@@ -23,7 +23,7 @@ public class polyplay
 	
 	
 	
-	void polyplay_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr polyplay_init_palette = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		static unsigned char polyplay_palette[] =
 		{
@@ -42,7 +42,7 @@ public class polyplay
 	
 	
 		memcpy(palette,polyplay_palette,sizeof(polyplay_palette));
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr polyplay_characterram_w = new WriteHandlerPtr() {public void handler(int offset, int data)

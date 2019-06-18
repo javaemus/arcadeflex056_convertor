@@ -19,7 +19,7 @@ public class strnskil
 	
 	static UINT8 strnskil_flipscreen, strnskil_xscroll[2], strnskil_scrl_ctrl;
 	
-	void strnskil_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr strnskil_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -44,7 +44,7 @@ public class strnskil
 		for (i=0; i<512; i++)
 			*(colortable++) = *(color_prom++);
 	
-	}
+	} };
 	
 	public static WriteHandlerPtr strnskil_scroll_x_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

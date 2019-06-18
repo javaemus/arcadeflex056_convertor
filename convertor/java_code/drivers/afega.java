@@ -41,7 +41,6 @@ public class afega
 	WRITE16_HANDLER( afega_vram_1_w );
 	WRITE16_HANDLER( afega_palette_w );
 	
-	void grdnstrm_vh_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	

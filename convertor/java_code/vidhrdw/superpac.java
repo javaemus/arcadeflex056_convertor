@@ -39,7 +39,7 @@ public class superpac
 	
 	***************************************************************************/
 	
-	void superpac_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr superpac_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i, j;
 	
@@ -77,7 +77,7 @@ public class superpac
 				if (colortable[64*4 + i*4 + j] == 0x1f)
 					color15_mask[i] |= 1 << j;
 		}
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr superpac_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)

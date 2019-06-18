@@ -43,7 +43,7 @@ public class jrpacman
 	  bit 0 -- 1  kohm resistor  -- RED
 	
 	***************************************************************************/
-	void jrpacman_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr jrpacman_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -78,7 +78,7 @@ public class jrpacman
 			if (color_prom[i]) colortable[i + 64*4] = color_prom[i] + 0x10;
 			else colortable[i + 64*4] = 0;
 		}
-	}
+	} };
 	
 	
 	

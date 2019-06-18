@@ -24,7 +24,7 @@ public class cheekyms
 	static int char_palette = 0;
 	
 	
-	void cheekyms_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr cheekyms_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i,j,bit;
 	
@@ -66,7 +66,7 @@ public class cheekyms
 				color_prom++;
 			}
 		}
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr cheekyms_sprite_w = new WriteHandlerPtr() {public void handler(int offset, int data)

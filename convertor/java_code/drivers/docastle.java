@@ -123,8 +123,6 @@ public class docastle
 	
 	
 	
-	void docastle_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void dorunrun_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	public static Memory_ReadAddress docastle_readmem[]={

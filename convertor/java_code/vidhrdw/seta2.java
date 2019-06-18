@@ -91,13 +91,13 @@ public class seta2
 	***************************************************************************/
 	
 	/* 256 color sprites, but the color code granularity is of 16 colors */
-	void seta2_vh_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr seta2_vh_init_palette = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int color, pen;
 		for( color = 0; color < (0x8000/16); color++ )
 			for( pen = 0; pen < 256; pen++ )
 					colortable[color * 256 + pen + 0x8000] = (color * 16 + pen) % 0x8000;
-	}
+	} };
 	
 	
 	/***************************************************************************

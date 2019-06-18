@@ -45,7 +45,6 @@ package drivers;
 public class karnov
 {
 	
-	void karnov_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	WRITE16_HANDLER( karnov_playfield_w );
 	WRITE16_HANDLER( karnov_videoram_w );
 	void karnov_flipscreen_w(int data);

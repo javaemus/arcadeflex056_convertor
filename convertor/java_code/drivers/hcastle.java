@@ -15,7 +15,6 @@ package drivers;
 public class hcastle
 {
 	
-	void hcastle_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	extern data8_t *hcastle_pf1_videoram,*hcastle_pf2_videoram;
 	

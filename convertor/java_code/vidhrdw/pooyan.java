@@ -39,7 +39,7 @@ public class pooyan
 	  bit 0 -- 1  kohm resistor  -- RED
 	
 	***************************************************************************/
-	void pooyan_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr pooyan_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
@@ -79,7 +79,7 @@ public class pooyan
 		/* characters */
 		for (i = 0;i < TOTAL_COLORS(0);i++)
 			COLOR(0,i) = (*(color_prom++) & 0x0f) + 0x10;
-	}
+	} };
 	
 	
 	

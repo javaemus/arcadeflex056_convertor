@@ -31,7 +31,6 @@ public class pandoras
 	static unsigned char *pandoras_sharedram2;
 	
 	/* from vidhrdw */
-	void pandoras_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	public static InterruptPtr pandoras_interrupt_a = new InterruptPtr() { public int handler() {
 		if (irq_enable_a)

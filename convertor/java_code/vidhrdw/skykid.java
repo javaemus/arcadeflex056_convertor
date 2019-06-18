@@ -27,7 +27,7 @@ public class skykid
 	
 	***************************************************************************/
 	
-	void skykid_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr skykid_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		int bit0,bit1,bit2,bit3;
@@ -74,7 +74,7 @@ public class skykid
 		for (i = 0;i < 64*8;i++)
 			*(colortable++) = *(color_prom++);
 	
-	}
+	} };
 	
 	/***************************************************************************
 	

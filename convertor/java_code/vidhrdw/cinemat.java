@@ -91,7 +91,7 @@ public class cinemat
 		cinemat_simple_overlay = simple_overlay;
 	}
 	
-	void cinemat_init_colors (unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr cinemat_init_colors = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		char filename[1024];
 	
@@ -131,10 +131,10 @@ public class cinemat
 	            color_display = TRUE;
 				break;
 		}
-	}
+	} };
 	
 	
-	void spacewar_init_colors (unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr spacewar_init_colors = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int width, height;
 	
@@ -154,7 +154,7 @@ public class cinemat
 				return ;
 			}
 		}
-	}
+	} };
 	
 	/***************************************************************************
 	

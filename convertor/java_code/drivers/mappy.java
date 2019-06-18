@@ -62,7 +62,6 @@ public class mappy
 	
 	
 	/* video driver data & functions */
-	void mappy_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	/* sound driver data & functions */
 	extern unsigned char *mappy_soundregs;

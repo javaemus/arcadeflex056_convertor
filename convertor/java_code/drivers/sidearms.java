@@ -29,7 +29,6 @@ public class sidearms
 	extern unsigned char *sidearms_bg_scrollx,*sidearms_bg_scrolly;
 	extern unsigned char *sidearms_bg2_scrollx,*sidearms_bg2_scrolly;
 	
-	void sidearms_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	public static WriteHandlerPtr sidearms_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)

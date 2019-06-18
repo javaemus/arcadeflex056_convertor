@@ -154,7 +154,7 @@ public class galaxian
 	  The RGB outputs have a 470 ohm pull-down each.
 	
 	***************************************************************************/
-	void galaxian_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr galaxian_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -196,9 +196,9 @@ public class galaxian
 		*(palette++) = 0xef;
 		*(palette++) = 0xef;
 		*(palette++) = 0xef;
-	}
+	} };
 	
-	void scramble_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr scramble_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		galaxian_vh_convert_color_prom(palette, colortable, color_prom);
 	
@@ -208,9 +208,9 @@ public class galaxian
 		palette[(BACKGROUND_COLOR_BASE * 3) + 0] = 0;
 		palette[(BACKGROUND_COLOR_BASE * 3) + 1] = 0;
 		palette[(BACKGROUND_COLOR_BASE * 3) + 2] = 0x56;
-	}
+	} };
 	
-	void moonwar_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr moonwar_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		scramble_vh_convert_color_prom(palette, colortable, color_prom);
 	
@@ -218,9 +218,9 @@ public class galaxian
 		/* wire mod to connect the bullet blue output to the 220 ohm resistor */
 	
 		palette[BULLETS_COLOR_BASE * 3 + 2] = 0x97;
-	}
+	} };
 	
-	void turtles_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr turtles_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -240,9 +240,9 @@ public class galaxian
 			palette[(BACKGROUND_COLOR_BASE + i) * 3 + 1] = (i & 0x02) ? 0x47 : 0x00;
 			palette[(BACKGROUND_COLOR_BASE + i) * 3 + 2] = (i & 0x04) ? 0x55 : 0x00;
 		}
-	}
+	} };
 	
-	void stratgyx_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr stratgyx_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -262,9 +262,9 @@ public class galaxian
 			palette[(BACKGROUND_COLOR_BASE + i) * 3 + 1] = (i & 0x02) ? 0x3c : 0x00;
 			palette[(BACKGROUND_COLOR_BASE + i) * 3 + 2] = (i & 0x04) ? 0x47 : 0x00;
 		}
-	}
+	} };
 	
-	void frogger_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr frogger_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		galaxian_vh_convert_color_prom(palette, colortable, color_prom);
 	
@@ -274,7 +274,7 @@ public class galaxian
 		palette[(BACKGROUND_COLOR_BASE * 3) + 0] = 0;
 		palette[(BACKGROUND_COLOR_BASE * 3) + 1] = 0;
 		palette[(BACKGROUND_COLOR_BASE * 3) + 2] = 0x47;
-	}
+	} };
 	
 	
 	/***************************************************************************
@@ -295,7 +295,7 @@ public class galaxian
 	  The RGB outputs have a 470 ohm pull-down each.
 	
 	***************************************************************************/
-	void darkplnt_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr darkplnt_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -332,9 +332,9 @@ public class galaxian
 		*(palette++) = 0x00;
 		*(palette++) = 0x00;
 		*(palette++) = 0xef;
-	}
+	} };
 	
-	void minefld_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr minefld_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -361,9 +361,9 @@ public class galaxian
 			palette[(BACKGROUND_COLOR_BASE + 128 + i) * 3 + 1] = i * 0.75;
 			palette[(BACKGROUND_COLOR_BASE + 128 + i) * 3 + 2] = i / 2;
 		}
-	}
+	} };
 	
-	void rescue_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr rescue_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -381,9 +381,9 @@ public class galaxian
 			palette[(BACKGROUND_COLOR_BASE + i) * 3 + 1] = i;
 			palette[(BACKGROUND_COLOR_BASE + i) * 3 + 2] = i * 2;
 		}
-	}
+	} };
 	
-	void mariner_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr mariner_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -413,7 +413,7 @@ public class galaxian
 			palette[(BACKGROUND_COLOR_BASE + i) * 3 + 1] = 0;
 			palette[(BACKGROUND_COLOR_BASE + i) * 3 + 2] = 0x0e * bit0 + 0x1f * bit1 + 0x43 * bit2 + 0x8f * bit3;
 		}
-	}
+	} };
 	
 	
 	/***************************************************************************

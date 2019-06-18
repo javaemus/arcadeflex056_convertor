@@ -31,7 +31,7 @@ public class crbaloon
 	  bit 0 RED
 	
 	***************************************************************************/
-	void crbaloon_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr crbaloon_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
@@ -58,7 +58,7 @@ public class crbaloon
 			COLOR(0,i) = 15;		/* black background */
 			COLOR(0,i + 1) = i / 2;	/* colored foreground */
 		}
-	}
+	} };
 	
 	
 	

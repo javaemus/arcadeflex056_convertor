@@ -40,7 +40,6 @@ public class gotya
 	extern unsigned char *gotya_scroll;
 	extern unsigned char *gotya_foregroundram;
 	
-	void gotya_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	

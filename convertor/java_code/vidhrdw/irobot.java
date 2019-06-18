@@ -54,7 +54,7 @@ public class irobot
 	          the processor)
 	
 	***************************************************************************/
-	void irobot_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr irobot_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
@@ -99,7 +99,7 @@ public class irobot
 		{
 			COLOR(0,i) = ((i & 0x18) | ((i & 0x01) << 2) | ((i & 0x06) >> 1)) + 64;
 		}
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr irobot_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)

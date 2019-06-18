@@ -133,7 +133,6 @@ public class taitosj
 	extern unsigned char *taitosj_colscrolly;
 	extern unsigned char *taitosj_gfxpointer;
 	extern unsigned char *taitosj_colorbank,*taitosj_video_priority;
-	void taitosj_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	static int sndnmi_disable = 1;

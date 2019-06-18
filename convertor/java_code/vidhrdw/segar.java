@@ -63,7 +63,7 @@ public class segar
 	
 	***************************************************************************/
 	
-	void segar_init_colors(unsigned char *palette, unsigned short *colortable, const unsigned char *color_prom)
+	public static VhConvertColorPromPtr segar_init_colors = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		static unsigned char color_scale[] = {0x00, 0x40, 0x80, 0xC0 };
 		int i;
@@ -90,7 +90,7 @@ public class segar
 		for (i = 0;i < Machine->drv->total_colors;i++)
 			colortable[i] = i;
 	
-	}
+	} };
 	
 	
 	/***************************************************************************

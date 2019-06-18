@@ -241,7 +241,6 @@ public class stfight
 	void stfight_adpcm_int( int data );
 	
 	// vidhrdw
-	void stfight_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	// vidhrdw
 	extern unsigned char *stfight_text_char_ram;

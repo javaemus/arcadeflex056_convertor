@@ -386,7 +386,7 @@ public class alpha68k
 	
 	/******************************************************************************/
 	
-	void kyros_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr kyros_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i,bit0,bit1,bit2,bit3;
 	
@@ -420,7 +420,7 @@ public class alpha68k
 			*colortable++ = ((color_prom[0] & 0x0f) << 4) | (color_prom[0x100] & 0x0f);
 			color_prom++;
 		}
-	}
+	} };
 	
 	
 	static void kyros_draw_sprites(struct mame_bitmap *bitmap, int c,int d)

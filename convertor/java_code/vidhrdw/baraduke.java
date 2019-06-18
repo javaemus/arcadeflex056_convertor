@@ -26,7 +26,7 @@ public class baraduke
 	
 	***************************************************************************/
 	
-	void baraduke_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr baraduke_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		int bit0,bit1,bit2,bit3;
@@ -56,7 +56,7 @@ public class baraduke
 	
 			color_prom++;
 		}
-	}
+	} };
 	
 	/***************************************************************************
 	

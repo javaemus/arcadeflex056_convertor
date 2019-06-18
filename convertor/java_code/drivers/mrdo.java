@@ -24,7 +24,6 @@ public class mrdo
 	
 	
 	extern unsigned char *mrdo_bgvideoram,*mrdo_fgvideoram;
-	void mrdo_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	

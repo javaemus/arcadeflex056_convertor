@@ -21,7 +21,7 @@ public class gotya
 	  I'm using Pac Man resistor values
 	
 	***************************************************************************/
-	void gotya_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr gotya_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
@@ -59,7 +59,7 @@ public class gotya
 		/* sprites use the same color lookup table as characters */
 		for (i = 0;i < TOTAL_COLORS(0);i++)
 			COLOR(0,i) = *(color_prom++) & 0x07;
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr gotya_video_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)

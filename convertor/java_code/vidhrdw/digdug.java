@@ -42,7 +42,7 @@ public class digdug
 	  bit 0 -- 1  kohm resistor  -- RED
 	
 	***************************************************************************/
-	void digdug_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr digdug_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -76,7 +76,7 @@ public class digdug
 		/* playfield */
 		for (i = 64*4;i < 128*4;i++)
 			colortable[8*2 + i] = 31 - (color_prom[i + 32] & 0x0f);
-	}
+	} };
 	
 	
 	

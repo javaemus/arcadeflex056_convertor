@@ -51,7 +51,7 @@ public class phoenix
 	
 	***************************************************************************/
 	
-	void phoenix_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr phoenix_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		#define COLOR(gfxn,offs) (colortable[Machine->drv->gfxdecodeinfo[gfxn].color_codes_start + offs])
@@ -87,9 +87,9 @@ public class phoenix
 			COLOR(0,i) = col;
 			COLOR(1,i) = col | 0x20;
 		}
-	}
+	} };
 	
-	void pleiads_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr pleiads_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
@@ -126,7 +126,7 @@ public class phoenix
 			COLOR(0,i) = col;
 			COLOR(1,i) = col | 0x20;
 		}
-	}
+	} };
 	
 	/***************************************************************************
 	

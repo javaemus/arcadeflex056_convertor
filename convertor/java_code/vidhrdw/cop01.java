@@ -24,7 +24,7 @@ public class cop01
 	
 	
 	
-	void cop01_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr cop01_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
@@ -70,7 +70,7 @@ public class cop01
 		/* sprites use colors 128-143 (or 128-191, but the four rows are identical) */
 		for (i = 0;i < TOTAL_COLORS(2);i++)
 			COLOR(2,i) = 0x80 + (*(color_prom++) & 0x0f);
-	}
+	} };
 	
 	
 	

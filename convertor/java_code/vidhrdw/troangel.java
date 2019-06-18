@@ -34,7 +34,7 @@ public class troangel
 	  bit 0 -- 1  kohm resistor  -- BLUE
 	
 	***************************************************************************/
-	void troangel_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr troangel_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
@@ -106,7 +106,7 @@ public class troangel
 			COLOR(1,i) = 256 + (~*color_prom & 0x0f);
 			color_prom++;
 		}
-	}
+	} };
 	
 	
 	

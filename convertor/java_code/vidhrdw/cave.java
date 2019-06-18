@@ -125,7 +125,7 @@ public class cave
 	
 	***************************************************************************/
 	
-	void dfeveron_vh_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr dfeveron_vh_init_palette = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int color, pen;
 	
@@ -137,9 +137,9 @@ public class cave
 		for( color = 0; color < 0x40; color++ )
 			for( pen = 0; pen < 16; pen++ )
 				colortable[color * 256 + pen] = color * 16 + pen;
-	}
+	} };
 	
-	void ddonpach_vh_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr ddonpach_vh_init_palette = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int color, pen;
 	
@@ -151,9 +151,9 @@ public class cave
 		for( color = 0; color < 0x40; color++ )
 			for( pen = 0; pen < 16; pen++ )
 				colortable[color * 16 + pen + 0x8000] = 0x4000 + color * 256 + pen;
-	}
+	} };
 	
-	void mazinger_vh_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr mazinger_vh_init_palette = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int color, pen;
 	
@@ -167,7 +167,7 @@ public class cave
 		for( color = 0; color < 0x40; color++ )
 			for( pen = 0; pen < 64; pen++ )
 				colortable[color * 64 + pen + 0x4400] = 0x400 + (color % (64/4)) * 64 + pen;
-	}
+	} };
 	
 	/***************************************************************************
 	

@@ -255,7 +255,7 @@ public class mcr3
 	 *
 	 *************************************/
 	
-	void spyhunt_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable, const unsigned char *color_prom)
+	public static VhConvertColorPromPtr spyhunt_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		/* add some colors for the alpha RAM */
 		palette[(4*16)*3+0] = 0;
@@ -270,7 +270,7 @@ public class mcr3
 		palette[(4*16+3)*3+0] = 255;
 		palette[(4*16+3)*3+1] = 255;
 		palette[(4*16+3)*3+2] = 255;
-	}
+	} };
 	
 	
 	

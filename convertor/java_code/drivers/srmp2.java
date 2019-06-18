@@ -69,8 +69,6 @@ public class srmp2
 	
 	***************************************************************************/
 	
-	void srmp2_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void srmp3_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	

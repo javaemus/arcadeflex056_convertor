@@ -26,7 +26,6 @@ public class grobda
 	/* INT functions */
 	
 	/* video functions */
-	void grobda_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	public static WriteHandlerPtr flip_screen_w = new WriteHandlerPtr() {public void handler(int offset, int data)

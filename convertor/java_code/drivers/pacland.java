@@ -39,7 +39,6 @@ public class pacland
 	
 	static unsigned char *sharedram1;
 	
-	void pacland_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	public static ReadHandlerPtr sharedram1_r  = new ReadHandlerPtr() { public int handler(int offset)

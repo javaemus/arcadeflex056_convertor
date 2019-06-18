@@ -11,7 +11,7 @@ public class labyrunr
 	static struct tilemap *layer0, *layer1;
 	
 	
-	void labyrunr_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr labyrunr_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i,pal;
 	
@@ -31,7 +31,7 @@ public class labyrunr
 						*(colortable++) = 16 * pal + color_prom[i];
 			}
 		}
-	}
+	} };
 	
 	
 	/***************************************************************************

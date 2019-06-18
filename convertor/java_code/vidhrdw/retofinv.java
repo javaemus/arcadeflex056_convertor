@@ -40,7 +40,7 @@ public class retofinv
 				((v & 0x80) >> 3) | ((v & 0x40) >> 1) | ((v & 0x20) << 1) | ((v & 0x10) << 3);
 	}
 	
-	void retofinv_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr retofinv_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
@@ -92,7 +92,7 @@ public class retofinv
 		/* background bank 1 (title screen) */
 		for(i = 0;i < TOTAL_COLORS(1);i++)
 			COLOR(1,i) = adj_data(color_prom[i]);
-	}
+	} };
 	
 	
 	public static VhStartPtr retofinv_vh_start = new VhStartPtr() { public int handler() 

@@ -86,7 +86,6 @@ public class vicdual
 	static unsigned char *vicdual_ram;
 	
 	extern unsigned char *vicdual_characterram;
-	void vicdual_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	/* Carnival sound handlers */
 	extern const char *carnival_sample_names[];

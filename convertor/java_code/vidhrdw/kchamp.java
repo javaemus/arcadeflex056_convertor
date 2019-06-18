@@ -47,7 +47,7 @@ public class kchamp
 	/***************************************************************************
 	  Convert color prom.
 	***************************************************************************/
-	void kchamp_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr kchamp_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 	        int i, red, green, blue;
 	        #define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
@@ -69,7 +69,7 @@ public class kchamp
 	                *(colortable++) = i;
 		}
 	
-	}
+	} };
 	
 	void kchamp_vs_drawsprites( struct mame_bitmap *bitmap ) {
 	

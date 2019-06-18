@@ -41,7 +41,7 @@ public class mystston
 	
 	***************************************************************************/
 	
-	void mystston_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr mystston_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -71,7 +71,7 @@ public class mystston
 	
 			color_prom++;
 		}
-	}
+	} };
 	
 	
 	/***************************************************************************

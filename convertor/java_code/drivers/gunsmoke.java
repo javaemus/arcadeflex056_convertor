@@ -22,7 +22,6 @@ public class gunsmoke
 	extern unsigned char *gunsmoke_bg_scrollx;
 	extern unsigned char *gunsmoke_bg_scrolly;
 	
-	void gunsmoke_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	

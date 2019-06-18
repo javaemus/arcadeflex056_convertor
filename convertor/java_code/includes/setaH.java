@@ -22,11 +22,6 @@ WRITE16_HANDLER( seta_vram_2_w );
 WRITE16_HANDLER( seta_vram_3_w );
 WRITE16_HANDLER( seta_vregs_w );
 
-void blandia_vh_init_palette (unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-void gundhara_vh_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-void jjsquawk_vh_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-void usclssic_vh_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-void zingzip_vh_init_palette (unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 
 
 
@@ -39,7 +34,6 @@ extern data16_t *seta2_vregs;
 
 WRITE16_HANDLER( seta2_vregs_w );
 
-void seta2_vh_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 
 
 /* Variables and functions defined in sndhrdw/seta.c */

@@ -22,7 +22,6 @@ public class amidar
 	extern unsigned char *galaxian_attributesram;
 	extern size_t galaxian_spriteram_size;
 	
-	void turtles_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	extern struct AY8910interface scobra_ay8910_interface;
 	extern const struct Memory_ReadAddress scobra_sound_readmem[];

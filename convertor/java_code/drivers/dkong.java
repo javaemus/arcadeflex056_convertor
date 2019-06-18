@@ -175,8 +175,6 @@ public class dkong
 	static int t[2] = { 1,1 };
 	
 	
-	void dkong_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void dkong3_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	

@@ -35,7 +35,6 @@ public class system1H
 	
 	void system1_define_background_memory(int Mode);
 	
-	void system1_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	#endif

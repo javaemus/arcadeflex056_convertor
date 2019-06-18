@@ -26,9 +26,7 @@ public class cinemat
 	
 	/* from vidhrdw/cinemat.c */
 	void cinemat_select_artwork (int monitor, int overlay_req, int backdrop_req, struct artwork_element *simple_overlay);
-	void cinemat_init_colors (unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
-	void spacewar_init_colors (unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	extern struct artwork_element starcas_overlay[];
 	extern struct artwork_element tailg_overlay[];

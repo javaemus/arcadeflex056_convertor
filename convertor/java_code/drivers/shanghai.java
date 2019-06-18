@@ -686,7 +686,7 @@ public class shanghai
 	
 	
 	
-	void shanghai_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr shanghai_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -712,7 +712,7 @@ public class shanghai
 			bit2 = (i >> 1) & 0x01;
 			*(palette++) = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
 		}
-	}
+	} };
 	
 	public static VhStartPtr shanghai_vh_start = new VhStartPtr() { public int handler() 
 	{

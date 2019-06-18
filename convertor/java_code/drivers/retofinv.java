@@ -20,7 +20,6 @@ public class retofinv
 	/* in machine */
 	
 	/* in vidhrdw */
-	void retofinv_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	extern size_t retofinv_videoram_size;
 	extern unsigned char *retofinv_sprite_ram1;

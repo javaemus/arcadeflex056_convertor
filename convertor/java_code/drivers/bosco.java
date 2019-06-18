@@ -77,7 +77,6 @@ public class bosco
 	
 	extern unsigned char *bosco_sharedram;
 	
-	void bosco_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	extern unsigned char *bosco_videoram2,*bosco_colorram2;
 	extern unsigned char *bosco_radarx,*bosco_radary,*bosco_radarattr;

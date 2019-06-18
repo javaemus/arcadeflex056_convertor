@@ -73,7 +73,7 @@ public class naughtyb
 	  plus 270 ohm pullup and pulldown resistors on all lines
 	
 	***************************************************************************/
-	void naughtyb_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr naughtyb_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
@@ -127,7 +127,7 @@ public class naughtyb
 				COLOR(1,4*i + j*4*8 + 3) = 3*8 + i + 32 + j*64;
 			}
 		}
-	}
+	} };
 	
 	
 	

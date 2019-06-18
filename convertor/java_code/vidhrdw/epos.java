@@ -35,7 +35,7 @@ public class epos
 	  bit 0 -- 510 ohm resistor  -- BLUE
 	
 	***************************************************************************/
-	void epos_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr epos_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -61,7 +61,7 @@ public class epos
 	
 			color_prom++;
 		}
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr epos_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)

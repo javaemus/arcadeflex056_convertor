@@ -29,7 +29,7 @@ public class phozon
 	  bit 0 -- 2.2kohm resistor  -- RED/GREEN/BLUE
 	
 	***************************************************************************/
-	void phozon_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom){
+	public static VhConvertColorPromPtr phozon_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) {
 		int i;
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
 		#define COLOR(gfxn,offs) (colortable[Machine->drv->gfxdecodeinfo[gfxn].color_codes_start + offs])
@@ -68,7 +68,7 @@ public class phozon
 		/* sprites */
 		for (i = 0; i < TOTAL_COLORS(2); i++)
 			COLOR(2,i) = (*(color_prom++) & 0x0f) + 0x10;
-	}
+	} };
 	
 	public static VhStartPtr phozon_vh_start = new VhStartPtr() { public int handler()  {
 		/* set up spriteram area */

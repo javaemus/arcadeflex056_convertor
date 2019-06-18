@@ -17,7 +17,6 @@ public class ttmahjng
 	extern unsigned char *ttmahjng_videoram2;
 	extern size_t ttmahjng_videoram_size;
 	
-	void ttmahjng_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	static int psel;

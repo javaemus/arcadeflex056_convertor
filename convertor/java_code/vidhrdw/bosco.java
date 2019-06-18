@@ -75,7 +75,7 @@ public class bosco
 	
 	
 	
-	void bosco_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr bosco_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
@@ -127,7 +127,7 @@ public class bosco
 			bits = ((i-32) >> 4) & 0x03;
 			palette[3*i + 2] = map[bits];
 		}
-	}
+	} };
 	
 	public static VhStartPtr bosco_vh_start = new VhStartPtr() { public int handler() 
 	{

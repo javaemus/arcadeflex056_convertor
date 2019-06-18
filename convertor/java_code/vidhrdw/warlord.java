@@ -28,7 +28,7 @@ public class warlord
 	  bit 0 -- BLUE
 	
 	***************************************************************************/
-	void warlord_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr warlord_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i, j;
 		#define COLOR(gfxn,offs) (colortable[Machine->drv->gfxdecodeinfo[gfxn].color_codes_start + offs])
@@ -69,7 +69,7 @@ public class warlord
 				COLOR(1,i*4+j) = i*16+j*4;
 			}
 		}
-	}
+	} };
 	
 	
 	/***************************************************************************

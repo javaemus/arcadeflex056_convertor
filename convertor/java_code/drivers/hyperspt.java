@@ -17,7 +17,6 @@ public class hyperspt
 	
 	extern unsigned char *hyperspt_scroll;
 	
-	void hyperspt_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	/* these routines lurk in sndhrdw/trackfld.c */

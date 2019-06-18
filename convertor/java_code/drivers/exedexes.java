@@ -24,7 +24,6 @@ public class exedexes
 	extern unsigned char *exedexes_bg_scroll;
 	extern unsigned char *exedexes_nbg_yscroll;
 	extern unsigned char *exedexes_nbg_xscroll;
-	void exedexes_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	

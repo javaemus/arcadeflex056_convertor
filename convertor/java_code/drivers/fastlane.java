@@ -20,7 +20,6 @@ public class fastlane
 	
 	/* from vidhrdw/fastlane.c */
 	extern unsigned char *fastlane_k007121_regs,*fastlane_videoram1,*fastlane_videoram2;
-	void fastlane_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	public static InterruptPtr fastlane_interrupt = new InterruptPtr() { public int handler() 
 	{

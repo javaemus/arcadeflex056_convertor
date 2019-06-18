@@ -52,6 +52,7 @@ public class convertMame {
     static final int MACHINE_INIT = 24;
     static final int CUSTOM_SOUND = 25;
     static final int DAC_SOUND = 26;
+    static final int VH_CONVERT=27;
 
     public static void Convert() {
         Convertor.inpos = 0;//position of pointer inside the buffers
@@ -228,6 +229,66 @@ public class convertMame {
                         if (Convertor.token[0].contains("vh_screenrefresh")) {
                             sUtil.putString((new StringBuilder()).append("public static VhUpdatePtr ").append(Convertor.token[0]).append(" = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int fullrefresh) ").toString());
                             type = VH_SCREENREFRESH;
+                            i3 = -1;
+                            continue;
+                        }
+
+                    }
+                    if (sUtil.getToken("unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom")) {
+                        sUtil.skipSpace();
+                        if (sUtil.parseChar() != ')') {
+                            Convertor.inpos = j;
+                            break;
+                        }
+                        if (sUtil.getChar() == ';') {
+                            sUtil.skipLine();
+                            continue;
+                        }
+                        if (Convertor.token[0].contains("vh_convert_color_prom")) {
+                            sUtil.putString((new StringBuilder()).append("public static VhConvertColorPromPtr ").append(Convertor.token[0]).append(" = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) ").toString());
+                            type = VH_CONVERT;
+                            i3 = -1;
+                            continue;
+                        }
+                        if (Convertor.token[0].contains("init_colors")) {
+                            sUtil.putString((new StringBuilder()).append("public static VhConvertColorPromPtr ").append(Convertor.token[0]).append(" = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) ").toString());
+                            type = VH_CONVERT;
+                            i3 = -1;
+                            continue;
+                        }
+                        if (Convertor.token[0].contains("init_palette")) {
+                            sUtil.putString((new StringBuilder()).append("public static VhConvertColorPromPtr ").append(Convertor.token[0]).append(" = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) ").toString());
+                            type = VH_CONVERT;
+                            i3 = -1;
+                            continue;
+                        }
+
+                    }
+                    if (sUtil.getToken("unsigned char *palette, unsigned short *colortable, const unsigned char *color_prom")) {
+                        sUtil.skipSpace();
+                        if (sUtil.parseChar() != ')') {
+                            Convertor.inpos = j;
+                            break;
+                        }
+                        if (sUtil.getChar() == ';') {
+                            sUtil.skipLine();
+                            continue;
+                        }
+                        if (Convertor.token[0].contains("vh_convert_color_prom")) {
+                            sUtil.putString((new StringBuilder()).append("public static VhConvertColorPromPtr ").append(Convertor.token[0]).append(" = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) ").toString());
+                            type = VH_CONVERT;
+                            i3 = -1;
+                            continue;
+                        }
+                        if (Convertor.token[0].contains("init_colors")) {
+                            sUtil.putString((new StringBuilder()).append("public static VhConvertColorPromPtr ").append(Convertor.token[0]).append(" = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) ").toString());
+                            type = VH_CONVERT;
+                            i3 = -1;
+                            continue;
+                        }
+                        if (Convertor.token[0].contains("init_palette")) {
+                            sUtil.putString((new StringBuilder()).append("public static VhConvertColorPromPtr ").append(Convertor.token[0]).append(" = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) ").toString());
+                            type = VH_CONVERT;
                             i3 = -1;
                             continue;
                         }
@@ -872,7 +933,7 @@ public class convertMame {
 
                     if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL
                             || type == READ_HANDLER8 || type == WRITE_HANDLER8 || type == MACHINE_INTERRUPT
-                            || type == VH_START || type == VH_STOP || type == VH_SCREENREFRESH || type == DRIVER_INIT || type == MACHINE_INIT) {
+                            || type == VH_START || type == VH_STOP || type == VH_SCREENREFRESH || type == DRIVER_INIT || type == MACHINE_INIT || type == VH_CONVERT) {
                         i3++;
                     }
                 }
@@ -989,7 +1050,7 @@ public class convertMame {
                     }
                     if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL
                             || type == READ_HANDLER8 || type == WRITE_HANDLER8 || type == MACHINE_INTERRUPT
-                            || type == VH_START || type == VH_STOP || type == VH_SCREENREFRESH || type == DRIVER_INIT || type == MACHINE_INIT) {
+                            || type == VH_START || type == VH_STOP || type == VH_SCREENREFRESH || type == DRIVER_INIT || type == MACHINE_INIT ||  type == VH_CONVERT) {
                         i3--;
                         if (i3 == -1) {
                             sUtil.putString("} };");

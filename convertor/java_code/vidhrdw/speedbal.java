@@ -34,7 +34,7 @@ public class speedbal
 	static struct mame_bitmap *bitmap_bg;   /* background tiles */
 	static struct mame_bitmap *bitmap_ch;   /* foreground char  */
 	
-	void speedbal_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr speedbal_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
@@ -78,7 +78,7 @@ public class speedbal
 		for (i = 0;i < TOTAL_COLORS(2);i++)
 			COLOR(2,i) = *(color_prom++) & 0x0f;
 	
-	}
+	} };
 	
 	
 	/*************************************

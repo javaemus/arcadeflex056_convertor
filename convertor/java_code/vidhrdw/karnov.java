@@ -46,7 +46,7 @@ public class karnov
 	  bit 0 -- 2.2kohm resistor  -- BLUE
 	
 	***************************************************************************/
-	void karnov_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr karnov_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -72,7 +72,7 @@ public class karnov
 	
 			color_prom++;
 		}
-	}
+	} };
 	
 	void karnov_flipscreen_w(int data)
 	{

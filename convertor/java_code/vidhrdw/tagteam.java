@@ -20,7 +20,7 @@ public class tagteam
 	
 	
 	
-	void tagteam_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr tagteam_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -48,7 +48,7 @@ public class tagteam
 	
 			color_prom++;
 		}
-	}
+	} };
 	
 	public static ReadHandlerPtr tagteam_mirrorvideoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

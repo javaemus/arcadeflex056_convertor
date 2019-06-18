@@ -63,10 +63,10 @@ public class system1
 	  accurate to +/- .003K ohms.
 	
 	***************************************************************************/
-	void system1_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr system1_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		system1_color_prom = color_prom;
-	}
+	} };
 	
 	public static WriteHandlerPtr system1_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

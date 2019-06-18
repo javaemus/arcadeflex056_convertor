@@ -21,7 +21,7 @@ public class funkybee
 	static int gfx_bank;
 	
 	
-	void funkybee_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr funkybee_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -49,7 +49,7 @@ public class funkybee
 	
 			color_prom++;
 		}
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr funkybee_gfx_bank_w = new WriteHandlerPtr() {public void handler(int offset, int data)

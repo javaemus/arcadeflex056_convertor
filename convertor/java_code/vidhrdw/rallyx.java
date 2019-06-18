@@ -74,7 +74,7 @@ public class rallyx
 	  1 kohm pull-down is an all three RGB outputs.
 	
 	***************************************************************************/
-	void rallyx_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr rallyx_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
@@ -117,9 +117,9 @@ public class rallyx
 		/* they use colors 16-19 */
 		for (i = 0;i < 4;i++)
 			COLOR(2,i) = 16 + i;
-	}
+	} };
 	
-	void locomotn_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr locomotn_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
@@ -161,7 +161,7 @@ public class rallyx
 		/* they use colors 16-19 */
 		for (i = 0;i < 4;i++)
 			COLOR(2,i) = 16 + i;
-	}
+	} };
 	
 	
 	/***************************************************************************

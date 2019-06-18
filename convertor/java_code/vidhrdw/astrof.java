@@ -27,10 +27,10 @@ public class astrof
 	
 	
 	/* Just save the colorprom pointer */
-	void astrof_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr astrof_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		prom = color_prom;
-	}
+	} };
 	
 	/***************************************************************************
 	

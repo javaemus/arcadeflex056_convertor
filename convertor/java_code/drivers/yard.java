@@ -23,7 +23,6 @@ public class yard
 	extern unsigned char *yard_scroll_y_low;
 	extern unsigned char *yard_score_panel_disabled;
 	
-	void yard_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	

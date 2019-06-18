@@ -40,10 +40,10 @@ public class route16
 	
 	
 	
-	void route16_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr route16_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		route16_color_prom = color_prom;	/* we'll need this later */
-	}
+	} };
 	
 	
 	/***************************************************************************

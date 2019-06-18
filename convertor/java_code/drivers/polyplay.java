@@ -92,7 +92,6 @@ public class polyplay
 	
 	/* video hardware access */
 	extern unsigned char *polyplay_characterram;
-	void polyplay_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	/* I/O Port handling */
 	

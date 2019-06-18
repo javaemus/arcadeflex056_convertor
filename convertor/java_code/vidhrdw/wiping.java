@@ -25,7 +25,7 @@ public class wiping
 	
 	***************************************************************************/
 	
-	void wiping_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr wiping_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
@@ -64,7 +64,7 @@ public class wiping
 		/* sprites use colors 16-31 */
 		for (i = 0;i < TOTAL_COLORS(1);i++)
 			COLOR(1,i ^ 3) = (*(color_prom++) & 0x0f) + 0x10;
-	}
+	} };
 	
 	
 	

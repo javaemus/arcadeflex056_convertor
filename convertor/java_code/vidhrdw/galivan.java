@@ -61,7 +61,7 @@ public class galivan
 	
 	***************************************************************************/
 	
-	void galivan_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr galivan_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
@@ -131,7 +131,7 @@ public class galivan
 	
 		/* color_prom now points to the beginning of the sprite palette bank table */
 		spritepalettebank = color_prom;	/* we'll need it at run time */
-	}
+	} };
 	
 	
 	

@@ -108,7 +108,6 @@ public class gridlee
 	
 	/* video driver data & functions */
 	extern UINT8 gridlee_cocktail_flip;
-	void gridlee_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable, const unsigned char *color_prom);
 	
 	
 	

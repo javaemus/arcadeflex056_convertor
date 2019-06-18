@@ -47,7 +47,6 @@ public class astrof
 	extern unsigned char *astrof_color;
 	extern unsigned char *tomahawk_protection;
 	
-	void astrof_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	extern struct Samplesinterface astrof_samples_interface;
 	extern struct Samplesinterface tomahawk_samples_interface;

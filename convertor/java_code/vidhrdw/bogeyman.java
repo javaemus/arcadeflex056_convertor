@@ -13,7 +13,7 @@ public class bogeyman
 	
 	
 	
-	void bogeyman_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr bogeyman_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -43,7 +43,7 @@ public class bogeyman
 	
 			color_prom++;
 		}
-	}
+	} };
 	
 	public static VhStartPtr bogeyman_vh_start = new VhStartPtr() { public int handler() 
 	{

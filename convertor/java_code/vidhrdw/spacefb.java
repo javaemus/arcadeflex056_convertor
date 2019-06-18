@@ -36,7 +36,7 @@ public class spacefb
 	  bit 0 -- 1  kohm resistor  -- RED
 	
 	***************************************************************************/
-	void spacefb_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr spacefb_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -65,7 +65,7 @@ public class spacefb
 			if (i & 3) colortable[i] = i;
 			else colortable[i] = 0;
 		}
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr spacefb_video_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)

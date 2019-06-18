@@ -29,7 +29,7 @@ public class toypop
 	
 	
 	***************************************************************************/
-	void toypop_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr toypop_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -64,7 +64,7 @@ public class toypop
 		// sprites
 		for (i = 256;i < Machine->drv->color_table_len;i++)
 			colortable[i] = color_prom[i + 0x400];	// 0x500-5ff
-	}
+	} };
 	
 	public static WriteHandlerPtr toypop_palettebank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

@@ -41,7 +41,7 @@ public class mappy
 	  bit 0 -- 1  kohm resistor  -- RED
 	
 	***************************************************************************/
-	void mappy_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr mappy_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -72,7 +72,7 @@ public class mappy
 		/* sprites */
 		for (i = 64*4;i < Machine->drv->color_table_len;i++)
 			colortable[i] = color_prom[i] & 0x0f;
-	}
+	} };
 	
 	
 	static public static VhStartPtr common_vh_start = new VhStartPtr() { public int handler() 

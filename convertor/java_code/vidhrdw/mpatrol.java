@@ -58,7 +58,7 @@ public class mpatrol
 	  bit 0 -- 1  kohm resistor  -- BLUE
 	
 	***************************************************************************/
-	void mpatrol_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr mpatrol_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
@@ -193,7 +193,7 @@ public class mpatrol
 		COLOR(6,1) = 128+16+1;
 		COLOR(6,2) = 128+16+2;
 		COLOR(6,3) = 128+16+3;
-	}
+	} };
 	
 	
 	

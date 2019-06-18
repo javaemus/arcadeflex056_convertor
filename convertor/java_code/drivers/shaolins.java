@@ -20,7 +20,6 @@ public class shaolins
 	unsigned char *shaolins_nmi_enable;
 	extern unsigned char *shaolins_scroll;
 	
-	void shaolins_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	public static InterruptPtr shaolins_interrupt = new InterruptPtr() { public int handler() 

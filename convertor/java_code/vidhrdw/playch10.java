@@ -9,7 +9,7 @@ public class playch10
 	
 	/* from machine */
 	
-	void playch10_vh_convert_color_prom( unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom )
+	public static VhConvertColorPromPtr playch10_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -40,7 +40,7 @@ public class playch10
 		}
 	
 		ppu2c03b_init_palette( palette );
-	}
+	} };
 	
 	
 	static void ppu_irq( int num )

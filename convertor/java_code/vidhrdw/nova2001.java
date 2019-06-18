@@ -50,7 +50,7 @@ public class nova2001
 	
 	
 	
-	void nova2001_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr nova2001_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i,j;
 	
@@ -96,7 +96,7 @@ public class nova2001
 				}
 			}
 		}
-	}
+	} };
 	
 	
 	

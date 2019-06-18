@@ -37,10 +37,10 @@ public class ttmahjng
 	
 	
 	
-	void ttmahjng_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr ttmahjng_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		ttmahjng_color_prom = color_prom;	/* we'll need this later */
-	}
+	} };
 	
 	
 	/***************************************************************************

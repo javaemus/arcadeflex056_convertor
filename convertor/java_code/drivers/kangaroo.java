@@ -94,7 +94,6 @@ public class kangaroo
 	extern unsigned char *kangaroo_bank_select;
 	extern unsigned char *kangaroo_blitter;
 	extern unsigned char *kangaroo_scroll;
-	void kangaroo_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	

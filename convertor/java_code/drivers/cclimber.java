@@ -140,7 +140,6 @@ public class cclimber
 	extern size_t cclimber_bsvideoram_size;
 	extern unsigned char *cclimber_bigspriteram;
 	extern unsigned char *cclimber_column_scroll;
-	void cclimber_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	int cclimber_sh_start(const struct MachineSound *msound);
 	
@@ -1022,7 +1021,6 @@ public class cclimber
 	
 	***************************************************************************/
 	
-	void swimmer_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	

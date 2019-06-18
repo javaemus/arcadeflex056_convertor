@@ -87,7 +87,7 @@ public class fuuki16
 	
 	***************************************************************************/
 	
-	void fuuki16_vh_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr fuuki16_vh_init_palette = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int color, pen;
 	
@@ -100,7 +100,7 @@ public class fuuki16
 		/* The game does not initialise the palette at startup. It should
 		   be totally black */
 		memset(palette, 0, 3 * Machine->drv->total_colors);
-	}
+	} };
 	
 	public static VhStartPtr fuuki16_vh_start = new VhStartPtr() { public int handler() 
 	{

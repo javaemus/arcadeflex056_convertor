@@ -23,7 +23,6 @@ public class mermaid
 	extern unsigned char* mermaid_foreground_scrollram;
 	
 	
-	void mermaid_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	static unsigned char *mermaid_AY8910_enable;

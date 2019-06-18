@@ -20,7 +20,7 @@ public class buggychl
 	
 	
 	
-	void buggychl_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr buggychl_init_palette = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -33,7 +33,7 @@ public class buggychl
 			*(palette++) = i;
 			*(palette++) = 2*i;
 		}
-	}
+	} };
 	
 	
 	

@@ -933,8 +933,8 @@ public class avgdvg
 	
 	/* A macro for the palette_init functions */
 	#define VEC_PAL_INIT(name, paltype) \
-	void avg_init_palette_##name (unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom) \
-	{ avg_init_palette (paltype, palette, colortable, color_prom); }
+	public static VhConvertColorPromPtr avg_init_palette_##name = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom)  \
+	{ avg_init_palette (paltype, palette, colortable, color_prom); } };
 	
 	/* The functions referenced from gamedriver */
 	VEC_PAL_INIT(white,    VEC_PAL_WHITE)

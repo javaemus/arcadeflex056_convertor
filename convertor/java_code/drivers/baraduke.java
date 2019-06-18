@@ -24,7 +24,6 @@ public class baraduke
 	extern unsigned char *baraduke_textram, *spriteram, *baraduke_videoram;
 	
 	/* from vidhrdw/baraduke.c */
-	void baraduke_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	static int inputport_selected;
 	

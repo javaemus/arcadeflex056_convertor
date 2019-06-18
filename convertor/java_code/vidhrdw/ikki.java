@@ -19,7 +19,7 @@ public class ikki
 	
 	static UINT8 ikki_flipscreen, ikki_scroll[2];
 	
-	void ikki_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr ikki_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		int colors = Machine->drv->total_colors-1;
@@ -55,7 +55,7 @@ public class ikki
 		for (i=0; i<512; i++)
 			*(colortable++) = *(color_prom++);
 	
-	}
+	} };
 	
 	public static WriteHandlerPtr ikki_scroll_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

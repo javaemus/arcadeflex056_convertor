@@ -32,7 +32,7 @@ public class rockola
 	  Zarzon has a different PROM layout from the others.
 	
 	***************************************************************************/
-	void rockola_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr rockola_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
@@ -74,9 +74,9 @@ public class rockola
 			if (i % 4 == 0) COLOR(1,i) = 4 * backcolor + 0x20;
 			else COLOR(1,i) = i + 0x20;
 		}
-	}
+	} };
 	
-	void satansat_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr satansat_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
@@ -118,7 +118,7 @@ public class rockola
 			if (i % 4 == 0) COLOR(1,i) = backcolor + 0x10;
 			else COLOR(1,i) = 4 * (i % 4) + (i / 4) + 0x10;
 		}
-	}
+	} };
 	
 	
 	

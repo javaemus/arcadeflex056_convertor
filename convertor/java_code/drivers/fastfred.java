@@ -69,7 +69,6 @@ public class fastfred
 	
 	extern unsigned char *fastfred_attributesram;
 	
-	void fastfred_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	public static ReadHandlerPtr jumpcoas_custom_io_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

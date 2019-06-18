@@ -10,7 +10,7 @@ public class rockrage
 	static int layer_colorbase[2];
 	static int rockrage_vreg;
 	
-	void rockrage_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr rockrage_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
@@ -21,7 +21,7 @@ public class rockrage
 			COLOR(0,i) = 0x00 + (color_prom[i] & 0x0f);
 			COLOR(0,(TOTAL_COLORS(0)/2)+i) = 0x10 + (color_prom[0x100+i] & 0x0f);
 		}
-	}
+	} };
 	
 	/***************************************************************************
 	

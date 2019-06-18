@@ -22,9 +22,6 @@ WRITE16_HANDLER( cave_vram_0_8x8_w );
 WRITE16_HANDLER( cave_vram_1_8x8_w );
 WRITE16_HANDLER( cave_vram_2_8x8_w );
 
-void ddonpach_vh_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-void dfeveron_vh_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-void mazinger_vh_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 
 
 

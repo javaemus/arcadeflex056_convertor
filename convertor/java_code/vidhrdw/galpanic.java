@@ -14,7 +14,7 @@ public class galpanic
 	
 	
 	
-	void galpanic_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr galpanic_init_palette = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -33,7 +33,7 @@ public class galpanic
 			(*palette++) = (g << 3) | (g >> 2);
 			(*palette++) = (b << 3) | (b >> 2);
 		}
-	}
+	} };
 	
 	
 	

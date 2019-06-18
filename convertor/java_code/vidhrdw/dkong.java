@@ -42,7 +42,7 @@ public class dkong
 	  bit 0 -- 470 ohm resistor -- inverter  -- BLUE
 	
 	***************************************************************************/
-	void dkong_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr dkong_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
@@ -75,7 +75,7 @@ public class dkong
 		color_prom += 256;
 		/* color_prom now points to the beginning of the character color codes */
 		color_codes = color_prom;	/* we'll need it later */
-	}
+	} };
 	
 	/***************************************************************************
 	
@@ -107,7 +107,7 @@ public class dkong
 	  bit 0 -- 2.2kohm resistor -- inverter  -- BLUE
 	
 	***************************************************************************/
-	void dkong3_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr dkong3_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
@@ -144,7 +144,7 @@ public class dkong
 		color_prom += 256;
 		/* color_prom now points to the beginning of the character color codes */
 		color_codes = color_prom;	/* we'll need it later */
-	}
+	} };
 	
 	
 	

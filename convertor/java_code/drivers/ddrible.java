@@ -29,7 +29,6 @@ public class ddrible
 	/* video hardware memory handlers */
 	
 	/* video hardware functions */
-	void ddrible_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	public static InterruptPtr ddrible_interrupt_0 = new InterruptPtr() { public int handler() 

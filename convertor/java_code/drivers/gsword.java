@@ -143,8 +143,6 @@ package drivers;
 public class gsword
 {
 	
-	void josvolly_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	void gsword_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
 	extern size_t gs_videoram_size;

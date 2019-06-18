@@ -70,7 +70,6 @@ public class tankbatt
 	static int tankbatt_nmi_enable; /* No need to init this - the game will set it on reset */
 	static int tankbatt_sound_enable;
 	
-	void tankbatt_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	public static WriteHandlerPtr tankbatt_led_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

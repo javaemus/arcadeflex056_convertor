@@ -22,7 +22,7 @@ public class hanaawas
 	
 	***************************************************************************/
 	
-	void hanaawas_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr hanaawas_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
@@ -71,7 +71,7 @@ public class hanaawas
 			COLOR(0,i*8+6) = color_prom[i*4+0x82] & 0x0f;
 			COLOR(0,i*8+7) = color_prom[i*4+0x83] & 0x0f;
 		}
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr hanaawas_colorram_w = new WriteHandlerPtr() {public void handler(int offset, int data)

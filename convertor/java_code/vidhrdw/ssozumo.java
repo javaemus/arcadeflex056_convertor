@@ -25,7 +25,7 @@ public class ssozumo
 	
 	/**************************************************************************/
 	
-	void ssozumo_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable, const unsigned char *color_prom)
+	public static VhConvertColorPromPtr ssozumo_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int	bit0, bit1, bit2, bit3;
 		int	i;
@@ -50,7 +50,7 @@ public class ssozumo
 	
 			color_prom++;
 		}
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr ssozumo_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)

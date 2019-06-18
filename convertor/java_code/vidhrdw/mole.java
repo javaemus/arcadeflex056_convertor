@@ -21,7 +21,7 @@ public class mole
 	#define NUM_COLS 40
 	#define NUM_TILES (NUM_ROWS*NUM_COLS)
 	
-	void moleattack_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom){
+	public static VhConvertColorPromPtr moleattack_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) {
 		int i;
 		for( i=0; i<8; i++ ){
 			colortable[i] = i;
@@ -29,7 +29,7 @@ public class mole
 			*palette++ = (i&4)?0xff:0x00;
 			*palette++ = (i&2)?0xff:0x00;
 		}
-	}
+	} };
 	
 	public static VhStartPtr moleattack_vh_start = new VhStartPtr() { public int handler() {
 		tile_data = (UINT16 *)malloc( NUM_TILES*sizeof(UINT16) );

@@ -9,7 +9,7 @@ public class jailbrek
 	
 	unsigned char *jailbrek_scroll_x;
 	
-	void jailbrek_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr jailbrek_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
 		#define COLOR(gfxn,offs) (colortable[Machine->drv->gfxdecodeinfo[gfxn].color_codes_start + offs])
@@ -48,7 +48,7 @@ public class jailbrek
 	
 		for ( i = 0; i < TOTAL_COLORS(1); i++ )
 			COLOR(1,i) = *color_prom++;
-	}
+	} };
 	
 	public static VhStartPtr jailbrek_vh_start = new VhStartPtr() { public int handler() 
 	{

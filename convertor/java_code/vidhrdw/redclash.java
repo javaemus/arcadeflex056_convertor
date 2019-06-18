@@ -30,7 +30,7 @@ public class redclash
 	  schematics show a different resistor network.
 	
 	***************************************************************************/
-	void redclash_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr redclash_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -80,7 +80,7 @@ public class redclash
 			bit3 = (color_prom[i + 32] >> 4) & 0x01;
 			colortable[i + 4 * 16] = 1 * bit0 + 2 * bit1 + 4 * bit2 + 8 * bit3;
 		}
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr redclash_gfxbank_w = new WriteHandlerPtr() {public void handler(int offset, int data)

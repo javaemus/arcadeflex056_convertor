@@ -91,7 +91,6 @@ package drivers;
 public class cvs
 {
 	
-	void cvs_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	extern unsigned char *dirty_character;
 	extern unsigned char *character_1_ram;

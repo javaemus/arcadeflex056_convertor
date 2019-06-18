@@ -119,7 +119,7 @@ public class cosmic
 	 *
 	 */
 	
-	void panic_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr panic_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
@@ -141,7 +141,7 @@ public class cosmic
 	
 	
 	    map_color = panic_map_color;
-	}
+	} };
 	
 	
 	/*
@@ -153,7 +153,7 @@ public class cosmic
 	 *
 	 */
 	
-	void cosmica_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr cosmica_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -176,7 +176,7 @@ public class cosmic
 	
 	
 	    map_color = panic_map_color;
-	}
+	} };
 	
 	
 	/*
@@ -190,7 +190,7 @@ public class cosmic
 	 *
 	 */
 	
-	void cosmicg_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr cosmicg_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -208,7 +208,7 @@ public class cosmic
 	
 	
 	    map_color = cosmicg_map_color;
-	}
+	} };
 	
 	/**************************************************/
 	/* Magical Spot 2/Devil Zone specific routines    */
@@ -216,7 +216,7 @@ public class cosmic
 	/* 16 colors, 8 sprite color codes				  */
 	/**************************************************/
 	
-	void magspot2_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr magspot2_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
@@ -242,7 +242,7 @@ public class cosmic
 	
 	
 	    map_color = magspot2_map_color;
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr nomnlnd_background_w = new WriteHandlerPtr() {public void handler(int offset, int data)

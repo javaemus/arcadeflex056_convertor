@@ -83,7 +83,6 @@ public class polepos
 	extern data16_t *polepos_alpha16_memory;
 	extern data16_t *polepos_sprite16_memory;
 	
-	void polepos_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	WRITE16_HANDLER( polepos_view16_w );
 	WRITE16_HANDLER( polepos_road16_w );

@@ -46,7 +46,7 @@ public class centiped
 	
 	***************************************************************************/
 	
-	void centiped_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr centiped_init_palette = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 		#define TOTAL_COLORS(gfxn) (Machine->gfx[gfxn]->total_colors * Machine->gfx[gfxn]->color_granularity)
@@ -70,7 +70,7 @@ public class centiped
 			COLOR(1,i+2) = 16 + ((i >> 4) & 3);
 			COLOR(1,i+3) = 16 + ((i >> 6) & 3);
 		}
-	}
+	} };
 	
 	
 	static void setcolor(int pen,int data)

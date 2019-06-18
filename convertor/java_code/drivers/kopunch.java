@@ -10,7 +10,7 @@ public class kopunch
 	unsigned char *bsvideoram;
 	size_t bsvideoram_size;
 	
-	void kopunch_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
+	public static VhConvertColorPromPtr kopunch_vh_convert_color_prom = new VhConvertColorPromPtr() { public void handler(char []palette, char []colortable, UBytePtr color_prom) 
 	{
 		int i;
 	
@@ -39,7 +39,7 @@ public class kopunch
 	
 			color_prom++;
 		}
-	}
+	} };
 	
 	public static VhUpdatePtr kopunch_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
