@@ -53,7 +53,7 @@ public class raiders5
 		int x = (offset + (raiders5_xscroll >> 3) ) & 0x1f;
 		int offs = x+y+(offset & 0x400);
 	
-		videoram[offs] = data;
+		videoram.write(offs,data);
 	} };
 	public static ReadHandlerPtr raiders5_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -61,7 +61,7 @@ public class raiders5
 		int x = (offset + (raiders5_xscroll >> 3) ) & 0x1f;
 		int offs = x+y+(offset & 0x400);
 	
-		return videoram[offs];
+		return videoram.read(offs);
 	} };
 	
 	public static WriteHandlerPtr raiders5_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
@@ -92,7 +92,7 @@ public class raiders5
 		int x,y,px,py,fx,fy,sx,sy;
 		int b1,b2;
 	
-		int size = videoram_size/2;
+		int size = videoram_size[0]/2;
 	
 	/* draw BG layer */
 	
@@ -108,8 +108,8 @@ public class raiders5
 				px = x*8;
 				py = y*8;
 	
-				chr = videoram[ offs ] ;
-				col = videoram[ offs + size];
+				chr = videoram.read( offs );
+				col = videoram.read( offs + size);
 	
 				b1 = (col >> 1) & 1; /* ? */
 				b2 = col & 1;

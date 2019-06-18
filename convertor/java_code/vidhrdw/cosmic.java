@@ -255,7 +255,7 @@ public class cosmic
 	{
 	    int i,x,y,col;
 	
-	    videoram[offset] = data;
+	    videoram.write(offset,data);
 	
 		y = offset / 32;
 		x = 8 * (offset % 32);
@@ -281,9 +281,9 @@ public class cosmic
 		{
 			int offs;
 	
-			for (offs = 0; offs < videoram_size; offs++)
+			for (offs = 0; offs < videoram_size[0]; offs++)
 			{
-				cosmica_videoram_w(offs, videoram[offs]);
+				cosmica_videoram_w(offs, videoram.read(offs));
 			}
 		}
 	

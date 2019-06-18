@@ -361,7 +361,7 @@ public class gaplus
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 	        int sx,sy,mx,my, bank;
 	
@@ -401,7 +401,7 @@ public class gaplus
 			bank = ( colorram[offs] & 0x80 ) ? 1 : 0;
 	
 	        drawgfx(bitmap,Machine->gfx[bank],
-	                videoram[offs],
+	                videoram.read(offs),
 	                colorram[offs] & 0x3f,
 	                flip_screen,flip_screen,8*sy,8*sx,
 	                &Machine->visible_area,TRANSPARENCY_PEN,0);

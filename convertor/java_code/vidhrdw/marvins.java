@@ -99,7 +99,7 @@ public class marvins
 	
 	public static ReadHandlerPtr marvins_foreground_ram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
-		return videoram[offset+0x1000];
+		return videoram.read(offset+0x1000);
 	} };
 	public static WriteHandlerPtr marvins_foreground_ram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
@@ -108,12 +108,12 @@ public class marvins
 			if( videoram[offset+0x1000]==data ) return;
 			tilemap_mark_tile_dirty(fg_tilemap,offset);
 		}
-		videoram[offset+0x1000] = data;
+		videoram.write(offset+0x1000,data);
 	} };
 	
 	public static ReadHandlerPtr marvins_background_ram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
-		return videoram[offset];
+		return videoram.read(offset);
 	} };
 	public static WriteHandlerPtr marvins_background_ram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
@@ -122,12 +122,12 @@ public class marvins
 			if( videoram[offset]==data ) return;
 			tilemap_mark_tile_dirty(bg_tilemap,offset);
 		}
-		videoram[offset] = data;
+		videoram.write(offset,data);
 	} };
 	
 	public static ReadHandlerPtr marvins_text_ram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
-		return videoram[offset+0x2000];
+		return videoram.read(offset+0x2000);
 	} };
 	public static WriteHandlerPtr marvins_text_ram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
@@ -136,7 +136,7 @@ public class marvins
 			if( videoram[offset+0x2000]==data ) return;
 			tilemap_mark_tile_dirty(tx_tilemap,offset);
 		}
-		videoram[offset+0x2000] = data;
+		videoram.write(offset+0x2000,data);
 	} };
 	
 	/***************************************************************************
@@ -149,7 +149,7 @@ public class marvins
 	{
 		SET_TILE_INFO(
 				2,
-				videoram[tile_index],
+				videoram.read(tile_index),
 				0,
 				0)
 	}
@@ -158,14 +158,14 @@ public class marvins
 	{
 		SET_TILE_INFO(
 				1,
-				videoram[tile_index+0x1000],
+				videoram.read(tile_index+0x1000),
 				0,
 				0)
 	}
 	
 	static void get_tx_tilemap_info(int tile_index)
 	{
-		int tile_number = videoram[tile_index+0x2000];
+		int tile_number = videoram.read(tile_index+0x2000);
 		SET_TILE_INFO(
 				0,
 				tile_number,

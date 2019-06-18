@@ -297,14 +297,14 @@ public class combatsc
 	
 	public static ReadHandlerPtr combasc_video_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
-		return videoram[offset];
+		return videoram.read(offset);
 	} };
 	
 	public static WriteHandlerPtr combasc_video_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-		if( videoram[offset]!=data )
+		if( videoram.read(offset)!=data )
 		{
-			videoram[offset] = data;
+			videoram.write(offset,data);
 			if( offset<0x800 )
 			{
 				if (combasc_video_circuit)

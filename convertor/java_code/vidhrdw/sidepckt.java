@@ -56,7 +56,7 @@ public class sidepckt
 		unsigned char attr = colorram[tile_index];
 		SET_TILE_INFO(
 				0,
-				videoram[tile_index] + ((attr & 0x07) << 8),
+				videoram.read(tile_index)+ ((attr & 0x07) << 8),
 				((attr & 0x10) >> 3) | ((attr & 0x20) >> 5),
 				TILE_FLIPX | TILE_SPLIT((attr & 0x80) >> 7))
 	}
@@ -94,9 +94,9 @@ public class sidepckt
 	
 	public static WriteHandlerPtr sidepckt_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-		if (videoram[offset] != data)
+		if (videoram.read(offset)!= data)
 		{
-			videoram[offset] = data;
+			videoram.write(offset,data);
 			tilemap_mark_tile_dirty(bg_tilemap,offset);
 		}
 	} };

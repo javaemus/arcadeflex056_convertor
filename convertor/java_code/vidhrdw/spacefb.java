@@ -113,11 +113,11 @@ public class spacefb
 			int sx,sy,code,cnt,col;
 	
 	
-			sx = 255 - videoram[spriteno];
-			sy = videoram[spriteno+0x100];
+			sx = 255 - videoram.read(spriteno);
+			sy = videoram.read(spriteno+0x100);
 	
-			code = videoram[spriteno+0x200];
-			cnt  = videoram[spriteno+0x300];
+			code = videoram.read(spriteno+0x200);
+			cnt  = videoram.read(spriteno+0x300);
 	
 			col = (~cnt & 0x03) | col_bit2;
 	

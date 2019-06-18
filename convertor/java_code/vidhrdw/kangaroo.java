@@ -245,14 +245,14 @@ public class kangaroo
 		flipA = *kangaroo_video_control & 0x20;
 		flipB = *kangaroo_video_control & 0x10;
 	
-		kangaroo_plot_pixel(tmpbitmap , x  , y, videoram[offs  ] & 0x0f, 8,  flipA);
-		kangaroo_plot_pixel(tmpbitmap , x+1, y, videoram[offs+1] & 0x0f, 8,  flipA);
-		kangaroo_plot_pixel(tmpbitmap , x+2, y, videoram[offs+2] & 0x0f, 8,  flipA);
-		kangaroo_plot_pixel(tmpbitmap , x+3, y, videoram[offs+3] & 0x0f, 8,  flipA);
-		kangaroo_plot_pixel(tmpbitmap2, x  , y, videoram[offs  ] >> 4,   16, flipB);
-		kangaroo_plot_pixel(tmpbitmap2, x+1, y, videoram[offs+1] >> 4,   16, flipB);
-		kangaroo_plot_pixel(tmpbitmap2, x+2, y, videoram[offs+2] >> 4,   16, flipB);
-		kangaroo_plot_pixel(tmpbitmap2, x+3, y, videoram[offs+3] >> 4,   16, flipB);
+		kangaroo_plot_pixel(tmpbitmap , x  , y, videoram.read(offs  )& 0x0f, 8,  flipA);
+		kangaroo_plot_pixel(tmpbitmap , x+1, y, videoram.read(offs+1)& 0x0f, 8,  flipA);
+		kangaroo_plot_pixel(tmpbitmap , x+2, y, videoram.read(offs+2)& 0x0f, 8,  flipA);
+		kangaroo_plot_pixel(tmpbitmap , x+3, y, videoram.read(offs+3)& 0x0f, 8,  flipA);
+		kangaroo_plot_pixel(tmpbitmap2, x  , y, videoram.read(offs  )>> 4,   16, flipB);
+		kangaroo_plot_pixel(tmpbitmap2, x+1, y, videoram.read(offs+1)>> 4,   16, flipB);
+		kangaroo_plot_pixel(tmpbitmap2, x+2, y, videoram.read(offs+2)>> 4,   16, flipB);
+		kangaroo_plot_pixel(tmpbitmap2, x+3, y, videoram.read(offs+3)>> 4,   16, flipB);
 	}
 	
 	public static WriteHandlerPtr kangaroo_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
@@ -272,34 +272,34 @@ public class kangaroo
 	
 		if (a_G_B)
 		{
-			videoram[offs  ] = (videoram[offs  ] & 0xfc) | ((data & 0x10) >> 3) | ((data & 0x01) >> 0);
-			videoram[offs+1] = (videoram[offs+1] & 0xfc) | ((data & 0x20) >> 4) | ((data & 0x02) >> 1);
-			videoram[offs+2] = (videoram[offs+2] & 0xfc) | ((data & 0x40) >> 5) | ((data & 0x04) >> 2);
-			videoram[offs+3] = (videoram[offs+3] & 0xfc) | ((data & 0x80) >> 6) | ((data & 0x08) >> 3);
+			videoram.write(offs  ,(videoram[offs  ] & 0xfc) | ((data & 0x10) >> 3) | ((data & 0x01) >> 0));
+			videoram.write(offs+1,(videoram[offs+1] & 0xfc) | ((data & 0x20) >> 4) | ((data & 0x02) >> 1));
+			videoram.write(offs+2,(videoram[offs+2] & 0xfc) | ((data & 0x40) >> 5) | ((data & 0x04) >> 2));
+			videoram.write(offs+3,(videoram[offs+3] & 0xfc) | ((data & 0x80) >> 6) | ((data & 0x08) >> 3));
 		}
 	
 		if (a_Z_R)
 		{
-			videoram[offs  ] = (videoram[offs  ] & 0xf3) | ((data & 0x10) >> 1) | ((data & 0x01) << 2);
-			videoram[offs+1] = (videoram[offs+1] & 0xf3) | ((data & 0x20) >> 2) | ((data & 0x02) << 1);
-			videoram[offs+2] = (videoram[offs+2] & 0xf3) | ((data & 0x40) >> 3) | ((data & 0x04) >> 0);
-			videoram[offs+3] = (videoram[offs+3] & 0xf3) | ((data & 0x80) >> 4) | ((data & 0x08) >> 1);
+			videoram.write(offs  ,(videoram[offs  ] & 0xf3) | ((data & 0x10) >> 1) | ((data & 0x01) << 2));
+			videoram.write(offs+1,(videoram[offs+1] & 0xf3) | ((data & 0x20) >> 2) | ((data & 0x02) << 1));
+			videoram.write(offs+2,(videoram[offs+2] & 0xf3) | ((data & 0x40) >> 3) | ((data & 0x04) >> 0));
+			videoram.write(offs+3,(videoram[offs+3] & 0xf3) | ((data & 0x80) >> 4) | ((data & 0x08) >> 1));
 		}
 	
 		if (b_G_B)
 		{
-			videoram[offs  ] = (videoram[offs  ] & 0xcf) | ((data & 0x10) << 1) | ((data & 0x01) << 4);
-			videoram[offs+1] = (videoram[offs+1] & 0xcf) | ((data & 0x20) >> 0) | ((data & 0x02) << 3);
-			videoram[offs+2] = (videoram[offs+2] & 0xcf) | ((data & 0x40) >> 1) | ((data & 0x04) << 2);
-			videoram[offs+3] = (videoram[offs+3] & 0xcf) | ((data & 0x80) >> 2) | ((data & 0x08) << 1);
+			videoram.write(offs  ,(videoram[offs  ] & 0xcf) | ((data & 0x10) << 1) | ((data & 0x01) << 4));
+			videoram.write(offs+1,(videoram[offs+1] & 0xcf) | ((data & 0x20) >> 0) | ((data & 0x02) << 3));
+			videoram.write(offs+2,(videoram[offs+2] & 0xcf) | ((data & 0x40) >> 1) | ((data & 0x04) << 2));
+			videoram.write(offs+3,(videoram[offs+3] & 0xcf) | ((data & 0x80) >> 2) | ((data & 0x08) << 1));
 		}
 	
 		if (b_Z_R)
 		{
-			videoram[offs  ] = (videoram[offs  ] & 0x3f) | ((data & 0x10) << 3) | ((data & 0x01) << 6);
-			videoram[offs+1] = (videoram[offs+1] & 0x3f) | ((data & 0x20) << 2) | ((data & 0x02) << 5);
-			videoram[offs+2] = (videoram[offs+2] & 0x3f) | ((data & 0x40) << 1) | ((data & 0x04) << 4);
-			videoram[offs+3] = (videoram[offs+3] & 0x3f) | ((data & 0x80) << 0) | ((data & 0x08) << 3);
+			videoram.write(offs  ,(videoram[offs  ] & 0x3f) | ((data & 0x10) << 3) | ((data & 0x01) << 6));
+			videoram.write(offs+1,(videoram[offs+1] & 0x3f) | ((data & 0x20) << 2) | ((data & 0x02) << 5));
+			videoram.write(offs+2,(videoram[offs+2] & 0x3f) | ((data & 0x40) << 1) | ((data & 0x04) << 4));
+			videoram.write(offs+3,(videoram[offs+3] & 0x3f) | ((data & 0x80) << 0) | ((data & 0x08) << 3));
 		}
 	
 		kangaroo_redraw_4pixels(sx, sy);

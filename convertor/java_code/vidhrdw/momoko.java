@@ -284,7 +284,7 @@ public class momoko
 					py = 255-y;
 				}
 				drawgfx(bitmap,Machine->gfx[0],
-					videoram[(sy>>3)*32+x]*8+dy,
+					videoram.read((sy>>3)*32+x)*8+dy,
 					col,
 					flip,0,
 					px,py,

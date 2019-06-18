@@ -25,7 +25,7 @@ public class bombjack
 	{
 		if (background_image != data)
 		{
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 			background_image = data;
 		}
 	} };
@@ -37,7 +37,7 @@ public class bombjack
 		if (flipscreen != (data & 1))
 		{
 			flipscreen = data & 1;
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 		}
 	} };
 	
@@ -70,7 +70,7 @@ public class bombjack
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			int sx,sy;
 			int tilecode,tileattribute;
@@ -126,7 +126,7 @@ public class bombjack
 							&clip,TRANSPARENCY_NONE,0);
 	
 					drawgfx(tmpbitmap,Machine->gfx[0],
-							videoram[offs] + 16 * (colorram[offs] & 0x10),
+							videoram.read(offs)+ 16 * (colorram[offs] & 0x10),
 							colorram[offs] & 0x0f,
 							flipscreen,flipscreen,
 							8*sx,8*sy,
@@ -134,7 +134,7 @@ public class bombjack
 				}
 				else
 					drawgfx(tmpbitmap,Machine->gfx[0],
-							videoram[offs] + 16 * (colorram[offs] & 0x10),
+							videoram.read(offs)+ 16 * (colorram[offs] & 0x10),
 							colorram[offs] & 0x0f,
 							flipscreen,flipscreen,
 							8*sx,8*sy,

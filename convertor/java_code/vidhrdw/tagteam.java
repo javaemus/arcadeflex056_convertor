@@ -144,7 +144,7 @@ public class tagteam
 				/*Someday when the proms are properly figured out, we can remove
 				the color hack*/
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram[offs] + 256 * colorram[offs],
+						videoram.read(offs)+ 256 * colorram[offs],
 						2*color,	/* guess */
 						flipscreen,flipscreen,
 						8*sx,8*sy,
@@ -166,14 +166,14 @@ public class tagteam
 			int sx,sy,flipx,flipy;
 			int spritebank;
 	
-			if (!(videoram[offs + 0] & 0x01)) continue;
+			if (!(videoram.read(offs + 0)& 0x01)) continue;
 	
-			sx = 240 - videoram[offs + 3];
-			sy = 240 - videoram[offs + 2];
+			sx = 240 - videoram.read(offs + 3);
+			sy = 240 - videoram.read(offs + 2);
 	
-			flipx = videoram[offs + 0] & 0x04;
-			flipy = videoram[offs + 0] & 0x02;
-			spritebank = (videoram[offs] & 0x30) << 4;
+			flipx = videoram.read(offs + 0)& 0x04;
+			flipy = videoram.read(offs + 0)& 0x02;
+			spritebank = (videoram.read(offs)& 0x30) << 4;
 	
 			if (flipscreen)
 			{
@@ -185,7 +185,7 @@ public class tagteam
 			}
 	
 			drawgfx(bitmap,Machine->gfx[1],
-					videoram[offs + 1] + 256 * spritebank,
+					videoram.read(offs + 1)+ 256 * spritebank,
 					1+2*color,	/* guess */
 					flipx,flipy,
 					sx,sy,
@@ -195,7 +195,7 @@ public class tagteam
 	
 			// Wrap around
 			drawgfx(bitmap,Machine->gfx[1],
-					videoram[offs + 0x20] + 256 * spritebank,
+					videoram.read(offs + 0x20)+ 256 * spritebank,
 					color,
 					flipx,flipy,
 					sx,sy,

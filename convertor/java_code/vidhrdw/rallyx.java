@@ -174,9 +174,9 @@ public class rallyx
 		if (generic_vh_start() != 0)
 			return 1;
 	
-		if ((dirtybuffer2 = malloc(videoram_size)) == 0)
+		if ((dirtybuffer2 = malloc(videoram_size[0])) == 0)
 			return 1;
-		memset(dirtybuffer2,1,videoram_size);
+		memset(dirtybuffer2,1,videoram_size[0]);
 	
 		if ((tmpbitmap1 = bitmap_alloc(32*8,32*8)) == 0)
 		{
@@ -232,8 +232,8 @@ public class rallyx
 		if (flipscreen != (data & 1))
 		{
 			flipscreen = data & 1;
-			memset(dirtybuffer,1,videoram_size);
-			memset(dirtybuffer2,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
+			memset(dirtybuffer2,1,videoram_size[0]);
 		}
 	} };
 	
@@ -267,7 +267,7 @@ public class rallyx
 	
 	
 		/* draw the below sprite priority characters */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (rallyx_colorram2[offs] & 0x20)  continue;
 	
@@ -300,7 +300,7 @@ public class rallyx
 		}
 	
 		/* update radar */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -322,7 +322,7 @@ public class rallyx
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram[offs],
+						videoram.read(offs),
 						colorram[offs] & 0x3f,
 						flipx,flipy,
 						8*sx,8*sy,
@@ -351,7 +351,7 @@ public class rallyx
 	
 	
 		/* draw the above sprite priority characters */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			int flipx,flipy;
 	
@@ -435,7 +435,7 @@ public class rallyx
 		}
 	
 	
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer2[offs])
 			{
@@ -466,7 +466,7 @@ public class rallyx
 		}
 	
 		/* update radar */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -488,7 +488,7 @@ public class rallyx
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram[offs],
+						videoram.read(offs),
 						colorram[offs] & 0x3f,
 						flipx,flipy,
 						8*sx,8*sy,
@@ -549,7 +549,7 @@ public class rallyx
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer2[offs])
 			{
@@ -581,7 +581,7 @@ public class rallyx
 		}
 	
 		/* update radar */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -604,7 +604,7 @@ public class rallyx
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						(videoram[offs]&0x7f) + 2*(colorram[offs]&0x40) + 2*(videoram[offs]&0x80),
+						(videoram.read(offs)&0x7f) + 2*(colorram[offs]&0x40) + 2*(videoram.read(offs)&0x80),
 						colorram[offs] & 0x3f,
 						flipx,flipy,
 						8*sx,8*sy,
@@ -691,7 +691,7 @@ public class rallyx
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer2[offs])
 			{
@@ -723,7 +723,7 @@ public class rallyx
 		}
 	
 		/* update radar */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -746,7 +746,7 @@ public class rallyx
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						(videoram[offs]&0x7f) + 2*(colorram[offs]&0x40) + 2*(videoram[offs]&0x80),
+						(videoram.read(offs)&0x7f) + 2*(colorram[offs]&0x40) + 2*(videoram.read(offs)&0x80),
 						colorram[offs] & 0x3f,
 						flipx,flipy,
 						8*sx,8*sy,

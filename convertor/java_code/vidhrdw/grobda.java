@@ -136,10 +136,10 @@ public class grobda
 	
 	
 		if (full_refresh)
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 	
 	
-		for (offs = videoram_size - 1; offs > 0; offs--)
+		for (offs = videoram_size[0] - 1; offs > 0; offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -174,7 +174,7 @@ public class grobda
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram[offs],
+						videoram.read(offs),
 						colorram[offs] & 0x3f,
 						flip_screen,flip_screen,
 						sx*8,sy*8,

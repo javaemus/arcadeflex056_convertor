@@ -98,8 +98,8 @@ public class kncljoe
 	
 	static void get_bg_tile_info(int tile_index)
 	{
-		int attr = videoram[2*tile_index+1];
-		int code = videoram[2*tile_index] + ((attr & 0xc0) << 2) + (tile_bank << 10);
+		int attr = videoram.read(2*tile_index+1);
+		int code = videoram.read(2*tile_index)+ ((attr & 0xc0) << 2) + (tile_bank << 10);
 	
 		SET_TILE_INFO(
 				0,
@@ -137,9 +137,9 @@ public class kncljoe
 	
 	public static WriteHandlerPtr kncljoe_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-		if (videoram[offset] != data)
+		if (videoram.read(offset)!= data)
 		{
-			videoram[offset] = data;
+			videoram.write(offset,data);
 			tilemap_mark_tile_dirty(bg_tilemap,offset/2);
 		}
 	} };

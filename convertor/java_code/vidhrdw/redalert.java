@@ -141,13 +141,13 @@ public class redalert
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			int charcode;
 			int stat_transparent;
 	
 	
-			charcode = videoram[offs];
+			charcode = videoram.read(offs);
 	
 			if (dirtybuffer[offs] || redalert_dirtycharacter[charcode])
 			{

@@ -97,13 +97,13 @@ public class thief
 	} };
 	
 	public static ReadHandlerPtr thief_videoram_r  = new ReadHandlerPtr() { public int handler(int offset){
-		unsigned char *source = &videoram[offset];
+		unsigned char *source = &videoram.read(offset);
 		if( thief_video_control&0x02 ) source+=0x2000*4; /* foreground/background */
 		return source[thief_read_mask*0x2000];
 	} };
 	
 	public static WriteHandlerPtr thief_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data){
-		UINT8 *dest = &videoram[offset];
+		UINT8 *dest = &videoram.read(offset);
 		if( thief_video_control&0x02 ){
 			dest+=0x2000*4; /* foreground/background */
 			dirtybuffer[offset+0x2000] = 1;

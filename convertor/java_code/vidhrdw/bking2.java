@@ -250,13 +250,13 @@ public class bking2
 	
 		if (full_refresh)
 		{
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 		}
 	
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 2;offs >= 0;offs -= 2)
+		for (offs = videoram_size[0] - 2;offs >= 0;offs -= 2)
 		{
 			if (dirtybuffer[offs] || dirtybuffer[offs + 1])
 			{
@@ -267,8 +267,8 @@ public class bking2
 	
 				sx = (offs/2) % 32;
 				sy = (offs/2) / 32;
-				flipx = videoram[offs + 1] & 0x04;
-				flipy = videoram[offs + 1] & 0x08;
+				flipx = videoram.read(offs + 1)& 0x04;
+				flipy = videoram.read(offs + 1)& 0x08;
 	
 				if (flip_screen)
 				{
@@ -280,7 +280,7 @@ public class bking2
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram[offs] + ((videoram[offs + 1] & 0x03) << 8),
+						videoram.read(offs)+ ((videoram.read(offs + 1)& 0x03) << 8),
 						palette_bank,
 						flipx,flipy,
 						8*sx,8*sy,

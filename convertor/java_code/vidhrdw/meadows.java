@@ -140,7 +140,7 @@ public class meadows
 				y = (i / SCR_HORZ) * CHR_VERT;
 	
 				drawgfx(bitmap, Machine->gfx[0],
-					videoram[i] & 0x7f, 1, 0,0, x, y,
+					videoram.read(i)& 0x7f, 1, 0,0, x, y,
 					&Machine->visible_area,
 					TRANSPARENCY_NONE,0);
 				meadows_char_dirty(x,y);
@@ -157,11 +157,11 @@ public class meadows
 	/*************************************************************/
 	public static WriteHandlerPtr meadows_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-	    if (offset >= videoram_size)
+	    if (offset >= videoram_size[0])
 	        return;
 		if (videoram[offset] == data)
 			return;
-		videoram[offset] = data;
+		videoram.write(offset,data);
 		dirtybuffer[offset] = 1;
 	} };
 	

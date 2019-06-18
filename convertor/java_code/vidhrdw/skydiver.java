@@ -75,7 +75,7 @@ public class skydiver
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -85,8 +85,8 @@ public class skydiver
 	
 				dirtybuffer[offs]=0;
 	
-				charcode = videoram[offs] & 0x3F;
-				color    = (videoram[offs] & 0xc0) >> 6;
+				charcode = videoram.read(offs)& 0x3F;
+				color    = (videoram.read(offs)& 0xc0) >> 6;
 	
 				sx = 8 * (offs % 32);
 				sy = 8 * (offs / 32);

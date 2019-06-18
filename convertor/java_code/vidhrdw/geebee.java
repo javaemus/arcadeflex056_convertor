@@ -182,9 +182,9 @@ public class geebee
 	#endif
 	
 		if (full_refresh)
-	        memset(dirtybuffer, 1, videoram_size);
+	        memset(dirtybuffer, 1, videoram_size[0]);
 	
-		for( offs = 0; offs < videoram_size; offs++ )
+		for( offs = 0; offs < videoram_size[0]; offs++ )
 		{
 			if( dirtybuffer[offs] )
 			{
@@ -217,7 +217,7 @@ public class geebee
 					sy = 31*8 - sy;
 				}
 	
-				code = videoram[offs];
+				code = videoram.read(offs);
 				color = ((geebee_bgw & 1) << 1) | ((code & 0x80) >> 7);
 				drawgfx(bitmap,Machine->gfx[0],
 						code,color,

@@ -74,7 +74,7 @@ public class higemaru
 		if (flipscreen != (data & 0x80))
 		{
 			flipscreen = data & 0x80;
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 		}
 	} };
 	
@@ -92,7 +92,7 @@ public class higemaru
 		int offs;
 	
 		/* draw the frontmost playfield. They are characters, but draw them as sprites */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -108,7 +108,7 @@ public class higemaru
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram[offs] + ((colorram[offs] & 0x80) << 1),
+						videoram.read(offs)+ ((colorram[offs] & 0x80) << 1),
 						colorram[offs] & 0x1f,
 						flipscreen,flipscreen,
 						8*sx,8*sy,

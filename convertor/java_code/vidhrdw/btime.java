@@ -195,9 +195,9 @@ public class btime
 	
 	public static WriteHandlerPtr lnc_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-	    if (videoram[offset] != data || colorram[offset] != *lnc_charbank)
+	    if (videoram.read(offset)!= data || colorram[offset] != *lnc_charbank)
 	    {
-	        videoram[offset] = data;
+	        videoram.write(offset,data);
 	        colorram[offset] = *lnc_charbank;
 	
 	        dirtybuffer[offset] = 1;
@@ -395,7 +395,7 @@ public class btime
 	
 	        dirtybuffer[offs] = 0;
 	
-	        code = videoram[offs] + 256 * (colorram[offs] & 3);
+	        code = videoram.read(offs)+ 256 * (colorram[offs] & 3);
 	
 	        /* check priority */
 	        if ((priority != -1) && (priority != ((code >> 7) & 0x01)))  continue;
@@ -517,7 +517,7 @@ public class btime
 	    {
 	        int code;
 	
-	        code = videoram[offs] + 256 * (colorram[offs] & 3);
+	        code = videoram.read(offs)+ 256 * (colorram[offs] & 3);
 	
 	        switch (char_dirty[code])
 	        {
@@ -557,7 +557,7 @@ public class btime
 	public static VhUpdatePtr btime_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 	    if (full_refresh)
-	        memset(dirtybuffer,1,videoram_size);
+	        memset(dirtybuffer,1,videoram_size[0]);
 	
 	    if (bnj_scroll1 & 0x10)
 	    {
@@ -596,7 +596,7 @@ public class btime
 	public static VhUpdatePtr eggs_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 	    if (full_refresh)
-	        memset(dirtybuffer,1,videoram_size);
+	        memset(dirtybuffer,1,videoram_size[0]);
 	
 	    drawchars(tmpbitmap, TRANSPARENCY_NONE, 0, -1);
 	
@@ -610,7 +610,7 @@ public class btime
 	public static VhUpdatePtr lnc_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 	    if (full_refresh)
-	        memset(dirtybuffer,1,videoram_size);
+	        memset(dirtybuffer,1,videoram_size[0]);
 	
 	    drawchars(tmpbitmap, TRANSPARENCY_NONE, 0, -1);
 	
@@ -624,7 +624,7 @@ public class btime
 	public static VhUpdatePtr zoar_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 	    if (full_refresh)
-	        memset(dirtybuffer,1,videoram_size);
+	        memset(dirtybuffer,1,videoram_size[0]);
 	
 	    if (bnj_scroll1 & 0x04)
 	    {
@@ -650,7 +650,7 @@ public class btime
 	{
 	    if (full_refresh)
 	    {
-	        memset(dirtybuffer,1,videoram_size);
+	        memset(dirtybuffer,1,videoram_size[0]);
 	        memset(dirtybuffer2,1,bnj_backgroundram_size);
 	    }
 	
@@ -718,7 +718,7 @@ public class btime
 	
 	
 	    if (full_refresh)
-	        memset(dirtybuffer,1,videoram_size);
+	        memset(dirtybuffer,1,videoram_size[0]);
 	
 	    /*
 	     *  For each character in the background RAM, check if it has been
@@ -754,7 +754,7 @@ public class btime
 	public static VhUpdatePtr disco_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 	    if (full_refresh)
-	        memset(dirtybuffer,1,videoram_size);
+	        memset(dirtybuffer,1,videoram_size[0]);
 	
 	    decode_modified(spriteram, 1);
 	

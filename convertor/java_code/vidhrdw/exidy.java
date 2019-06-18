@@ -285,7 +285,7 @@ public class exidy
 		for (y = offs = 0; y < 32; y++)
 			for (x = 0; x < 32; x++, offs++)
 			{
-				int code = videoram[offs];
+				int code = videoram.read(offs);
 	
 				/* see if the character is dirty */
 				if (chardirty[code] == 1)

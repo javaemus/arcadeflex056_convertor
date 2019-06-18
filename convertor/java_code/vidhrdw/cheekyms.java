@@ -130,7 +130,7 @@ public class cheekyms
 	
 		if (full_refresh)
 		{
-			memset(dirtybuffer, 1, videoram_size);
+			memset(dirtybuffer, 1, videoram_size[0]);
 		}
 	
 	
@@ -184,7 +184,7 @@ public class cheekyms
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			int sx,sy,man_area;
 	
@@ -212,7 +212,7 @@ public class cheekyms
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram[offs],
+						videoram.read(offs),
 						0 + char_palette,
 						flip_screen,flip_screen,
 						8*sx, 8*sy - (man_area ? man_scroll : 0),

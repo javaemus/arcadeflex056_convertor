@@ -122,7 +122,7 @@ public class fastfred
 			int i;
 	
 	
-			for (i = offset / 2;i < videoram_size;i += 32)
+			for (i = offset / 2;i < videoram_size[0];i += 32)
 				dirtybuffer[i] = 1;
 		}
 	
@@ -168,13 +168,13 @@ public class fastfred
 	
 	
 		if (full_refresh)
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 	
 	
 		charbank   = ((character_bank[1] << 9) | (character_bank[0] << 8));
 		colorbank  = ((color_bank[1]     << 4) | (color_bank[0]     << 3));
 	
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			int color;
 	
@@ -193,7 +193,7 @@ public class fastfred
 				if (flip_screen_y) sy = 31 - sy;
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						charbank | videoram[offs],
+						charbank | videoram.read(offs),
 						color,
 						flip_screen_x,flip_screen_y,
 						8*sx,8*sy,

@@ -136,7 +136,7 @@ public class sprint2
 	    sy = 8 * (offs / 32)-org_y;
 	
 	    drawgfx(back_vid,Machine->gfx[0],
-	            videoram[offs] & 0x3F, (videoram[offs] & 0x80)>>7,
+	            videoram.read(offs)& 0x3F, (videoram.read(offs)& 0x80)>>7,
 				0,0,sx,sy, &clip,TRANSPARENCY_NONE,0);
 	
 	    offs=((org_y/8)*32) + (((org_x+8)/8)%32);
@@ -144,7 +144,7 @@ public class sprint2
 	    sy = 8 * (offs / 32)-org_y;
 	
 	    drawgfx(back_vid,Machine->gfx[0],
-	            videoram[offs] & 0x3F, (videoram[offs] & 0x80)>>7,
+	            videoram.read(offs)& 0x3F, (videoram.read(offs)& 0x80)>>7,
 				0,0,sx,sy, &clip,TRANSPARENCY_NONE,0);
 	
 	    offs=((org_y/8)*32) + (((org_x+16)/8)%32);
@@ -152,7 +152,7 @@ public class sprint2
 	    sy = 8 * (offs / 32)-org_y;
 	
 	    drawgfx(back_vid,Machine->gfx[0],
-	            videoram[offs] & 0x3F, (videoram[offs] & 0x80)>>7,
+	            videoram.read(offs)& 0x3F, (videoram.read(offs)& 0x80)>>7,
 				0,0,sx,sy, &clip,TRANSPARENCY_NONE,0);
 	
 	    offs=(((org_y+8)/8)*32) + ((org_x/8)%32);
@@ -160,7 +160,7 @@ public class sprint2
 	    sy = 8 * (offs / 32)-org_y;
 	
 	    drawgfx(back_vid,Machine->gfx[0],
-	            videoram[offs] & 0x3F, (videoram[offs] & 0x80)>>7,
+	            videoram.read(offs)& 0x3F, (videoram.read(offs)& 0x80)>>7,
 				0,0,sx,sy, &clip,TRANSPARENCY_NONE,0);
 	
 	    offs=(((org_y+8)/8)*32) + (((org_x+8)/8)%32);
@@ -168,7 +168,7 @@ public class sprint2
 	    sy = 8 * (offs / 32)-org_y;
 	
 	    drawgfx(back_vid,Machine->gfx[0],
-	            videoram[offs] & 0x3F, (videoram[offs] & 0x80)>>7,
+	            videoram.read(offs)& 0x3F, (videoram.read(offs)& 0x80)>>7,
 				0,0,sx,sy, &clip,TRANSPARENCY_NONE,0);
 	
 	    offs=(((org_y+8)/8)*32) + (((org_x+16)/8)%32);
@@ -176,7 +176,7 @@ public class sprint2
 	    sy = 8 * (offs / 32)-org_y;
 	
 	    drawgfx(back_vid,Machine->gfx[0],
-	            videoram[offs] & 0x3F, (videoram[offs] & 0x80)>>7,
+	            videoram.read(offs)& 0x3F, (videoram.read(offs)& 0x80)>>7,
 				0,0,sx,sy, &clip,TRANSPARENCY_NONE,0);
 	
 	
@@ -279,7 +279,7 @@ public class sprint2
 	    sy = 8 * (offs / 32)-org_y;
 	
 	    drawgfx(back_vid,Machine->gfx[0],
-	            videoram[offs] & 0x3F, (videoram[offs] & 0x80)>>7,
+	            videoram.read(offs)& 0x3F, (videoram.read(offs)& 0x80)>>7,
 				0,0,sx,sy, &clip,TRANSPARENCY_NONE,0);
 	
 	    offs=((org_y/8)*32) + (((org_x+8)/8)%32);
@@ -287,7 +287,7 @@ public class sprint2
 	    sy = 8 * (offs / 32)-org_y;
 	
 	    drawgfx(back_vid,Machine->gfx[0],
-	            videoram[offs] & 0x3F, (videoram[offs] & 0x80)>>7,
+	            videoram.read(offs)& 0x3F, (videoram.read(offs)& 0x80)>>7,
 				0,0,sx,sy, &clip,TRANSPARENCY_NONE,0);
 	
 	    offs=((org_y/8)*32) + (((org_x+16)/8)%32);
@@ -295,7 +295,7 @@ public class sprint2
 	    sy = 8 * (offs / 32)-org_y;
 	
 	    drawgfx(back_vid,Machine->gfx[0],
-	            videoram[offs] & 0x3F, (videoram[offs] & 0x80)>>7,
+	            videoram.read(offs)& 0x3F, (videoram.read(offs)& 0x80)>>7,
 				0,0,sx,sy, &clip,TRANSPARENCY_NONE,0);
 	
 	    offs=(((org_y+8)/8)*32) + ((org_x/8)%32);
@@ -303,7 +303,7 @@ public class sprint2
 	    sy = 8 * (offs / 32)-org_y;
 	
 	    drawgfx(back_vid,Machine->gfx[0],
-	            videoram[offs] & 0x3F, (videoram[offs] & 0x80)>>7,
+	            videoram.read(offs)& 0x3F, (videoram.read(offs)& 0x80)>>7,
 				0,0,sx,sy, &clip,TRANSPARENCY_NONE,0);
 	
 	    offs=(((org_y+8)/8)*32) + (((org_x+8)/8)%32);
@@ -311,7 +311,7 @@ public class sprint2
 	    sy = 8 * (offs / 32)-org_y;
 	
 	    drawgfx(back_vid,Machine->gfx[0],
-	            videoram[offs] & 0x3F, (videoram[offs] & 0x80)>>7,
+	            videoram.read(offs)& 0x3F, (videoram.read(offs)& 0x80)>>7,
 				0,0,sx,sy, &clip,TRANSPARENCY_NONE,0);
 	
 	    offs=(((org_y+8)/8)*32) + (((org_x+16)/8)%32);
@@ -319,7 +319,7 @@ public class sprint2
 	    sy = 8 * (offs / 32)-org_y;
 	
 	    drawgfx(back_vid,Machine->gfx[0],
-	            videoram[offs] & 0x3F, (videoram[offs] & 0x80)>>7,
+	            videoram.read(offs)& 0x3F, (videoram.read(offs)& 0x80)>>7,
 				0,0,sx,sy, &clip,TRANSPARENCY_NONE,0);
 	
 	
@@ -405,7 +405,7 @@ public class sprint2
 	
 	    /* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -414,12 +414,12 @@ public class sprint2
 	
 				dirtybuffer[offs]=0;
 	
-				charcode = videoram[offs] & 0x3f;
+				charcode = videoram.read(offs)& 0x3f;
 	
 				sx = 8 * (offs % 32);
 				sy = 8 * (offs / 32);
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						charcode, (videoram[offs] & 0x80)>>7,
+						charcode, (videoram.read(offs)& 0x80)>>7,
 						0,0,sx,sy,
 						&Machine->visible_area,TRANSPARENCY_NONE,0);
 			}

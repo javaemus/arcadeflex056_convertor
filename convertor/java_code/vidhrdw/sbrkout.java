@@ -63,11 +63,11 @@ public class sbrkout
 	
 	
 		if (full_refresh)
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -76,13 +76,13 @@ public class sbrkout
 	
 				dirtybuffer[offs]=0;
 	
-				code = videoram[offs] & 0x3f;
+				code = videoram.read(offs)& 0x3f;
 	
 				sx = 8*(offs % 32);
 				sy = 8*(offs / 32);
 	
 				/* Check the "draw" bit */
-				color = ((videoram[offs] & 0x80)>>7);
+				color = ((videoram.read(offs)& 0x80)>>7);
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
 						code, color,

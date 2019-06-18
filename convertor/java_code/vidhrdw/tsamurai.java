@@ -44,7 +44,7 @@ public class tsamurai
 	
 	static void get_fg_tile_info(int tile_index)
 	{
-		int tile_number = videoram[tile_index];
+		int tile_number = videoram.read(tile_index);
 		if (textbank1 & 0x01) tile_number += 256; /* legacy */
 		if (textbank2 & 0x01) tile_number += 512; /* Mission 660 add-on */
 		SET_TILE_INFO(
@@ -126,9 +126,9 @@ public class tsamurai
 	} };
 	public static WriteHandlerPtr tsamurai_fg_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-		if( videoram[offset]!=data )
+		if( videoram.read(offset)!=data )
 		{
-			videoram[offset]=data;
+			videoram.write(offset,data);
 			tilemap_mark_tile_dirty(foreground,offset);
 		}
 	} };
@@ -242,7 +242,7 @@ public class tsamurai
 	
 	static void get_vsgongf_tile_info(int tile_index)
 	{
-		int tile_number = videoram[tile_index];
+		int tile_number = videoram.read(tile_index);
 		int color = vsgongf_color&0x1f;
 		if( textbank1 ) tile_number += 0x100;
 		SET_TILE_INFO(

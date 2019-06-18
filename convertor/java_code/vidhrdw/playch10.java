@@ -95,7 +95,7 @@ public class playch10
 		bottom_monitor.min_y = ( bottom_monitor.max_y - bottom_monitor.min_y ) / 2;
 	
 		if ( full_refresh )
-			memset( dirtybuffer, 1, videoram_size );
+			memset( dirtybuffer, 1, videoram_size[0] );
 	
 		/* On Playchoice 10 single monitor, this bit toggles	*/
 		/* between PPU and BIOS display.						*/
@@ -131,7 +131,7 @@ public class playch10
 			return;
 		}
 	
-		for( offs = videoram_size - 2; offs >= 0; offs -= 2 )
+		for( offs = videoram_size[0] - 2; offs >= 0; offs -= 2 )
 		{
 			if ( dirtybuffer[offs] || dirtybuffer[offs+1] )
 			{
@@ -140,8 +140,8 @@ public class playch10
 				int sx = offs2 % 32;
 				int sy = offs2 / 32;
 	
-				int tilenum = videoram[offs] + ( ( videoram[offs+1] & 7 ) << 8 );
-				int color = ( videoram[offs+1] >> 3 ) & 0x1f;
+				int tilenum = videoram.read(offs)+ ( ( videoram.read(offs+1)& 7 ) << 8 );
+				int color = ( videoram.read(offs+1)>> 3 ) & 0x1f;
 	
 				dirtybuffer[offs] = dirtybuffer[offs+1] = 0;
 	

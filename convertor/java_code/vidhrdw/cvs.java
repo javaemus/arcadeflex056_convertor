@@ -167,7 +167,7 @@ public class cvs
 	    if(newmode != character_mode)
 	    {
 		    character_mode = newmode;
-	        memset(dirtybuffer,1,videoram_size);
+	        memset(dirtybuffer,1,videoram_size[0]);
 	    }
 	
 	    character_page = (value << 2) & 0x300;
@@ -225,7 +225,7 @@ public class cvs
 	    {
 	    	// Data
 	
-	        return videoram[offset];
+	        return videoram.read(offset);
 	    }
 	} };
 	
@@ -519,9 +519,9 @@ public class cvs
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
 	
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
-	        character = videoram[offs];
+	        character = videoram.read(offs);
 	
 			if(dirtybuffer[offs] || full_refresh || dirty_character[character])
 			{

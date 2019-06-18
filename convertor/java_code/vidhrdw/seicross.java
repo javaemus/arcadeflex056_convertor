@@ -103,7 +103,7 @@ public class seicross
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
 	
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -116,7 +116,7 @@ public class seicross
 				sy = offs / 32;
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram[offs] + ((colorram[offs] & 0x10) << 4),
+						videoram.read(offs)+ ((colorram[offs] & 0x10) << 4),
 						colorram[offs] & 0x0f,
 						colorram[offs] & 0x40,colorram[offs] & 0x80,
 						8*sx,8*sy,

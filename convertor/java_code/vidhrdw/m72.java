@@ -80,9 +80,9 @@ public class m72
 	
 		tile_index *= 4;
 	
-		code  = videoram[tile_index];
-		attr  = videoram[tile_index+1];
-		color = videoram[tile_index+2];
+		code  = videoram.read(tile_index);
+		attr  = videoram.read(tile_index+1);
+		color = videoram.read(tile_index+2);
 	
 		if (color & 0x80) pri = 2;
 		else if (color & 0x40) pri = 1;
@@ -102,16 +102,16 @@ public class m72
 	
 		tile_index *= 4;
 	
-		code  = videoram[tile_index] + (videoram[tile_index+1] << 8);
-		color = videoram[tile_index+2];
-		attr  = videoram[tile_index+3];
+		code  = videoram.read(tile_index)+ (videoram.read(tile_index+1)<< 8);
+		color = videoram.read(tile_index+2);
+		attr  = videoram.read(tile_index+3);
 	
 		if (attr & 0x01) pri = 2;
 		else if (color & 0x80) pri = 1;
 		else pri = 0;
 	
-	/* (videoram[tile_index+2] & 0x10) is used by majtitle on the green, but it's not clear for what */
-	/* (videoram[tile_index+3] & 0xfe) are used as well */
+	/* (videoram.read(tile_index+2)& 0x10) is used by majtitle on the green, but it's not clear for what */
+	/* (videoram.read(tile_index+3)& 0xfe) are used as well */
 	
 		SET_TILE_INFO(
 				gfxnum,

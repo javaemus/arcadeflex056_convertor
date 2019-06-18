@@ -21,9 +21,9 @@ public class renegade
 	
 	public static WriteHandlerPtr renegade_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-		if( videoram[offset]!=data )
+		if( videoram.read(offset)!=data )
 		{
-			videoram[offset] = data;
+			videoram.write(offset,data);
 			offset = offset%(64*16);
 			tilemap_mark_tile_dirty(bg_tilemap,offset);
 		}
@@ -57,7 +57,7 @@ public class renegade
 	
 	static void get_bg_tilemap_info(int tile_index)
 	{
-		const UINT8 *source = &videoram[tile_index];
+		const UINT8 *source = &videoram.read(tile_index);
 		UINT8 attributes = source[0x400]; /* CCC??BBB */
 		SET_TILE_INFO(
 				1+(attributes&0x7),

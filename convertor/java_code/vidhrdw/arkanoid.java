@@ -60,13 +60,13 @@ public class arkanoid
 	
 		if (full_refresh)
 		{
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 		}
 	
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 2;offs >= 0;offs -= 2)
+		for (offs = videoram_size[0] - 2;offs >= 0;offs -= 2)
 		{
 			int offs2;
 	
@@ -85,10 +85,10 @@ public class arkanoid
 				if (flip_screen_x) sx = 31 - sx;
 				if (flip_screen_y) sy = 31 - sy;
 	
-				code = videoram[offs + 1] + ((videoram[offs] & 0x07) << 8) + 2048 * gfxbank;
+				code = videoram.read(offs + 1)+ ((videoram.read(offs)& 0x07) << 8) + 2048 * gfxbank;
 				drawgfx(tmpbitmap,Machine->gfx[0],
 						code,
-						((videoram[offs] & 0xf8) >> 3) + 32 * palettebank,
+						((videoram.read(offs)& 0xf8) >> 3) + 32 * palettebank,
 						flip_screen_x,flip_screen_y,
 						8*sx,8*sy,
 						&Machine->visible_area,TRANSPARENCY_NONE,0);

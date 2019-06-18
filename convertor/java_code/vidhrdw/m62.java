@@ -269,7 +269,7 @@ public class m62
 		if (flipscreen != (data & 1))
 		{
 			flipscreen = data & 1;
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 		}
 	
 		coin_counter_w(0,data & 2);
@@ -366,7 +366,7 @@ public class m62
 		if (kidniki_background_bank != (data & 1))
 		{
 			kidniki_background_bank = data & 1;
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 		}
 	} };
 	
@@ -375,7 +375,7 @@ public class m62
 		if (spelunk2_palbank != (data & 0x01))
 		{
 			spelunk2_palbank = data & 0x01;
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 		}
 	} };
 	
@@ -397,7 +397,7 @@ public class m62
 			if (spelunk2_palbank != ((data & 0x0c) >> 2))
 			{
 				spelunk2_palbank = (data & 0x0c) >> 2;
-				memset(dirtybuffer,1,videoram_size);
+				memset(dirtybuffer,1,videoram_size[0]);
 			}
 			break;
 		}
@@ -557,7 +557,7 @@ public class m62
 		{
 			for (offs = videoram_size/2 - 1;offs >= 0;offs--)
 			{
-				int color = videoram[offs+0x800] & 0x1f;
+				int color = videoram.read(offs+0x800)& 0x1f;
 				int sy = offs / 64;
 	
 				/* is the following right? */
@@ -567,8 +567,8 @@ public class m62
 	
 	
 					sx = offs % 64;
-					code = videoram[offs] + 4 * (videoram[offs+0x800] & 0xc0);
-					flipx = videoram[offs+0x800] & 0x20;
+					code = videoram.read(offs)+ 4 * (videoram.read(offs+0x800)& 0xc0);
+					flipx = videoram.read(offs+0x800)& 0x20;
 					flipy = 0;
 					if (flipscreen)
 					{
@@ -600,9 +600,9 @@ public class m62
 	
 					sx = offs % 64;
 					sy = offs / 64;
-					code = videoram[offs] + 4 * (videoram[offs+0x800] & 0xc0);
-					color = videoram[offs+0x800] & 0x1f;
-					flipx = videoram[offs+0x800] & 0x20;
+					code = videoram.read(offs)+ 4 * (videoram.read(offs+0x800)& 0xc0);
+					color = videoram.read(offs+0x800)& 0x1f;
+					flipx = videoram.read(offs+0x800)& 0x20;
 					flipy = 0;
 					if (flipscreen)
 					{
@@ -633,7 +633,7 @@ public class m62
 	
 		for (offs = videoram_size-2;offs >= 0;offs -= 2)
 		{
-			if ((dirtybuffer[offs] || dirtybuffer[offs+1]) && !(!prioritylayer && (videoram[offs+1] & 0x04)))
+			if ((dirtybuffer[offs] || dirtybuffer[offs+1]) && !(!prioritylayer && (videoram.read(offs+1)& 0x04)))
 			{
 				int sx,sy;
 	
@@ -651,8 +651,8 @@ public class m62
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram[offs] + ((videoram[offs+1] & 0x40) << 3) + ((videoram[offs + 1] & 0x10) << 4),
-						videoram[offs+1] & 0x0f,
+						videoram.read(offs)+ ((videoram.read(offs+1)& 0x40) << 3) + ((videoram.read(offs + 1)& 0x10) << 4),
+						videoram.read(offs+1)& 0x0f,
 						flipscreen,flipscreen,
 						8*sx,8*sy,
 						0,TRANSPARENCY_NONE,0);
@@ -694,7 +694,7 @@ public class m62
 		/* since last time and update it accordingly. */
 		for (offs = videoram_size-2;offs >= 0;offs -= 2)
 		{
-			if ((dirtybuffer[offs] || dirtybuffer[offs+1]) && !(!prioritylayer && (videoram[offs+1] & 0x04)))
+			if ((dirtybuffer[offs] || dirtybuffer[offs+1]) && !(!prioritylayer && (videoram.read(offs+1)& 0x04)))
 			{
 				int sx,sy,flipx;
 	
@@ -704,7 +704,7 @@ public class m62
 	
 				sx = (offs/2) % 64;
 				sy = (offs/2) / 64;
-				flipx = videoram[offs+1] & 0x20;
+				flipx = videoram.read(offs+1)& 0x20;
 	
 				if (flipscreen)
 				{
@@ -714,8 +714,8 @@ public class m62
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram[offs] + ((videoram[offs+1] & 0xc0) << 2),
-						videoram[offs+1] & 0x1f,
+						videoram.read(offs)+ ((videoram.read(offs+1)& 0xc0) << 2),
+						videoram.read(offs+1)& 0x1f,
 						flipx,flipscreen,
 						8*sx,8*sy,
 						0,TRANSPARENCY_NONE,0);
@@ -771,8 +771,8 @@ public class m62
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram[offs] + ((videoram[offs+1] & 0xc0) << 2) + ((videoram[offs+1] & 0x20) << 5),
-						videoram[offs+1] & 0x1f,
+						videoram.read(offs)+ ((videoram.read(offs+1)& 0xc0) << 2) + ((videoram.read(offs+1)& 0x20) << 5),
+						videoram.read(offs+1)& 0x1f,
 						flipscreen,flipscreen,
 						8*sx,8*sy,
 						0,TRANSPARENCY_NONE,0);
@@ -811,7 +811,7 @@ public class m62
 	
 				sx = (offs/2) % 32;
 				sy = (offs/2) / 32;
-				flipx = videoram[offs+1] & 0x20;
+				flipx = videoram.read(offs+1)& 0x20;
 	
 				if (flipscreen)
 				{
@@ -821,8 +821,8 @@ public class m62
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram[offs] + ((videoram[offs+1] & 0xc0) << 2),
-						videoram[offs+1] & 0x1f,
+						videoram.read(offs)+ ((videoram.read(offs+1)& 0xc0) << 2),
+						videoram.read(offs+1)& 0x1f,
 						flipx,flipscreen,
 						12*sx + 64,10*sy - 32,
 						0,TRANSPARENCY_NONE,0);
@@ -881,8 +881,8 @@ public class m62
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram[offs] + ((videoram[offs+1] & 0xe0) << 3) + (kidniki_background_bank << 11),
-						videoram[offs+1] & 0x1f,
+						videoram.read(offs)+ ((videoram.read(offs+1)& 0xe0) << 3) + (kidniki_background_bank << 11),
+						videoram.read(offs+1)& 0x1f,
 						flipscreen,flipscreen,
 						8*sx,8*sy,
 						0,TRANSPARENCY_NONE,0);
@@ -927,11 +927,11 @@ public class m62
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram[offs]
-								+ ((videoram[offs+1] & 0x10) << 4)
-								+ ((videoram[offs+1] & 0x20) << 6)
-								+ ((videoram[offs+1] & 0xc0) << 3),
-						(videoram[offs+1] & 0x0f) + (spelunk2_palbank << 4),
+						videoram.read(offs)
+								+ ((videoram.read(offs+1)& 0x10) << 4)
+								+ ((videoram.read(offs+1)& 0x20) << 6)
+								+ ((videoram.read(offs+1)& 0xc0) << 3),
+						(videoram.read(offs+1)& 0x0f) + (spelunk2_palbank << 4),
 						flipscreen,flipscreen,
 						8*sx,8*sy,
 						0,TRANSPARENCY_NONE,0);
@@ -982,8 +982,8 @@ public class m62
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram[offs] + ((videoram[offs+1] & 0xf0) << 4),
-						(videoram[offs+1] & 0x0f) + (spelunk2_palbank << 4),
+						videoram.read(offs)+ ((videoram.read(offs+1)& 0xf0) << 4),
+						(videoram.read(offs+1)& 0x0f) + (spelunk2_palbank << 4),
 						flipscreen,flipscreen,
 						8*sx,8*sy,
 						0,TRANSPARENCY_NONE,0);
@@ -1018,7 +1018,7 @@ public class m62
 	
 		for (offs = videoram_size - 2;offs >= 0;offs -= 2)
 		{
-			if ((videoram[offs + 1] & 0x10) == priority)
+			if ((videoram.read(offs + 1)& 0x10) == priority)
 			{
 				int sx,sy;
 				sx = (offs/2) % 64;
@@ -1031,8 +1031,8 @@ public class m62
 				}
 	
 				drawgfx(bitmap,Machine->gfx[0],
-						videoram[offs] + ((videoram[offs + 1] & 0x60) << 3),
-						videoram[offs + 1] & 0x1f,
+						videoram.read(offs)+ ((videoram.read(offs + 1)& 0x60) << 3),
+						videoram.read(offs + 1)& 0x1f,
 						flipscreen,flipscreen,
 						(8*sx - (irem_background_hscroll-2))&0x1ff,16*sy,
 						&Machine->visible_area,TRANSPARENCY_NONE,0);

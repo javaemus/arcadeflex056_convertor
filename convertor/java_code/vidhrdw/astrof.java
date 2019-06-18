@@ -86,7 +86,7 @@ public class astrof
 	***************************************************************************/
 	public static VhStartPtr astrof_vh_start = new VhStartPtr() { public int handler() 
 	{
-		if ((colorram = malloc(videoram_size)) == 0)
+		if ((colorram = malloc(videoram_size[0])) == 0)
 		{
 			generic_bitmapped_vh_stop();
 			return 1;
@@ -121,7 +121,7 @@ public class astrof
 		int i,x,y,fore,back;
 		int dx = 1;
 	
-		videoram[offset] = data;
+		videoram.write(offset,data);
 		colorram[offset] = color;
 	
 		fore = Machine->pens[color | 1];
@@ -257,9 +257,9 @@ public class astrof
 			int offs;
 	
 			/* redraw bitmap */
-			for (offs = 0; offs < videoram_size; offs++)
+			for (offs = 0; offs < videoram_size[0]; offs++)
 			{
-				common_videoram_w(offs, videoram[offs], colorram[offs]);
+				common_videoram_w(offs, videoram.read(offs), colorram[offs]);
 			}
 		}
 	} };

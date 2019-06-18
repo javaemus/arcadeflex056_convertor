@@ -104,7 +104,7 @@ public class ironhors
 		if (charbank != (data & 3))
 		{
 			charbank = data & 3;
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 		}
 	
 		spriterambank = data & 8;
@@ -119,7 +119,7 @@ public class ironhors
 		if (palettebank != (data & 7))
 		{
 			palettebank = data & 7;
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 		}
 	
 		coin_counter_w(0,data & 0x10);
@@ -144,7 +144,7 @@ public class ironhors
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -157,7 +157,7 @@ public class ironhors
 				sy = 8 * (offs / 32);
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram[offs] + ((colorram[offs] & 0x40)<<2) + ((colorram[offs] & 0x20)<<4) + (charbank<<10),
+						videoram.read(offs)+ ((colorram[offs] & 0x40)<<2) + ((colorram[offs] & 0x20)<<4) + (charbank<<10),
 						(colorram[offs] & 0x0f) + 16 * palettebank,
 						colorram[offs] & 0x10,colorram[offs] & 0x20,
 						sx,sy,

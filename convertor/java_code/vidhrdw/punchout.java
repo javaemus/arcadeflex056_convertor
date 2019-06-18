@@ -235,9 +235,9 @@ public class punchout
 	***************************************************************************/
 	public static VhStartPtr punchout_vh_start = new VhStartPtr() { public int handler() 
 	{
-		if ((dirtybuffer = malloc(videoram_size)) == 0)
+		if ((dirtybuffer = malloc(videoram_size[0])) == 0)
 			return 1;
-		memset(dirtybuffer,1,videoram_size);
+		memset(dirtybuffer,1,videoram_size[0]);
 	
 		if ((dirtybuffer2 = malloc(punchout_videoram2_size)) == 0)
 		{
@@ -298,9 +298,9 @@ public class punchout
 	
 	public static VhStartPtr armwrest_vh_start = new VhStartPtr() { public int handler() 
 	{
-		if ((dirtybuffer = malloc(videoram_size)) == 0)
+		if ((dirtybuffer = malloc(videoram_size[0])) == 0)
 			return 1;
-		memset(dirtybuffer,1,videoram_size);
+		memset(dirtybuffer,1,videoram_size[0]);
 	
 		if ((dirtybuffer2 = malloc(punchout_videoram2_size)) == 0)
 		{
@@ -418,7 +418,7 @@ public class punchout
 		if (top_palette_bank != ((data >> 1) & 0x01))
 		{
 			top_palette_bank = (data >> 1) & 0x01;
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 		}
 		if (bottom_palette_bank != ((data >> 0) & 0x01))
 		{
@@ -445,7 +445,7 @@ public class punchout
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 2;offs >= 0;offs -= 2)
+		for (offs = videoram_size[0] - 2;offs >= 0;offs -= 2)
 		{
 			if (dirtybuffer[offs] || dirtybuffer[offs + 1])
 			{
@@ -459,9 +459,9 @@ public class punchout
 				sy = offs/2 / 32;
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram[offs] + 256 * (videoram[offs + 1] & 0x03),
-						((videoram[offs + 1] & 0x7c) >> 2) + 64 * top_palette_bank,
-						videoram[offs + 1] & 0x80,0,
+						videoram.read(offs)+ 256 * (videoram.read(offs + 1)& 0x03),
+						((videoram.read(offs + 1)& 0x7c) >> 2) + 64 * top_palette_bank,
+						videoram.read(offs + 1)& 0x80,0,
 						8*sx,8*sy - 16,
 						&topvisiblearea,TRANSPARENCY_NONE,0);
 			}
@@ -784,7 +784,7 @@ public class punchout
 	
 	
 		/* draw the foregound chars */
-		for (offs = videoram_size - 2;offs >= 0;offs -= 2)
+		for (offs = videoram_size[0] - 2;offs >= 0;offs -= 2)
 		{
 			int sx,sy;
 	
@@ -796,9 +796,9 @@ public class punchout
 			sy = offs/2 / 32;
 	
 			drawgfx(bitmap,Machine->gfx[1],
-					videoram[offs] + 256 * (videoram[offs + 1] & 0x07),
-					((videoram[offs + 1] & 0xf8) >> 3) + 32 * bottom_palette_bank,
-					videoram[offs + 1] & 0x80,0,
+					videoram.read(offs)+ 256 * (videoram.read(offs + 1)& 0x07),
+					((videoram.read(offs + 1)& 0xf8) >> 3) + 32 * bottom_palette_bank,
+					videoram.read(offs + 1)& 0x80,0,
 					8*sx,8*sy + 8*TOP_MONITOR_ROWS - 16,
 					&backgroundvisiblearea,TRANSPARENCY_PEN,7);
 		}

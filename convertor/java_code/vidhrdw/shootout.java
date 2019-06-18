@@ -48,8 +48,8 @@ public class shootout
 	
 	
 	static void get_bg_tile_info(int tile_index){
-		int attributes = videoram[tile_index+0x400]; /* CCCC -TTT */
-		int tile_number = videoram[tile_index] + 256*(attributes&7);
+		int attributes = videoram.read(tile_index+0x400); /* CCCC -TTT */
+		int tile_number = videoram.read(tile_index)+ 256*(attributes&7);
 		int color = attributes>>4;
 		SET_TILE_INFO(
 				2,
@@ -70,8 +70,8 @@ public class shootout
 	}
 	
 	public static WriteHandlerPtr shootout_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data){
-		if( videoram[offset]!=data ){
-			videoram[offset] = data;
+		if( videoram.read(offset)!=data ){
+			videoram.write(offset,data);
 			tilemap_mark_tile_dirty( background, offset&0x3ff );
 		}
 	} };

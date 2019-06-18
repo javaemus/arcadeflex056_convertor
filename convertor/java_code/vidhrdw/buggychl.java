@@ -54,7 +54,7 @@ public class buggychl
 	
 	public static VhStartPtr buggychl_vh_start = new VhStartPtr() { public int handler() 
 	{
-		dirtybuffer = malloc(videoram_size);
+		dirtybuffer = malloc(videoram_size[0]);
 		dirtychar = malloc(256 * sizeof(*dirtychar));
 		tmpbitmap1 = bitmap_alloc(256,256);
 		tmpbitmap2 = bitmap_alloc(256,256);
@@ -65,7 +65,7 @@ public class buggychl
 			return 1;
 		}
 	
-		memset(dirtybuffer,1,videoram_size);
+		memset(dirtybuffer,1,videoram_size[0]);
 		memset(dirtychar,0xff,256 * sizeof(*dirtychar));
 	
 		return 0;
@@ -146,7 +146,7 @@ public class buggychl
 	
 		for (offs = 0;offs < 0x400;offs++)
 		{
-			int code = videoram[0x400+offs];
+			int code = videoram.read(0x400+offs);
 	
 			if (dirtybuffer[0x400+offs] || dirtychar[code])
 			{
@@ -193,7 +193,7 @@ public class buggychl
 			/* the following line is most likely wrong */
 			int transp = (bg_on && sx >= 22) ? TRANSPARENCY_NONE : TRANSPARENCY_PEN;
 	
-			int code = videoram[offs];
+			int code = videoram.read(offs);
 	
 			if (flip_screen_x) sx = 31 - sx;
 			if (flip_screen_y) sy = 31 - sy;

@@ -113,7 +113,7 @@ public class pingpong
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -128,7 +128,7 @@ public class pingpong
 				flipx = colorram[offs] & 0x40;
 				flipy = colorram[offs] & 0x80;
 				color = colorram[offs] & 0x1F;
-				tchar = (videoram[offs] + ((colorram[offs] & 0x20)<<3));
+				tchar = (videoram.read(offs)+ ((colorram[offs] & 0x20)<<3));
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
 						tchar,

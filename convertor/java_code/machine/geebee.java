@@ -128,7 +128,7 @@ public class geebee
 		case 7:
 			logerror("out7_w:7 inv      $%02X\n", data);
 			if( geebee_inv != (data & 1) )
-				memset(dirtybuffer, 1, videoram_size);
+				memset(dirtybuffer, 1, videoram_size[0]);
 			geebee_inv = data & 1;
 			break;
 		}

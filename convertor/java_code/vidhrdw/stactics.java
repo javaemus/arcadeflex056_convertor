@@ -244,19 +244,19 @@ public class stactics
 	    if ((bitmap_F = bitmap_alloc(Machine->drv->screen_width,Machine->drv->screen_height)) == 0)   return 1;
 	
 		/* Allocate dirty buffers */
-		if ((dirty_videoram_b = (unsigned char *)malloc(videoram_size)) == 0)       return 1;
-		if ((dirty_videoram_d = (unsigned char *)malloc(videoram_size)) == 0)       return 1;
-		if ((dirty_videoram_e = (unsigned char *)malloc(videoram_size)) == 0)       return 1;
-		if ((dirty_videoram_f = (unsigned char *)malloc(videoram_size)) == 0)       return 1;
+		if ((dirty_videoram_b = (unsigned char *)malloc(videoram_size[0])) == 0)       return 1;
+		if ((dirty_videoram_d = (unsigned char *)malloc(videoram_size[0])) == 0)       return 1;
+		if ((dirty_videoram_e = (unsigned char *)malloc(videoram_size[0])) == 0)       return 1;
+		if ((dirty_videoram_f = (unsigned char *)malloc(videoram_size[0])) == 0)       return 1;
 		if ((dirty_chardata_b = (unsigned char *)malloc(DIRTY_CHARDATA_SIZE)) == 0) return 1;
 		if ((dirty_chardata_d = (unsigned char *)malloc(DIRTY_CHARDATA_SIZE)) == 0) return 1;
 		if ((dirty_chardata_e = (unsigned char *)malloc(DIRTY_CHARDATA_SIZE)) == 0) return 1;
 		if ((dirty_chardata_f = (unsigned char *)malloc(DIRTY_CHARDATA_SIZE)) == 0) return 1;
 	
-	    memset(dirty_videoram_b,1,videoram_size);
-	    memset(dirty_videoram_d,1,videoram_size);
-	    memset(dirty_videoram_e,1,videoram_size);
-	    memset(dirty_videoram_f,1,videoram_size);
+	    memset(dirty_videoram_b,1,videoram_size[0]);
+	    memset(dirty_videoram_d,1,videoram_size[0]);
+	    memset(dirty_videoram_e,1,videoram_size[0]);
+	    memset(dirty_videoram_f,1,videoram_size[0]);
 	    memset(dirty_chardata_b,1,DIRTY_CHARDATA_SIZE);
 	    memset(dirty_chardata_d,1,DIRTY_CHARDATA_SIZE);
 	    memset(dirty_chardata_e,1,DIRTY_CHARDATA_SIZE);
@@ -380,10 +380,10 @@ public class stactics
 	
 	    if (old_palette_select != palette_select)
 	    {
-	        memset(dirty_videoram_b,1,videoram_size);
-	        memset(dirty_videoram_d,1,videoram_size);
-	        memset(dirty_videoram_e,1,videoram_size);
-	        memset(dirty_videoram_f,1,videoram_size);
+	        memset(dirty_videoram_b,1,videoram_size[0]);
+	        memset(dirty_videoram_d,1,videoram_size[0]);
+	        memset(dirty_videoram_e,1,videoram_size[0]);
+	        memset(dirty_videoram_f,1,videoram_size[0]);
 	    }
 	    return;
 	} };

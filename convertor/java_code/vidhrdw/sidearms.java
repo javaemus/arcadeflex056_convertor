@@ -178,7 +178,7 @@ public class sidearms
 	
 	
 		/* draw the frontmost playfield. They are characters, but draw them as sprites */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			sx = offs % 64;
 			sy = offs / 64;
@@ -190,7 +190,7 @@ public class sidearms
 			}
 	
 			drawgfx(bitmap,Machine->gfx[0],
-					videoram[offs] + 4 * (colorram[offs] & 0xc0),
+					videoram.read(offs)+ 4 * (colorram[offs] & 0xc0),
 					colorram[offs] & 0x3f,
 					flipscreen,flipscreen,
 					8*sx,8*sy,

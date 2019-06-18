@@ -110,12 +110,12 @@ public class qix
 			/* copy the data forwards or backwards, based on the cocktail flip */
 			if (qix_cocktail_flip == 0)
 			{
-				src = &videoram[offset];
+				src = &videoram.read(offset);
 				memcpy(dst, src, count);
 			}
 			else
 			{
-				src = &videoram[offset ^ 0xffff];
+				src = &videoram.read(offset ^ 0xffff);
 				while (count--)
 					*dst++ = *src--;
 			}
@@ -182,7 +182,7 @@ public class qix
 	{
 		/* add in the upper bit of the address latch */
 		offset += (qix_videoaddress[0] & 0x80) << 8;
-		return videoram[offset];
+		return videoram.read(offset);
 	} };
 	
 	
@@ -192,7 +192,7 @@ public class qix
 		offset += (qix_videoaddress[0] & 0x80) << 8;
 	
 		/* blend the data */
-		videoram[offset] = (videoram[offset] & ~vram_mask) | (data & vram_mask);
+		videoram.write(offset,(videoram[offset] & ~vram_mask) | (data & vram_mask));
 	} };
 	
 	
@@ -216,7 +216,7 @@ public class qix
 	{
 		/* compute the value at the address latch */
 		offset = (qix_videoaddress[0] << 8) | qix_videoaddress[1];
-		return videoram[offset];
+		return videoram.read(offset);
 	} };
 	
 	
@@ -227,7 +227,7 @@ public class qix
 		offset = (qix_videoaddress[0] << 8) | qix_videoaddress[1];
 	
 		/* blend the data */
-		videoram[offset] = (videoram[offset] & ~vram_mask) | (data & vram_mask);
+		videoram.write(offset,(videoram[offset] & ~vram_mask) | (data & vram_mask));
 	} };
 	
 	

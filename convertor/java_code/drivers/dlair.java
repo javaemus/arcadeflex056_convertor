@@ -55,7 +55,7 @@ public class dlair
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 2;offs >= 0;offs-=2)
+		for (offs = videoram_size[0] - 2;offs >= 0;offs-=2)
 		{
 			if (dirtybuffer[offs] || dirtybuffer[offs+1])
 			{
@@ -69,7 +69,7 @@ public class dlair
 				sy = (offs/2) / 32;
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram[offs+1],
+						videoram.read(offs+1),
 						0,
 						0,0,
 						8*sx,16*sy,

@@ -53,7 +53,7 @@ public class copsnrob
 	
 	    /* redrawing the entire display is faster in this case */
 	
-	    for (offs = videoram_size;offs >= 0;offs--)
+	    for (offs = videoram_size[0];offs >= 0;offs--)
 	    {
 			int sx,sy;
 	
@@ -61,7 +61,7 @@ public class copsnrob
 			sy = offs / 32;
 	
 			drawgfx(bitmap,Machine->gfx[0],
-					videoram[offs] & 0x3f,0,
+					videoram.read(offs)& 0x3f,0,
 					0,0,
 					8*sx,8*sy,
 					&Machine->visible_area,TRANSPARENCY_NONE,0);

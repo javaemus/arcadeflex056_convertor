@@ -130,27 +130,27 @@ public class mcr12
 	
 	public static WriteHandlerPtr mcr1_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-		if (videoram[offset] != data)
+		if (videoram.read(offset)!= data)
 		{
 			dirtybuffer[offset] = 1;
-			videoram[offset] = data;
+			videoram.write(offset,data);
 		}
 	} };
 	
 	
 	public static ReadHandlerPtr mcr2_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
-		return videoram[offset];
+		return videoram.read(offset);
 	} };
 	
 	public static ReadHandlerPtr twotigra_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
-		return videoram[((offset & 0x400) >> 10) | ((offset & 0x3ff) << 1)];
+		return videoram.read(((offset & 0x400) >> 10) | ((offset & 0x3ff) << 1));
 	} };
 	
 	public static WriteHandlerPtr mcr2_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-		videoram[offset] = data;
+		videoram.write(offset,data);
 		if ((offset & 0x780) != 0x780)
 			dirtybuffer[offset & ~1] = 1;
 		else
@@ -164,7 +164,7 @@ public class mcr12
 	{
 		offset = ((offset & 0x400) >> 10) | ((offset & 0x3ff) << 1);
 	
-		videoram[offset] = data;
+		videoram.write(offset,data);
 		if ((offset & 0x780) != (0x780))
 			dirtybuffer[offset & ~1] = 1;
 		else
@@ -199,7 +199,7 @@ public class mcr12
 				int sx = 16 * mx;
 				int sy = 16 * my;
 	
-				int code = videoram[offs];
+				int code = videoram.read(offs);
 	
 				/* adjust for cocktail mode */
 				if (mcr_cocktail_flip)
@@ -239,8 +239,8 @@ public class mcr12
 				int sx = 16 * mx;
 				int sy = 16 * my;
 	
-				int attr = videoram[offs + 1];
-				int code = videoram[offs] + 256 * (attr & 0x01);
+				int attr = videoram.read(offs + 1);
+				int code = videoram.read(offs)+ 256 * (attr & 0x01);
 				int hflip = attr & 0x02;
 				int vflip = attr & 0x04;
 				int color = (attr & 0x18) >> 3;
@@ -425,7 +425,7 @@ public class mcr12
 	{
 		/* mark everything dirty on a full refresh or cocktail flip change */
 		if (full_refresh || last_cocktail_flip != mcr_cocktail_flip)
-			memset(dirtybuffer, 1, videoram_size);
+			memset(dirtybuffer, 1, videoram_size[0]);
 		last_cocktail_flip = mcr_cocktail_flip;
 	
 		/* update the sprites */
@@ -440,7 +440,7 @@ public class mcr12
 	{
 		/* mark everything dirty on a full refresh or cocktail flip change */
 		if (full_refresh || last_cocktail_flip != mcr_cocktail_flip)
-			memset(dirtybuffer, 1, videoram_size);
+			memset(dirtybuffer, 1, videoram_size[0]);
 		last_cocktail_flip = mcr_cocktail_flip;
 	
 		/* update the sprites */
@@ -465,7 +465,7 @@ public class mcr12
 	{
 		/* mark everything dirty on a cocktail flip change */
 		if (last_cocktail_flip != mcr_cocktail_flip)
-			memset(dirtybuffer, 1, videoram_size);
+			memset(dirtybuffer, 1, videoram_size[0]);
 		last_cocktail_flip = mcr_cocktail_flip;
 	
 		/* redraw the background */

@@ -148,7 +148,7 @@ public class gladiatr
 	
 				int attributes = colorram[i];
 				int color = 0x1F - (attributes>>3);
-				int tile_number = videoram[i] + 256*(attributes&0x7) + tile_bank_select;
+				int tile_number = videoram.read(i)+ 256*(attributes&0x7) + tile_bank_select;
 	
 				drawgfx(tmpbitmap,Machine->gfx[1+(tile_number/512)],
 					tile_number%512,

@@ -52,9 +52,9 @@ public class jailbrek
 	
 	public static VhStartPtr jailbrek_vh_start = new VhStartPtr() { public int handler() 
 	{
-		if ( ( dirtybuffer = malloc( videoram_size ) ) == 0 )
+		if ( ( dirtybuffer = malloc( videoram_size[0] ) ) == 0 )
 			return 1;
-		memset( dirtybuffer, 1, videoram_size );
+		memset( dirtybuffer, 1, videoram_size[0] );
 	
 		if ( ( tmpbitmap = bitmap_alloc(Machine->drv->screen_width * 2,Machine->drv->screen_height) ) == 0 ) {
 			free(dirtybuffer);
@@ -107,9 +107,9 @@ public class jailbrek
 		int i;
 	
 		if ( full_refresh )
-			memset( dirtybuffer, 1, videoram_size );
+			memset( dirtybuffer, 1, videoram_size[0] );
 	
-		for ( i = 0; i < videoram_size; i++ )
+		for ( i = 0; i < videoram_size[0]; i++ )
 		{
 			if ( dirtybuffer[i] ) {
 				int sx,sy, code;
@@ -119,7 +119,7 @@ public class jailbrek
 				sx = ( i % 64 );
 				sy = ( i / 64 );
 	
-				code = videoram[i] + ( ( colorram[i] & 0xc0 ) << 2 );
+				code = videoram.read(i)+ ( ( colorram[i] & 0xc0 ) << 2 );
 	
 				if (flip_screen)
 				{

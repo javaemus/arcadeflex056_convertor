@@ -110,14 +110,14 @@ public class hanaawas
 	
 		if (full_refresh)
 		{
-			memset(dirtybuffer, 1, videoram_size);
+			memset(dirtybuffer, 1, videoram_size[0]);
 		}
 	
 	
 	
 		offs_adj = flip_screen ? 1 : -1;
 	
-		for (offs = videoram_size - 1; offs >= 0; offs--)
+		for (offs = videoram_size[0] - 1; offs >= 0; offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -138,7 +138,7 @@ public class hanaawas
 				offs2 = (offs + offs_adj) & 0x03ff;
 	
 				col  = colorram[offs] & 0x1f;
-				code = videoram[offs] + ((colorram[offs2] & 0x20) << 3);
+				code = videoram.read(offs)+ ((colorram[offs2] & 0x20) << 3);
 				bank = (colorram[offs2] & 0x40) >> 6;
 	
 				drawgfx(bitmap,Machine->gfx[bank],

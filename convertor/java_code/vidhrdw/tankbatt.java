@@ -86,7 +86,7 @@ public class tankbatt
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 1; offs >= 0; offs--)
+		for (offs = videoram_size[0] - 1; offs >= 0; offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -99,8 +99,8 @@ public class tankbatt
 				sy = offs / 32;
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram[offs],
-						(videoram[offs]) >> 2,
+						videoram.read(offs),
+						(videoram.read(offs)) >> 2,
 						0,0,
 						8*sx,8*sy,
 						&Machine->visible_area,TRANSPARENCY_NONE,0);

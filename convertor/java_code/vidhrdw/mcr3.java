@@ -94,10 +94,10 @@ public class mcr3
 	
 	public static WriteHandlerPtr mcr3_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-		if (videoram[offset] != data)
+		if (videoram.read(offset)!= data)
 		{
 			dirtybuffer[offset & ~1] = 1;
-			videoram[offset] = data;
+			videoram.write(offset,data);
 		}
 	} };
 	
@@ -120,9 +120,9 @@ public class mcr3
 			{
 				int mx = (offs / 2) % 32;
 				int my = (offs / 2) / 32;
-				int attr = videoram[offs + 1];
+				int attr = videoram.read(offs + 1);
 				int color = ((attr & 0x30) >> 4) ^ color_xor;
-				int code = videoram[offs] | ((attr & 0x03) << 8) | ((attr & 0x40) << 4);
+				int code = videoram.read(offs)| ((attr & 0x03) << 8) | ((attr & 0x40) << 4);
 	
 				if (mcr_cocktail_flip == 0)
 					drawgfx(bitmap, Machine->gfx[0], code, color, attr & 0x04, attr & 0x08,
@@ -209,7 +209,7 @@ public class mcr3
 	{
 		/* mark everything dirty on a cocktail flip change */
 		if (last_cocktail_flip != mcr_cocktail_flip)
-			memset(dirtybuffer, 1, videoram_size);
+			memset(dirtybuffer, 1, videoram_size[0]);
 		last_cocktail_flip = mcr_cocktail_flip;
 	
 		/* redraw the background */
@@ -234,7 +234,7 @@ public class mcr3
 	{
 		/* mark everything dirty on a cocktail flip change */
 		if (last_cocktail_flip != mcr_cocktail_flip)
-			memset(dirtybuffer, 1, videoram_size);
+			memset(dirtybuffer, 1, videoram_size[0]);
 		last_cocktail_flip = mcr_cocktail_flip;
 	
 		/* redraw the background */
@@ -283,10 +283,10 @@ public class mcr3
 	public static VhStartPtr spyhunt_vh_start = new VhStartPtr() { public int handler() 
 	{
 		/* allocate our own dirty buffer */
-		dirtybuffer = malloc(videoram_size);
+		dirtybuffer = malloc(videoram_size[0]);
 		if (dirtybuffer == 0)
 			return 1;
-		memset(dirtybuffer, 1, videoram_size);
+		memset(dirtybuffer, 1, videoram_size[0]);
 	
 		/* allocate a bitmap for the background */
 		spyhunt_backbitmap = bitmap_alloc(64*64, 32*32);
@@ -331,11 +331,11 @@ public class mcr3
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 1; offs >= 0; offs--)
+		for (offs = videoram_size[0] - 1; offs >= 0; offs--)
 		{
 			if (dirtybuffer[offs])
 			{
-				int code = videoram[offs];
+				int code = videoram.read(offs);
 				int vflip = code & 0x40;
 				int mx = (offs >> 4) & 0x3f;
 				int my = (offs & 0x0f) | ((offs >> 6) & 0x10);
@@ -458,7 +458,7 @@ public class mcr3
 		int offs;
 	
 		if (full_refresh)
-			memset(dirtybuffer, 1 ,videoram_size);
+			memset(dirtybuffer, 1 ,videoram_size[0]);
 	
 		/* Screen clip, because our backdrop is a different resolution than the game */
 		sclip.min_x = DOTRON_X_START;
@@ -468,12 +468,12 @@ public class mcr3
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 2; offs >= 0; offs -= 2)
+		for (offs = videoram_size[0] - 2; offs >= 0; offs -= 2)
 		{
 			if (dirtybuffer[offs])
 			{
-				int attr = videoram[offs+1];
-				int code = videoram[offs] + 256 * (attr & 0x03);
+				int attr = videoram.read(offs+1);
+				int code = videoram.read(offs)+ 256 * (attr & 0x03);
 				int color = (attr & 0x30) >> 4;
 				int mx = ((offs / 2) % 32) * 16;
 				int my = ((offs / 2) / 32) * 16;

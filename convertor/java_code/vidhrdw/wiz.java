@@ -106,7 +106,7 @@ public class wiz
 			int i;
 	
 	
-			for (i = offset / 2;i < videoram_size;i += 32)
+			for (i = offset / 2;i < videoram_size[0];i += 32)
 			{
 				dirtybuffer[i] = 1;
 			}
@@ -122,7 +122,7 @@ public class wiz
 			palbank[offset] = data & 1;
 			palette_bank = palbank[0] + 2 * palbank[1];
 	
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 		}
 	} };
 	
@@ -136,7 +136,7 @@ public class wiz
 		if (char_bank[offset] != (data & 1))
 		{
 			char_bank[offset] = data & 1;
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 		}
 	} };
 	
@@ -146,7 +146,7 @@ public class wiz
 	    {
 			flipx = data;
 	
-			memset(dirtybuffer, 1, videoram_size);
+			memset(dirtybuffer, 1, videoram_size[0]);
 	    }
 	} };
 	
@@ -157,7 +157,7 @@ public class wiz
 	    {
 			flipy = data;
 	
-			memset(dirtybuffer, 1, videoram_size);
+			memset(dirtybuffer, 1, videoram_size[0]);
 	    }
 	} };
 	
@@ -181,7 +181,7 @@ public class wiz
 			}
 			else
 			{
-				col = (wiz_attributesram[2 * (offs % 32) + 1] & 0x04) + (videoram[offs] & 3);
+				col = (wiz_attributesram[2 * (offs % 32) + 1] & 0x04) + (videoram.read(offs)& 3);
 			}
 	
 			scroll = (8*sy + 256 - wiz_attributesram[2 * sx]) % 256;
@@ -193,7 +193,7 @@ public class wiz
 	
 	
 			drawgfx(bitmap,Machine->gfx[bank],
-				videoram[offs],
+				videoram.read(offs),
 				col + 8 * palette_bank,
 				flipx,flipy,
 				8*sx,scroll,

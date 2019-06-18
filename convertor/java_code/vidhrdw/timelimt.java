@@ -88,9 +88,9 @@ public class timelimt
 	
 	public static WriteHandlerPtr timelimt_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-		if (videoram[offset] != data)
+		if (videoram.read(offset)!= data)
 		{
-			videoram[offset] = data;
+			videoram.write(offset,data);
 		}
 	} };
 	
@@ -206,7 +206,7 @@ public class timelimt
 			sx = offs % 32;
 			sy = offs / 32;
 	
-			code = videoram[offs];
+			code = videoram.read(offs);
 	
 			drawgfx( bitmap, Machine->gfx[0],
 					 code,

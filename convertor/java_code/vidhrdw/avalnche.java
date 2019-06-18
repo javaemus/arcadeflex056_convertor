@@ -36,7 +36,7 @@ public class avalnche
 	
 	public static WriteHandlerPtr avalnche_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-		videoram[offset] = data;
+		videoram.write(offset,data);
 	
 		if (offset >= 0x200)
 		{
@@ -57,8 +57,8 @@ public class avalnche
 			int offs;
 	
 	
-			for (offs = 0;offs < videoram_size; offs++)
-				avalnche_videoram_w(offs,videoram[offs]);
+			for (offs = 0;offs < videoram_size[0]; offs++)
+				avalnche_videoram_w(offs,videoram.read(offs));
 		}
 	
 		/* copy the character mapped graphics */

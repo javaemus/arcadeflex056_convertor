@@ -19,8 +19,8 @@ public class ninjakid
 	*******************************************************************************/
 	
 	static void get_fg_tile_info(int tile_index){
-		unsigned int tile_number = videoram[tile_index] & 0xFF;
-		unsigned char attr  = videoram[tile_index+0x400];
+		unsigned int tile_number = videoram.read(tile_index)& 0xFF;
+		unsigned char attr  = videoram.read(tile_index+0x400);
 		tile_number += (attr & 0x20) << 3; /* bank */
 		SET_TILE_INFO(
 				0,
@@ -30,8 +30,8 @@ public class ninjakid
 	}
 	
 	static void get_bg_tile_info(int tile_index){
-		unsigned int tile_number = videoram[tile_index+0x800] & 0xFF;
-		unsigned char attr  = videoram[tile_index+0xc00];
+		unsigned int tile_number = videoram.read(tile_index+0x800)& 0xFF;
+		unsigned char attr  = videoram.read(tile_index+0xc00);
 		tile_number += (attr & 0xC0) << 2; /* bank */
 		SET_TILE_INFO(
 				1,
@@ -41,7 +41,7 @@ public class ninjakid
 	}
 	
 	public static WriteHandlerPtr ninjakid_fg_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data){
-		videoram[offset] = data;
+		videoram.write(offset,data);
 		tilemap_mark_tile_dirty(fg_tilemap,offset&0x3ff);
 	} };
 	
@@ -51,7 +51,7 @@ public class ninjakid
 		int x = (offset + (ninjakun_xscroll >> 3) ) & 0x1f;
 		int offs = x+y+(offset & 0x400);
 	
-		videoram[0x800+offs] = data;
+		videoram.write(0x800+offs,data);
 		tilemap_mark_tile_dirty(bg_tilemap,x+y);
 	} };
 	
@@ -61,7 +61,7 @@ public class ninjakid
 		int x = (offset + (ninjakun_xscroll >> 3) ) & 0x1f;
 		int offs = x+y+(offset & 0x400);
 	
-		return videoram[0x800+offs];
+		return videoram.read(0x800+offs);
 	} };
 	
 	/******************************************************************************/
@@ -119,13 +119,13 @@ public class ninjakid
 			if ((new_row == ((old_row - 1) & 0xff)) || ((!old_row) && (new_row == 0x1f)))
 			{
 				for( i=0x400-0x21; i>=0; i-- ){
-					ninjakid_bg_videoram_w( i+0x20, videoram[0x800+i] );
+					ninjakid_bg_videoram_w( i+0x20, videoram.read(0x800+i));
 				}
 			}
 			else if ((new_row == ((old_row + 1) & 0xff)) || ((old_row == 0x1f) && (!new_row)))
 			{
 				for( i=0x20; i<0x400; i++ ){
-					ninjakid_bg_videoram_w( i-0x20, videoram[0x800+i] );
+					ninjakid_bg_videoram_w( i-0x20, videoram.read(0x800+i));
 				}
 			}
 	
@@ -278,8 +278,8 @@ public class ninjakid
 			for (x=0; x<32; x++)
 			{
 				offs = y*32+x;
-				chr = videoram[offs];
-				col = videoram[offs + 0x400];
+				chr = videoram.read(offs);
+				col = videoram.read(offs + 0x400);
 				chr +=  (col & 0x20) << 3;
 	
 				if ((col & 0x10) == 0)

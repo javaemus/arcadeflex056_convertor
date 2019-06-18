@@ -47,7 +47,7 @@ public class minivadr
 		int color;
 	
 	
-		videoram[offset] = data;
+		videoram.write(offset,data);
 	
 		x = (offset % 32) * 8;
 		y = (offset / 32);
@@ -75,8 +75,8 @@ public class minivadr
 	
 			/* redraw bitmap */
 	
-			for (offs = 0; offs < videoram_size; offs++)
-				minivadr_videoram_w(offs,videoram[offs]);
+			for (offs = 0; offs < videoram_size[0]; offs++)
+				minivadr_videoram_w(offs,videoram.read(offs));
 		}
 	} };
 }

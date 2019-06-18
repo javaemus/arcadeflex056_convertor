@@ -138,7 +138,7 @@ public class gottlieb
 		hflip = data & 2;
 		vflip = data & 4;
 		if ((data & 6) != (last & 6))
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 	
 		/* in Q*Bert Qubes only, bit 4 controls the sprite bank */
 		spritebank = (data & 0x10) >> 4;
@@ -198,9 +198,9 @@ public class gottlieb
 	
 	    /* for every character in the Video RAM, check if it has been modified */
 	    /* since last time and update it accordingly. */
-	    for (offs = videoram_size - 1;offs >= 0;offs--)
+	    for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
-			if (dirtybuffer[offs] || dirtycharacter[videoram[offs]])
+			if (dirtybuffer[offs] || dirtycharacter[videoram.read(offs)])
 			{
 				int sx,sy;
 	
@@ -213,7 +213,7 @@ public class gottlieb
 				if (vflip) sy = 29 - sy;
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram[offs],
+						videoram.read(offs),
 						0,
 						hflip,vflip,
 						8*sx,8*sy,

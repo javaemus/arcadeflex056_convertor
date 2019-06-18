@@ -239,7 +239,7 @@ public class segar
 		/* since last time and update it accordingly. */
 		for (offs = videoram_size - 1;offs >= 0;offs--)
 		{
-			if ((sv.char_refresh) && (sv.dirtychar[videoram[offs]]))
+			if ((sv.char_refresh) && (sv.dirtychar[videoram.read(offs)]))
 				dirtybuffer[offs]=1;
 	
 			/* Redraw every character if our palette or scene changed */
@@ -256,7 +256,7 @@ public class segar
 					sy = 27*8 - sy;
 				}
 	
-				charcode = videoram[offs];
+				charcode = videoram.read(offs);
 	
 				/* decode modified characters */
 				if (sv.dirtychar[charcode] == 1)
@@ -611,9 +611,9 @@ public class segar
 		{
 			/* for every character in the Video RAM, check if it has been modified */
 			/* since last time and update it accordingly. */
-			for (offs = videoram_size - 1;offs >= 0;offs--)
+			for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 			{
-				if ((sv.char_refresh) && (sv.dirtychar[videoram[offs]]))
+				if ((sv.char_refresh) && (sv.dirtychar[videoram.read(offs)]))
 					dirtybuffer[offs]=1;
 	
 				/* Redraw every background character if our palette or scene changed */
@@ -787,9 +787,9 @@ public class segar
 		{
 			/* for every character in the Video RAM, check if it has been modified */
 			/* since last time and update it accordingly. */
-			for (offs = videoram_size - 1;offs >= 0;offs--)
+			for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 			{
-				if ((sv.char_refresh) && (sv.dirtychar[videoram[offs]]))
+				if ((sv.char_refresh) && (sv.dirtychar[videoram.read(offs)]))
 					dirtybuffer[offs]=1;
 	
 				/* Redraw every background character if our palette or scene changed */

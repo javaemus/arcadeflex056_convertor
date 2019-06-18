@@ -26,7 +26,7 @@ public class shisen
 		if (gfxbank != ((data & 0x38) >> 3))
 		{
 			gfxbank = (data & 0x38) >> 3;
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 		}
 	
 		/* bits 6-7 unknown */
@@ -60,7 +60,7 @@ public class shisen
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size-2;offs >= 0;offs -= 2)
+		for (offs = videoram_size[0]-2;offs >= 0;offs -= 2)
 		{
 			if (dirtybuffer[offs] || dirtybuffer[offs+1])
 			{
@@ -73,8 +73,8 @@ public class shisen
 				sy = (offs/2) / 64;
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram[offs] + ((videoram[offs+1] & 0x0f) << 8) + (gfxbank << 12),
-						(videoram[offs+1] & 0xf0) >> 4,
+						videoram.read(offs)+ ((videoram.read(offs+1)& 0x0f) << 8) + (gfxbank << 12),
+						(videoram.read(offs+1)& 0xf0) >> 4,
 						0,0,
 						8*sx,8*sy,
 						&Machine->visible_area,TRANSPARENCY_NONE,0);

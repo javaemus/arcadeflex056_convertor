@@ -66,7 +66,7 @@ public class dynduke
 	
 	public static WriteHandlerPtr dynduke_text_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-		videoram[offset]=data;
+		videoram.write(offset,data);
 		tilemap_mark_tile_dirty(tx_layer,offset/2);
 	} };
 	
@@ -100,8 +100,8 @@ public class dynduke
 	
 	static void get_tx_tile_info(int tile_index)
 	{
-		int tile=videoram[2*tile_index]+((videoram[2*tile_index+1]&0xc0)<<2);
-		int color=videoram[2*tile_index+1]&0xf;
+		int tile=videoram.read(2*tile_index)+((videoram.read(2*tile_index+1)&0xc0)<<2);
+		int color=videoram.read(2*tile_index+1)&0xf;
 	
 		SET_TILE_INFO(
 				0,

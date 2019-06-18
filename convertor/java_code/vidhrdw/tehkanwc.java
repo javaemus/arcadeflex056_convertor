@@ -192,7 +192,7 @@ public class tehkanwc
 	
 	
 		/* draw the foreground chars which don't have priority over sprites */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			int sx,sy;
 	
@@ -204,7 +204,7 @@ public class tehkanwc
 	
 			if ((colorram[offs] & 0x20))
 				drawgfx(bitmap,Machine->gfx[0],
-						videoram[offs] + ((colorram[offs] & 0x10) << 4),
+						videoram.read(offs)+ ((colorram[offs] & 0x10) << 4),
 						colorram[offs] & 0x0f,
 						colorram[offs] & 0x40, colorram[offs] & 0x80,
 						sx*8,sy*8,
@@ -225,7 +225,7 @@ public class tehkanwc
 	
 	
 		/* draw the foreground chars which have priority over sprites */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			int sx,sy;
 	
@@ -237,7 +237,7 @@ public class tehkanwc
 	
 			if (!(colorram[offs] & 0x20))
 				drawgfx(bitmap,Machine->gfx[0],
-						videoram[offs] + ((colorram[offs] & 0x10) << 4),
+						videoram.read(offs)+ ((colorram[offs] & 0x10) << 4),
 						colorram[offs] & 0x0f,
 						colorram[offs] & 0x40, colorram[offs] & 0x80,
 						sx*8,sy*8,

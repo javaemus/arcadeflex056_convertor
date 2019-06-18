@@ -26,8 +26,8 @@ public class mrflea
 	public static WriteHandlerPtr mrflea_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		int bank = offset/0x400;
 		offset &= 0x3ff;
-		videoram[offset] = data;
-		videoram[offset+0x400] = bank;
+		videoram.write(offset,data);
+		videoram.write(offset+0x400,bank);
 		/*	the address range that tile data is written to sets one bit of
 		**	the bank select.  The remaining bits are from a video register.
 		*/

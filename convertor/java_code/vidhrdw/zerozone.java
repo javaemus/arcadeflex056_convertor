@@ -38,7 +38,7 @@ public class zerozone
 	
 	public static VhStartPtr zerozone_vh_start = new VhStartPtr() { public int handler() 
 	{
-		video_dirty = malloc(videoram_size/2);
+		video_dirty = malloc(videoram_size[0]/2);
 	
 		if (video_dirty == 0)
 		{
@@ -46,7 +46,7 @@ public class zerozone
 			return 1;
 		}
 	
-		memset(video_dirty,1,videoram_size/2);
+		memset(video_dirty,1,videoram_size[0]/2);
 	
 		return 0;
 	} };
@@ -56,9 +56,9 @@ public class zerozone
 		int offs;
 	
 		if (full_refresh)
-			memset(video_dirty,1,videoram_size/2);
+			memset(video_dirty,1,videoram_size[0]/2);
 	
-		for (offs = 0;offs < videoram_size/2;offs++)
+		for (offs = 0;offs < videoram_size[0]/2;offs++)
 		{
 			if (video_dirty[offs])
 			{

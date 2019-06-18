@@ -41,11 +41,11 @@ public class jack
 	
 	
 		if (full_refresh)
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -64,7 +64,7 @@ public class jack
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram[offs] + ((colorram[offs] & 0x18) << 5),
+						videoram.read(offs)+ ((colorram[offs] & 0x18) << 5),
 						colorram[offs] & 0x07,
 						flip_screen,flip_screen,
 						8*sx,8*sy,

@@ -400,7 +400,7 @@ public class cosmic
 	
 	public static ReadHandlerPtr cosmicg_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
-		return (videoram[offset] << 8) | videoram[offset+1];
+		return (videoram.read(offset)<< 8) | videoram.read(offset+1);
 	} };
 	
 	

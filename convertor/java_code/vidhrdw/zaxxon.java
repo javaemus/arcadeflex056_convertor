@@ -461,7 +461,7 @@ public class zaxxon
 	
 	
 		/* draw the frontmost playfield. They are characters, but draw them as sprites */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			int sx,sy;
 			int color;
@@ -483,7 +483,7 @@ public class zaxxon
 			}
 	
 			drawgfx(bitmap,Machine->gfx[0],
-					videoram[offs],
+					videoram.read(offs),
 					color,
 					flip_screen,flip_screen,
 					8*sx,8*sy,
@@ -515,7 +515,7 @@ public class zaxxon
 	
 	
 		/* draw the frontmost playfield. They are characters, but draw them as sprites */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			int sx,sy;
 			int code,color;
@@ -524,7 +524,7 @@ public class zaxxon
 			sx = offs % 32;
 			sy = offs / 32;
 	
-			code = videoram[offs];
+			code = videoram.read(offs);
 			color =	(color_codes[code] & 0x0f) + 16 * (*zaxxon_char_color_bank & 1);
 	
 			drawgfx(bitmap,Machine->gfx[0],
@@ -556,7 +556,7 @@ public class zaxxon
 		else fillbitmap(bitmap,Machine->pens[0],&Machine->visible_area);
 	
 		/* draw the frontmost playfield. They are characters, but draw them as sprites */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			int sx,sy;
 			int code,color;
@@ -565,7 +565,7 @@ public class zaxxon
 			sx = offs % 32;
 			sy = offs / 32;
 	
-			code = videoram[offs];
+			code = videoram.read(offs);
 			color =	(color_codes[code] & 0x0f) + 16 * (*zaxxon_char_color_bank & 1);
 	
 			drawgfx(bitmap,Machine->gfx[0],

@@ -186,7 +186,48 @@ public class convertMame {
                 }
 
                 case 'v': {
+                    if (type == WRITE_HANDLER8 || type == VH_SCREENREFRESH || type == VH_START || type == READ_HANDLER8) {
+                        if (i3 == -1) {
+                            break;//if is not inside a memwrite function break
+                        }
+                        i = Convertor.inpos;
+                        if (sUtil.getToken("videoram_size")) {
+                            sUtil.putString((new StringBuilder()).append("videoram_size[0]").toString());
+                            continue;
+                        }
+                    }
                     int j = Convertor.inpos;
+                    if (sUtil.getToken("videoram")) {
+                        if (sUtil.parseChar() != '[') {
+                            Convertor.inpos = j;
+                            break;
+                        }
+                        Convertor.token[0] = sUtil.parseToken(']');
+                        sUtil.skipSpace();
+                        if (sUtil.parseChar() != ']') {
+                            Convertor.inpos = j;
+                            break;
+                        } else {
+                            sUtil.skipSpace();
+                            if (sUtil.parseChar() == '=') {
+                                int g = Convertor.inpos;
+                                if (sUtil.parseChar() == '=') {
+                                    Convertor.inpos = j;
+                                    break;
+                                }
+                                Convertor.inpos = g;
+                                sUtil.skipSpace();
+                                Convertor.token[1] = sUtil.parseToken(';');
+                                sUtil.putString((new StringBuilder()).append("videoram.write(").append(Convertor.token[0]).append(",").append(Convertor.token[1]).append(");").toString());
+                                Convertor.inpos += 1;
+                                break;
+                            }
+                            sUtil.putString((new StringBuilder()).append("videoram.read(").append(Convertor.token[0]).append(")").toString());
+                            Convertor.inpos -= 1;
+                            continue;
+                        }
+                    }
+                    Convertor.inpos = j;
                     if (!sUtil.getToken("void")) {
                         break;
                     }

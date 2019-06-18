@@ -111,7 +111,7 @@ public class sonson
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -124,7 +124,7 @@ public class sonson
 				sy = offs / 32;
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram[offs] + 256 * (colorram[offs] & 3),
+						videoram.read(offs)+ 256 * (colorram[offs] & 3),
 						colorram[offs] >> 2,
 						0,0,
 						8*sx,8*sy,

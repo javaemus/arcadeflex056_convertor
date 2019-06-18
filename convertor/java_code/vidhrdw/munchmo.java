@@ -93,15 +93,15 @@ public class munchmo
 	
 	public static ReadHandlerPtr mnchmobl_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
-		return videoram[offset];
+		return videoram.read(offset);
 	} };
 	
 	public static WriteHandlerPtr mnchmobl_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		offset = offset&0xff; /* mirror the two banks? */
-		if( videoram[offset]!=data )
+		if( videoram.read(offset)!=data )
 		{
-			videoram[offset] = data;
+			videoram.write(offset,data);
 			dirtybuffer[offset] = 1;
 		}
 	} };
@@ -150,7 +150,7 @@ public class munchmo
 			{
 				int sy = (offs%16)*32;
 				int sx = (offs/16)*32;
-				int tile_number = videoram[offs];
+				int tile_number = videoram.read(offs);
 				int row,col;
 				dirtybuffer[offs] = 0;
 				for( row=0; row<4; row++ )

@@ -39,13 +39,13 @@ public class solomon
 			return 1;
 		}
 	
-		if ((dirtybuffer2 = malloc(videoram_size)) == 0)
+		if ((dirtybuffer2 = malloc(videoram_size[0])) == 0)
 		{
 			bitmap_free(tmpbitmap2);
 			generic_vh_stop();
 			return 1;
 		}
-		memset(dirtybuffer2,1,videoram_size);
+		memset(dirtybuffer2,1,videoram_size[0]);
 	
 		state_save_register_int ("video", 0, "flipscreen", &flipscreen);
 		state_save_register_func_postload (solomon_dirty_all);
@@ -95,8 +95,8 @@ public class solomon
 		if (flipscreen != (data & 1))
 		{
 			flipscreen = data & 1;
-			memset(dirtybuffer,1,videoram_size);
-			memset(dirtybuffer2,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
+			memset(dirtybuffer2,1,videoram_size[0]);
 		}
 	} };
 	
@@ -114,7 +114,7 @@ public class solomon
 		int offs;
 	
 	
-		for (offs = 0;offs < videoram_size;offs++)
+		for (offs = 0;offs < videoram_size[0];offs++)
 		{
 			if (dirtybuffer2[offs])
 			{
@@ -147,7 +147,7 @@ public class solomon
 		copybitmap(bitmap,tmpbitmap2,0,0,0,0,&Machine->visible_area,TRANSPARENCY_NONE,0);
 	
 		/* draw the frontmost playfield */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 	//		if (dirtybuffer[offs])
 			{
@@ -164,7 +164,7 @@ public class solomon
 				}
 	
 				drawgfx(bitmap,Machine->gfx[0],
-						videoram[offs] + 256 * (colorram[offs] & 0x07),
+						videoram.read(offs)+ 256 * (colorram[offs] & 0x07),
 						(colorram[offs] & 0x70) >> 4,
 						flipscreen,flipscreen,
 						8*sx,8*sy,

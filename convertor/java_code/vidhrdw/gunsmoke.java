@@ -292,7 +292,7 @@ public class gunsmoke
 		if (chon)
 		{
 			/* draw the frontmost playfield. They are characters, but draw them as sprites */
-			for (offs = videoram_size - 1;offs >= 0;offs--)
+			for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 			{
 				sx = offs % 32;
 				sy = offs / 32;
@@ -303,7 +303,7 @@ public class gunsmoke
 				}
 	
 				drawgfx(bitmap,Machine->gfx[0],
-						videoram[offs] + ((colorram[offs] & 0xc0) << 2),
+						videoram.read(offs)+ ((colorram[offs] & 0xc0) << 2),
 						colorram[offs] & 0x1f,
 						!flip_screen,!flip_screen,
 						8*sx,8*sy,

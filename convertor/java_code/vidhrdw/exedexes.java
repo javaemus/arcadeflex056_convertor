@@ -230,13 +230,13 @@ public class exedexes
 		if (chon)
 		{
 			/* draw the frontmost playfield. They are characters, but draw them as sprites */
-			for (offs = videoram_size - 1;offs >= 0;offs--)
+			for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 			{
 				sx = offs % 32;
 				sy = offs / 32;
 	
 				drawgfx(bitmap,Machine->gfx[0],
-						videoram[offs] + 2 * (colorram[offs] & 0x80),
+						videoram.read(offs)+ 2 * (colorram[offs] & 0x80),
 						colorram[offs] & 0x3f,
 						0,0,
 						8*sx,8*sy,

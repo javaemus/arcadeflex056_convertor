@@ -382,7 +382,7 @@ public class _1943
 		if (chon)
 		{
 			/* draw the frontmost playfield. They are characters, but draw them as sprites */
-			for (offs = videoram_size - 1;offs >= 0;offs--)
+			for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 			{
 				sx = offs % 32;
 				sy = offs / 32;
@@ -393,7 +393,7 @@ public class _1943
 				}
 	
 				drawgfx(bitmap,Machine->gfx[0],
-						videoram[offs] + ((colorram[offs] & 0xe0) << 3),
+						videoram.read(offs)+ ((colorram[offs] & 0xe0) << 3),
 						colorram[offs] & 0x1f,
 						flipscreen,flipscreen,
 						8*sx,8*sy,

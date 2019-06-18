@@ -91,9 +91,9 @@ public class trackfld
 	***************************************************************************/
 	public static VhStartPtr trackfld_vh_start = new VhStartPtr() { public int handler() 
 	{
-		if ((dirtybuffer = malloc(videoram_size)) == 0)
+		if ((dirtybuffer = malloc(videoram_size[0])) == 0)
 			return 1;
-		memset(dirtybuffer,1,videoram_size);
+		memset(dirtybuffer,1,videoram_size[0]);
 	
 		/* TracknField has a virtual screen twice as large as the visible screen */
 		if ((tmpbitmap = bitmap_alloc(2 * Machine->drv->screen_width,Machine->drv->screen_height)) == 0)
@@ -134,13 +134,13 @@ public class trackfld
 	
 		if (full_refresh)
 		{
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 		}
 	
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -162,7 +162,7 @@ public class trackfld
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram[offs] + 4 * (colorram[offs] & 0xc0),
+						videoram.read(offs)+ 4 * (colorram[offs] & 0xc0),
 						colorram[offs] & 0x0f,
 						flipx,flipy,
 						8*sx,8*sy,

@@ -156,9 +156,9 @@ public class ccastles
 	
 			addr -= 0xc00;
 			if (ccastles_screen_addr[0] & 0x01)
-				return ((videoram[addr] & 0x0f) << 4);
+				return ((videoram.read(addr)& 0x0f) << 4);
 			else
-				return (videoram[addr] & 0xf0);
+				return (videoram.read(addr)& 0xf0);
 		}
 	
 		return 0;
@@ -182,12 +182,12 @@ public class ccastles
 			if (ccastles_screen_addr[0] & 0x01)
 			{
 				mode = (data >> 4) & 0x0f;
-				videoram[addr] = (videoram[addr] & 0xf0) | mode;
+				videoram.write(addr,(videoram[addr] & 0xf0) | mode);
 			}
 			else
 			{
 				mode = (data & 0xf0);
-				videoram[addr] = (videoram[addr] & 0x0f) | mode;
+				videoram.write(addr,(videoram[addr] & 0x0f) | mode);
 			}
 	
 			j = 2*addr;
@@ -195,14 +195,14 @@ public class ccastles
 			y = j/256;
 			if (flip_screen == 0)
 			{
-				plot_pixel(tmpbitmap, x  , y, Machine->pens[16 + ((videoram[addr] & 0xf0) >> 4)]);
-				plot_pixel(tmpbitmap, x+1, y, Machine->pens[16 +  (videoram[addr] & 0x0f)      ]);
+				plot_pixel(tmpbitmap, x  , y, Machine->pens[16 + ((videoram.read(addr)& 0xf0) >> 4)]);
+				plot_pixel(tmpbitmap, x+1, y, Machine->pens[16 +  (videoram.read(addr)& 0x0f)      ]);
 	
 				/* if bit 3 of the pixel is set, background has priority over sprites when */
 				/* the sprite has the priority bit set. We use a second bitmap to remember */
 				/* which pixels have priority. */
-				plot_pixel(maskbitmap, x  , y, videoram[addr] & 0x80);
-				plot_pixel(maskbitmap, x+1, y, videoram[addr] & 0x08);
+				plot_pixel(maskbitmap, x  , y, videoram.read(addr)& 0x80);
+				plot_pixel(maskbitmap, x+1, y, videoram.read(addr)& 0x08);
 			}
 			else
 			{
@@ -210,14 +210,14 @@ public class ccastles
 				x = 254-x;
 				if (y >= 0)
 				{
-					plot_pixel(tmpbitmap, x+1, y, Machine->pens[16 + ((videoram[addr] & 0xf0) >> 4)]);
-					plot_pixel(tmpbitmap, x  , y, Machine->pens[16 +  (videoram[addr] & 0x0f)      ]);
+					plot_pixel(tmpbitmap, x+1, y, Machine->pens[16 + ((videoram.read(addr)& 0xf0) >> 4)]);
+					plot_pixel(tmpbitmap, x  , y, Machine->pens[16 +  (videoram.read(addr)& 0x0f)      ]);
 	
 					/* if bit 3 of the pixel is set, background has priority over sprites when */
 					/* the sprite has the priority bit set. We use a second bitmap to remember */
 					/* which pixels have priority. */
-					plot_pixel(maskbitmap, x+1, y, videoram[addr] & 0x80);
-					plot_pixel(maskbitmap, x  , y, videoram[addr] & 0x08);
+					plot_pixel(maskbitmap, x+1, y, videoram.read(addr)& 0x80);
+					plot_pixel(maskbitmap, x  , y, videoram.read(addr)& 0x08);
 				}
 			}
 		}

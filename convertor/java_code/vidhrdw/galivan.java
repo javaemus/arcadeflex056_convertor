@@ -156,7 +156,7 @@ public class galivan
 	static void get_tx_tile_info(int tile_index)
 	{
 		int attr = colorram[tile_index];
-		int code = videoram[tile_index] | ((attr & 0x01) << 8);
+		int code = videoram.read(tile_index)| ((attr & 0x01) << 8);
 		SET_TILE_INFO(
 				0,
 				code,
@@ -180,7 +180,7 @@ public class galivan
 	static void ninjemak_get_tx_tile_info(int tile_index)
 	{
 		int attr = colorram[tile_index];
-		int code = videoram[tile_index] | ((attr & 0x03) << 8);
+		int code = videoram.read(tile_index)| ((attr & 0x03) << 8);
 		SET_TILE_INFO(
 				0,
 				code,
@@ -232,9 +232,9 @@ public class galivan
 	
 	public static WriteHandlerPtr galivan_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-		if (videoram[offset] != data)
+		if (videoram.read(offset)!= data)
 		{
-			videoram[offset] = data;
+			videoram.write(offset,data);
 			tilemap_mark_tile_dirty(tx_tilemap,offset);
 		}
 	} };
@@ -291,11 +291,11 @@ public class galivan
 	
 	logerror("%04x: write %02x to port 80\n",cpu_get_pc(),data);
 	
-			for (offs = 0; offs < videoram_size; offs++)
+			for (offs = 0; offs < videoram_size[0]; offs++)
 			{
 				galivan_videoram_w(offs, 0x20);
 			}
-			for (offs = 0; offs < videoram_size; offs++)
+			for (offs = 0; offs < videoram_size[0]; offs++)
 			{
 				galivan_colorram_w(offs, 0x03);
 			}

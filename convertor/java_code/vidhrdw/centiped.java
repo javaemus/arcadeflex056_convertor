@@ -149,9 +149,9 @@ public class centiped
 		int offs;
 	
 		if (full_refresh)
-			memset (dirtybuffer, 1, videoram_size);
+			memset (dirtybuffer, 1, videoram_size[0]);
 	
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -169,7 +169,7 @@ public class centiped
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						(videoram[offs] & 0x3f) + 0x40,
+						(videoram.read(offs)& 0x3f) + 0x40,
 						(sy + 1) / 8,	/* support midframe palette changes in test mode */
 						flip_screen,flip_screen,
 						8*sx,8*sy,

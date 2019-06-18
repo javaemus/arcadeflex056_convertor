@@ -54,7 +54,7 @@ public class amspdwy
 	
 	static void get_tile_info( int tile_index )
 	{
-		data8_t code	=	videoram[ tile_index ];
+		data8_t code	=	videoram.read( tile_index );
 		data8_t color	=	colorram[ tile_index ];
 		SET_TILE_INFO(
 				0,
@@ -65,9 +65,9 @@ public class amspdwy
 	
 	public static WriteHandlerPtr amspdwy_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-		if (videoram[offset] != data)
+		if (videoram.read(offset)!= data)
 		{
-			videoram[offset] = data;
+			videoram.write(offset,data);
 			tilemap_mark_tile_dirty(tilemap, offset);
 		}
 	} };

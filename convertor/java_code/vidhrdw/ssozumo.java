@@ -89,11 +89,11 @@ public class ssozumo
 	
 	public static VhStartPtr ssozumo_vh_start = new VhStartPtr() { public int handler() 
 	{
-		if ((dirtybuffer = malloc(videoram_size)) == 0)
+		if ((dirtybuffer = malloc(videoram_size[0])) == 0)
 		{
 			return 1;
 		}
-		memset(dirtybuffer, 1, videoram_size);
+		memset(dirtybuffer, 1, videoram_size[0]);
 	
 		if ((tmpbitmap = bitmap_alloc(Machine->drv->screen_width, 2 * Machine->drv->screen_height)) == 0)
 		{
@@ -120,7 +120,7 @@ public class ssozumo
 	
 	
 		/* Draw the background layer*/
-		for (offs = (videoram_size - 1) ; offs >= 0 ; offs--)
+		for (offs = (videoram_size[0] - 1) ; offs >= 0 ; offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -130,7 +130,7 @@ public class ssozumo
 				sy = (offs % 32);
 	
 				drawgfx(tmpbitmap, Machine->gfx[1],
-						videoram[offs] + ((colorram[offs] & 0x08) << 5),
+						videoram.read(offs)+ ((colorram[offs] & 0x08) << 5),
 						(colorram[offs] & 0x30) >> 4,
 						0, sy >= 16,
 						(16 * sx), (16 * sy),

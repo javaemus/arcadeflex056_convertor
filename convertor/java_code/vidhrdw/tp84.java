@@ -153,12 +153,12 @@ public class tp84
 		if (generic_vh_start() != 0)
 			return 1;
 	
-		if ((dirtybuffer2 = malloc(videoram_size)) == 0)
+		if ((dirtybuffer2 = malloc(videoram_size[0])) == 0)
 		{
 			generic_vh_stop();
 			return 1;
 		}
-		memset(dirtybuffer2,1,videoram_size);
+		memset(dirtybuffer2,1,videoram_size[0]);
 	
 		if ((tmpbitmap2 = bitmap_alloc(Machine->drv->screen_width,Machine->drv->screen_height)) == 0)
 		{
@@ -231,8 +231,8 @@ public class tp84
 		{
 			col0 = data;
 	
-			memset(dirtybuffer,1,videoram_size);
-			memset(dirtybuffer2,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
+			memset(dirtybuffer2,1,videoram_size[0]);
 		}
 	} };
 	
@@ -303,7 +303,7 @@ public class tp84
 	
 		coloffset = ((col0&0x18) << 1) + ((col0&0x07) << 6);
 	
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -316,7 +316,7 @@ public class tp84
 				sy = offs / 32;
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram[offs] + ((colorram[offs] & 0x30) << 4),
+						videoram.read(offs)+ ((colorram[offs] & 0x30) << 4),
 						(colorram[offs] & 0x0f) + coloffset,
 						colorram[offs] & 0x40,colorram[offs] & 0x80,
 						8*sx,8*sy,

@@ -89,9 +89,9 @@ public class jrpacman
 	***************************************************************************/
 	public static VhStartPtr jrpacman_vh_start = new VhStartPtr() { public int handler() 
 	{
-		if ((dirtybuffer = malloc(videoram_size)) == 0)
+		if ((dirtybuffer = malloc(videoram_size[0])) == 0)
 			return 1;
-		memset(dirtybuffer,1,videoram_size);
+		memset(dirtybuffer,1,videoram_size[0]);
 	
 		/* Jr. Pac Man has a virtual screen twice as large as the visible screen */
 		if ((tmpbitmap = bitmap_alloc(Machine->drv->screen_width,2*Machine->drv->screen_height)) == 0)
@@ -120,11 +120,11 @@ public class jrpacman
 	
 	public static WriteHandlerPtr jrpacman_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-		if (videoram[offset] != data)
+		if (videoram.read(offset)!= data)
 		{
 			dirtybuffer[offset] = 1;
 	
-			videoram[offset] = data;
+			videoram.write(offset,data);
 	
 			if (offset < 32)	/* line color - mark whole line as dirty */
 			{
@@ -148,7 +148,7 @@ public class jrpacman
 		if (*jrpacman_palettebank != data)
 		{
 			*jrpacman_palettebank = data;
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 		}
 	} };
 	
@@ -159,7 +159,7 @@ public class jrpacman
 		if (*jrpacman_colortablebank != data)
 		{
 			*jrpacman_colortablebank = data;
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 		}
 	} };
 	
@@ -170,7 +170,7 @@ public class jrpacman
 		if (*jrpacman_charbank != data)
 		{
 			*jrpacman_charbank = data;
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 		}
 	} };
 	
@@ -180,7 +180,7 @@ public class jrpacman
 		if (flipscreen != (data & 1))
 		{
 			flipscreen = data & 1;
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 		}
 	} };
 	
@@ -200,7 +200,7 @@ public class jrpacman
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -228,9 +228,9 @@ public class jrpacman
 						}
 	
 						drawgfx(tmpbitmap,Machine->gfx[0],
-								videoram[offs] + 256 * *jrpacman_charbank,
+								videoram.read(offs)+ 256 * *jrpacman_charbank,
 							/* color is set line by line */
-								(videoram[mx] & 0x1f) + 0x20 * (*jrpacman_colortablebank & 1)
+								(videoram.read(mx)& 0x1f) + 0x20 * (*jrpacman_colortablebank & 1)
 										+ 0x40 * (*jrpacman_palettebank & 1),
 								flipscreen,flipscreen,
 								8*sx,8*sy,
@@ -249,8 +249,8 @@ public class jrpacman
 							}
 	
 							drawgfx(tmpbitmap,Machine->gfx[0],
-									videoram[offs],
-									(videoram[offs + 4*32] & 0x1f) + 0x20 * (*jrpacman_colortablebank & 1)
+									videoram.read(offs),
+									(videoram.read(offs + 4*32)& 0x1f) + 0x20 * (*jrpacman_colortablebank & 1)
 											+ 0x40 * (*jrpacman_palettebank & 1),
 									flipscreen,flipscreen,
 									8*sx,8*sy,
@@ -267,8 +267,8 @@ public class jrpacman
 							}
 	
 							drawgfx(tmpbitmap,Machine->gfx[0],
-									videoram[offs] + 0x100 * (*jrpacman_charbank & 1),
-									(videoram[offs + 4*32] & 0x1f) + 0x20 * (*jrpacman_colortablebank & 1)
+									videoram.read(offs)+ 0x100 * (*jrpacman_charbank & 1),
+									(videoram.read(offs + 4*32)& 0x1f) + 0x20 * (*jrpacman_colortablebank & 1)
 											+ 0x40 * (*jrpacman_palettebank & 1),
 									flipscreen,flipscreen,
 									8*sx,8*sy,

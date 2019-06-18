@@ -108,7 +108,7 @@ public class exprraid
 	
 	
 		/* draw the foreground */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			int sx,sy;
 	
@@ -116,7 +116,7 @@ public class exprraid
 			sy = offs / 32;
 	
 			drawgfx(bitmap,Machine->gfx[0],
-					videoram[offs] + ((colorram[offs] & 7) << 8),
+					videoram.read(offs)+ ((colorram[offs] & 7) << 8),
 					(colorram[offs] & 0x10) >> 4,
 					0,0,
 					8*sx,8*sy,

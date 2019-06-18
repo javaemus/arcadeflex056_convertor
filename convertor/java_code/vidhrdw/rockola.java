@@ -204,11 +204,11 @@ public class rockola
 	
 	
 		if (full_refresh)
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -226,7 +226,7 @@ public class rockola
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[1],
-						videoram[offs] + 256 * charbank,
+						videoram.read(offs)+ 256 * charbank,
 						(colorram[offs] & 0x38) >> 3,
 						flip_screen,flip_screen,
 						8*sx,8*sy,
@@ -254,7 +254,7 @@ public class rockola
 	
 	
 		/* draw the frontmost playfield. They are characters, but draw them as sprites */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			int charcode;
 			int sx,sy;
@@ -295,11 +295,11 @@ public class rockola
 	
 	
 		if (full_refresh)
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-	    for (offs = videoram_size - 1;offs >= 0;offs--)
+	    for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -317,7 +317,7 @@ public class rockola
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[1],
-						videoram[offs],
+						videoram.read(offs),
 						(colorram[offs] & 0x0c) >> 2,
 						flip_screen,flip_screen,
 						8*sx,8*sy,
@@ -329,7 +329,7 @@ public class rockola
 	    copybitmap(bitmap,tmpbitmap,0,0,0,0,&Machine->visible_area,TRANSPARENCY_NONE,0);
 	
 		/* draw the frontmost playfield. They are characters, but draw them as sprites */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			int charcode;
 			int sx,sy;

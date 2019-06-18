@@ -206,19 +206,19 @@ public class taitosj
 		if (generic_vh_start() != 0)
 			return 1;
 	
-		if ((dirtybuffer2 = malloc(videoram_size)) == 0)
+		if ((dirtybuffer2 = malloc(videoram_size[0])) == 0)
 		{
 			generic_vh_stop();
 			return 1;
 		}
-		memset(dirtybuffer2,1,videoram_size);
+		memset(dirtybuffer2,1,videoram_size[0]);
 	
-		if ((dirtybuffer3 = malloc(videoram_size)) == 0)
+		if ((dirtybuffer3 = malloc(videoram_size[0])) == 0)
 		{
 			generic_vh_stop();
 			return 1;
 		}
-		memset(dirtybuffer3,1,videoram_size);
+		memset(dirtybuffer3,1,videoram_size[0]);
 	
 		if ((sprite_plane_collbitmap1 = bitmap_alloc(16,16)) == 0)
 		{
@@ -333,9 +333,9 @@ public class taitosj
 		if (taitosj_colorbank[offset] != data)
 		{
 	logerror("colorbank %d = %02x\n",offset,data);
-			memset(dirtybuffer,1,videoram_size);
-			memset(dirtybuffer2,1,videoram_size);
-			memset(dirtybuffer3,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
+			memset(dirtybuffer2,1,videoram_size[0]);
+			memset(dirtybuffer3,1,videoram_size[0]);
 	
 			taitosj_colorbank[offset] = data;
 		}
@@ -354,9 +354,9 @@ public class taitosj
 				flipscreen[0] = data & 1;
 				flipscreen[1] = data & 2;
 	
-				memset(dirtybuffer,1,videoram_size);
-				memset(dirtybuffer2,1,videoram_size);
-				memset(dirtybuffer3,1,videoram_size);
+				memset(dirtybuffer,1,videoram_size[0]);
+				memset(dirtybuffer2,1,videoram_size[0]);
+				memset(dirtybuffer3,1,videoram_size[0]);
 			}
 	
 			taitosj_video_enable = data;
@@ -804,7 +804,7 @@ public class taitosj
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -819,7 +819,7 @@ public class taitosj
 				if (flipscreen[1]) sy = 31 - sy;
 	
 				drawgfx(taitosj_tmpbitmap[0],Machine->gfx[taitosj_colorbank[0] & 0x08 ? 2 : 0],
-						videoram[offs],
+						videoram.read(offs),
 						(taitosj_colorbank[0] & 0x07) + 8,	/* use transparent pen 0 */
 						flipscreen[0],flipscreen[1],
 						8*sx,8*sy,

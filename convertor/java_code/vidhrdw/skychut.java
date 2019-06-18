@@ -27,7 +27,7 @@ public class skychut
 	/*	if (flipscreen != (data & 0x8f))
 		{
 			flipscreen = (data & 0x8f);
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 		}
 	*/
 	} };
@@ -56,9 +56,9 @@ public class skychut
 	{
 		int offs;
 		if (full_refresh)
-			memset (dirtybuffer, 1, videoram_size);
+			memset (dirtybuffer, 1, videoram_size[0]);
 	
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -71,7 +71,7 @@ public class skychut
 				sy = offs / 32;
 	
 				drawgfx(bitmap,Machine->gfx[0],
-						videoram[offs],
+						videoram.read(offs),
 						 colorram[offs],
 						flipscreen,flipscreen,
 						8*sx,8*sy,
@@ -113,9 +113,9 @@ public class skychut
 	{
 		int offs;
 		if (full_refresh)
-			memset (dirtybuffer, 1, videoram_size);
+			memset (dirtybuffer, 1, videoram_size[0]);
 	
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -128,7 +128,7 @@ public class skychut
 				sy = offs / 32;
 	
 				iremm15_drawgfx(bitmap,
-								videoram[offs],
+								videoram.read(offs),
 								Machine->pens[colorram[offs]],
 								Machine->pens[7], // space beam not color 0
 								8*sx,8*sy);

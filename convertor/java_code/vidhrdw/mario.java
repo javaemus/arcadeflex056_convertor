@@ -99,7 +99,7 @@ public class mario
 	{
 		if (gfx_bank != (data & 1))
 		{
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 			gfx_bank = data & 1;
 		}
 	} };
@@ -110,7 +110,7 @@ public class mario
 	{
 		if (palette_bank != (data & 1))
 		{
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 			palette_bank = data & 1;
 		}
 	} };
@@ -131,7 +131,7 @@ public class mario
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -144,8 +144,8 @@ public class mario
 				sy = offs / 32;
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram[offs] + 256 * gfx_bank,
-						(videoram[offs] >> 5) + 8 * palette_bank,
+						videoram.read(offs)+ 256 * gfx_bank,
+						(videoram.read(offs)>> 5) + 8 * palette_bank,
 						0,0,
 						8*sx,8*sy,
 						0,TRANSPARENCY_NONE,0);

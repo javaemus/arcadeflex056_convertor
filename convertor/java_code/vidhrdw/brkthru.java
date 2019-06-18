@@ -85,12 +85,12 @@ public class brkthru
 	***************************************************************************/
 	public static VhStartPtr brkthru_vh_start = new VhStartPtr() { public int handler() 
 	{
-		if ((dirtybuffer = malloc(videoram_size)) == 0)
+		if ((dirtybuffer = malloc(videoram_size[0])) == 0)
 		{
 			generic_vh_stop();
 			return 1;
 		}
-		memset(dirtybuffer,1,videoram_size);
+		memset(dirtybuffer,1,videoram_size[0]);
 	
 		/* the background area is twice as wide as the screen */
 		if ((tmpbitmap = bitmap_alloc(2*Machine->drv->screen_width,Machine->drv->screen_height)) == 0)
@@ -135,14 +135,14 @@ public class brkthru
 			if (((data & 0x38) >> 2) != bgbasecolor)
 			{
 				bgbasecolor = (data & 0x38) >> 2;
-				memset(dirtybuffer,1,videoram_size);
+				memset(dirtybuffer,1,videoram_size[0]);
 			}
 	
 			/* bit 6 = screen flip */
 			if (flipscreen != (data & 0x40))
 			{
 				flipscreen = data & 0x40;
-				memset(dirtybuffer,1,videoram_size);
+				memset(dirtybuffer,1,videoram_size[0]);
 			}
 	
 			/* bit 7 = high bit of scroll */
@@ -166,7 +166,7 @@ public class brkthru
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 2;offs >= 0;offs -= 2)
+		for (offs = videoram_size[0] - 2;offs >= 0;offs -= 2)
 		{
 			if (dirtybuffer[offs] || dirtybuffer[offs+1])
 			{
@@ -183,10 +183,10 @@ public class brkthru
 					sy = 15 - sy;
 				}
 	
-				code = videoram[offs] + 256 * (videoram[offs+1] & 3);
+				code = videoram.read(offs)+ 256 * (videoram.read(offs+1)& 3);
 				drawgfx(tmpbitmap,Machine->gfx[1 + (code >> 7)],
 						code & 0x7f,
-						bgbasecolor + ((videoram[offs+1] & 0x04) >> 2),
+						bgbasecolor + ((videoram.read(offs+1)& 0x04) >> 2),
 						flipscreen,flipscreen,
 						16*sx,16*sy,
 						0,TRANSPARENCY_NONE,0);

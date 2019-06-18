@@ -78,7 +78,7 @@ public class espial
 		if (espial_attributeram[offset] != data)
 		{
 			espial_attributeram[offset] = data;
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 		}
 	} };
 	
@@ -98,7 +98,7 @@ public class espial
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -111,7 +111,7 @@ public class espial
 				sy = offs / 32;
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram[offs] + 256*(espial_attributeram[offs] & 0x03),
+						videoram.read(offs)+ 256*(espial_attributeram[offs] & 0x03),
 						colorram[offs],
 						espial_attributeram[offs] & 0x04,espial_attributeram[offs] & 0x08,
 						8*sx,8*sy,

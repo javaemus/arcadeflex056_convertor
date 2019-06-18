@@ -71,9 +71,9 @@ public class qwakprot
 		int offs;
 	
 		if (full_refresh)
-			memset (dirtybuffer, 1, videoram_size);
+			memset (dirtybuffer, 1, videoram_size[0]);
 	
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -86,9 +86,9 @@ public class qwakprot
 				sx = offs % 32;
 				sy = offs / 32;
 	
-				gfxset = ((videoram[offs] & 0x80) >> 7);
+				gfxset = ((videoram.read(offs)& 0x80) >> 7);
 				drawgfx(bitmap,Machine->gfx[gfxset],
-						videoram[offs] & 0x7f,
+						videoram.read(offs)& 0x7f,
 						0,		/* color */
 						0,0,	/* flipx, flipy */
 						8*sx,8*sy,

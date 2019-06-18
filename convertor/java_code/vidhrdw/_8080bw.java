@@ -377,7 +377,7 @@ public class _8080bw
 	{
 		int x,y;
 	
-		videoram[offset] = data;
+		videoram.write(offset,data);
 	
 		y = offset / 32;
 		x = 8 * (offset % 32);
@@ -389,7 +389,7 @@ public class _8080bw
 	{
 		UINT8 x,y,col;
 	
-		videoram[offset] = data;
+		videoram.write(offset,data);
 	
 		y = offset / 32;
 		x = 8 * (offset % 32);
@@ -403,7 +403,7 @@ public class _8080bw
 	{
 		UINT8 x,y,col;
 	
-		videoram[offset] = data;
+		videoram.write(offset,data);
 	
 		y = offset / 32;
 		x = 8 * (offset % 32);
@@ -418,7 +418,7 @@ public class _8080bw
 		int x,i,col,back_color,fore_color,color_map;
 		UINT8 y, cloud_y;
 	
-		videoram[offset] = data;
+		videoram.write(offset,data);
 	
 		y = offset / 32;
 		x = 8 * (offset % 32);
@@ -481,7 +481,7 @@ public class _8080bw
 	{
 		int x,y,back_color,foreground_color;
 	
-		videoram[offset] = data;
+		videoram.write(offset,data);
 	
 		y = offset / 32;
 		x = 8 * (offset % 32);
@@ -510,7 +510,7 @@ public class _8080bw
 		/* redraw region with (possibly) changed color */
 		for (i = 0; i < 8; i++, offset += 0x20)
 		{
-			videoram_w_p(offset, videoram[offset]);
+			videoram_w_p(offset, videoram.read(offset));
 		}
 	} };
 	
@@ -525,7 +525,7 @@ public class _8080bw
 		colorram[offset] = data;
 	
 		/* redraw region with (possibly) changed color */
-		videoram_w_p(offset, videoram[offset]);
+		videoram_w_p(offset, videoram.read(offset));
 	} };
 	
 	
@@ -548,8 +548,8 @@ public class _8080bw
 		{
 			int offs;
 	
-			for (offs = 0;offs < videoram_size;offs++)
-				videoram_w_p(offs, videoram[offs]);
+			for (offs = 0;offs < videoram_size[0];offs++)
+				videoram_w_p(offs, videoram.read(offs));
 		}
 	
 	
@@ -709,7 +709,7 @@ public class _8080bw
 	{
 		UINT8 x,y,col;
 	
-		videoram[offset] = data;
+		videoram.write(offset,data);
 	
 		y = offset / 32;
 		x = 8 * (offset % 32);
@@ -732,7 +732,7 @@ public class _8080bw
 	{
 		UINT8 x,y,col;
 	
-		videoram[offset] = data;
+		videoram.write(offset,data);
 	
 		y = offset / 32;
 		x = 8 * (offset % 32);
@@ -761,7 +761,7 @@ public class _8080bw
 	{
 		UINT8 x,y,col;
 	
-		videoram[offset] = data;
+		videoram.write(offset,data);
 	
 		y = offset / 32;
 		x = 8 * (offset % 32);
@@ -784,7 +784,7 @@ public class _8080bw
 		UINT8 x,y,col;
 		int i;
 	
-		videoram[offset] = data;
+		videoram.write(offset,data);
 	
 		y = 8 * (offset / 256);
 		x = offset % 256;

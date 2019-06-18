@@ -227,13 +227,13 @@ public class docastle
 	
 		if (full_refresh)
 		{
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 		}
 	
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -252,7 +252,7 @@ public class docastle
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram[offs] + 8*(colorram[offs] & 0x20),
+						videoram.read(offs)+ 8*(colorram[offs] & 0x20),
 						colorram[offs] & 0x1f,
 						flip_screen,flip_screen,
 						8*sx,8*sy,
@@ -261,7 +261,7 @@ public class docastle
 				/* also draw the part of the character which has priority over the */
 				/* sprites in another bitmap */
 				drawgfx(tmpbitmap1,Machine->gfx[0],
-						videoram[offs] + 8*(colorram[offs] & 0x20),
+						videoram.read(offs)+ 8*(colorram[offs] & 0x20),
 						32 + (colorram[offs] & 0x1f),
 						flip_screen,flip_screen,
 						8*sx,8*sy,

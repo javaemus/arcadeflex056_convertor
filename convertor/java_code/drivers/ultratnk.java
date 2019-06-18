@@ -82,7 +82,7 @@ public class ultratnk
 			if (dirtybuffer[offs])
 			{
 				dirtybuffer[offs]=0;
-				code = videoram[offs];
+				code = videoram.read(offs);
 				sx = 8 * (offs % 32);
 				sy = 8 * (offs / 32);
 				drawgfx( tmpbitmap,

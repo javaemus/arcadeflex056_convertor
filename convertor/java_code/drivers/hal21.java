@@ -103,7 +103,7 @@ public class hal21
 	
 		for( offs=0; offs<64*64; offs++ ){
 			if( dirtybuffer[offs] ){
-				int tile_number = videoram[offs]+bank*256;
+				int tile_number = videoram.read(offs)+bank*256;
 				int sy = (offs%64)*8;
 				int sx = (offs/64)*8;
 	

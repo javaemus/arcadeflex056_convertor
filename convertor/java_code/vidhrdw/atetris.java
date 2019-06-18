@@ -25,8 +25,8 @@ public class atetris
 	
 	static void get_tile_info(int tile_index)
 	{
-		int code = videoram[tile_index * 2] | ((videoram[tile_index * 2 + 1] & 7) << 8);
-		int color = (videoram[tile_index * 2 + 1] & 0xf0) >> 4;
+		int code = videoram.read(tile_index * 2)| ((videoram.read(tile_index * 2 + 1)& 7) << 8);
+		int color = (videoram.read(tile_index * 2 + 1)& 0xf0) >> 4;
 	
 		SET_TILE_INFO(0, code, color, 0);
 	}
@@ -41,7 +41,7 @@ public class atetris
 	
 	public static WriteHandlerPtr atetris_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-		videoram[offset] = data;
+		videoram.write(offset,data);
 		tilemap_mark_tile_dirty(tilemap, offset / 2);
 	} };
 	

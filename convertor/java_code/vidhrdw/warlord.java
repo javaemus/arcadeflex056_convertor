@@ -89,7 +89,7 @@ public class warlord
 		upright_mode = input_port_0_r(0) & 0x80;
 		palette = ( upright_mode ? 4 : 0);
 	
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer[offs])
 			{

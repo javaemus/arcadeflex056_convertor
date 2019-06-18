@@ -38,7 +38,7 @@ public class aeroboto
 		int offs;
 	
 	
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			int sx,sy;
 	
@@ -47,20 +47,20 @@ public class aeroboto
 			sy = offs / 32;
 	
 			drawgfx(bitmap,Machine->gfx[0],
-					videoram[offs] + 256 * aeroboto_charbank,
+					videoram.read(offs)+ 256 * aeroboto_charbank,
 					0,
 					0,0,
 					8*sx - aeroboto_bgscroll[sy],8*sy,
 					&Machine->visible_area,TRANSPARENCY_NONE,0);
 			drawgfx(bitmap,Machine->gfx[0],
-					videoram[offs] + 256 * aeroboto_charbank,
+					videoram.read(offs)+ 256 * aeroboto_charbank,
 					0,
 					0,0,
 					8*sx - aeroboto_bgscroll[sy] + 256,8*sy,
 					&Machine->visible_area,TRANSPARENCY_NONE,0);
 		}
 	
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			int sx,sy;
 	

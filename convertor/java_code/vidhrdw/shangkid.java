@@ -16,8 +16,8 @@ public class shangkid
 	
 	
 	static void get_bg_tile_info(int tile_index){
-		int attributes = videoram[tile_index+0x800];
-		int tile_number = videoram[tile_index]+0x100*(attributes&0x3);
+		int attributes = videoram.read(tile_index+0x800);
+		int tile_number = videoram.read(tile_index)+0x100*(attributes&0x3);
 		int color;
 	
 		if( shangkid_gfx_type==1 )
@@ -66,8 +66,8 @@ public class shangkid
 	
 	public static WriteHandlerPtr shangkid_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-		if( videoram[offset]!=data ){
-			videoram[offset] = data;
+		if( videoram.read(offset)!=data ){
+			videoram.write(offset,data);
 			tilemap_mark_tile_dirty( background, offset&0x7ff );
 		}
 	} };
@@ -226,8 +226,8 @@ public class shangkid
 				sx+=16;
 			}
 	
-			tile = videoram[i];
-			attr = videoram[i+0x400];
+			tile = videoram.read(i);
+			attr = videoram.read(i+0x400);
 			/*
 				x---.----	priority?
 				-xx-.----	bank
@@ -259,13 +259,13 @@ public class shangkid
 		struct rectangle *clip = &Machine->visible_area;
 		for( i=0x7e; i>=0x00; i-=2 )
 		{
-			bank = videoram[0x1b80+i];
-			attr = videoram[0x1b81+i];
-			tile = videoram[0xb80+i];
-			color = videoram[0xb81+i];
-			sy = 240-videoram[0x1380+i];
+			bank = videoram.read(0x1b80+i);
+			attr = videoram.read(0x1b81+i);
+			tile = videoram.read(0xb80+i);
+			color = videoram.read(0xb81+i);
+			sy = 240-videoram.read(0x1380+i);
 	
-			sx = videoram[0x1381+i]-64+8+16;
+			sx = videoram.read(0x1381+i)-64+8+16;
 			if( attr&1 ) sx += 0x100;
 	
 			drawgfx(

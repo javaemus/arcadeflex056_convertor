@@ -153,7 +153,7 @@ public class kingobox
 		if (palette_bank != ((data & 0x18) >> 3))
 		{
 			palette_bank = (data & 0x18) >> 3;
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 		}
 	} };
 	
@@ -169,7 +169,7 @@ public class kingobox
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -181,7 +181,7 @@ public class kingobox
 	
 				dirtybuffer[offs] = 0;
 	
-				code = videoram[offs] + ((colorram[offs] & 0x03) << 8);
+				code = videoram.read(offs)+ ((colorram[offs] & 0x03) << 8);
 				bank = (colorram[offs] & 0x04) >> 2;
 	
 				drawgfx(tmpbitmap,Machine->gfx[2 + bank],
@@ -254,7 +254,7 @@ public class kingobox
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -267,7 +267,7 @@ public class kingobox
 				dirtybuffer[offs] = 0;
 	
 				drawgfx(tmpbitmap,Machine->gfx[4],
-						sx ? videoram[offs] : 0,	/* make the top row black */
+						sx ? videoram.read(offs): 0,	/* make the top row black */
 						((colorram[offs] & 0x70) >> 4 ) + 8 * palette_bank,
 						0,0,
 						sx*16,sy*16,

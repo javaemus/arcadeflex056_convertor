@@ -113,7 +113,7 @@ public class phozon
 	
 		/* for every character in the video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -148,7 +148,7 @@ public class phozon
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[(colorram[offs] & 0x80) ? 1 : 0],
-						videoram[offs],
+						videoram.read(offs),
 						colorram[offs] & 0x3f,
 						0,0,
 						8*sx,8*sy,
@@ -224,7 +224,7 @@ public class phozon
 	
 	
 		/* redraw high priority chars */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (colorram[offs] & 0x40)
 			{
@@ -257,7 +257,7 @@ public class phozon
 				}
 	
 				drawgfx(bitmap,Machine->gfx[(colorram[offs] & 0x80) ? 1 : 0],
-						videoram[offs],
+						videoram.read(offs),
 						colorram[offs] & 0x3f,
 						0,0,
 						8*sx,8*sy,

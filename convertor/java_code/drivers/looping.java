@@ -97,7 +97,7 @@ public class looping
 	
 	static void get_tile_info( int offset )
 	{
-		int tile_number = videoram[offset];
+		int tile_number = videoram.read(offset);
 		int color = colorram[(offset&0x1f)*2+1]&0x7;
 		SET_TILE_INFO(
 				0,
@@ -144,9 +144,9 @@ public class looping
 	
 	public static WriteHandlerPtr looping_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-		if( videoram[offset]!=data )
+		if( videoram.read(offset)!=data )
 		{
-			videoram[offset] = data;
+			videoram.write(offset,data);
 			tilemap_mark_tile_dirty( tilemap, offset );
 		}
 	} };

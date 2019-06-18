@@ -98,7 +98,7 @@ public class ladybug
 		if (flipscreen != (data & 1))
 		{
 			flipscreen = data & 1;
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 		}
 	} };
 	
@@ -118,7 +118,7 @@ public class ladybug
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -137,7 +137,7 @@ public class ladybug
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram[offs] + 32 * (colorram[offs] & 8),
+						videoram.read(offs)+ 32 * (colorram[offs] & 8),
 						colorram[offs],
 						flipscreen,flipscreen,
 						8*sx,8*sy,
@@ -158,9 +158,9 @@ public class ladybug
 				sy = offs / 4;
 	
 				if (flipscreen)
-					scroll[31-offs] = -videoram[32 * sx + sy];
+					scroll[31-offs] = -videoram.read(32 * sx + sy);
 				else
-					scroll[offs] = -videoram[32 * sx + sy];
+					scroll[offs] = -videoram.read(32 * sx + sy);
 			}
 	
 			copyscrollbitmap(bitmap,tmpbitmap,32,scroll,0,0,&Machine->visible_area,TRANSPARENCY_NONE,0);

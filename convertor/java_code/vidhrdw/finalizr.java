@@ -77,9 +77,9 @@ public class finalizr
 		dirtybuffer = 0;
 		tmpbitmap = 0;
 	
-		if ((dirtybuffer = malloc(videoram_size)) == 0)
+		if ((dirtybuffer = malloc(videoram_size[0])) == 0)
 			return 1;
-		memset(dirtybuffer,1,videoram_size);
+		memset(dirtybuffer,1,videoram_size[0]);
 	
 		if ((tmpbitmap = bitmap_alloc(256,256)) == 0)
 		{
@@ -106,7 +106,7 @@ public class finalizr
 		if (charbank != (data & 3))
 		{
 			charbank = data & 3;
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 		}
 	
 		spriterambank = data & 8;
@@ -130,7 +130,7 @@ public class finalizr
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -143,7 +143,7 @@ public class finalizr
 				sy = offs / 32;
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram[offs] + ((colorram[offs] & 0xc0) << 2) + (charbank<<10),
+						videoram.read(offs)+ ((colorram[offs] & 0xc0) << 2) + (charbank<<10),
 						(colorram[offs] & 0x0f),
 						colorram[offs] & 0x10,colorram[offs] & 0x20,
 						8*sx,8*sy,
@@ -272,7 +272,7 @@ public class finalizr
 			}
 		}
 	
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			int sx,sy;
 	

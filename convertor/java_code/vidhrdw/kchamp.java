@@ -151,7 +151,7 @@ public class kchamp
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-	        for ( offs = videoram_size - 1; offs >= 0; offs-- ) {
+	        for ( offs = videoram_size[0] - 1; offs >= 0; offs-- ) {
 	                if ( dirtybuffer[offs] ) {
 				int sx,sy,code;
 	
@@ -160,7 +160,7 @@ public class kchamp
 	                        sx = (offs % 32);
 				sy = (offs / 32);
 	
-	                        code = videoram[offs] + ( ( colorram[offs] & 7 ) << 8 );
+	                        code = videoram.read(offs)+ ( ( colorram[offs] & 7 ) << 8 );
 	
 	                        drawgfx(tmpbitmap,Machine->gfx[0],
 	                                        code,

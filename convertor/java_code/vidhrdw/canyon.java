@@ -28,7 +28,7 @@ public class canyon
 	
 	    /* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (full_refresh || dirtybuffer[offs])
 			{
@@ -37,12 +37,12 @@ public class canyon
 	
 				dirtybuffer[offs]=0;
 	
-				charcode = videoram[offs] & 0x3F;
+				charcode = videoram.read(offs)& 0x3F;
 	
 				sx = 8 * (offs % 32);
 				sy = 8 * (offs / 32);
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						charcode, (videoram[offs] & 0x80)>>7,
+						charcode, (videoram.read(offs)& 0x80)>>7,
 						0,0,sx,sy,
 						&Machine->visible_area,TRANSPARENCY_NONE,0);
 			}

@@ -43,7 +43,7 @@ public class videopin
 	
 		if (full_refresh)
 		{
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 		}
 	
 	    /* For every character in the Video RAM, check if it has been modified
@@ -58,13 +58,13 @@ public class videopin
 		 * Playfield window size is 296x256
 		 * X and Y are referring to the screen in it's non final orientation (ROT0)
 		 */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (full_refresh || dirtybuffer[offs])
 			{
 				dirtybuffer[offs]=0;
 	
-				charcode = videoram[offs] & 0x3F;
+				charcode = videoram.read(offs)& 0x3F;
 	
 				/* Correct coordinates for cut-in-half display */
 				sx = 8 * (offs / 32);
@@ -87,7 +87,7 @@ public class videopin
 					copybitmap(tmpbitmap,videopin_backdrop->artwork,0,0,0,0,&aclip,TRANSPARENCY_NONE,0);
 				}
 	
-				if (videoram[offs] & 0x40)
+				if (videoram.read(offs)& 0x40)
 				{
 					drawgfx(tmpbitmap,Machine->gfx[0],
 						charcode, 1,
@@ -107,7 +107,7 @@ public class videopin
 			 * offsc test is necessary for selftest mode
 			 * where there are more than 4 tiles having the ball bit
 			 */
-			if (videoram[offs] & 0x80)
+			if (videoram.read(offs)& 0x80)
 			{
 				if (offsc < 4)
 				{

@@ -62,15 +62,15 @@ public class generic
 		dirtybuffer = 0;
 		tmpbitmap = 0;
 	
-		if (videoram_size == 0)
+		if (videoram_size[0] == 0)
 		{
-	logerror("Error: generic_vh_start() called but videoram_size not initialized\n");
+	logerror("Error: generic_vh_start() called but videoram_size[0] not initialized\n");
 			return 1;
 		}
 	
-		if ((dirtybuffer = malloc(videoram_size)) == 0)
+		if ((dirtybuffer = malloc(videoram_size[0])) == 0)
 			return 1;
-		memset(dirtybuffer,1,videoram_size);
+		memset(dirtybuffer,1,videoram_size[0]);
 	
 		if ((tmpbitmap = bitmap_alloc(Machine->drv->screen_width,Machine->drv->screen_height)) == 0)
 		{
@@ -132,7 +132,7 @@ public class generic
 	
 	public static ReadHandlerPtr videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
-		return videoram[offset];
+		return videoram.read(offset);
 	} };
 	
 	public static ReadHandlerPtr colorram_r  = new ReadHandlerPtr() { public int handler(int offset)
@@ -142,11 +142,11 @@ public class generic
 	
 	public static WriteHandlerPtr videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-		if (videoram[offset] != data)
+		if (videoram.read(offset)!= data)
 		{
 			dirtybuffer[offset] = 1;
 	
-			videoram[offset] = data;
+			videoram.write(offset,data);
 		}
 	} };
 	

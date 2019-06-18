@@ -81,10 +81,10 @@ public class bublbobl
 	
 					goffs = gfx_offs + xc * 0x40 + (yc & 7) * 0x02 +
 							(prom_line[yc/2] & 0x03) * 0x10;
-					code = videoram[goffs] + 256 * (videoram[goffs + 1] & 0x03) + 1024 * (gfx_attr & 0x0f);
-					color = (videoram[goffs + 1] & 0x3c) >> 2;
-					flipx = videoram[goffs + 1] & 0x40;
-					flipy = videoram[goffs + 1] & 0x80;
+					code = videoram.read(goffs)+ 256 * (videoram.read(goffs + 1)& 0x03) + 1024 * (gfx_attr & 0x0f);
+					color = (videoram.read(goffs + 1)& 0x3c) >> 2;
+					flipx = videoram.read(goffs + 1)& 0x40;
+					flipy = videoram.read(goffs + 1)& 0x80;
 					x = sx + xc * 8;
 					y = (sy + yc * 8) & 0xff;
 	

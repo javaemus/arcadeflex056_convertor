@@ -168,7 +168,7 @@ public class gridlee
 	
 	public static WriteHandlerPtr gridlee_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-		videoram[offset] = data;
+		videoram.write(offset,data);
 	
 		/* expand the two pixel values into two bytes */
 		local_videoram[offset * 2 + 0] = data >> 4;

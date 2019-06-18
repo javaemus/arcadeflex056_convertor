@@ -129,7 +129,7 @@ public class vicdual
 		if (palette_bank != (data & 3))
 		{
 			palette_bank = data & 3;
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 		}
 	} };
 	
@@ -149,17 +149,17 @@ public class vicdual
 	
 		if (full_refresh)
 		{
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 		}
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			int charcode;
 	
 	
-			charcode = videoram[offs];
+			charcode = videoram.read(offs);
 	
 			if (dirtybuffer[offs] || dirtycharacter[charcode])
 			{

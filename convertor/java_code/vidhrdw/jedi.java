@@ -41,10 +41,10 @@ public class jedi
 	public static VhStartPtr jedi_vh_start = new VhStartPtr() { public int handler() 
 	{
 		/* allocate dirty buffer for the foreground characters */
-		fgdirty = dirtybuffer = malloc(videoram_size);
+		fgdirty = dirtybuffer = malloc(videoram_size[0]);
 		if (fgdirty == 0)
 			return 1;
-		memset(fgdirty, 1, videoram_size);
+		memset(fgdirty, 1, videoram_size[0]);
 	
 		/* allocate an 8bpp bitmap for the raw foreground characters */
 		fgbitmap = bitmap_alloc(Machine->drv->screen_width, Machine->drv->screen_height);
@@ -198,7 +198,7 @@ public class jedi
 		if (jedi_alpha_bank != 2 * (data & 0x80))
 		{
 			jedi_alpha_bank = 2 * (data & 0x80);
-			memset(fgdirty, 1, videoram_size);
+			memset(fgdirty, 1, videoram_size[0]);
 		}
 	} };
 	
@@ -337,7 +337,7 @@ public class jedi
 		/* colors (see the palette test in service mode) */
 	
 	    /* update foreground bitmap as a raw bitmap*/
-	    for (offs = videoram_size - 1; offs >= 0; offs--)
+	    for (offs = videoram_size[0] - 1; offs >= 0; offs--)
 			if (fgdirty[offs])
 			{
 				int sx = offs % 64;
@@ -345,7 +345,7 @@ public class jedi
 	
 				fgdirty[offs] = 0;
 	
-				drawgfx(fgbitmap, Machine->gfx[0], videoram[offs] + jedi_alpha_bank,
+				drawgfx(fgbitmap, Machine->gfx[0], videoram.read(offs)+ jedi_alpha_bank,
 						0, 0, 0, 8*sx, 8*sy, &Machine->visible_area, TRANSPARENCY_NONE_RAW, 0);
 			}
 	

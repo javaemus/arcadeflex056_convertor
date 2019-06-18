@@ -36,8 +36,8 @@ public class lsasquad
 				if (flip_screen) sy = 248 - sy;
 				sy &= 0xff;
 	
-				attr = videoram[base + 2*y + 1];
-				code = videoram[base + 2*y] + ((attr & 0x0f) << 8);
+				attr = videoram.read(base + 2*y + 1);
+				code = videoram.read(base + 2*y)+ ((attr & 0x0f) << 8);
 				color = attr >> 4;
 	
 				drawgfx(bitmap,Machine->gfx[0],

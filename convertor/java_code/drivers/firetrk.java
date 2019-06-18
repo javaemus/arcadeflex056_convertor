@@ -365,10 +365,10 @@ public class firetrk
 		int color		= firetruck_invert_display?3:7; /* invert display */
 		int track_color = Machine->pens[firetruck_invert_display?0:3];
 		int bgcolor		= firetruck_invert_display?4:0;
-		int cabrot		= videoram[0x1080];
-		int hpos		= videoram[0x1460];
-		int vpos		= videoram[0x1480];
-		int tailrot		= videoram[0x14a0];
+		int cabrot		= videoram.read(0x1080);
+		int hpos		= videoram.read(0x1460);
+		int vpos		= videoram.read(0x1480);
+		int tailrot		= videoram.read(0x14a0);
 		int pen;
 		int sx, sy;
 		int x,y;
@@ -507,8 +507,8 @@ public class firetrk
 	static void draw_background( struct mame_bitmap *bitmap )
 	{
 		int color = firetruck_invert_display?4:0; /* invert display */
-		int pvpload = videoram[0x1000];
-		int phpload = videoram[0x1020];
+		int pvpload = videoram.read(0x1000);
+		int phpload = videoram.read(0x1020);
 	
 		int x,y,tile_number;
 		const UINT8 *source = videoram+0x800;

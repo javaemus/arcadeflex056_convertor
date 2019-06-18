@@ -117,7 +117,7 @@ public class nova2001
 		if ((~data & 0x01) != flipscreen)
 		{
 			flipscreen = ~data & 0x01;
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 		}
 	} };
 	
@@ -137,7 +137,7 @@ public class nova2001
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -155,7 +155,7 @@ public class nova2001
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[1],
-						videoram[offs],
+						videoram.read(offs),
 						colorram[offs] & 0x0f,
 						flipscreen,flipscreen,
 						8*sx,8*sy,

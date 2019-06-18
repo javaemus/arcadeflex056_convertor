@@ -65,7 +65,7 @@ public class strnskil
 	
 		/* draw bg layer */
 	
-		for (offs=0; offs<(videoram_size/2); offs++)
+		for (offs=0; offs<(videoram_size[0]/2); offs++)
 		{
 			int sx,sy;
 	
@@ -95,14 +95,14 @@ public class strnskil
 				py = 248-py;
 			}
 	
-			col = videoram[offs*2];
+			col = videoram.read(offs*2);
 			fx = strnskil_flipscreen;
 			fy = strnskil_flipscreen;
 			bank = (col & 0x60) << 3;
 			col = ((col & 0x1f)<<0) | ((col & 0x80) >> 2);
 	
 			drawgfx(bitmap,Machine->gfx[0],
-				videoram[offs*2+1] + bank,
+				videoram.read(offs*2+1)+ bank,
 				col,
 				fx,fy,
 				px,py,

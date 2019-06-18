@@ -96,9 +96,9 @@ public class pacland
 	
 	public static VhStartPtr pacland_vh_start = new VhStartPtr() { public int handler() 
 	{
-		if ( ( dirtybuffer = malloc( videoram_size ) ) == 0)
+		if ( ( dirtybuffer = malloc( videoram_size[0] ) ) == 0)
 			return 1;
-		memset (dirtybuffer, 1, videoram_size);
+		memset (dirtybuffer, 1, videoram_size[0]);
 	
 		if ( ( tmpbitmap = bitmap_alloc( 64*8, 32*8 ) ) == 0 )
 		{
@@ -285,20 +285,20 @@ public class pacland
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for ( offs = videoram_size / 2; offs < videoram_size; offs += 2 )
+		for ( offs = videoram_size[0] / 2; offs < videoram_size[0]; offs += 2 )
 		{
 			if ( dirtybuffer[offs] || dirtybuffer[offs+1] )
 			{
 				dirtybuffer[offs] = dirtybuffer[offs+1] = 0;
 	
-				sx = ( ( ( offs - ( videoram_size / 2 ) ) % 128 ) / 2 );
-				sy = ( ( ( offs - ( videoram_size / 2 ) ) / 128 ) );
+				sx = ( ( ( offs - ( videoram_size[0] / 2 ) ) % 128 ) / 2 );
+				sy = ( ( ( offs - ( videoram_size[0] / 2 ) ) / 128 ) );
 	
-				flipx = videoram[offs+1] & 0x40;
-				flipy = videoram[offs+1] & 0x80;
+				flipx = videoram.read(offs+1)& 0x40;
+				flipy = videoram.read(offs+1)& 0x80;
 	
-				code = videoram[offs] + ((videoram[offs+1] & 0x01) << 8);
-				color = ((videoram[offs+1] & 0x3e) >> 1) + ((code & 0x1c0) >> 1);
+				code = videoram.read(offs)+ ((videoram.read(offs+1)& 0x01) << 8);
+				color = ((videoram.read(offs+1)& 0x3e) >> 1) + ((code & 0x1c0) >> 1);
 	
 				drawgfx(tmpbitmap,Machine->gfx[1],
 						code,
@@ -327,7 +327,7 @@ public class pacland
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for ( offs = 0; offs < videoram_size / 2; offs += 2 )
+		for ( offs = 0; offs < videoram_size[0] / 2; offs += 2 )
 		{
 			if ( dirtybuffer[offs] || dirtybuffer[offs+1] )
 			{
@@ -336,11 +336,11 @@ public class pacland
 				sx = ( ( offs % 128 ) / 2 );
 				sy = ( ( offs / 128 ) );
 	
-				flipx = videoram[offs+1] & 0x40;
-				flipy = videoram[offs+1] & 0x80;
+				flipx = videoram.read(offs+1)& 0x40;
+				flipy = videoram.read(offs+1)& 0x80;
 	
-				code = videoram[offs] + ((videoram[offs+1] & 0x01) << 8);
-				color = ((videoram[offs+1] & 0x1e) >> 1) + ((code & 0x1e0) >> 1);
+				code = videoram.read(offs)+ ((videoram.read(offs+1)& 0x01) << 8);
+				color = ((videoram.read(offs+1)& 0x1e) >> 1) + ((code & 0x1e0) >> 1);
 	
 				drawgfx(tmpbitmap2,Machine->gfx[0],
 						code,
@@ -373,9 +373,9 @@ public class pacland
 	
 		/* redraw the tiles which have priority over the sprites */
 		fillbitmap(tmpbitmap3,Machine->pens[0x7f],&Machine->visible_area);
-		for ( offs = 0; offs < videoram_size / 2; offs += 2 )
+		for ( offs = 0; offs < videoram_size[0] / 2; offs += 2 )
 		{
-			if (videoram[offs+1] & 0x20)
+			if (videoram.read(offs+1)& 0x20)
 			{
 				int scroll;
 	
@@ -390,11 +390,11 @@ public class pacland
 	
 				if (sx*8 + scroll < -8) scroll += 512;
 	
-				flipx = videoram[offs+1] & 0x40;
-				flipy = videoram[offs+1] & 0x80;
+				flipx = videoram.read(offs+1)& 0x40;
+				flipy = videoram.read(offs+1)& 0x80;
 	
-				code = videoram[offs] + ((videoram[offs+1] & 0x01) << 8);
-				color = ((videoram[offs+1] & 0x1e) >> 1) + ((code & 0x1e0) >> 1);
+				code = videoram.read(offs)+ ((videoram.read(offs+1)& 0x01) << 8);
+				color = ((videoram.read(offs+1)& 0x1e) >> 1) + ((code & 0x1e0) >> 1);
 	
 				drawgfx(tmpbitmap3,Machine->gfx[0],
 						code,

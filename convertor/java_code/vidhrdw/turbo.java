@@ -475,7 +475,7 @@ public class turbo
 			for (x = 8; x < VIEW_WIDTH; x += 8)
 			{
 				int area5_buffer = road_gfxdata_base[0x4000 + (x >> 3)];
-				UINT8 back_data = videoram[(y / 8) * 32 + (x / 8) - 33];
+				UINT8 back_data = videoram.read((y / 8) * 32 + (x / 8) - 33);
 				UINT16 backbits_buffer = back_expanded_data[(back_data << 3) | (y & 7)];
 	
 				/* loop over columns */

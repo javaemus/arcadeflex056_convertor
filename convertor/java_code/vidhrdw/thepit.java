@@ -148,7 +148,7 @@ public class thepit
 			int i;
 	
 	
-			for (i = offset / 2;i < videoram_size;i += 32)
+			for (i = offset / 2;i < videoram_size[0];i += 32)
 				dirtybuffer[i] = 1;
 		}
 	
@@ -224,7 +224,7 @@ public class thepit
 	
 				if (priority == 0)
 				{
-					code = videoram[offs];
+					code = videoram.read(offs);
 					bank = graphics_bank;
 				}
 				else
@@ -336,7 +336,7 @@ public class thepit
 	{
 		if (full_refresh)
 		{
-			memset(dirtybuffer, 1, videoram_size);
+			memset(dirtybuffer, 1, videoram_size[0]);
 		}
 	
 	

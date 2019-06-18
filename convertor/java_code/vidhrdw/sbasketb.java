@@ -108,13 +108,13 @@ public class sbasketb
 	
 		if (full_refresh)
 		{
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 		}
 	
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -123,7 +123,7 @@ public class sbasketb
 				sx = offs % 32;
 				sy = offs / 32;
 	
-				code  = videoram[offs] + ((colorram[offs] & 0x20) << 3);
+				code  = videoram.read(offs)+ ((colorram[offs] & 0x20) << 3);
 				color = colorram[offs] & 0x0f;
 				flipx = colorram[offs] & 0x40;
 				flipy = colorram[offs] & 0x80;

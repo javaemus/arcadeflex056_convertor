@@ -230,7 +230,7 @@ public class terracre
 		}
 	
 	
-		for (offs = videoram_size/2 - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0]/2 - 1;offs >= 0;offs--)
 		{
 			int sx,sy;
 	

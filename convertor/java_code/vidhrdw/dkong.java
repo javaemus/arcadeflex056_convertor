@@ -232,7 +232,7 @@ public class dkong
 				sx = offs % 32;
 				sy = offs / 32;
 	
-				charcode = videoram[offs] + 256 * gfx_bank;
+				charcode = videoram.read(offs)+ 256 * gfx_bank;
 				/* retrieve the character color from the PROM */
 				color = (color_codes[offs % 32 + 32 * (offs / 32 / 4)] & 0x0f) + 0x10 * palette_bank;
 	
@@ -352,7 +352,7 @@ public class dkong
 		palette_set_color(256,0xff,0x00,0x00);	/* stars */
 	
 		if (full_refresh)
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 	
 		draw_tiles(bitmap);
 		draw_grid(bitmap);
@@ -362,7 +362,7 @@ public class dkong
 	public static VhUpdatePtr dkong_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		if (full_refresh)
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 	
 		draw_tiles(bitmap);
 		draw_sprites(bitmap);

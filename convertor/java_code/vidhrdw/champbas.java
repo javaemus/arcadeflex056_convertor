@@ -90,7 +90,7 @@ public class champbas
 		if (gfxbank != (data & 1))
 		{
 			gfxbank = data & 1;
-			memset(dirtybuffer,1,videoram_size);
+			memset(dirtybuffer,1,videoram_size[0]);
 		}
 	} };
 	
@@ -109,7 +109,7 @@ public class champbas
 	
 		/* for every character in the Video RAM, check if it has been modified */
 		/* since last time and update it accordingly. */
-		for (offs = videoram_size - 1;offs >= 0;offs--)
+		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
 			if (dirtybuffer[offs])
 			{
@@ -122,7 +122,7 @@ public class champbas
 				sy = 8 * (offs / 32);
 	
 				drawgfx(tmpbitmap,Machine->gfx[0 + gfxbank],
-						videoram[offs],
+						videoram.read(offs),
 						(colorram[offs] & 0x1f) + 32,
 						0,0,
 						sx,sy,
