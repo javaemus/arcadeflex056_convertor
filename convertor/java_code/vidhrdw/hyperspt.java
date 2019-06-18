@@ -156,8 +156,8 @@ public class hyperspt
 	
 				sx = offs % 64;
 				sy = offs / 64;
-				flipx = colorram[offs] & 0x10;
-				flipy = colorram[offs] & 0x20;
+				flipx = colorram.read(offs)& 0x10;
+				flipy = colorram.read(offs)& 0x20;
 				if (flipscreen)
 				{
 					sx = 63 - sx;
@@ -167,8 +167,8 @@ public class hyperspt
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram.read(offs)+ ((colorram[offs] & 0x80) << 1) + ((colorram[offs] & 0x40) << 3),
-						colorram[offs] & 0x0f,
+						videoram.read(offs)+ ((colorram.read(offs)& 0x80) << 1) + ((colorram.read(offs)& 0x40) << 3),
+						colorram.read(offs)& 0x0f,
 						flipx,flipy,
 						8*sx,8*sy,
 						0,TRANSPARENCY_NONE,0);
@@ -256,7 +256,7 @@ public class hyperspt
 	
 				sx = offs % 64;
 				sy = offs / 64;
-				flipx = colorram[offs] & 0x10;
+				flipx = colorram.read(offs)& 0x10;
 				flipy = 0;	/* no vertical flip */
 				if (flipscreen)
 				{
@@ -267,8 +267,8 @@ public class hyperspt
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram.read(offs)+ ((colorram[offs] & 0x80) << 1) + ((colorram[offs] & 0x60) << 4),
-						colorram[offs] & 0x0f,
+						videoram.read(offs)+ ((colorram.read(offs)& 0x80) << 1) + ((colorram.read(offs)& 0x60) << 4),
+						colorram.read(offs)& 0x0f,
 						flipx,flipy,
 						8*sx,8*sy,
 						0,TRANSPARENCY_NONE,0);

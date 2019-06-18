@@ -151,8 +151,8 @@ public class trackfld
 	
 				sx = offs % 64;
 				sy = offs / 64;
-				flipx = colorram[offs] & 0x10;
-				flipy = colorram[offs] & 0x20;
+				flipx = colorram.read(offs)& 0x10;
+				flipy = colorram.read(offs)& 0x20;
 				if (flip_screen)
 				{
 					sx = 63 - sx;
@@ -162,8 +162,8 @@ public class trackfld
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram.read(offs)+ 4 * (colorram[offs] & 0xc0),
-						colorram[offs] & 0x0f,
+						videoram.read(offs)+ 4 * (colorram.read(offs)& 0xc0),
+						colorram.read(offs)& 0x0f,
 						flipx,flipy,
 						8*sx,8*sy,
 						0,TRANSPARENCY_NONE,0);

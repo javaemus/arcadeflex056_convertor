@@ -63,25 +63,25 @@ public class vicdual
 	
 	
 			/* background red component */
-			bit = (color_prom[i] >> 3) & 0x01;
+			bit = (color_prom.read(i)>> 3) & 0x01;
 			r = 0xff * bit;
 			/* background green component */
-			bit = (color_prom[i] >> 1) & 0x01;
+			bit = (color_prom.read(i)>> 1) & 0x01;
 			g = 0xff * bit;
 			/* background blue component */
-			bit = (color_prom[i] >> 2) & 0x01;
+			bit = (color_prom.read(i)>> 2) & 0x01;
 			b = 0xff * bit;
 	
 			palette_set_color(2*i,r,g,b);
 	
 			/* foreground red component */
-			bit = (color_prom[i] >> 7) & 0x01;
+			bit = (color_prom.read(i)>> 7) & 0x01;
 			r = 0xff * bit;
 			/* foreground green component */
-			bit = (color_prom[i] >> 5) & 0x01;
+			bit = (color_prom.read(i)>> 5) & 0x01;
 			g = 0xff * bit;
 			/* foreground blue component */
-			bit = (color_prom[i] >> 6) & 0x01;
+			bit = (color_prom.read(i)>> 6) & 0x01;
 			b = 0xff * bit;
 	
 			palette_set_color(2*i+1,r,g,b);

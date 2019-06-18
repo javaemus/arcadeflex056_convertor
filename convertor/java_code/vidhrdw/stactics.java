@@ -201,25 +201,25 @@ public class stactics
 	        for(j=0;j<16;j++)
 	        {
 	            *(colortable++) = 0;
-	            *(colortable++) = color_prom[i*0x100+0x01*0x10+j];
+	            *(colortable++) = color_prom.read(i*0x100+0x01*0x10+j);
 	        }
 	        /* For page F - Close Aliens (these are all the same color) */
 	        for(j=0;j<16;j++)
 	        {
 	            *(colortable++) = 0;
-	            *(colortable++) = color_prom[i*0x100+0x02*0x10];
+	            *(colortable++) = color_prom.read(i*0x100+0x02*0x10);
 	        }
 	        /* For page E - Medium Aliens (these are all the same color) */
 	        for(j=0;j<16;j++)
 	        {
 	            *(colortable++) = 0;
-	            *(colortable++) = color_prom[i*0x100+0x04*0x10+j];
+	            *(colortable++) = color_prom.read(i*0x100+0x04*0x10+j);
 	        }
 	        /* For page D - Far Aliens (these are all the same color) */
 	        for(j=0;j<16;j++)
 	        {
 	            *(colortable++) = 0;
-	            *(colortable++) = color_prom[i*0x100+0x08*0x10+j];
+	            *(colortable++) = color_prom.read(i*0x100+0x08*0x10+j);
 	        }
 	    }
 	}

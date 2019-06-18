@@ -50,17 +50,17 @@ public class digdug
 		{
 			int bit0,bit1,bit2;
 	
-			bit0 = (color_prom[31-i] >> 0) & 0x01;
-			bit1 = (color_prom[31-i] >> 1) & 0x01;
-			bit2 = (color_prom[31-i] >> 2) & 0x01;
+			bit0 = (color_prom.read(31-i)>> 0) & 0x01;
+			bit1 = (color_prom.read(31-i)>> 1) & 0x01;
+			bit2 = (color_prom.read(31-i)>> 2) & 0x01;
 			palette[3*i] = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
-			bit0 = (color_prom[31-i] >> 3) & 0x01;
-			bit1 = (color_prom[31-i] >> 4) & 0x01;
-			bit2 = (color_prom[31-i] >> 5) & 0x01;
+			bit0 = (color_prom.read(31-i)>> 3) & 0x01;
+			bit1 = (color_prom.read(31-i)>> 4) & 0x01;
+			bit2 = (color_prom.read(31-i)>> 5) & 0x01;
 			palette[3*i + 1] = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
 			bit0 = 0;
-			bit1 = (color_prom[31-i] >> 6) & 0x01;
-			bit2 = (color_prom[31-i] >> 7) & 0x01;
+			bit1 = (color_prom.read(31-i)>> 6) & 0x01;
+			bit2 = (color_prom.read(31-i)>> 7) & 0x01;
 			palette[3*i + 2] = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
 		}
 	
@@ -72,10 +72,10 @@ public class digdug
 		}
 		/* sprites */
 		for (i = 0*4;i < 64*4;i++)
-			colortable[8*2 + i] = 31 - ((color_prom[i + 32] & 0x0f) + 0x10);
+			colortable[8*2 + i] = 31 - ((color_prom.read(i + 32)& 0x0f) + 0x10);
 		/* playfield */
 		for (i = 64*4;i < 128*4;i++)
-			colortable[8*2 + i] = 31 - (color_prom[i + 32] & 0x0f);
+			colortable[8*2 + i] = 31 - (color_prom.read(i + 32)& 0x0f);
 	} };
 	
 	

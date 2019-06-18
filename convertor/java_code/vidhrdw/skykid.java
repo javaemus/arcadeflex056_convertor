@@ -36,24 +36,24 @@ public class skykid
 		for (i = 0; i < totcolors; i++)
 		{
 			/* red component */
-			bit0 = (color_prom[totcolors*0] >> 0) & 0x01;
-			bit1 = (color_prom[totcolors*0] >> 1) & 0x01;
-			bit2 = (color_prom[totcolors*0] >> 2) & 0x01;
-			bit3 = (color_prom[totcolors*0] >> 3) & 0x01;
+			bit0 = (color_prom.read(totcolors*0)>> 0) & 0x01;
+			bit1 = (color_prom.read(totcolors*0)>> 1) & 0x01;
+			bit2 = (color_prom.read(totcolors*0)>> 2) & 0x01;
+			bit3 = (color_prom.read(totcolors*0)>> 3) & 0x01;
 			*(palette++) = 0x0e*bit0 + 0x1f*bit1 + 0x43*bit2 + 0x8f*bit3;
 	
 			/* green component */
-			bit0 = (color_prom[totcolors*1] >> 0) & 0x01;
-			bit1 = (color_prom[totcolors*1] >> 1) & 0x01;
-			bit2 = (color_prom[totcolors*1] >> 2) & 0x01;
-			bit3 = (color_prom[totcolors*1] >> 3) & 0x01;
+			bit0 = (color_prom.read(totcolors*1)>> 0) & 0x01;
+			bit1 = (color_prom.read(totcolors*1)>> 1) & 0x01;
+			bit2 = (color_prom.read(totcolors*1)>> 2) & 0x01;
+			bit3 = (color_prom.read(totcolors*1)>> 3) & 0x01;
 			*(palette++) = 0x0e*bit0 + 0x1f*bit1 + 0x43*bit2 + 0x8f*bit3;
 	
 			/* blue component */
-			bit0 = (color_prom[totcolors*2] >> 0) & 0x01;
-			bit1 = (color_prom[totcolors*2] >> 1) & 0x01;
-			bit2 = (color_prom[totcolors*2] >> 2) & 0x01;
-			bit3 = (color_prom[totcolors*2] >> 3) & 0x01;
+			bit0 = (color_prom.read(totcolors*2)>> 0) & 0x01;
+			bit1 = (color_prom.read(totcolors*2)>> 1) & 0x01;
+			bit2 = (color_prom.read(totcolors*2)>> 2) & 0x01;
+			bit3 = (color_prom.read(totcolors*2)>> 3) & 0x01;
 			*(palette++) = 0x0e*bit0 + 0x1f*bit1 + 0x43*bit2 + 0x8f*bit3;
 	
 			color_prom++;

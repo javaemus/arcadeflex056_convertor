@@ -108,8 +108,8 @@ public class higemaru
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram.read(offs)+ ((colorram[offs] & 0x80) << 1),
-						colorram[offs] & 0x1f,
+						videoram.read(offs)+ ((colorram.read(offs)& 0x80) << 1),
+						colorram.read(offs)& 0x1f,
 						flipscreen,flipscreen,
 						8*sx,8*sy,
 						0,TRANSPARENCY_NONE,0);

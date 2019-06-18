@@ -392,22 +392,22 @@ public class alpha68k
 	
 		for (i = 0;i < 256;i++)
 		{
-			bit0 = (color_prom[0] >> 0) & 0x01;
-			bit1 = (color_prom[0] >> 1) & 0x01;
-			bit2 = (color_prom[0] >> 2) & 0x01;
-			bit3 = (color_prom[0] >> 3) & 0x01;
+			bit0 = (color_prom.read(0)>> 0) & 0x01;
+			bit1 = (color_prom.read(0)>> 1) & 0x01;
+			bit2 = (color_prom.read(0)>> 2) & 0x01;
+			bit3 = (color_prom.read(0)>> 3) & 0x01;
 			*palette++ = 0x0e * bit0 + 0x1f * bit1 + 0x43 * bit2 + 0x8f * bit3;
 	
-			bit0 = (color_prom[0x100] >> 0) & 0x01;
-			bit1 = (color_prom[0x100] >> 1) & 0x01;
-			bit2 = (color_prom[0x100] >> 2) & 0x01;
-			bit3 = (color_prom[0x100] >> 3) & 0x01;
+			bit0 = (color_prom.read(0x100)>> 0) & 0x01;
+			bit1 = (color_prom.read(0x100)>> 1) & 0x01;
+			bit2 = (color_prom.read(0x100)>> 2) & 0x01;
+			bit3 = (color_prom.read(0x100)>> 3) & 0x01;
 			*palette++ = 0x0e * bit0 + 0x1f * bit1 + 0x43 * bit2 + 0x8f * bit3;
 	
-			bit0 = (color_prom[0x200] >> 0) & 0x01;
-			bit1 = (color_prom[0x200] >> 1) & 0x01;
-			bit2 = (color_prom[0x200] >> 2) & 0x01;
-			bit3 = (color_prom[0x200] >> 3) & 0x01;
+			bit0 = (color_prom.read(0x200)>> 0) & 0x01;
+			bit1 = (color_prom.read(0x200)>> 1) & 0x01;
+			bit2 = (color_prom.read(0x200)>> 2) & 0x01;
+			bit3 = (color_prom.read(0x200)>> 3) & 0x01;
 			*palette++ = 0x0e * bit0 + 0x1f * bit1 + 0x43 * bit2 + 0x8f * bit3;
 	
 			color_prom++;
@@ -417,7 +417,7 @@ public class alpha68k
 	
 		for (i = 0;i < 256;i++)
 		{
-			*colortable++ = ((color_prom[0] & 0x0f) << 4) | (color_prom[0x100] & 0x0f);
+			*colortable++ = ((color_prom.read(0)& 0x0f) << 4) | (color_prom.read(0x100)& 0x0f);
 			color_prom++;
 		}
 	} };

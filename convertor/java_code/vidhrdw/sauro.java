@@ -65,12 +65,12 @@ public class sauro
 	
 			dirtybuffer[offs] = 0;
 	
-			code = videoram.read(offs)+ ((colorram[offs] & 0x07) << 8);
+			code = videoram.read(offs)+ ((colorram.read(offs)& 0x07) << 8);
 			sx = 8 * (offs / 32);
 			sy = 8 * (offs % 32);
-			color = (colorram[offs] >> 4) & 0x0f;
+			color = (colorram.read(offs)>> 4) & 0x0f;
 	
-			flipx = colorram[offs] & 0x08;
+			flipx = colorram.read(offs)& 0x08;
 	
 			if (flip_screen)
 			{

@@ -25,9 +25,9 @@ public class strnskil
 	
 		for (i = 0;i < Machine->drv->total_colors;i++)
 		{
-			*(palette++) = color_prom[0]*0x11;
-			*(palette++) = color_prom[Machine->drv->total_colors]*0x11;
-			*(palette++) = color_prom[2*Machine->drv->total_colors]*0x11;
+			*(palette++) = color_prom.read(0)*0x11;
+			*(palette++) = color_prom.read(Machine->drv->total_colors)*0x11;
+			*(palette++) = color_prom.read(2*Machine->drv->total_colors)*0x11;
 	
 			color_prom++;
 		}

@@ -116,8 +116,8 @@ public class exprraid
 			sy = offs / 32;
 	
 			drawgfx(bitmap,Machine->gfx[0],
-					videoram.read(offs)+ ((colorram[offs] & 7) << 8),
-					(colorram[offs] & 0x10) >> 4,
+					videoram.read(offs)+ ((colorram.read(offs)& 7) << 8),
+					(colorram.read(offs)& 0x10) >> 4,
 					0,0,
 					8*sx,8*sy,
 					&Machine->visible_area,TRANSPARENCY_PEN,0);

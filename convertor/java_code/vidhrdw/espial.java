@@ -52,19 +52,19 @@ public class espial
 	
 	
 			/* red component */
-			bit0 = (color_prom[i] >> 0) & 0x01;
-			bit1 = (color_prom[i] >> 1) & 0x01;
-			bit2 = (color_prom[i] >> 2) & 0x01;
+			bit0 = (color_prom.read(i)>> 0) & 0x01;
+			bit1 = (color_prom.read(i)>> 1) & 0x01;
+			bit2 = (color_prom.read(i)>> 2) & 0x01;
 			r = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
 			/* green component */
-			bit0 = (color_prom[i] >> 3) & 0x01;
-			bit1 = (color_prom[i + Machine->drv->total_colors] >> 0) & 0x01;
-			bit2 = (color_prom[i + Machine->drv->total_colors] >> 1) & 0x01;
+			bit0 = (color_prom.read(i)>> 3) & 0x01;
+			bit1 = (color_prom.read(i + Machine->drv->total_colors)>> 0) & 0x01;
+			bit2 = (color_prom.read(i + Machine->drv->total_colors)>> 1) & 0x01;
 			g = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
 			/* blue component */
 			bit0 = 0;
-			bit1 = (color_prom[i + Machine->drv->total_colors] >> 2) & 0x01;
-			bit2 = (color_prom[i + Machine->drv->total_colors] >> 3) & 0x01;
+			bit1 = (color_prom.read(i + Machine->drv->total_colors)>> 2) & 0x01;
+			bit2 = (color_prom.read(i + Machine->drv->total_colors)>> 3) & 0x01;
 			b = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
 	
 			palette_set_color(i,r,g,b);
@@ -112,7 +112,7 @@ public class espial
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
 						videoram.read(offs)+ 256*(espial_attributeram[offs] & 0x03),
-						colorram[offs],
+						colorram.read(offs),
 						espial_attributeram[offs] & 0x04,espial_attributeram[offs] & 0x08,
 						8*sx,8*sy,
 						0,TRANSPARENCY_NONE,0);

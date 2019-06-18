@@ -38,22 +38,22 @@ public class phozon
 			int bit0,bit1,bit2,bit3;
 	
 			/* red component */
-			bit0 = (color_prom[0] >> 0) & 0x01;
-			bit1 = (color_prom[0] >> 1) & 0x01;
-			bit2 = (color_prom[0] >> 2) & 0x01;
-			bit3 = (color_prom[0] >> 3) & 0x01;
+			bit0 = (color_prom.read(0)>> 0) & 0x01;
+			bit1 = (color_prom.read(0)>> 1) & 0x01;
+			bit2 = (color_prom.read(0)>> 2) & 0x01;
+			bit3 = (color_prom.read(0)>> 3) & 0x01;
 			*(palette++) = 0x0e * bit0 + 0x1f * bit1 + 0x43 * bit2 + 0x8f * bit3;
 			/* green component */
-			bit0 = (color_prom[Machine->drv->total_colors] >> 0) & 0x01;
-			bit1 = (color_prom[Machine->drv->total_colors] >> 1) & 0x01;
-			bit2 = (color_prom[Machine->drv->total_colors] >> 2) & 0x01;
-			bit3 = (color_prom[Machine->drv->total_colors] >> 3) & 0x01;
+			bit0 = (color_prom.read(Machine->drv->total_colors)>> 0) & 0x01;
+			bit1 = (color_prom.read(Machine->drv->total_colors)>> 1) & 0x01;
+			bit2 = (color_prom.read(Machine->drv->total_colors)>> 2) & 0x01;
+			bit3 = (color_prom.read(Machine->drv->total_colors)>> 3) & 0x01;
 			*(palette++) = 0x0e * bit0 + 0x1f * bit1 + 0x43 * bit2 + 0x8f * bit3;
 			/* blue component */
-			bit0 = (color_prom[2*Machine->drv->total_colors] >> 0) & 0x01;
-			bit1 = (color_prom[2*Machine->drv->total_colors] >> 1) & 0x01;
-			bit2 = (color_prom[2*Machine->drv->total_colors] >> 2) & 0x01;
-			bit3 = (color_prom[2*Machine->drv->total_colors] >> 3) & 0x01;
+			bit0 = (color_prom.read(2*Machine->drv->total_colors)>> 0) & 0x01;
+			bit1 = (color_prom.read(2*Machine->drv->total_colors)>> 1) & 0x01;
+			bit2 = (color_prom.read(2*Machine->drv->total_colors)>> 2) & 0x01;
+			bit3 = (color_prom.read(2*Machine->drv->total_colors)>> 3) & 0x01;
 			*(palette++) = 0x0e * bit0 + 0x1f * bit1 + 0x43 * bit2 + 0x8f * bit3;
 	
 			color_prom++;
@@ -147,9 +147,9 @@ public class phozon
 					sy = my - 2;
 				}
 	
-				drawgfx(tmpbitmap,Machine->gfx[(colorram[offs] & 0x80) ? 1 : 0],
+				drawgfx(tmpbitmap,Machine->gfx[(colorram.read(offs)& 0x80) ? 1 : 0],
 						videoram.read(offs),
-						colorram[offs] & 0x3f,
+						colorram.read(offs)& 0x3f,
 						0,0,
 						8*sx,8*sy,
 						&Machine->visible_area,TRANSPARENCY_NONE,0);
@@ -226,7 +226,7 @@ public class phozon
 		/* redraw high priority chars */
 		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
-			if (colorram[offs] & 0x40)
+			if (colorram.read(offs)& 0x40)
 			{
 				int sx,sy,mx,my;
 	
@@ -256,9 +256,9 @@ public class phozon
 					sy = my - 2;
 				}
 	
-				drawgfx(bitmap,Machine->gfx[(colorram[offs] & 0x80) ? 1 : 0],
+				drawgfx(bitmap,Machine->gfx[(colorram.read(offs)& 0x80) ? 1 : 0],
 						videoram.read(offs),
-						colorram[offs] & 0x3f,
+						colorram.read(offs)& 0x3f,
 						0,0,
 						8*sx,8*sy,
 						&Machine->visible_area,TRANSPARENCY_PEN,0);

@@ -222,9 +222,9 @@ public class superqix
 				sx = offs % 32;
 				sy = offs / 32;
 	
-				drawgfx(tmpbitmap,Machine->gfx[(colorram[offs] & 0x04) ? 0 : (1 + gfxbank)],
-						videoram.read(offs)+ 256 * (colorram[offs] & 0x03),
-						(colorram[offs] & 0xf0) >> 4,
+				drawgfx(tmpbitmap,Machine->gfx[(colorram.read(offs)& 0x04) ? 0 : (1 + gfxbank)],
+						videoram.read(offs)+ 256 * (colorram.read(offs)& 0x03),
+						(colorram.read(offs)& 0xf0) >> 4,
 						0,0,
 						8*sx,8*sy,
 						&Machine->visible_area,TRANSPARENCY_NONE,0);
@@ -305,7 +305,7 @@ public class superqix
 		/* redraw characters which have priority over the bitmap */
 		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
-			if (colorram[offs] & 0x08)
+			if (colorram.read(offs)& 0x08)
 			{
 				int sx,sy;
 	
@@ -313,9 +313,9 @@ public class superqix
 				sx = offs % 32;
 				sy = offs / 32;
 	
-				drawgfx(bitmap,Machine->gfx[(colorram[offs] & 0x04) ? 0 : 1],
-						videoram.read(offs)+ 256 * (colorram[offs] & 0x03),
-						(colorram[offs] & 0xf0) >> 4,
+				drawgfx(bitmap,Machine->gfx[(colorram.read(offs)& 0x04) ? 0 : 1],
+						videoram.read(offs)+ 256 * (colorram.read(offs)& 0x03),
+						(colorram.read(offs)& 0xf0) >> 4,
 						0,0,
 						8*sx,8*sy,
 						&Machine->visible_area,TRANSPARENCY_PEN,0);

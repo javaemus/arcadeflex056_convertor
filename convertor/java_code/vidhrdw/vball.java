@@ -64,10 +64,10 @@ public class vball
 	
 		for (i=0;i<128;i++, color_prom++)
 		{
-			palette_set_color(i,(color_prom[0] & 0x0f) << 4,(color_prom[0] & 0xf0) >> 0,
-					       (color_prom[0x800] & 0x0f) << 4);
-	//		logerror("\t%d: r:%d g:%d b:%d\n",i,(color_prom[0] & 0x0f) << 4,(color_prom[0] & 0xf0) >> 0,
-	//				       (color_prom[0x800] & 0x0f) << 4);
+			palette_set_color(i,(color_prom.read(0)& 0x0f) << 4,(color_prom.read(0)& 0xf0) >> 0,
+					       (color_prom.read(0x800)& 0x0f) << 4);
+	//		logerror("\t%d: r:%d g:%d b:%d\n",i,(color_prom.read(0)& 0x0f) << 4,(color_prom.read(0)& 0xf0) >> 0,
+	//				       (color_prom.read(0x800)& 0x0f) << 4);
 		}
 	
 		vb_bgprombank=bank;
@@ -89,8 +89,8 @@ public class vball
 	
 		for (i=128;i<256;i++,color_prom++)
 		{
-			palette_set_color(i,(color_prom[0] & 0x0f) << 4,(color_prom[0] & 0xf0) >> 0,
-					       (color_prom[0x800] & 0x0f) << 4);
+			palette_set_color(i,(color_prom.read(0)& 0x0f) << 4,(color_prom.read(0)& 0xf0) >> 0,
+					       (color_prom.read(0x800)& 0x0f) << 4);
 		}
 	
 		vb_spprombank=bank;

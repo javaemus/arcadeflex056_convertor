@@ -68,7 +68,7 @@ public class avgdvg
 	static int vectorEngine = USE_DVG;
 	static int flipword = 0; /* little/big endian issues */
 	static int busy = 0;     /* vector engine busy? */
-	static int colorram[16]; /* colorram entries */
+	static int colorram.read(16); /* colorram entries */
 	
 	/* These hold the X/Y coordinates the vector engine uses */
 	static int width; int height;
@@ -246,7 +246,7 @@ public class avgdvg
 						z = z * BRIGHTNESS;
 					else
 						if (z) z = (z << 4) | 0x0f;
-					vector_add_point (currentx, currenty, VECTOR_COLOR111(colorram[1]), z);
+					vector_add_point (currentx, currenty, VECTOR_COLOR111(colorram.read(1)), z);
 	
 					break;
 	
@@ -337,7 +337,7 @@ public class avgdvg
 						z = z * BRIGHTNESS;
 					else
 						if (z) z = (z << 4) | 0x0f;
-					vector_add_point (currentx, currenty, VECTOR_COLOR111(colorram[1]), z);
+					vector_add_point (currentx, currenty, VECTOR_COLOR111(colorram.read(1)), z);
 					break;
 	
 				default:
@@ -562,7 +562,7 @@ public class avgdvg
 							color = 2;
 					}
 	
-					vector_add_point (currentx, currenty, VECTOR_COLOR111(colorram[color]), z);
+					vector_add_point (currentx, currenty, VECTOR_COLOR111(colorram.read(color)), z);
 	
 	#ifdef VG_DEBUG
 					logerror("VCTR x:%d y:%d z:%d statz:%d", x, y, z, statz);
@@ -605,7 +605,7 @@ public class avgdvg
 						color = rand() & 0x07;
 					}
 	
-					vector_add_point (currentx, currenty, VECTOR_COLOR111(colorram[color]), z);
+					vector_add_point (currentx, currenty, VECTOR_COLOR111(colorram.read(color)), z);
 	
 	#ifdef VG_DEBUG
 					logerror("SVEC x:%d y:%d z:%d statz:%d", x, y, z, statz);
@@ -898,25 +898,25 @@ public class avgdvg
 	
 		/* initialize the colorram */
 		for (i = 0; i < 16; i++)
-			colorram[i] = i & 0x07;
+			colorram.write(i,i & 0x07);
 	
 		/* fill the rest of the 256 color entries depending on the game */
 		switch (paltype)
 		{
 			/* Black and White vector colors (Asteroids,Omega Race) .ac JAN2498 */
 			case  VEC_PAL_WHITE:
-				colorram[1] = 7; /* BW games use only color 1 (== white) */
+				colorram.write(1,7); /* BW games use only color 1 (== white) */
 				break;
 	
 			/* Monochrome Aqua colors (Asteroids Deluxe,Red Baron) .ac JAN2498 */
 			case  VEC_PAL_ASTDELUX:
 				/* Use backdrop if present MLR OCT0598 */
 				backdrop_load("astdelux.png", 256);
-				colorram[1] =  3; /* for Asteroids */
+				colorram.write(1,3); /* for Asteroids */
 				break;
 	
 			case  VEC_PAL_AQUA:
-				colorram[0] =  3; /* for Red Baron */
+				colorram.write(0,3); /* for Red Baron */
 				break;
 	
 			/* Monochrome Green/Red vector colors (Battlezone) .ac JAN2498 */
@@ -949,7 +949,7 @@ public class avgdvg
 	 * a fake GfxLayout, otherwise you'll crash */
 	public static WriteHandlerPtr colorram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-		colorram[offset & 0x0f] = data & 0x0f;
+		colorram.write(offset & 0x0f,data & 0x0f);
 	} };
 	
 	/*

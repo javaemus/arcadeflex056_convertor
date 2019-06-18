@@ -94,14 +94,14 @@ public class mrdo
 			a1 = ((i >> 3) & 0x1c) + (i & 0x03) + 32;
 			a2 = ((i >> 0) & 0x1c) + (i & 0x03);
 	
-			bits0 = (color_prom[a1] >> 0) & 0x03;
-			bits2 = (color_prom[a2] >> 0) & 0x03;
+			bits0 = (color_prom.read(a1)>> 0) & 0x03;
+			bits2 = (color_prom.read(a2)>> 0) & 0x03;
 			*(palette++) = weight[bits0 + (bits2 << 2)];
-			bits0 = (color_prom[a1] >> 2) & 0x03;
-			bits2 = (color_prom[a2] >> 2) & 0x03;
+			bits0 = (color_prom.read(a1)>> 2) & 0x03;
+			bits2 = (color_prom.read(a2)>> 2) & 0x03;
 			*(palette++) = weight[bits0 + (bits2 << 2)];
-			bits0 = (color_prom[a1] >> 4) & 0x03;
-			bits2 = (color_prom[a2] >> 4) & 0x03;
+			bits0 = (color_prom.read(a1)>> 4) & 0x03;
+			bits2 = (color_prom.read(a2)>> 4) & 0x03;
 			*(palette++) = weight[bits0 + (bits2 << 2)];
 		}
 	
@@ -113,9 +113,9 @@ public class mrdo
 			int bits;
 	
 			if (i < 32)
-				bits = color_prom[i] & 0x0f;		/* low 4 bits are for sprite color n */
+				bits = color_prom.read(i)& 0x0f;		/* low 4 bits are for sprite color n */
 			else
-				bits = color_prom[i & 0x1f] >> 4;	/* high 4 bits are for sprite color n + 8 */
+				bits = color_prom.read(i & 0x1f)>> 4;	/* high 4 bits are for sprite color n + 8 */
 	
 			COLOR(2,i) = bits + ((bits & 0x0c) << 3);
 		}

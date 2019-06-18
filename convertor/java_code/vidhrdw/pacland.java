@@ -173,20 +173,20 @@ public class pacland
 				int bit0,bit1,bit2,bit3;
 				int r,g,b;
 	
-				bit0 = (color_prom[0] >> 0) & 0x01;
-				bit1 = (color_prom[0] >> 1) & 0x01;
-				bit2 = (color_prom[0] >> 2) & 0x01;
-				bit3 = (color_prom[0] >> 3) & 0x01;
+				bit0 = (color_prom.read(0)>> 0) & 0x01;
+				bit1 = (color_prom.read(0)>> 1) & 0x01;
+				bit2 = (color_prom.read(0)>> 2) & 0x01;
+				bit3 = (color_prom.read(0)>> 3) & 0x01;
 				r = 0x0e * bit0 + 0x1f * bit1 + 0x43 * bit2 + 0x8f * bit3;
-				bit0 = (color_prom[0] >> 4) & 0x01;
-				bit1 = (color_prom[0] >> 5) & 0x01;
-				bit2 = (color_prom[0] >> 6) & 0x01;
-				bit3 = (color_prom[0] >> 7) & 0x01;
+				bit0 = (color_prom.read(0)>> 4) & 0x01;
+				bit1 = (color_prom.read(0)>> 5) & 0x01;
+				bit2 = (color_prom.read(0)>> 6) & 0x01;
+				bit3 = (color_prom.read(0)>> 7) & 0x01;
 				g = 0x0e * bit0 + 0x1f * bit1 + 0x43 * bit2 + 0x8f * bit3;
-				bit0 = (color_prom[1024] >> 0) & 0x01;
-				bit1 = (color_prom[1024] >> 1) & 0x01;
-				bit2 = (color_prom[1024] >> 2) & 0x01;
-				bit3 = (color_prom[1024] >> 3) & 0x01;
+				bit0 = (color_prom.read(1024)>> 0) & 0x01;
+				bit1 = (color_prom.read(1024)>> 1) & 0x01;
+				bit2 = (color_prom.read(1024)>> 2) & 0x01;
+				bit3 = (color_prom.read(1024)>> 3) & 0x01;
 				b = 0x0e * bit0 + 0x1f * bit1 + 0x43 * bit2 + 0x8f * bit3;
 	
 				color_prom++;

@@ -68,7 +68,7 @@ public class stfight
 		/* fg uses colors 64-127 */
 		for (i = 0;i < TOTAL_COLORS(1);i++)
 		{
-			COLOR(1,i) = (color_prom[256] & 0x0f) + 16 * (color_prom[0] & 0x03) + 0x40;
+			COLOR(1,i) = (color_prom.read(256)& 0x0f) + 16 * (color_prom.read(0)& 0x03) + 0x40;
 			color_prom++;
 		}
 		color_prom += 256;
@@ -76,7 +76,7 @@ public class stfight
 		/* bg uses colors 0-63 */
 		for (i = 0;i < TOTAL_COLORS(2);i++)
 		{
-			COLOR(2,i) = (color_prom[256] & 0x0f) + 16 * (color_prom[0] & 0x03) + 0x00;
+			COLOR(2,i) = (color_prom.read(256)& 0x0f) + 16 * (color_prom.read(0)& 0x03) + 0x00;
 			color_prom++;
 		}
 		color_prom += 256;
@@ -84,7 +84,7 @@ public class stfight
 		/* sprites use colors 128-191 */
 		for (i = 0;i < TOTAL_COLORS(4);i++)
 		{
-			COLOR(4,i) = (color_prom[256] & 0x0f) + 16 * (color_prom[0] & 0x03) + 0x80;
+			COLOR(4,i) = (color_prom.read(256)& 0x0f) + 16 * (color_prom.read(0)& 0x03) + 0x80;
 			color_prom++;
 		}
 		color_prom += 256;

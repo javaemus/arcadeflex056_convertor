@@ -181,8 +181,8 @@ public class grchamp
 		{
 			int col = offs%32;
 			int row = offs/32;
-			int scroll = colorram[col*2]-1;
-			int attributes = colorram[col*2+1];
+			int scroll = colorram.read(col*2)-1;
+			int attributes = colorram.read(col*2+1);
 			int tile_number = source[offs];
 	
 			drawgfx( bitmap, gfx,

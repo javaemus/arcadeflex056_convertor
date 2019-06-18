@@ -252,8 +252,8 @@ public class docastle
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram.read(offs)+ 8*(colorram[offs] & 0x20),
-						colorram[offs] & 0x1f,
+						videoram.read(offs)+ 8*(colorram.read(offs)& 0x20),
+						colorram.read(offs)& 0x1f,
 						flip_screen,flip_screen,
 						8*sx,8*sy,
 						&Machine->visible_area,TRANSPARENCY_NONE,0);
@@ -261,8 +261,8 @@ public class docastle
 				/* also draw the part of the character which has priority over the */
 				/* sprites in another bitmap */
 				drawgfx(tmpbitmap1,Machine->gfx[0],
-						videoram.read(offs)+ 8*(colorram[offs] & 0x20),
-						32 + (colorram[offs] & 0x1f),
+						videoram.read(offs)+ 8*(colorram.read(offs)& 0x20),
+						32 + (colorram.read(offs)& 0x1f),
 						flip_screen,flip_screen,
 						8*sx,8*sy,
 						&Machine->visible_area,TRANSPARENCY_NONE,0);

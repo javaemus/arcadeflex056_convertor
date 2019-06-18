@@ -52,20 +52,20 @@ public class gunsmoke
 			int bit0,bit1,bit2,bit3;
 	
 	
-			bit0 = (color_prom[0] >> 0) & 0x01;
-			bit1 = (color_prom[0] >> 1) & 0x01;
-			bit2 = (color_prom[0] >> 2) & 0x01;
-			bit3 = (color_prom[0] >> 3) & 0x01;
+			bit0 = (color_prom.read(0)>> 0) & 0x01;
+			bit1 = (color_prom.read(0)>> 1) & 0x01;
+			bit2 = (color_prom.read(0)>> 2) & 0x01;
+			bit3 = (color_prom.read(0)>> 3) & 0x01;
 			*(palette++) = 0x0e * bit0 + 0x1f * bit1 + 0x43 * bit2 + 0x8f * bit3;
-			bit0 = (color_prom[Machine->drv->total_colors] >> 0) & 0x01;
-			bit1 = (color_prom[Machine->drv->total_colors] >> 1) & 0x01;
-			bit2 = (color_prom[Machine->drv->total_colors] >> 2) & 0x01;
-			bit3 = (color_prom[Machine->drv->total_colors] >> 3) & 0x01;
+			bit0 = (color_prom.read(Machine->drv->total_colors)>> 0) & 0x01;
+			bit1 = (color_prom.read(Machine->drv->total_colors)>> 1) & 0x01;
+			bit2 = (color_prom.read(Machine->drv->total_colors)>> 2) & 0x01;
+			bit3 = (color_prom.read(Machine->drv->total_colors)>> 3) & 0x01;
 			*(palette++) = 0x0e * bit0 + 0x1f * bit1 + 0x43 * bit2 + 0x8f * bit3;
-			bit0 = (color_prom[2*Machine->drv->total_colors] >> 0) & 0x01;
-			bit1 = (color_prom[2*Machine->drv->total_colors] >> 1) & 0x01;
-			bit2 = (color_prom[2*Machine->drv->total_colors] >> 2) & 0x01;
-			bit3 = (color_prom[2*Machine->drv->total_colors] >> 3) & 0x01;
+			bit0 = (color_prom.read(2*Machine->drv->total_colors)>> 0) & 0x01;
+			bit1 = (color_prom.read(2*Machine->drv->total_colors)>> 1) & 0x01;
+			bit2 = (color_prom.read(2*Machine->drv->total_colors)>> 2) & 0x01;
+			bit3 = (color_prom.read(2*Machine->drv->total_colors)>> 3) & 0x01;
 			*(palette++) = 0x0e * bit0 + 0x1f * bit1 + 0x43 * bit2 + 0x8f * bit3;
 	
 			color_prom++;
@@ -82,7 +82,7 @@ public class gunsmoke
 		/* background tiles use colors 0-63 */
 		for (i = 0;i < TOTAL_COLORS(1);i++)
 		{
-			COLOR(1,i) = color_prom[0] + 16 * (color_prom[256] & 0x03);
+			COLOR(1,i) = color_prom.read(0)+ 16 * (color_prom.read(256)& 0x03);
 			color_prom++;
 		}
 		color_prom += TOTAL_COLORS(1);
@@ -90,7 +90,7 @@ public class gunsmoke
 		/* sprites use colors 128-255 */
 		for (i = 0;i < TOTAL_COLORS(2);i++)
 		{
-			COLOR(2,i) = color_prom[0] + 16 * (color_prom[256] & 0x07) + 128;
+			COLOR(2,i) = color_prom.read(0)+ 16 * (color_prom.read(256)& 0x07) + 128;
 			color_prom++;
 		}
 		color_prom += TOTAL_COLORS(2);
@@ -303,8 +303,8 @@ public class gunsmoke
 				}
 	
 				drawgfx(bitmap,Machine->gfx[0],
-						videoram.read(offs)+ ((colorram[offs] & 0xc0) << 2),
-						colorram[offs] & 0x1f,
+						videoram.read(offs)+ ((colorram.read(offs)& 0xc0) << 2),
+						colorram.read(offs)& 0x1f,
 						!flip_screen,!flip_screen,
 						8*sx,8*sy,
 						&Machine->visible_area,TRANSPARENCY_COLOR,79);

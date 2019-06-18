@@ -65,9 +65,9 @@ public class gridlee
 	
 		for (i = 0; i < Machine->drv->total_colors; i++)
 		{
-			*palette++ = color_prom[0x0000] | (color_prom[0x0000] << 4);
-			*palette++ = color_prom[0x0800] | (color_prom[0x0800] << 4);
-			*palette++ = color_prom[0x1000] | (color_prom[0x1000] << 4);
+			*palette++ = color_prom.read(0x0000)| (color_prom.read(0x0000)<< 4);
+			*palette++ = color_prom.read(0x0800)| (color_prom.read(0x0800)<< 4);
+			*palette++ = color_prom.read(0x1000)| (color_prom.read(0x1000)<< 4);
 			*colortable++ = i;
 			color_prom++;
 		}

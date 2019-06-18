@@ -471,7 +471,7 @@ public class zaxxon
 			sx = offs % 32;
 	
 			if (zaxxon_vid_type == CONGO_VID)
-				color = colorram[offs];
+				color = colorram.read(offs);
 			else
 				/* not sure about the color code calculation - char_color_bank is used only in test mode */
 				color =	(color_codes[sx + 32 * (sy/4)] & 0x0f) + 16 * (*zaxxon_char_color_bank & 1);

@@ -146,7 +146,7 @@ public class gladiatr
 				int sx = (i%64)*8;
 				int sy = (i/64)*8;
 	
-				int attributes = colorram[i];
+				int attributes = colorram.read(i);
 				int color = 0x1F - (attributes>>3);
 				int tile_number = videoram.read(i)+ 256*(attributes&0x7) + tile_bank_select;
 	

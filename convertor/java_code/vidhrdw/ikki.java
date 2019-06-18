@@ -26,9 +26,9 @@ public class ikki
 	
 		for (i = 0; i<colors; i++)
 		{
-			*(palette++) = color_prom[0]*0x11;
-			*(palette++) = color_prom[colors]*0x11;
-			*(palette++) = color_prom[2*colors]*0x11;
+			*(palette++) = color_prom.read(0)*0x11;
+			*(palette++) = color_prom.read(colors)*0x11;
+			*(palette++) = color_prom.read(2*colors)*0x11;
 	
 			color_prom++;
 		}

@@ -46,22 +46,22 @@ public class gsword
 	
 	
 			/* red component */
-			bit0 = (color_prom[0] >> 0) & 0x01;
-			bit1 = (color_prom[0] >> 1) & 0x01;
-			bit2 = (color_prom[0] >> 2) & 0x01;
-			bit3 = (color_prom[0] >> 3) & 0x01;
+			bit0 = (color_prom.read(0)>> 0) & 0x01;
+			bit1 = (color_prom.read(0)>> 1) & 0x01;
+			bit2 = (color_prom.read(0)>> 2) & 0x01;
+			bit3 = (color_prom.read(0)>> 3) & 0x01;
 			*(palette++) = 0x0e * bit0 + 0x1f * bit1 + 0x43 * bit2 + 0x8f * bit3;
 			/* green component */
-			bit0 = (color_prom[Machine->drv->total_colors] >> 0) & 0x01;
-			bit1 = (color_prom[Machine->drv->total_colors] >> 1) & 0x01;
-			bit2 = (color_prom[Machine->drv->total_colors] >> 2) & 0x01;
-			bit3 = (color_prom[Machine->drv->total_colors] >> 3) & 0x01;
+			bit0 = (color_prom.read(Machine->drv->total_colors)>> 0) & 0x01;
+			bit1 = (color_prom.read(Machine->drv->total_colors)>> 1) & 0x01;
+			bit2 = (color_prom.read(Machine->drv->total_colors)>> 2) & 0x01;
+			bit3 = (color_prom.read(Machine->drv->total_colors)>> 3) & 0x01;
 			*(palette++) = 0x0e * bit0 + 0x1f * bit1 + 0x43 * bit2 + 0x8f * bit3;
 			/* blue component */
-			bit0 = (color_prom[2*Machine->drv->total_colors] >> 0) & 0x01;
-			bit1 = (color_prom[2*Machine->drv->total_colors] >> 1) & 0x01;
-			bit2 = (color_prom[2*Machine->drv->total_colors] >> 2) & 0x01;
-			bit3 = (color_prom[2*Machine->drv->total_colors] >> 3) & 0x01;
+			bit0 = (color_prom.read(2*Machine->drv->total_colors)>> 0) & 0x01;
+			bit1 = (color_prom.read(2*Machine->drv->total_colors)>> 1) & 0x01;
+			bit2 = (color_prom.read(2*Machine->drv->total_colors)>> 2) & 0x01;
+			bit3 = (color_prom.read(2*Machine->drv->total_colors)>> 3) & 0x01;
 			*(palette++) = 0x0e * bit0 + 0x1f * bit1 + 0x43 * bit2 + 0x8f * bit3;
 	
 			color_prom++;
@@ -96,19 +96,19 @@ public class gsword
 			int bit0,bit1,bit2;
 	
 			/* red component */
-			bit0 = (color_prom[Machine->drv->total_colors] >> 0) & 1;
-			bit1 = (color_prom[Machine->drv->total_colors] >> 1) & 1;
-			bit2 = (color_prom[Machine->drv->total_colors] >> 2) & 1;
+			bit0 = (color_prom.read(Machine->drv->total_colors)>> 0) & 1;
+			bit1 = (color_prom.read(Machine->drv->total_colors)>> 1) & 1;
+			bit2 = (color_prom.read(Machine->drv->total_colors)>> 2) & 1;
 			*(palette++) = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
 			/* green component */
-			bit0 = (color_prom[Machine->drv->total_colors] >> 3) & 1;
-			bit1 = (color_prom[0] >> 0) & 1;
-			bit2 = (color_prom[0] >> 1) & 1;
+			bit0 = (color_prom.read(Machine->drv->total_colors)>> 3) & 1;
+			bit1 = (color_prom.read(0)>> 0) & 1;
+			bit2 = (color_prom.read(0)>> 1) & 1;
 			*(palette++) = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
 			/* blue component */
 			bit0 = 0;
-			bit1 = (color_prom[0] >> 2) & 1;
-			bit2 = (color_prom[0] >> 3) & 1;
+			bit1 = (color_prom.read(0)>> 2) & 1;
+			bit2 = (color_prom.read(0)>> 3) & 1;
 			*(palette++) = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
 	
 			color_prom++;

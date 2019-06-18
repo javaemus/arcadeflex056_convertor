@@ -139,7 +139,7 @@ public class taitosj
 			{
 				int data;
 	
-				data = color_prom[0x10 * (i & 0x0f) + mask];
+				data = color_prom.read(0x10 * (i & 0x0f) + mask);
 				if (i & 0x10) data >>= 2;
 				data &= 0x03;
 				mask |= (1 << data);	/* in next loop, we'll see which of the remaining */

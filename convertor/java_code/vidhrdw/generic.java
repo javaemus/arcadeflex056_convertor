@@ -137,7 +137,7 @@ public class generic
 	
 	public static ReadHandlerPtr colorram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
-		return colorram[offset];
+		return colorram.read(offset);
 	} };
 	
 	public static WriteHandlerPtr videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
@@ -152,11 +152,11 @@ public class generic
 	
 	public static WriteHandlerPtr colorram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-		if (colorram[offset] != data)
+		if (colorram.read(offset)!= data)
 		{
 			dirtybuffer[offset] = 1;
 	
-			colorram[offset] = data;
+			colorram.write(offset,data);
 		}
 	} };
 	

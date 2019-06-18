@@ -47,27 +47,27 @@ public class superpac
 		{
 			int bit0, bit1, bit2;
 	
-			bit0 = (color_prom[31-i] >> 0) & 0x01;
-			bit1 = (color_prom[31-i] >> 1) & 0x01;
-			bit2 = (color_prom[31-i] >> 2) & 0x01;
+			bit0 = (color_prom.read(31-i)>> 0) & 0x01;
+			bit1 = (color_prom.read(31-i)>> 1) & 0x01;
+			bit2 = (color_prom.read(31-i)>> 2) & 0x01;
 			palette[3*i] = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
-			bit0 = (color_prom[31-i] >> 3) & 0x01;
-			bit1 = (color_prom[31-i] >> 4) & 0x01;
-			bit2 = (color_prom[31-i] >> 5) & 0x01;
+			bit0 = (color_prom.read(31-i)>> 3) & 0x01;
+			bit1 = (color_prom.read(31-i)>> 4) & 0x01;
+			bit2 = (color_prom.read(31-i)>> 5) & 0x01;
 			palette[3*i + 1] = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
 			bit0 = 0;
-			bit1 = (color_prom[31-i] >> 6) & 0x01;
-			bit2 = (color_prom[31-i] >> 7) & 0x01;
+			bit1 = (color_prom.read(31-i)>> 6) & 0x01;
+			bit2 = (color_prom.read(31-i)>> 7) & 0x01;
 			palette[3*i + 2] = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
 		}
 	
 		/* characters */
 		for (i = 0; i < 64*4; i++)
-			colortable[i] = color_prom[i + 32] & 0x0f;
+			colortable[i] = color_prom.read(i + 32)& 0x0f;
 	
 		/* sprites */
 		for (i = 64*4; i < 128*4; i++)
-			colortable[i] = 0x1f - (color_prom[i + 32] & 0x0f);
+			colortable[i] = 0x1f - (color_prom.read(i + 32)& 0x0f);
 	
 		/* for sprites, track which pens for each color map to color 31 */
 		for (i = 0; i < 64; i++)
@@ -248,7 +248,7 @@ public class superpac
 					sy = 27 - sy;
 				}
 	
-				drawgfx(tmpbitmap, Machine->gfx[0], videoram.read(offs), colorram[offs],
+				drawgfx(tmpbitmap, Machine->gfx[0], videoram.read(offs), colorram.read(offs),
 						flip_screen, flip_screen, 8 * sx, 8 * sy,
 						&Machine->visible_area, TRANSPARENCY_NONE, 0);
 			}
@@ -261,7 +261,7 @@ public class superpac
 	
 		/* Draw the high priority characters */
 		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
-			if (colorram[offs] & 0x40)
+			if (colorram.read(offs)& 0x40)
 			{
 				int sx, sy, mx, my;
 	
@@ -290,7 +290,7 @@ public class superpac
 					sy = 27 - sy;
 				}
 	
-				drawgfx(bitmap, Machine->gfx[0], videoram.read(offs), colorram[offs],
+				drawgfx(bitmap, Machine->gfx[0], videoram.read(offs), colorram.read(offs),
 						flip_screen, flip_screen, 8 * sx, 8 * sy,
 						&Machine->visible_area, TRANSPARENCY_COLOR, 31);
 			}

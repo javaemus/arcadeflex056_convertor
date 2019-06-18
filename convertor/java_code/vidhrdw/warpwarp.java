@@ -124,7 +124,7 @@ public class warpwarp
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
 						videoram.read(offs),
-						colorram[offs],
+						colorram.read(offs),
 						0,0,
 						8*sx,8*sy,
 						&Machine->visible_area,TRANSPARENCY_NONE,0);

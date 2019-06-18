@@ -227,7 +227,7 @@ public class rockola
 	
 				drawgfx(tmpbitmap,Machine->gfx[1],
 						videoram.read(offs)+ 256 * charbank,
-						(colorram[offs] & 0x38) >> 3,
+						(colorram.read(offs)& 0x38) >> 3,
 						flip_screen,flip_screen,
 						8*sx,8*sy,
 						0,TRANSPARENCY_NONE,0);
@@ -280,7 +280,7 @@ public class rockola
 	
 			drawgfx(bitmap,Machine->gfx[0],
 					charcode,
-					colorram[offs] & 0x07,
+					colorram.read(offs)& 0x07,
 					flip_screen,flip_screen,
 					8*sx,8*sy,
 					&Machine->visible_area,TRANSPARENCY_PEN,0);
@@ -318,7 +318,7 @@ public class rockola
 	
 				drawgfx(tmpbitmap,Machine->gfx[1],
 						videoram.read(offs),
-						(colorram[offs] & 0x0c) >> 2,
+						(colorram.read(offs)& 0x0c) >> 2,
 						flip_screen,flip_screen,
 						8*sx,8*sy,
 						&Machine->visible_area,TRANSPARENCY_NONE,0);
@@ -355,7 +355,7 @@ public class rockola
 	
 			drawgfx(bitmap,Machine->gfx[0],
 					charcode,
-					colorram[offs] & 0x03,
+					colorram.read(offs)& 0x03,
 					flip_screen,flip_screen,
 					8*sx,8*sy,
 					&Machine->visible_area,TRANSPARENCY_PEN,0);

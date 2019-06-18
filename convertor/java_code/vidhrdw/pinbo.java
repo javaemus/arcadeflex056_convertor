@@ -55,8 +55,8 @@ public class pinbo
 				if (flipscreen[1]) sy = 31 - sy;
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram.read(offs)+ ((colorram[offs] & 0x70) << 5),
-						colorram[offs] & 0x0f,
+						videoram.read(offs)+ ((colorram.read(offs)& 0x70) << 5),
+						colorram.read(offs)& 0x0f,
 						flipscreen[0],flipscreen[1],
 						8*sx,8*sy,
 						&Machine->visible_area,TRANSPARENCY_NONE,0);

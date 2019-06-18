@@ -123,7 +123,7 @@ public class champbas
 	
 				drawgfx(tmpbitmap,Machine->gfx[0 + gfxbank],
 						videoram.read(offs),
-						(colorram[offs] & 0x1f) + 32,
+						(colorram.read(offs)& 0x1f) + 32,
 						0,0,
 						sx,sy,
 						&Machine->visible_area,TRANSPARENCY_NONE,0);

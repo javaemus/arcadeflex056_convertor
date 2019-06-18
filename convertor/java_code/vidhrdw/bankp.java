@@ -223,7 +223,7 @@ public class bankp
 	
 				sx = offs % 32;
 				sy = offs / 32;
-				flipx = colorram[offs] & 0x04;
+				flipx = colorram.read(offs)& 0x04;
 				if (flipscreen)
 				{
 					sx = 31 - sx;
@@ -232,8 +232,8 @@ public class bankp
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram.read(offs)+ 256 * ((colorram[offs] & 3) >> 0),
-						colorram[offs] >> 3,
+						videoram.read(offs)+ 256 * ((colorram.read(offs)& 3) >> 0),
+						colorram.read(offs)>> 3,
 						flipx,flipscreen,
 						8*sx,8*sy,
 						0,TRANSPARENCY_NONE,0);

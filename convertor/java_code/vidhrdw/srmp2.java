@@ -32,7 +32,7 @@ public class srmp2
 		{
 			int col, r, g, b;
 	
-			col = (color_prom[i] << 8) + color_prom[i + Machine->drv->total_colors];
+			col = (color_prom.read(i)<< 8) + color_prom.read(i + Machine->drv->total_colors);
 	
 			r = (col & 0x7c00) >> 10;
 			g = (col & 0x03e0) >> 5;
@@ -58,7 +58,7 @@ public class srmp2
 		{
 			int col, r, g, b;
 	
-			col = (color_prom[i] << 8) + color_prom[i + Machine->drv->total_colors];
+			col = (color_prom.read(i)<< 8) + color_prom.read(i + Machine->drv->total_colors);
 	
 			r = (col & 0x7c00) >> 10;
 			g = (col & 0x03e0) >> 5;

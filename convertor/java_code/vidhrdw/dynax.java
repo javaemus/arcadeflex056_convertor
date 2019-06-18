@@ -58,7 +58,7 @@ public class dynax
 	
 		for (i = 0;i < Machine->drv->total_colors;i++)
 		{
-			int x =	(color_prom[i]<<8) + color_prom[0x200+i];
+			int x =	(color_prom.read(i)<<8) + color_prom.read(0x200+i);
 			int r = BITSWAP5((x >>  0) & 0x1f);
 			int g = BITSWAP5((x >>  5) & 0x1f);
 			int b = BITSWAP5((x >> 10) & 0x1f);

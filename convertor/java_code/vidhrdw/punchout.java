@@ -81,20 +81,20 @@ public class punchout
 			int bit0,bit1,bit2,bit3;
 	
 	
-			bit0 = (color_prom[0] >> 0) & 0x01;
-			bit1 = (color_prom[0] >> 1) & 0x01;
-			bit2 = (color_prom[0] >> 2) & 0x01;
-			bit3 = (color_prom[0] >> 3) & 0x01;
+			bit0 = (color_prom.read(0)>> 0) & 0x01;
+			bit1 = (color_prom.read(0)>> 1) & 0x01;
+			bit2 = (color_prom.read(0)>> 2) & 0x01;
+			bit3 = (color_prom.read(0)>> 3) & 0x01;
 			*(palette++) = 255 - (0x10 * bit0 + 0x21 * bit1 + 0x46 * bit2 + 0x88 * bit3);
-			bit0 = (color_prom[1024] >> 0) & 0x01;
-			bit1 = (color_prom[1024] >> 1) & 0x01;
-			bit2 = (color_prom[1024] >> 2) & 0x01;
-			bit3 = (color_prom[1024] >> 3) & 0x01;
+			bit0 = (color_prom.read(1024)>> 0) & 0x01;
+			bit1 = (color_prom.read(1024)>> 1) & 0x01;
+			bit2 = (color_prom.read(1024)>> 2) & 0x01;
+			bit3 = (color_prom.read(1024)>> 3) & 0x01;
 			*(palette++) = 255 - (0x10 * bit0 + 0x21 * bit1 + 0x46 * bit2 + 0x88 * bit3);
-			bit0 = (color_prom[2*1024] >> 0) & 0x01;
-			bit1 = (color_prom[2*1024] >> 1) & 0x01;
-			bit2 = (color_prom[2*1024] >> 2) & 0x01;
-			bit3 = (color_prom[2*1024] >> 3) & 0x01;
+			bit0 = (color_prom.read(2*1024)>> 0) & 0x01;
+			bit1 = (color_prom.read(2*1024)>> 1) & 0x01;
+			bit2 = (color_prom.read(2*1024)>> 2) & 0x01;
+			bit3 = (color_prom.read(2*1024)>> 3) & 0x01;
 			*(palette++) = 255 - (0x10 * bit0 + 0x21 * bit1 + 0x46 * bit2 + 0x88 * bit3);
 	
 			color_prom++;

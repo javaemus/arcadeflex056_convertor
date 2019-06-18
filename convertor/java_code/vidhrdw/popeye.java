@@ -104,19 +104,19 @@ public class popeye
 	
 	
 			/* red component */
-			bit0 = ((color_prom[0] ^ invertmask) >> 0) & 0x01;
-			bit1 = ((color_prom[0] ^ invertmask) >> 1) & 0x01;
-			bit2 = ((color_prom[0] ^ invertmask) >> 2) & 0x01;
+			bit0 = ((color_prom.read(0)^ invertmask) >> 0) & 0x01;
+			bit1 = ((color_prom.read(0)^ invertmask) >> 1) & 0x01;
+			bit2 = ((color_prom.read(0)^ invertmask) >> 2) & 0x01;
 			*(palette++) = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
 			/* green component */
-			bit0 = ((color_prom[0] ^ invertmask) >> 3) & 0x01;
-			bit1 = ((color_prom[256] ^ invertmask) >> 0) & 0x01;
-			bit2 = ((color_prom[256] ^ invertmask) >> 1) & 0x01;
+			bit0 = ((color_prom.read(0)^ invertmask) >> 3) & 0x01;
+			bit1 = ((color_prom.read(256)^ invertmask) >> 0) & 0x01;
+			bit2 = ((color_prom.read(256)^ invertmask) >> 1) & 0x01;
 			*(palette++) = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
 			/* blue component */
 			bit0 = 0;
-			bit1 = ((color_prom[256] ^ invertmask) >> 2) & 0x01;
-			bit2 = ((color_prom[256] ^ invertmask) >> 3) & 0x01;
+			bit1 = ((color_prom.read(256)^ invertmask) >> 2) & 0x01;
+			bit2 = ((color_prom.read(256)^ invertmask) >> 3) & 0x01;
 			*(palette++) = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
 	
 			color_prom++;

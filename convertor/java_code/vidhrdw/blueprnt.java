@@ -117,7 +117,7 @@ public class blueprnt
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
 						videoram.read(offs)+ 256 * gfx_bank,
-						colorram[offs] & 0x7f,
+						colorram.read(offs)& 0x7f,
 						flipscreen,flipscreen,
 						8*sx,8*sy,
 						0,TRANSPARENCY_NONE,0);
@@ -179,7 +179,7 @@ public class blueprnt
 		/* redraw the characters which have priority over sprites */
 		for (offs = videoram_size[0] - 1;offs >= 0;offs--)
 		{
-			if (colorram[offs] & 0x80)
+			if (colorram.read(offs)& 0x80)
 			{
 				int sx,sy;
 	
@@ -194,7 +194,7 @@ public class blueprnt
 	
 				drawgfx(bitmap,Machine->gfx[0],
 						videoram.read(offs)+ 256 * gfx_bank,
-						colorram[offs] & 0x7f,
+						colorram.read(offs)& 0x7f,
 						flipscreen,flipscreen,
 						8*sx,(8*sy+scroll[sx]) & 0xff,
 						&Machine->visible_area,TRANSPARENCY_PEN,0);

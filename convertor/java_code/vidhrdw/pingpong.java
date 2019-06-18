@@ -125,10 +125,10 @@ public class pingpong
 	
 				dirtybuffer[offs] = 0;
 	
-				flipx = colorram[offs] & 0x40;
-				flipy = colorram[offs] & 0x80;
-				color = colorram[offs] & 0x1F;
-				tchar = (videoram.read(offs)+ ((colorram[offs] & 0x20)<<3));
+				flipx = colorram.read(offs)& 0x40;
+				flipy = colorram.read(offs)& 0x80;
+				color = colorram.read(offs)& 0x1F;
+				tchar = (videoram.read(offs)+ ((colorram.read(offs)& 0x20)<<3));
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
 						tchar,

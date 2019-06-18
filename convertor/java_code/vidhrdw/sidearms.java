@@ -190,8 +190,8 @@ public class sidearms
 			}
 	
 			drawgfx(bitmap,Machine->gfx[0],
-					videoram.read(offs)+ 4 * (colorram[offs] & 0xc0),
-					colorram[offs] & 0x3f,
+					videoram.read(offs)+ 4 * (colorram.read(offs)& 0xc0),
+					colorram.read(offs)& 0x3f,
 					flipscreen,flipscreen,
 					8*sx,8*sy,
 					&Machine->visible_area,TRANSPARENCY_PEN,3);

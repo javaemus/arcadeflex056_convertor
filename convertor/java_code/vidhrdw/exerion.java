@@ -91,14 +91,14 @@ public class exerion
 	
 		/* fg chars */
 		for (i = 0; i < 256; i++)
-			colortable[i + 0x000] = 16 + (color_prom[(i & 0xc0) | ((i & 3) << 4) | ((i >> 2) & 15)] & 15);
+			colortable[i + 0x000] = 16 + (color_prom.read((i & 0xc0) | ((i & 3) << 4) | ((i >> 2) & 15))& 15);
 		color_prom += 256;
 	
 		/* color_prom now points to the beginning of the sprite lookup table */
 	
 		/* sprites */
 		for (i = 0; i < 256; i++)
-			colortable[i + 0x100] = 16 + (color_prom[(i & 0xc0) | ((i & 3) << 4) | ((i >> 2) & 15)] & 15);
+			colortable[i + 0x100] = 16 + (color_prom.read((i & 0xc0) | ((i & 3) << 4) | ((i >> 2) & 15))& 15);
 		color_prom += 256;
 	
 		/* bg chars (this is not the full story... there are four layers mixed */

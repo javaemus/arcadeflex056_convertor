@@ -396,7 +396,7 @@ public class mpatrol
 				sx = offs % 32;
 				sy = offs / 32;
 	
-				color = colorram[offs] & 0x1f;
+				color = colorram.read(offs)& 0x1f;
 				if (sy >= 7) color += 32;	/* lines 7-31 are transparent */
 	
 				if (flip_screen)
@@ -406,7 +406,7 @@ public class mpatrol
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram.read(offs)+ 2 * (colorram[offs] & 0x80),
+						videoram.read(offs)+ 2 * (colorram.read(offs)& 0x80),
 						color,
 						flip_screen,flip_screen,
 						8*sx,8*sy,

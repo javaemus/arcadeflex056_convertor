@@ -156,7 +156,7 @@ public class nova2001
 	
 				drawgfx(tmpbitmap,Machine->gfx[1],
 						videoram.read(offs),
-						colorram[offs] & 0x0f,
+						colorram.read(offs)& 0x0f,
 						flipscreen,flipscreen,
 						8*sx,8*sy,
 						0,TRANSPARENCY_NONE,0);

@@ -152,8 +152,8 @@ public class rollrace
 			sx =  offs % 32;
 			sy =  offs / 32;
 	
-			scroll = ( 8 * sy + colorram[2 * sx] ) % 256;
-			col = colorram[ sx * 2 + 1 ]&0x1f;
+			scroll = ( 8 * sy + colorram.read(2 * sx)) % 256;
+			col = colorram.read( sx * 2 + 1 )&0x1f;
 	
 			if (ra_flipy == 0)
 			{

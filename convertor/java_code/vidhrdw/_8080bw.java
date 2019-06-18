@@ -394,7 +394,7 @@ public class _8080bw
 		y = offset / 32;
 		x = 8 * (offset % 32);
 	
-		col = colorram[offset & 0x1f1f] & 0x07;
+		col = colorram.read(offset & 0x1f1f)& 0x07;
 	
 		plot_byte(x, y, data, col, background_color);
 	} };
@@ -408,7 +408,7 @@ public class _8080bw
 		y = offset / 32;
 		x = 8 * (offset % 32);
 	
-		col = ~colorram[offset & 0x1f1f] & 0x07;
+		col = ~colorram.read(offset & 0x1f1f)& 0x07;
 	
 		plot_byte(x, y, data, col, background_color);
 	} };
@@ -430,7 +430,7 @@ public class _8080bw
 	
 		color_map = memory_region(REGION_PROMS)[(((y+32)/8)*32) + (x/8)];
 		back_color = (color_map & 1) ? 6 : 2;
-		fore_color = ~colorram[offset & 0x1f1f] & 0x07;
+		fore_color = ~colorram.read(offset & 0x1f1f)& 0x07;
 	
 		/* bit 3 is connected to the cloud enable. bits 1 and 2 are marked 'not use' (sic)
 		   on the schematics */
@@ -487,7 +487,7 @@ public class _8080bw
 		x = 8 * (offset % 32);
 	
 		back_color = 0;
-		foreground_color = colorram[offset] & 0x07;
+		foreground_color = colorram.read(offset)& 0x07;
 	
 		if (x < 0x78)
 		{
@@ -505,7 +505,7 @@ public class _8080bw
 	
 		offset &= 0x1f1f;
 	
-		colorram[offset] = data;
+		colorram.write(offset,data);
 	
 		/* redraw region with (possibly) changed color */
 		for (i = 0; i < 8; i++, offset += 0x20)
@@ -516,13 +516,13 @@ public class _8080bw
 	
 	public static ReadHandlerPtr schaser_colorram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
-		return colorram[offset & 0x1f1f];
+		return colorram.read(offset & 0x1f1f);
 	} };
 	
 	
 	public static WriteHandlerPtr helifire_colorram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-		colorram[offset] = data;
+		colorram.write(offset,data);
 	
 		/* redraw region with (possibly) changed color */
 		videoram_w_p(offset, videoram.read(offset));

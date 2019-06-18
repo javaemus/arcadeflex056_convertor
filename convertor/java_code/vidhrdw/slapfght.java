@@ -36,8 +36,8 @@ public class slapfght
 	{
 		int tile,color;
 	
-		tile=videoram.read(tile_index)+ ((colorram[tile_index] & 0x03) << 8);
-		color=(colorram[tile_index] >> 3) & 0x0f;
+		tile=videoram.read(tile_index)+ ((colorram.read(tile_index)& 0x03) << 8);
+		color=(colorram.read(tile_index)>> 3) & 0x0f;
 		SET_TILE_INFO(
 				0,
 				tile,
@@ -49,8 +49,8 @@ public class slapfght
 	{
 		int tile,color;
 	
-		tile=videoram.read(tile_index)+ ((colorram[tile_index] & 0x0f) << 8);
-		color=(colorram[tile_index] & 0xf0) >> 4;
+		tile=videoram.read(tile_index)+ ((colorram.read(tile_index)& 0x0f) << 8);
+		color=(colorram.read(tile_index)& 0xf0) >> 4;
 	
 		SET_TILE_INFO(
 				1,
@@ -120,7 +120,7 @@ public class slapfght
 	
 	public static WriteHandlerPtr slapfight_colorram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-		colorram[offset]=data;
+		colorram.write(offset,data);
 		tilemap_mark_tile_dirty(pf1_tilemap,offset);
 	} };
 	
@@ -151,7 +151,7 @@ public class slapfght
 			int i;
 			for (i=0; i<0x800; i++)
 			{
-				logerror("Offset:%03x   TileRAM:%02x   AttribRAM:%02x   SpriteRAM:%02x\n",i, videoram.read(i),colorram[i],spriteram.read(i));
+				logerror("Offset:%03x   TileRAM:%02x   AttribRAM:%02x   SpriteRAM:%02x\n",i, videoram.read(i),colorram.read(i),spriteram.read(i));
 			}
 		}
 	}

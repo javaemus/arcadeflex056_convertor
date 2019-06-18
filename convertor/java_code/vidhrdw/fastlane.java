@@ -19,7 +19,7 @@ public class fastlane
 		{
 			for (col = 0;col < 1024;col++)
 			{
-				*(colortable++) = (col & ~0x0f) | color_prom[16 * pal + (col & 0x0f)];
+				*(colortable++) = (col & ~0x0f) | color_prom.read(16 * pal + (col & 0x0f));
 			}
 		}
 	} };

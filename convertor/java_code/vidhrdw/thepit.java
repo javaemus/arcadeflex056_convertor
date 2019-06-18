@@ -67,17 +67,17 @@ public class thepit
 			int bit0,bit1,bit2;
 	
 	
-			bit0 = (color_prom[i] >> 0) & 0x01;
-			bit1 = (color_prom[i] >> 1) & 0x01;
-			bit2 = (color_prom[i] >> 2) & 0x01;
+			bit0 = (color_prom.read(i)>> 0) & 0x01;
+			bit1 = (color_prom.read(i)>> 1) & 0x01;
+			bit2 = (color_prom.read(i)>> 2) & 0x01;
 			*(palette++) = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
-			bit0 = (color_prom[i] >> 3) & 0x01;
-			bit1 = (color_prom[i] >> 4) & 0x01;
-			bit2 = (color_prom[i] >> 5) & 0x01;
+			bit0 = (color_prom.read(i)>> 3) & 0x01;
+			bit1 = (color_prom.read(i)>> 4) & 0x01;
+			bit2 = (color_prom.read(i)>> 5) & 0x01;
 			*(palette++) = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
 			bit0 = 0;
-			bit1 = (color_prom[i] >> 6) & 0x01;
-			bit2 = (color_prom[i] >> 7) & 0x01;
+			bit1 = (color_prom.read(i)>> 6) & 0x01;
+			bit2 = (color_prom.read(i)>> 7) & 0x01;
 			*(palette++) = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
 		}
 	
@@ -114,23 +114,23 @@ public class thepit
 			int bit0,bit1,bit2,bit3,bit4;
 	
 	
-			bit0 = (color_prom[i+0x20] >> 6) & 0x01;
-			bit1 = (color_prom[i+0x20] >> 7) & 0x01;
-			bit2 = (color_prom[i] >> 0) & 0x01;
-			bit3 = (color_prom[i] >> 1) & 0x01;
-			bit4 = (color_prom[i] >> 2) & 0x01;
+			bit0 = (color_prom.read(i+0x20)>> 6) & 0x01;
+			bit1 = (color_prom.read(i+0x20)>> 7) & 0x01;
+			bit2 = (color_prom.read(i)>> 0) & 0x01;
+			bit3 = (color_prom.read(i)>> 1) & 0x01;
+			bit4 = (color_prom.read(i)>> 2) & 0x01;
 			*(palette++) = 0x10 * bit0 + 0x20 * bit1 + 0x30 * bit2 + 0x40 * bit3 + 0x50 * bit4;
-			bit0 = (color_prom[i+0x20] >> 1) & 0x01;
-			bit1 = (color_prom[i+0x20] >> 2) & 0x01;
-			bit2 = (color_prom[i+0x20] >> 3) & 0x01;
-			bit3 = (color_prom[i+0x20] >> 4) & 0x01;
-			bit4 = (color_prom[i+0x20] >> 5) & 0x01;
+			bit0 = (color_prom.read(i+0x20)>> 1) & 0x01;
+			bit1 = (color_prom.read(i+0x20)>> 2) & 0x01;
+			bit2 = (color_prom.read(i+0x20)>> 3) & 0x01;
+			bit3 = (color_prom.read(i+0x20)>> 4) & 0x01;
+			bit4 = (color_prom.read(i+0x20)>> 5) & 0x01;
 			*(palette++) = 0x50 * bit0 + 0x40 * bit1 + 0x30 * bit2 + 0x20 * bit3 + 0x10 * bit4;
-			bit0 = (color_prom[i] >> 3) & 0x01;
-			bit1 = (color_prom[i] >> 4) & 0x01;
-			bit2 = (color_prom[i] >> 5) & 0x01;
-			bit3 = (color_prom[i] >> 6) & 0x01;
-			bit4 = (color_prom[i] >> 7) & 0x01;
+			bit0 = (color_prom.read(i)>> 3) & 0x01;
+			bit1 = (color_prom.read(i)>> 4) & 0x01;
+			bit2 = (color_prom.read(i)>> 5) & 0x01;
+			bit3 = (color_prom.read(i)>> 6) & 0x01;
+			bit4 = (color_prom.read(i)>> 7) & 0x01;
 			*(palette++) = 0x50 * bit0 + 0x40 * bit1 + 0x30 * bit2 + 0x20 * bit3 + 0x10 * bit4;
 		}
 	
@@ -209,10 +209,10 @@ public class thepit
 			int bgcolor;
 	
 	
-			bgcolor = (colorram[offs] & 0x70) >> 4;
+			bgcolor = (colorram.read(offs)& 0x70) >> 4;
 	
 			if ((priority == 0 && dirtybuffer[offs]) ||
-					(priority == 1 && bgcolor != 0 && (colorram[offs] & 0x80) == 0))
+					(priority == 1 && bgcolor != 0 && (colorram.read(offs)& 0x80) == 0))
 			{
 				int sx,sy,code,bank,color;
 	
@@ -238,7 +238,7 @@ public class thepit
 				if (flip_screen_x) sx = 31 - sx;
 				if (flip_screen_y) sy = 248 - sy;
 	
-				color = colorram[offs] & (Machine->drv->gfxdecodeinfo[bank].total_color_codes - 1);
+				color = colorram.read(offs)& (Machine->drv->gfxdecodeinfo[bank].total_color_codes - 1);
 	
 				/* set up the background color */
 				Machine->gfx[bank]->

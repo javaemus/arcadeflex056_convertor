@@ -65,24 +65,24 @@ public class polepos
 			int bit0,bit1,bit2,bit3;
 	
 			/* Sheet 15B: 136014-0137 red component */
-			bit0 = (color_prom[0x000 + i] >> 0) & 1;
-			bit1 = (color_prom[0x000 + i] >> 1) & 1;
-			bit2 = (color_prom[0x000 + i] >> 2) & 1;
-			bit3 = (color_prom[0x000 + i] >> 3) & 1;
+			bit0 = (color_prom.read(0x000 + i)>> 0) & 1;
+			bit1 = (color_prom.read(0x000 + i)>> 1) & 1;
+			bit2 = (color_prom.read(0x000 + i)>> 2) & 1;
+			bit3 = (color_prom.read(0x000 + i)>> 3) & 1;
 			*(palette++) = 0x0e * bit0 + 0x1f * bit1 + 0x43 * bit2 + 0x8f * bit3;
 	
 			/* Sheet 15B: 136014-0138 green component */
-			bit0 = (color_prom[0x100 + i] >> 0) & 1;
-			bit1 = (color_prom[0x100 + i] >> 1) & 1;
-			bit2 = (color_prom[0x100 + i] >> 2) & 1;
-			bit3 = (color_prom[0x100 + i] >> 3) & 1;
+			bit0 = (color_prom.read(0x100 + i)>> 0) & 1;
+			bit1 = (color_prom.read(0x100 + i)>> 1) & 1;
+			bit2 = (color_prom.read(0x100 + i)>> 2) & 1;
+			bit3 = (color_prom.read(0x100 + i)>> 3) & 1;
 			*(palette++) = 0x0e * bit0 + 0x1f * bit1 + 0x43 * bit2 + 0x8f * bit3;
 	
 			/* Sheet 15B: 136014-0139 blue component */
-			bit0 = (color_prom[0x200 + i] >> 0) & 1;
-			bit1 = (color_prom[0x200 + i] >> 1) & 1;
-			bit2 = (color_prom[0x200 + i] >> 2) & 1;
-			bit3 = (color_prom[0x200 + i] >> 3) & 1;
+			bit0 = (color_prom.read(0x200 + i)>> 0) & 1;
+			bit1 = (color_prom.read(0x200 + i)>> 1) & 1;
+			bit2 = (color_prom.read(0x200 + i)>> 2) & 1;
+			bit3 = (color_prom.read(0x200 + i)>> 3) & 1;
 			*(palette++) = 0x0e * bit0 + 0x1f * bit1 + 0x43 * bit2 + 0x8f * bit3;
 		}
 	
@@ -93,7 +93,7 @@ public class polepos
 		 *******************************************************/
 		for (i = 0; i < 64*4; i++)
 		{
-			int color = color_prom[0x300 + i];
+			int color = color_prom.read(0x300 + i);
 			colortable[0x0000 + i] = (color != 15) ? (0x020 + color) : 0;
 			colortable[0x0100 + i] = (color != 15) ? (0x060 + color) : 0;
 		}
@@ -105,7 +105,7 @@ public class polepos
 		 *******************************************************/
 		for (i = 0; i < 64*4; i++)
 		{
-			int color = color_prom[0x400 + i];
+			int color = color_prom.read(0x400 + i);
 			colortable[0x0200 + i] = 0x000 + color;
 			colortable[0x0300 + i] = 0x040 + color;
 		}
@@ -117,7 +117,7 @@ public class polepos
 		 *******************************************************/
 		for (i = 0; i < 64*16; i++)
 		{
-			int color = color_prom[0xc00 + i];
+			int color = color_prom.read(0xc00 + i);
 			colortable[0x0400 + i] = (color != 15) ? (0x010 + color) : 0;
 			colortable[0x0800 + i] = (color != 15) ? (0x050 + color) : 0;
 		}
@@ -129,7 +129,7 @@ public class polepos
 		 *******************************************************/
 		for (i = 0; i < 64*16; i++)
 		{
-			int color = color_prom[0x800 + i];
+			int color = color_prom.read(0x800 + i);
 			colortable[0x0c00 + i] = 0x000 + color;
 			colortable[0x1000 + i] = 0x040 + color;
 		}
@@ -137,13 +137,13 @@ public class polepos
 		/* 136014-142, 136014-143, 136014-144 Vertical position modifiers */
 		for (i = 0; i < 256; i++)
 		{
-			j = color_prom[0x500 + i] + (color_prom[0x600 + i] << 4) + (color_prom[0x700 + i] << 8);
+			j = color_prom.read(0x500 + i)+ (color_prom.read(0x600 + i)<< 4) + (color_prom.read(0x700 + i)<< 8);
 			polepos_vertical_position_modifier[i] = j;
 		}
 	
-		road_control = &color_prom[0x2000];
-		road_bits1 = &color_prom[0x4000];
-		road_bits2 = &color_prom[0x6000];
+		road_control = &color_prom.read(0x2000);
+		road_bits1 = &color_prom.read(0x4000);
+		road_bits2 = &color_prom.read(0x6000);
 	}
 	
 	

@@ -98,7 +98,7 @@ public class looping
 	static void get_tile_info( int offset )
 	{
 		int tile_number = videoram.read(offset);
-		int color = colorram[(offset&0x1f)*2+1]&0x7;
+		int color = colorram.read((offset&0x1f)*2+1)&0x7;
 		SET_TILE_INFO(
 				0,
 				tile_number,
@@ -109,9 +109,9 @@ public class looping
 	public static WriteHandlerPtr looping_colorram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int i,offs;
-		if( colorram[offset]!=data )
+		if( colorram.read(offset)!=data )
 		{
-			colorram[offset] = data;
+			colorram.write(offset,data);
 			if( offset&1 )
 			{
 				/* odd bytes are column color attribute */

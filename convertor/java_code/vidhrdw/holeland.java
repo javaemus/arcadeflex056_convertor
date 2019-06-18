@@ -27,7 +27,7 @@ public class holeland
 	
 	static void holeland_get_tile_info(int tile_index)
 	{
-		int attr = colorram[tile_index];
+		int attr = colorram.read(tile_index);
 		int tile_number = videoram.read(tile_index)| ((attr & 0x03) << 8);
 	
 	/*if (keyboard_pressed(KEYCODE_Q) && (attr & 0x10)) tile_number = rand(); */
@@ -43,7 +43,7 @@ public class holeland
 	
 	static void crzrally_get_tile_info(int tile_index)
 	{
-		int attr = colorram[tile_index];
+		int attr = colorram.read(tile_index);
 		int tile_number = videoram.read(tile_index)| ((attr & 0x03) << 8);
 	
 		SET_TILE_INFO(
@@ -92,9 +92,9 @@ public class holeland
 	
 	public static WriteHandlerPtr holeland_colorram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-		if( colorram[offset]!=data )
+		if( colorram.read(offset)!=data )
 		{
-			colorram[offset] = data;
+			colorram.write(offset,data);
 			tilemap_mark_tile_dirty( bg_tilemap, offset );
 		}
 	} };

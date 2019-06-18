@@ -36,13 +36,13 @@ public class cheekyms
 			for (j = 0;j < Machine->drv->total_colors/6;j++)
 			{
 				/* red component */
-				bit = (color_prom[0] >> 0) & 0x01;
+				bit = (color_prom.read(0)>> 0) & 0x01;
 				*(palette++) = 0xff * bit;
 				/* green component */
-				bit = (color_prom[0] >> 1) & 0x01;
+				bit = (color_prom.read(0)>> 1) & 0x01;
 				*(palette++) = 0xff * bit;
 				/* blue component */
-				bit = (color_prom[0] >> 2) & 0x01;
+				bit = (color_prom.read(0)>> 2) & 0x01;
 				*(palette++) = 0xff * bit;
 	
 				color_prom++;
@@ -54,13 +54,13 @@ public class cheekyms
 			for (j = 0;j < Machine->drv->total_colors/6;j++)
 			{
 				/* red component */
-				bit = (color_prom[0] >> 4) & 0x01;
+				bit = (color_prom.read(0)>> 4) & 0x01;
 				*(palette++) = 0xff * bit;
 				/* green component */
-				bit = (color_prom[0] >> 5) & 0x01;
+				bit = (color_prom.read(0)>> 5) & 0x01;
 				*(palette++) = 0xff * bit;
 				/* blue component */
-				bit = (color_prom[0] >> 6) & 0x01;
+				bit = (color_prom.read(0)>> 6) & 0x01;
 				*(palette++) = 0xff * bit;
 	
 				color_prom++;

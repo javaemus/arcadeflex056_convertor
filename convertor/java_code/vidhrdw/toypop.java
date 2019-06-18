@@ -38,32 +38,32 @@ public class toypop
 			int bit0,bit1,bit2,bit3;
 	
 			// red component
-			bit0 = (color_prom[i] >> 0) & 0x01;
-			bit1 = (color_prom[i] >> 1) & 0x01;
-			bit2 = (color_prom[i] >> 2) & 0x01;
-			bit3 = (color_prom[i] >> 3) & 0x01;
+			bit0 = (color_prom.read(i)>> 0) & 0x01;
+			bit1 = (color_prom.read(i)>> 1) & 0x01;
+			bit2 = (color_prom.read(i)>> 2) & 0x01;
+			bit3 = (color_prom.read(i)>> 3) & 0x01;
 			palette[3*i] = 0x0e * bit0 + 0x1f * bit1 + 0x43 * bit2 + 0x8f * bit3;
 			// green component
-			bit0 = (color_prom[i+0x100] >> 0) & 0x01;
-			bit1 = (color_prom[i+0x100] >> 1) & 0x01;
-			bit2 = (color_prom[i+0x100] >> 2) & 0x01;
-			bit3 = (color_prom[i+0x100] >> 3) & 0x01;
+			bit0 = (color_prom.read(i+0x100)>> 0) & 0x01;
+			bit1 = (color_prom.read(i+0x100)>> 1) & 0x01;
+			bit2 = (color_prom.read(i+0x100)>> 2) & 0x01;
+			bit3 = (color_prom.read(i+0x100)>> 3) & 0x01;
 			palette[3*i + 1] = 0x0e * bit0 + 0x1f * bit1 + 0x43 * bit2 + 0x8f * bit3;
 			// blue component
-			bit0 = (color_prom[i+0x200] >> 0) & 0x01;
-			bit1 = (color_prom[i+0x200] >> 1) & 0x01;
-			bit2 = (color_prom[i+0x200] >> 2) & 0x01;
-			bit3 = (color_prom[i+0x200] >> 3) & 0x01;
+			bit0 = (color_prom.read(i+0x200)>> 0) & 0x01;
+			bit1 = (color_prom.read(i+0x200)>> 1) & 0x01;
+			bit2 = (color_prom.read(i+0x200)>> 2) & 0x01;
+			bit3 = (color_prom.read(i+0x200)>> 3) & 0x01;
 			palette[3*i + 2] = 0x0e * bit0 + 0x1f * bit1 + 0x43 * bit2 + 0x8f * bit3;
 		}
 	
 		// characters
 		for (i = 0;i < 256;i++)
-			colortable[i] = color_prom[i + 0x300] | 0x70;
+			colortable[i] = color_prom.read(i + 0x300)| 0x70;
 	
 		// sprites
 		for (i = 256;i < Machine->drv->color_table_len;i++)
-			colortable[i] = color_prom[i + 0x400];	// 0x500-5ff
+			colortable[i] = color_prom.read(i + 0x400);	// 0x500-5ff
 	} };
 	
 	public static WriteHandlerPtr toypop_palettebank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
@@ -161,7 +161,7 @@ public class toypop
 				x = 280 - x;
 				y = 216 - y;
 			}
-			drawgfx(bitmap,Machine->gfx[0],videoram.read(offs),colorram[offs],flipscreen,flipscreen,x,y,0,TRANSPARENCY_PEN,0);
+			drawgfx(bitmap,Machine->gfx[0],videoram.read(offs),colorram.read(offs),flipscreen,flipscreen,x,y,0,TRANSPARENCY_PEN,0);
 		}
 	}
 	

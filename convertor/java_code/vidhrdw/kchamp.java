@@ -56,9 +56,9 @@ public class kchamp
 	
 		for (i = 0;i < Machine->drv->total_colors;i++)
 		{
-	                red = color_prom[i];
-	                green = color_prom[Machine->drv->total_colors+i];
-	                blue = color_prom[2*Machine->drv->total_colors+i];
+	                red = color_prom.read(i);
+	                green = color_prom.read(Machine->drv->total_colors+i);
+	                blue = color_prom.read(2*Machine->drv->total_colors+i);
 	
 	
 	                *(palette++) = red*0x11;
@@ -160,11 +160,11 @@ public class kchamp
 	                        sx = (offs % 32);
 				sy = (offs / 32);
 	
-	                        code = videoram.read(offs)+ ( ( colorram[offs] & 7 ) << 8 );
+	                        code = videoram.read(offs)+ ( ( colorram.read(offs)& 7 ) << 8 );
 	
 	                        drawgfx(tmpbitmap,Machine->gfx[0],
 	                                        code,
-	                                        ( colorram[offs] >> 3 ) & 0x1f,
+	                                        ( colorram.read(offs)>> 3 ) & 0x1f,
 	                                        0, /* flip x */
 	                                        0, /* flip y */
 						sx*8,sy*8,

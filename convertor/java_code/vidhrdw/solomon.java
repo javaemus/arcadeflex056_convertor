@@ -164,8 +164,8 @@ public class solomon
 				}
 	
 				drawgfx(bitmap,Machine->gfx[0],
-						videoram.read(offs)+ 256 * (colorram[offs] & 0x07),
-						(colorram[offs] & 0x70) >> 4,
+						videoram.read(offs)+ 256 * (colorram.read(offs)& 0x07),
+						(colorram.read(offs)& 0x70) >> 4,
 						flipscreen,flipscreen,
 						8*sx,8*sy,
 						&Machine->visible_area,TRANSPARENCY_PEN,0);

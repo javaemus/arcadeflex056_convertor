@@ -144,7 +144,7 @@ public class tagteam
 				/*Someday when the proms are properly figured out, we can remove
 				the color hack*/
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram.read(offs)+ 256 * colorram[offs],
+						videoram.read(offs)+ 256 * colorram.read(offs),
 						2*color,	/* guess */
 						flipscreen,flipscreen,
 						8*sx,8*sy,

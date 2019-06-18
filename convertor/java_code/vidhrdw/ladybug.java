@@ -49,14 +49,14 @@ public class ladybug
 			int bit1,bit2;
 	
 	
-			bit1 = (~color_prom[i] >> 0) & 0x01;
-			bit2 = (~color_prom[i] >> 5) & 0x01;
+			bit1 = (~color_prom.read(i)>> 0) & 0x01;
+			bit2 = (~color_prom.read(i)>> 5) & 0x01;
 			palette[3*i] = 0x47 * bit1 + 0x97 * bit2;
-			bit1 = (~color_prom[i] >> 2) & 0x01;
-			bit2 = (~color_prom[i] >> 6) & 0x01;
+			bit1 = (~color_prom.read(i)>> 2) & 0x01;
+			bit2 = (~color_prom.read(i)>> 6) & 0x01;
 			palette[3*i + 1] = 0x47 * bit1 + 0x97 * bit2;
-			bit1 = (~color_prom[i] >> 4) & 0x01;
-			bit2 = (~color_prom[i] >> 7) & 0x01;
+			bit1 = (~color_prom.read(i)>> 4) & 0x01;
+			bit2 = (~color_prom.read(i)>> 7) & 0x01;
 			palette[3*i + 2] = 0x47 * bit1 + 0x97 * bit2;
 		}
 	
@@ -76,17 +76,17 @@ public class ladybug
 	
 	
 			/* low 4 bits are for sprite n */
-			bit0 = (color_prom[i + 32] >> 3) & 0x01;
-			bit1 = (color_prom[i + 32] >> 2) & 0x01;
-			bit2 = (color_prom[i + 32] >> 1) & 0x01;
-			bit3 = (color_prom[i + 32] >> 0) & 0x01;
+			bit0 = (color_prom.read(i + 32)>> 3) & 0x01;
+			bit1 = (color_prom.read(i + 32)>> 2) & 0x01;
+			bit2 = (color_prom.read(i + 32)>> 1) & 0x01;
+			bit3 = (color_prom.read(i + 32)>> 0) & 0x01;
 			colortable[i + 4 * 8] = 1 * bit0 + 2 * bit1 + 4 * bit2 + 8 * bit3;
 	
 			/* high 4 bits are for sprite n + 8 */
-			bit0 = (color_prom[i + 32] >> 7) & 0x01;
-			bit1 = (color_prom[i + 32] >> 6) & 0x01;
-			bit2 = (color_prom[i + 32] >> 5) & 0x01;
-			bit3 = (color_prom[i + 32] >> 4) & 0x01;
+			bit0 = (color_prom.read(i + 32)>> 7) & 0x01;
+			bit1 = (color_prom.read(i + 32)>> 6) & 0x01;
+			bit2 = (color_prom.read(i + 32)>> 5) & 0x01;
+			bit3 = (color_prom.read(i + 32)>> 4) & 0x01;
 			colortable[i + 4 * 16] = 1 * bit0 + 2 * bit1 + 4 * bit2 + 8 * bit3;
 		}
 	} };
@@ -137,8 +137,8 @@ public class ladybug
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram.read(offs)+ 32 * (colorram[offs] & 8),
-						colorram[offs],
+						videoram.read(offs)+ 32 * (colorram.read(offs)& 8),
+						colorram.read(offs),
 						flipscreen,flipscreen,
 						8*sx,8*sy,
 						0,TRANSPARENCY_NONE,0);

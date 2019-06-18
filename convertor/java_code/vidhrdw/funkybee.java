@@ -90,7 +90,7 @@ public class funkybee
 	
 					drawgfx(_tmpbitmap,Machine->gfx[gfx_bank],
 							videoram.read(offs),
-							colorram[offs] & 0x03,
+							colorram.read(offs)& 0x03,
 							0,0,
 							8*sx,8*sy,
 							0,TRANSPARENCY_NONE,0);
@@ -133,8 +133,8 @@ public class funkybee
 	
 			code  = videoram.read(offs2);
 			sx    = videoram.read(offs2 + 0x10);
-			sy    = 224 - colorram[offs2];
-			col   = colorram[offs2 + 0x10];
+			sy    = 224 - colorram.read(offs2);
+			col   = colorram.read(offs2 + 0x10);
 			flipy = code & 0x01;
 	
 			drawgfx(bitmap,Machine->gfx[2+gfx_bank],
@@ -151,14 +151,14 @@ public class funkybee
 		{
 			drawgfx(bitmap,Machine->gfx[gfx_bank],
 					videoram.read(offs+0x1c00),
-					colorram[0x1f10] & 0x03,
+					colorram.read(0x1f10)& 0x03,
 					0,0,
 					videoram.read(0x1f10),8*offs,
 					0,TRANSPARENCY_PEN,0);
 	
 			drawgfx(bitmap,Machine->gfx[gfx_bank],
 					videoram.read(offs+0x1d00),
-					colorram[0x1f11] & 0x03,
+					colorram.read(0x1f11)& 0x03,
 					0,0,
 					videoram.read(0x1f11),8*offs,
 					0,TRANSPARENCY_PEN,0);

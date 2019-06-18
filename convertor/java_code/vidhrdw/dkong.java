@@ -55,18 +55,18 @@ public class dkong
 	
 	
 			/* red component */
-			bit0 = (color_prom[256] >> 1) & 1;
-			bit1 = (color_prom[256] >> 2) & 1;
-			bit2 = (color_prom[256] >> 3) & 1;
+			bit0 = (color_prom.read(256)>> 1) & 1;
+			bit1 = (color_prom.read(256)>> 2) & 1;
+			bit2 = (color_prom.read(256)>> 3) & 1;
 			*(palette++) = 255 - (0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2);
 			/* green component */
-			bit0 = (color_prom[0] >> 2) & 1;
-			bit1 = (color_prom[0] >> 3) & 1;
-			bit2 = (color_prom[256] >> 0) & 1;
+			bit0 = (color_prom.read(0)>> 2) & 1;
+			bit1 = (color_prom.read(0)>> 3) & 1;
+			bit2 = (color_prom.read(256)>> 0) & 1;
 			*(palette++) = 255 - (0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2);
 			/* blue component */
-			bit0 = (color_prom[0] >> 0) & 1;
-			bit1 = (color_prom[0] >> 1) & 1;
+			bit0 = (color_prom.read(0)>> 0) & 1;
+			bit1 = (color_prom.read(0)>> 1) & 1;
 			*(palette++) = 255 - (0x55 * bit0 + 0xaa * bit1);
 	
 			color_prom++;
@@ -120,22 +120,22 @@ public class dkong
 	
 	
 			/* red component */
-			bit0 = (color_prom[0] >> 4) & 0x01;
-			bit1 = (color_prom[0] >> 5) & 0x01;
-			bit2 = (color_prom[0] >> 6) & 0x01;
-			bit3 = (color_prom[0] >> 7) & 0x01;
+			bit0 = (color_prom.read(0)>> 4) & 0x01;
+			bit1 = (color_prom.read(0)>> 5) & 0x01;
+			bit2 = (color_prom.read(0)>> 6) & 0x01;
+			bit3 = (color_prom.read(0)>> 7) & 0x01;
 			*(palette++) = 255 - (0x0e * bit0 + 0x1f * bit1 + 0x43 * bit2 + 0x8f * bit3);
 			/* green component */
-			bit0 = (color_prom[0] >> 0) & 0x01;
-			bit1 = (color_prom[0] >> 1) & 0x01;
-			bit2 = (color_prom[0] >> 2) & 0x01;
-			bit3 = (color_prom[0] >> 3) & 0x01;
+			bit0 = (color_prom.read(0)>> 0) & 0x01;
+			bit1 = (color_prom.read(0)>> 1) & 0x01;
+			bit2 = (color_prom.read(0)>> 2) & 0x01;
+			bit3 = (color_prom.read(0)>> 3) & 0x01;
 			*(palette++) = 255 - (0x0e * bit0 + 0x1f * bit1 + 0x43 * bit2 + 0x8f * bit3);
 			/* blue component */
-			bit0 = (color_prom[256] >> 0) & 0x01;
-			bit1 = (color_prom[256] >> 1) & 0x01;
-			bit2 = (color_prom[256] >> 2) & 0x01;
-			bit3 = (color_prom[256] >> 3) & 0x01;
+			bit0 = (color_prom.read(256)>> 0) & 0x01;
+			bit1 = (color_prom.read(256)>> 1) & 0x01;
+			bit2 = (color_prom.read(256)>> 2) & 0x01;
+			bit3 = (color_prom.read(256)>> 3) & 0x01;
 			*(palette++) = 255 - (0x0e * bit0 + 0x1f * bit1 + 0x43 * bit2 + 0x8f * bit3);
 	
 			color_prom++;

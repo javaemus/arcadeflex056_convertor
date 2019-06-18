@@ -150,8 +150,8 @@ public class megazone
 	
 				sx = offs % 32;
 				sy = offs / 32;
-				flipx = colorram[offs] & (1<<6);
-				flipy = colorram[offs] & (1<<5);
+				flipx = colorram.read(offs)& (1<<6);
+				flipy = colorram.read(offs)& (1<<5);
 				if (flipscreen)
 				{
 					sx = 31 - sx;
@@ -161,8 +161,8 @@ public class megazone
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						((int)videoram.read(offs)) + ((colorram[offs] & (1<<7) ? 256 : 0) ),
-						(colorram[offs] & 0x0f) + 0x10,
+						((int)videoram.read(offs)) + ((colorram.read(offs)& (1<<7) ? 256 : 0) ),
+						(colorram.read(offs)& 0x0f) + 0x10,
 						flipx,flipy,
 						8*sx,8*sy,
 						0,TRANSPARENCY_NONE,0);

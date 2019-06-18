@@ -192,8 +192,8 @@ public class gyruss
 	
 				sx = offs % 32;
 				sy = offs / 32;
-				flipx = colorram[offs] & 0x40;
-				flipy = colorram[offs] & 0x80;
+				flipx = colorram.read(offs)& 0x40;
+				flipy = colorram.read(offs)& 0x80;
 				if (flipscreen)
 				{
 					sx = 31 - sx;
@@ -203,8 +203,8 @@ public class gyruss
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram.read(offs)+ 8 * (colorram[offs] & 0x20),
-						colorram[offs] & 0x0f,
+						videoram.read(offs)+ 8 * (colorram.read(offs)& 0x20),
+						colorram.read(offs)& 0x0f,
 						flipx,flipy,
 						8*sx,8*sy,
 						&Machine->visible_area,TRANSPARENCY_NONE,0);
@@ -227,8 +227,8 @@ public class gyruss
 	
 			sx = offs % 32;
 			sy = offs / 32;
-			flipx = colorram[offs] & 0x40;
-			flipy = colorram[offs] & 0x80;
+			flipx = colorram.read(offs)& 0x40;
+			flipy = colorram.read(offs)& 0x80;
 			if (flipscreen)
 			{
 				sx = 31 - sx;
@@ -237,10 +237,10 @@ public class gyruss
 				flipy = !flipy;
 			}
 	
-			if ((colorram[offs] & 0x10) != 0)
+			if ((colorram.read(offs)& 0x10) != 0)
 				drawgfx(bitmap,Machine->gfx[0],
-						videoram.read(offs)+ 8 * (colorram[offs] & 0x20),
-						colorram[offs] & 0x0f,
+						videoram.read(offs)+ 8 * (colorram.read(offs)& 0x20),
+						colorram.read(offs)& 0x0f,
 						flipx,flipy,
 						8*sx,8*sy,
 						&Machine->visible_area,TRANSPARENCY_NONE,0);

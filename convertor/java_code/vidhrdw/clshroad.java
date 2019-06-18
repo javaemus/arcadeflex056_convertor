@@ -70,22 +70,22 @@ public class clshroad
 	
 	
 			/* red component */
-			bit0 = (color_prom[i] >> 0) & 0x01;
-			bit1 = (color_prom[i] >> 1) & 0x01;
-			bit2 = (color_prom[i] >> 2) & 0x01;
-			bit3 = (color_prom[i] >> 3) & 0x01;
+			bit0 = (color_prom.read(i)>> 0) & 0x01;
+			bit1 = (color_prom.read(i)>> 1) & 0x01;
+			bit2 = (color_prom.read(i)>> 2) & 0x01;
+			bit3 = (color_prom.read(i)>> 3) & 0x01;
 			r = 0x0e * bit0 + 0x1f * bit1 + 0x43 * bit2 + 0x8f * bit3;
 			/* green component */
-			bit0 = (color_prom[i + 256] >> 0) & 0x01;
-			bit1 = (color_prom[i + 256] >> 1) & 0x01;
-			bit2 = (color_prom[i + 256] >> 2) & 0x01;
-			bit3 = (color_prom[i + 256] >> 3) & 0x01;
+			bit0 = (color_prom.read(i + 256)>> 0) & 0x01;
+			bit1 = (color_prom.read(i + 256)>> 1) & 0x01;
+			bit2 = (color_prom.read(i + 256)>> 2) & 0x01;
+			bit3 = (color_prom.read(i + 256)>> 3) & 0x01;
 			g = 0x0e * bit0 + 0x1f * bit1 + 0x43 * bit2 + 0x8f * bit3;
 			/* blue component */
-			bit0 = (color_prom[i + 2*256] >> 0) & 0x01;
-			bit1 = (color_prom[i + 2*256] >> 1) & 0x01;
-			bit2 = (color_prom[i + 2*256] >> 2) & 0x01;
-			bit3 = (color_prom[i + 2*256] >> 3) & 0x01;
+			bit0 = (color_prom.read(i + 2*256)>> 0) & 0x01;
+			bit1 = (color_prom.read(i + 2*256)>> 1) & 0x01;
+			bit2 = (color_prom.read(i + 2*256)>> 2) & 0x01;
+			bit3 = (color_prom.read(i + 2*256)>> 3) & 0x01;
 			b = 0x0e * bit0 + 0x1f * bit1 + 0x43 * bit2 + 0x8f * bit3;
 	
 			palette_set_color(i,r,g,b);
@@ -97,7 +97,7 @@ public class clshroad
 	
 	
 		for (i = 0;i < TOTAL_COLORS(2);i++)
-			COLOR(2,i) = ((color_prom[i] & 0x0f) << 4) + (color_prom[i+256] & 0x0f);
+			COLOR(2,i) = ((color_prom.read(i)& 0x0f) << 4) + (color_prom.read(i+256)& 0x0f);
 	}
 	
 	

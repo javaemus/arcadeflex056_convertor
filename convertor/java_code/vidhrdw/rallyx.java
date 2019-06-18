@@ -311,8 +311,8 @@ public class rallyx
 	
 				sx = (offs % 32) ^ 4;
 				sy = offs / 32 - 2;
-				flipx = ~colorram[offs] & 0x40;
-				flipy = colorram[offs] & 0x80;
+				flipx = ~colorram.read(offs)& 0x40;
+				flipy = colorram.read(offs)& 0x80;
 				if (flipscreen)
 				{
 					sx = 7 - sx;
@@ -323,7 +323,7 @@ public class rallyx
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
 						videoram.read(offs),
-						colorram[offs] & 0x3f,
+						colorram.read(offs)& 0x3f,
 						flipx,flipy,
 						8*sx,8*sy,
 						&radarvisibleareaflip,TRANSPARENCY_NONE,0);
@@ -477,8 +477,8 @@ public class rallyx
 	
 				sx = (offs % 32) ^ 4;
 				sy = offs / 32 - 2;
-				flipx = ~colorram[offs] & 0x40;
-				flipy = colorram[offs] & 0x80;
+				flipx = ~colorram.read(offs)& 0x40;
+				flipy = colorram.read(offs)& 0x80;
 				if (flipscreen)
 				{
 					sx = 7 - sx;
@@ -489,7 +489,7 @@ public class rallyx
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
 						videoram.read(offs),
-						colorram[offs] & 0x3f,
+						colorram.read(offs)& 0x3f,
 						flipx,flipy,
 						8*sx,8*sy,
 						&radarvisibleareaflip,TRANSPARENCY_NONE,0);
@@ -593,8 +593,8 @@ public class rallyx
 				sx = (offs % 32) ^ 4;
 				sy = offs / 32 - 2;
 				/* not a mistake, one bit selects both  flips */
-				flipx = colorram[offs] & 0x80;
-				flipy = colorram[offs] & 0x80;
+				flipx = colorram.read(offs)& 0x80;
+				flipy = colorram.read(offs)& 0x80;
 				if (flipscreen)
 				{
 					sx = 7 - sx;
@@ -604,8 +604,8 @@ public class rallyx
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						(videoram.read(offs)&0x7f) + 2*(colorram[offs]&0x40) + 2*(videoram.read(offs)&0x80),
-						colorram[offs] & 0x3f,
+						(videoram.read(offs)&0x7f) + 2*(colorram.read(offs)&0x40) + 2*(videoram.read(offs)&0x80),
+						colorram.read(offs)& 0x3f,
 						flipx,flipy,
 						8*sx,8*sy,
 						&radarvisibleareaflip,TRANSPARENCY_NONE,0);
@@ -735,8 +735,8 @@ public class rallyx
 				sx = (offs % 32) ^ 4;
 				sy = offs / 32 - 2;
 				/* not a mistake, one bit selects both  flips */
-				flipx = colorram[offs] & 0x80;
-				flipy = colorram[offs] & 0x80;
+				flipx = colorram.read(offs)& 0x80;
+				flipy = colorram.read(offs)& 0x80;
 				if (flipscreen)
 				{
 					sx = 7 - sx;
@@ -746,8 +746,8 @@ public class rallyx
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						(videoram.read(offs)&0x7f) + 2*(colorram[offs]&0x40) + 2*(videoram.read(offs)&0x80),
-						colorram[offs] & 0x3f,
+						(videoram.read(offs)&0x7f) + 2*(colorram.read(offs)&0x40) + 2*(videoram.read(offs)&0x80),
+						colorram.read(offs)& 0x3f,
 						flipx,flipy,
 						8*sx,8*sy,
 						&radarvisibleareaflip,TRANSPARENCY_NONE,0);

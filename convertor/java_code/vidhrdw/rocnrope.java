@@ -118,8 +118,8 @@ public class rocnrope
 	
 				sx = offs % 32;
 				sy = offs / 32;
-				flipx = colorram[offs] & 0x40;
-				flipy = colorram[offs] & 0x20;
+				flipx = colorram.read(offs)& 0x40;
+				flipy = colorram.read(offs)& 0x20;
 				if (flipscreen)
 				{
 					sx = 31 - sx;
@@ -129,8 +129,8 @@ public class rocnrope
 				}
 	
 				drawgfx(tmpbitmap,Machine->gfx[0],
-						videoram.read(offs)+ 2 * (colorram[offs] & 0x80),
-						colorram[offs] & 0x0f,
+						videoram.read(offs)+ 2 * (colorram.read(offs)& 0x80),
+						colorram.read(offs)& 0x0f,
 						flipx,flipy,
 						8*sx,8*sy,
 						&Machine->visible_area,TRANSPARENCY_NONE,0);
