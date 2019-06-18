@@ -190,11 +190,11 @@ public class centiped
 			int x, y;
 	
 	
-			code = ((spriteram[offs] & 0x3e) >> 1) | ((spriteram[offs] & 0x01) << 6);
-			color = spriteram[offs+0x30];
-			flipx = (spriteram[offs] & 0x80);
-			x = spriteram[offs + 0x20];
-			y = 240 - spriteram[offs + 0x10];
+			code = ((spriteram.read(offs)& 0x3e) >> 1) | ((spriteram.read(offs)& 0x01) << 6);
+			color = spriteram.read(offs+0x30);
+			flipx = (spriteram.read(offs)& 0x80);
+			x = spriteram.read(offs + 0x20);
+			y = 240 - spriteram.read(offs + 0x10);
 	
 			if (flip_screen)
 			{

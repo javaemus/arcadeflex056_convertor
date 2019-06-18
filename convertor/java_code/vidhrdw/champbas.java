@@ -137,13 +137,13 @@ public class champbas
 	
 		/* Draw the sprites. Note that it is important to draw them exactly in this */
 		/* order, to have the correct priorities. */
-		for (offs = spriteram_size - 2;offs >= 0;offs -= 2)
+		for (offs = spriteram_size[0] - 2;offs >= 0;offs -= 2)
 		{
 			drawgfx(bitmap,Machine->gfx[2 + gfxbank],
-					spriteram[offs] >> 2,
-					spriteram[offs + 1],
-					spriteram[offs] & 1,spriteram[offs] & 2,
-					((256+16 - spriteram_2[offs + 1]) & 0xff) - 16,spriteram_2[offs] - 16,
+					spriteram.read(offs)>> 2,
+					spriteram.read(offs + 1),
+					spriteram.read(offs)& 1,spriteram.read(offs)& 2,
+					((256+16 - spriteram_2.read(offs + 1)) & 0xff) - 16,spriteram_2.read(offs)- 16,
 					&Machine->visible_area,TRANSPARENCY_COLOR,0);
 		}
 	} };

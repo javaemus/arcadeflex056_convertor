@@ -213,13 +213,13 @@ public class tehkanwc
 	
 	
 		/* draw sprites */
-		for (offs = 0;offs < spriteram_size;offs += 4)
+		for (offs = 0;offs < spriteram_size[0];offs += 4)
 		{
 			drawgfx(bitmap,Machine->gfx[1],
-					spriteram[offs+0] + ((spriteram[offs+1] & 0x08) << 5),
-					spriteram[offs+1] & 0x07,
-					spriteram[offs+1] & 0x40,spriteram[offs+1] & 0x80,
-					spriteram[offs+2] + ((spriteram[offs+1] & 0x20) << 3) - 0x80,spriteram[offs+3],
+					spriteram.read(offs+0)+ ((spriteram.read(offs+1)& 0x08) << 5),
+					spriteram.read(offs+1)& 0x07,
+					spriteram.read(offs+1)& 0x40,spriteram.read(offs+1)& 0x80,
+					spriteram.read(offs+2)+ ((spriteram.read(offs+1)& 0x20) << 3) - 0x80,spriteram.read(offs+3),
 					&Machine->visible_area,TRANSPARENCY_PEN,0);
 		}
 	

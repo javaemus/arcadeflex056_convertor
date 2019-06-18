@@ -1027,8 +1027,8 @@ public class argus
 			{
 				int sx, sy, tile, flipx, flipy, color, pri;
 	
-				sx = spriteram[offs + 1];
-				sy = spriteram[offs];
+				sx = spriteram.read(offs + 1);
+				sy = spriteram.read(offs);
 	
 				if (argus_flipscreen)
 				{
@@ -1038,20 +1038,20 @@ public class argus
 	
 				if (argus_flipscreen == 0)
 				{
-					if (  spriteram[offs+2] & 0x01)  sx -= 256;
-					if (!(spriteram[offs+2] & 0x02)) sy -= 256;
+					if (  spriteram.read(offs+2)& 0x01)  sx -= 256;
+					if (!(spriteram.read(offs+2)& 0x02)) sy -= 256;
 				}
 				else
 				{
-					if (  spriteram[offs+2] & 0x01)  sx += 256;
-					if (!(spriteram[offs+2] & 0x02)) sy += 256;
+					if (  spriteram.read(offs+2)& 0x01)  sx += 256;
+					if (!(spriteram.read(offs+2)& 0x02)) sy += 256;
 				}
 	
-				tile	 = spriteram[offs+3] + ((spriteram[offs+2] & 0xc0) << 2);
-				flipx	 = spriteram[offs+2] & 0x10;
-				flipy	 = spriteram[offs+2] & 0x20;
-				color	 = spriteram[offs+4] & 0x07;
-				pri      = (spriteram[offs+4] & 0x08) >> 3;
+				tile	 = spriteram.read(offs+3)+ ((spriteram.read(offs+2)& 0xc0) << 2);
+				flipx	 = spriteram.read(offs+2)& 0x10;
+				flipy	 = spriteram.read(offs+2)& 0x20;
+				color	 = spriteram.read(offs+4)& 0x07;
+				pri      = (spriteram.read(offs+4)& 0x08) >> 3;
 	
 				if (argus_flipscreen)
 				{
@@ -1083,8 +1083,8 @@ public class argus
 			{
 				int sx, sy, tile, flipx, flipy, color;
 	
-				sx = spriteram[offs + 1];
-				sy = spriteram[offs];
+				sx = spriteram.read(offs + 1);
+				sy = spriteram.read(offs);
 	
 				if (argus_flipscreen)
 				{
@@ -1094,19 +1094,19 @@ public class argus
 	
 				if (argus_flipscreen == 0)
 				{
-					if (  spriteram[offs+2] & 0x01)  sx -= 256;
-					if (!(spriteram[offs+2] & 0x02)) sy -= 256;
+					if (  spriteram.read(offs+2)& 0x01)  sx -= 256;
+					if (!(spriteram.read(offs+2)& 0x02)) sy -= 256;
 				}
 				else
 				{
-					if (  spriteram[offs+2] & 0x01)  sx += 256;
-					if (!(spriteram[offs+2] & 0x02)) sy += 256;
+					if (  spriteram.read(offs+2)& 0x01)  sx += 256;
+					if (!(spriteram.read(offs+2)& 0x02)) sy += 256;
 				}
 	
-				tile	 = spriteram[offs+3] + ((spriteram[offs+2] & 0xc0) << 2);
-				flipx	 = spriteram[offs+2] & 0x10;
-				flipy	 = spriteram[offs+2] & 0x20;
-				color	 = spriteram[offs+4] & 0x0f;
+				tile	 = spriteram.read(offs+3)+ ((spriteram.read(offs+2)& 0xc0) << 2);
+				flipx	 = spriteram.read(offs+2)& 0x10;
+				flipy	 = spriteram.read(offs+2)& 0x20;
+				color	 = spriteram.read(offs+4)& 0x0f;
 	
 				if (argus_flipscreen)
 				{
@@ -1134,16 +1134,16 @@ public class argus
 		{
 			int sx, sy, tile, flipx, flipy, color;
 	
-			sx = spriteram[offs + 2];
-			sy = 240 - spriteram[offs + 4];
+			sx = spriteram.read(offs + 2);
+			sy = 240 - spriteram.read(offs + 4);
 	
-			if (spriteram[offs + 3] & 0x01) sx -= 256;
-			if (spriteram[offs + 5] & 0x01) sy += 256;
+			if (spriteram.read(offs + 3)& 0x01) sx -= 256;
+			if (spriteram.read(offs + 5)& 0x01) sy += 256;
 	
-			tile	 = spriteram[offs + 6] + ((spriteram[offs + 7] & 0x0f) << 8);
-			flipx	 = spriteram[offs + 0] & 0x01;
-			flipy	 = spriteram[offs + 0] & 0x04;
-			color	 = spriteram[offs + 1] & 0x0f;
+			tile	 = spriteram.read(offs + 6)+ ((spriteram.read(offs + 7)& 0x0f) << 8);
+			flipx	 = spriteram.read(offs + 0)& 0x01;
+			flipy	 = spriteram.read(offs + 0)& 0x04;
+			color	 = spriteram.read(offs + 1)& 0x0f;
 	
 			if (argus_flipscreen == 0)
 			{
@@ -1334,14 +1334,14 @@ public class argus
 					if (i == 0)
 					{
 						logerror("%04x : ", offs + 0xf000);
-						logerror("%02x ", spriteram[offs]);
+						logerror("%02x ", spriteram.read(offs));
 					}
 					else if (i == 7)
-						logerror("%02x  ", spriteram[offs + 7]);
+						logerror("%02x  ", spriteram.read(offs + 7));
 					else if (i == 15)
-						logerror("%02x\n", spriteram[offs + 15]);
+						logerror("%02x\n", spriteram.read(offs + 15));
 					else
-						logerror("%02x ", spriteram[offs + i]);
+						logerror("%02x ", spriteram.read(offs + i));
 				}
 			}
 			logerror("\nColor RAM\n");

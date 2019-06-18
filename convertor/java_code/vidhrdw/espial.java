@@ -134,19 +134,19 @@ public class espial
 	
 		/* Draw the sprites. Note that it is important to draw them exactly in this */
 		/* order, to have the correct priorities. */
-		for (offs = 0;offs < spriteram_size/2;offs++)
+		for (offs = 0;offs < spriteram_size[0]/2;offs++)
 		{
 			int sx,sy,code,color,flipx,flipy;
 	
 	
-			sx = spriteram[offs + 16];
-			sy = 240 - spriteram_2[offs];
-			code = spriteram[offs] >> 1;
-			color = spriteram_2[offs + 16];
-			flipx = spriteram_3[offs] & 0x04;
-			flipy = spriteram_3[offs] & 0x08;
+			sx = spriteram.read(offs + 16);
+			sy = 240 - spriteram_2.read(offs);
+			code = spriteram.read(offs)>> 1;
+			color = spriteram_2.read(offs + 16);
+			flipx = spriteram_3.read(offs)& 0x04;
+			flipy = spriteram_3.read(offs)& 0x08;
 	
-			if (spriteram[offs] & 1)	/* double height */
+			if (spriteram.read(offs)& 1)	/* double height */
 			{
 				drawgfx(bitmap,Machine->gfx[1],
 						code,

@@ -57,9 +57,9 @@ public class canyon
 			int pic;
 			int flipx;
 	
-			sx = 27*8 - spriteram[offs*2+1];
-			sy = 30*8 - spriteram[offs*2+8];
-			pic = spriteram[offs*2+9];
+			sx = 27*8 - spriteram.read(offs*2+1);
+			sy = 30*8 - spriteram.read(offs*2+8);
+			pic = spriteram.read(offs*2+9);
 			if (pic & 0x80)
 				flipx=0;
 			else
@@ -76,8 +76,8 @@ public class canyon
 		{
 			int sx, sy;
 	
-			sx = 31*8 - spriteram[offs*2+1];
-			sy = 31*8 - spriteram[offs*2+8];
+			sx = 31*8 - spriteram.read(offs*2+1);
+			sy = 31*8 - spriteram.read(offs*2+8);
 	
 	        drawgfx(bitmap,Machine->gfx[2],
 	                0, offs,

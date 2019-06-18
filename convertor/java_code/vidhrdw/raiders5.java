@@ -141,10 +141,10 @@ public class raiders5
 	
 	/* draw sprites */
 	
-		for (offs=0; offs<spriteram_size; offs +=32)
+		for (offs=0; offs<spriteram_size[0]; offs +=32)
 		{
-			chr = spriteram[offs];
-			col = spriteram[offs+3];
+			chr = spriteram.read(offs);
+			col = spriteram.read(offs+3);
 	
 			b1 = (col >> 1) & 1;
 			b2 = col & 0x01;
@@ -152,8 +152,8 @@ public class raiders5
 			fx = ((chr >> 0) & 1) ^ flipscreen;
 			fy = ((chr >> 1) & 1) ^ flipscreen;
 	
-			x = spriteram[offs+1];
-			y = spriteram[offs+2];
+			x = spriteram.read(offs+1);
+			y = spriteram.read(offs+2);
 	
 			col = (col >> 4) & 0x0f ;
 			chr = (chr >> 2) | b2*0x40;

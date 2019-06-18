@@ -113,7 +113,7 @@ public class skykid
 			spriteram	= &RAM[0x4f80];
 			spriteram_2	= &RAM[0x4f80+0x0800];
 			spriteram_3	= &RAM[0x4f80+0x0800+0x0800];
-			spriteram_size = 0x80;
+			spriteram_size[0] = 0x80;
 	
 			return 0;
 		}
@@ -172,12 +172,12 @@ public class skykid
 		int offs;
 	
 		for (offs = 0; offs < spriteram_size; offs += 2){
-			int number = spriteram[offs] | ((spriteram_3[offs] & 0x80) << 1);
-			int color = (spriteram[offs+1] & 0x3f);
-			int sx = (spriteram_2[offs+1]) + 0x100*(spriteram_3[offs+1] & 1) - 72;
-			int sy = 256 - spriteram_2[offs] - 57;
-			int flipy = spriteram_3[offs] & 0x02;
-			int flipx = spriteram_3[offs] & 0x01;
+			int number = spriteram.read(offs)| ((spriteram_3.read(offs)& 0x80) << 1);
+			int color = (spriteram.read(offs+1)& 0x3f);
+			int sx = (spriteram_2.read(offs+1)) + 0x100*(spriteram_3.read(offs+1)& 1) - 72;
+			int sy = 256 - spriteram_2.read(offs)- 57;
+			int flipy = spriteram_3.read(offs)& 0x02;
+			int flipx = spriteram_3.read(offs)& 0x01;
 			int width, height;
 	
 			if (flipscreen){
@@ -187,7 +187,7 @@ public class skykid
 	
 			if (number >= 128*3) continue;
 	
-			switch (spriteram_3[offs] & 0x0c){
+			switch (spriteram_3.read(offs)& 0x0c){
 				case 0x0c:	/* 2x both ways */
 					width = height = 2; number &= (~3); break;
 				case 0x08:	/* 2x vertical */

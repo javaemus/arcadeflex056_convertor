@@ -150,7 +150,7 @@ public class liberatr
 	static UINT8 *liberatr_ctrld;
 	
 	
-	public static WriteHandlerPtr liberatr_led_w = new WriteHandlerPtr() {public void handler(int offset, int data)
+	static public static WriteHandlerPtr liberatr_led_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_led_status(offset,~data & 0x10);
 	} };

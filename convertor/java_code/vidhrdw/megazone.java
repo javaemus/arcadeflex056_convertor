@@ -192,22 +192,22 @@ public class megazone
 	
 		/* Draw the sprites. */
 		{
-			for (offs = spriteram_size-4; offs >= 0;offs -= 4)
+			for (offs = spriteram_size[0]-4; offs >= 0;offs -= 4)
 			{
 				int sx,sy,flipx,flipy;
 	
 	
-				sx = spriteram[offs + 3];
+				sx = spriteram.read(offs + 3);
 				if (flipscreen) sx-=11; else sx+=4*8;   	  // Sprite y-position correction depending on screen flip
-				sy = 255-((spriteram[offs + 1]+16)&0xff);
+				sy = 255-((spriteram.read(offs + 1)+16)&0xff);
 				if (flipscreen) sy+=2; 			  	  // Sprite x-position correction depending on screen flip
 	
-				flipx = ~spriteram[offs+0] & 0x40;
-				flipy = spriteram[offs+0] & 0x80;
+				flipx = ~spriteram.read(offs+0)& 0x40;
+				flipy = spriteram.read(offs+0)& 0x80;
 	
 				drawgfx(bitmap,Machine->gfx[1],
-						spriteram[offs + 2],
-						spriteram[offs + 0] & 0x0f,
+						spriteram.read(offs + 2),
+						spriteram.read(offs + 0)& 0x0f,
 						flipx,flipy,
 						sx,sy,
 						&Machine->visible_area,TRANSPARENCY_COLOR,0);

@@ -183,7 +183,7 @@ public class system1
 	
 	INLINE int get_sprite_bottom_y(int spr_number)
 	{
-		return  spriteram[0x10 * spr_number + SPR_Y_BOTTOM];
+		return  spriteram.read(0x10 * spr_number + SPR_Y_BOTTOM);
 	}
 	
 	INLINE void draw_pixel(struct mame_bitmap *bitmap,

@@ -67,16 +67,16 @@ public class pinbo
 		copybitmap(bitmap,tmpbitmap,0,0,0,0,&Machine->visible_area,TRANSPARENCY_NONE,0);
 	
 		/* Draw the sprites. */
-		for (offs = spriteram_size - 4;offs >= 0;offs -= 4)
+		for (offs = spriteram_size[0] - 4;offs >= 0;offs -= 4)
 		{
 			int sx,sy,flipx,flipy;
 			int code,color;
 	
 	
-			sx = spriteram[offs + 3];
-			sy = 240 - spriteram[offs];
-			flipx = spriteram[offs+1] & 0x40;
-			flipy = spriteram[offs+1] & 0x80;
+			sx = spriteram.read(offs + 3);
+			sy = 240 - spriteram.read(offs);
+			flipx = spriteram.read(offs+1)& 0x40;
+			flipy = spriteram.read(offs+1)& 0x80;
 			if (flipscreen[0])
 			{
 				sx = 240 - sx;
@@ -87,8 +87,8 @@ public class pinbo
 				sy = 240 - sy;
 				flipy = !flipy;
 			}
-			code = (spriteram[offs+1] & 0x3f) | 0x40 | ((spriteram[offs+2] & 0x30) << 3);
-			color = (spriteram[offs+2] & 0x0f);
+			code = (spriteram.read(offs+1)& 0x3f) | 0x40 | ((spriteram.read(offs+2)& 0x30) << 3);
+			color = (spriteram.read(offs+2)& 0x0f);
 	
 			drawgfx(bitmap,Machine->gfx[1],
 					code,

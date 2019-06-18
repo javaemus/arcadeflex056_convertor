@@ -120,17 +120,17 @@ public class m90
 	
 			if (/*spriteram[offs+0]==0x78 &&*/ spriteram[offs+1]==0x7f) continue;
 	
-			y=(spriteram[offs+0] | (spriteram[offs+1]<<8))&0x1ff;
-			x=(spriteram[offs+6] | (spriteram[offs+7]<<8))&0x1ff;
+			y=(spriteram.read(offs+0)| (spriteram.read(offs+1)<<8))&0x1ff;
+			x=(spriteram.read(offs+6)| (spriteram.read(offs+7)<<8))&0x1ff;
 	
 			x = x - /*64 -*/ 16;
 			y = 256 - /*32 -*/ y;
 	
-		    sprite=(spriteram[offs+2] | (spriteram[offs+3]<<8));
-			colour=(spriteram[offs+5]>>1)&0xf;
+		    sprite=(spriteram.read(offs+2)| (spriteram.read(offs+3)<<8));
+			colour=(spriteram.read(offs+5)>>1)&0xf;
 	
-			fx=spriteram[offs+5]&1;
-			fy=0;//spriteram[offs+5]&2;
+			fx=spriteram.read(offs+5)&1;
+			fy=0;//spriteram.read(offs+5)&2;
 	
 			drawgfx(bitmap,Machine->gfx[1],
 					sprite&0x1fff,

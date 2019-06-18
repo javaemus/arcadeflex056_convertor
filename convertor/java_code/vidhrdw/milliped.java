@@ -157,18 +157,18 @@ public class milliped
 			int sx, sy;
 	
 	
-			x = spriteram[offs + 0x20];
-			y = 240 - spriteram[offs + 0x10];
+			x = spriteram.read(offs + 0x20);
+			y = 240 - spriteram.read(offs + 0x10);
 	
-			spritenum = spriteram[offs] & 0x3f;
+			spritenum = spriteram.read(offs)& 0x3f;
 			if (spritenum & 1) spritenum = spritenum / 2 + 64;
 			else spritenum = spritenum / 2;
-			color = spriteram[offs + 0x30];
+			color = spriteram.read(offs + 0x30);
 	
 			drawgfx(bitmap,Machine->gfx[1],
 					spritenum,
 					color,
-					0,spriteram[offs] & 0x80,
+					0,spriteram.read(offs)& 0x80,
 					x,y,
 					&spritevisiblearea,TRANSPARENCY_PEN,0);
 	

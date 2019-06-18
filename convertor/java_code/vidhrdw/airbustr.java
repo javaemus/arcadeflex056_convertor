@@ -180,7 +180,7 @@ public class airbustr
 		/* Let's draw the sprites */
 		for (i = 0 ; i < 2 ; i++)
 		{
-			unsigned char *ram = &spriteram[i * 0x800];
+			unsigned char *ram = &spriteram.read(i * 0x800);
 			int sx = 0;
 			int sy = 0;
 	

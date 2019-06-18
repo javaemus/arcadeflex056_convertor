@@ -35,10 +35,10 @@ public class mrflea
 	
 	public static WriteHandlerPtr mrflea_spriteram_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		if( offset&2 ){ /* tile_number */
-			spriteram[offset|1] = offset&1;
+			spriteram.write(offset|1,offset&1);
 			offset &= ~1;
 		}
-		spriteram[offset] = data;
+		spriteram.write(offset,data);
 	} };
 	
 	static void draw_sprites( struct mame_bitmap *bitmap ){

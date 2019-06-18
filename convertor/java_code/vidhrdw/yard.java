@@ -321,17 +321,17 @@ public class yard
 		}
 	
 	
-		for (offs = spriteram_size - 4;offs >= 0;offs -= 4)
+		for (offs = spriteram_size[0] - 4;offs >= 0;offs -= 4)
 		{
 			int code1,code2,bank,sx,sy1,sy2,flipx,flipy;
 	
 	
-			bank  = (spriteram[offs + 1] & 0x20) >> 5;
-			code1 =  spriteram[offs + 2] & 0xbf;
-			sx    =  spriteram[offs + 3];
-			sy1   =  241 - spriteram[offs];
-			flipx =  spriteram[offs + 1] & 0x40;
-			flipy =  spriteram[offs + 1] & 0x80;
+			bank  = (spriteram.read(offs + 1)& 0x20) >> 5;
+			code1 =  spriteram.read(offs + 2)& 0xbf;
+			sx    =  spriteram.read(offs + 3);
+			sy1   =  241 - spriteram.read(offs);
+			flipx =  spriteram.read(offs + 1)& 0x40;
+			flipy =  spriteram.read(offs + 1)& 0x80;
 	
 			if (flipy)
 			{
@@ -358,14 +358,14 @@ public class yard
 	
 			drawgfx(bitmap,Machine->gfx[1],
 					code1 + 256 * bank,
-					spriteram[offs + 1] & 0x1f,
+					spriteram.read(offs + 1)& 0x1f,
 					flipx,flipy,
 					sx, sy1,
 					&Machine->visible_area,TRANSPARENCY_COLOR,256);
 	
 			drawgfx(bitmap,Machine->gfx[1],
 					code2 + 256 * bank,
-					spriteram[offs + 1] & 0x1f,
+					spriteram.read(offs + 1)& 0x1f,
 					flipx,flipy,
 					sx, sy2,
 					&Machine->visible_area,TRANSPARENCY_COLOR,256);

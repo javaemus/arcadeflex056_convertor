@@ -217,7 +217,7 @@ public class jackal
 		colorram = &RAM[0x2000];
 		videoram = &RAM[0x2400];
 	
-		spriteram_size = 0x500;
+		spriteram_size[0] = 0x500;
 	
 		if (jackal_videoctrl[0x03] & 0x08)
 		{

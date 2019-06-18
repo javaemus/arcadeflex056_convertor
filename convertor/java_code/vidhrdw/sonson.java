@@ -148,13 +148,13 @@ public class sonson
 	
 	
 		/* draw the sprites */
-		for (offs = spriteram_size - 4;offs >= 0;offs -= 4)
+		for (offs = spriteram_size[0] - 4;offs >= 0;offs -= 4)
 		{
 			drawgfx(bitmap,Machine->gfx[1],
-					spriteram[offs + 2] + ((spriteram[offs + 1] & 0x20) << 3),
-					spriteram[offs + 1] & 0x1f,
-					~spriteram[offs + 1] & 0x40,~spriteram[offs + 1] & 0x80,
-					spriteram[offs + 3],spriteram[offs + 0],
+					spriteram.read(offs + 2)+ ((spriteram.read(offs + 1)& 0x20) << 3),
+					spriteram.read(offs + 1)& 0x1f,
+					~spriteram.read(offs + 1)& 0x40,~spriteram.read(offs + 1)& 0x80,
+					spriteram.read(offs + 3),spriteram.read(offs + 0),
 					&Machine->visible_area,TRANSPARENCY_PEN,0);
 		}
 	} };

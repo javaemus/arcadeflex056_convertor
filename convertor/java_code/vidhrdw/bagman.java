@@ -137,15 +137,15 @@ public class bagman
 	
 	
 		/* Draw the sprites. */
-		for (offs = spriteram_size - 4;offs >= 0;offs -= 4)
+		for (offs = spriteram_size[0] - 4;offs >= 0;offs -= 4)
 		{
 			int sx,sy,flipx,flipy;
 	
 	
-			sx = spriteram[offs + 3];
-			sy = 240 - spriteram[offs + 2];
-			flipx = spriteram[offs] & 0x40;
-			flipy = spriteram[offs] & 0x80;
+			sx = spriteram.read(offs + 3);
+			sy = 240 - spriteram.read(offs + 2);
+			flipx = spriteram.read(offs)& 0x40;
+			flipy = spriteram.read(offs)& 0x80;
 			if (flipscreen[0])
 			{
 				sx = 240 - sx +1;	/* compensate misplacement */
@@ -157,10 +157,10 @@ public class bagman
 				flipy = !flipy;
 			}
 	
-			if (spriteram[offs + 2] && spriteram[offs + 3])
+			if (spriteram.read(offs + 2)&& spriteram.read(offs + 3))
 				drawgfx(bitmap,Machine->gfx[1],
-						(spriteram[offs] & 0x3f) + 2 * (spriteram[offs + 1] & 0x20),
-						spriteram[offs + 1] & 0x1f,
+						(spriteram.read(offs)& 0x3f) + 2 * (spriteram.read(offs + 1)& 0x20),
+						spriteram.read(offs + 1)& 0x1f,
 						flipx,flipy,
 						sx,sy+1,	/* compensate misplacement */
 						&Machine->visible_area,TRANSPARENCY_PEN,0);

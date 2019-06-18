@@ -134,8 +134,8 @@ public class timeplt
 	{
 		bg_tilemap = tilemap_create(get_tile_info,tilemap_scan_rows,TILEMAP_OPAQUE,8,8,32,32);
 	
-		sprite_mux_buffer = malloc(256 * spriteram_size);
-		sprite_mux_buffer_2 = malloc(256 * spriteram_size);
+		sprite_mux_buffer = malloc(256 * spriteram_size[0]);
+		sprite_mux_buffer_2 = malloc(256 * spriteram_size[0]);
 	
 		if (!bg_tilemap || !sprite_mux_buffer || !sprite_mux_buffer_2)
 		{

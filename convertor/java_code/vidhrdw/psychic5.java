@@ -421,15 +421,15 @@ public class psychic5
 		{
 			if (!(spriteram[offs+4]==0 && spriteram[offs]==0xf0))
 			{
-				sx = spriteram[offs+1];
-				sy = spriteram[offs];
-				if (spriteram[offs+2] & 0x01) sx-=256;
-				if (spriteram[offs+2] & 0x04) sy-=256;
-				tile	 = spriteram[offs+3]+((spriteram[offs+2] & 0xc0)<<2);
-				size32	 = spriteram[offs+2] & 0x08;
-				flipx	 = spriteram[offs+2] & 0x20;
-				flipy	 = spriteram[offs+2] & 0x10;
-				palette	 = spriteram[offs+4] & 0x0f;
+				sx = spriteram.read(offs+1);
+				sy = spriteram.read(offs);
+				if (spriteram.read(offs+2)& 0x01) sx-=256;
+				if (spriteram.read(offs+2)& 0x04) sy-=256;
+				tile	 = spriteram.read(offs+3)+((spriteram.read(offs+2)& 0xc0)<<2);
+				size32	 = spriteram.read(offs+2)& 0x08;
+				flipx	 = spriteram.read(offs+2)& 0x20;
+				flipy	 = spriteram.read(offs+2)& 0x10;
+				palette	 = spriteram.read(offs+4)& 0x0f;
 				if (flipx)
 				{
 					tileofs0 = 1;
@@ -509,15 +509,15 @@ public class psychic5
 		{
 			if (!(spriteram[offs+4]==0 && spriteram[offs]==0xf0))
 			{
-				sx = spriteram[offs+1];
-				sy = spriteram[offs];
-				if (spriteram[offs+2] & 0x01) sx-=256;
-				if (spriteram[offs+2] & 0x04) sy-=256;
-				tile	 = spriteram[offs+3]+((spriteram[offs+2] & 0xc0)<<2);
-				size32	 = spriteram[offs+2] & 0x08;
-				flipx	 = spriteram[offs+2] & 0x20;
-				flipy	 = spriteram[offs+2] & 0x10;
-				palette	 = spriteram[offs+4] & 0x0;
+				sx = spriteram.read(offs+1);
+				sy = spriteram.read(offs);
+				if (spriteram.read(offs+2)& 0x01) sx-=256;
+				if (spriteram.read(offs+2)& 0x04) sy-=256;
+				tile	 = spriteram.read(offs+3)+((spriteram.read(offs+2)& 0xc0)<<2);
+				size32	 = spriteram.read(offs+2)& 0x08;
+				flipx	 = spriteram.read(offs+2)& 0x20;
+				flipy	 = spriteram.read(offs+2)& 0x10;
+				palette	 = spriteram.read(offs+4)& 0x0;
 				tileofs0 = 0;
 				tileofs1 = 1;
 				tileofs2 = 2;
@@ -582,10 +582,10 @@ public class psychic5
 				struct rectangle clip;
 				int sx1,sy1,sy2,tile;
 	
-				sx1  = spriteram[12];		/* sprite 0 */
-				sy1  = spriteram[11];
-				tile = spriteram[14];
-				sy2 = spriteram[11+128];	/* sprite 8 */
+				sx1  = spriteram.read(12);		/* sprite 0 */
+				sy1  = spriteram.read(11);
+				tile = spriteram.read(14);
+				sy2 = spriteram.read(11+128);	/* sprite 8 */
 	
 				clip.min_x = Machine->visible_area.min_x;
 				clip.min_y = Machine->visible_area.min_y;

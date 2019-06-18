@@ -180,12 +180,12 @@ public class cbasebal
 		/* moving diagonally across the screen */
 		for (offs = spriteram_size-8;offs >= 0;offs -= 4)
 		{
-			int code = spriteram[offs];
-			int attr = spriteram[offs+1];
+			int code = spriteram.read(offs);
+			int attr = spriteram.read(offs+1);
 			int color = attr & 0x07;
 			int flipx = attr & 0x08;
-			sx = spriteram[offs+3] + ((attr & 0x10) << 4);
-			sy = ((spriteram[offs+2] + 8) & 0xff) - 8;
+			sx = spriteram.read(offs+3)+ ((attr & 0x10) << 4);
+			sy = ((spriteram.read(offs+2)+ 8) & 0xff) - 8;
 			code += (attr & 0xe0) << 3;
 			code += spritebank * 0x800;
 	

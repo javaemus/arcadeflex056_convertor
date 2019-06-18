@@ -202,10 +202,10 @@ public class kncljoe
 	
 		for (offs = spriteram_size;offs >= 0;offs -= 4)
 		{
-			int sy = spriteram[offs];
-			int sx = spriteram[offs+3];
-			int code = spriteram[offs+2];
-			int attr = spriteram[offs+1];
+			int sy = spriteram.read(offs);
+			int sx = spriteram.read(offs+3);
+			int code = spriteram.read(offs+2);
+			int attr = spriteram.read(offs+1);
 			int flipx = attr & 0x40;
 			int flipy = !(attr & 0x80);
 			int color = attr & 0x0f;

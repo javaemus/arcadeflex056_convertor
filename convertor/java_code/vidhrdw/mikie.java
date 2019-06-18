@@ -166,24 +166,24 @@ public class mikie
 	
 	
 		/* Draw the sprites. */
-		for (offs = 0;offs < spriteram_size;offs += 4)
+		for (offs = 0;offs < spriteram_size[0];offs += 4)
 		{
 			int sx,sy,flipx,flipy;
 	
-			sx = spriteram[offs + 3];
-			sy = 244 - spriteram[offs + 1];
-			flipx = ~spriteram[offs] & 0x10;
-			flipy = spriteram[offs] & 0x20;
+			sx = spriteram.read(offs + 3);
+			sy = 244 - spriteram.read(offs + 1);
+			flipx = ~spriteram.read(offs)& 0x10;
+			flipy = spriteram.read(offs)& 0x20;
 			if (flipscreen)
 			{
 				sy = 242 - sy;
 				flipy = !flipy;
 			}
 	
-			drawgfx(bitmap,Machine->gfx[(spriteram[offs+2] & 0x40) ? 2 : 1],
-					(spriteram[offs + 2] & 0x3f) + ((spriteram[offs + 2] & 0x80) >> 1)
-							+ ((spriteram[offs] & 0x40) << 1),
-					(spriteram[offs] & 0x0f) + 16 * palettebank,
+			drawgfx(bitmap,Machine->gfx[(spriteram.read(offs+2)& 0x40) ? 2 : 1],
+					(spriteram.read(offs + 2)& 0x3f) + ((spriteram.read(offs + 2)& 0x80) >> 1)
+							+ ((spriteram.read(offs)& 0x40) << 1),
+					(spriteram.read(offs)& 0x0f) + 16 * palettebank,
 					flipx,flipy,
 					sx,sy,
 					&Machine->visible_area,TRANSPARENCY_PEN,0);

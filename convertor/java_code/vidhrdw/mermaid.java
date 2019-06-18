@@ -153,20 +153,20 @@ public class mermaid
 	
 	
 		/* draw the sprites */
-		for (offs = spriteram_size - 4;offs >= 0;offs -= 4)
+		for (offs = spriteram_size[0] - 4;offs >= 0;offs -= 4)
 		{
 	#ifdef MAME_DEBUG
 			#endif
 			UINT8 flipx,flipy,sx,sy,code,bank = 0;
 	
 	
-			sx = spriteram[offs + 3] + 1;
-			sy = 240 - spriteram[offs + 1];
-			flipx = spriteram[offs + 0] & 0x40;
-			flipy = spriteram[offs + 0] & 0x80;
+			sx = spriteram.read(offs + 3)+ 1;
+			sy = 240 - spriteram.read(offs + 1);
+			flipx = spriteram.read(offs + 0)& 0x40;
+			flipy = spriteram.read(offs + 0)& 0x80;
 	
 			/* this doesn't look correct. Oh really? Maybe there is a PROM. */
-			switch (spriteram[offs + 2] & 0xf0)
+			switch (spriteram.read(offs + 2)& 0xf0)
 			{
 			case 0x00:  bank = 2; break;
 			case 0x10:  bank = 1; break;
@@ -183,11 +183,11 @@ public class mermaid
 	#endif
 			}
 	
-			code = (spriteram[offs + 0] & 0x3f) | (bank << 6);
+			code = (spriteram.read(offs + 0)& 0x3f) | (bank << 6);
 	
 			drawgfx(bitmap,Machine->gfx[1],
 					code,
-					spriteram[offs + 2] & 0x0f,
+					spriteram.read(offs + 2)& 0x0f,
 					flipx, flipy,
 					sx, sy,
 					&spritevisiblearea,TRANSPARENCY_PEN,0);

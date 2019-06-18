@@ -233,12 +233,12 @@ public class mrdo
 	
 		for (offs = spriteram_size - 4;offs >= 0;offs -= 4)
 		{
-			if (spriteram[offs + 1] != 0)
+			if (spriteram.read(offs + 1)!= 0)
 			{
 				drawgfx(bitmap,Machine->gfx[2],
-						spriteram[offs],spriteram[offs + 2] & 0x0f,
-						spriteram[offs + 2] & 0x10,spriteram[offs + 2] & 0x20,
-						spriteram[offs + 3],256 - spriteram[offs + 1],
+						spriteram.read(offs),spriteram.read(offs + 2)& 0x0f,
+						spriteram.read(offs + 2)& 0x10,spriteram.read(offs + 2)& 0x20,
+						spriteram.read(offs + 3),256 - spriteram.read(offs + 1),
 						&Machine->visible_area,TRANSPARENCY_PEN,0);
 			}
 		}

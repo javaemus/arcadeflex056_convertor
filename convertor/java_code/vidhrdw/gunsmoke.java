@@ -259,18 +259,18 @@ public class gunsmoke
 		if (objon)
 		{
 			/* Draw the sprites. */
-			for (offs = spriteram_size - 32;offs >= 0;offs -= 32)
+			for (offs = spriteram_size[0] - 32;offs >= 0;offs -= 32)
 			{
 				int bank,flipx,flipy;
 	
 	
-				bank = (spriteram[offs + 1] & 0xc0) >> 6;
+				bank = (spriteram.read(offs + 1)& 0xc0) >> 6;
 				if (bank == 3) bank += sprite3bank;
 	
-				sx = spriteram[offs + 3] - ((spriteram[offs + 1] & 0x20) << 3);
-	 			sy = spriteram[offs + 2];
+				sx = spriteram.read(offs + 3)- ((spriteram.read(offs + 1)& 0x20) << 3);
+	 			sy = spriteram.read(offs + 2);
 				flipx = 0;
-				flipy = spriteram[offs + 1] & 0x10;
+				flipy = spriteram.read(offs + 1)& 0x10;
 				if (flip_screen)
 				{
 					sx = 240 - sx;
@@ -280,8 +280,8 @@ public class gunsmoke
 				}
 	
 				drawgfx(bitmap,Machine->gfx[2],
-						spriteram[offs] + 256 * bank,
-						spriteram[offs + 1] & 0x0f,
+						spriteram.read(offs)+ 256 * bank,
+						spriteram.read(offs + 1)& 0x0f,
 						flipx,flipy,
 						sx,sy,
 						&Machine->visible_area,TRANSPARENCY_PEN,0);

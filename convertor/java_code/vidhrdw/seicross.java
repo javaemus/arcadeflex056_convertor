@@ -137,39 +137,39 @@ public class seicross
 		}
 	
 		/* draw sprites */
-		for (offs = spriteram_size - 4;offs >= 0;offs -= 4)
+		for (offs = spriteram_size[0] - 4;offs >= 0;offs -= 4)
 		{
-			x=spriteram[offs + 3];
+			x=spriteram.read(offs + 3);
 			drawgfx(bitmap,Machine->gfx[1],
-					(spriteram[offs] & 0x3f) + ((spriteram[offs + 1] & 0x10) << 2) + 128,
-					spriteram[offs + 1] & 0x0f,
-					spriteram[offs] & 0x40,spriteram[offs] & 0x80,
-					x,240-spriteram[offs + 2],
+					(spriteram.read(offs)& 0x3f) + ((spriteram.read(offs + 1)& 0x10) << 2) + 128,
+					spriteram.read(offs + 1)& 0x0f,
+					spriteram.read(offs)& 0x40,spriteram.read(offs)& 0x80,
+					x,240-spriteram.read(offs + 2),
 					&Machine->visible_area,TRANSPARENCY_PEN,0);
 			if(x>0xf0)
 				drawgfx(bitmap,Machine->gfx[1],
-						(spriteram[offs] & 0x3f) + ((spriteram[offs + 1] & 0x10) << 2) + 128,
-						spriteram[offs + 1] & 0x0f,
-						spriteram[offs] & 0x40,spriteram[offs] & 0x80,
-						x-256,240-spriteram[offs + 2],
+						(spriteram.read(offs)& 0x3f) + ((spriteram.read(offs + 1)& 0x10) << 2) + 128,
+						spriteram.read(offs + 1)& 0x0f,
+						spriteram.read(offs)& 0x40,spriteram.read(offs)& 0x80,
+						x-256,240-spriteram.read(offs + 2),
 						&Machine->visible_area,TRANSPARENCY_PEN,0);
 		}
 	
 		for (offs = spriteram_2_size - 4;offs >= 0;offs -= 4)
 		{
-			x=spriteram_2[offs + 3];
+			x=spriteram_2.read(offs + 3);
 			drawgfx(bitmap,Machine->gfx[1],
-					(spriteram_2[offs] & 0x3f) + ((spriteram_2[offs + 1] & 0x10) << 2),
-					spriteram_2[offs + 1] & 0x0f,
-					spriteram_2[offs] & 0x40,spriteram_2[offs] & 0x80,
-					x,240-spriteram_2[offs + 2],
+					(spriteram_2.read(offs)& 0x3f) + ((spriteram_2.read(offs + 1)& 0x10) << 2),
+					spriteram_2.read(offs + 1)& 0x0f,
+					spriteram_2.read(offs)& 0x40,spriteram_2.read(offs)& 0x80,
+					x,240-spriteram_2.read(offs + 2),
 					&Machine->visible_area,TRANSPARENCY_PEN,0);
 			if(x>0xf0)
 				drawgfx(bitmap,Machine->gfx[1],
-						(spriteram_2[offs] & 0x3f) + ((spriteram_2[offs + 1] & 0x10) << 2),
-						spriteram_2[offs + 1] & 0x0f,
-						spriteram_2[offs] & 0x40,spriteram_2[offs] & 0x80,
-						x-256,240-spriteram_2[offs + 2],
+						(spriteram_2.read(offs)& 0x3f) + ((spriteram_2.read(offs + 1)& 0x10) << 2),
+						spriteram_2.read(offs + 1)& 0x0f,
+						spriteram_2.read(offs)& 0x40,spriteram_2.read(offs)& 0x80,
+						x-256,240-spriteram_2.read(offs + 2),
 						&Machine->visible_area,TRANSPARENCY_PEN,0);
 		}
 	} };

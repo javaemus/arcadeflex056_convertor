@@ -74,16 +74,16 @@ public class exprraid
 		drawbg(bitmap,0);
 	
 		/* draw the sprites */
-		for (offs = 0;offs < spriteram_size;offs += 4)
+		for (offs = 0;offs < spriteram_size[0];offs += 4)
 		{
 			int sx,sy,code,color,flipx;
 	
-			code = spriteram[offs+3] + ( ( spriteram[offs+1] & 0xe0 ) << 3 );
+			code = spriteram.read(offs+3)+ ( ( spriteram.read(offs+1)& 0xe0 ) << 3 );
 	
-			sx = ((248 - spriteram[offs+2]) & 0xff) - 8;
-			sy = spriteram[offs];
-			color = (spriteram[offs+1] & 0x03) + ((spriteram[offs+1] & 0x08) >> 1);
-			flipx = ( spriteram[offs+1] & 0x04 );
+			sx = ((248 - spriteram.read(offs+2)) & 0xff) - 8;
+			sy = spriteram.read(offs);
+			color = (spriteram.read(offs+1)& 0x03) + ((spriteram.read(offs+1)& 0x08) >> 1);
+			flipx = ( spriteram.read(offs+1)& 0x04 );
 	
 			drawgfx(bitmap,Machine->gfx[1],
 					code,
@@ -92,7 +92,7 @@ public class exprraid
 					sx,sy,
 					0,TRANSPARENCY_PEN,0);
 	
-			if ( spriteram[offs+1] & 0x10 ) { /* double height */
+			if ( spriteram.read(offs+1)& 0x10 ) { /* double height */
 				drawgfx(bitmap,Machine->gfx[1],
 						code + 1,
 						color,

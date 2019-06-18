@@ -387,18 +387,18 @@ public class jedi
 	    for (offs = 0; offs < 0x30; offs++)
 		{
 			/* coordinates adjustments made to match screenshot */
-			int x = spriteram[offs + 0x100] + ((spriteram[offs + 0x40] & 0x01) << 8) - 2;
-			int y = 240 - spriteram[offs + 0x80] + 1;
-			int flipx = spriteram[offs + 0x40] & 0x10;
-			int flipy = spriteram[offs + 0x40] & 0x20;
-			int tall = spriteram[offs + 0x40] & 0x08;
+			int x = spriteram.read(offs + 0x100)+ ((spriteram.read(offs + 0x40)& 0x01) << 8) - 2;
+			int y = 240 - spriteram.read(offs + 0x80)+ 1;
+			int flipx = spriteram.read(offs + 0x40)& 0x10;
+			int flipy = spriteram.read(offs + 0x40)& 0x20;
+			int tall = spriteram.read(offs + 0x40)& 0x08;
 			int code, bank;
 	
 			/* shuffle the bank bits in */
-			bank  = ((spriteram[offs + 0x40] & 0x02) >> 1);
-			bank |= ((spriteram[offs + 0x40] & 0x40) >> 5);
-			bank |=  (spriteram[offs + 0x40] & 0x04);
-			code = spriteram[offs] + (bank * 256);
+			bank  = ((spriteram.read(offs + 0x40)& 0x02) >> 1);
+			bank |= ((spriteram.read(offs + 0x40)& 0x40) >> 5);
+			bank |=  (spriteram.read(offs + 0x40)& 0x04);
+			code = spriteram.read(offs)+ (bank * 256);
 	
 			/* adjust for double-height */
 			if (tall)
@@ -427,9 +427,9 @@ public class jedi
 	    for (offs = 0; offs < 0x30; offs++)
 		{
 			/* coordinates adjustments made to match screenshot */
-			int x = spriteram[offs + 0x100] + ((spriteram[offs + 0x40] & 0x01) << 8) - 2;
-			int y = 240 - spriteram[offs + 0x80] + 1;
-			int tall = spriteram[offs + 0x40] & 0x08;
+			int x = spriteram.read(offs + 0x100)+ ((spriteram.read(offs + 0x40)& 0x01) << 8) - 2;
+			int y = 240 - spriteram.read(offs + 0x80)+ 1;
+			int tall = spriteram.read(offs + 0x40)& 0x08;
 			struct rectangle bounds;
 	
 			/* compute the bounds */

@@ -159,13 +159,13 @@ public class mcr3
 				continue;
 	
 			/* extract the bits of information */
-			flags = spriteram[offs + 1];
-			code = spriteram[offs + 2] + 256 * ((flags >> 3) & 0x01);
+			flags = spriteram.read(offs + 1);
+			code = spriteram.read(offs + 2)+ 256 * ((flags >> 3) & 0x01);
 			color = ~flags & color_mask;
 			flipx = flags & 0x10;
 			flipy = flags & 0x20;
-			sx = (spriteram[offs + 3] - 3) * 2;
-			sy = (241 - spriteram[offs]) * 2;
+			sx = (spriteram.read(offs + 3)- 3) * 2;
+			sy = (241 - spriteram.read(offs)) * 2;
 	
 			code ^= code_xor;
 	

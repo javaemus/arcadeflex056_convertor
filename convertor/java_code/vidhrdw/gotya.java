@@ -188,10 +188,10 @@ public class gotya
 			int code,col,sx,sy;
 	
 	
-			code = spriteram[offs + 0x01] >> 2;
-			col  = spriteram[offs + 0x11] & 0x0f;
-			sx   = 256 - spriteram[offs + 0x10] + (spriteram[offs + 0x01] & 0x01) * 256;
-			sy   =       spriteram[offs + 0x00];
+			code = spriteram.read(offs + 0x01)>> 2;
+			col  = spriteram.read(offs + 0x11)& 0x0f;
+			sx   = 256 - spriteram.read(offs + 0x10)+ (spriteram.read(offs + 0x01)& 0x01) * 256;
+			sy   =       spriteram.read(offs + 0x00);
 	
 			if (flip_screen)
 			{

@@ -138,13 +138,13 @@ public class wiping
 		for (offs = 0x0; offs < 128; offs += 2) {
 			int sx,sy,flipx,flipy,otherbank;
 	
-			sx = spriteram[offs+0x100+1] + ((spriteram[offs+0x81] & 0x01) << 8) - 40;
-			sy = 224 - spriteram[offs+0x100];
+			sx = spriteram.read(offs+0x100+1)+ ((spriteram.read(offs+0x81)& 0x01) << 8) - 40;
+			sy = 224 - spriteram.read(offs+0x100);
 	
-			otherbank = spriteram[offs+0x80] & 0x01;
+			otherbank = spriteram.read(offs+0x80)& 0x01;
 	
-			flipy = spriteram[offs] & 0x40;
-			flipx = spriteram[offs] & 0x80;
+			flipy = spriteram.read(offs)& 0x40;
+			flipx = spriteram.read(offs)& 0x80;
 	
 			if (flipscreen)
 			{
@@ -154,8 +154,8 @@ public class wiping
 			}
 	
 			drawgfx(bitmap,Machine->gfx[1],
-				(spriteram[offs] & 0x3f) + 64 * otherbank,
-				spriteram[offs+1] & 0x3f,
+				(spriteram.read(offs)& 0x3f) + 64 * otherbank,
+				spriteram.read(offs+1)& 0x3f,
 				flipx,flipy,
 				sx,sy,
 				&Machine->visible_area,TRANSPARENCY_COLOR,0x1f);

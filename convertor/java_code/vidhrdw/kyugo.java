@@ -58,8 +58,8 @@ public class kyugo
 	{
 		/* sprite information is scattered through memory */
 		/* and uses a portion of the text layer memory (outside the visible area) */
-		unsigned char *spriteram_area1 = &spriteram[0x28];
-		unsigned char *spriteram_area2 = &spriteram_2[0x28];
+		unsigned char *spriteram_area1 = &spriteram.read(0x28);
+		unsigned char *spriteram_area2 = &spriteram_2.read(0x28);
 		unsigned char *spriteram_area3 = &kyugo_videoram[0x28];
 	
 		int n;

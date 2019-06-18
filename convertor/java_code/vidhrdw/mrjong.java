@@ -125,20 +125,20 @@ public class mrjong
 		copybitmap(bitmap, tmpbitmap, 0, 0, 0, 0, &Machine->visible_area, TRANSPARENCY_NONE, 0);
 	
 		/* Draw the sprites. */
-		for (offs = (spriteram_size - 4); offs >= 0; offs -= 4)
+		for (offs = (spriteram_size[0] - 4); offs >= 0; offs -= 4)
 		{
 			int sprt;
 			int color;
 			int sx, sy;
 			int flipx, flipy;
 	
-			sprt = (((spriteram[offs + 1] >> 2) & 0x3f) | ((spriteram[offs + 3] & 0x20) << 1));
-			flipx = (spriteram[offs + 1] & 0x01) >> 0;
-			flipy = (spriteram[offs + 1] & 0x02) >> 1;
-			color = (spriteram[offs + 3] & 0x1f);
+			sprt = (((spriteram.read(offs + 1)>> 2) & 0x3f) | ((spriteram.read(offs + 3)& 0x20) << 1));
+			flipx = (spriteram.read(offs + 1)& 0x01) >> 0;
+			flipy = (spriteram.read(offs + 1)& 0x02) >> 1;
+			color = (spriteram.read(offs + 3)& 0x1f);
 	
-			sx = 224 - spriteram[offs + 2];
-			sy = spriteram[offs + 0];
+			sx = 224 - spriteram.read(offs + 2);
+			sy = spriteram.read(offs + 0);
 			if (flipscreen)
 			{
 				sx = 208 - sx;

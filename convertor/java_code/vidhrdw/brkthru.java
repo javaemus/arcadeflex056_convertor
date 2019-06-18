@@ -207,27 +207,27 @@ public class brkthru
 	
 		/* Draw the sprites. Note that it is important to draw them exactly in this */
 		/* order, to have the correct priorities. */
-		for (offs = 0;offs < spriteram_size; offs += 4)
+		for (offs = 0;offs < spriteram_size[0]; offs += 4)
 		{
-			if (spriteram[offs] & 0x01)	/* enable */
+			if (spriteram.read(offs)& 0x01)	/* enable */
 			{
 				int sx,sy,code,color;
 	
 	
 				/* the meaning of bit 3 of [offs] is unknown */
 	
-				sx = 240 - spriteram[offs+3];
+				sx = 240 - spriteram.read(offs+3);
 				if (sx < -7) sx += 256;
-				sy = 240 - spriteram[offs+2];
-				code = spriteram[offs+1] + 128 * (spriteram[offs] & 0x06);
-				color = (spriteram[offs] & 0xe0) >> 5;
+				sy = 240 - spriteram.read(offs+2);
+				code = spriteram.read(offs+1)+ 128 * (spriteram.read(offs)& 0x06);
+				color = (spriteram.read(offs)& 0xe0) >> 5;
 				if (flipscreen)
 				{
 					sx = 240 - sx;
 					sy = 240 - sy;
 				}
 	
-				if (spriteram[offs] & 0x10)	/* double height */
+				if (spriteram.read(offs)& 0x10)	/* double height */
 				{
 					drawgfx(bitmap,Machine->gfx[9],
 							code & ~1,

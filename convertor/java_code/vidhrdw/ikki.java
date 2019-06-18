@@ -139,11 +139,11 @@ public class ikki
 		/* c060 - c0ff */
 		for (offs=0x00; offs<0x800; offs +=4)
 		{
-			chr = spriteram[offs+1] >> 1 ;
-			col = spriteram[offs+2];
+			chr = spriteram.read(offs+1)>> 1 ;
+			col = spriteram.read(offs+2);
 	
-			px = spriteram[offs+3];
-			py = spriteram[offs+0];
+			px = spriteram.read(offs+3);
+			py = spriteram.read(offs+0);
 	
 			chr += (col & 0x80);
 			col = (col & 0x3f) >> 0 ;

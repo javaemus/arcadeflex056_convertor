@@ -172,7 +172,7 @@ public class finalizr
 				sr = spriteram_2;
 			else sr = spriteram;
 	
-			for (offs = 0;offs < spriteram_size;offs += 5)
+			for (offs = 0;offs < spriteram_size[0];offs += 5)
 			{
 				int sx,sy,flipx,flipy,code,color;
 	

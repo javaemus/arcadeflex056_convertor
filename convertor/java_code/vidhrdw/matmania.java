@@ -268,15 +268,15 @@ public class matmania
 	
 	
 		/* Draw the sprites */
-		for (offs = 0;offs < spriteram_size;offs += 4)
+		for (offs = 0;offs < spriteram_size[0];offs += 4)
 		{
-			if (spriteram[offs] & 0x01)
+			if (spriteram.read(offs)& 0x01)
 			{
 				drawgfx(bitmap,Machine->gfx[2],
-						spriteram[offs+1] + ((spriteram[offs] & 0xf0) << 4),
-						(spriteram[offs] & 0x08) >> 3,
-						spriteram[offs] & 0x04,spriteram[offs] & 0x02,
-						239 - spriteram[offs+3],(240 - spriteram[offs+2]) & 0xff,
+						spriteram.read(offs+1)+ ((spriteram.read(offs)& 0xf0) << 4),
+						(spriteram.read(offs)& 0x08) >> 3,
+						spriteram.read(offs)& 0x04,spriteram.read(offs)& 0x02,
+						239 - spriteram.read(offs+3),(240 - spriteram.read(offs+2)) & 0xff,
 						&Machine->visible_area,TRANSPARENCY_PEN,0);
 			}
 		}
@@ -364,15 +364,15 @@ public class matmania
 	
 	
 		/* Draw the sprites */
-		for (offs = 0;offs < spriteram_size;offs += 4)
+		for (offs = 0;offs < spriteram_size[0];offs += 4)
 		{
-			if (spriteram[offs] & 0x01)
+			if (spriteram.read(offs)& 0x01)
 			{
 				drawgfx(bitmap,Machine->gfx[2],
-						spriteram[offs+1] + ((spriteram[offs] & 0xf0) << 4),
-						(spriteram[offs] & 0x08) >> 3,
-						spriteram[offs] & 0x04,spriteram[offs] & 0x02,
-						239 - spriteram[offs+3],(240 - spriteram[offs+2]) & 0xff,
+						spriteram.read(offs+1)+ ((spriteram.read(offs)& 0xf0) << 4),
+						(spriteram.read(offs)& 0x08) >> 3,
+						spriteram.read(offs)& 0x04,spriteram.read(offs)& 0x02,
+						239 - spriteram.read(offs+3),(240 - spriteram.read(offs+2)) & 0xff,
 						&Machine->visible_area,TRANSPARENCY_PEN,0);
 			}
 		}

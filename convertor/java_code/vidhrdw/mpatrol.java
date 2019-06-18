@@ -471,15 +471,15 @@ public class mpatrol
 	
 	
 		/* Draw the sprites. */
-		for (offs = spriteram_size - 4;offs >= 0;offs -= 4)
+		for (offs = spriteram_size[0] - 4;offs >= 0;offs -= 4)
 		{
 			int sx,sy,flipx,flipy;
 	
 	
-			sx = spriteram_2[offs + 3];
-			sy = 241 - spriteram_2[offs];
-			flipx = spriteram_2[offs + 1] & 0x40;
-			flipy = spriteram_2[offs + 1] & 0x80;
+			sx = spriteram_2.read(offs + 3);
+			sy = 241 - spriteram_2.read(offs);
+			flipx = spriteram_2.read(offs + 1)& 0x40;
+			flipy = spriteram_2.read(offs + 1)& 0x80;
 			if (flip_screen)
 			{
 				flipx = !flipx;
@@ -489,20 +489,20 @@ public class mpatrol
 			}
 	
 			drawgfx(bitmap,Machine->gfx[1],
-					spriteram_2[offs + 2],
-					spriteram_2[offs + 1] & 0x3f,
+					spriteram_2.read(offs + 2),
+					spriteram_2.read(offs + 1)& 0x3f,
 					flipx,flipy,
 					sx,sy,
 					&Machine->visible_area,TRANSPARENCY_COLOR,128+32);
 		}
-		for (offs = spriteram_size - 4;offs >= 0;offs -= 4)
+		for (offs = spriteram_size[0] - 4;offs >= 0;offs -= 4)
 		{
 			int sx,sy,flipx,flipy;
 	
-			sx = spriteram[offs + 3];
-			sy = 241 - spriteram[offs];
-			flipx = spriteram[offs + 1] & 0x40;
-			flipy = spriteram[offs + 1] & 0x80;
+			sx = spriteram.read(offs + 3);
+			sy = 241 - spriteram.read(offs);
+			flipx = spriteram.read(offs + 1)& 0x40;
+			flipy = spriteram.read(offs + 1)& 0x80;
 			if (flip_screen)
 			{
 				flipx = !flipx;
@@ -512,8 +512,8 @@ public class mpatrol
 			}
 	
 			drawgfx(bitmap,Machine->gfx[1],
-					spriteram[offs + 2],
-					spriteram[offs + 1] & 0x3f,
+					spriteram.read(offs + 2),
+					spriteram.read(offs + 1)& 0x3f,
 					flipx,flipy,
 					sx,sy,
 					&Machine->visible_area,TRANSPARENCY_COLOR,128+32);

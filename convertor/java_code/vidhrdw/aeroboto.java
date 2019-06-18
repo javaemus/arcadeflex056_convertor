@@ -81,17 +81,17 @@ public class aeroboto
 					&Machine->visible_area,TRANSPARENCY_PEN,0);
 		}
 	
-		for (offs = spriteram_size-4;offs >= 0;offs -= 4)
+		for (offs = spriteram_size[0]-4;offs >= 0;offs -= 4)
 		{
 			int sx,sy;
 	
 	
-			sx = spriteram[offs + 3];
-			sy = 239 - spriteram[offs];
+			sx = spriteram.read(offs + 3);
+			sy = 239 - spriteram.read(offs);
 	
 			drawgfx(bitmap,Machine->gfx[2],
-					spriteram[offs + 1],
-					spriteram[offs + 2] & 0x0f,
+					spriteram.read(offs + 1),
+					spriteram.read(offs + 2)& 0x0f,
 					0,0,
 					sx,sy,
 					&Machine->visible_area,TRANSPARENCY_PEN,0);

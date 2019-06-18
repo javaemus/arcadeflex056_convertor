@@ -246,10 +246,10 @@ public class travrusa
 			int sx,sy,flipx,flipy;
 	
 	
-			sx = ((spriteram[offs + 3] + 8) & 0xff) - 8;
-			sy = 240 - spriteram[offs];
-			flipx = spriteram[offs + 1] & 0x40;
-			flipy = spriteram[offs + 1] & 0x80;
+			sx = ((spriteram.read(offs + 3)+ 8) & 0xff) - 8;
+			sy = 240 - spriteram.read(offs);
+			flipx = spriteram.read(offs + 1)& 0x40;
+			flipy = spriteram.read(offs + 1)& 0x80;
 			if (flip_screen)
 			{
 				sx = 240 - sx;
@@ -259,8 +259,8 @@ public class travrusa
 			}
 	
 			drawgfx(bitmap,Machine->gfx[1],
-					spriteram[offs + 2],
-					spriteram[offs + 1] & 0x0f,
+					spriteram.read(offs + 2),
+					spriteram.read(offs + 1)& 0x0f,
 					flipx,flipy,
 					sx,sy,
 					flip_screen ? &spritevisibleareaflip : &spritevisiblearea,TRANSPARENCY_PEN,0);

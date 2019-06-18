@@ -273,13 +273,13 @@ public class cloak
 	
 	
 		/* Draw the sprites */
-		for (offs = spriteram_size/4-1; offs >= 0; offs--)
+		for (offs = spriteram_size[0]/4-1; offs >= 0; offs--)
 		{
 			drawgfx(bitmap,Machine->gfx[1],
-					spriteram[offs+64] & 0x7f,
+					spriteram.read(offs+64)& 0x7f,
 					0,
-					spriteram[offs+64] & 0x80,0,
-					spriteram[offs+192],240-spriteram[offs],
+					spriteram.read(offs+64)& 0x80,0,
+					spriteram.read(offs+192),240-spriteram.read(offs),
 					&Machine->visible_area,TRANSPARENCY_PEN,0);
 		}
 	} };

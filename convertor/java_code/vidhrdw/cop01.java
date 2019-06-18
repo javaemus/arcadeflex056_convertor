@@ -195,8 +195,8 @@ public class cop01
 	
 		for (offs = 0;offs < spriteram_size;offs += 4)
 		{
-			code = spriteram[offs+1];
-			attr = spriteram[offs+2];
+			code = spriteram.read(offs+1);
+			attr = spriteram.read(offs+2);
 			/* xxxx----	color
 			 * ----xx--	flipy,flipx
 			 * -------x msbx
@@ -205,8 +205,8 @@ public class cop01
 			flipx = attr & 0x04;
 			flipy = attr & 0x08;
 	
-			sx = (spriteram[offs+3] - 0x80) + 256 * (attr & 0x01);
-			sy = 240 - spriteram[offs];
+			sx = (spriteram.read(offs+3)- 0x80) + 256 * (attr & 0x01);
+			sy = 240 - spriteram.read(offs);
 	
 			if (flip_screen)
 			{

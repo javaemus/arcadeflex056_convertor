@@ -247,19 +247,19 @@ public class galaga
 	
 	
 		/* Draw the sprites. */
-		for (offs = 0;offs < spriteram_size;offs += 2)
+		for (offs = 0;offs < spriteram_size[0];offs += 2)
 		{
-			if ((spriteram_3[offs + 1] & 2) == 0)
+			if ((spriteram_3.read(offs + 1)& 2) == 0)
 			{
 				int code,color,flipx,flipy,sx,sy,sfa,sfb;
 	
 	
-				code = spriteram[offs];
-				color = spriteram[offs + 1];
-				flipx = spriteram_3[offs] & 1;
-				flipy = spriteram_3[offs] & 2;
-				sx = spriteram_2[offs + 1] - 40 + 0x100*(spriteram_3[offs + 1] & 1);
-				sy = 28*8 - spriteram_2[offs];
+				code = spriteram.read(offs);
+				color = spriteram.read(offs + 1);
+				flipx = spriteram_3.read(offs)& 1;
+				flipy = spriteram_3.read(offs)& 2;
+				sx = spriteram_2.read(offs + 1)- 40 + 0x100*(spriteram_3.read(offs + 1)& 1);
+				sy = 28*8 - spriteram_2.read(offs);
 				sfa = 0;
 				sfb = 16;
 	
@@ -276,7 +276,7 @@ public class galaga
 					sfb = 0;
 				}
 	
-				if ((spriteram_3[offs] & 0x0c) == 0x0c)		/* double width, double height */
+				if ((spriteram_3.read(offs)& 0x0c) == 0x0c)		/* double width, double height */
 				{
 					drawgfx(bitmap,Machine->gfx[1],
 							code+2,color,flipx,flipy,sx+sfa,sy-sfa,
@@ -292,7 +292,7 @@ public class galaga
 							code+1,color,flipx,flipy,sx+sfb,sy-sfb,
 							&Machine->visible_area,TRANSPARENCY_COLOR,0);
 				}
-				else if (spriteram_3[offs] & 8)	/* double width */
+				else if (spriteram_3.read(offs)& 8)	/* double width */
 				{
 					drawgfx(bitmap,Machine->gfx[1],
 							code+2,color,flipx,flipy,sx,sy-sfa,
@@ -301,7 +301,7 @@ public class galaga
 							code,color,flipx,flipy,sx,sy-sfb,
 							&Machine->visible_area,TRANSPARENCY_COLOR,0);
 				}
-				else if (spriteram_3[offs] & 4)	/* double height */
+				else if (spriteram_3.read(offs)& 4)	/* double height */
 				{
 					drawgfx(bitmap,Machine->gfx[1],
 							code,color,flipx,flipy,sx+sfa,sy,

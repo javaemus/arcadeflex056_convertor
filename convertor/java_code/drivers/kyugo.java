@@ -51,7 +51,7 @@ public class kyugo
 	public static ReadHandlerPtr special_spriteram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* RAM is 4 bits wide, must set the high bits to 1 for the RAM test to pass */
-		return spriteram_2[offset] | 0xf0;
+		return spriteram_2.read(offset)| 0xf0;
 	} };
 	
 	

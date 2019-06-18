@@ -47,7 +47,7 @@ public class snowbros
 	
 	  	fillbitmap(bitmap,Machine->pens[0],&Machine->visible_area);
 	
-		for (offs = 0;offs < spriteram_size/2;offs += 8)
+		for (offs = 0;offs < spriteram_size[0]/2;offs += 8)
 		{
 			int sx = spriteram16[offs+4] & 0xff;
 			int sy = spriteram16[offs+5] & 0xff;
@@ -92,7 +92,7 @@ public class snowbros
 	
 		fillbitmap(bitmap,Machine->pens[0],&Machine->visible_area);
 	
-		for (offs = 0;offs < spriteram_size/2;offs += 8)
+		for (offs = 0;offs < spriteram_size[0]/2;offs += 8)
 		{
 			int xpos  = spriteram16[offs] & 0xff;
 			int ypos  = spriteram16[offs+4] & 0xff;

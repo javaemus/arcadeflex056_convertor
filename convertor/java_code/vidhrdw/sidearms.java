@@ -157,10 +157,10 @@ public class sidearms
 		/* Draw the sprites. */
 		if (objon)
 		{
-			for (offs = spriteram_size - 32;offs >= 0;offs -= 32)
+			for (offs = spriteram_size[0] - 32;offs >= 0;offs -= 32)
 			{
-				sx = spriteram[offs + 3] + ((spriteram[offs + 1] & 0x10) << 4);
-				sy = spriteram[offs + 2];
+				sx = spriteram.read(offs + 3)+ ((spriteram.read(offs + 1)& 0x10) << 4);
+				sy = spriteram.read(offs + 2);
 				if (flipscreen)
 				{
 					sx = 496 - sx;
@@ -168,8 +168,8 @@ public class sidearms
 				}
 	
 				drawgfx(bitmap,Machine->gfx[2],
-						spriteram[offs] + 8 * (spriteram[offs + 1] & 0xe0),
-						spriteram[offs + 1] & 0x0f,
+						spriteram.read(offs)+ 8 * (spriteram.read(offs + 1)& 0xe0),
+						spriteram.read(offs + 1)& 0x0f,
 						flipscreen,flipscreen,
 						sx,sy,
 						&Machine->visible_area,TRANSPARENCY_PEN,15);

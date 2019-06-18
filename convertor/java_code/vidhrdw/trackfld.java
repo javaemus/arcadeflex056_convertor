@@ -192,15 +192,15 @@ public class trackfld
 	
 	
 		/* Draw the sprites. */
-		for (offs = spriteram_size - 2;offs >= 0;offs -= 2)
+		for (offs = spriteram_size[0] - 2;offs >= 0;offs -= 2)
 		{
 			int sx,sy,flipx,flipy;
 	
 	
-			sx = spriteram[offs] - 1;
-			sy = 240 - spriteram_2[offs + 1];
-			flipx = ~spriteram_2[offs] & 0x40;
-			flipy = spriteram_2[offs] & 0x80;
+			sx = spriteram.read(offs)- 1;
+			sy = 240 - spriteram_2.read(offs + 1);
+			flipx = ~spriteram_2.read(offs)& 0x40;
+			flipy = spriteram_2.read(offs)& 0x80;
 			if (flip_screen)
 			{
 				sy = 240 - sy;
@@ -212,16 +212,16 @@ public class trackfld
 			sy += 1;
 	
 			drawgfx(bitmap,Machine->gfx[1],
-					spriteram[offs + 1],
-					spriteram_2[offs] & 0x0f,
+					spriteram.read(offs + 1),
+					spriteram_2.read(offs)& 0x0f,
 					flipx,flipy,
 					sx,sy,
 					&Machine->visible_area,TRANSPARENCY_COLOR,0);
 	
 			/* redraw with wraparound */
 			drawgfx(bitmap,Machine->gfx[1],
-					spriteram[offs + 1],
-					spriteram_2[offs] & 0x0f,
+					spriteram.read(offs + 1),
+					spriteram_2.read(offs)& 0x0f,
 					flipx,flipy,
 					sx-256,sy,
 					&Machine->visible_area,TRANSPARENCY_COLOR,0);

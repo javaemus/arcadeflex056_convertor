@@ -261,16 +261,16 @@ public class popeye
 			 * bit 0 /
 			 */
 	
-			code = (spriteram[offs + 2] & 0x7f) + ((spriteram[offs + 3] & 0x10) << 3)
-								+ ((spriteram[offs + 3] & 0x04) << 6);
-			color = (spriteram[offs + 3] & 0x07) + 8*(*popeye_palettebank & 0x07);
+			code = (spriteram.read(offs + 2)& 0x7f) + ((spriteram.read(offs + 3)& 0x10) << 3)
+								+ ((spriteram.read(offs + 3)& 0x04) << 6);
+			color = (spriteram.read(offs + 3)& 0x07) + 8*(*popeye_palettebank & 0x07);
 	
-			if (spriteram[offs] != 0)
+			if (spriteram.read(offs)!= 0)
 				drawgfx(bitmap,Machine->gfx[1],
 						code ^ 0x1ff,
 						color,
-						spriteram[offs + 2] & 0x80,spriteram[offs + 3] & 0x08,
-						2*(spriteram[offs])-8,2*(256-spriteram[offs + 1]),
+						spriteram.read(offs + 2)& 0x80,spriteram.read(offs + 3)& 0x08,
+						2*(spriteram.read(offs))-8,2*(256-spriteram.read(offs + 1)),
 						&Machine->visible_area,TRANSPARENCY_PEN,0);
 		}
 	}

@@ -301,24 +301,24 @@ public class cosmic
 	
 	    /* draw the sprites */
 	
-		for (offs = spriteram_size - 4;offs >= 0;offs -= 4)
+		for (offs = spriteram_size[0] - 4;offs >= 0;offs -= 4)
 		{
-			if (spriteram[offs] != 0)
+			if (spriteram.read(offs)!= 0)
 			{
 				int code,bank,flipy;
 	
 				/* panic_remap_sprite_code sprite number to my layout */
 	
-				code = panic_remap_sprite_code[(spriteram[offs] & 0x3F)][0];
-				bank = panic_remap_sprite_code[(spriteram[offs] & 0x3F)][1];
-				flipy = spriteram[offs] & 0x40;
+				code = panic_remap_sprite_code[(spriteram.read(offs)& 0x3F)][0];
+				bank = panic_remap_sprite_code[(spriteram.read(offs)& 0x3F)][1];
+				flipy = spriteram.read(offs)& 0x40;
 	
 				if((code==0) && (bank==0))
-					logerror("remap failure %2x\n",(spriteram[offs] & 0x3F));
+					logerror("remap failure %2x\n",(spriteram.read(offs)& 0x3F));
 	
 				/* Switch Bank */
 	
-				if(spriteram[offs+3] & 0x08) bank=1;
+				if(spriteram.read(offs+3)& 0x08) bank=1;
 	
 				if (flip_screen)
 				{
@@ -327,9 +327,9 @@ public class cosmic
 	
 				drawgfx(bitmap,Machine->gfx[bank],
 						code,
-						7 - (spriteram[offs+3] & 0x07),
+						7 - (spriteram.read(offs+3)& 0x07),
 						flip_screen,flipy,
-						256-spriteram[offs+2],spriteram[offs+1],
+						256-spriteram.read(offs+2),spriteram.read(offs+1),
 						&Machine->visible_area,TRANSPARENCY_PEN,0);
 			}
 		}
@@ -346,16 +346,16 @@ public class cosmic
 	
 	    /* draw the sprites */
 	
-		for (offs = spriteram_size - 4;offs >= 0;offs -= 4)
+		for (offs = spriteram_size[0] - 4;offs >= 0;offs -= 4)
 		{
-			if (spriteram[offs] != 0)
+			if (spriteram.read(offs)!= 0)
 	        {
 				int code, color;
 	
-				code  = ~spriteram[offs  ] & 0x3f;
-				color = ~spriteram[offs+3] & 0x0f;
+				code  = ~spriteram.read(offs  )& 0x3f;
+				color = ~spriteram.read(offs+3)& 0x0f;
 	
-	            if (spriteram[offs] & 0x80)
+	            if (spriteram.read(offs)& 0x80)
 	            {
 	                /* 16x16 sprite */
 	
@@ -363,7 +363,7 @@ public class cosmic
 						    code,
 						    color,
 						    0,0,
-					    	256-spriteram[offs+2],spriteram[offs+1],
+					    	256-spriteram.read(offs+2),spriteram.read(offs+1),
 					        &Machine->visible_area,TRANSPARENCY_PEN,0);
 	            }
 	            else
@@ -374,7 +374,7 @@ public class cosmic
 						    code >> 2,
 						    color,
 						    0,0,
-					    	256-spriteram[offs+2],spriteram[offs+1],
+					    	256-spriteram.read(offs+2),spriteram.read(offs+1),
 					        &Machine->visible_area,TRANSPARENCY_PEN,0);
 	            }
 	        }
@@ -392,16 +392,16 @@ public class cosmic
 	
 	    /* draw the sprites */
 	
-		for (offs = spriteram_size - 4;offs >= 0;offs -= 4)
+		for (offs = spriteram_size[0] - 4;offs >= 0;offs -= 4)
 		{
-			if (spriteram[offs] != 0)
+			if (spriteram.read(offs)!= 0)
 	        {
 				int code, color;
 	
-				code  = ~spriteram[offs  ] & 0x3f;
-				color = ~spriteram[offs+3] & 0x07;
+				code  = ~spriteram.read(offs  )& 0x3f;
+				color = ~spriteram.read(offs+3)& 0x07;
 	
-	            if (spriteram[offs] & 0x80)
+	            if (spriteram.read(offs)& 0x80)
 	            {
 	                /* 16x16 sprite */
 	
@@ -409,7 +409,7 @@ public class cosmic
 						    code,
 						    color,
 						    0,0,
-					    	256-spriteram[offs+2],spriteram[offs+1],
+					    	256-spriteram.read(offs+2),spriteram.read(offs+1),
 					        &Machine->visible_area,TRANSPARENCY_PEN,0);
 	            }
 	            else
@@ -420,7 +420,7 @@ public class cosmic
 						    code >> 2,
 						    color,
 						    0,0,
-					    	256-spriteram[offs+2],spriteram[offs+1],
+					    	256-spriteram.read(offs+2),spriteram.read(offs+1),
 					        &Machine->visible_area,TRANSPARENCY_PEN,0);
 	            }
 	        }

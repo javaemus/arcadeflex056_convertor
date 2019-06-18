@@ -158,15 +158,15 @@ public class shaolins
 		}
 	
 	
-		for (offs = spriteram_size-32; offs >= 0; offs-=32 ) /* max 24 sprites */
+		for (offs = spriteram_size[0]-32; offs >= 0; offs-=32 ) /* max 24 sprites */
 		{
-			if (spriteram[offs] && spriteram[offs+6]) /* stop rogue sprites on high score screen */
+			if (spriteram.read(offs)&& spriteram.read(offs+6)) /* stop rogue sprites on high score screen */
 			{
 				drawgfx(bitmap,Machine->gfx[1],
-						spriteram[offs+8],
-						(spriteram[offs+9] & 0x0f) + 16 * palettebank,
-						!(spriteram[offs+9] & 0x40),(spriteram[offs+9] & 0x80),
-						240-spriteram[offs+6],248-spriteram[offs+4],
+						spriteram.read(offs+8),
+						(spriteram.read(offs+9)& 0x0f) + 16 * palettebank,
+						!(spriteram.read(offs+9)& 0x40),(spriteram.read(offs+9)& 0x80),
+						240-spriteram.read(offs+6),248-spriteram.read(offs+4),
 						&Machine->visible_area,TRANSPARENCY_COLOR,0);
 						/* transparency_color, otherwise sprites in test mode are not visible */
 			}

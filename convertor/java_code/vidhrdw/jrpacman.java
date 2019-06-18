@@ -303,25 +303,25 @@ public class jrpacman
 	
 		/* Draw the sprites. Note that it is important to draw them exactly in this */
 		/* order, to have the correct priorities. */
-		for (offs = spriteram_size - 2;offs > 2*2;offs -= 2)
+		for (offs = spriteram_size[0] - 2;offs > 2*2;offs -= 2)
 		{
 			drawgfx(bitmap,Machine->gfx[1],
-					(spriteram[offs] >> 2) + 0x40 * (*jrpacman_spritebank & 1),
-					(spriteram[offs + 1] & 0x1f) + 0x20 * (*jrpacman_colortablebank & 1)
+					(spriteram.read(offs)>> 2) + 0x40 * (*jrpacman_spritebank & 1),
+					(spriteram.read(offs + 1)& 0x1f) + 0x20 * (*jrpacman_colortablebank & 1)
 							+ 0x40 * (*jrpacman_palettebank & 1),
-					spriteram[offs] & 1,spriteram[offs] & 2,
-					272 - spriteram_2[offs + 1],spriteram_2[offs]-31,
+					spriteram.read(offs)& 1,spriteram.read(offs)& 2,
+					272 - spriteram_2.read(offs + 1),spriteram_2.read(offs)-31,
 					&Machine->visible_area,TRANSPARENCY_COLOR,0);
 		}
 		/* the first two sprites must be offset one pixel to the left */
 		for (offs = 2*2;offs > 0;offs -= 2)
 		{
 			drawgfx(bitmap,Machine->gfx[1],
-					(spriteram[offs] >> 2) + 0x40 * (*jrpacman_spritebank & 1),
-					(spriteram[offs + 1] & 0x1f) + 0x20 * (*jrpacman_colortablebank & 1)
+					(spriteram.read(offs)>> 2) + 0x40 * (*jrpacman_spritebank & 1),
+					(spriteram.read(offs + 1)& 0x1f) + 0x20 * (*jrpacman_colortablebank & 1)
 							+ 0x40 * (*jrpacman_palettebank & 1),
-					spriteram[offs] & 1,spriteram[offs] & 2,
-					272 - spriteram_2[offs + 1],spriteram_2[offs]-30,
+					spriteram.read(offs)& 1,spriteram.read(offs)& 2,
+					272 - spriteram_2.read(offs + 1),spriteram_2.read(offs)-30,
 					&Machine->visible_area,TRANSPARENCY_COLOR,0);
 		}
 	

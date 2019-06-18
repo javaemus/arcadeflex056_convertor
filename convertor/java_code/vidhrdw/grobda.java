@@ -77,12 +77,12 @@ public class grobda
 	
 		for (offs = 0; offs < 0x80; offs += 2)
 		{
-			int number = spriteram[offs+0x0780];
-			int color = spriteram[offs+0x0781];
-			int sx = (spriteram[offs+0x0f81]-40) + 0x100*(spriteram[offs+0x1781] & 1);
-			int sy = 28*8-spriteram[offs+0x0f80] - 16;
-			int flipx = spriteram[offs+0x1780] & 1;
-			int flipy = spriteram[offs+0x1780] & 2;
+			int number = spriteram.read(offs+0x0780);
+			int color = spriteram.read(offs+0x0781);
+			int sx = (spriteram.read(offs+0x0f81)-40) + 0x100*(spriteram.read(offs+0x1781)& 1);
+			int sy = 28*8-spriteram.read(offs+0x0f80)- 16;
+			int flipx = spriteram.read(offs+0x1780)& 1;
+			int flipy = spriteram.read(offs+0x1780)& 2;
 			int width,height;
 	
 			if (flip_screen)
@@ -91,9 +91,9 @@ public class grobda
 				flipy = !flipy;
 			}
 	
-			if (spriteram[offs+0x1781] & 2) continue;
+			if (spriteram.read(offs+0x1781)& 2) continue;
 	
-			switch (spriteram[offs+0x1780] & 0x0c)
+			switch (spriteram.read(offs+0x1780)& 0x0c)
 			{
 				case 0x0c:	/* 2x both ways */
 					width = height = 2; number &= (~3); break;

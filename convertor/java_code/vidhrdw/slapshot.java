@@ -65,8 +65,8 @@ public class slapshot
 	{
 		int i;
 	
-		spriteram_delayed = malloc(spriteram_size);
-		spriteram_buffered = malloc(spriteram_size);
+		spriteram_delayed = malloc(spriteram_size[0]);
+		spriteram_buffered = malloc(spriteram_size[0]);
 		spritelist = malloc(0x400 * sizeof(*spritelist));
 	
 		if (!spriteram_delayed || !spriteram_buffered || !spritelist)
@@ -102,8 +102,8 @@ public class slapshot
 		state_save_register_UINT16("main3", 0, "control", spritebank, 8);
 		state_save_register_int   ("main5", 0, "control", &sprites_disabled);
 		state_save_register_int   ("main6", 0, "control", &sprites_active_area);
-		state_save_register_UINT16("main7", 0, "memory", spriteram_delayed, spriteram_size/2);
-		state_save_register_UINT16("main8", 0, "memory", spriteram_buffered, spriteram_size/2);
+		state_save_register_UINT16("main7", 0, "memory", spriteram_delayed, spriteram_size[0]/2);
+		state_save_register_UINT16("main8", 0, "memory", spriteram_buffered, spriteram_size[0]/2);
 	
 		return 0;
 	} };
@@ -393,7 +393,7 @@ public class slapshot
 	
 			code = 0;
 			extoffs = offs;
-			if (extoffs >= 0x8000) extoffs -= 0x4000;   /* spriteram[0x4000-7fff] has no corresponding extension area */
+			if (extoffs >= 0x8000) extoffs -= 0x4000;   /* spriteram.read(0x4000-7fff)has no corresponding extension area */
 	
 			if (taito_sprite_type == 0)
 			{

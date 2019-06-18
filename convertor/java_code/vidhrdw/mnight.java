@@ -174,17 +174,17 @@ public class mnight
 		{
 			int sx,sy,tile,palette,flipx,flipy,big;
 	
-			if (spriteram[offs+2] & 2)
+			if (spriteram.read(offs+2)& 2)
 			{
-				sx = spriteram[offs+1];
-				sy = spriteram[offs];
-				if (spriteram[offs+2] & 1) sx-=256;
-				tile = spriteram[offs+3]+((spriteram[offs+2] & 0xc0)<<2) + ((spriteram[offs+2] & 0x08)<<7);
-				big  = spriteram[offs+2] & 4;
+				sx = spriteram.read(offs+1);
+				sy = spriteram.read(offs);
+				if (spriteram.read(offs+2)& 1) sx-=256;
+				tile = spriteram.read(offs+3)+((spriteram.read(offs+2)& 0xc0)<<2) + ((spriteram.read(offs+2)& 0x08)<<7);
+				big  = spriteram.read(offs+2)& 4;
 				if (big) tile /= 4;
-				flipx = spriteram[offs+2] & 0x10;
-				flipy = spriteram[offs+2] & 0x20;
-				palette = spriteram[offs+4] & 0x0f;
+				flipx = spriteram.read(offs+2)& 0x10;
+				flipy = spriteram.read(offs+2)& 0x20;
+				palette = spriteram.read(offs+4)& 0x0f;
 				drawgfx(bitmap,Machine->gfx[(big)?2:1],
 						tile,
 						palette,
@@ -195,7 +195,7 @@ public class mnight
 	
 				/* kludge to clear shots */
 				if (((spriteram[offs+2]==2) || (spriteram[offs+2]==0x12)) && (((tile>=0xd0) && (tile<=0xd5)) || ((tile>=0x20) && (tile<=0x25))))
-					spriteram[offs+2]=0;
+					spriteram.write(offs+2,0);
 			}
 		}
 	}

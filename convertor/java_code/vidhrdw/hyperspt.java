@@ -198,15 +198,15 @@ public class hyperspt
 	
 	
 		/* Draw the sprites. */
-		for (offs = spriteram_size - 4;offs >= 0;offs -= 4)
+		for (offs = spriteram_size[0] - 4;offs >= 0;offs -= 4)
 		{
 			int sx,sy,flipx,flipy;
 	
 	
-			sx = spriteram[offs + 3];
-			sy = 240 - spriteram[offs + 1];
-			flipx = ~spriteram[offs] & 0x40;
-			flipy = spriteram[offs] & 0x80;
+			sx = spriteram.read(offs + 3);
+			sy = 240 - spriteram.read(offs + 1);
+			flipx = ~spriteram.read(offs)& 0x40;
+			flipy = spriteram.read(offs)& 0x80;
 			if (flipscreen)
 			{
 				sy = 240 - sy;
@@ -218,16 +218,16 @@ public class hyperspt
 			sy += 1;
 	
 			drawgfx(bitmap,Machine->gfx[1],
-					spriteram[offs + 2] + 8 * (spriteram[offs] & 0x20),
-					spriteram[offs] & 0x0f,
+					spriteram.read(offs + 2)+ 8 * (spriteram.read(offs)& 0x20),
+					spriteram.read(offs)& 0x0f,
 					flipx,flipy,
 					sx,sy,
 					&Machine->visible_area,TRANSPARENCY_COLOR,0);
 	
 			/* redraw with wraparound */
 			drawgfx(bitmap,Machine->gfx[1],
-					spriteram[offs + 2] + 8 * (spriteram[offs] & 0x20),
-					spriteram[offs] & 0x0f,
+					spriteram.read(offs + 2)+ 8 * (spriteram.read(offs)& 0x20),
+					spriteram.read(offs)& 0x0f,
 					flipx,flipy,
 					sx-256,sy,
 					&Machine->visible_area,TRANSPARENCY_COLOR,0);
@@ -298,15 +298,15 @@ public class hyperspt
 	
 	
 		/* Draw the sprites. */
-		for (offs = spriteram_size - 4;offs >= 0;offs -= 4)
+		for (offs = spriteram_size[0] - 4;offs >= 0;offs -= 4)
 		{
 			int sx,sy,flipx,flipy;
 	
 	
-			sx = spriteram[offs + 3];
-			sy = 240 - spriteram[offs + 1];
-			flipx = ~spriteram[offs] & 0x40;
-			flipy = spriteram[offs] & 0x80;
+			sx = spriteram.read(offs + 3);
+			sy = 240 - spriteram.read(offs + 1);
+			flipx = ~spriteram.read(offs)& 0x40;
+			flipy = spriteram.read(offs)& 0x80;
 			if (flipscreen)
 			{
 				sy = 240 - sy;
@@ -318,16 +318,16 @@ public class hyperspt
 			sy += 1;
 	
 			drawgfx(bitmap,Machine->gfx[1],
-					spriteram[offs + 2] + 8 * (spriteram[offs] & 0x20),
-					spriteram[offs] & 0x0f,
+					spriteram.read(offs + 2)+ 8 * (spriteram.read(offs)& 0x20),
+					spriteram.read(offs)& 0x0f,
 					flipx,flipy,
 					sx,sy,
 					&Machine->visible_area,TRANSPARENCY_COLOR,0);
 	
 			/* redraw with wraparound (actually not needed in Road Fighter) */
 			drawgfx(bitmap,Machine->gfx[1],
-					spriteram[offs + 2] + 8 * (spriteram[offs] & 0x20),
-					spriteram[offs] & 0x0f,
+					spriteram.read(offs + 2)+ 8 * (spriteram.read(offs)& 0x20),
+					spriteram.read(offs)& 0x0f,
 					flipx,flipy,
 					sx-256,sy,
 					&Machine->visible_area,TRANSPARENCY_COLOR,0);

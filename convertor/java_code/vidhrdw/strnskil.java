@@ -114,14 +114,14 @@ public class strnskil
 		/* c060 - c0ff */
 		for (offs=0x60; offs<0x100; offs +=4)
 		{
-			chr = spriteram[offs+1];
-			col = spriteram[offs+2];
+			chr = spriteram.read(offs+1);
+			col = spriteram.read(offs+2);
 	
 			fx = strnskil_flipscreen;
 			fy = strnskil_flipscreen;
 	
-			x = spriteram[offs+3];
-			y = spriteram[offs+0];
+			x = spriteram.read(offs+3);
+			y = spriteram.read(offs+0);
 	
 			col &= 0x3f ;
 	

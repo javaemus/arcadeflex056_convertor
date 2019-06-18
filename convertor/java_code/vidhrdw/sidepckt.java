@@ -131,14 +131,14 @@ public class sidepckt
 		{
 			int sx,sy,code,color,flipx,flipy;
 	
-			code = spriteram[offs+3] + ((spriteram[offs+1] & 0x03) << 8);
-			color = (spriteram[offs+1] & 0xf0) >> 4;
+			code = spriteram.read(offs+3)+ ((spriteram.read(offs+1)& 0x03) << 8);
+			color = (spriteram.read(offs+1)& 0xf0) >> 4;
 	
-			sx = spriteram[offs+2]-2;
-			sy = spriteram[offs];
+			sx = spriteram.read(offs+2)-2;
+			sy = spriteram.read(offs);
 	
-			flipx = spriteram[offs+1] & 0x08;
-			flipy = spriteram[offs+1] & 0x04;
+			flipx = spriteram.read(offs+1)& 0x08;
+			flipy = spriteram.read(offs+1)& 0x04;
 	
 			drawgfx(bitmap,Machine->gfx[1],
 					code,

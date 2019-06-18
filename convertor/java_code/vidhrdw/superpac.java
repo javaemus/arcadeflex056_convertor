@@ -104,14 +104,14 @@ public class superpac
 		for (offs = 0; offs < spriteram_size; offs += 2)
 		{
 			/* is it on? */
-			if ((spriteram_3[offs+1] & 2) == 0)
+			if ((spriteram_3.read(offs+1)& 2) == 0)
 			{
-				int sprite = spriteram[offs];
-				int color = spriteram[offs+1] & 0x3f;
-				int x = (spriteram_2[offs+1] - 40) + 0x100*(spriteram_3[offs+1] & 1);
-				int y = 28*8 - spriteram_2[offs] + 1;
-				int flipx = spriteram_3[offs] & 1;
-				int flipy = spriteram_3[offs] & 2;
+				int sprite = spriteram.read(offs);
+				int color = spriteram.read(offs+1)& 0x3f;
+				int x = (spriteram_2.read(offs+1)- 40) + 0x100*(spriteram_3.read(offs+1)& 1);
+				int y = 28*8 - spriteram_2.read(offs)+ 1;
+				int flipx = spriteram_3.read(offs)& 1;
+				int flipy = spriteram_3.read(offs)& 2;
 				int pens;
 	
 				if (flip_screen)
@@ -122,7 +122,7 @@ public class superpac
 	
 				pens = (drawmode == TRANSPARENCY_PENS) ? ~color15_mask[color] : 16;
 	
-				switch (spriteram_3[offs] & 0x0c)
+				switch (spriteram_3.read(offs)& 0x0c)
 				{
 					case 0:		/* normal size */
 						drawgfx(bitmap, gfx, sprite, color, flipx, flipy, x, y, clip, drawmode, pens);

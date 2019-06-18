@@ -231,13 +231,13 @@ public class atarifb
 			int sx,sy;
 			int shade = 0;
 	
-			sy = 255 - spriteram[obj*2 + 1];
+			sy = 255 - spriteram.read(obj*2 + 1);
 			if (sy == 255) continue;
 	
-			charcode = spriteram[obj*2] & 0x3f;
-			flipx = (spriteram[obj*2] & 0x40);
-			flipy = (spriteram[obj*2] & 0x80);
-			sx = spriteram[obj*2 + 0x20] + 8*3;
+			charcode = spriteram.read(obj*2)& 0x3f;
+			flipx = (spriteram.read(obj*2)& 0x40);
+			flipy = (spriteram.read(obj*2)& 0x80);
+			sx = spriteram.read(obj*2 + 0x20)+ 8*3;
 	
 			/* Note on Atari Soccer: */
 			/* There are 3 sets of 2 bits each, where the 2 bits represent */
@@ -245,14 +245,14 @@ public class atarifb
 			/* color of each bit in the sprite, but I haven't implemented it that way. */
 			if (atarifb_game == 4)
 			{
-				shade = ((spriteram[obj*2+1 + 0x20]) & 0x07);
+				shade = ((spriteram.read(obj*2+1 + 0x20)) & 0x07);
 	
 				drawgfx(bitmap,Machine->gfx[sprite_bank+1],
 					charcode, shade,
 					flipx,flipy,sx,sy,
 					&bigfield_area,TRANSPARENCY_PEN,0);
 	
-				shade = ((spriteram[obj*2+1 + 0x20]) & 0x08) >> 3;
+				shade = ((spriteram.read(obj*2+1 + 0x20)) & 0x08) >> 3;
 			}
 	
 			drawgfx(bitmap,Machine->gfx[sprite_bank],

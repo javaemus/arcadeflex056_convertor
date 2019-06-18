@@ -243,10 +243,10 @@ public class zaccaria
 		*/
 		for (offs = 0;offs < spriteram_2_size;offs += 4)
 		{
-			int sx = spriteram_2[offs + 3] + 1;
-			int sy = 242 - spriteram_2[offs];
-			int flipx = spriteram_2[offs + 2] & 0x40;
-			int flipy = spriteram_2[offs + 2] & 0x80;
+			int sx = spriteram_2.read(offs + 3)+ 1;
+			int sy = 242 - spriteram_2.read(offs);
+			int flipx = spriteram_2.read(offs + 2)& 0x40;
+			int flipy = spriteram_2.read(offs + 2)& 0x80;
 	
 			if (flip_screen_x)
 			{
@@ -260,8 +260,8 @@ public class zaccaria
 			}
 	
 			drawgfx(bitmap,Machine->gfx[1],
-					(spriteram_2[offs + 2] & 0x3f) + (spriteram_2[offs + 1] & 0xc0),
-					4 * (spriteram_2[offs + 1] & 0x07),
+					(spriteram_2.read(offs + 2)& 0x3f) + (spriteram_2.read(offs + 1)& 0xc0),
+					4 * (spriteram_2.read(offs + 1)& 0x07),
 					flipx,flipy,
 					sx,sy,
 					flip_screen_x ? &spritevisiblearea_flipx : &spritevisiblearea,TRANSPARENCY_PEN,0);
@@ -269,10 +269,10 @@ public class zaccaria
 	
 		for (offs = 0;offs < spriteram_size;offs += 4)
 		{
-			int sx = spriteram[offs + 3] + 1;
-			int sy = 242 - spriteram[offs];
-			int flipx = spriteram[offs + 1] & 0x40;
-			int flipy = spriteram[offs + 1] & 0x80;
+			int sx = spriteram.read(offs + 3)+ 1;
+			int sy = 242 - spriteram.read(offs);
+			int flipx = spriteram.read(offs + 1)& 0x40;
+			int flipy = spriteram.read(offs + 1)& 0x80;
 	
 			if (flip_screen_x)
 			{
@@ -286,8 +286,8 @@ public class zaccaria
 			}
 	
 			drawgfx(bitmap,Machine->gfx[1],
-					(spriteram[offs + 1] & 0x3f) + (spriteram[offs + 2] & 0xc0),
-					4 * (spriteram[offs + 2] & 0x07),
+					(spriteram.read(offs + 1)& 0x3f) + (spriteram.read(offs + 2)& 0xc0),
+					4 * (spriteram.read(offs + 2)& 0x07),
 					flipx,flipy,
 					sx,sy,
 					flip_screen_x ? &spritevisiblearea_flipx : &spritevisiblearea,TRANSPARENCY_PEN,0);

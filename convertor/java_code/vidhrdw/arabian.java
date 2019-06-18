@@ -303,18 +303,18 @@ public class arabian
 	{
 		/* write the data */
 		offset &= 7;
-		spriteram[offset] = data;
+		spriteram.write(offset,data);
 	
 		/* watch for a write to offset 6 -- that triggers the blit */
 		if ((offset & 0x07) == 6)
 		{
 			/* extract the data */
-			int plane = spriteram[offset - 6];
-			int src   = spriteram[offset - 5] | (spriteram[offset - 4] << 8);
-			int x     = spriteram[offset - 2] << 2;
-			int y     = spriteram[offset - 3];
-			int sx    = spriteram[offset - 0];
-			int sy    = spriteram[offset - 1];
+			int plane = spriteram.read(offset - 6);
+			int src   = spriteram.read(offset - 5)| (spriteram.read(offset - 4)<< 8);
+			int x     = spriteram.read(offset - 2)<< 2;
+			int y     = spriteram.read(offset - 3);
+			int sx    = spriteram.read(offset - 0);
+			int sy    = spriteram.read(offset - 1);
 	
 			/* blit it */
 			blit_area(plane, src, x, y, sx, sy);
@@ -354,7 +354,7 @@ public class arabian
 		*/
 	
 		/* enable writes to AZ/AR */
-		if (spriteram[0] & 0x08)
+		if (spriteram.read(0)& 0x08)
 		{
 			base[0] = (base[0] & ~0x03) | ((data & 0x10) >> 3) | ((data & 0x01) >> 0);
 			base[1] = (base[1] & ~0x03) | ((data & 0x20) >> 4) | ((data & 0x02) >> 1);
@@ -363,7 +363,7 @@ public class arabian
 		}
 	
 		/* enable writes to AG/AB */
-		if (spriteram[0] & 0x04)
+		if (spriteram.read(0)& 0x04)
 		{
 			base[0] = (base[0] & ~0x0c) | ((data & 0x10) >> 1) | ((data & 0x01) << 2);
 			base[1] = (base[1] & ~0x0c) | ((data & 0x20) >> 2) | ((data & 0x02) << 1);
@@ -372,7 +372,7 @@ public class arabian
 		}
 	
 		/* enable writes to BZ/BR */
-		if (spriteram[0] & 0x02)
+		if (spriteram.read(0)& 0x02)
 		{
 			base[0] = (base[0] & ~0x30) | ((data & 0x10) << 1) | ((data & 0x01) << 4);
 			base[1] = (base[1] & ~0x30) | ((data & 0x20) << 0) | ((data & 0x02) << 3);
@@ -381,7 +381,7 @@ public class arabian
 		}
 	
 		/* enable writes to BG/BB */
-		if (spriteram[0] & 0x01)
+		if (spriteram.read(0)& 0x01)
 		{
 			base[0] = (base[0] & ~0xc0) | ((data & 0x10) << 3) | ((data & 0x01) << 6);
 			base[1] = (base[1] & ~0xc0) | ((data & 0x20) << 2) | ((data & 0x02) << 5);

@@ -175,15 +175,15 @@ public class sbasketb
 	
 		for (i = 0; i < 64; i++, offs += 4)
 		{
-			sx = spriteram[offs + 2];
-			sy = spriteram[offs + 3];
+			sx = spriteram.read(offs + 2);
+			sy = spriteram.read(offs + 3);
 	
 			if (sx || sy)
 			{
-				code  =  spriteram[offs + 0] | ((spriteram[offs + 1] & 0x20) << 3);
-				color = (spriteram[offs + 1] & 0x0f) + 16 * *sbasketb_palettebank;
-				flipx =  spriteram[offs + 1] & 0x40;
-				flipy =  spriteram[offs + 1] & 0x80;
+				code  =  spriteram.read(offs + 0)| ((spriteram.read(offs + 1)& 0x20) << 3);
+				color = (spriteram.read(offs + 1)& 0x0f) + 16 * *sbasketb_palettebank;
+				flipx =  spriteram.read(offs + 1)& 0x40;
+				flipy =  spriteram.read(offs + 1)& 0x80;
 	
 				if (flip_screen)
 				{

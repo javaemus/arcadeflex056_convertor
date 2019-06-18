@@ -340,16 +340,16 @@ public class bosco
 	
 	
 		/* draw the sprites */
-		for (offs = 0;offs < spriteram_size;offs += 2)
+		for (offs = 0;offs < spriteram_size[0];offs += 2)
 		{
-			sx = spriteram[offs + 1] - displacement;
+			sx = spriteram.read(offs + 1)- displacement;
 	if (flipscreen) sx += 32;
-			sy = 225 - spriteram_2[offs] - displacement;
+			sy = 225 - spriteram_2.read(offs)- displacement;
 	
 			drawgfx(bitmap,Machine->gfx[1],
-					(spriteram[offs] & 0xfc) >> 2,
-					spriteram_2[offs + 1] & 0x3f,
-					spriteram[offs] & 1,spriteram[offs] & 2,
+					(spriteram.read(offs)& 0xfc) >> 2,
+					spriteram_2.read(offs + 1)& 0x3f,
+					spriteram.read(offs)& 1,spriteram.read(offs)& 2,
 					sx,sy,
 					flipscreen ? &spritevisibleareaflip : &spritevisiblearea,TRANSPARENCY_COLOR,0);
 		}

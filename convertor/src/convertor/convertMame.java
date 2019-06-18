@@ -52,8 +52,8 @@ public class convertMame {
     static final int MACHINE_INIT = 24;
     static final int CUSTOM_SOUND = 25;
     static final int DAC_SOUND = 26;
-    static final int VH_CONVERT=27;
-    static final int RECTANGLE=28;
+    static final int VH_CONVERT = 27;
+    static final int RECTANGLE = 28;
 
     public static void Convert() {
         Convertor.inpos = 0;//position of pointer inside the buffers
@@ -378,11 +378,112 @@ public class convertMame {
                     break;
                 }
                 case 's': {
+                    if (type == WRITE_HANDLER8 || type == VH_SCREENREFRESH || type == VH_START || type == READ_HANDLER8) {
+                        if (i3 == -1) {
+                            break;//if is not inside a memwrite function break
+                        }
+                        i = Convertor.inpos;
+                        if (sUtil.getToken("spriteram_size")) {
+                            sUtil.putString((new StringBuilder()).append("spriteram_size[0]").toString());
+                            continue;
+                        }
+                    }
                     i = Convertor.inpos;
-                    boolean isstatic=false;
+                    if (sUtil.getToken("spriteram")) {
+                        if (sUtil.parseChar() != '[') {
+                            Convertor.inpos = i;
+                            break;
+                        }
+                        Convertor.token[0] = sUtil.parseToken(']');
+                        sUtil.skipSpace();
+                        if (sUtil.parseChar() != ']') {
+                            Convertor.inpos = i;
+                            break;
+                        } else {
+                            sUtil.skipSpace();
+                            if (sUtil.parseChar() == '=') {
+                                int g = Convertor.inpos;
+                                if (sUtil.parseChar() == '=') {
+                                    Convertor.inpos = i;
+                                    break;
+                                }
+                                Convertor.inpos = g;
+                                sUtil.skipSpace();
+                                Convertor.token[1] = sUtil.parseToken(';');
+                                sUtil.putString((new StringBuilder()).append("spriteram.write(").append(Convertor.token[0]).append(",").append(Convertor.token[1]).append(");").toString());
+                                Convertor.inpos += 1;
+                                break;
+                            }
+                            sUtil.putString((new StringBuilder()).append("spriteram.read(").append(Convertor.token[0]).append(")").toString());
+                            Convertor.inpos -= 1;
+                            continue;
+                        }
+                    }
+                    if (sUtil.getToken("spriteram_2")) {
+                        if (sUtil.parseChar() != '[') {
+                            Convertor.inpos = i;
+                            break;
+                        }
+                        Convertor.token[0] = sUtil.parseToken(']');
+                        sUtil.skipSpace();
+                        if (sUtil.parseChar() != ']') {
+                            Convertor.inpos = i;
+                            break;
+                        } else {
+                            sUtil.skipSpace();
+                            if (sUtil.parseChar() == '=') {
+                                int g = Convertor.inpos;
+                                if (sUtil.parseChar() == '=') {
+                                    Convertor.inpos = i;
+                                    break;
+                                }
+                                Convertor.inpos = g;
+                                sUtil.skipSpace();
+                                Convertor.token[1] = sUtil.parseToken(';');
+                                sUtil.putString((new StringBuilder()).append("spriteram_2.write(").append(Convertor.token[0]).append(",").append(Convertor.token[1]).append(");").toString());
+                                Convertor.inpos += 1;
+                                break;
+                            }
+                            sUtil.putString((new StringBuilder()).append("spriteram_2.read(").append(Convertor.token[0]).append(")").toString());
+                            Convertor.inpos -= 1;
+                            continue;
+                        }
+                    }
+                    if (sUtil.getToken("spriteram_3")) {
+                        if (sUtil.parseChar() != '[') {
+                            Convertor.inpos = i;
+                            break;
+                        }
+                        Convertor.token[0] = sUtil.parseToken(']');
+                        sUtil.skipSpace();
+                        if (sUtil.parseChar() != ']') {
+                            Convertor.inpos = i;
+                            break;
+                        } else {
+                            sUtil.skipSpace();
+                            if (sUtil.parseChar() == '=') {
+                                int g = Convertor.inpos;
+                                if (sUtil.parseChar() == '=') {
+                                    Convertor.inpos = i;
+                                    break;
+                                }
+                                Convertor.inpos = g;
+                                sUtil.skipSpace();
+                                Convertor.token[1] = sUtil.parseToken(';');
+                                sUtil.putString((new StringBuilder()).append("spriteram_3.write(").append(Convertor.token[0]).append(",").append(Convertor.token[1]).append(");").toString());
+                                Convertor.inpos += 1;
+                                break;
+                            }
+                            sUtil.putString((new StringBuilder()).append("spriteram_3.read(").append(Convertor.token[0]).append(")").toString());
+                            Convertor.inpos -= 1;
+                            continue;
+                        }
+                    }
+                    i = Convertor.inpos;
+                    boolean isstatic = false;
                     if (sUtil.getToken("static")) {
                         sUtil.skipSpace();
-                        isstatic=true;
+                        isstatic = true;
                     }
                     if (!sUtil.getToken("struct")) //static but not static struct
                     {
@@ -1085,7 +1186,7 @@ public class convertMame {
                     }
                     if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL
                             || type == READ_HANDLER8 || type == WRITE_HANDLER8 || type == MACHINE_INTERRUPT
-                            || type == VH_START || type == VH_STOP || type == VH_SCREENREFRESH || type == DRIVER_INIT || type == MACHINE_INIT ||  type == VH_CONVERT) {
+                            || type == VH_START || type == VH_STOP || type == VH_SCREENREFRESH || type == DRIVER_INIT || type == MACHINE_INIT || type == VH_CONVERT) {
                         i3--;
                         if (i3 == -1) {
                             sUtil.putString("} };");

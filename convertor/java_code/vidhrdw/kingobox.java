@@ -201,18 +201,18 @@ public class kingobox
 	
 	
 		/* sprites */
-		for (offs = spriteram_size - 4;offs >= 0;offs -= 4)
+		for (offs = spriteram_size[0] - 4;offs >= 0;offs -= 4)
 		{
 			int sx,sy,code,color,bank,flipy;
 	
 	
-			sx = spriteram[offs+1];
-			sy = spriteram[offs];
+			sx = spriteram.read(offs+1);
+			sy = spriteram.read(offs);
 	
-			code = spriteram[offs + 2] + ((spriteram[offs + 3] & 0x03) << 8);
-			bank = (spriteram[offs + 3] & 0x04) >> 2;
-			color = ((spriteram[offs + 3] & 0x70) >> 4) + 8 * palette_bank,
-			flipy = spriteram[offs + 3] & 0x80;
+			code = spriteram.read(offs + 2)+ ((spriteram.read(offs + 3)& 0x03) << 8);
+			bank = (spriteram.read(offs + 3)& 0x04) >> 2;
+			color = ((spriteram.read(offs + 3)& 0x70) >> 4) + 8 * palette_bank,
+			flipy = spriteram.read(offs + 3)& 0x80;
 	
 			drawgfx(bitmap,Machine->gfx[2 + bank],
 						code,
@@ -283,17 +283,17 @@ public class kingobox
 	
 	
 		/* sprites */
-		for (offs = 0; offs < spriteram_size;offs += 4)
+		for (offs = 0; offs < spriteram_size[0];offs += 4)
 		{
 			int sx,sy,code,color,bank,flipy;
 	
-			sx = spriteram[offs+2];
-			sy = spriteram[offs];
+			sx = spriteram.read(offs+2);
+			sy = spriteram.read(offs);
 	
-			code = spriteram[offs + 3] + ((spriteram[offs + 1] & 0x03) << 8);
-			bank = (spriteram[offs + 1] & 0x04) >> 2;
-			color = ((spriteram[offs + 1] & 0x70) >> 4) + 8 * palette_bank,
-			flipy = ( spriteram[offs + 1] & 0x80 ) ? 0 : 1;
+			code = spriteram.read(offs + 3)+ ((spriteram.read(offs + 1)& 0x03) << 8);
+			bank = (spriteram.read(offs + 1)& 0x04) >> 2;
+			color = ((spriteram.read(offs + 1)& 0x70) >> 4) + 8 * palette_bank,
+			flipy = ( spriteram.read(offs + 1)& 0x80 ) ? 0 : 1;
 	
 			drawgfx(bitmap,Machine->gfx[2 + bank],
 						code,

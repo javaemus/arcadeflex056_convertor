@@ -185,9 +185,9 @@ public class skyfox
 			int xinc, yinc, dx, dy;
 			int low_code, high_code, n;
 	
-			int y		=		spriteram[offs+0];
-			int x		=		spriteram[offs+1];
-			int code	=		spriteram[offs+2] + spriteram[offs+3] * 256;
+			int y		=		spriteram.read(offs+0);
+			int x		=		spriteram.read(offs+1);
+			int code	=		spriteram.read(offs+2)+ spriteram.read(offs+3)* 256;
 			int flipx	=		code & 0x2;
 			int flipy	=		code & 0x4;
 	

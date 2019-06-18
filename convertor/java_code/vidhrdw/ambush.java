@@ -118,23 +118,23 @@ public class ambush
 	
 	
 		/* Draw the sprites. */
-		for (offs = spriteram_size - 4;offs >= 0;offs -= 4)
+		for (offs = spriteram_size[0] - 4;offs >= 0;offs -= 4)
 		{
 			int code,col,sx,sy,flipx,flipy,gfx;
 	
 	
-			sy = spriteram[offs + 0];
-			sx = spriteram[offs + 3];
+			sy = spriteram.read(offs + 0);
+			sx = spriteram.read(offs + 3);
 	
 			if ( (sy == 0) ||
 				 (sy == 0xff) ||
-				((sx <  0x40) && (  spriteram[offs + 2] & 0x10)) ||
-				((sx >= 0xc0) && (!(spriteram[offs + 2] & 0x10))))  continue;  /* prevent wraparound */
+				((sx <  0x40) && (  spriteram.read(offs + 2)& 0x10)) ||
+				((sx >= 0xc0) && (!(spriteram.read(offs + 2)& 0x10))))  continue;  /* prevent wraparound */
 	
 	
-			code = (spriteram[offs + 1] & 0x3f) | ((spriteram[offs + 2] & 0x60) << 1);
+			code = (spriteram.read(offs + 1)& 0x3f) | ((spriteram.read(offs + 2)& 0x60) << 1);
 	
-			if (spriteram[offs + 2] & 0x80)
+			if (spriteram.read(offs + 2)& 0x80)
 			{
 				/* 16x16 sprites */
 				gfx = 1;
@@ -164,9 +164,9 @@ public class ambush
 				}
 			}
 	
-			col   = spriteram[offs + 2] & 0x0f;
-			flipx = spriteram[offs + 1] & 0x40;
-			flipy = spriteram[offs + 1] & 0x80;
+			col   = spriteram.read(offs + 2)& 0x0f;
+			flipx = spriteram.read(offs + 1)& 0x40;
+			flipy = spriteram.read(offs + 1)& 0x80;
 	
 			if (flip_screen)
 			{

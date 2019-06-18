@@ -171,13 +171,13 @@ public class xain
 		for (offs = 0; offs < spriteram_size;offs += 4)
 		{
 			int sx,sy,flipx;
-			int attr = spriteram[offs+1];
-			int numtile = spriteram[offs+2] | ((attr & 7) << 8);
+			int attr = spriteram.read(offs+1);
+			int numtile = spriteram.read(offs+2)| ((attr & 7) << 8);
 			int color = (attr & 0x38) >> 3;
 	
-			sx = 239 - spriteram[offs+3];
+			sx = 239 - spriteram.read(offs+3);
 			if (sx <= -7) sx += 256;
-			sy = 240 - spriteram[offs];
+			sy = 240 - spriteram.read(offs);
 			if (sy <= -7) sy += 256;
 			flipx = attr & 0x40;
 			if (flip_screen)

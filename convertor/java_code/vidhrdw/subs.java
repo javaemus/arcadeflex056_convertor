@@ -133,10 +133,10 @@ public class subs
 			int prom_set;
 			int sub_enable;
 	
-			sx = spriteram[0x00 + (offs * 2)] - 16;
-			sy = spriteram[0x08 + (offs * 2)] - 16;
-			charcode = spriteram[0x09 + (offs * 2)];
-			sub_enable = spriteram[0x01 + (offs * 2)];
+			sx = spriteram.read(0x00 + (offs * 2))- 16;
+			sy = spriteram.read(0x08 + (offs * 2))- 16;
+			charcode = spriteram.read(0x09 + (offs * 2));
+			sub_enable = spriteram.read(0x01 + (offs * 2));
 	
 			prom_set = charcode & 0x01;
 			charcode = (charcode >> 3) & 0x1F;

@@ -166,13 +166,13 @@ public class momoko
 	
 		for (offs=0; offs<9*4; offs +=4)
 		{
-			chr = spriteram[offs+1] | ((spriteram[offs+2]&0x60)<<3);
+			chr = spriteram.read(offs+1)| ((spriteram.read(offs+2)&0x60)<<3);
 			chr = ((chr & 0x380) << 1) | (chr & 0x7f);
-			col = spriteram[offs+2] & 0x07;
-			fx = ((spriteram[offs+2] & 0x10) >> 4) ^ flip;
-			fy = ((spriteram[offs+2] & 0x08) >> 3) ^ flip; /* ??? */
-			x = spriteram[offs+3];
-			y = spriteram[offs+0];
+			col = spriteram.read(offs+2)& 0x07;
+			fx = ((spriteram.read(offs+2)& 0x10) >> 4) ^ flip;
+			fy = ((spriteram.read(offs+2)& 0x08) >> 3) ^ flip; /* ??? */
+			x = spriteram.read(offs+3);
+			y = spriteram.read(offs+0);
 			if (flip==0)
 			{
 				px = x;
@@ -229,15 +229,15 @@ public class momoko
 	
 	/* draw sprites (others) */
 	
-		for (offs=9*4; offs<spriteram_size; offs +=4)
+		for (offs=9*4; offs<spriteram_size[0]; offs +=4)
 		{
-			chr = spriteram[offs+1] | ((spriteram[offs+2]&0x60)<<3);
+			chr = spriteram.read(offs+1)| ((spriteram.read(offs+2)&0x60)<<3);
 			chr = ((chr & 0x380) << 1) | (chr & 0x7f);
-			col = spriteram[offs+2] & 0x07;
-			fx = ((spriteram[offs+2] & 0x10) >> 4) ^ flip;
-			fy = ((spriteram[offs+2] & 0x08) >> 3) ^ flip; /* ??? */
-			x = spriteram[offs+3];
-			y = spriteram[offs+0];
+			col = spriteram.read(offs+2)& 0x07;
+			fx = ((spriteram.read(offs+2)& 0x10) >> 4) ^ flip;
+			fy = ((spriteram.read(offs+2)& 0x08) >> 3) ^ flip; /* ??? */
+			x = spriteram.read(offs+3);
+			y = spriteram.read(offs+0);
 			if (flip==0)
 			{
 				px = x;

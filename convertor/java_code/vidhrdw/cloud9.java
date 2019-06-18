@@ -271,14 +271,14 @@ public class cloud9
 			int xflip,yflip,rblank,lblank;
 			int x, y;
 	
-			spritenum = spriteram[offs + 0x20];
+			spritenum = spriteram.read(offs + 0x20);
 	
-			xflip  = (spriteram[offs + 0x40] & 0x80);
-			yflip  = (spriteram[offs + 0x40] & 0x40);
-			rblank = (spriteram[offs + 0x40] & 0x20);
-			lblank = (spriteram[offs + 0x40] & 0x10);
-			x = spriteram[offs + 0x60];
-			y = 240 - spriteram[offs];
+			xflip  = (spriteram.read(offs + 0x40)& 0x80);
+			yflip  = (spriteram.read(offs + 0x40)& 0x40);
+			rblank = (spriteram.read(offs + 0x40)& 0x20);
+			lblank = (spriteram.read(offs + 0x40)& 0x10);
+			x = spriteram.read(offs + 0x60);
+			y = 240 - spriteram.read(offs);
 	
 			drawgfx(bitmap,Machine->gfx[2],
 					spritenum,

@@ -231,7 +231,7 @@ public class pacman
 	 	if (offset < 0x10)
 			pengo_sound_w(offset, data);
 		else if (offset < 0x20)
-			spriteram_2[offset - 0x10] = data;
+			spriteram_2.write(offset - 0x10,data);
 		else
 			pengo_sound_w(offset - 0x10, data);
 	} };

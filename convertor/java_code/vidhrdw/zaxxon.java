@@ -306,19 +306,19 @@ public class zaxxon
 			/* The number of active sprites is stored at 0xc032 */
 	
 			for (offs = 0x1e * 0x20 ;offs >= 0x00 ;offs -= 0x20)
-				sprpri[ spriteram[offs+1] ] = offs;
+				sprpri[ spriteram.read(offs+1)] = offs;
 	
 			for (i=0x1e ; i>=0; i--)
 			{
 				offs = sprpri[i];
 	
-				if (spriteram[offs+2] != 0xff)
+				if (spriteram.read(offs+2)!= 0xff)
 				{
 					drawgfx(bitmap,Machine->gfx[2],
-							spriteram[offs+2+1]& 0x7f,
-							spriteram[offs+2+2],
-							spriteram[offs+2+2] & 0x80,spriteram[offs+2+1] & 0x80,
-							((spriteram[offs+2+3] + 16) & 0xff) - 31,255 - spriteram[offs+2] - 15,
+							spriteram.read(offs+2+1)& 0x7f,
+							spriteram.read(offs+2+2),
+							spriteram.read(offs+2+2)& 0x80,spriteram.read(offs+2+1)& 0x80,
+							((spriteram.read(offs+2+3)+ 16) & 0xff) - 31,255 - spriteram.read(offs+2)- 15,
 							&Machine->visible_area,TRANSPARENCY_PEN,0);
 				}
 			}
@@ -327,13 +327,13 @@ public class zaxxon
 		{
 			for (offs = spriteram_size - 4;offs >= 0;offs -= 4)
 			{
-				if (spriteram[offs] != 0xff)
+				if (spriteram.read(offs)!= 0xff)
 				{
 						drawgfx(bitmap,Machine->gfx[2],
-							spriteram[offs+1] & 0x7f,
-							spriteram[offs+2] & 0x3f,
-							spriteram[offs+1] & 0x80,spriteram[offs+1] & 0x80,	/* ?? */
-							((spriteram[offs+3] + 16) & 0xff) - 32,255 - spriteram[offs] - 16,
+							spriteram.read(offs+1)& 0x7f,
+							spriteram.read(offs+2)& 0x3f,
+							spriteram.read(offs+1)& 0x80,spriteram.read(offs+1)& 0x80,	/* ?? */
+							((spriteram.read(offs+3)+ 16) & 0xff) - 32,255 - spriteram.read(offs)- 16,
 							&Machine->visible_area,TRANSPARENCY_PEN,0);
 				}
 			}
@@ -342,15 +342,15 @@ public class zaxxon
 		{
 			for (offs = spriteram_size - 4;offs >= 0;offs -= 4)
 			{
-				if (spriteram[offs] != 0xff)
+				if (spriteram.read(offs)!= 0xff)
 				{
 					int sx,sy,flipx,flipy;
 	
 	
-					sx = ((spriteram[offs+3] + 16) & 0xff) - 32;
-					sy = 255 - spriteram[offs] - 16;
-					flipx = spriteram[offs+1] & 0x40;
-					flipy = spriteram[offs+1] & 0x80;
+					sx = ((spriteram.read(offs+3)+ 16) & 0xff) - 32;
+					sy = 255 - spriteram.read(offs)- 16;
+					flipx = spriteram.read(offs+1)& 0x40;
+					flipy = spriteram.read(offs+1)& 0x80;
 	
 					if (flip_screen)
 					{
@@ -361,8 +361,8 @@ public class zaxxon
 					}
 	
 					drawgfx(bitmap,Machine->gfx[2],
-							spriteram[offs+1] & 0x3f,
-							spriteram[offs+2] & 0x3f,
+							spriteram.read(offs+1)& 0x3f,
+							spriteram.read(offs+2)& 0x3f,
 							flipx,flipy,
 							sx,sy,
 							&Machine->visible_area,TRANSPARENCY_PEN,0);

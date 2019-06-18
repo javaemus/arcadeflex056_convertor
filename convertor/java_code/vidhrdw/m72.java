@@ -170,7 +170,7 @@ public class m72
 		bg_tilemap = tilemap_create(m72_get_bg_tile_info,tilemap_scan_rows,TILEMAP_SPLIT,8,8,64,64);
 		fg_tilemap = tilemap_create(m72_get_fg_tile_info,tilemap_scan_rows,TILEMAP_SPLIT,8,8,64,64);
 	
-		m72_spriteram = malloc(spriteram_size);
+		m72_spriteram = malloc(spriteram_size[0]);
 	
 		if (!fg_tilemap || !bg_tilemap || !m72_spriteram)
 			return 1;
@@ -183,7 +183,7 @@ public class m72
 		tilemap_set_transmask(bg_tilemap,1,0x00ff,0xff00);
 		tilemap_set_transmask(bg_tilemap,2,0x0001,0xfffe);
 	
-		memset(m72_spriteram,0,spriteram_size);
+		memset(m72_spriteram,0,spriteram_size[0]);
 	
 		xadjust = 0;
 	
@@ -195,7 +195,7 @@ public class m72
 		bg_tilemap = tilemap_create(rtype2_get_bg_tile_info,tilemap_scan_rows,TILEMAP_SPLIT,8,8,64,64);
 		fg_tilemap = tilemap_create(rtype2_get_fg_tile_info,tilemap_scan_rows,TILEMAP_SPLIT,8,8,64,64);
 	
-		m72_spriteram = malloc(spriteram_size);
+		m72_spriteram = malloc(spriteram_size[0]);
 	
 		if (!fg_tilemap || !bg_tilemap || !m72_spriteram)
 			return 1;
@@ -208,7 +208,7 @@ public class m72
 		tilemap_set_transmask(bg_tilemap,1,0x00ff,0xff00);
 		tilemap_set_transmask(bg_tilemap,2,0x0001,0xfffe);
 	
-		memset(m72_spriteram,0,spriteram_size);
+		memset(m72_spriteram,0,spriteram_size[0]);
 	
 		xadjust = -4;
 	
@@ -234,7 +234,7 @@ public class m72
 		bg_tilemap = tilemap_create(rtype2_get_bg_tile_info,majtitle_scan_rows,TILEMAP_SPLIT,8,8,128,64);
 		fg_tilemap = tilemap_create(rtype2_get_fg_tile_info,tilemap_scan_rows,TILEMAP_SPLIT,8,8,64,64);
 	
-		m72_spriteram = malloc(spriteram_size);
+		m72_spriteram = malloc(spriteram_size[0]);
 	
 		if (!fg_tilemap || !bg_tilemap || !m72_spriteram)
 			return 1;
@@ -247,7 +247,7 @@ public class m72
 		tilemap_set_transmask(bg_tilemap,1,0x00ff,0xff00);
 		tilemap_set_transmask(bg_tilemap,2,0x0001,0xfffe);
 	
-		memset(m72_spriteram,0,spriteram_size);
+		memset(m72_spriteram,0,spriteram_size[0]);
 	
 		xadjust = -4;
 	
@@ -259,7 +259,7 @@ public class m72
 		bg_tilemap = tilemap_create(hharry_get_bg_tile_info,tilemap_scan_rows,TILEMAP_SPLIT,8,8,64,64);
 		fg_tilemap = tilemap_create(hharry_get_fg_tile_info,tilemap_scan_rows,TILEMAP_SPLIT,8,8,64,64);
 	
-		m72_spriteram = malloc(spriteram_size);
+		m72_spriteram = malloc(spriteram_size[0]);
 	
 		if (!fg_tilemap || !bg_tilemap || !m72_spriteram)
 			return 1;
@@ -272,7 +272,7 @@ public class m72
 		tilemap_set_transmask(bg_tilemap,1,0x00ff,0xff00);
 		tilemap_set_transmask(bg_tilemap,2,0x0001,0xfffe);
 	
-		memset(m72_spriteram,0,spriteram_size);
+		memset(m72_spriteram,0,spriteram_size[0]);
 	
 		xadjust = -4;
 	
@@ -438,7 +438,7 @@ public class m72
 	{
 		if (offset == 0)
 		{
-			memcpy(m72_spriteram,spriteram,spriteram_size);
+			memcpy(m72_spriteram,spriteram,spriteram_size[0]);
 		}
 	} };
 	
@@ -575,15 +575,15 @@ public class m72
 			int code,color,sx,sy,flipx,flipy,w,h,x,y;
 	
 	
-			code = spriteram_2[offs+2] | (spriteram_2[offs+3] << 8);
-			color = spriteram_2[offs+4] & 0x0f;
-			sx = -256+(spriteram_2[offs+6] | ((spriteram_2[offs+7] & 0x03) << 8));
-			sy = 512-(spriteram_2[offs+0] | ((spriteram_2[offs+1] & 0x01) << 8));
-			flipx = spriteram_2[offs+5] & 0x08;
-			flipy = spriteram_2[offs+5] & 0x04;
+			code = spriteram_2.read(offs+2)| (spriteram_2.read(offs+3)<< 8);
+			color = spriteram_2.read(offs+4)& 0x0f;
+			sx = -256+(spriteram_2.read(offs+6)| ((spriteram_2.read(offs+7)& 0x03) << 8));
+			sy = 512-(spriteram_2.read(offs+0)| ((spriteram_2.read(offs+1)& 0x01) << 8));
+			flipx = spriteram_2.read(offs+5)& 0x08;
+			flipy = spriteram_2.read(offs+5)& 0x04;
 	
-			w = 1;// << ((spriteram_2[offs+5] & 0xc0) >> 6);
-			h = 1 << ((spriteram_2[offs+5] & 0x30) >> 4);
+			w = 1;// << ((spriteram_2.read(offs+5)& 0xc0) >> 6);
+			h = 1 << ((spriteram_2.read(offs+5)& 0x30) >> 4);
 			sy -= 16 * h;
 	
 			if (flip_screen)

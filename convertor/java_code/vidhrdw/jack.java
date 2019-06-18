@@ -77,16 +77,16 @@ public class jack
 		copybitmap(bitmap,tmpbitmap,0,0,0,0,&Machine->visible_area,TRANSPARENCY_NONE,0);
 	
 		/* draw sprites */
-		for (offs = spriteram_size - 4;offs >= 0;offs -= 4)
+		for (offs = spriteram_size[0] - 4;offs >= 0;offs -= 4)
 		{
 			int sx,sy,num, color,flipx,flipy;
 	
-			sx    = spriteram[offs + 1];
-			sy    = spriteram[offs];
-			num   = spriteram[offs + 2] + ((spriteram[offs + 3] & 0x08) << 5);
-			color = spriteram[offs + 3] & 0x07;
-			flipx = (spriteram[offs + 3] & 0x80);
-			flipy = (spriteram[offs + 3] & 0x40);
+			sx    = spriteram.read(offs + 1);
+			sy    = spriteram.read(offs);
+			num   = spriteram.read(offs + 2)+ ((spriteram.read(offs + 3)& 0x08) << 5);
+			color = spriteram.read(offs + 3)& 0x07;
+			flipx = (spriteram.read(offs + 3)& 0x80);
+			flipy = (spriteram.read(offs + 3)& 0x40);
 	
 			if (flip_screen)
 			{

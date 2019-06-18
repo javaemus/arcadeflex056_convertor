@@ -335,17 +335,17 @@ public class wc90
 	
 		/* draw all visible sprites of specified priority */
 		for (offs = 0;offs < spriteram_size;offs += 16){
-			int bank = spriteram[offs+0];
+			int bank = spriteram.read(offs+0);
 	
 			if ( ( bank >> 4 ) == priority ) {
 	
 				if ( bank & 4 ) { /* visible */
-					which = ( spriteram[offs+2] >> 2 ) + ( spriteram[offs+3] << 6 );
+					which = ( spriteram.read(offs+2)>> 2 ) + ( spriteram.read(offs+3)<< 6 );
 	
-					sx = spriteram[offs + 8] + ( (spriteram[offs + 9] & 1 ) << 8 );
-					sy = spriteram[offs + 6] + ( (spriteram[offs + 7] & 1 ) << 8 );
+					sx = spriteram.read(offs + 8)+ ( (spriteram.read(offs + 9)& 1 ) << 8 );
+					sy = spriteram.read(offs + 6)+ ( (spriteram.read(offs + 7)& 1 ) << 8 );
 	
-					flags = spriteram[offs+4];
+					flags = spriteram.read(offs+4);
 					( *( drawsprites_proc[ flags & 0x0f ] ) )( bitmap, which, sx, sy, bank, flags );
 				}
 			}

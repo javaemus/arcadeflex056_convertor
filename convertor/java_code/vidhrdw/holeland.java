@@ -129,16 +129,16 @@ public class holeland
 		/* Weird, sprites entries don't start on DWORD boundary */
 		for (offs = 3;offs < spriteram_size - 1;offs += 4)
 		{
-			sy = 236 - spriteram[offs];
-			sx = spriteram[offs+2];
+			sy = 236 - spriteram.read(offs);
+			sx = spriteram.read(offs+2);
 	
 			/* Bit 7 unknown */
-			code = spriteram[offs+1] & 0x7f;
-			color = palette_offset + (spriteram[offs+3] >> 4);
+			code = spriteram.read(offs+1)& 0x7f;
+			color = palette_offset + (spriteram.read(offs+3)>> 4);
 	
 			/* Bit 0, 1 unknown */
-			flipx = spriteram[offs+3] & 0x04;
-			flipy = spriteram[offs+3] & 0x08;
+			flipx = spriteram.read(offs+3)& 0x04;
+			flipy = spriteram.read(offs+3)& 0x08;
 	
 			if (flip_screen_x)
 			{
@@ -168,15 +168,15 @@ public class holeland
 		/* Weird, sprites entries don't start on DWORD boundary */
 		for (offs = 3;offs < spriteram_size - 1;offs += 4)
 		{
-			sy = 236 - spriteram[offs];
-			sx = spriteram[offs+2];
+			sy = 236 - spriteram.read(offs);
+			sx = spriteram.read(offs+2);
 	
-			code = spriteram[offs+1] + ((spriteram[offs+3] & 0x01) << 8);
-			color = (spriteram[offs+3] >> 4) + ((spriteram[offs+3] & 0x01) << 4);
+			code = spriteram.read(offs+1)+ ((spriteram.read(offs+3)& 0x01) << 8);
+			color = (spriteram.read(offs+3)>> 4) + ((spriteram.read(offs+3)& 0x01) << 4);
 	
 			/* Bit 1 unknown */
-			flipx = spriteram[offs+3] & 0x04;
-			flipy = spriteram[offs+3] & 0x08;
+			flipx = spriteram.read(offs+3)& 0x04;
+			flipy = spriteram.read(offs+3)& 0x08;
 	
 			if (flip_screen_x)
 			{

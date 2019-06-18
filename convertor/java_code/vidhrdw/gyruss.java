@@ -97,7 +97,7 @@ public class gyruss
 	
 	public static VhStartPtr gyruss_vh_start = new VhStartPtr() { public int handler() 
 	{
-		sprite_mux_buffer = malloc(256 * spriteram_size);
+		sprite_mux_buffer = malloc(256 * spriteram_size[0]);
 	
 		if (sprite_mux_buffer == 0)
 		{

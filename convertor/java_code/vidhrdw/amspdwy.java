@@ -126,10 +126,10 @@ public class amspdwy
 	
 		for (i = 0; i < spriteram_size ; i += 4)
 		{
-			int y		=	spriteram[i+0];
-			int x		=	spriteram[i+1];
-			int code	=	spriteram[i+2];
-			int attr	=	spriteram[i+3];
+			int y		=	spriteram.read(i+0);
+			int x		=	spriteram.read(i+1);
+			int code	=	spriteram.read(i+2);
+			int attr	=	spriteram.read(i+3);
 			int flipx	=	attr & 0x80;
 			int flipy	=	attr & 0x40;
 	

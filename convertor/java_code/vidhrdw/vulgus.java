@@ -194,10 +194,10 @@ public class vulgus
 			int code,i,col,sx,sy,dir;
 	
 	
-			code = spriteram[offs];
-			col = spriteram[offs + 1] & 0x0f;
-			sx = spriteram[offs + 3];
-			sy = spriteram[offs + 2];
+			code = spriteram.read(offs);
+			col = spriteram.read(offs + 1)& 0x0f;
+			sx = spriteram.read(offs + 3);
+			sy = spriteram.read(offs + 2);
 			dir = 1;
 			if (flip_screen)
 			{
@@ -206,7 +206,7 @@ public class vulgus
 				dir = -1;
 			}
 	
-			i = (spriteram[offs + 1] & 0xc0) >> 6;
+			i = (spriteram.read(offs + 1)& 0xc0) >> 6;
 			if (i == 2) i = 3;
 	
 			do

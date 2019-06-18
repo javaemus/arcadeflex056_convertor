@@ -143,16 +143,16 @@ public class xxmissio
 	
 	/* draw sprites */
 	
-		for (offs=0; offs<spriteram_size; offs +=32)
+		for (offs=0; offs<spriteram_size[0]; offs +=32)
 		{
-			chr = spriteram[offs];
-			col = spriteram[offs+3];
+			chr = spriteram.read(offs);
+			col = spriteram.read(offs+3);
 	
 			fx = ((col & 0x10) >> 4) ^ flipscreen;
 			fy = ((col & 0x20) >> 5) ^ flipscreen;
 	
-			x = spriteram[offs+1]*2;
-			y = spriteram[offs+2];
+			x = spriteram.read(offs+1)*2;
+			y = spriteram.read(offs+2);
 	
 			chr = chr + ((col & 0x40) << 2);
 			col = col & 0x07;

@@ -333,11 +333,11 @@ public class atarimo
 		VERIFYRETFREE(priority_bitmap, "atarimo_init: out of memory for priority bitmap", 0)
 	
 		/* allocate the spriteram */
-		mo->spriteram = malloc(sizeof(mo->spriteram[0]) * mo->spriteramsize);
+		mo->spriteram = malloc(sizeof(mo->spriteram.read(0)) * mo->spriteramsize);
 		VERIFYRETFREE(mo->spriteram, "atarimo_init: out of memory for spriteram", 0)
 	
 		/* clear it to zero */
-		memset(mo->spriteram, 0, sizeof(mo->spriteram[0]) * mo->spriteramsize);
+		memset(mo->spriteram, 0, sizeof(mo->spriteram.read(0)) * mo->spriteramsize);
 	
 		/* allocate the code lookup */
 		mo->codelookup = malloc(sizeof(mo->codelookup[0]) * round_to_powerof2(mo->codemask.mask));
@@ -648,7 +648,7 @@ public class atarimo
 			idx = offset & 3;
 		}
 		bank = offset >> (2 + atarimo[0].entrybits);
-		COMBINE_DATA(&atarimo[0].spriteram[(bank << atarimo[0].entrybits) + entry].data[idx]);
+		COMBINE_DATA(&atarimo[0].spriteram.read((bank << atarimo[0).entrybits) + entry].data[idx]);
 	}
 	
 	
@@ -672,7 +672,7 @@ public class atarimo
 			idx = offset & 3;
 		}
 		bank = offset >> (2 + atarimo[1].entrybits);
-		COMBINE_DATA(&atarimo[1].spriteram[(bank << atarimo[1].entrybits) + entry].data[idx]);
+		COMBINE_DATA(&atarimo[1].spriteram.read((bank << atarimo[1).entrybits) + entry].data[idx]);
 	}
 	
 	
@@ -700,7 +700,7 @@ public class atarimo
 				idx = offset & 3;
 			}
 			bank = offset >> (2 + atarimo[0].entrybits);
-			COMBINE_DATA(&atarimo[0].spriteram[(bank << atarimo[0].entrybits) + entry].data[idx]);
+			COMBINE_DATA(&atarimo[0].spriteram.read((bank << atarimo[0).entrybits) + entry].data[idx]);
 		}
 	}
 	
@@ -870,7 +870,7 @@ public class atarimo
 		memset(spritevisit, 0, mo->entrycount);
 		while (!spritevisit[link])
 		{
-			struct atarimo_entry *modata = &mo->spriteram[link + (mo->bank << mo->entrybits)];
+			struct atarimo_entry *modata = &mo->spriteram.read(link + (mo->bank << mo->entrybits));
 	
 			/* bounds checking */
 			if (current >= mo->endcache)

@@ -289,7 +289,7 @@ public class thepit
 		/* draw low priority sprites */
 		for (offs = spriteram_size - 4;offs >= 0;offs -= 4)
 		{
-			if (((spriteram[offs + 2] & 0x08) >> 3) == priority)
+			if (((spriteram.read(offs + 2)& 0x08) >> 3) == priority)
 			{
 				int sx,sy,flipx,flipy;
 	
@@ -300,11 +300,11 @@ public class thepit
 					continue;
 				}
 	
-				sx = (spriteram[offs+3] + 1) & 0xff;
-				sy = 240 - spriteram[offs];
+				sx = (spriteram.read(offs+3)+ 1) & 0xff;
+				sy = 240 - spriteram.read(offs);
 	
-				flipx = spriteram[offs + 1] & 0x40;
-				flipy = spriteram[offs + 1] & 0x80;
+				flipx = spriteram.read(offs + 1)& 0x40;
+				flipy = spriteram.read(offs + 1)& 0x80;
 	
 				if (flip_screen_x)
 				{
@@ -322,8 +322,8 @@ public class thepit
 				if (offs <= 3*4) sy++;
 	
 				drawgfx(bitmap,Machine->gfx[graphics_bank | 1],
-						spriteram[offs + 1] & 0x3f,
-						spriteram[offs + 2] & 0x07,
+						spriteram.read(offs + 1)& 0x3f,
+						spriteram.read(offs + 2)& 0x07,
 						flipx,flipy,
 						sx,sy,
 						flip_screen_x & 1 ? &spritevisibleareaflipx : &spritevisiblearea,TRANSPARENCY_PEN,0);

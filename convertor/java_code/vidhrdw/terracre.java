@@ -207,7 +207,7 @@ public class terracre
 	
 	
 	
-		for (x = 0;x <spriteram_size/2;x += 4)
+		for (x = 0;x <spriteram_size[0]/2;x += 4)
 		{
 			int code;
 			int attr = spriteram16[x+2] & 0xff;

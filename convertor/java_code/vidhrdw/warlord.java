@@ -132,7 +132,7 @@ public class warlord
 			int sx, sy, flipx, flipy, spritenum, color;
 	
 			sx = spriteram [offs + 0x20];
-	        sy = 248 - spriteram[offs + 0x10];
+	        sy = 248 - spriteram.read(offs + 0x10);
 	
 			flipx = !(spriteram [offs] & 0x40);
 			flipy =   spriteram [offs] & 0x80;
@@ -143,7 +143,7 @@ public class warlord
 				flipx = !flipx;
 			}
 	
-			spritenum = (spriteram[offs] & 0x3f);
+			spritenum = (spriteram.read(offs)& 0x3f);
 	
 			/* The four quadrants have different colors. This is not 100% accurate,
 			   because right on the middle the sprite could actually have two or more

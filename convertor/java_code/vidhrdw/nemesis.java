@@ -241,7 +241,7 @@ public class nemesis
 		nemesis_lsbify_gfx();
 	#endif
 	
-		spriteram_words = spriteram_size / 2;
+		spriteram_words = spriteram_size[0] / 2;
 	
 		background = tilemap_create(
 			get_bg_tile_info, tilemap_scan_rows, TILEMAP_TRANSPARENT, 8,8, 64,32 );

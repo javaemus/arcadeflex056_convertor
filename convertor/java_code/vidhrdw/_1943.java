@@ -262,17 +262,17 @@ public class _1943
 		if (objon)
 		{
 			/* Draw the sprites which don't have priority over the foreground. */
-			for (offs = spriteram_size - 32;offs >= 0;offs -= 32)
+			for (offs = spriteram_size[0] - 32;offs >= 0;offs -= 32)
 			{
 				int color;
 	
 	
-				color = spriteram[offs + 1] & 0x0f;
+				color = spriteram.read(offs + 1)& 0x0f;
 				if (color == 0x0a || color == 0x0b)	/* the priority is actually selected by */
 													/* bit 3 of BMPROM.07 */
 				{
-					sx = spriteram[offs + 3] - ((spriteram[offs + 1] & 0x10) << 4);
-					sy = spriteram[offs + 2];
+					sx = spriteram.read(offs + 3)- ((spriteram.read(offs + 1)& 0x10) << 4);
+					sy = spriteram.read(offs + 2);
 					if (flipscreen)
 					{
 						sx = 240 - sx;
@@ -280,7 +280,7 @@ public class _1943
 					}
 	
 					drawgfx(bitmap,Machine->gfx[3],
-							spriteram[offs] + ((spriteram[offs + 1] & 0xe0) << 3),
+							spriteram.read(offs)+ ((spriteram.read(offs + 1)& 0xe0) << 3),
 							color,
 							flipscreen,flipscreen,
 							sx,sy,
@@ -351,17 +351,17 @@ public class _1943
 		if (objon)
 		{
 			/* Draw the sprites which have priority over the foreground. */
-			for (offs = spriteram_size - 32;offs >= 0;offs -= 32)
+			for (offs = spriteram_size[0] - 32;offs >= 0;offs -= 32)
 			{
 				int color;
 	
 	
-				color = spriteram[offs + 1] & 0x0f;
+				color = spriteram.read(offs + 1)& 0x0f;
 				if (color != 0x0a && color != 0x0b)	/* the priority is actually selected by */
 													/* bit 3 of BMPROM.07 */
 				{
-					sx = spriteram[offs + 3] - ((spriteram[offs + 1] & 0x10) << 4);
-					sy = spriteram[offs + 2];
+					sx = spriteram.read(offs + 3)- ((spriteram.read(offs + 1)& 0x10) << 4);
+					sy = spriteram.read(offs + 2);
 					if (flipscreen)
 					{
 						sx = 240 - sx;
@@ -369,7 +369,7 @@ public class _1943
 					}
 	
 					drawgfx(bitmap,Machine->gfx[3],
-							spriteram[offs] + ((spriteram[offs + 1] & 0xe0) << 3),
+							spriteram.read(offs)+ ((spriteram.read(offs + 1)& 0xe0) << 3),
 							color,
 							flipscreen,flipscreen,
 							sx,sy,

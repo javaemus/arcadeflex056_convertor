@@ -341,11 +341,11 @@ public class atarirle
 			prescan_rle(mo, i);
 	
 		/* allocate the spriteram */
-		mo->spriteram = malloc(sizeof(mo->spriteram[0]) * mo->spriteramsize);
+		mo->spriteram = malloc(sizeof(mo->spriteram.read(0)) * mo->spriteramsize);
 		VERIFYRETFREE(mo->spriteram, "atarirle_init: out of memory for spriteram", 0)
 	
 		/* clear it to zero */
-		memset(mo->spriteram, 0, sizeof(mo->spriteram[0]) * mo->spriteramsize);
+		memset(mo->spriteram, 0, sizeof(mo->spriteram.read(0)) * mo->spriteramsize);
 	
 		return 1;
 	}
@@ -430,7 +430,7 @@ public class atarirle
 				int scale, code;
 	
 				/* extract scale and code */
-				obj = &mo->spriteram[current->entry];
+				obj = &mo->spriteram.read(current->entry);
 				scale = EXTRACT_DATA(obj, mo->scalemask);
 				code = EXTRACT_DATA(obj, mo->codemask);
 	
@@ -506,7 +506,7 @@ public class atarirle
 	
 		entry = (offset >> 3) & atarirle[0].spriterammask;
 		idx = offset & 7;
-		COMBINE_DATA(&atarirle[0].spriteram[entry].data[idx]);
+		COMBINE_DATA(&atarirle[0].spriteram.read(entry).data[idx]);
 	}
 	
 	
@@ -523,10 +523,10 @@ public class atarirle
 		entry = (offset >> 2) & atarirle[0].spriterammask;
 		idx = 2 * (offset & 3);
 	
-		newword = (atarirle[0].spriteram[entry].data[idx+0] << 16) | atarirle[0].spriteram[entry].data[idx+1];
+		newword = (atarirle[0].spriteram.read(entry).data[idx+0] << 16) | atarirle[0].spriteram.read(entry).data[idx+1];
 		COMBINE_DATA(&newword);
-		atarirle[0].spriteram[entry].data[idx+0] = newword >> 16;
-		atarirle[0].spriteram[entry].data[idx+1] = newword;
+		atarirle[0].spriteram.read(entry).data[idx+0] = newword >> 16;
+		atarirle[0].spriteram.read(entry).data[idx+1] = newword;
 	}
 	
 	

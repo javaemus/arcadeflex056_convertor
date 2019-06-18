@@ -105,15 +105,15 @@ public class bogeyman
 		copyscrollbitmap(bitmap,tmpbitmap,0,0,0,0,&Machine->visible_area,TRANSPARENCY_NONE,0);
 	
 		/* Sprites */
-		for (offs = 0;offs < spriteram_size;offs += 4)
+		for (offs = 0;offs < spriteram_size[0];offs += 4)
 		{
-			if (spriteram[offs] & 0x01)
+			if (spriteram.read(offs)& 0x01)
 			{
-				sx = 240 - spriteram[offs+3];
-				sy = (240 - spriteram[offs+2]) & 0xff;
-				flipx = spriteram[offs] & 0x04;
-				flipy = 0;//spriteram[offs] & 0x02;
-				multi=spriteram[offs] & 0x10;
+				sx = 240 - spriteram.read(offs+3);
+				sy = (240 - spriteram.read(offs+2)) & 0xff;
+				flipx = spriteram.read(offs)& 0x04;
+				flipy = 0;//spriteram.read(offs)& 0x02;
+				multi=spriteram.read(offs)& 0x10;
 				if (multi) sy-=16;
 	
 				if (1/*flipscreen*/)
@@ -125,15 +125,15 @@ public class bogeyman
 				}
 	
 				drawgfx(bitmap,Machine->gfx[2],
-						spriteram[offs+1] + ((spriteram[offs] & 0x40) << 2),	// Modified by T.Nogi 1999/10/25
-						(spriteram[offs] & 0x08) >> 3,	// Modified by T.Nogi 1999/10/26
+						spriteram.read(offs+1)+ ((spriteram.read(offs)& 0x40) << 2),	// Modified by T.Nogi 1999/10/25
+						(spriteram.read(offs)& 0x08) >> 3,	// Modified by T.Nogi 1999/10/26
 						flipx,flipy,
 						sx,sy,
 						&Machine->visible_area,TRANSPARENCY_PEN,0);
 				if (multi)
 					drawgfx(bitmap,Machine->gfx[2],
-						spriteram[offs+1]+ 1 + ((spriteram[offs] & 0x40) << 2),	// Modified by T.Nogi 1999/10/25
-						(spriteram[offs] & 0x08) >> 3,	// Modified by T.Nogi 1999/10/26
+						spriteram.read(offs+1)+ 1 + ((spriteram.read(offs)& 0x40) << 2),	// Modified by T.Nogi 1999/10/25
+						(spriteram.read(offs)& 0x08) >> 3,	// Modified by T.Nogi 1999/10/26
 						flipx,flipy,
 						sx,sy+16,
 						&Machine->visible_area,TRANSPARENCY_PEN,0);

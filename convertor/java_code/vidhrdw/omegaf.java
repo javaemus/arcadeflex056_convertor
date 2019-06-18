@@ -591,22 +591,22 @@ public class omegaf
 		{
 			int sx, sy, tile, color, flipx, flipy, big;
 	
-			if (spriteram[offs + 2] & 2)
+			if (spriteram.read(offs + 2)& 2)
 			{
-				sx = spriteram[offs + 1];
-				sy = spriteram[offs];
-				if (spriteram[offs + 2] & 1)
+				sx = spriteram.read(offs + 1);
+				sy = spriteram.read(offs);
+				if (spriteram.read(offs + 2)& 1)
 					sx -= 256;
-				tile = spriteram[offs + 3] |
-						((spriteram[offs + 2] & 0xc0) << 2) |
-						((spriteram[offs + 2] & 0x08) << 7);
+				tile = spriteram.read(offs + 3)|
+						((spriteram.read(offs + 2)& 0xc0) << 2) |
+						((spriteram.read(offs + 2)& 0x08) << 7);
 	
-				big  = spriteram[offs + 2] & 4;
+				big  = spriteram.read(offs + 2)& 4;
 				if (big)
 					tile >>= 2;
-				flipx = spriteram[offs + 2] & 0x10;
-				flipy = spriteram[offs + 2] & 0x20;
-				color = spriteram[offs + 4] & 0x0f;
+				flipx = spriteram.read(offs + 2)& 0x10;
+				flipy = spriteram.read(offs + 2)& 0x20;
+				color = spriteram.read(offs + 4)& 0x0f;
 				drawgfx(bitmap,Machine->gfx[(big) ? 4 : 3],
 						tile,
 						color,

@@ -378,14 +378,14 @@ public class galivan
 		for (offs = 0;offs < spriteram_size;offs += 4)
 		{
 			int code;
-			int attr = spriteram[offs+2];
+			int attr = spriteram.read(offs+2);
 			int color = (attr & 0x3c) >> 2;
 			int flipx = attr & 0x40;
 			int flipy = attr & 0x80;
 			int sx,sy;
 	
-			sx = (spriteram[offs+3] - 0x80) + 256 * (attr & 0x01);
-			sy = 240 - spriteram[offs];
+			sx = (spriteram.read(offs+3)- 0x80) + 256 * (attr & 0x01);
+			sy = 240 - spriteram.read(offs);
 			if (flipscreen)
 			{
 				sx = 240 - sx;
@@ -394,8 +394,8 @@ public class galivan
 				flipy = !flipy;
 			}
 	
-	//		code = spriteram[offs+1] + ((attr & 0x02) << 7);
-			code = spriteram[offs+1] + ((attr & 0x06) << 7);	// for ninjemak, not sure ?
+	//		code = spriteram.read(offs+1)+ ((attr & 0x02) << 7);
+			code = spriteram.read(offs+1)+ ((attr & 0x06) << 7);	// for ninjemak, not sure ?
 	
 			drawgfx(bitmap,Machine->gfx[2],
 					code,

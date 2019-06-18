@@ -221,14 +221,14 @@ public class buggychl
 			const unsigned char *zoomx_rom,*zoomy_rom;
 	
 	
-			sx = spriteram[offs+3] - ((spriteram[offs+2] & 0x80) << 1);
-			sy = 256-64 - spriteram[offs] + ((spriteram[offs+1] & 0x80) << 1);
-			flipy = spriteram[offs+1] & 0x40;
-			zoom = spriteram[offs+1] & 0x3f;
+			sx = spriteram.read(offs+3)- ((spriteram.read(offs+2)& 0x80) << 1);
+			sy = 256-64 - spriteram.read(offs)+ ((spriteram.read(offs+1)& 0x80) << 1);
+			flipy = spriteram.read(offs+1)& 0x40;
+			zoom = spriteram.read(offs+1)& 0x3f;
 			zoomy_rom = memory_region(REGION_GFX2) + (zoom << 6);
 			zoomx_rom = memory_region(REGION_GFX2) + 0x2000 + (zoom << 3);
 	
-			lookup = buggychl_sprite_lookup + ((spriteram[offs+2] & 0x7f) << 6);
+			lookup = buggychl_sprite_lookup + ((spriteram.read(offs+2)& 0x7f) << 6);
 	
 			for (y = 0;y < 64;y++)
 			{

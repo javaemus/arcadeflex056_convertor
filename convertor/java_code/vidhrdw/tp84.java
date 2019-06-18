@@ -167,7 +167,7 @@ public class tp84
 			return 1;
 		}
 	
-		sprite_mux_buffer = malloc(256 * spriteram_size);
+		sprite_mux_buffer = malloc(256 * spriteram_size[0]);
 	
 		if (sprite_mux_buffer == 0)
 		{

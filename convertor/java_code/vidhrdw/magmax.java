@@ -479,7 +479,7 @@ public class magmax
 		}
 	
 		/* draw the sprites */
-		for (offs = 0; offs < spriteram_size/2; offs += 4)
+		for (offs = 0; offs < spriteram_size[0]/2; offs += 4)
 		{
 			int sx, sy;
 	

@@ -233,21 +233,21 @@ public class gottlieb
 	
 		/* Draw the sprites. Note that it is important to draw them exactly in this */
 		/* order, to have the correct priorities. */
-	    for (offs = 0;offs < spriteram_size - 8;offs += 4)     /* it seems there's something strange with sprites #62 and #63 */
+	    for (offs = 0;offs < spriteram_size[0] - 8;offs += 4)     /* it seems there's something strange with sprites #62 and #63 */
 		{
 		    int sx,sy;
 	
 	
 			/* coordinates hand tuned to make the position correct in Q*Bert Qubes start */
 			/* of level animation. */
-			sx = (spriteram[offs + 1]) - 4;
+			sx = (spriteram.read(offs + 1)) - 4;
 			if (hflip) sx = 233 - sx;
-			sy = (spriteram[offs]) - 13;
+			sy = (spriteram.read(offs)) - 13;
 			if (vflip) sy = 228 - sy;
 	
-			if (spriteram[offs] || spriteram[offs + 1])	/* needed to avoid garbage on screen */
+			if (spriteram.read(offs)|| spriteram.read(offs + 1))	/* needed to avoid garbage on screen */
 				drawgfx(bitmap,Machine->gfx[1],
-						(255 ^ spriteram[offs + 2]) + 256 * spritebank,
+						(255 ^ spriteram.read(offs + 2)) + 256 * spritebank,
 						0,
 						hflip,vflip,
 						sx,sy,

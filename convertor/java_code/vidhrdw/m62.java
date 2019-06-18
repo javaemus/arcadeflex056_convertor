@@ -421,12 +421,12 @@ public class m62
 			int i,incr,code,col,flipx,flipy,sx,sy;
 	
 	
-			code = spriteram[offs+4] + ((spriteram[offs+5] & 0x07) << 8);
-			col = spriteram[offs+0] & 0x1f;
-			sx = 256 * (spriteram[offs+7] & 1) + spriteram[offs+6],
-			sy = 256+128-15 - (256 * (spriteram[offs+3] & 1) + spriteram[offs+2]),
-			flipx = spriteram[offs+5] & 0x40;
-			flipy = spriteram[offs+5] & 0x80;
+			code = spriteram.read(offs+4)+ ((spriteram.read(offs+5)& 0x07) << 8);
+			col = spriteram.read(offs+0)& 0x1f;
+			sx = 256 * (spriteram.read(offs+7)& 1) + spriteram.read(offs+6),
+			sy = 256+128-15 - (256 * (spriteram.read(offs+3)& 1) + spriteram.read(offs+2)),
+			flipx = spriteram.read(offs+5)& 0x40;
+			flipy = spriteram.read(offs+5)& 0x80;
 	
 			i = sprite_height_prom[(code >> 5) & 0x1f];
 			if (i == 1)	/* double height */
@@ -479,14 +479,14 @@ public class m62
 			int i,incr,code,col,flipx,flipy,sx,sy;
 	
 	
-			if (!prioritylayer || (prioritylayer && (spriteram[offs] & 0x10)))
+			if (!prioritylayer || (prioritylayer && (spriteram.read(offs)& 0x10)))
 			{
-				code = spriteram[offs+4] + ((spriteram[offs+5] & 0x07) << 8);
-				col = spriteram[offs+0] & 0x0f;
-				sx = 256 * (spriteram[offs+7] & 1) + spriteram[offs+6],
-				sy = 256+128-15 - (256 * (spriteram[offs+3] & 1) + spriteram[offs+2]),
-				flipx = spriteram[offs+5] & 0x40;
-				flipy = spriteram[offs+5] & 0x80;
+				code = spriteram.read(offs+4)+ ((spriteram.read(offs+5)& 0x07) << 8);
+				col = spriteram.read(offs+0)& 0x0f;
+				sx = 256 * (spriteram.read(offs+7)& 1) + spriteram.read(offs+6),
+				sy = 256+128-15 - (256 * (spriteram.read(offs+3)& 1) + spriteram.read(offs+2)),
+				flipx = spriteram.read(offs+5)& 0x40;
+				flipy = spriteram.read(offs+5)& 0x80;
 	
 				i = sprite_height_prom[(code >> 5) & 0x1f];
 				if (i == 1)	/* double height */

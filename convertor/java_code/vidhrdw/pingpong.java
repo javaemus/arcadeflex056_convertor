@@ -146,18 +146,18 @@ public class pingpong
 	
 		/* Draw the sprites. Note that it is important to draw them exactly in this */
 		/* order, to have the correct priorities. */
-		for (offs = spriteram_size - 4;offs >= 0;offs -= 4)
+		for (offs = spriteram_size[0] - 4;offs >= 0;offs -= 4)
 		{
 			int sx,sy,flipx,flipy,color,schar;
 	
 	
-			sx = spriteram[offs + 3];
-			sy = 241 - spriteram[offs + 1];
+			sx = spriteram.read(offs + 3);
+			sy = 241 - spriteram.read(offs + 1);
 	
-			flipx = spriteram[offs] & 0x40;
-			flipy = spriteram[offs] & 0x80;
-			color = spriteram[offs] & 0x1F;
-			schar = spriteram[offs + 2] & 0x7F;
+			flipx = spriteram.read(offs)& 0x40;
+			flipy = spriteram.read(offs)& 0x80;
+			color = spriteram.read(offs)& 0x1F;
+			schar = spriteram.read(offs + 2)& 0x7F;
 	
 			drawgfx(bitmap,Machine->gfx[1],
 					schar,

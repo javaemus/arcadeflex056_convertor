@@ -272,13 +272,13 @@ public class vigilant
 		{
 			int code,color,sx,sy,flipx,flipy,h,y;
 	
-			code = spriteram[offs+4] | ((spriteram[offs+5] & 0x0f) << 8);
-			color = spriteram[offs+0] & 0x0f;
-			sx = (spriteram[offs+6] | ((spriteram[offs+7] & 0x01) << 8));
-			sy = 256+128 - (spriteram[offs+2] | ((spriteram[offs+3] & 0x01) << 8));
-			flipx = spriteram[offs+5] & 0x40;
-			flipy = spriteram[offs+5] & 0x80;
-			h = 1 << ((spriteram[offs+5] & 0x30) >> 4);
+			code = spriteram.read(offs+4)| ((spriteram.read(offs+5)& 0x0f) << 8);
+			color = spriteram.read(offs+0)& 0x0f;
+			sx = (spriteram.read(offs+6)| ((spriteram.read(offs+7)& 0x01) << 8));
+			sy = 256+128 - (spriteram.read(offs+2)| ((spriteram.read(offs+3)& 0x01) << 8));
+			flipx = spriteram.read(offs+5)& 0x40;
+			flipy = spriteram.read(offs+5)& 0x80;
+			h = 1 << ((spriteram.read(offs+5)& 0x30) >> 4);
 			sy -= 16 * h;
 	
 			for (y = 0;y < h;y++)

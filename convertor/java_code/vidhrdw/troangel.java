@@ -202,10 +202,10 @@ public class troangel
 	
 		for (offs = spriteram_size-4;offs >= 0;offs -= 4)
 		{
-			unsigned char attributes = spriteram[offs+1];
-			int sx = spriteram[offs+3];
-			int sy = ((224-spriteram[offs+0]-32)&0xff)+32;
-			int code = spriteram[offs+2];
+			unsigned char attributes = spriteram.read(offs+1);
+			int sx = spriteram.read(offs+3);
+			int sy = ((224-spriteram.read(offs+0)-32)&0xff)+32;
+			int code = spriteram.read(offs+2);
 			int color = attributes&0x1f;
 			int flipy = attributes&0x80;
 			int flipx = attributes&0x40;

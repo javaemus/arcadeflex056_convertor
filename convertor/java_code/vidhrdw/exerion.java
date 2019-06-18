@@ -427,23 +427,23 @@ public class exerion
 		{
 			int i;
 	
-			for (i = 0; i < spriteram_size; i+= 4)
+			for (i = 0; i < spriteram_size[0]; i+= 4)
 			{
 				if (spriteram[i+2] == 0x02)
 				{
-					fprintf (sprite_log, "%02x %02x %02x %02x\n",spriteram[i], spriteram[i+1], spriteram[i+2], spriteram[i+3]);
+					fprintf (sprite_log, "%02x %02x %02x %02x\n",spriteram.read(i), spriteram.read(i+1), spriteram.read(i+2), spriteram.read(i+3));
 				}
 			}
 		}
 	#endif
 	
 		/* draw sprites */
-		for (i = 0; i < spriteram_size; i += 4)
+		for (i = 0; i < spriteram_size[0]; i += 4)
 		{
-			int flags = spriteram[i + 0];
-			int y = spriteram[i + 1] ^ 255;
-			int code = spriteram[i + 2];
-			int x = spriteram[i + 3] * 2 + 72;
+			int flags = spriteram.read(i + 0);
+			int y = spriteram.read(i + 1)^ 255;
+			int code = spriteram.read(i + 2);
+			int x = spriteram.read(i + 3)* 2 + 72;
 	
 			int xflip = flags & 0x80;
 			int yflip = flags & 0x40;

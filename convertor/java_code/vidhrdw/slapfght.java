@@ -151,7 +151,7 @@ public class slapfght
 			int i;
 			for (i=0; i<0x800; i++)
 			{
-				logerror("Offset:%03x   TileRAM:%02x   AttribRAM:%02x   SpriteRAM:%02x\n",i, videoram[i],colorram[i],spriteram[i]);
+				logerror("Offset:%03x   TileRAM:%02x   AttribRAM:%02x   SpriteRAM:%02x\n",i, videoram[i],colorram[i],spriteram.read(i));
 			}
 		}
 	}
@@ -248,7 +248,7 @@ public class slapfght
 		tilemap_draw(bitmap,pf1_tilemap,0,0);
 	
 		/* Draw the sprites */
-		for (offs = 0;offs < spriteram_size;offs += 4)
+		for (offs = 0;offs < spriteram_size[0];offs += 4)
 		{
 			if (flipscreen)
 				drawgfx(bitmap,Machine->gfx[2],

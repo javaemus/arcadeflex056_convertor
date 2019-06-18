@@ -103,9 +103,9 @@ public class tunhunt
 	
 	public static WriteHandlerPtr tunhunt_mott_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-		if( spriteram[offset]!=data )
+		if( spriteram.read(offset)!=data )
 		{
-			spriteram[offset] = data;
+			spriteram.write(offset,data);
 			dirtybuffer[offset>>4] = 1;
 		}
 	} };
@@ -341,7 +341,7 @@ public class tunhunt
 			{
 				dirtybuffer[line] = 0;
 				x = 0;
-				source = &spriteram[line*0x10];
+				source = &spriteram.read(line*0x10);
 				for( span=0; span<0x10; span++ )
 				{
 					span_data = source[span];

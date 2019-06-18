@@ -217,11 +217,11 @@ public class _1942
 			int i,code,col,sx,sy,dir;
 	
 	
-			code = (spriteram[offs] & 0x7f) + 4*(spriteram[offs + 1] & 0x20)
-					+ 2*(spriteram[offs] & 0x80);
-			col = spriteram[offs + 1] & 0x0f;
-			sx = spriteram[offs + 3] - 0x10 * (spriteram[offs + 1] & 0x10);
-			sy = spriteram[offs + 2];
+			code = (spriteram.read(offs)& 0x7f) + 4*(spriteram.read(offs + 1)& 0x20)
+					+ 2*(spriteram.read(offs)& 0x80);
+			col = spriteram.read(offs + 1)& 0x0f;
+			sx = spriteram.read(offs + 3)- 0x10 * (spriteram.read(offs + 1)& 0x10);
+			sy = spriteram.read(offs + 2);
 			dir = 1;
 			if (flip_screen)
 			{
@@ -231,7 +231,7 @@ public class _1942
 			}
 	
 			/* handle double / quadruple height */
-			i = (spriteram[offs + 1] & 0xc0) >> 6;
+			i = (spriteram.read(offs + 1)& 0xc0) >> 6;
 			if (i == 2) i = 3;
 	
 			do

@@ -252,7 +252,7 @@ public class rastan
 	 	PC080SN_tilemap_draw(bitmap,0,layer[0],TILEMAP_IGNORE_TRANSPARENCY,0);
 	
 		/* Draw the sprites. 256 sprites in total */
-		for (offs = spriteram_size/2-4; offs >= 0; offs -= 4)
+		for (offs = spriteram_size[0]/2-4; offs >= 0; offs -= 4)
 		{
 			int tile = spriteram16[offs+2];
 			if (tile)
@@ -334,7 +334,7 @@ public class rastan
 	 	PC080SN_tilemap_draw(bitmap,0,layer[0],TILEMAP_IGNORE_TRANSPARENCY,0);
 	
 		/* Draw the sprites. 128 sprites in total */
-		for (offs = spriteram_size/2-8; offs >= 0; offs -= 8)
+		for (offs = spriteram_size[0]/2-8; offs >= 0; offs -= 8)
 		{
 			int tile = spriteram16[offs];
 			if (tile < Machine->gfx[1]->total_elements)

@@ -175,15 +175,15 @@ public class ninjakd2
 		{
 			int sx,sy,tile,palette,flipx,flipy;
 	
-			if (spriteram[offs+2] & 2)
+			if (spriteram.read(offs+2)& 2)
 			{
-				sx = spriteram[offs+1];
-				sy = spriteram[offs];
-				if (spriteram[offs+2] & 1) sx-=256;
-				tile = spriteram[offs+3]+((spriteram[offs+2] & 0xc0)<<2);
-				flipx = spriteram[offs+2] & 0x10;
-				flipy = spriteram[offs+2] & 0x20;
-				palette = spriteram[offs+4] & 0x0f;
+				sx = spriteram.read(offs+1);
+				sy = spriteram.read(offs);
+				if (spriteram.read(offs+2)& 1) sx-=256;
+				tile = spriteram.read(offs+3)+((spriteram.read(offs+2)& 0xc0)<<2);
+				flipx = spriteram.read(offs+2)& 0x10;
+				flipy = spriteram.read(offs+2)& 0x20;
+				palette = spriteram.read(offs+4)& 0x0f;
 				drawgfx(bitmap,Machine->gfx[1],
 							tile,
 							palette,

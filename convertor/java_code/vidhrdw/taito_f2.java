@@ -828,7 +828,7 @@ public class taito_f2
 	
 			code = 0;
 			extoffs = offs;
-			/* spriteram[0x4000-7fff] has no corresponding extension area */
+			/* spriteram.read(0x4000-7fff)has no corresponding extension area */
 			if (extoffs >= 0x8000) extoffs -= 0x4000;
 	
 			if (f2_sprite_type == 0)
@@ -1058,7 +1058,7 @@ public class taito_f2
 	
 	void taitof2_partial_buffer_delayed_qzchikyu_eof_callback(void)
 	{
-		/* spriteram[2] and [3] are 1 frame behind...
+		/* spriteram.read(2)and [3] are 1 frame behind...
 		   probably thundfox_eof_callback would work fine */
 	
 		int i;

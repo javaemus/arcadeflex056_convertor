@@ -86,14 +86,14 @@ public class kchamp
 	
 	        for (offs = 0 ;offs < 0x100;offs+=4)
 		{
-	                int numtile = spriteram[offs+1] + ( ( spriteram[offs+2] & 0x10 ) << 4 );
-	                int flipx = ( spriteram[offs+2] & 0x80 );
+	                int numtile = spriteram.read(offs+1)+ ( ( spriteram.read(offs+2)& 0x10 ) << 4 );
+	                int flipx = ( spriteram.read(offs+2)& 0x80 );
 	                int sx, sy;
-	                int gfx = 1 + ( ( spriteram[offs+2] & 0x60 ) >> 5 );
-	                int color = ( spriteram[offs+2] & 0x0f );
+	                int gfx = 1 + ( ( spriteram.read(offs+2)& 0x60 ) >> 5 );
+	                int color = ( spriteram.read(offs+2)& 0x0f );
 	
-	                sx = spriteram[offs+3];
-	                sy = 240 - spriteram[offs];
+	                sx = spriteram.read(offs+3);
+	                sy = 240 - spriteram.read(offs);
 	
 	                drawgfx(bitmap,Machine->gfx[gfx],
 	                                numtile,
@@ -119,14 +119,14 @@ public class kchamp
 	
 	        for (offs = 0 ;offs < 0x100;offs+=4)
 		{
-	                int numtile = spriteram[offs+1] + ( ( spriteram[offs+2] & 0x10 ) << 4 );
-	                int flipx = ( spriteram[offs+2] & 0x80 );
+	                int numtile = spriteram.read(offs+1)+ ( ( spriteram.read(offs+2)& 0x10 ) << 4 );
+	                int flipx = ( spriteram.read(offs+2)& 0x80 );
 	                int sx, sy;
-	                int gfx = 1 + ( ( spriteram[offs+2] & 0x60 ) >> 5 );
-	                int color = ( spriteram[offs+2] & 0x0f );
+	                int gfx = 1 + ( ( spriteram.read(offs+2)& 0x60 ) >> 5 );
+	                int color = ( spriteram.read(offs+2)& 0x0f );
 	
-	                sx = spriteram[offs+3] - 8;
-	                sy = 247 - spriteram[offs];
+	                sx = spriteram.read(offs+3)- 8;
+	                sy = 247 - spriteram.read(offs);
 	
 	                drawgfx(bitmap,Machine->gfx[gfx],
 	                                numtile,

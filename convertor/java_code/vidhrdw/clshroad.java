@@ -320,10 +320,10 @@ public class clshroad
 	
 		for (i = 0; i < spriteram_size ; i += 8)
 		{
-			int y		=	 240 - spriteram[i+1];
-			int code	=	(spriteram[i+3] & 0x3f) + (spriteram[i+2] << 6);
-			int x		=	 spriteram[i+5]         + (spriteram[i+6] << 8);
-			int attr	=	 spriteram[i+7];
+			int y		=	 240 - spriteram.read(i+1);
+			int code	=	(spriteram.read(i+3)& 0x3f) + (spriteram.read(i+2)<< 6);
+			int x		=	 spriteram.read(i+5)+ (spriteram.read(i+6)<< 8);
+			int attr	=	 spriteram.read(i+7);
 	
 			int flipx	=	0;
 			int flipy	=	0;

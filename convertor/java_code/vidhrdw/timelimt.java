@@ -131,12 +131,12 @@ public class timelimt
 	
 		for( offs = spriteram_size; offs >= 0; offs -= 4 )
 		{
-			int sy = 240 - spriteram[offs];
-			int sx = spriteram[offs+3];
-			int code = spriteram[offs+1] & 0x3f;
-			int attr = spriteram[offs+2];
-			int flipy = spriteram[offs+1] & 0x80;
-			int flipx = spriteram[offs+1] & 0x40;
+			int sy = 240 - spriteram.read(offs);
+			int sx = spriteram.read(offs+3);
+			int code = spriteram.read(offs+1)& 0x3f;
+			int attr = spriteram.read(offs+2);
+			int flipy = spriteram.read(offs+1)& 0x80;
+			int flipx = spriteram.read(offs+1)& 0x40;
 	
 			code += ( attr & 0x80 ) ? 0x40 : 0x00;
 			code += ( attr & 0x40 ) ? 0x80 : 0x00;

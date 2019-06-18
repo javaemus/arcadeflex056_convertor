@@ -291,13 +291,13 @@ public class superqix
 	
 		/* Draw the sprites. Note that it is important to draw them exactly in this */
 		/* order, to have the correct priorities. */
-		for (offs = 0;offs < spriteram_size;offs += 4)
+		for (offs = 0;offs < spriteram_size[0];offs += 4)
 		{
 			drawgfx(bitmap,Machine->gfx[5],
-					spriteram[offs] + 256 * (spriteram[offs + 3] & 0x01),
-					(spriteram[offs + 3] & 0xf0) >> 4,
-					spriteram[offs + 3] & 0x04,spriteram[offs + 3] & 0x08,
-					spriteram[offs + 1],spriteram[offs + 2],
+					spriteram.read(offs)+ 256 * (spriteram.read(offs + 3)& 0x01),
+					(spriteram.read(offs + 3)& 0xf0) >> 4,
+					spriteram.read(offs + 3)& 0x04,spriteram.read(offs + 3)& 0x08,
+					spriteram.read(offs + 1),spriteram.read(offs + 2),
 					&Machine->visible_area,TRANSPARENCY_PEN,0);
 		}
 	

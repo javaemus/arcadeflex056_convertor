@@ -79,12 +79,12 @@ public class jailbrek
 	
 			/* attributes = ?tyxcccc */
 	
-			sx = spriteram[i+2] - ( ( spriteram[i+1] & 0x80 ) << 1 );
-			sy = spriteram[i+3];
-			tile = spriteram[i] + ( ( spriteram[i+1] & 0x40 ) << 2 );
-			flipx = spriteram[i+1] & 0x10;
-			flipy = spriteram[i+1] & 0x20;
-			color = spriteram[i+1] & 0x0f;
+			sx = spriteram.read(i+2)- ( ( spriteram.read(i+1)& 0x80 ) << 1 );
+			sy = spriteram.read(i+3);
+			tile = spriteram.read(i)+ ( ( spriteram.read(i+1)& 0x40 ) << 2 );
+			flipx = spriteram.read(i+1)& 0x10;
+			flipy = spriteram.read(i+1)& 0x20;
+			color = spriteram.read(i+1)& 0x0f;
 	
 			if (flip_screen)
 			{

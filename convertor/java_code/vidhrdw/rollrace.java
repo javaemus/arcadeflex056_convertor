@@ -114,8 +114,8 @@ public class rollrace
 			int s_flipy = 0;
 			int bank = 0;
 	
-			sy=spriteram[offs] - 16;
-			sx=spriteram[offs+3] - 16;
+			sy=spriteram.read(offs)- 16;
+			sx=spriteram.read(offs+3)- 16;
 	
 			if(sx && sy)
 			{
@@ -125,17 +125,17 @@ public class rollrace
 			if(ra_flipy)
 				sy = 224 - sy;
 	
-			if(spriteram[offs+1] & 0x80)
+			if(spriteram.read(offs+1)& 0x80)
 				s_flipy = 1;
 	
-			bank = (( spriteram[offs+1] & 0x40 ) >> 6 ) ;
+			bank = (( spriteram.read(offs+1)& 0x40 ) >> 6 ) ;
 	
 			if(bank)
 				bank += ra_spritebank;
 	
 			drawgfx(bitmap, Machine->gfx[ RA_SP_BASE + bank ],
-				spriteram[offs+1] & 0x3f ,
-				spriteram[offs+2] & 0x1f,
+				spriteram.read(offs+1)& 0x3f ,
+				spriteram.read(offs+2)& 0x1f,
 				ra_flipx,!(s_flipy^ra_flipy),
 				sx,sy,
 				&Machine->visible_area,TRANSPARENCY_PEN,0);

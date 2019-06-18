@@ -259,7 +259,7 @@ public class gaplus
 	public static VhStartPtr gaplus_vh_start = new VhStartPtr() { public int handler()  {
 	
 		/* set up spriteram area */
-		spriteram_size = 0x80;
+		spriteram_size[0] = 0x80;
 		spriteram = &gaplus_sharedram[0x780];
 		spriteram_2 = &gaplus_sharedram[0x780+0x800];
 		spriteram_3 = &gaplus_sharedram[0x780+0x800+0x800];
@@ -284,13 +284,13 @@ public class gaplus
 		int offs;
 	
 		for (offs = 0; offs < spriteram_size; offs += 2){
-	        if ((spriteram_3[offs+1] & 2) == 0){
-				int number = spriteram[offs]+4*(spriteram_3[offs] & 0x40);
-				int color = spriteram[offs+1] & 0x3f;
-	            int sx = (spriteram_2[offs+1]-71) + 0x100*(spriteram_3[offs+1] & 1);
-				int sy = ( Machine->drv->screen_height ) - spriteram_2[offs]-24;
-				int flipy = spriteram_3[offs] & 2;
-				int flipx = spriteram_3[offs] & 1;
+	        if ((spriteram_3.read(offs+1)& 2) == 0){
+				int number = spriteram.read(offs)+4*(spriteram_3.read(offs)& 0x40);
+				int color = spriteram.read(offs+1)& 0x3f;
+	            int sx = (spriteram_2.read(offs+1)-71) + 0x100*(spriteram_3.read(offs+1)& 1);
+				int sy = ( Machine->drv->screen_height ) - spriteram_2.read(offs)-24;
+				int flipy = spriteram_3.read(offs)& 2;
+				int flipx = spriteram_3.read(offs)& 1;
 				int width, height;
 	
 				if (number >= 128*3) continue;
@@ -301,7 +301,7 @@ public class gaplus
 					flipy = !flipy;
 				}
 	
-				if ((spriteram_3[offs] & 0xa8) == 0xa0){ /* draw the sprite twice in a row */
+				if ((spriteram_3.read(offs)& 0xa8) == 0xa0){ /* draw the sprite twice in a row */
 	                    drawgfx(bitmap,Machine->gfx[2+(number >> 7)],
 									number,color,flipx,flipy,sx,sy,
 									&Machine->visible_area,TRANSPARENCY_COLOR,255);
@@ -310,7 +310,7 @@ public class gaplus
 									&Machine->visible_area,TRANSPARENCY_COLOR,255);
 				}
 				else{
-					switch (spriteram_3[offs] & 0x28){
+					switch (spriteram_3.read(offs)& 0x28){
 						case 0x28:	/* 2x both ways */
 							width = height = 2; number &= (~3); break;
 						case 0x20:	/* 2x vertical */

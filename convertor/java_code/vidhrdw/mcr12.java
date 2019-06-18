@@ -364,11 +364,11 @@ public class mcr12
 				continue;
 	
 			/* extract the bits of information */
-			code = spriteram[offs + 1] & 0x3f;
-			hflip = spriteram[offs + 1] & 0x40;
-			vflip = spriteram[offs + 1] & 0x80;
-			x = (spriteram[offs + 2] - 4) * 2;
-			y = (240 - spriteram[offs]) * 2;
+			code = spriteram.read(offs + 1)& 0x3f;
+			hflip = spriteram.read(offs + 1)& 0x40;
+			vflip = spriteram.read(offs + 1)& 0x80;
+			x = (spriteram.read(offs + 2)- 4) * 2;
+			y = (240 - spriteram.read(offs)) * 2;
 	
 			/* apply cocktail mode */
 			if (mcr_cocktail_flip)
