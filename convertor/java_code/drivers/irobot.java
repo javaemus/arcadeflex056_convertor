@@ -254,23 +254,23 @@ public class irobot
 		new GfxDecodeInfo( -1 )
 	};
 	
-	static struct POKEYinterface pokey_interface =
-	{
+	static POKEYinterface pokey_interface = new POKEYinterface
+	(
 		4,	/* 4 chips */
 		1250000,	/* 1.25 MHz??? */
-		{ 25, 25, 25, 25 },
+		new int[] { 25, 25, 25, 25 },
 		/* The 8 pot handlers */
-		{ 0, 0, 0, 0 },
-		{ 0, 0, 0, 0 },
-		{ 0, 0, 0, 0 },
-		{ 0, 0, 0, 0 },
-		{ 0, 0, 0, 0 },
-		{ 0, 0, 0, 0 },
-		{ 0, 0, 0, 0 },
-		{ 0, 0, 0, 0 },
+		new ReadHandlerPtr[] { 0, 0, 0, 0 },
+		new ReadHandlerPtr[] { 0, 0, 0, 0 },
+		new ReadHandlerPtr[] { 0, 0, 0, 0 },
+		new ReadHandlerPtr[] { 0, 0, 0, 0 },
+		new ReadHandlerPtr[] { 0, 0, 0, 0 },
+		new ReadHandlerPtr[] { 0, 0, 0, 0 },
+		new ReadHandlerPtr[] { 0, 0, 0, 0 },
+		new ReadHandlerPtr[] { 0, 0, 0, 0 },
 		/* The allpot handler */
-	    { input_port_4_r, 0, 0, 0 },
-	};
+	    new ReadHandlerPtr[] { input_port_4_r, 0, 0, 0 },
+	);
 	
 	
 	static MachineDriver machine_driver_irobot = new MachineDriver

@@ -687,12 +687,12 @@ public class gauntlet
 	};
 	
 	
-	static struct POKEYinterface pokey_interface =
-	{
+	static POKEYinterface pokey_interface = new POKEYinterface
+	(
 		1,
 		ATARI_CLOCK_14MHz/8,
-		{ 32 },
-	};
+		new int[] { 32 },
+	);
 	
 	
 	static struct TMS5220interface tms5220_interface =

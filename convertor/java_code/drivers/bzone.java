@@ -480,23 +480,23 @@ public class bzone
 	
 	
 	
-	static struct POKEYinterface bzone_pokey_interface =
-	{
+	static POKEYinterface bzone_pokey_interface = new POKEYinterface
+	(
 		1,	/* 1 chip */
 		1500000,	/* 1.5 MHz??? */
-		{ 100 },
+		new int[] { 100 },
 		/* The 8 pot handlers */
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
 		/* The allpot handler */
-		{ bzone_IN3_r },
-	};
+		new ReadHandlerPtr[] { bzone_IN3_r },
+	);
 	
 	static CustomSound_interface bzone_custom_interface = new CustomSound_interface
 	(
@@ -549,23 +549,23 @@ public class bzone
 	);
 	
 	
-	static struct POKEYinterface redbaron_pokey_interface =
-	{
+	static POKEYinterface redbaron_pokey_interface = new POKEYinterface
+	(
 		1,	/* 1 chip */
 		1500000,	/* 1.5 MHz??? */
-		{ 100 },
+		new int[] { 100 },
 		/* The 8 pot handlers */
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
 		/* The allpot handler */
-		{ redbaron_joy_r },
-	};
+		new ReadHandlerPtr[] { redbaron_joy_r },
+	);
 	
 	
 	static CustomSound_interface redbaron_custom_interface = new CustomSound_interface

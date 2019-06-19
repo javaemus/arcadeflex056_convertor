@@ -426,23 +426,23 @@ public class starwars
 	 *
 	 *************************************/
 	
-	static struct POKEYinterface pokey_interface =
-	{
+	static POKEYinterface pokey_interface = new POKEYinterface
+	(
 		4,			/* 4 chips */
 		1500000,	/* 1.5 MHz? */
-		{ 20, 20, 20, 20 },	/* volume */
+		new int[] { 20, 20, 20, 20 },	/* volume */
 		/* The 8 pot handlers */
-		{ 0, 0, 0, 0 },
-		{ 0, 0, 0, 0 },
-		{ 0, 0, 0, 0 },
-		{ 0, 0, 0, 0 },
-		{ 0, 0, 0, 0 },
-		{ 0, 0, 0, 0 },
-		{ 0, 0, 0, 0 },
-		{ 0, 0, 0, 0 },
+		new ReadHandlerPtr[] { 0, 0, 0, 0 },
+		new ReadHandlerPtr[] { 0, 0, 0, 0 },
+		new ReadHandlerPtr[] { 0, 0, 0, 0 },
+		new ReadHandlerPtr[] { 0, 0, 0, 0 },
+		new ReadHandlerPtr[] { 0, 0, 0, 0 },
+		new ReadHandlerPtr[] { 0, 0, 0, 0 },
+		new ReadHandlerPtr[] { 0, 0, 0, 0 },
+		new ReadHandlerPtr[] { 0, 0, 0, 0 },
 		/* The allpot handler */
-		{ 0, 0, 0, 0 },
-	};
+		new ReadHandlerPtr[] { 0, 0, 0, 0 },
+	);
 	
 	
 	static struct TMS5220interface tms5220_interface =

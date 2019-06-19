@@ -336,23 +336,23 @@ public class missile
 	
 	
 	
-	static struct POKEYinterface pokey_interface =
-	{
+	static POKEYinterface pokey_interface = new POKEYinterface
+	(
 		1,	/* 1 chip */
 		1250000,	/* 1.25 MHz??? */
-		{ 100 },
+		new int[] { 100 },
 		/* The 8 pot handlers */
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
 		/* The allpot handler */
-		{ input_port_3_r },
-	};
+		new ReadHandlerPtr[] { input_port_3_r },
+	);
 	
 	
 	

@@ -823,12 +823,12 @@ public class atarisy1
 	};
 	
 	
-	static struct POKEYinterface pokey_interface =
-	{
+	static POKEYinterface pokey_interface = new POKEYinterface
+	(
 		1,
 		ATARI_CLOCK_14MHz/8,
-		{ 40 },
-	};
+		new int[] { 40 },
+	);
 	
 	
 	static struct TMS5220interface tms5220_interface =

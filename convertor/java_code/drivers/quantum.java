@@ -275,23 +275,23 @@ public class quantum
 	 *
 	 *************************************/
 	
-	static struct POKEYinterface pokey_interface =
-	{
+	static POKEYinterface pokey_interface = new POKEYinterface
+	(
 		2,	/* 2 chips */
 		600000,        /* .6 MHz? (hand tuned) */
-		{ 50, 50 },
+		new int[] { 50, 50 },
 		/* The 8 pot handlers */
-		{ input_1_r, input_2_r },
-		{ input_1_r, input_2_r },
-		{ input_1_r, input_2_r },
-		{ input_1_r, input_2_r },
-		{ input_1_r, input_2_r },
-		{ input_1_r, input_2_r },
-		{ input_1_r, input_2_r },
-		{ input_1_r, input_2_r },
+		new ReadHandlerPtr[] { input_1_r, input_2_r },
+		new ReadHandlerPtr[] { input_1_r, input_2_r },
+		new ReadHandlerPtr[] { input_1_r, input_2_r },
+		new ReadHandlerPtr[] { input_1_r, input_2_r },
+		new ReadHandlerPtr[] { input_1_r, input_2_r },
+		new ReadHandlerPtr[] { input_1_r, input_2_r },
+		new ReadHandlerPtr[] { input_1_r, input_2_r },
+		new ReadHandlerPtr[] { input_1_r, input_2_r },
 		/* The allpot handler */
-		{ 0, 0 },
-	};
+		new ReadHandlerPtr[] { 0, 0 },
+	);
 	
 	
 	

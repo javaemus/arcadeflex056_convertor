@@ -192,23 +192,23 @@ public class qwakprot
 	
 	
 	
-	static struct POKEYinterface pokey_interface =
-	{
+	static POKEYinterface pokey_interface = new POKEYinterface
+	(
 		2,	/* 2 chips */
 		1500000,	/* 1.5 MHz??? */
-		{ 50, 50 },
+		new int[] { 50, 50 },
 		/* The 8 pot handlers */
-		{ 0, 0 },
-		{ 0, 0 },
-		{ 0, 0 },
-		{ 0, 0 },
-		{ 0, 0 },
-		{ 0, 0 },
-		{ 0, 0 },
-		{ 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
 		/* The allpot handler */
-		{ 0, 0 },
-	};
+		new ReadHandlerPtr[] { 0, 0 },
+	);
 	
 	
 	static MachineDriver machine_driver_qwakprot = new MachineDriver

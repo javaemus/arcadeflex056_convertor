@@ -350,23 +350,23 @@ public class liberatr
 	
 	
 	
-	static struct POKEYinterface pokey_interface =
-	{
+	static POKEYinterface pokey_interface = new POKEYinterface
+	(
 		2,				/* 2 chips */
 		FREQ_17_APPROX,	/* 1.7 MHz */
-		{ 50, 50 },
+		new int[] { 50, 50 },
 		/* The 8 pot handlers */
-		{ 0, 0 },
-		{ 0, 0 },
-		{ 0, 0 },
-		{ 0, 0 },
-		{ 0, 0 },
-		{ 0, 0 },
-		{ 0, 0 },
-		{ 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
 		/* The allpot handler */
-		{ input_port_3_r, input_port_2_r }
-	};
+		new ReadHandlerPtr[] { input_port_3_r, input_port_2_r }
+	);
 	
 	
 	#define MACHINE_DRIVER(NAME)							\

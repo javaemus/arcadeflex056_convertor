@@ -645,22 +645,22 @@ public class tunhunt
 		PORT_DIPSETTING (     0x0000, "None" );
 	INPUT_PORTS_END(); }}; 
 	
-	static struct POKEYinterface pokey_interface =
-	{
+	static POKEYinterface pokey_interface = new POKEYinterface
+	(
 		2,	/* 2 chips */
 		1209600,
-		{ 50, 50 }, /* volume */
+		new int[] { 50, 50 }, /* volume */
 		/* pot handlers */
-		{ 0, input_port_1_r },
-		{ 0, input_port_2_r },
-		{ 0, dsw2_0r },
-		{ 0, dsw2_1r },
-		{ 0, dsw2_2r },
-		{ 0, dsw2_3r },
-		{ 0, dsw2_4r },
-		{ 0, 0 },
-		{ dsw1_r, 0 },
-	};
+		new ReadHandlerPtr[] { 0, input_port_1_r },
+		new ReadHandlerPtr[] { 0, input_port_2_r },
+		new ReadHandlerPtr[] { 0, dsw2_0r },
+		new ReadHandlerPtr[] { 0, dsw2_1r },
+		new ReadHandlerPtr[] { 0, dsw2_2r },
+		new ReadHandlerPtr[] { 0, dsw2_3r },
+		new ReadHandlerPtr[] { 0, dsw2_4r },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { dsw1_r, 0 },
+	);
 	
 	static struct MachineDriver machine_driver_tunhunt =
 	{

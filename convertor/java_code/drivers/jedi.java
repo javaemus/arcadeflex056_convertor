@@ -550,23 +550,23 @@ public class jedi
 	 *
 	 *************************************/
 	
-	static struct POKEYinterface pokey_interface =
-	{
+	static POKEYinterface pokey_interface = new POKEYinterface
+	(
 		4,
 		SOUND_CPU_OSC/2/4,	/* 1.5MHz */
-		{ 30, 30, MIXER(30,MIXER_PAN_LEFT), MIXER(30,MIXER_PAN_RIGHT) },
+		new int[] { 30, 30, MIXER(30,MIXER_PAN_LEFT), MIXER(30,MIXER_PAN_RIGHT) },
 		/* The 8 pot handlers */
-		{ 0, 0, 0, 0 },
-		{ 0, 0, 0, 0 },
-		{ 0, 0, 0, 0 },
-		{ 0, 0, 0, 0 },
-		{ 0, 0, 0, 0 },
-		{ 0, 0, 0, 0 },
-		{ 0, 0, 0, 0 },
-		{ 0, 0, 0, 0 },
+		new ReadHandlerPtr[] { 0, 0, 0, 0 },
+		new ReadHandlerPtr[] { 0, 0, 0, 0 },
+		new ReadHandlerPtr[] { 0, 0, 0, 0 },
+		new ReadHandlerPtr[] { 0, 0, 0, 0 },
+		new ReadHandlerPtr[] { 0, 0, 0, 0 },
+		new ReadHandlerPtr[] { 0, 0, 0, 0 },
+		new ReadHandlerPtr[] { 0, 0, 0, 0 },
+		new ReadHandlerPtr[] { 0, 0, 0, 0 },
 		/* The allpot handler */
-		{ 0, 0, 0, 0 }
-	};
+		new ReadHandlerPtr[] { 0, 0, 0, 0 }
+	);
 	
 	
 	static struct TMS5220interface tms5220_interface =

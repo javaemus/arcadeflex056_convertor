@@ -228,23 +228,23 @@ public class warlord
 	
 	
 	
-	static struct POKEYinterface pokey_interface =
-	{
+	static POKEYinterface pokey_interface = new POKEYinterface
+	(
 		1,	/* 1 chip */
 		12096000/8, /* 1.512 MHz */
-		{ 100 },
+		new int[] { 100 },
 		/* The 8 pot handlers */
-		{ input_port_4_r },
-		{ input_port_5_r },
-		{ input_port_6_r },
-		{ input_port_7_r },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
+		new ReadHandlerPtr[] { input_port_4_r },
+		new ReadHandlerPtr[] { input_port_5_r },
+		new ReadHandlerPtr[] { input_port_6_r },
+		new ReadHandlerPtr[] { input_port_7_r },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
 		/* The allpot handler */
-		{ 0 },
-	};
+		new ReadHandlerPtr[] { 0 },
+	);
 	
 	
 	

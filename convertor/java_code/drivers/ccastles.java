@@ -234,23 +234,23 @@ public class ccastles
 	
 	
 	
-	static struct POKEYinterface pokey_interface =
-	{
+	static POKEYinterface pokey_interface = new POKEYinterface
+	(
 		2,	/* 2 chips */
 		1250000,	/* 1.25 MHz??? */
-		{ 50, 50 },
+		new int[] { 50, 50 },
 		/* The 8 pot handlers */
-		{ 0, 0 },
-		{ 0, 0 },
-		{ 0, 0 },
-		{ 0, 0 },
-		{ 0, 0 },
-		{ 0, 0 },
-		{ 0, 0 },
-		{ 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
 		/* The allpot handler */
-		{ 0, input_port_1_r },
-	};
+		new ReadHandlerPtr[] { 0, input_port_1_r },
+	);
 	
 	
 	

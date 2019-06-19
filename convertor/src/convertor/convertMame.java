@@ -54,6 +54,7 @@ public class convertMame {
     static final int DAC_SOUND = 26;
     static final int VH_CONVERT = 27;
     static final int RECTANGLE = 28;
+    static final int POKEY = 29;
 
     public static void Convert() {
         Convertor.inpos = 0;//position of pointer inside the buffers
@@ -942,6 +943,19 @@ public class convertMame {
                                 i3 = -1;
                                 continue;
                             }
+                        } else if (sUtil.getToken("POKEYinterface")) {
+                            sUtil.skipSpace();
+                            Convertor.token[0] = sUtil.parseToken();
+                            sUtil.skipSpace();
+                            if (sUtil.parseChar() != '=') {
+                                Convertor.inpos = i;
+                            } else {
+                                sUtil.skipSpace();
+                                sUtil.putString("static POKEYinterface " + Convertor.token[0] + " = new POKEYinterface");
+                                type = POKEY;
+                                i3 = -1;
+                                continue;
+                            }
                         } else if (sUtil.getToken("CustomSound_interface")) {
                             sUtil.skipSpace();
                             Convertor.token[0] = sUtil.parseToken();
@@ -1150,6 +1164,66 @@ public class convertMame {
                             continue;
                         }
                     }
+                     else if (type == POKEY) {
+                            i3++;
+                            insideagk[i3] = 0;
+                            if (i3 == 0) {
+                                Convertor.outbuf[(Convertor.outpos++)] = '(';
+                                Convertor.inpos += 1;
+                                continue;
+                            }
+                            if ((i3 == 1) && ((insideagk[0] == 1) || (insideagk[0] == 2))) {
+                                sUtil.putString("new int[] {");
+                                Convertor.inpos += 1;
+                                continue;
+                            }
+                            if ((i3 == 1) && ((insideagk[0] == 1) || (insideagk[0] == 3))) {
+                                sUtil.putString("new ReadHandlerPtr[] {");
+                                Convertor.inpos += 1;
+                                continue;
+                            }
+                            if ((i3 == 1) && ((insideagk[0] == 1) || (insideagk[0] == 4))) {
+                                sUtil.putString("new ReadHandlerPtr[] {");
+                                Convertor.inpos += 1;
+                                continue;
+                            }
+                            if ((i3 == 1) && ((insideagk[0] == 1) || (insideagk[0] == 5))) {
+                                sUtil.putString("new ReadHandlerPtr[] {");
+                                Convertor.inpos += 1;
+                                continue;
+                            }
+                            if ((i3 == 1) && ((insideagk[0] == 1) || (insideagk[0] == 6))) {
+                                sUtil.putString("new ReadHandlerPtr[] {");
+                                Convertor.inpos += 1;
+                                continue;
+                            }
+                            if ((i3 == 1) && ((insideagk[0] == 1) || (insideagk[0] == 7))) {
+                                sUtil.putString("new ReadHandlerPtr[] {");
+                                Convertor.inpos += 1;
+                                continue;
+                            }
+                            if ((i3 == 1) && ((insideagk[0] == 1) || (insideagk[0] == 8))) {
+                                sUtil.putString("new ReadHandlerPtr[] {");
+                                Convertor.inpos += 1;
+                                continue;
+                            }
+                            if ((i3 == 1) && ((insideagk[0] == 1) || (insideagk[0] == 9))) {
+                                sUtil.putString("new ReadHandlerPtr[] {");
+                                Convertor.inpos += 1;
+                                continue;
+                            }
+                            if ((i3 == 1) && ((insideagk[0] == 1) || (insideagk[0] == 10))) {
+                                sUtil.putString("new ReadHandlerPtr[] {");
+                                Convertor.inpos += 1;
+                                continue;
+                            }
+                            if ((i3 == 1) && ((insideagk[0] == 1) || (insideagk[0] == 11))) {
+                                sUtil.putString("new ReadHandlerPtr[] {");
+                                Convertor.inpos += 1;
+                                continue;
+                            }
+                        }
+                    
                     if (type == CUSTOM_SOUND) {
                         i3++;
                         insideagk[i3] = 0;
@@ -1269,6 +1343,15 @@ public class convertMame {
                         }
                     }
                     if (type == AY8910) {
+                        i3--;
+                        if (i3 == -1) {
+                            Convertor.outbuf[(Convertor.outpos++)] = 41;
+                            Convertor.inpos += 1;
+                            type = -1;
+                            continue;
+                        }
+                    }
+                    if (type == POKEY) {
                         i3--;
                         if (i3 == -1) {
                             Convertor.outbuf[(Convertor.outpos++)] = 41;

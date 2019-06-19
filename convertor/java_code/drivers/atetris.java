@@ -325,23 +325,23 @@ public class atetris
 	 *
 	 *************************************/
 	
-	static struct POKEYinterface pokey_interface =
-	{
+	static POKEYinterface pokey_interface = new POKEYinterface
+	(
 		2,
 		ATARI_CLOCK_14MHz/8,
-		{ 50, 50 },
+		new int[] { 50, 50 },
 		/* The 8 pot handlers */
-		{ 0, 0 },
-		{ 0, 0 },
-		{ 0, 0 },
-		{ 0, 0 },
-		{ 0, 0 },
-		{ 0, 0 },
-		{ 0, 0 },
-		{ 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
 		/* The allpot handler */
-		{ input_port_0_r, input_port_1_r }
-	};
+		new ReadHandlerPtr[] { input_port_0_r, input_port_1_r }
+	);
 	
 	
 	

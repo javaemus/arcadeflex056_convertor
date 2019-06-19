@@ -781,12 +781,12 @@ public class atarijsa
 	};
 	
 	
-	struct POKEYinterface atarijsa_pokey_interface =
-	{
+	static POKEYinterface atarijsa_pokey_interface = new POKEYinterface
+	(
 		1,			/* 1 chip */
 		ATARI_CLOCK_3MHz/2,
-		{ 40 },
-	};
+		new int[] { 40 },
+	);
 	
 	
 	struct YM2151interface atarijsa_ym2151_interface_mono =

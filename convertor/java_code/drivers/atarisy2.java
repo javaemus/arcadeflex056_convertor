@@ -1157,23 +1157,23 @@ public class atarisy2
 	};
 	
 	
-	static struct POKEYinterface pokey_interface =
-	{
+	static POKEYinterface pokey_interface = new POKEYinterface
+	(
 		2,
 		ATARI_CLOCK_14MHz/8,
-		{ MIXER(60,MIXER_PAN_LEFT), MIXER(60,MIXER_PAN_RIGHT) },
+		new int[] { MIXER(60,MIXER_PAN_LEFT), MIXER(60,MIXER_PAN_RIGHT) },
 		/* The 8 pot handlers */
-		{ 0, 0 },
-		{ 0, 0 },
-		{ 0, 0 },
-		{ 0, 0 },
-		{ 0, 0 },
-		{ 0, 0 },
-		{ 0, 0 },
-		{ 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
 		/* The allpot handler */
-		{ input_port_11_r, input_port_12_r },	/* dip switches */
-	};
+		new ReadHandlerPtr[] { input_port_11_r, input_port_12_r },	/* dip switches */
+	);
 	
 	
 	static struct TMS5220interface tms5220_interface =

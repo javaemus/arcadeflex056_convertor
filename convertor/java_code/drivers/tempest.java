@@ -342,23 +342,23 @@ public class tempest
 	public static ReadHandlerPtr input_port_1_bit_r  = new ReadHandlerPtr() { public int handler(int offset) { return (readinputport(1) & (1 << offset)) ? 0 : 228; } };
 	public static ReadHandlerPtr input_port_2_bit_r  = new ReadHandlerPtr() { public int handler(int offset) { return (readinputport(2) & (1 << offset)) ? 0 : 228; } };
 	
-	static struct POKEYinterface pokey_interface =
-	{
+	static POKEYinterface pokey_interface = new POKEYinterface
+	(
 		2,	/* 2 chips */
 		12096000/8,	/* 1.512 MHz */
-		{ 50, 50 },
+		new int[] { 50, 50 },
 		/* The 8 pot handlers */
-		{ input_port_1_bit_r, input_port_2_bit_r },
-		{ input_port_1_bit_r, input_port_2_bit_r },
-		{ input_port_1_bit_r, input_port_2_bit_r },
-		{ input_port_1_bit_r, input_port_2_bit_r },
-		{ input_port_1_bit_r, input_port_2_bit_r },
-		{ input_port_1_bit_r, input_port_2_bit_r },
-		{ input_port_1_bit_r, input_port_2_bit_r },
-		{ input_port_1_bit_r, input_port_2_bit_r },
+		new ReadHandlerPtr[] { input_port_1_bit_r, input_port_2_bit_r },
+		new ReadHandlerPtr[] { input_port_1_bit_r, input_port_2_bit_r },
+		new ReadHandlerPtr[] { input_port_1_bit_r, input_port_2_bit_r },
+		new ReadHandlerPtr[] { input_port_1_bit_r, input_port_2_bit_r },
+		new ReadHandlerPtr[] { input_port_1_bit_r, input_port_2_bit_r },
+		new ReadHandlerPtr[] { input_port_1_bit_r, input_port_2_bit_r },
+		new ReadHandlerPtr[] { input_port_1_bit_r, input_port_2_bit_r },
+		new ReadHandlerPtr[] { input_port_1_bit_r, input_port_2_bit_r },
 		/* The allpot handler */
-		{ 0, 0 },
-	};
+		new ReadHandlerPtr[] { 0, 0 },
+	);
 	
 	
 	

@@ -476,23 +476,23 @@ public class centiped
 	
 	
 	
-	static struct POKEYinterface pokey_interface =
-	{
+	static POKEYinterface pokey_interface = new POKEYinterface
+	(
 		1,	/* 1 chip */
 		12096000/8,	/* 1.512 MHz */
-		{ 100 },
+		new int[] { 100 },
 		/* The 8 pot handlers */
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
 		/* The allpot handler */
-		{ 0 },
-	};
+		new ReadHandlerPtr[] { 0 },
+	);
 	
 	static AY8910interface centipdb_ay8910_interface = new AY8910interface
 	(

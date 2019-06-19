@@ -370,23 +370,23 @@ public class foodf
 		return (readinputport(5) >> offset) << 7;
 	} };
 	
-	static struct POKEYinterface pokey_interface =
-	{
+	static POKEYinterface pokey_interface = new POKEYinterface
+	(
 		3,	/* 3 chips */
 		600000,	/* .6 MHz */
-		{ 33, 33, 33 },
+		new int[] { 33, 33, 33 },
 		/* The 8 pot handlers */
-		{ pot_r, 0, 0 },
-		{ pot_r, 0, 0 },
-		{ pot_r, 0, 0 },
-		{ pot_r, 0, 0 },
-		{ pot_r, 0, 0 },
-		{ pot_r, 0, 0 },
-		{ pot_r, 0, 0 },
-		{ pot_r, 0, 0 },
+		new ReadHandlerPtr[] { pot_r, 0, 0 },
+		new ReadHandlerPtr[] { pot_r, 0, 0 },
+		new ReadHandlerPtr[] { pot_r, 0, 0 },
+		new ReadHandlerPtr[] { pot_r, 0, 0 },
+		new ReadHandlerPtr[] { pot_r, 0, 0 },
+		new ReadHandlerPtr[] { pot_r, 0, 0 },
+		new ReadHandlerPtr[] { pot_r, 0, 0 },
+		new ReadHandlerPtr[] { pot_r, 0, 0 },
 		/* The allpot handler */
-		{ 0, 0, 0 }
-	};
+		new ReadHandlerPtr[] { 0, 0, 0 }
+	);
 	
 	
 	
